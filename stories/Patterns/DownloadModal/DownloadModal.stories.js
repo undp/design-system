@@ -616,11 +616,35 @@ export default {
                 <li>Choose the image either true or false and Category either Single or Multiple Languages from the control tab on canvas.</li>
                 <li>Grab the HTML from the HTML tab in the canvas and include CSS and JS files listed below.</li>
                 <li>Make sure to add <code>data-toggle='modal'</code> and <code>data-target-modal='&lt;your-modal-id&gt;'</code> in your button or link which will open the modal box.</li>
-                <li>If you want select option then include <code>select.min.js</code> and initialize select by calling <code>select();</code></li>
+                {/* <li>If you want select option then include <code>select.min.js</code> and initialize select by calling <code>select();</code></li>
                 <li>If you want the add modal on click then include <code>modal.min.js</code> and initialize modal();</li>
-                <li>If you want the filter select on click then include <code>downloadmodal.min.js</code> and initialize <code>selectFilter();</code> and <code>checkbox('.form-check input', '.download-footer .button-primary');</code> on load.</li>
+                <li>If you want the filter select on click then include <code>downloadmodal.min.js</code> and initialize <code>selectFilter();</code> and <code>checkbox('.form-check input', '.download-footer .button-primary');</code> on load.</li> */}
               </ul>
-
+              <h4>Method 1: Automatic Initialization (Recommended)</h4>
+              <ul>
+                <li>Include the component initializer script:
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li>Add the required data attribute to your download modal container:
+                  <code>data-undpds-component="download-modal"</code>
+                </li>
+                <li>Optionally, you can customize the selectors:
+                  <code>data-checkbox-selector=".form-check input" data-button-selector=".download-footer .button-primary"</code>
+                </li>
+                <li>All required functionality will initialize automatically when the page loads - no JavaScript calls required!</li>
+              </ul>
+              <h4>Method 2: Manual Initialization (Traditional)</h4>
+              <ul>
+               <li>Include the required JS files:
+                  <ul>
+                    <li>If you want select option then include <code>select.min.js</code> and initialize select by calling <code>select();</code></li>
+                    <li>If you want the add modal on click then include <code>modal.min.js</code> and initialize modal();</li>
+                    <li>If you want the filter select on click then include <code>downloadmodal.min.js</code> and initialize <code>selectFilter();</code> and <code>checkbox('.form-check input', '.download-footer .button-primary');</code> on load.</li>
+                  </ul>
+                </li>
+                
+              </ul>
+              
               <h3>CSS and JS References</h3>
 
               <h4>CSS</h4>
@@ -641,6 +665,7 @@ export default {
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js</a></li>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js</a></li>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/download-modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/download-modal.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js</a> (for automatic initialization)</li>
               </ul>
 
               <h3>Interactions</h3>

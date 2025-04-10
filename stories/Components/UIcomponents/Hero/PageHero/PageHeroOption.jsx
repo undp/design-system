@@ -1,9 +1,10 @@
-import React from "react";
-import "./page-hero.scss";
-import { Video } from "../../../../Atom/Video/Video";
-import { Heading } from "../../../../Atom/Typography/Heading/Heading";
-import { Breadcrumbcomponent } from "../../../Navigationcomponents/Breadcrumbs/Breadcrumbs";
-import { CtaButton } from "../../Buttons/CtaButton/CtaButton";
+import React, { useEffect } from 'react';
+import './page-hero.scss';
+import { Video } from '../../../../Atom/Video/Video';
+import { Heading } from '../../../../Atom/Typography/Heading/Heading';
+import { Breadcrumbcomponent } from '../../../Navigationcomponents/Breadcrumbs/Breadcrumbs';
+import { CtaButton } from '../../Buttons/CtaButton/CtaButton';
+import { fitTitle } from "../../../../assets/js/fitTitle";
 
 export function PageHeroOption({
   data,
@@ -19,23 +20,22 @@ export function PageHeroOption({
   cta,
   ...args
 }) {
-  const CtaEnabledClass = args.CTA == "On" ? "has-cta" : "";
+  useEffect(() => {
+    if (typeof fitTitle == "function") {
+      fitTitle(".pagehero-content h2");
+    }
+  }, []);
+  const CtaEnabledClass = args.CTA == 'On' ? 'has-cta' : '';
   return (
     <div className={["pagehero-tall", CtaEnabledClass].join(" ")}>
       <div className="grid-x">
         <div className="cell medium-4 medium-offset-1 ">
           <div className="pagehero-content color-black">
             <Breadcrumbcomponent data={data} />
-            {args.Overline == "On" && content && (
-              <Heading type="4" label={content} dataViewport="true" />
-            )}
+            {args.Overline == 'On' && content && <Heading type="4" label={content} dataViewport="true" />}
             <Heading type="2" label={title} dataViewport="true" />
-            {args.Subtitle == "On" && subtitle && (
-              <p className="subtitle">{subtitle}</p>
-            )}
-            {args.CTA == "On" && cta.label && (
-              <CtaButton label={cta.label} For_Primary={cta.for_primary} />
-            )}
+            {args.Subtitle == 'On' && subtitle && <p className="subtitle">{subtitle}</p>}
+            {args.CTA == 'On' && cta.label && <CtaButton label={cta.label} For_Primary={cta.for_primary} />}
           </div>
         </div>
         <div className="cell medium-7">
@@ -45,7 +45,8 @@ export function PageHeroOption({
             ) : (
               <picture>
                 <source media="(min-width: 767px)" srcSet={imgsrc} />
-                <img src={imgsrc2} alt={imgalt} />
+                <img
+                src={imgsrc2} alt={imgalt} />
               </picture>
             )}
           </div>

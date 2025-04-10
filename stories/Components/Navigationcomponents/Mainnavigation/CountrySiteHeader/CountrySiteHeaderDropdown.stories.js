@@ -425,35 +425,38 @@ mobile nav container here ... <br />
 
 
 <h3>Usage:</h3>
-
-<h4>Default Dropdown Usage:</h4>
-
+<h4>Automatic Initialization (Recommended):</h4>
 <ol>
-  <li>Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.</li>
-  <li>Initialize the <strong>navigationInitialize()</strong>, <strong>langSwitch()</strong> function in your js file’s document ready</li>
+  <li>Copy HTML from the HTML tab of canvas.</li>
+  <li>Add the <code>data-undpds-component="country-header"</code> attribute to the header element.</li>
+  <li>If you want to enable overflow functionality, also add the <code>data-overflow="true"</code> attribute.</li>
+  {/* <li>Add the <code>data-undpds-component="language-switcher"</code> attribute to any language switcher elements within the header.</li> */}
+  <li>Include the CSS and JS files listed below, including the component initializer.</li>
+  <li>The component will automatically initialize when the page loads.</li>
 </ol>
 
 <h4>Dropdown menu Usage:</h4>
 
 <ol>
   <li>Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.</li>
-  <li>Initialize the <strong>navigationInitialize()</strong>, <strong>navigationMultiLevelEdgeDetection()</strong>, and <strong>langSwitch()</strong> function in your js file’s document ready. For example:</li>
+  <li>Add the <code>data-undpds-component="country-header"</code> attribute to the header element.</li>
+  {/* <li>Initialize the <strong>navigationInitialize()</strong>, <strong>navigationMultiLevelEdgeDetection()</strong>, and <strong>langSwitch()</strong> function in your js file’s document ready. For example:</li> */}
 </ol>
 
-<pre>
+{/* <pre>
 <code>
 $(document).ready(function() &#123; <br />
   &emsp;&emsp;navigationInitialize(); <br />
   &emsp;&emsp;navigationMultiLevelEdgeDetection(); <br />
 &#125;);
 </code>
-</pre>
+</pre> */}
 
-<h4>Overflow Usage:</h4>
+{/* <h4>Overflow Usage:</h4>
 
 <ol>
   <li>In addition to the steps above, Initialize the <strong>navigationOverFlow()</strong> function in your js file’s document ready.</li>
-</ol>
+</ol> */}
 
 
 <h3>CSS and JS References</h3>
@@ -483,6 +486,7 @@ $(document).ready(function() &#123; <br />
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">navigation.min.js</a></li>
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">undp.min.js</a></li>
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">lang-switcher.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js</a></li>
 </ul>
 
 

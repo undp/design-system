@@ -133,7 +133,25 @@ export default {
               <ul>
                   <li>Grab the HTML from the HTML tab in the canvas and include the JS and CSS in the ‘CSS and JS References’ section.</li>
                   <li>Make sure to add <code>data-toggle=’modal’</code> and <code>data-target-modal=’your-modal-id’</code> to your button or link that will open the modal box.</li>
-                  <li>Include <code>modal.min.js</code> file and initialize <code>modal()</code>.</li>
+                  {/* <li>Include <code>modal.min.js</code> file and initialize <code>modal()</code>.</li> */}
+                  <li>Choose one of the following initialization methods:</li>
+              </ul>
+              <h4>Method 1: Automatic Initialization (Recommended)</h4>
+              <ul>
+                <li>Include the component initializer script:
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li>Add the required data attribute to your modal element:
+                  <code>data-undpds-component="modal"</code>
+                </li>
+                <li>The modal will initialize automatically when the page loads - no JavaScript calls required!</li>
+              </ul>
+              <h4>Method 2: Manual Initialization (Traditional)</h4>
+              <ul>
+                <li>Include <code>modal.min.js</code> in your HTML.</li>
+                <li>Call the initialization function directly in your JavaScript:
+                  <code>modal();</code>
+                </li>
               </ul>
 
               <h3>CSS and JS References</h3>

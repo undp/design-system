@@ -1,9 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const RemoveEmptyScripts = require('webpack-remove-empty-scripts');
 // const RemovePlugin = require('remove-files-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const webpackEntry = require('./webpack.entries');
 
 const packMode = 'production';
@@ -126,11 +128,29 @@ module.exports = [
       filename: '[name].min.js',
       libraryTarget: 'umd',
     },
+    optimization: {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            format: {
+              comments: false, // Remove comments
+            },
+          },
+          extractComments: false, // Do not extract comments to a separate file
+        }),
+      ],
+    },
     externals: {
       jquery: 'jQuery',
       Swiper: 'Swiper',
       gsap: 'gsap',
     },
+    plugins: [
+      new webpack.optimize.LimitChunkCountPlugin({
+        maxChunks: 1,
+      }),
+    ],
     module: {
       rules: [
         {
@@ -149,6 +169,27 @@ module.exports = [
           test: /\.(svg|png|jpg)$/,
           type: 'asset',
         },
+      ],
+    },
+  },
+  {
+    mode: packMode,
+    entry: './stories/assets/js/init.js', // Special routine for the initialization script
+    output: {
+      path: path.resolve(__dirname, 'docs/js'), // Output directory
+      filename: 'init.js', // Minified output file name
+    },
+    optimization: {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            format: {
+              comments: false, // Remove comments
+            },
+          },
+          extractComments: false, // Do not extract comments to a separate file
+        }),
       ],
     },
   },

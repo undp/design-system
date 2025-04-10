@@ -8,6 +8,9 @@ import renderToHTML from './renderToHTML'
 import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css'
 import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss'
 
+//import init-loader
+import { initializeComponents } from '../stories/assets/js/storybook-init';
+
 // Log the contents of RTLAddon for debugging
 
 // console.log(RTLAddon);
@@ -208,6 +211,6 @@ const setAccentClass = (Story, context) => {
 export default {
   parameters: parameters,
   globalTypes: globalTypes,
-  decorators: [getLangCode, sbFrameReset, setDirection, setAccentClass],
+  decorators: [getLangCode, sbFrameReset, setDirection, setAccentClass, initializeComponents],
   tags: ['autodocs', 'autodocs'],
 }

@@ -85,9 +85,28 @@ export default {
               <ul>
                   <li>Choose the color variant either Blue or White from the control tab of the canvas.</li>
                   <li>Copy HTML from the HTML tab and include the CSS and JS files listed below.</li>
-                  <li>Initialize the Language Switcher by calling <code>langSwitch()</code> function.</li>
+                  <li>Choose one of the following initialization methods:</li>
+                  {/* <li>Initialize the Language Switcher by calling <code>langSwitch()</code> function.</li> */}
+              </ul>
+              <h4>Method 1: Automatic Initialization (Recommended)</h4>
+              <ul>
+                <li>Include the component initializer script:
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li>Add the required data attribute to your language switcher element:
+                  <code>data-undpds-component="language-switcher"</code>
+                </li>
+                <li>The language switcher will initialize automatically when the page loads - no JavaScript calls required!</li>
               </ul>
 
+              <h4>Method 2: Manual Initialization (Traditional)</h4>
+              <ul>
+                <li>Include <code>lang-switcher.min.js</code> in your HTML.</li>
+                <li>Call the initialization function directly in your JavaScript:
+                  <code>langSwitch();</code>
+                </li>
+              </ul>
+              
               <h3>CSS and JS References</h3>
 
               <h4>CSS:</h4>

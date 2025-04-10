@@ -231,7 +231,8 @@ export default {
           <h4>Default mega menu Usage:</h4>
           <ol>
             <li>Copy HTML from the HTML tab of canvas and also include the CSS and JS files listed below.</li>
-            <li>Initialize the <code>navigationInitialize()</code>, <code>langSwitch()</code> functions in your JS file’s document ready, For example:</li>
+            <li>Add the <code>data-undpds-component="country-site-header"</code> attribute to the header element.</li>
+            {/* <li>Initialize the <code>navigationInitialize()</code>, <code>langSwitch()</code> functions in your JS file’s document ready, For example:</li> */}
           </ol>
 
           <pre><code>
@@ -265,6 +266,7 @@ export default {
             <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
             <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
             <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js</a></li>
           </ul>
 
           <p>Menu overflow functionality is included in the navigation.min.js file. It only triggers if the overflow classes are in place. Please see "Implementing menu overflow" for instructions on setting up overflow menu functionality for the main header menu.</p>

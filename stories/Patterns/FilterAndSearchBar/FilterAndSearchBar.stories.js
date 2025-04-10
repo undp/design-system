@@ -62,10 +62,31 @@ export default {
 <h3>Usage:</h3>
 <ul>
   <li>Copy HTML from the HTML tab of the canvas and also include the CSS and JS files listed below.</li>
-  <li>Initialize the search, multi-select, and filter by calling functions <code>expandSearch()</code>, <code>multiSelect()</code>, and <code>toggleFilter()</code> respectively.</li>
+  {/* <li>Initialize the search, multi-select, and filter by calling functions <code>expandSearch()</code>, <code>multiSelect()</code>, and <code>toggleFilter()</code> respectively.</li> */}
   <li>Custom code can be triggered by available Custom Events on the filter items. See <strong>Custom Events</strong> and <strong>Custom Event Data</strong> below.</li>
 </ul>
-
+<h4>Method 1: Automatic Initialization (Recommended)</h4>
+<ul>
+   <li>Include the required CSS and JS files listed in the CSS and JS References section below.</li>
+   <li>Include the component initializer script:
+      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+   </li>
+   <li>Add the required data attributes to your filter and search bar elements:
+      <code>data-undpds-component="filter-search-bar"</code> for the main container,
+      <code>data-undpds-component="expand-search"</code> for the search field, and
+      <code>data-undpds-component="multi-select"</code> for each filter dropdown
+   </li>
+   <li>The filter and search bar components will initialize automatically when the page loads - no JavaScript calls required!</li>
+</ul>
+<h4>Method 2: Manual Initialization (Traditional)</h4>
+<ul>
+   <li>Include the required CSS and JS files listed in the CSS and JS References section below (excluding init.min.js).</li>
+   <li>Call the initialization functions directly in your JavaScript:
+      <code>expandSearch();</code> for the search functionality,
+      <code>multiSelect();</code> for the filter dropdowns, and
+      <code>toggleFilter();</code> for the filter functionality
+   </li>
+</ul>
 <hr />
 
 <h3>Custom Events:</h3>

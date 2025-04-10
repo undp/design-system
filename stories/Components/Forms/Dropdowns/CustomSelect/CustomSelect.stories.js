@@ -72,7 +72,7 @@ export default {
           </Canvas>
 
           <h3>Usage:</h3>
-          <p>Copy the HTML from the HTML tab of Canvas. Include the CSS and JS files listed below. Initialize the select by calling the <code>select()</code> function. If you need a fixed height dropdown, then apply height to the <code>&lt;ul&gt;</code> tag of the dropdown. It will scroll inside the dropdown.</p>
+          <p>Copy the HTML from the HTML tab of Canvas. Include the CSS and JS files listed below. Add the <code>data-undpds-component="custom-select"</code> attribute to the select-box element. If you need a fixed height dropdown, then apply height to the <code>&lt;ul&gt;</code> tag of the dropdown. It will scroll inside the dropdown.</p>
 
           <h3>CSS and JS References</h3>
 
@@ -86,6 +86,7 @@ export default {
           <h4>JS:</h4>
           <ul>
             <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js</a></li>
           </ul>
 
           <h3>Interactions</h3>
