@@ -432,8 +432,14 @@
 %expand_to_size {
   @include transition(max-width 0.5s ease);
 
-  margin: 0 auto;
-  max-width: 100%;
+  // margin: 0 auto;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 1.5rem);
+
+  @include breakpoints.devicebreak(medium) {
+    max-width: calc(100% - 3rem);
+  }
 }
 
 %expand_search {

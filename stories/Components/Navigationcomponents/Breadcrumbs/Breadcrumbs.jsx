@@ -3,7 +3,6 @@ import "./breadcrumbs.scss";
 
 export function Breadcrumbcomponent({ data, Color, rlt_offset, ...args }) {
   const lastIndex = data.length - 1;
-  console.log(rlt_offset);
 
   let color = "";
   if (Color == "White") {

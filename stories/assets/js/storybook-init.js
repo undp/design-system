@@ -1,15 +1,17 @@
+// This script logic is identical to init.js, but it is used for Storybook.
+
 export const initializeComponents = (Story, context) => {
-  
+
     setTimeout(() => {
-     
+
       const componentElements = document.querySelectorAll('[data-undpds-component]');
-      
+
       componentElements.forEach(element => {
         const componentType = element.getAttribute('data-undpds-component');
         if (element.hasAttribute('data-initialized')) {
           return;
         }
-        
+
         let options = {};
         if (element.hasAttribute('data-options')) {
           try {
@@ -18,7 +20,7 @@ export const initializeComponents = (Story, context) => {
             console.warn(`Invalid options format for ${componentType}:`, error);
           }
         }
-        
+
     // Initialize based on component type
     switch (componentType) {
         case 'language-switcher':
@@ -78,7 +80,7 @@ export const initializeComponents = (Story, context) => {
                         console.warn('Invalid swiper options format:', error);
                     }
                 }
-                
+
                 swiper(targetSelector, arrowsSelector, swiperOptions);
                 element.setAttribute('data-initialized', 'true');
             } else {
@@ -98,7 +100,7 @@ export const initializeComponents = (Story, context) => {
                             console.warn('Invalid swiper options format:', error);
                         }
                     }
-                    
+
                     module.swiper(targetSelector, arrowsSelector, swiperOptions);
                 }
                 element.setAttribute('data-initialized', 'true');
@@ -120,14 +122,14 @@ export const initializeComponents = (Story, context) => {
             break;
         case 'expandToSize':
             if (typeof expandToSize === 'function') {
-                const selector = element.getAttribute('data-selector');
-                expandToSize(selector);
+                // const selector = element.getAttribute('data-selector');
+                expandToSize(element);
                 element.setAttribute('data-initialized', 'true');
             } else {
                 import("./animation.js").then(module => {
                     if (module && typeof module.default === 'function') {
-                        const selector = element.getAttribute('data-selector');
-                        module.default(selector);
+                        // const selector = element.getAttribute('data-selector');
+                        module.default(element);
                     }
                     element.setAttribute('data-initialized', 'true');
                 }).catch(err => console.error('Error initializing expandToSize:', err));
@@ -150,11 +152,11 @@ export const initializeComponents = (Story, context) => {
             if (typeof fitText === 'function') {
                 // Get options with proper error handling
                 let fitTextSelector = '.stats-card h2'; // Default selector
-                
+
                 if (options && options.selector) {
                     fitTextSelector = options.selector;
                 }
-                
+
                 // Apply fitText with the selector
                 fitText(fitTextSelector);
                 element.setAttribute('data-initialized', 'true');
@@ -163,11 +165,11 @@ export const initializeComponents = (Story, context) => {
                     if (module && typeof module.fitText === 'function') {
                         // Get options with proper error handling
                         let fitTextSelector = '.stats-card h2'; // Default selector
-                        
+
                         if (options && options.selector) {
                             fitTextSelector = options.selector;
                         }
-                        
+
                         // Apply fitText with the selector
                         module.fitText(fitTextSelector);
                     }
@@ -258,7 +260,7 @@ export const initializeComponents = (Story, context) => {
                 element.setAttribute('data-initialized', 'true');
             } else {
                 import("./sidebar.js").then(module => {
-                    if (module && typeof module.sidebarNav === 'function' && 
+                    if (module && typeof module.sidebarNav === 'function' &&
                         typeof module.sidebarMenu === 'function') {
                         module.sidebarNav();
                         module.sidebarMenu();
@@ -270,6 +272,6 @@ export const initializeComponents = (Story, context) => {
         }
       });
     }, 100);
-    
+
     return Story(Object.assign({}, context));
 };

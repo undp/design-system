@@ -5,7 +5,14 @@
 /* page hero start */
 .pagehero {
   &-full {
-    @extend %expand_to_size;
+
+    .overlay-grey {
+      @extend %expand_to_size;
+    }
+
+    &.expand-to-size .overlay-grey{
+      max-width: 100%;
+    }
 
     background-color: var(--undpds-color-gray-200);
     min-height: 642px;

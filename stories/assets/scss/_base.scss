@@ -87,14 +87,6 @@
   }
 }
 
-.expand-to-size {
-  max-width: calc(100% - 1.5rem);
-
-  @include breakpoints.devicebreak(medium) {
-    max-width: calc(100% - 3rem);
-  }
-}
-
 [dir="rtl"] {
   *[data-viewport="true"] {
     @include mixins.transform(translateX(100px));
