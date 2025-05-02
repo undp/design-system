@@ -30,7 +30,7 @@ function GlobalHeader({
   }, [locale]);
 
   return (
-    <header className="global-header global-load-animation">
+    <header className="global-header">
       <section className="header">
         <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">
