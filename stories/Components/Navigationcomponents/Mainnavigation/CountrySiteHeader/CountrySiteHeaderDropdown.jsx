@@ -55,7 +55,7 @@ function CountrySiteHeader({
   args.overflow = overflow;
 
   return (
-    <header className="country-header country-load-animation">
+    <header className="country-header">
       <section className="header">
         <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">

@@ -189,32 +189,32 @@ export const navigationInitialize = (locale) => {
    *
    * Displays the logo moving into position and then displays the rest of the header content.
    */
-  const headerClass = localStorage.getItem('current-nav');
-  if (headerClass == 'global-header') {
-    jQuery('.global-header').removeClass('global-load-animation');
-    jQuery('.country-load-animation').addClass('run-animation');
-    setTimeout(() => {
-      jQuery('.country-load-animation.run-animation').removeClass('country-load-animation run-animation').addClass('show-content');
-    }, 800);
-    setTimeout(() => {
-      jQuery('.country-header').removeClass('show-content');
-      if (document.getElementsByTagName('header')[0].classList.length) {
-        localStorage.setItem('current-nav', document.getElementsByTagName('header')[0].classList[0]);
-      }
-    }, 1000);
-  } else {
-    jQuery('.country-header').removeClass('country-load-animation');
-    jQuery('.global-load-animation').addClass('run-animation');
-    setTimeout(() => {
-      jQuery('.global-load-animation.run-animation').removeClass('global-load-animation run-animation').addClass('show-content');
-    }, 800);
-    setTimeout(() => {
-      jQuery('.global-header').removeClass('show-content');
-      if (document.getElementsByTagName('header').length && document.getElementsByTagName('header')[0].classList.length) {
-        localStorage.setItem('current-nav', document.getElementsByTagName('header')[0].classList[0]);
-      }
-    }, 1000);
-  }
+  // const headerClass = localStorage.getItem('current-nav');
+  // if (headerClass == 'global-header') {
+  //   jQuery('.global-header').removeClass('global-load-animation');
+  //   jQuery('.country-load-animation').addClass('run-animation');
+  //   setTimeout(() => {
+  //     jQuery('.country-load-animation.run-animation').removeClass('country-load-animation run-animation').addClass('show-content');
+  //   }, 800);
+  //   setTimeout(() => {
+  //     jQuery('.country-header').removeClass('show-content');
+  //     if (document.getElementsByTagName('header')[0].classList.length) {
+  //       localStorage.setItem('current-nav', document.getElementsByTagName('header')[0].classList[0]);
+  //     }
+  //   }, 1000);
+  // } else {
+  //   jQuery('.country-header').removeClass('country-load-animation');
+  //   jQuery('.global-load-animation').addClass('run-animation');
+  //   setTimeout(() => {
+  //     jQuery('.global-load-animation.run-animation').removeClass('global-load-animation run-animation').addClass('show-content');
+  //   }, 800);
+  //   setTimeout(() => {
+  //     jQuery('.global-header').removeClass('show-content');
+  //     if (document.getElementsByTagName('header').length && document.getElementsByTagName('header')[0].classList.length) {
+  //       localStorage.setItem('current-nav', document.getElementsByTagName('header')[0].classList[0]);
+  //     }
+  //   }, 1000);
+  // }
 
   /**
    * Language switch toggle effect.
