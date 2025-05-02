@@ -11,7 +11,7 @@
     }
 
     &.expand-to-size .overlay-grey{
-      max-width: 100%;
+      clip-path: inset(0);
     }
 
     min-height: 642px;
@@ -79,8 +79,7 @@
 
       @include breakpoints.devicebreak(small) {
         padding-top: var(--undpds-spacing-11);
-        padding-left: var(--undpds-spacing-04);
-        padding-right: var(--undpds-spacing-04);
+        padding-inline: var(--undpds-spacing-06);
       }
 
       ul li {
@@ -111,7 +110,7 @@
 
     @include breakpoints.devicebreak(small) {
       height: auto;
-      padding-inline: var(--undpds-spacing-04);
+      padding-inline: var(--undpds-spacing-06);
     }
 
     h4 {

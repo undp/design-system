@@ -430,15 +430,12 @@
 }
 
 %expand_to_size {
-  @include transition(max-width 0.5s ease);
+  @include transition(clip-path 0.5s ease);
 
-  // margin: 0 auto;
-  inset-inline-start: 50%;
-  transform: translateX(-50%);
-  max-width: calc(100% - 1.5rem);
+  clip-path: inset(0 0.75rem);
 
   @include breakpoints.devicebreak(medium) {
-    max-width: calc(100% - 3rem);
+    clip-path: inset(0 1.5rem);
   }
 }
 

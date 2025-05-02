@@ -71,6 +71,7 @@ const parameters = {
     pauseAnimationAtEnd: true,
     delay: 1500
   },
+  layout: 'fullscreen',
 }
 
 /* Implementing locale for language switcher */
