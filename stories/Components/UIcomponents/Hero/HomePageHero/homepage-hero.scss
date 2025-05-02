@@ -5,12 +5,14 @@
 /* global homepage hero */
 .homepage-hero {
   &-full {
-    .overlay-grey {
+    .overlay-grey, > video, > img {
       @extend %expand_to_size;
     }
 
-    &.expand-to-size .overlay-grey{
-      max-width: 100%;
+    &.expand-to-size {
+      .overlay-grey, > video, > img {
+        max-width: 100%;
+      }
     }
 
     position: relative;

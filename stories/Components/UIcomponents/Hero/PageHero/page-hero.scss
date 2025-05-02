@@ -14,11 +14,14 @@
       max-width: 100%;
     }
 
-    background-color: var(--undpds-color-gray-200);
     min-height: 642px;
     overflow: hidden;
     position: relative;
     word-break: break-word;
+
+    &:not(:has(div.overlay-grey)) {
+      background-color: var(--undpds-color-gray-200);
+    }
 
     @include breakpoints.devicebreak(medium) {
       min-height: 746px;
