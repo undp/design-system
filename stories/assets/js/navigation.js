@@ -228,14 +228,23 @@ export const navigationInitialize = (locale) => {
   /**
    * Scrolled logo effect.
    */
-  jQuery(window).scroll(() => {
-    var winScroll = jQuery(window).scrollTop();
-    if (winScroll >= 1) {
-      jQuery('.logo img').addClass('scrolled');
-    } else {
-      jQuery('.logo img').removeClass('scrolled');
-    }
-  });
+  // jQuery(window).scroll(() => {
+  //   var winScroll = jQuery(window).scrollTop();
+  //   if (winScroll >= 1) {
+  //     jQuery('.logo img').addClass('scrolled');
+  //   } else {
+  //     jQuery('.logo img').removeClass('scrolled');
+  //   }
+  // });
+  const logo_scroller = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const logo = document.querySelector('.logo img');
+      if (logo) {
+        logo.classList.toggle('scrolled', !entry.isIntersecting);
+      }
+    });
+  }, {threshold: 1});
+  logo_scroller.observe(document.querySelector('header'));
 };
 
 /**
