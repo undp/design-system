@@ -5,13 +5,23 @@
 /* page hero start */
 .pagehero {
   &-full {
-    @extend %expand_to_size;
 
-    background-color: var(--undpds-color-gray-200);
+    .overlay-grey {
+      @extend %expand_to_size;
+    }
+
+    &.expand-to-size .overlay-grey{
+      clip-path: inset(0);
+    }
+
     min-height: 642px;
     overflow: hidden;
     position: relative;
     word-break: break-word;
+
+    &:not(:has(div.overlay-grey)) {
+      background-color: var(--undpds-color-gray-200);
+    }
 
     @include breakpoints.devicebreak(medium) {
       min-height: 746px;
@@ -69,8 +79,7 @@
 
       @include breakpoints.devicebreak(small) {
         padding-top: var(--undpds-spacing-11);
-        padding-left: var(--undpds-spacing-04);
-        padding-right: var(--undpds-spacing-04);
+        padding-inline: var(--undpds-spacing-06);
       }
 
       ul li {
@@ -101,7 +110,7 @@
 
     @include breakpoints.devicebreak(small) {
       height: auto;
-      padding-inline: var(--undpds-spacing-04);
+      padding-inline: var(--undpds-spacing-06);
     }
 
     h4 {
