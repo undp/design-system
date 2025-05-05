@@ -1,19 +1,23 @@
-/* Function to chech if element is in viewport or not */
+jQuery(window).on('load', () => {
 
-jQuery.fn.isInViewport = function () {
-  const $elementTop = jQuery(this).offset().top;
-  const $elementBottom = $elementTop + jQuery(this).outerHeight();
+  const $objs = jQuery('[data-viewport=true]');
+  if ($objs.length > 0) {
 
-  const $viewportTop = jQuery(window).scrollTop();
-  const $viewportBottom = $viewportTop + jQuery(window).height();
+    const isElementInViewport = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          jQuery(entry.target).addClass('inviewport');
+          isElementInViewport.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1 // Trigger when at least 10% of the element is visible
+    });
 
-  return $elementBottom > $viewportTop && $elementTop < $viewportBottom;
-};
+    $objs.each((i, element) => {
+      isElementInViewport.observe(element);
+    });
 
-jQuery(window).on('resize scroll load', () => {
-  jQuery('[data-viewport=true]').each(function () {
-    if (jQuery(this).isInViewport()) {
-      jQuery(this).addClass('inviewport');
-    }
-  });
+  }
+
 });

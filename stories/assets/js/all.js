@@ -4,6 +4,7 @@ import './viewport';
 import './lazyload';
 import './scrolling-progress-bar';
 import './smartresize';
+import './init';
 
 // ES6 imports
 import { accordion } from './accordion';
@@ -13,6 +14,7 @@ import { checkbox, selectFilter } from './download-modal';
 import { expandSearch } from './expand-search';
 import { toggleFilter } from './filter-search-bar';
 import { fitText } from './fitText';
+import { fitTitle } from './fitTitle';
 import { langSwitch } from './lang-switcher';
 import { lightboxGallery } from './lightbox-gallery';
 import { modal } from './modal';
@@ -40,6 +42,7 @@ export {
   expandSearch,
   toggleFilter,
   fitText,
+  fitTitle,
   langSwitch,
   lightboxGallery,
   modal,
