@@ -46,14 +46,14 @@
         }
       }
 
-      .dropdown-language {
-        margin-left: var(--undpds-spacing-04);
-        display: flex;
-        align-items: center;
+    }
+    .dropdown-language {
+      margin-inline: var(--undpds-spacing-03);
+      display: flex;
+      align-items: center;
 
-        @include devicebreak(mediumonlytab) {
-          display: none;
-        }
+      @include devicebreak(mediumonlytab) {
+        display: none;
       }
     }
 
@@ -172,11 +172,12 @@
           display: none;
         }
       }
+    }
 
       .icon-globe {
         @extend %header-icon;
 
-        margin-left: 1.75rem;
+        margin-inline: var(--undpds-spacing-03);
         mask: url(~icons/globe.svg) no-repeat left center;
 
         @include devicebreak(mediumonlytab) {
@@ -187,13 +188,12 @@
       .icon-search {
         @extend %header-icon;
 
-        margin-left: var(--undpds-spacing-05);
-        margin-right: var(--undpds-spacing-04);
+        margin-inline: var(--undpds-spacing-03);
         mask: url(~icons/search.svg) no-repeat left center;
 
         @include devicebreak(small) {
           background: transparent url(~icons/search.svg) no-repeat left center;
-          margin-inline: 0;
+          // margin-inline: 0;
           mask: inherit;
 
           &:hover {
@@ -201,7 +201,7 @@
           }
         }
       }
-    }
+
 
     .mid-nav ul,
     .top-left,
@@ -272,27 +272,27 @@
       }
     }
 
-    .top-right {
-      .icon-globe {
-        margin-left: 0;
-        margin-right: 1.75rem;
-      }
+    // .top-right {
+    //   .icon-globe {
+    //     margin-left: 0;
+    //     margin-right: 1.75rem;
+    //   }
 
-      .icon-search {
-        margin-left: 0;
-      }
-    }
+    //   .icon-search {
+    //     margin-left: 0;
+    //   }
+    // }
 
-    .top-left {
-      .dropdown-language {
-        margin-left: 0;
-        margin-right: var(--undpds-spacing-04);
-      }
+    // .top-left {
+    //   .dropdown-language {
+    //     margin-left: 0;
+    //     margin-right: var(--undpds-spacing-04);
+    //   }
 
-      .icon-bar {
-        margin-right: var(--undpds-spacing-04);
-      }
-    }
+    //   .icon-bar {
+    //     margin-right: var(--undpds-spacing-04);
+    //   }
+    // }
 
     // &.global-load-animation {
     //   .header .mid-nav .logo {
