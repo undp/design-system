@@ -79,6 +79,16 @@ function CountrySiteHeader({
               )}
             </div>
             <div className="cell small-3 large-auto top-right">
+              <button className="icon-search">Search</button>
+              <button className="icon-globe">Global</button>
+              {args.cta_enabled == 'On' && (
+                <CtaButton
+                  label="Donate"
+                  href="#"
+                  Icon="No Arrow"
+                  Type="Primary"
+                />
+              )}
               <Languageswitcher
                 data={languageswitcherData.languagedata}
                 headerText={languageswitcherData.headerText}
@@ -89,16 +99,6 @@ function CountrySiteHeader({
                 <span className="hamburger-line line-bottom" />
                 Nav toggle
               </button>
-              <button className="icon-globe">Global</button>
-              <button className="icon-search">Search</button>
-              {args.cta_enabled == 'On' && (
-                <CtaButton
-                  label="Donate"
-                  href="#"
-                  Icon="No Arrow"
-                  Type="Primary"
-                />
-              )}
             </div>
             {args.menu_extended == 'On' && (
               <div className="grid-container full menu__overflow__container hidden">
