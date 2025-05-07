@@ -79,8 +79,8 @@ function CountrySiteHeader({
               )}
             </div>
             <div className="cell small-3 large-auto top-right">
-              <button className="icon-search">Search</button>
               <button className="icon-globe">Global</button>
+              <button className="icon-search">Search</button>
               {args.cta_enabled == 'On' && (
                 <CtaButton
                   label="Donate"
