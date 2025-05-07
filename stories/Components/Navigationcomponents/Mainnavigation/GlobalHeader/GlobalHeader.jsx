@@ -35,16 +35,8 @@ function GlobalHeader({
         <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">
             <div className="cell large-2 small-2 align-self-middle top-left">
-              <Languageswitcher
-                data={languageswitcherData.languagedata}
-                headerText={languageswitcherData.headerText}
-              />
-              <button className="menu-icon menu-hamburger" aria-label="menu-icon">
-                <span className="hamburger-line line-top" />
-                <span className="hamburger-line line-middle" />
-                <span className="hamburger-line line-bottom" />
-                Nav toggle
-              </button>
+              <button className="icon-globe">Global</button>
+              <button className="icon-search">Search</button>
             </div>
             <div className="cell large-8 small-8 mid-nav">
               <nav className="menu" role="navigation" aria-label="navigation">
@@ -56,8 +48,16 @@ function GlobalHeader({
               </nav>
             </div>
             <div className="cell large-2 small-2 top-right">
-              <button className="icon-globe">Global</button>
-              <button className="icon-search">Search</button>
+              <Languageswitcher
+                data={languageswitcherData.languagedata}
+                headerText={languageswitcherData.headerText}
+              />
+              <button className="menu-icon menu-hamburger" aria-label="menu-icon">
+                <span className="hamburger-line line-top" />
+                <span className="hamburger-line line-middle" />
+                <span className="hamburger-line line-bottom" />
+                Nav toggle
+              </button>
             </div>
             <MobileNav
               navigationData={navigationData}
