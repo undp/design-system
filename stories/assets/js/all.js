@@ -4,7 +4,6 @@ import './viewport';
 import './lazyload';
 import './scrolling-progress-bar';
 import './smartresize';
-import './init';
 
 // ES6 imports
 import { accordion } from './accordion';
