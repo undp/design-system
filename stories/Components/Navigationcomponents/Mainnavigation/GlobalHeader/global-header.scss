@@ -33,19 +33,10 @@
     }
 
     .top-left {
-      @include devicebreak(xlarge) {
+      display: flex;
+      @include devicebreak(medium) {
         margin-bottom: 0;
       }
-
-      @include devicebreak(mediumonlytab) {
-        margin-bottom: 0;
-        display: flex;
-
-        .dropdown-language {
-          display: none;
-        }
-      }
-
     }
     .dropdown-language {
       margin-inline: var(--undpds-spacing-03);
