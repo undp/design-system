@@ -14,8 +14,6 @@
     height: 7.1875rem;
     position: fixed;
 
-    height: 7.1875rem;
-
     @include devicebreak(mediumonlytab) {
       height: 4.6875rem;
     }
@@ -179,17 +177,19 @@
       .icon-search {
         @extend %header-icon;
 
-        margin-inline: var(--undpds-spacing-03);
+        margin-inline-end: var(--undpds-spacing-03);
         mask: url(~icons/search.svg) no-repeat left center;
 
         @include devicebreak(small) {
           background: transparent url(~icons/search.svg) no-repeat left center;
-          // margin-inline: 0;
           mask: inherit;
 
           &:hover {
             background-color: transparent;
           }
+        }
+        @include devicebreak(large) {
+          margin-inline-start: var(--undpds-spacing-03);
         }
       }
 
