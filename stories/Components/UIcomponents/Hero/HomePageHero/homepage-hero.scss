@@ -5,7 +5,15 @@
 /* global homepage hero */
 .homepage-hero {
   &-full {
-    @extend %expand_to_size;
+    .overlay-grey, > video, > img {
+      @extend %expand_to_size;
+    }
+
+    &.expand-to-size {
+      .overlay-grey, > video, > img {
+        clip-path: inset(0);
+      }
+    }
 
     position: relative;
 

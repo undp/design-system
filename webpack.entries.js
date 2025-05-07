@@ -13,7 +13,7 @@ module.exports = (type = 'css') => {
   let ignoreFiles = [
     './node_modules',
     './stories/assets/**/lib/**',
-    './stories/assets/js/init.js', // initialization script, not a module, doesn't need to be bundled
+    './stories/assets/js/init.js', './stories/assets/js/storybook-init.js', // initialization script, not a module, doesn't need to be bundled
     './stories/**/_!(swiper)*.scss', // no partials
     './stories/**/normalize.scss', // merged atom into base styling
     './stories/**/style.scss', // we don't need this file

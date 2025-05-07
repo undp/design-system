@@ -243,6 +243,7 @@
       justify-self: flex-end;
       display: flex;
       align-items: center;
+      margin-inline: var(--undpds-spacing-03);
 
       @include devicebreak(mediumonlytab) {
         display: none;
@@ -252,8 +253,8 @@
     .icon-search {
       @extend %header-icon;
 
-      margin-inline-start: var(--undpds-spacing-05);
-      -webkit-mask: url(~icons/search.svg) no-repeat left center;
+      margin-inline: var(--undpds-spacing-03);
+      // -webkit-mask: url(~icons/search.svg) no-repeat left center;
       mask: url(~icons/search.svg) no-repeat left center;
 
       @include devicebreak(small) {
@@ -264,8 +265,8 @@
     .icon-globe {
       @extend %header-icon;
 
-      margin-inline-start: 1.75rem;
-      -webkit-mask: url(~icons/globe.svg) no-repeat left center;
+      margin-inline: var(--undpds-spacing-03);
+      // -webkit-mask: url(~icons/globe.svg) no-repeat left center;
       mask: url(~icons/globe.svg) no-repeat left center;
 
       @include devicebreak(mediumonlytab) {
@@ -274,7 +275,7 @@
     }
 
     .button {
-      margin-inline-start: var(--undpds-spacing-05);
+      margin-inline: var(--undpds-spacing-03);
       display: block;
 
       @include devicebreak(mediumonlytab) {
@@ -289,39 +290,39 @@
     }
   }
 
-  &.country-load-animation {
-    .header .top-left .logo {
-      @include transition(all 0.7s ease);
+  // &.country-load-animation {
+  //   .header .top-left .logo {
+  //     @include transition(all 0.7s ease);
 
-      left: 50%;
-      position: fixed;
-      top: 0;
-      transform: translateX(-50%);
-    }
+  //     left: 50%;
+  //     position: fixed;
+  //     top: 0;
+  //     transform: translateX(-50%);
+  //   }
 
-    .menu,
-    .site-title,
-    .top-right {
-      opacity: 0;
-    }
-  }
+  //   .menu,
+  //   .site-title,
+  //   .top-right {
+  //     opacity: 0;
+  //   }
+  // }
 
-  &.run-animation {
-    .header .top-left .logo {
-      inset-inline-start: var(--undpds-spacing-04);
-      position: fixed;
-      transform: translateX(0);
-    }
-  }
+  // &.run-animation {
+  //   .header .top-left .logo {
+  //     inset-inline-start: var(--undpds-spacing-04);
+  //     position: fixed;
+  //     transform: translateX(0);
+  //   }
+  // }
 
-  &.show-content {
+  // &.show-content {
 
-    .menu,
-    .site-title,
-    .top-right {
-      opacity: 1;
-    }
-  }
+  //   .menu,
+  //   .site-title,
+  //   .top-right {
+  //     opacity: 1;
+  //   }
+  // }
 }
 
 [dir='rtl'] {

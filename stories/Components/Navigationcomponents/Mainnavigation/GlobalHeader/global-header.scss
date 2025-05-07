@@ -14,8 +14,6 @@
     height: 7.1875rem;
     position: fixed;
 
-    height: 7.1875rem;
-
     @include devicebreak(mediumonlytab) {
       height: 4.6875rem;
     }
@@ -33,27 +31,18 @@
     }
 
     .top-left {
-      @include devicebreak(xlarge) {
+      display: flex;
+      @include devicebreak(medium) {
         margin-bottom: 0;
       }
+    }
+    .dropdown-language {
+      margin-inline: var(--undpds-spacing-03);
+      display: flex;
+      align-items: center;
 
       @include devicebreak(mediumonlytab) {
-        margin-bottom: 0;
-        display: flex;
-
-        .dropdown-language {
-          display: none;
-        }
-      }
-
-      .dropdown-language {
-        margin-left: var(--undpds-spacing-04);
-        display: flex;
-        align-items: center;
-
-        @include devicebreak(mediumonlytab) {
-          display: none;
-        }
+        display: none;
       }
     }
 
@@ -172,11 +161,12 @@
           display: none;
         }
       }
+    }
 
       .icon-globe {
         @extend %header-icon;
 
-        margin-left: 1.75rem;
+        margin-inline: var(--undpds-spacing-03);
         mask: url(~icons/globe.svg) no-repeat left center;
 
         @include devicebreak(mediumonlytab) {
@@ -187,21 +177,22 @@
       .icon-search {
         @extend %header-icon;
 
-        margin-left: var(--undpds-spacing-05);
-        margin-right: var(--undpds-spacing-04);
+        margin-inline-end: var(--undpds-spacing-03);
         mask: url(~icons/search.svg) no-repeat left center;
 
         @include devicebreak(small) {
           background: transparent url(~icons/search.svg) no-repeat left center;
-          margin-inline: 0;
           mask: inherit;
 
           &:hover {
             background-color: transparent;
           }
         }
+        @include devicebreak(large) {
+          margin-inline-start: var(--undpds-spacing-03);
+        }
       }
-    }
+
 
     .mid-nav ul,
     .top-left,
@@ -210,39 +201,39 @@
     }
   }
 
-  &.global-load-animation {
-    .header .mid-nav .logo {
-      @include transition(all 0.7s ease);
+  // &.global-load-animation {
+  //   .header .mid-nav .logo {
+  //     @include transition(all 0.7s ease);
 
-      left: var(--undpds-spacing-04);
-      position: fixed;
-      top: 0;
-      transform: translateX(0);
-    }
+  //     left: var(--undpds-spacing-04);
+  //     position: fixed;
+  //     top: 0;
+  //     transform: translateX(0);
+  //   }
 
-    .mid-nav ul,
-    .top-left,
-    .top-right {
-      opacity: 0;
-    }
-  }
+  //   .mid-nav ul,
+  //   .top-left,
+  //   .top-right {
+  //     opacity: 0;
+  //   }
+  // }
 
-  &.run-animation {
-    .header .mid-nav .logo {
-      left: 50%;
-      position: fixed;
-      transform: translateX(-50%);
-    }
-  }
+  // &.run-animation {
+  //   .header .mid-nav .logo {
+  //     left: 50%;
+  //     position: fixed;
+  //     transform: translateX(-50%);
+  //   }
+  // }
 
-  &.show-content {
+  // &.show-content {
 
-    .mid-nav ul,
-    .top-left,
-    .top-right {
-      opacity: 1;
-    }
-  }
+  //   .mid-nav ul,
+  //   .top-left,
+  //   .top-right {
+  //     opacity: 1;
+  //   }
+  // }
 
   .mega-nav-option {
     top: 7.125rem;
@@ -272,41 +263,41 @@
       }
     }
 
-    .top-right {
-      .icon-globe {
-        margin-left: 0;
-        margin-right: 1.75rem;
-      }
+    // .top-right {
+    //   .icon-globe {
+    //     margin-left: 0;
+    //     margin-right: 1.75rem;
+    //   }
 
-      .icon-search {
-        margin-left: 0;
-      }
-    }
+    //   .icon-search {
+    //     margin-left: 0;
+    //   }
+    // }
 
-    .top-left {
-      .dropdown-language {
-        margin-left: 0;
-        margin-right: var(--undpds-spacing-04);
-      }
+    // .top-left {
+    //   .dropdown-language {
+    //     margin-left: 0;
+    //     margin-right: var(--undpds-spacing-04);
+    //   }
 
-      .icon-bar {
-        margin-right: var(--undpds-spacing-04);
-      }
-    }
+    //   .icon-bar {
+    //     margin-right: var(--undpds-spacing-04);
+    //   }
+    // }
 
-    &.global-load-animation {
-      .header .mid-nav .logo {
-        left: inherit;
-        right: var(--undpds-spacing-04);
-      }
-    }
+    // &.global-load-animation {
+    //   .header .mid-nav .logo {
+    //     left: inherit;
+    //     right: var(--undpds-spacing-04);
+    //   }
+    // }
 
-    &.run-animation {
-      .header .mid-nav .logo {
-        left: inherit;
-        right: 50%;
-        transform: translateX(50%);
-      }
-    }
+    // &.run-animation {
+    //   .header .mid-nav .logo {
+    //     left: inherit;
+    //     right: 50%;
+    //     transform: translateX(50%);
+    //   }
+    // }
   }
 }

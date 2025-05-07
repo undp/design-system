@@ -430,10 +430,13 @@
 }
 
 %expand_to_size {
-  @include transition(max-width 0.5s ease);
+  @include transition(clip-path 0.5s ease);
 
-  margin: 0 auto;
-  max-width: 100%;
+  clip-path: inset(0 0.75rem);
+
+  @include breakpoints.devicebreak(medium) {
+    clip-path: inset(0 1.5rem);
+  }
 }
 
 %expand_search {

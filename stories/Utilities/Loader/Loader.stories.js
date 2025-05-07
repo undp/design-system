@@ -5,6 +5,17 @@ import { Loader } from './Loader';
 export default {
   title: 'Utilities/Loader',
   component: Loader,
+  argTypes: {
+    Variant: {
+      name: "Display variant",
+      options: ["Responsive", "Small", "Large"],
+      control: { type: "inline-radio" },
+    },
+  },
+  args: {
+    Variant: "Responsive",
+  },
+
   parameters: {
     docs: {
         page: () => (
@@ -23,7 +34,10 @@ export default {
 <h3>Formatting</h3>
 
 <h4>Default</h4>
-<p>The loading spinner is a simple animation that informs the user that the page is loading. It will be displayed until the full page has been loaded.</p>
+<p>The loading spinner is a simple animation that informs the user that the page is loading. It will be displayed until the full page has been loaded. By default it displays small version on small screens and large version for medium screens and desktops.</p>
+
+<h4>Small/Large</h4>
+<p>Loader will be displayed in a respective size variant for all screens.</p>
 
 <h3>Content</h3>
 <p>The loading spinner is a simple circle animation. The size varies depending on the screen size.</p>
@@ -31,7 +45,7 @@ export default {
 <h3>Behaviors</h3>
 
 <h4>States</h4>
-<p>The loading spinner has just one state - spinning. As soon as the page loads, the loading spinner is removed.</p>
+<p>The loading spinner has just one state - spinning. As soon as the page loads, the loading spinner should be removed.</p>
 
 <Canvas>
   <Story name="Loader">
@@ -62,8 +76,6 @@ export default {
 <h4>Interactions</h4>
 <p>No interactions are needed with the loader</p>
 
-<h3>Changelog</h3>
-<p>1.0 — Released component</p>
 
             </>
         )
@@ -72,7 +84,7 @@ export default {
 }
 
 const Template = (args, { globals: { locale } }) => {
-  return <Loader></Loader>;
+  return <Loader {...args}></Loader>;
 }
 
 export const LoaderStory = Template.bind({});

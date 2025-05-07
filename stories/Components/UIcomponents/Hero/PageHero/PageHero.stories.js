@@ -230,8 +230,8 @@ export default {
                 <li>Include the component initializer script:
                   <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
-                <li>Add the required data attributes to your hero element:
-                  <code>data-undpds-component="expandToSize" data-selector=".pagehero-full"</code>
+                <li>Add the required data attributes to your hero element with class <code>.pagehero-full</code>: <br />
+                  <code>data-undpds-component="expandToSize"</code>
                 </li>
                 <li>The expand effect will initialize automatically when the page loads - no JavaScript calls required!</li>
               </ul>
