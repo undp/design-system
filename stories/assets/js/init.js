@@ -220,10 +220,10 @@
 
             if (element.hasAttribute('data-options')) {
               try {
-                const options = element.getAttribute('data-options');
+                const dataOptions = element.getAttribute('data-options');
                 // convert HTML entities to their original characters (encoded double quotes)
                 const textArea = document.createElement('textarea');
-                textArea.innerHTML = options;
+                textArea.innerHTML = dataOptions;
                 const customOptions = JSON.parse(textArea.value);
                 // Merge default options with custom options
                 options = { ...options, ...customOptions };
