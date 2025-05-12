@@ -6,12 +6,13 @@ export function changeBackground(container) {
 
   const bodyElement = jQuery('body');
   const section = container || '.heading-big';
+  const $section = jQuery(section);
   // Set Light and Dark Background colors.
   const colorDark = '#232E3E';
   const colorLight = '#ffffff';
   // Calculate height for start and end trigger
-  const sectionHeight = jQuery('.heading-big').height();
-  const sectionFullHeight = jQuery('.heading-big').innerHeight();
+  const sectionHeight = $section.height();
+  const sectionFullHeight = $section.innerHeight();
   const sectionStart = `${Math.round((sectionFullHeight - sectionHeight) / 2) - 100}px`;
   const sectionEnd = `${Math.round(sectionFullHeight / 2) - 40}px`;
   const sectionStartReverse = `${Math.round((sectionFullHeight - sectionHeight) / 2) + 100}px`;
@@ -22,7 +23,7 @@ export function changeBackground(container) {
 
   // create ScrollTrigger instance and animation
   const bgScrollAnimation = () => {
-    if (jQuery(section).length) {
+    if ($section.length) {
       // Tween for animation
       const colorToBlue = gsap.fromTo(bodyElement, { backgroundColor: colorLight, duration: 1, ease: 'SlowMo' }, { backgroundColor: colorDark, duration: 1, ease: 'SlowMo' });
       // Create ScrollTrigger instance
