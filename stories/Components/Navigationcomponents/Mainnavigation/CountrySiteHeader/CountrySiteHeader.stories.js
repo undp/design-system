@@ -28,17 +28,17 @@ export default {
   },
   parameters: {
     docs: {
-      page: () => 
+      page: () =>
         <>
-         
+
          <style>
-            {` 
+            {`
               pre code {
-                white-space: pre-wrap;  
-                word-wrap: break-word;  
-                overflow-x: auto;      
-                max-width: 100%;       
-                box-sizing: border-box; 
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                overflow-x: auto;
+                max-width: 100%;
+                box-sizing: border-box;
 }
             `}
           </style>
@@ -231,7 +231,7 @@ export default {
           <h4>Default mega menu Usage:</h4>
           <ol>
             <li>Copy HTML from the HTML tab of canvas and also include the CSS and JS files listed below.</li>
-            <li>Add the <code>data-undpds-component="country-site-header"</code> attribute to the header element.</li>
+            <li>Add the <code>data-undpds-component="navigation"</code> attribute to the header element. </li>
             {/* <li>Initialize the <code>navigationInitialize()</code>, <code>langSwitch()</code> functions in your JS file’s document ready, For example:</li> */}
           </ol>
 
@@ -243,7 +243,8 @@ export default {
 
           <h4>Overflow Usage:</h4>
           <ol>
-            <li>In addition to the steps above, initialize the <code>navigationOverFlow()</code> function in your JS file’s document ready.</li>
+            <li>In addition to the steps above, add <code>data-overflow</code> attribute or initialize the <code>navigationOverFlow()</code> function in your JS file’s document ready.</li>
+            <li>To enable multilevel menus add <code>data-multilevel</code> attribute or initialize the <code>navigationMultiLevelEdgeDetection()</code> function in your JS file’s document ready.</li>
           </ol>
 
 
@@ -282,7 +283,7 @@ export default {
           <p>1.3 — Released component</p>
 
         </>
-      
+
     }
   }
 }
