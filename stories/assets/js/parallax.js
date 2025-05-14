@@ -55,10 +55,9 @@ export const parallaxEffect = (trigger, selector, start, end, direction, device,
           // Define scrollTrigger options.
           scrollTrigger: {
             trigger: container,
-            start,
-            end,
+            start: start,
+            end: end,
             scrub: true,
-            ease: 'SlowMo',
           },
         });
 
@@ -85,30 +84,25 @@ export const parallaxEffect = (trigger, selector, start, end, direction, device,
         }
       });
     });
+
+    window.addEventListener('resize', () => {
+      ScrollTrigger.getAll().forEach(t=>t.refresh());
+    });
+
   }
 
-  // ScrollTrigger Internal MatchMedia Function.
-  // This is useful as we do not need to use any window resize event observer.
-  ScrollTrigger.matchMedia({
-    // ScrollTrigger will match the below mediaQueries and incase if there is no match then it will kill itself.
-    // Desktop.
-    '(min-width: 768px)': function () {
+  if (device == 'all') {
+    initParallax();
+  } else {
+    // GSAP Internal MatchMedia Function.
+    // This is useful as we do not need to use any window resize event observer.
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 48em)", () => {
       if (device == 'desktop') {
         initParallax();
       }
-    },
-    // Mobile
-    '(max-width: 768px)': function () {
-      // Kill on mobile otherwise.
-    },
-    // Will run both on Desktop and Mobile.
-    all() {
-      // We need to explicitly pass the `device` argument for this to work.
-      if (device == 'all') {
-        initParallax();
-      }
-    },
-  });
+    });
+  }
 };
 
 // parallaxlines Function.
