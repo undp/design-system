@@ -7,8 +7,13 @@ const RemoveEmptyScripts = require('webpack-remove-empty-scripts');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpackEntry = require('./webpack.entries');
+const pkg = require('./package.json');
 
 const packMode = 'production';
+
+const banner = `
+${pkg.description} ${pkg.version}
+`;
 
 /*
 * Webpack build for scss and js
@@ -101,6 +106,10 @@ module.exports = [
       new MiniCssExtractPlugin({
         filename: '[name].min.css',
       }),
+      new webpack.BannerPlugin({
+        banner: banner,
+        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT
+      }),
       // delete fonts from the root directory
       // new RemovePlugin({
       //   after: {
@@ -150,6 +159,10 @@ module.exports = [
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 1,
       }),
+      new webpack.BannerPlugin({
+        banner: banner,
+        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT
+      }),
     ],
     module: {
       rules: [
@@ -192,5 +205,11 @@ module.exports = [
         }),
       ],
     },
+    plugins: [
+      new webpack.BannerPlugin({
+        banner: banner,
+        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT
+      }),
+    ],
   },
 ];

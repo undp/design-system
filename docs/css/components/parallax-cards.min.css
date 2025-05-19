@@ -1,1 +1,6 @@
+/*!
+ * 
+ * UNDP Design System 1.4.6
+ *
+ */
 .parallax{position:relative}@media(max-width:47.9375em){.parallax{overflow:hidden}}@media(min-width:48em){.parallax{background-image:linear-gradient(90deg,var(--undpds-color-gray-400) 1px,hsla(210,5%,84%,0) 0);background-size:25%;border-right:1px solid var(--undpds-color-gray-400)}}.parallax__heading{margin-bottom:var(--undpds-spacing-07)}@media(min-width:48em){.parallax__heading{margin-bottom:0;position:absolute;top:15rem}}.parallax__heading h2{margin:0}@media(max-width:47.9375em){.parallax-card{box-sizing:border-box;padding-right:1.25rem}}.parallax .swiper-wrapper{display:flex}@media(min-width:48em){.parallax .swiper-wrapper{display:block;padding-bottom:var(--undpds-spacing-50);padding-top:var(--undpds-spacing-13)}}[dir=rtl] .parallax__heading{margin-left:0;margin-right:8.33333%}@media(max-width:47.9375em){[dir=rtl] .parallax-card{padding-left:1.25rem;padding-right:0}}
