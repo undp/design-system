@@ -1,1 +1,6 @@
+/*!
+ * 
+ * UNDP Design System 1.4.6
+ *
+ */
 .project-data{border-bottom:1px solid #d4d6d8}@media(min-width:48em){.project-data{border:0}}.project-data__col{display:inline-block;margin-bottom:2rem;width:50%}@media(min-width:48em){.project-data__col{width:100%}}.project-data__label{display:block;font-size:1rem;font-weight:700;letter-spacing:.03em;line-height:1.15;margin-bottom:.25rem}.project-data__text{color:#232e3d}
