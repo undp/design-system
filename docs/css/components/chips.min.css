@@ -1,1 +1,6 @@
+/*!
+ * 
+ * UNDP Design System 1.4.6
+ *
+ */
 .chip{align-items:center;background:#f7f7f7;border:none;border-radius:20px;box-shadow:0 1px 2px rgba(0,0,0,.2);display:inline-flex;min-height:1.875rem;padding:.25rem 1rem}.chip:hover{background-color:#edeff0}.chip.chip__cross:before{background:url(../../images/times-red.svg) no-repeat 0;content:"";display:inline-flex;height:22px;margin-left:-.25rem;margin-right:.5rem;padding-right:1.375rem;position:relative;top:0;width:auto}[dir=rtl] .chip__cross:before{margin-left:.5rem;margin-right:-.25rem}:lang(my) .chip{align-items:flex-end}:lang(my) .chip__cross{align-items:baseline}:lang(my) .chip__cross:before{top:5px}
