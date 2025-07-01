@@ -54,7 +54,7 @@
     "@storybook/manager-api": "^8.6.12",
     "@storybook/preview-api": "^8.6.12",
     "@storybook/react": "^8.6.12",
-    "@storybook/react-webpack5": "^8.6.12",
+    "@storybook/react-webpack5": "^9.0.15",
     "@storybook/test": "^8.6.12",
     "@storybook/theming": "^8.6.12",
     "@whitespace/storybook-addon-html": "^6.1.1",
