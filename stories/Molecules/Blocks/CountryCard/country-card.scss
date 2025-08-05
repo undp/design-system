@@ -44,7 +44,6 @@
           &-cards {
             &__caption {
               transform: translateY(calc(-100% + #{$spacing-44}));
-
               p {
                 opacity: 1;
               }
@@ -126,12 +125,11 @@
         // bottom: 0;
         box-shadow: 0 1px 0 1px $color-white;
         box-sizing: border-box;
-        opacity: 0;
+        opacity: 1;
 
         p {
           @include transition(all 0.5s cubic-bezier(0.64,0.05,0.35,1.05));
           @include transitiondelay(0.3s)
-        ;
         }
       }
     }
