@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Icons } from "./Icons";
 import data from "./Icons.json";

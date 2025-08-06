@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/blocks";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Switch } from "./Switch";
 
 const getCaptionForLocale = (locale) => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import { Story, Meta } from '@storybook/react-webpack5';
 import CountrySiteHeaderDropdown from './CountrySiteHeaderDropdown';
-import { Canvas } from '@storybook/blocks';
+import { Canvas } from '@storybook/addon-docs/blocks';
 import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 
 

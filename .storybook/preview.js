@@ -1,4 +1,4 @@
-// import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+// import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 // import * as RTLAddon from 'storybook-addon-rtl';
 import { allModes } from './modes'
 import renderToHTML from './renderToHTML'
