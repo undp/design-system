@@ -1,4 +1,4 @@
-import { Canvas, Meta, Story, Source, Anchor } from "@storybook/addon-docs";
+import { Canvas, Meta, Story, Source, Anchor } from "@storybook/addon-docs/blocks";
 import React from "react";
 
 import { Heading } from "../Typography/Heading/Heading";
@@ -150,7 +150,7 @@ export default {
 
             <h3>Usage</h3>
 
-            <p>- Include <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css </a> file in your HTML file, no other CSS and JS file required.</p>
+            <p>- Include <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css </a> file in your HTML file, no other CSS and JS file required.</p>
           </section>
           )
         }

@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { CountryHomepage } from "./CountryHomepage";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import { statsArray as statssliderdata } from "../../Patterns/StatsSlider/StatsSliderUtils.js";
@@ -618,7 +618,7 @@ export default {
 <h3>Overview</h3>
 <p>
     A country homepage has a content list related to one specific country. This includes content lists like articles, publications, success stories, blogs, etc.
-    Mock Up: <a href="https://undp-design-system.azurewebsites.net/country-page">Country Page Mockup</a>
+
 </p>
 
 <h3>Template Structure</h3>
@@ -666,44 +666,44 @@ export default {
 <h5>CSS:</h5>
 <p>Add the base layout style from <code>dist/css/base-minimal.min.css</code></p>
 <ul>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css">Country Site Header</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">Language Switcher</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">Menu</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">Mega Menu</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">Mobile Nav</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css">Homepage Hero</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">Breadcrumbs</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css">Heading Big</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css">Content Card</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css">Content Card With and Without Image</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css">Featured Content Card</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">CTA Link</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css">Page Wide Card</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-card.min.css">Image Card</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-reveal-cards.min.css">Image Reveal Cards</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats.min.css">Stats</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css">Stats Cards</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css">Stats Slider</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-group.min.css">Input Group</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">Buttons</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">Newsletter Signup</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">Accordion</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">Footer</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/countryhome-page.min.css">Country Homepage</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css">Article Page</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">Swiper</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-site-header.min.css">Country Site Header</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css">Language Switcher</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css">Menu</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css">Mega Menu</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css">Mobile Nav</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css">Homepage Hero</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css">Breadcrumbs</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/headingbig.min.css">Heading Big</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css">Content Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card-with-and-without-image.min.css">Content Card With and Without Image</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css">Featured Content Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css">CTA Link</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-wide-card.min.css">Page Wide Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-card.min.css">Image Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-reveal-cards.min.css">Image Reveal Cards</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats.min.css">Stats</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css">Stats Cards</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-slider.min.css">Stats Slider</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-group.min.css">Input Group</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css">Buttons</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css">Newsletter Signup</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css">Accordion</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css">Footer</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/countryhome-page.min.css">Country Homepage</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/article-page.min.css">Article Page</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css">Swiper</a></li>
 </ul>
 
 <h5>JS:</h5>
 <ul>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">Navigation</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">UNDP</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">Language Switcher</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">Accordion</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smooth-bg-change.min.js">Smooth BG Change</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">Swiper</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">Parallax</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">Viewport</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js">Navigation</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js">UNDP</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js">Language Switcher</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js">Accordion</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js">Smooth BG Change</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js">Swiper</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js">Parallax</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">Viewport</a></li>
 </ul>
 
 <p>Add following external libraries:</p>
@@ -712,8 +712,6 @@ export default {
     <li><a href="https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo">GSAP</a></li>
 </ul>
 
-<h3>Changelog</h3>
-<p>1.0 — Released component</p>
 <Canvas>
   <Story
     name="Country homepage rtl"
@@ -773,7 +771,7 @@ export default {
 </Canvas>
 
             </>
-            
+
         )
     }
   }

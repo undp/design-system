@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { ModalSample } from "./ModalSample";
 import img from "../../../assets/images/bio.jpg";
 import img2 from "../../../assets/images/modal.png";
@@ -139,7 +139,7 @@ export default {
               <h4>Method 1: Automatic Initialization (Recommended)</h4>
               <ul>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
                 <li>Add the required data attribute to your modal element:
                   <code>data-undpds-component="modal"</code>
@@ -161,16 +161,16 @@ export default {
               <p>Add the base layout style from:</p>
 
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/bio-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/bio-card.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/modal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/modal.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/bio-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/bio-card.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/modal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/modal.min.css</a></li>
               </ul>
 
               <h4>JS:</h4>
 
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/modal.min.js</a></li>
               </ul>
 
               <h3>Interactions</h3>
@@ -180,9 +180,9 @@ export default {
                   <li>The pop-up window can be closed by clicking on the cross icon or anywhere outside of the modal container.</li>
               </ul>
 
-              <h3>Changelog</h3>
+              
 
-              <p>1.0 — Released component</p>
+              
 
             </>
         )

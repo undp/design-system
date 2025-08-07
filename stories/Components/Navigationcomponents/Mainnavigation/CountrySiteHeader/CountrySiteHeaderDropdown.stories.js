@@ -1,7 +1,6 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react-webpack5';
 import CountrySiteHeaderDropdown from './CountrySiteHeaderDropdown';
-import { Canvas } from '@storybook/addon-docs/blocks';
+import { Canvas, Story, Meta } from '@storybook/addon-docs/blocks';
 import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 
 
@@ -185,7 +184,7 @@ export default {
   parameters: {
     docs: {
       page: () => (
-        <>         
+        <>
 <h1>Country Header</h1>
 
 <h2>With dropdown menu and menu overflow</h2>
@@ -466,27 +465,27 @@ $(document).ready(function() &#123; <br />
 <p>Add the base layout style from</p>
 
 <ul>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">base-minimal.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css">country-site-header.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">language-switcher.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">menu.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu-multi-level.min.css">menu-multi-level.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">mobile-nav.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">base-minimal.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-site-header.min.css">country-site-header.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css">language-switcher.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css">menu.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu-multi-level.min.css">menu-multi-level.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css">mobile-nav.min.css</a></li>
 </ul>
 
 <p>If adding the menu overflow functionality, add the style from</p>
 
 <ul>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu-overflow.min.css">menu-overflow.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu-overflow.min.css">menu-overflow.min.css</a></li>
 </ul>
 
 <h4>JS:</h4>
 
 <ul>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">navigation.min.js</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">undp.min.js</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">lang-switcher.min.js</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js">navigation.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js">undp.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js">lang-switcher.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js</a></li>
 </ul>
 
 
@@ -499,7 +498,7 @@ $(document).ready(function() &#123; <br />
   <li>If overflow is enabled, clicking on the 3 dot button will open overflow container.</li>
 </ul>
 
-<h3>Changelog</h3>
+
 
 <p>1.3 — Released component</p>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { ScrollBar } from './ScrollBar';
 
 export default {
@@ -55,8 +55,8 @@ export default {
 <h3>Interactions</h3>
 <p>By clicking on the bar and scrolling it, the contents of the page are moved. As the contents of the page move, the color of the bar changes as well.</p>
 
-<h3>Changelog</h3>
-<p>1.0 — Released component</p>
+
+
 
             </>
         )

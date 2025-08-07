@@ -1,5 +1,5 @@
 import React from 'react';
-import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import CustomSelect from './CustomSelect';
 
 const getCaptionForLocale = (locale) => {
@@ -79,14 +79,14 @@ export default {
           <h4>CSS:</h4>
           <p>Add the base layout style from:</p>
           <ul>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/custom-select.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/custom-select.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/custom-select.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/custom-select.min.css</a></li>
           </ul>
 
           <h4>JS:</h4>
           <ul>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js</a></li>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/select.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/select.min.js</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js</a></li>
           </ul>
 
           <h3>Interactions</h3>
@@ -95,8 +95,6 @@ export default {
             <li>By clicking on the option/options, those can be selected.</li>
           </ul>
 
-          <h3>Changelog</h3>
-          <p>1.0 — Released component</p>
 
         </>
       ),

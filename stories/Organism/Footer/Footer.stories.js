@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Footer } from "./Footer";
 import logo from "../../assets/images/undp-logo-blue.svg";
 import logowhite from "../../assets/images/undp-logo-white.svg";
@@ -109,7 +109,7 @@ export default {
 <ul>
    <li>Include the required CSS and JS files listed in the CSS and JS References section.</li>
    <li>Include the component initializer script:
-      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
    </li>
    <li>Add the required data attribute to your footer element:
       <code>data-undpds-component="footer"</code>
@@ -130,27 +130,27 @@ export default {
 <p>Add the base layout style from:</p>
 
 <ul>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css</a></li>
 </ul>
 
 <h4>JS:</h4>
 
 <ul>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js</a></li>
 </ul>
 
 <h3>Interactions</h3>
 
 <p>No interactions</p>
 
-<h3>Changelog</h3>
 
-<p>1.0 — Released component</p>
+
+
 
         </>
       )

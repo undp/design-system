@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { TableTag } from './Table';
 
 
@@ -116,7 +116,7 @@ export default {
 
     <h4>CSS:</h4>
     <ul>
-      <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+      <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" target="_blank">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
     </ul>
 
     <h4>JS:</h4>
@@ -127,8 +127,6 @@ export default {
     <h3>Interactions</h3>
     <p>No interactions are needed with the progress bar.</p>
 
-    <h3>Changelog</h3>
-    <p>1.0 — Released component</p>
   </>
       ),
     }
@@ -142,7 +140,7 @@ export const Table = (args, { globals: { locale } }) => {
           text={caption.headertext}
           tdtext={caption.tdtext}
           details={caption.details}
-          {...args} 
+          {...args}
         />;
 }
 

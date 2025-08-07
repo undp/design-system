@@ -1,5 +1,5 @@
 import React from 'react';
-import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import { Checkbox } from './Checkbox';
 
 export default {
@@ -56,7 +56,7 @@ export default {
           )}
         </Story>
       </Canvas>
-  
+
       <h3>Usage</h3>
         <ol>
           <li>Copy the HTML from the HTML tab of canvas and include the CSS file mentioned below.</li>
@@ -67,8 +67,8 @@ export default {
         <h4>CSS:</h4>
         <p>Add the base layout style from:</p>
         <ul>
-          <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-          <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/checkbox.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/checkbox.min.css</a></li>
+          <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+          <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/checkbox.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/checkbox.min.css</a></li>
         </ul>
 
         <h4>JS:</h4>
@@ -80,8 +80,6 @@ export default {
           <li>The checked state is applied to the entire button.</li>
         </ul>
 
-        <h4>Changelog</h4>
-        <p>1.0 — Released component</p>
         </>
       )
     },

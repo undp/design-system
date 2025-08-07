@@ -1,5 +1,5 @@
 // import React from "react";
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Icons } from "./Icons";
 import data from "./Icons.json";
 import "./icons.scss";
@@ -89,8 +89,8 @@ export default {
             <h4>CSS:</h4>
             <p>
               Add the base layout style from{" "}
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">
-                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">
+                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css
               </a>
             </p>
             <h4>JS:</h4>

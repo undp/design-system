@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { StatsCards } from "./StatsCards";
 
 const getCaptionForLocale = (locale) => {
@@ -200,13 +200,13 @@ export default {
 
           <ul>
             <li>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">
-                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">
+                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css
               </a>
             </li>
             <li>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css">
-                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css">
+                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css
               </a>
             </li>
           </ul>
@@ -214,8 +214,8 @@ export default {
           <h4>JS:</h4>
 
           <p>
-            <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/fitText.min.js">
-              https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/fitText.min.js
+            <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitText.min.js">
+              https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitText.min.js
             </a>
           </p>
 
@@ -227,9 +227,9 @@ export default {
 
           <p>The hover state is applied to the entire card.</p>
 
-          <h3>Changelog</h3>
+          
 
-          <p>1.0 — Released component</p>
+          
         </>
       ),
     },

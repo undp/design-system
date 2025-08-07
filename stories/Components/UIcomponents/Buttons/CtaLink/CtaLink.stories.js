@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Ctalink } from './CtaLink';
 
 const getCaptionForLocale = (locale) => {
@@ -110,8 +110,8 @@ export default {
           <p>Add the base layout style from:</p>
 
           <ul>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css</a></li>
           </ul>
 
           <p>Use the above CSS concerning CTA link.</p>
@@ -126,9 +126,9 @@ export default {
             <li>The hover state is applied to the entire button.</li>
           </ul>
 
-          <h3>Changelog</h3>
+          
 
-          <p>1.0 — Released component</p>
+          
 
         </>
       ),

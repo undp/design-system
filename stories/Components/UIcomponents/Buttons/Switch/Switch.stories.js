@@ -127,8 +127,8 @@ export default {
           <p>Add the base layout style from:</p>
 
           <ul>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/switch.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/switch.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/switch.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/switch.min.css</a></li>
           </ul>
 
           <p>Use the above CSS concerning the switch component.</p>
@@ -144,9 +144,9 @@ export default {
             <li>The switch changes its appearance when hovered or focused.</li>
           </ul>
 
-          <h3>Changelog</h3>
+          
 
-          <p>1.0 — Released component</p>
+          
 
         </>
       ),

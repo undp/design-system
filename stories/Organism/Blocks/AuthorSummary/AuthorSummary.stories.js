@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { AuthorSummary } from "./AuthorSummary";
 import user from "../../../assets/images/user.svg";
 import { getCaptionForLocale } from "./AuthorSummaryUtils";
@@ -44,17 +44,17 @@ export default {
             <p>Add the base layout style from:</p>
 
             <ul>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-summary.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-summary.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-summary.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-summary.min.css</a></li>
             </ul>
 
             <h4>JS:</h4>
 
             <p>NA</p>
 
-            <h3>Changelog</h3>
+            
 
-            <p>1.0 — Released component</p>
+            
 
         </>
       ),

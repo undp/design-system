@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Images } from "./ImageCaptionCredit";
 import farmlandlg from "../../../assets/images/farmland-lg.jpg";
 import farmlandmd from "../../../assets/images/farmland-md.jpg";
@@ -83,29 +83,27 @@ export default {
               Add the base layout style from:
               <ul>
                 <li>
-                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">
-                    https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">
+                    https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css
                   </a>
                 </li>
                 <li>
-                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-caption.min.css">
-                    https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-caption.min.css
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-caption.min.css">
+                    https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-caption.min.css
                   </a>
                 </li>
               </ul>
             </p>
             <h4>JS:</h4>
             <p>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">
-                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">
+                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js
               </a>
             </p>
             <h3>Interactions</h3>
             <p>
               When the page containing the image is opened, the image zooms out and gives a 3-D effect.
             </p>
-            <h3>Changelog</h3>
-            <p>1.0 — Released component</p>
           </section>
         </>
       ),

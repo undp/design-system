@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Sidebar } from './Sidebar';
 import { getCaptionForLocale } from './sidebarUtils';
 
@@ -97,14 +97,14 @@ export default {
           <h3>CSS and JS References</h3>
           <h4>CSS:</h4>
           <ul>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar-data.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar-data.min.css</a></li>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar-data.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar-data.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar.min.css</a></li>
           </ul>
 
           <h4>JS:</h4>
           <ul>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sidebar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sidebar.min.js</a></li>
             <li> Import the init.js</li>
           </ul>
 
@@ -114,8 +114,8 @@ export default {
             <li>The selected state is applied to the entire button.</li>
           </ul>
 
-          <h3>Changelog</h3>
-          <p>1.0 — Released component</p>
+          
+          
 
         </>
       )

@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
+import { Meta, Story, Canvas, Source } from "@storybook/addon-docs/blocks";
 import { FeaturedCard } from "./FeaturedCard";
 import { getCaptionForLocale } from "./FeaturedContentCardUtils";
 

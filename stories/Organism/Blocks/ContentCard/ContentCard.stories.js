@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { ContentCard } from "./ContentCard";
 
 import { getCaptionForLocale } from "./ContentCardUtils";

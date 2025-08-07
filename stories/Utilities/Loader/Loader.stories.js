@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Loader } from './Loader';
 
 export default {
@@ -67,7 +67,7 @@ export default {
 <h4>CSS:</h4>
 <p>Add the base layout style from <strong>dist/css/base-minimal.min.css</strong></p>
 <ul>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/loader.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/loader.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/loader.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/loader.css</a></li>
 </ul>
 
 <h4>JS:</h4>

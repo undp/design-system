@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import GlobalHeader from "./GlobalHeader";
 import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcherUtils"
 import { 
@@ -116,20 +116,20 @@ export default {
       <h4>CSS:</h4>
 
       <ul>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/global-header.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/global-header.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css</a></li>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/global-header.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/global-header.min.css</a></li>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css</a></li>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css</a></li>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css</a></li>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css</a></li>
       </ul>
 
       <h4>JS:</h4>
 
       <ul>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js</a></li>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js</a></li>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js</a></li>
       </ul>
 
       <h3>Interactions</h3>
@@ -143,9 +143,9 @@ export default {
         <li>Reading meter (if used) updated based on the scrolling depth into content.</li>
       </ul>
 
-      <h3>Changelog</h3>
+      
 
-      <p>1.0 — Released component</p>
+      
     </>
       )
     }
