@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Post } from "./Post";
 
 const getCaptionForLocale = (locale) => {
@@ -94,15 +94,15 @@ export default {
               <h4>CSS:</h4>
               <p>Add the base style only, located at <strong>dist/css/base-minimal.min.css</strong> along with the following:</p>
               <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/post.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/post.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/post.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/post.min.css</a></li>
               </ul>
 
               <h4>JS:</h4>
-              <p><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a> (optional for viewport animation)</p>
+              <p><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a> (optional for viewport animation)</p>
 
-              <h3>Changelog</h3>
+              
 
-              <p>1.0 — Released component</p>
+              
 
             </>
         )

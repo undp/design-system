@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Stats } from "./Stats";
 import BackgroundImg from "../../assets/images/card2.jpg";
 import { statsArray } from "./StatsUtils";
@@ -42,7 +42,7 @@ export default {
                   <h4>Method 1: Automatic Initialization (Recommended)</h4>
                   <ul>
                     <li>Include the component initializer script:
-                      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
                     </li>
                     <li>Add the required data attribute to your stats grid element:
                       <code>data-undpds-component="stats"</code>
@@ -58,7 +58,7 @@ export default {
                   </ul>
 
                   <ul>
-                      <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/stats.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/stats.min.js</a></li>
+                      <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/stats.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/stats.min.js</a></li>
                   </ul>
               </ul>
 

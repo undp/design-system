@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Tab } from "./Tab";
 
 const getCaptionForLocale = (locale) => {
@@ -201,7 +201,7 @@ export default {
               <h4>Method 1: Automatic Initialization (Recommended)</h4>
               <ul>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
                 <li>Add the required data attribute to your tabs element:
                   <code>data-undpds-component="tabs"</code>
@@ -221,14 +221,14 @@ export default {
 
               <h4>CSS:</h4>
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/tab.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/tab.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/tab.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/tab.min.css</a></li>
               </ul>
 
               <h4>JS:</h4>
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/tabs.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/tabs.min.js</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/tabs.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/tabs.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a></li>
               </ul>
 
               <h3>Interactions</h3>
@@ -238,9 +238,9 @@ export default {
                   <li>By clicking on the tab, the particular tab opens.</li>
               </ul>
 
-              <h3>Changelog</h3>
+              
 
-              <p>1.0 — Released component</p>
+              
 
             </>
         )

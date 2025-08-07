@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Author } from "./AuthorColumn";
 import authorImage from "../../../../assets/images/author.png";
 import { getCaptionForLocale } from "./AuthorUtils";
@@ -98,8 +98,8 @@ export default {
             <p>Add the base layout style from:</p>
 
             <ul>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-column.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-column.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-column.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-column.min.css</a></li>
             </ul>
 
             <h4>JS:</h4>
@@ -112,9 +112,9 @@ export default {
               <li>The author component can be used with or without a link. When linking, the entire block—image, name, designation—should be clickable.</li>
             </ul>
 
-            <h3>Changelog</h3>
+            
 
-            <p>1.0 — Released component</p>
+            
 
         </>
       ),

@@ -1,4 +1,4 @@
-import { ArgsTable, Meta, Story, Canvas, Anchor } from "@storybook/addon-docs";
+import { ArgsTable, Meta, Story, Canvas, Anchor } from "@storybook/addon-docs/blocks";
 import { PageHero } from "./PageHero";
 import { PageHeroOption } from "./PageHeroOption";
 import BackgroundImg from "../../../../assets/images/herooption.jpg";
@@ -228,7 +228,7 @@ export default {
               <h4>Method 1: Automatic Initialization (Recommended)</h4>
               <ul>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
                 <li>Add the required data attributes to your hero element with class <code>.pagehero-full</code>: <br />
                   <code>data-undpds-component="expandToSize"</code>
@@ -255,26 +255,26 @@ export default {
               <p>Add the base layout style from:</p>
 
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-hero.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css</a></li>
               </ul>
 
               <h4>JS:</h4>
 
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js</a> (for automatic initialization)</li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/animation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/animation.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js</a> (for automatic initialization)</li>
               </ul>
 
               <h3>Interactions</h3>
 
               <p>When the page is opened, the contents of the card appear beside the image, and the image zooms in.</p>
 
-              <h3>Changelog</h3>
+              
 
-              <p>1.0 — Released component</p>
+              
 
             </>
         )

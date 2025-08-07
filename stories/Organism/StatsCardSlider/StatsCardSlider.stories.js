@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Statscardslider } from "./StatsCardSlider";
 import { statsArray } from "./StatsCardSliderUtils";
 
@@ -38,7 +38,7 @@ export default {
             <h4>Method 1: Automatic Initialization (Recommended)</h4>
             <ul>
               <li>Include the component initializer script:
-                <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
               </li>
               <li>Add the required data attributes to your slider element:
                 <code>data-undpds-component="swiper" data-selector=".stats-slider"</code>
@@ -58,15 +58,15 @@ export default {
 
             <h5>CSS:</h5>
             <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a> (only once)</li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-card-slider.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-card-slider.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a> (only once)</li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-card-slider.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-card-slider.min.css</a></li>
             </ul>
 
             <h5>JS:</h5>
             <ul>
                 <li><a href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js">https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js</a></li>
             </ul>
 
           </>

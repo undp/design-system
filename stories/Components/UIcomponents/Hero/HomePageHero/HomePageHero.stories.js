@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, Anchor } from "@storybook/addon-docs";
+import { Meta, Story, Canvas, Anchor } from "@storybook/addon-docs/blocks";
 import { Homepagehero } from "./HomePageHero";
 import { Homepageherosplit } from "./HomePageHeroSplit";
 import { Homepageherooption } from "./HomePageHeroOption";
@@ -66,7 +66,7 @@ export default {
               <ul>
                 <li>Include <code>animation.min.js</code> in your HTML.</li>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
                 <li>Add the required data attributes to your hero element:
                   <code>data-undpds-component="expandToSize" data-selector=".homepage-hero-full"</code>
@@ -89,16 +89,16 @@ export default {
               <p>Add the base layout style from:</p>
 
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepagehero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepagehero.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepagehero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepagehero.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css</a></li>
               </ul>
 
               <h4>JS:</h4>
 
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/animation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/animation.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a></li>
               </ul>
 
               <h3>Interactions</h3>
@@ -149,7 +149,7 @@ export default {
               <ul>
                 <li>Include <code>animation.min.js</code> in your HTML.</li>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
             <li>Add the required data attributes to your hero element with class <code>.homepage-hero-full</code>: <br />
                   <code>data-undpds-component="expandToSize"</code>
@@ -170,15 +170,15 @@ export default {
               <p>Add the base layout style from <code>dist/css/base-minimal.min.css</code>:</p>
 
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css</a></li>
               </ul>
 
               <h4>JS:</h4>
 
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js</a> (for automatic initialization)</li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js</a> (for automatic initialization)</li>
               </ul>
 
               <h3>Interactions</h3>
@@ -238,23 +238,23 @@ export default {
               <p>Add the base layout style from <code>dist/css/base-minimal.min.css</code>:</p>
 
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepagehero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepagehero.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepagehero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepagehero.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css</a></li>
               </ul>
 
               <h4>JS:</h4>
 
               <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a></li>
               </ul>
 
               <h3>Interactions</h3>
 
               <p>When the page is opened, the contents of the card appears beside the image.</p>
 
-              <h3>Changelog</h3>
+              
 
-              <p>1.0 — Released component</p>
+              
 
             </>
         )

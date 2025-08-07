@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { GenericLandingPage } from "./GenericLandingPage";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import img from "../../assets/images/card-thumbnail.jpg";
@@ -998,7 +998,7 @@ export default {
 
 <h3>Overview</h3>
 
-<p>Generic Landing Page is the template where all the content is available for the user. The user can easily search for specific content here. Mock up - <a href="https://www.undp.org/news-centre">https://www.undp.org/news-centre</a></p>
+<p>Generic Landing Page is the template where all the content is available for the user. The user can easily search for specific content here. Real use case - <a href="https://www.undp.org/news-centre">https://www.undp.org/news-centre</a></p>
 
 <h3>Template Structure</h3>
 
@@ -1051,64 +1051,60 @@ export default {
 <p>Add the base layout style from <code>dist/css/base-minimal.min.css</code></p>
 
 <ul>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-card.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-reveal-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-reveal-cards.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-group.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-group.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/countryhome-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/countryhome-page.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-site-header.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-site-header.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/headingbig.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/headingbig.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card-with-and-without-image.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card-with-and-without-image.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-wide-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-wide-card.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-card.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-reveal-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-reveal-cards.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-slider.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-slider.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-group.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-group.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/countryhome-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/countryhome-page.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/article-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/article-page.min.css</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css</a></li>
 </ul>
 
 <h5>JS:</h5>
 
 <ul>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smooth-bg-change.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smooth-bg-change.min.js</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js</a></li>
-<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a></li>
 </ul>
-
-<h3>Changelog</h3>
-
-<p>1.0 — Released component</p>
 
 <Canvas>
   <Story
     name="Generic landing page"
-    parameters={{
-      layout: "fullscreen",
-      docs: {
-        story: {
-          inline: false,
-          iframeHeight: "100%",
-        },
-      },
-      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-    }}
+    // parameters={{
+    //   layout: "fullscreen",
+    //   docs: {
+    //     story: {
+    //       inline: false,
+    //       iframeHeight: "100%",
+    //     },
+    //   },
+    //   chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+    // }}
   >
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);

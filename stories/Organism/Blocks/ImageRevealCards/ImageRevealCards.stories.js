@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
+import { Meta, Story, Canvas, Source } from "@storybook/addon-docs/blocks";
 import { ImageRevealCards } from "./ImageRevealCards";
 import { getCaptionForLocale } from "./ImageRevealCardsUtils";
 

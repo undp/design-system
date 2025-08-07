@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Inputcomponent } from "./InputFields";
 
 const getCaptionForLocale = (locale) => {
@@ -230,20 +230,20 @@ export default {
           <ul>
             <li>
               <a
-                href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css"
+                href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
+                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css
               </a>
             </li>
             <li>
               <a
-                href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css"
+                href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css
+                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css
               </a>
             </li>
           </ul>
@@ -258,8 +258,6 @@ export default {
             </li>
           </ul>
 
-          <h3>Changelog</h3>
-          <p>1.0 — Released component</p>
         </>
       ),
     },

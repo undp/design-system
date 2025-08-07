@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import FilterAndSearchBar from "./FilterAndSearchBar";
 import { getCaptionForLocale, getButtonForLocale, getCaptionForClearLocale, getCaptionForActiveLocale } from "./FilterAndSearchBarUtils";
 
@@ -69,7 +69,7 @@ export default {
 <ul>
    <li>Include the required CSS and JS files listed in the CSS and JS References section below.</li>
    <li>Include the component initializer script:
-      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
    </li>
    <li>Add the required data attributes to your filter and search bar elements:
       <code>data-undpds-component="filter-search-bar"</code> for the main container,
@@ -168,20 +168,20 @@ $(document).on('multiSelectInputToggle', (e) =&gt;  &#123; <br />
 <h4>CSS:</h4>
 <p>Add the base layout style from:</p>
 <ul>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/filter-and-search-bar.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/filter-and-search-bar.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/multi-select.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/multi-select.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/checkbox.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/checkbox.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/radio.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/radio.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/chips.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/chips.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/filter-and-search-bar.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/filter-and-search-bar.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/multi-select.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/multi-select.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/checkbox.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/checkbox.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/radio.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/radio.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/search-expand.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/search-expand.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/chips.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/chips.min.css</a></li>
 </ul>
 
 <h4>JS:</h4>
 <ul>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/filter-search-bar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/filter-search-bar.min.js</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/multi-select.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/multi-select.min.js</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/filter-search-bar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/filter-search-bar.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/multi-select.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/multi-select.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/expand-search.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/expand-search.min.js</a></li>
 </ul>
 
 <h3>Interactions</h3>
@@ -191,8 +191,8 @@ $(document).on('multiSelectInputToggle', (e) =&gt;  &#123; <br />
   <li>By clicking on the X icon, the filters are removed.</li>
 </ul>
 
-<h3>Changelog</h3>
-<p>1.0 — Released component</p>
+
+
 
             </>
         )

@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { StatsSlider } from "./StatsSlider";
 import { statsArray } from "./StatsSliderUtils";
 
@@ -72,7 +72,7 @@ export default {
 <ul>
    <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> and GSAP libraries (gsap, ScrollTrigger, and EasePack) from <a href="https://greensock.com/docs/v3/Installation">here</a> in your HTML page.</li>
    <li>Include the component initializer script:
-      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
    </li>
    <li>Add the required data attribute to your stats slider element:
       <code>data-undpds-component="stats-slider"</code>
@@ -100,18 +100,18 @@ export default {
 <h4>CSS:</h4>
 <p>Add the base layout style from:</p>
 <ul>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-slider.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-slider.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css</a></li>
 </ul>
 
 <h4>JS:</h4>
 <p>Include the following JS Files:</p>
 <ul>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/fitText.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/fitText.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitText.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitText.min.js</a></li>
 </ul>
 
 <p>The following external libraries need to be included as well:</p>
@@ -125,8 +125,8 @@ export default {
 <h3>Interactions</h3>
 <p>The stats card slider follows the hover-over effect of the cards used. These cards are not clickable.</p>
 
-<h3>Changelog</h3>
-<p>1.0 — Released component</p>
+
+
 
             </>
         )

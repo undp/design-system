@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Link } from './Links';
 
 const getCaptionForLocale = (locale) => {
@@ -69,7 +69,7 @@ export default {
           <h4>CSS:</h4>
           <p>Add the base layout style from</p>
           <ul>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
           </ul>
 
           <h4>JS:</h4>
@@ -77,9 +77,6 @@ export default {
 
           <h3>Interactions</h3>
           <p>By clicking on the link, the current page is forwarded to the next page.</p>
-
-          <h3>Changelog</h3>
-          <p>1.0 — Released component</p>
 
         </>
       )

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { ProgressBar } from './ProgressBar';
 
 export default {
@@ -64,7 +64,7 @@ export default {
 <h4>CSS:</h4>
 <p>Add the base layout style from <strong>dist/css/base-minimal.min.css</strong></p>
 <ul>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/progress.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/progress.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/progress.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/progress.min.css</a></li>
 </ul>
 
 <h4>JS:</h4>
@@ -73,8 +73,8 @@ export default {
 <h4>Interactions</h4>
 <p>No interactions are needed with the progress bar.</p>
 
-<h3>Changelog</h3>
-<p>1.0 — Released component</p>
+
+
 
             </>
         )

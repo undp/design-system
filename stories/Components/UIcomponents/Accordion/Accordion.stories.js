@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { renderToStaticMarkup } from "react-dom/server";
 import { Accordion } from "./Accordion";
 
@@ -126,12 +126,12 @@ export default {
           <p>Add following CSS in your project</p>
           <ul>
             <li>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">
                 Base layouting CSS
               </a>
             </li>
             <li>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css">
                 Copy and add this component CSS in your project
               </a>
             </li>
@@ -139,7 +139,7 @@ export default {
           <h4>JS</h4>
           <p>
             Use this JS file in your project{" "}
-            <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">
+            <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js">
               accordion.min.js
             </a>{" "}
             and then use following code:
@@ -153,7 +153,7 @@ export default {
           </p>
           <pre>
             <code>
-              &lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js"&gt;&lt;/script&gt;
+              &lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js"&gt;&lt;/script&gt;
             </code>
           </pre>
           
@@ -243,8 +243,8 @@ export default {
               back the navigation history while clicking Back button.
             </li>
           </ul>
-          <h3>Changelog</h3>
-          <p>1.0 — Released component</p>
+          
+          
         </>
       ),
     },

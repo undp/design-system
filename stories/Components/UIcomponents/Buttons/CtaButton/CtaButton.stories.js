@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { CtaButton } from './CtaButton';
 
 const getCaptionForLocale = (locale) => {
@@ -141,7 +141,7 @@ export default {
           <p>Add the base layout style from <code>dist/css/base-minimal.min.css</code>:</p>
 
           <ul>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css</a></li>
           </ul>
 
           <p>Use the above CSS concerning the CTA Button.</p>
@@ -156,9 +156,9 @@ export default {
             <li>The hover state is applied to the entire button.</li>
           </ul>
 
-          <h3>Changelog</h3>
+          
 
-          <p>1.0 — Released component</p>
+          
 
         </>
       ),

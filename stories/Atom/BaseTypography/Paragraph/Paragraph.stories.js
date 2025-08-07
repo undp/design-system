@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { P } from './Paragraph';
 import { getCaptionForLocale } from './ParagraphUtils';
 
@@ -36,7 +36,7 @@ export default {
 
 <h4>CSS:</h4>
 <ul>
-    <li>Add the base layout style from <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+    <li>Add the base layout style from <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" target="_blank">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
 </ul>
 
 <h4>JS:</h4>

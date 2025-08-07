@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.4.6
+ * UNDP Design System 1.4.7
  *
  */
 .breadcrumb ul{align-items:baseline;display:flex;flex-wrap:wrap;font-size:var(--undpds-font-size-12);padding:0}.breadcrumb ul li{display:inline-block;margin-block:var(--undpds-spacing-04);margin-inline:var(--undpds-spacing-06) 0;padding-inline-start:0;position:relative}.breadcrumb ul li:after{color:var(--undpds-color-dark-red);content:"/";font-weight:700;position:absolute;right:-12px;top:0}.breadcrumb ul li:first-of-type{margin-inline-start:0}.breadcrumb ul li:last-of-type{font-weight:600;letter-spacing:.03em;margin-inline-end:0;max-width:calc(100vw - 2rem);text-transform:uppercase}.breadcrumb ul li:last-of-type:after{display:none}.breadcrumb ul li a{background:none;color:var(--undpds-color-dark-red);font-size:var(--undpds-font-size-12);font-weight:600;letter-spacing:.03em;text-transform:uppercase;transition:opacity .2s ease}.breadcrumb ul li a:hover{color:var(--undpds-color-red)}.breadcrumb.white li a,.breadcrumb.white li a:hover,.breadcrumb.white li:after{color:var(--undpds-color-white)}.breadcrumb.white li a:hover{opacity:.7}.breadcrumb.white li:last-of-type,.breadcrumb.white:last-of-type{color:var(--undpds-color-white)}[dir=rtl] .breadcrumb li:after{left:-14px;right:unset;top:63%;transform:translateY(-63%) rotate(140deg)}:lang(my) .breadcrumb ul li:last-of-type{font-size:var(--undpds-font-size-12)}:lang(ro) .breadcrumb ul li a,:lang(ro) .breadcrumb ul li:last-of-type{font-weight:700}

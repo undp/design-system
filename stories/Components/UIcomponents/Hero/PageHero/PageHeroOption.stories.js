@@ -1,4 +1,4 @@
-import { ArgsTable, Meta, Story, Canvas, Anchor } from "@storybook/addon-docs";
+import { ArgsTable, Meta, Story, Canvas, Anchor } from "@storybook/addon-docs/blocks";
 import { PageHero } from "./PageHero";
 import { PageHeroOption } from "./PageHeroOption";
 import BackgroundImg from "../../../../assets/images/herooption.jpg";
@@ -252,8 +252,8 @@ export default {
             <li>
               If title wraps unexpectedly because of the long words - you can use fitTitle utility:
               include JS file:<br></br>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/fitTitle.min.js">
-                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/fitTitle.min.js
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitTitle.min.js">
+                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitTitle.min.js
               </a><br></br>
               and call following function in your JS file <code>fitTitle(".pagehero-content h2")</code>
             </li>
@@ -267,13 +267,13 @@ export default {
 
           <ul>
             <li>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css">
-                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-hero.min.css">
+                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-hero.min.css
               </a>
             </li>
             <li>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">
-                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css">
+                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css
               </a>
             </li>
           </ul>
@@ -282,8 +282,8 @@ export default {
 
           <ul>
             <li>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">
-                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">
+                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js
               </a>
             </li>
           </ul>
@@ -295,9 +295,9 @@ export default {
             image.
           </p>
 
-          <h3>Changelog</h3>
+          
 
-          <p>1.0 — Released component</p>
+          
         </>
       ),
     },

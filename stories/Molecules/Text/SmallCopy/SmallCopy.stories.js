@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Smallcopy } from "./SmallCopy";
 
 const getCaptionForLocale = (locale) => {
@@ -134,15 +134,15 @@ export default {
               <h4>CSS:</h4>
               <p>Add the base style only, located at <strong>dist/css/base-minimal.min.css</strong> along with the following:</p>
               <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/smallcopy.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/smallcopy.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/smallcopy.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/smallcopy.min.css</a></li>
               </ul>
 
               <h4>JS:</h4>
               <p>NA</p>
 
-              <h3>Changelog</h3>
+              
 
-              <p>1.0 — Released component</p>
+              
 
             </>
         )
