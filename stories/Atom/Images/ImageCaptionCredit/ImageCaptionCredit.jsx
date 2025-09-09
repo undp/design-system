@@ -1,6 +1,7 @@
 import React from 'react';
 import './image-caption-credit.scss';
 import { Imagecaption } from '../../../Molecules/ImageCaption/ImageCaption';
+import isChromatic from "chromatic/isChromatic";
 
 export function Images({
   imagelg,
@@ -19,8 +20,8 @@ export function Images({
 
   if (args.animation === 'true') {
     return (
-      <figure data-viewport="true" className={cls(`${size}`)}>
-        <div data-viewport="true" className="scale-up">
+      <figure data-viewport={isChromatic() ? '' : 'true'} className={cls(`${size}`)}>
+        <div data-viewport={isChromatic() ? '' : 'true'} className="scale-up">
           {args.size === 'wide' && <img src={imagelg} alt={alt} />}
           {args.size === 'medium' && <img src={imagemd} alt={alt} />}
           {args.size === 'portrait' && <img src={imagesm} alt={alt} />}

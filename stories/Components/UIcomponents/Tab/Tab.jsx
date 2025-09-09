@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import { tabs } from '../../../assets/js/tabs';
 import './tab.scss';
 import { BodyColumnTwo } from '../../../Molecules/Text/BodyColumn/BodyColumn';
+import isChromatic from "chromatic/isChromatic";
 
 export function Tab({ tabdata }) {
   // useEffect(() => {
   //   tabs();
   // }, []);
   return (
-    <div className="tabs" data-viewport="true" data-undpds-component="tabs">
+    <div className="tabs" data-viewport={isChromatic() ? '' : 'true'} data-undpds-component="tabs">
       <ul data-deep-link="true" data-tabs id="tablist_1" role="tablist">
         {tabdata.map((item, index) => (
           <li key={index} className={index == 0 ? 'tabs-title is-active' : 'tabs-title'}>

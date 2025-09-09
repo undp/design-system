@@ -11,6 +11,7 @@ import './publication-page.scss';
 import { sticky } from '../../assets/js/sticky';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 import { FeaturedContentCard } from '../../Components/UIcomponents/Cards/FeaturedCard/FeaturedContentCard';
+import isChromatic from "chromatic/isChromatic";
 
 export function PublicationPage({
   data,
@@ -130,7 +131,7 @@ export function PublicationPage({
             </div>
           </div>
         </div>
-        <div className="grid-x grid-margin-x related-publication" data-viewport="true">
+        <div className="grid-x grid-margin-x related-publication" data-viewport={isChromatic() ? '' : 'true'}>
           <div className="cell small-12 large-6 large-offset-6 border-top-2">
             <div className="column">
               <Heading type="2" label={relatedPublicationHeading} />

@@ -1,5 +1,6 @@
 import React from "react";
 import "./breadcrumbs.scss";
+import isChromatic from "chromatic/isChromatic";
 
 export function Breadcrumbcomponent({ data, Color, rlt_offset, ...args }) {
   const lastIndex = data.length - 1;
@@ -14,7 +15,7 @@ export function Breadcrumbcomponent({ data, Color, rlt_offset, ...args }) {
   return (
     <nav
       aria-label="breadcrumbs"
-      data-viewport="true"
+      data-viewport={isChromatic() ? '' : 'true'}
       className={["breadcrumb", `${color}`, moreClasses].join(" ")}
     >
       <ul>

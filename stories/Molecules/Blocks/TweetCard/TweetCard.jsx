@@ -3,6 +3,7 @@ import './tweet-card.scss';
 import '../../../assets/scss/_grid.scss';
 import { Ctalink } from '../../../Components/UIcomponents/Buttons/CtaLink/CtaLink';
 import { P } from '../../../Atom/BaseTypography/Paragraph/Paragraph';
+import isChromatic from "chromatic/isChromatic";
 
 export const TweetCard = ({
   delaytime,
@@ -14,7 +15,7 @@ export const TweetCard = ({
   contentdate,
   button,
 }) => (
-  <div data-viewport="true" className={`cell medium-3 tweet-card delay-${delaytime}`}>
+  <div data-viewport={isChromatic() ? '' : 'true'} className={`cell medium-3 tweet-card delay-${delaytime}`}>
     <a href={link} target="_blank" rel="noreferrer">
       <img src={imgback} alt={imgback} />
       <div className="tweet-card__header">

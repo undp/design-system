@@ -5,6 +5,7 @@ import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 import { swiper } from '../../../../assets/js/swiper';
 import './fluid-image-size-carousel.scss';
 import '../../../../assets/scss/_swiper.scss';
+import isChromatic from "chromatic/isChromatic";
 
 // RTL Fix for Storybook.
 let rtl = document.dir || undefined;
@@ -16,7 +17,7 @@ export const FluidImageSizeCarousel = ({ data }) => {
   //   swiper('.fluid-carousel', '.slide-content');
   // }, []);
   return (
-    <section data-viewport="true" className="fluid-carousel" dir={rtl} data-undpds-component="swiper" data-selector=".fluid-carousel" data-arrows-selector=".slide-content">
+    <section data-viewport={isChromatic() ? '' : 'true'} className="fluid-carousel" dir={rtl} data-undpds-component="swiper" data-selector=".fluid-carousel" data-arrows-selector=".slide-content">
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

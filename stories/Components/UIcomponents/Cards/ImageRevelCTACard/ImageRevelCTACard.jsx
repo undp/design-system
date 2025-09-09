@@ -3,6 +3,7 @@ import './image-revel-cta-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
+import isChromatic from "chromatic/isChromatic";
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
@@ -30,7 +31,7 @@ export function ImageRevelCard({
   return (
     <div className="grid-x grid-margin-x">
       {data.map((item, index) => (
-        <div key={index} data-viewport="true" className={['cell', `${size}`, 'image-reveal-card', `delay-${2 + index++}`].join(' ')}>
+        <div key={index} data-viewport={isChromatic() ? '' : 'true'} className={['cell', `${size}`, 'image-reveal-card', `delay-${2 + index++}`].join(' ')}>
           <a href={item.link}>
             <div className={`image-reveal-card__content ${accent_color}`}>
               <div className="image">

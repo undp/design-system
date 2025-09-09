@@ -2,10 +2,11 @@ import React from 'react';
 import './textbackground.scss';
 import '../../../assets/scss/_grid.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
+import isChromatic from "chromatic/isChromatic";
 
 export function TextBackground({ headerText, descriptionText }) {
   return (
-    <div className="grid-x heading-container align-center" data-viewport="true">
+    <div className="grid-x heading-container align-center" data-viewport={isChromatic() ? '' : 'true'}>
       <div className="cell medium-3">
         <Heading type="2" label={headerText} />
       </div>

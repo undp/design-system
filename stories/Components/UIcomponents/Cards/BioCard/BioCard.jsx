@@ -7,6 +7,7 @@ import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { Cardthumb } from '../../../../Atom/Cards/CardThumbnail/CardThumbnail';
 import { Modal } from '../../Modal/Modal';
 import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
+import isChromatic from "chromatic/isChromatic";
 
 export const biodata = (image2, contentname, descriptionText, descriptionText2) => (
   <div className="bio-card-wrapper">
@@ -65,7 +66,7 @@ export function BioCard({
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
               <div className="grid-x">
                 <article className="bio-card__content medium-7">
-                  <div data-viewport="true" className="bio-card__description">
+                  <div data-viewport={isChromatic() ? '' : 'true'} className="bio-card__description">
                     <Heading type="5" label={contentname} />
                     <P label={descriptionText} />
                   </div>
@@ -86,7 +87,7 @@ export function BioCard({
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
               <Cardthumb image={image} accent={color} />
               <article className="bio-card__content">
-                <div data-viewport="true" className="bio-card__description">
+                <div data-viewport={isChromatic() ? '' : 'true'} className="bio-card__description">
                   <Heading type="5" label={contentname} />
                   <P label={descriptionText} />
                 </div>

@@ -11,6 +11,7 @@ import CountrySiteHeader from '../../Components/Navigationcomponents/Mainnavigat
 import { Footer } from '../../Organism/Footer/Footer';
 import './countryhome-page.scss';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
+import isChromatic from "chromatic/isChromatic";
 
 export function CountryHomepage({
   footerData,
@@ -112,7 +113,7 @@ export function CountryHomepage({
           <CtaButton label={storyBtn} Icon="No Arrow" />
         </div>
         <div className="grid-x our-impact">
-          <div className="cell small-12 medium-12 large-11 large-offset-1" data-viewport="true">
+          <div className="cell small-12 medium-12 large-11 large-offset-1" data-viewport={isChromatic() ? '' : 'true'}>
             <Heading type="2" label={statHeading} />
           </div>
           <div className="cell small-12 medium-12 large-12">
