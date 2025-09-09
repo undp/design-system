@@ -161,7 +161,7 @@ function ArticlePage({
         data={footerData.footerdata}
         copyright={footerData.copyright}
         menudata={footerData.menudata}
-        {...{ color: 'default' }}
+        {...{ color: 'default', variant: 'default' }}
       />
     </div>
   );
