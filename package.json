@@ -8,8 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --loglevel verbose",
-    "chromatic": "IS_CHROMATIC=true chromatic"
+    "build-storybook": "storybook build --loglevel verbose"
   },
   "keywords": [
     "UNDP",

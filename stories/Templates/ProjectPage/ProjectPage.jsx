@@ -114,6 +114,7 @@ export function ProjectPage({
                 descriptionText={whatwedodescription}
                 listData={listData}
                 dataViewport="false"
+                {...{ Emphasize: 'true' }}
               />
             </div>
           </div>

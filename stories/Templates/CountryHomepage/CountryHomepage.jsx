@@ -87,6 +87,7 @@ export function CountryHomepage({
               headerText={whatwedoheader}
               descriptionText={whatwedodescription}
               dataViewport="false"
+              {...{ Emphasize: 'true' }}
             />
           </div>
         </div>
