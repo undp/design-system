@@ -2,11 +2,11 @@ import React from "react";
 import "./breadcrumbs.scss";
 import isChromatic from "chromatic/isChromatic";
 
-export function Breadcrumbcomponent({ data, Color, rlt_offset, ...args }) {
+export function Breadcrumbcomponent({ data, colorTheme, rlt_offset, ...args }) {
   const lastIndex = data.length - 1;
 
   let color = "";
-  if (Color == "White") {
+  if (colorTheme == "dark") {
     color = "white";
   }
 

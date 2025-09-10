@@ -2,7 +2,8 @@
 // import * as RTLAddon from 'storybook-addon-rtl';
 import { allModes } from './modes'
 import renderToHTML from './renderToHTML'
-
+import { addons } from 'storybook/preview-api';
+import { UPDATE_GLOBALS, STORY_ARGS_UPDATED } from "storybook/internal/core-events";
 
 // include base styling globally
 import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css'
@@ -72,6 +73,13 @@ const parameters = {
     delay: 1500
   },
   layout: 'fullscreen',
+  backgrounds: {
+    disable: true,
+    values: [
+      { name: "light", value: "#FFFFFF" },
+      { name: "dark", value: "#55606e" }
+    ]
+  }
 }
 
 /* Implementing locale for language switcher */
@@ -113,7 +121,19 @@ const globalTypes = {
         { value: 'blue', title: 'Azure' },
       ]
     }
-  }
+  },
+  theme: {
+    description: 'Global theme for components',
+    toolbar: {
+      // The label to show for this toolbar item
+      title: 'Theme',
+      icon: 'circlehollow',
+      // Array of plain string values or MenuItem shape (see below)
+      items: ['light', 'dark'],
+      // Change title based on selected value
+      dynamicTitle: true,
+    },
+  },
 };
 
 const getLangCode = (Story, context) => {
@@ -209,9 +229,29 @@ const setAccentClass = (Story, context) => {
 // export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];
 // export const tags = ['autodocs'];
 
+// https://www.bekk.christmas/post/2021/03/storybook-background-change-on-prop-change
+let channel = addons.getChannel();
+const storyListener = (args) => {
+  if (args.args.colorTheme) {
+    let colorTheme = args.args.colorTheme;
+    channel.emit(UPDATE_GLOBALS, {
+      globals: {
+        theme: colorTheme,
+        backgrounds: colorTheme === "dark" ? { name: "dark", value: "#55606e" } : { name: "light", value: "#FFFFFF" }
+      }
+    });
+  }
+};
+function setupBackgroundListener() {
+  channel.removeListener(STORY_ARGS_UPDATED, storyListener);
+  channel.addListener(STORY_ARGS_UPDATED, storyListener);
+}
+setupBackgroundListener();
+
 export default {
   parameters: parameters,
   globalTypes: globalTypes,
+  initialGlobals: {theme: 'light'},
   decorators: [getLangCode, sbFrameReset, setDirection, setAccentClass, initializeComponents],
   tags: ['autodocs', 'autodocs'],
 }
