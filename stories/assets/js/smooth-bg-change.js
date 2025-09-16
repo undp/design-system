@@ -19,15 +19,17 @@ export function changeBackground(container) {
   const headerHeight = jQuery('.header').innerHeight() + 5 || 120;
 
   // Save Initial ScrollTrigger Styles.
-  ScrollTrigger.saveStyles('body');
+  // ScrollTrigger.saveStyles('body');
+
+  const stFactory = [];
 
   // create ScrollTrigger instance and animation
   const bgScrollAnimation = () => {
-    if ($section.length) {
+    if ($section.length && stFactory.length === 0) {
       // Tween for animation
       const colorToBlue = gsap.fromTo(bodyElement, { backgroundColor: colorLight, duration: 1, ease: 'SlowMo' }, { backgroundColor: colorDark, duration: 1, ease: 'SlowMo' });
       // Create ScrollTrigger instance
-      ScrollTrigger.create({
+      stFactory.push(ScrollTrigger.create({
         trigger: section,
         start: `top+=${sectionStart} center+=${headerHeight}`,
         end: `bottom-=${sectionEnd} center+=${headerHeight}`,
@@ -36,13 +38,13 @@ export function changeBackground(container) {
         fastScrollEnd: true,
         animation: colorToBlue,
         onLeaveBack: () => gsap.to(bodyElement, { backgroundColor: colorLight, overwrite: 'auto' }),
-      });
+      }));
       // Tween for animation
       const colorToWhite = gsap.fromTo(bodyElement, { backgroundColor: colorDark, duration: 1, ease: 'SlowMo' }, {
         backgroundColor: colorLight, duration: 1, ease: 'SlowMo', immediateRender: false,
       });
       // Create ScrollTrigger instance
-      ScrollTrigger.create({
+      stFactory.push(ScrollTrigger.create({
         trigger: section,
         start: `bottom-=${sectionStartReverse} top+=${headerHeight}`,
         end: `bottom-=40px top+=${headerHeight}`,
@@ -50,16 +52,18 @@ export function changeBackground(container) {
         preventOverlaps: true,
         fastScrollEnd: true,
         animation: colorToWhite,
-      });
+      }));
+    } else {
+      stFactory.forEach((st) => st.kill()); // kill all existing
     }
   };
 
   // init ScrollTrigger
-  let init = false;
-  if (!init) {
+  // let init = false;
+  // if (!init) {
     bgScrollAnimation();
-    init = true;
-  }
+  //   init = true;
+  // }
 
   // Custom windowResize;
   utility.windowResize(jQuery(window), (e) => {
