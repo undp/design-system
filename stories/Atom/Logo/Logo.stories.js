@@ -116,13 +116,15 @@ export const PNUDLogoWhite = Template.bind({});
 PNUDLogoWhite.args = {
   src: pnudwhite,
   alt: 'PNUD Logo - White',
+  colorTheme: 'dark',
 };
 PNUDLogoWhite.argTypes = {
   src: { table: { disable: true } },
   alt: { table: { disable: true } },
+  colorTheme: { table: { disable: true }, control: { disable: true } }, // hide control
 };
 PNUDLogoWhite.parameters = {
-  backgrounds: { default: 'gray' },
+  // backgrounds: { default: 'gray' },
   docs: {
     story: {
       inline: false,
@@ -153,14 +155,15 @@ export const UNDPLogoWhite = Template.bind({});
 UNDPLogoWhite.args = {
   src: logowhite,
   alt: 'UNDP Logo - White',
+  colorTheme: 'dark',
 };
 UNDPLogoWhite.argTypes = {
   src: { table: { disable: true } },
   alt: { table: { disable: true } },
-
+  colorTheme: { table: { disable: true }, control: { disable: true } }, // hide control
 };
 UNDPLogoWhite.parameters = {
-  backgrounds: { default: 'gray' },
+  // backgrounds: { default: 'gray' },
   docs: {
     story: {
       inline: false,

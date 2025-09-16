@@ -5,6 +5,13 @@ import { Checkbox } from './Checkbox';
 export default {
   title: 'Components/Forms/Checkbox',
   component: Checkbox,
+  argTypes: {
+    label_pos: {
+      control: { type: "inline-radio" },
+      options: ["before", "after"],
+      name: "Label positon",
+    }
+  },
   parameters: {
     docs: {
       page: () => (
@@ -110,6 +117,7 @@ const Template = (args, { globals: { locale } }) => {
       label={caption.label}
       value={caption.value}
       id="edit-checkbox"
+      label_pos={args.label_pos}
       {...args}
     />
   );
@@ -117,6 +125,6 @@ const Template = (args, { globals: { locale } }) => {
 
 export const CheckboxStory = Template.bind({});
 CheckboxStory.storyName = 'Checkbox';
-CheckboxStory.argTypes = {
-  label_pos: {table : {disable: true}},
+CheckboxStory.args = {
+  label_pos: 'after',
 };

@@ -25,6 +25,13 @@ const getCaptionForLocale = (locale) => {
 export default {
   title: 'Components/Forms/Radio',
   component: Radio,
+  argTypes: {
+    label_pos: {
+      control: { type: "inline-radio" },
+      options: ["before", "after"],
+      name: "Label positon",
+    }
+  },
   parameters: {
     docs: {
       page: () => (
@@ -110,6 +117,7 @@ const Template = (args, { globals: { locale } }) => {
       label={caption.label}
       name='undp'
       id="undp"
+      label_pos={args.label_pos}
       {...args}
     />
   );
@@ -117,3 +125,6 @@ const Template = (args, { globals: { locale } }) => {
 
 export const RadioStory = Template.bind({});
 RadioStory.storyName = 'Radio';
+RadioStory.args = {
+  label_pos: 'after',
+};
