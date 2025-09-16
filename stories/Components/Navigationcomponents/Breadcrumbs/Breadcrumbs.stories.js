@@ -11,11 +11,9 @@ export default {
     //   control: { type: "inline-radio" },
     // },
     colorTheme: {
-      control: {
-        type: "inline-radio",
-      },
+      control: { type: "inline-radio" },
       options: ["light", "dark"],
-      description: "Color Theme",
+      name: "Color Theme",
     }
   },
   parameters: {

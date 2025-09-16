@@ -2,21 +2,25 @@ import React, { useEffect } from 'react';
 import { langSwitch } from '../../../assets/js/lang-switcher';
 import './language-switcher.scss';
 
-export const variant_options = {
-  blue: 'blue',
-  white: 'white',
-};
+// export const variant_options = {
+//   blue: 'blue',
+//   white: 'white',
+// };
 
 export function Languageswitcher({
-  headerText, data, lang, ...args
+  headerText, data, lang, colorTheme, ...args
 }) {
   // useEffect(() => {
   //   langSwitch();
   // }, []);
-  let color_variant = variant_options[`${args.variant}`];
+  // let color_variant = variant_options[`${args.variant}`];
+  let color = "";
+  if (colorTheme == "dark") {
+    color = "white";
+  }
   return (
     <div className="dropdown-language" data-undpds-component="language-switcher">
-      <button className={[`${color_variant}`].join(' ')} aria-label="English, Select your language" aria-expanded="false">{headerText}</button>
+      <button className={[`${color}`].join(' ')} aria-label="English, Select your language" aria-expanded="false">{headerText}</button>
       <ul role="menu">
         {data.map((item, index) => (
           <li key={index} role="menuitem">

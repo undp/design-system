@@ -5,18 +5,26 @@ import { getCaptionForLocale } from "./LanguageSwitcherUtils";
 export default {
   title: "Components/UI components/Language switcher",
   argTypes: {
-    variant: {
-      options: ["blue", "white"],
-      control: { type: "radio" },
-    },
+    // variant: {
+    //   options: ["blue", "white"],
+    //   control: { type: "radio" },
+    // },
+    colorTheme: {
+      control: {
+        type: "inline-radio",
+      },
+      options: ["light", "dark"],
+      name: "Color Theme",
+    }
   },
-  args: {
-    variant: "blue",
-  },
+  // args: {
+  //   variant: "blue",
+  // },
   parameters: {
     backgrounds: {
-      default: "gray",
-      values: [{ name: "gray", value: "#D4D6D8" }],
+      // default: "gray",
+      // values: [{ name: "gray", value: "#D4D6D8" }],
+      disable: false
     },
     docs: {
         page: () => (
@@ -106,7 +114,7 @@ export default {
                   <code>langSwitch();</code>
                 </li>
               </ul>
-              
+
               <h3>CSS and JS References</h3>
 
               <h4>CSS:</h4>
@@ -128,21 +136,22 @@ export default {
 
               <p>By clicking on the drop-down menu, a language can be selected. After selecting the language, the language of the entire page is changed.</p>
 
-              
 
-              
+
+
             </>
         )
     }
   }
 }
 
-const Template = (args, { globals: { locale } }) => {
+const Template = (args, { globals: { locale, theme } }) => {
   const caption = getCaptionForLocale(locale);
   return (
     <Languageswitcher
       data={caption.languagedata}
       headerText={caption.headerText}
+      colorTheme={theme}
       {...args}
     ></Languageswitcher>
   );
@@ -158,4 +167,5 @@ LanguageSwitcherStory.parameters = {
     },
   },
 }
+LanguageSwitcherStory.args = { colorTheme: "light" };
 LanguageSwitcherStory.storyName = "Language switcher";
