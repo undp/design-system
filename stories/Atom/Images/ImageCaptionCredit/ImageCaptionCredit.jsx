@@ -16,16 +16,13 @@ export function Images({
   const sizes = ['medium', 'portrait'];
   size = sizes.includes(args.size) ? args.size : '';
 
-  let cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
-  if (isChromatic()) {
-    cls += ' inviewport';
-  }
+  let cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : '');
 
   const scaleUpCls = isChromatic() ? 'scale-up inviewport' : 'scale-up';
 
   if (args.animation === 'true') {
     return (
-      <figure data-viewport={isChromatic() ? '' : 'true'} className={cls(`${size}`)}>
+      <figure data-viewport={isChromatic() ? '' : 'true'} className={[cls(`${size}`), isChromatic() ? 'inviewport' : ''].join(' ')}>
         <div data-viewport={isChromatic() ? '' : 'true'} className={scaleUpCls}>
           {args.size === 'wide' && <img src={imagelg} alt={alt} />}
           {args.size === 'medium' && <img src={imagemd} alt={alt} />}
