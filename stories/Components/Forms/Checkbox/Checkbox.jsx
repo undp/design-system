@@ -6,6 +6,7 @@ import '../../../assets/scss/_typography.scss';
 export function Checkbox({
   label, value, arialabel, id, label_pos,
 }) {
+
   return (
     <div className="form-check">
       {label && label_pos == 'before' && (<label htmlFor={id}>{label}</label>)}
@@ -15,6 +16,6 @@ export function Checkbox({
   );
 }
 
-Checkbox.defaultProps = {
-  label_pos: 'after',
-};
+// Checkbox.defaultProps = {
+//   label_pos: 'after',
+// };

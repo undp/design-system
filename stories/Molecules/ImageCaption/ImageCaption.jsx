@@ -2,6 +2,7 @@ import React from 'react';
 import './image-caption.scss';
 import { Imagecredit } from '../../Atom/Images/ImageCredit/ImageCredit';
 import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
+import isChromatic from "chromatic/isChromatic";
 
 export const caption_options = {
   true: '',
@@ -32,7 +33,7 @@ export function Imagecaption({
   if (args.caption === 'true' || args.credit === 'true') {
     if (args.animation === 'true') {
       return (
-        <figcaption className={cls(`${opacityonly}`, `${caption_variant}`, `${credit_variant}`)} data-viewport="true">
+        <figcaption className={cls(`${opacityonly}`, `${caption_variant}`, `${credit_variant}`, isChromatic() ? 'inviewport' : '')} data-viewport={isChromatic() ? '' : 'true'}>
           {args.caption === 'true' && (<P label={paragraph} />)}
           {args.credit === 'true' && <Imagecredit label={label} />}
         </figcaption>

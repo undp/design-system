@@ -25,7 +25,7 @@ export function PageHero({
   //   expandToSize(".pagehero-full");
   // }, []);
 
-  const textColor = variant === "No background" ? "Black" : "White";
+  const colorTheme = variant === "No background" ? "light" : "dark";
   const textColorClass =
     variant === "No background" ? "color-black" : "color-white";
   const mobilePositionClass = `mobile-position-${mobileImagePosition}`;
@@ -45,7 +45,7 @@ export function PageHero({
       )}
       <Breadcrumbcomponent
         data={data}
-        Color={textColor}
+        colorTheme={colorTheme}
         Cls={navPositionClass}
       />
       <div className="pagehero-content medium-offset-1">

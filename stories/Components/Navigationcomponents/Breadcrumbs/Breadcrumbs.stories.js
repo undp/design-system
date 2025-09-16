@@ -6,26 +6,20 @@ import { getCaptionForLocale } from "./BreadcrumbsUtils";
 export default {
   title: 'Components/Navigation components/Breadcrumbs',
   argTypes: {
-    Color: {
-      options: ["Black", "White"],
+    // Color: {
+    //   options: ["Black", "White"],
+    //   control: { type: "inline-radio" },
+    // },
+    colorTheme: {
       control: { type: "inline-radio" },
-    },
+      options: ["light", "dark"],
+      name: "Color Theme",
+    }
   },
   parameters: {
       backgrounds: {
-        default: "Light gray",
-          values: [
-            { name: "Light gray", value: "#D4D6D8" },
-            { name: "Dark gray", value: "#232e3d" },
-            { name: "White", value: "#FFFFFF" },
-          ],
-        },
-        args: {
-          backgrounds: {
-            default: "Light gray",
-          },
-          Color: "Black",
-        },
+        disable: false,
+      },
       docs: {
         page: () => (
           <>
@@ -84,8 +78,8 @@ export default {
               <h3>Interactions</h3>
               <p>By clicking on the breadcrumb, the current page is redirected to the respective previous page.</p>
 
-              
-              
+
+
 
           </>
         )
@@ -93,11 +87,12 @@ export default {
   },
 };
 
-const Template = (args, { globals: { locale } }) => {
+const Template = (args, { globals: { locale, theme } }) => {
   const caption = getCaptionForLocale(locale);
   return (
     <Breadcrumbcomponent
       data={caption}
+      colorTheme={theme}
       {...args}
     />
   );
@@ -105,7 +100,6 @@ const Template = (args, { globals: { locale } }) => {
 
 export const Breadcrumbs = Template.bind({});
 Breadcrumbs.parameters = {
-  backgrounds: { default: 'Light gray' },
   docs: {
     story: {
       inline: false,
@@ -113,6 +107,7 @@ Breadcrumbs.parameters = {
     },
   },
 }
+Breadcrumbs.args = { colorTheme: "light" };
 Breadcrumbs.storyName = "Breadcrumbs";
 
 

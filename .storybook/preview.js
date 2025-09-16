@@ -2,7 +2,7 @@
 // import * as RTLAddon from 'storybook-addon-rtl';
 import { allModes } from './modes'
 import renderToHTML from './renderToHTML'
-
+import { addons } from 'storybook/preview-api';
 
 // include base styling globally
 import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css'
@@ -10,16 +10,6 @@ import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal
 
 //import init-loader
 import { initializeComponents } from '../stories/assets/js/storybook-init';
-
-// Log the contents of RTLAddon for debugging
-
-// console.log(RTLAddon);
-
-// if (RTLAddon && typeof RTLAddon.default === 'function') {
-//   RTLAddon.default(); // Use the default export if it is a function
-// } else {
-//   console.error('RTL initialization method not found.');
-// }
 
 // Configure Storybook
 const parameters = {
@@ -72,6 +62,13 @@ const parameters = {
     delay: 1500
   },
   layout: 'fullscreen',
+  backgrounds: {
+    disable: true,
+    values: [
+      { name: "light", value: "#FFFFFF" },
+      { name: "dark", value: "#55606e" }
+    ]
+  }
 }
 
 /* Implementing locale for language switcher */
@@ -113,7 +110,19 @@ const globalTypes = {
         { value: 'blue', title: 'Azure' },
       ]
     }
-  }
+  },
+  // theme: {
+  //   description: 'Global theme for components',
+  //   toolbar: {
+  //     // The label to show for this toolbar item
+  //     title: 'Theme',
+  //     icon: 'circlehollow',
+  //     // Array of plain string values or MenuItem shape (see below)
+  //     items: ['light', 'dark'],
+  //     // Change title based on selected value
+  //     dynamicTitle: true,
+  //   },
+  // },
 };
 
 const getLangCode = (Story, context) => {
@@ -206,12 +215,23 @@ const setAccentClass = (Story, context) => {
   )
 }
 
-// export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];
-// export const tags = ['autodocs'];
+// Decorator: Dynamically set canvas/background color based on the story arg `colorTheme` only (no global emission)
+const setColorThemeBackgroundFromArgs = (Story, context) => {
+  // Prefer explicit story arg, fallback to global theme
+  const theme = context.args?.colorTheme || context.globals?.theme || 'light';
+  const body = document.body;
+  const bg = theme === 'dark' ? '#55606e' : '#FFFFFF';
+  if (body.style.backgroundColor !== bg) {
+    body.style.backgroundColor = bg;
+  }
+  body.setAttribute('data-color-theme', theme);
+  return <Story {...context} />;
+};
 
 export default {
   parameters: parameters,
   globalTypes: globalTypes,
-  decorators: [getLangCode, sbFrameReset, setDirection, setAccentClass, initializeComponents],
+  initialGlobals: { theme: 'light' },
+  decorators: [getLangCode, sbFrameReset, setDirection, setAccentClass, setColorThemeBackgroundFromArgs, initializeComponents],
   tags: ['autodocs', 'autodocs'],
-}
+};
