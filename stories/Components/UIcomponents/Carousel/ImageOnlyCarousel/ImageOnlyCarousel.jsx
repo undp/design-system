@@ -13,8 +13,9 @@ export function ImageOnlyCarousel({ data }) {
   // useEffect(() => {
   //   swiper('.image-carousel', '.slider-slide');
   // }, []);
+  const ioCarouselCls = isChromatic() ? 'image-carousel inviewport' : 'image-carousel';
   return (
-    <div data-viewport={isChromatic() ? '' : 'true'} className="image-carousel" dir={rtl} data-undpds-component="swiper" data-selector=".image-carousel" data-arrows-selector=".slider-slide">
+    <div data-viewport={isChromatic() ? '' : 'true'} className={ioCarouselCls} dir={rtl} data-undpds-component="swiper" data-selector=".image-carousel" data-arrows-selector=".slider-slide">
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

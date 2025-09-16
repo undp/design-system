@@ -101,7 +101,7 @@ export function ProjectPage({
               <Heading type="2" label={topHeading} dataViewport="true" />
             </div>
           </div>
-          <div className="cell large-offset-3 large-7 small-offset-1 small-10 copy-text" data-viewport={isChromatic() ? '' : 'true'}>
+          <div className={['cell', 'large-offset-3', 'large-7', 'small-offset-1', 'small-10', 'copy-text', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
             <div className="column">
               <P label={topParagraph} />
               <P label={topParagraph1} />
@@ -125,7 +125,7 @@ export function ProjectPage({
               <Heading type="2" label={relatedHeading} dataViewport="true" />
             </div>
           </div>
-          <div className="cell small-10 small-offset-1 large-offset-3 large-6" data-viewport={isChromatic() ? '' : 'true'}>
+          <div className={['cell', 'small-10', 'small-offset-1', 'large-offset-3', 'large-6', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
             <div className="column">
               <DownloadCard title={downloadTitle} download={readmore} variant="External Link" />
             </div>
@@ -188,7 +188,7 @@ export function ProjectPage({
               <Heading type="2" label={supportHeading} dataViewport="true" />
             </div>
           </div>
-          <div className="cell large-offset-1 large-11" data-viewport={isChromatic() ? '' : 'true'}>
+          <div className={['cell', 'large-offset-1', 'large-11', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
             <div className="column">
               <Statscardslider data={statsliderdata} gapel="20" gapelsm="20" viewcard="5" perViewtablet="3" focusSpace="0" {...args} />
             </div>

@@ -131,7 +131,7 @@ export function PublicationPage({
             </div>
           </div>
         </div>
-        <div className="grid-x grid-margin-x related-publication" data-viewport={isChromatic() ? '' : 'true'}>
+        <div className={['grid-x', 'grid-margin-x', 'related-publication', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
           <div className="cell small-12 large-6 large-offset-6 border-top-2">
             <div className="column">
               <Heading type="2" label={relatedPublicationHeading} />

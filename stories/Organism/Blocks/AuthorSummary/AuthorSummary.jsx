@@ -14,7 +14,7 @@ export function AuthorSummary({
   ...args
 }) {
   return (
-    <div className="author-summary" data-viewport={isChromatic() ? '' : 'true'}>
+    <div className={['author-summary', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
       <div className="author-summary-left">
         <Authorimg image={image} variant="Large" alt="Author" {...args} />
         <div className="author-summary-text">

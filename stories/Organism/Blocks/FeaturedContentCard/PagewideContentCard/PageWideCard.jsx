@@ -31,7 +31,7 @@ export function PageWideCard({
     <div className="wide-card">
       <Heading type="6" label={label} dataViewport="true" />
       <div className="grid-x wide-card__wrapper">
-        <div className="cell medium-6 wide-card__description" data-viewport={isChromatic() ? '' : 'true'}>
+        <div className={['cell', 'medium-6', 'wide-card__description', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
           <div className="card-summary">
             <Heading type="4" label={title} />
             <P label={paragraph} />

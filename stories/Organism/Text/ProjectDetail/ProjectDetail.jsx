@@ -9,7 +9,7 @@ export const Projectdetail = ({
 }) => (
   <div className="project-detail">
     <Heading type="2" label={text} dataViewport="true"/>
-    <div className="grid-x grid-margin-x project-detail-list" data-viewport={isChromatic() ? '' : 'true'}>
+    <div className={['grid-x', 'grid-margin-x', 'project-detail-list', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
       <div className="cell large-2 medium-2">
         <div className="grid-x">
           <div className="cell large-12 medium-12 small-6">

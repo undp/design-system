@@ -16,8 +16,9 @@ export function FixedSizeCarousel({ data, label }) {
   // useEffect(() => {
   //   swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
   // }, []);
+  const fsCarouselCls = isChromatic() ? 'fixed-carousel inviewport' : 'fixed-carousel';
   return (
-    <section data-viewport={isChromatic() ? '' : 'true'} className="fixed-carousel" dir={rtl} data-undpds-component="swiper" data-selector=".fixed-carousel" data-arrows-selector=".fixed-carousel__button-wrap">
+    <section data-viewport={isChromatic() ? '' : 'true'} className={fsCarouselCls} dir={rtl} data-undpds-component="swiper" data-selector=".fixed-carousel" data-arrows-selector=".fixed-carousel__button-wrap">
       {label && <Heading type="2" label={label} />}
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">

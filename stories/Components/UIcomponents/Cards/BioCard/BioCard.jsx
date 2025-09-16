@@ -57,6 +57,7 @@ export function BioCard({
   let size_variant = size_options[`${args.size}`];
   let color = accent_color_options[`${args.accent}`] ?? false;
   // let accent_color = color ? `accent-${color}` : '';
+  const bioCardCls = isChromatic() ? 'bio-card__description inviewport' : 'bio-card__description';
 
   return (
     <>
@@ -66,7 +67,7 @@ export function BioCard({
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
               <div className="grid-x">
                 <article className="bio-card__content medium-7">
-                  <div data-viewport={isChromatic() ? '' : 'true'} className="bio-card__description">
+                  <div data-viewport={isChromatic() ? '' : 'true'} className={bioCardCls}>
                     <Heading type="5" label={contentname} />
                     <P label={descriptionText} />
                   </div>
@@ -87,7 +88,7 @@ export function BioCard({
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
               <Cardthumb image={image} accent={color} />
               <article className="bio-card__content">
-                <div data-viewport={isChromatic() ? '' : 'true'} className="bio-card__description">
+                <div data-viewport={isChromatic() ? '' : 'true'} className={bioCardCls}>
                   <Heading type="5" label={contentname} />
                   <P label={descriptionText} />
                 </div>

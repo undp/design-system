@@ -5,6 +5,8 @@ import { Ctalink } from '../../../Components/UIcomponents/Buttons/CtaLink/CtaLin
 import { P } from '../../../Atom/BaseTypography/Paragraph/Paragraph';
 import isChromatic from "chromatic/isChromatic";
 
+const tabsCls = isChromatic() ? 'tabs inviewport' : 'tabs';
+
 export const TweetCard = ({
   delaytime,
   link,
@@ -15,7 +17,7 @@ export const TweetCard = ({
   contentdate,
   button,
 }) => (
-  <div data-viewport={isChromatic() ? '' : 'true'} className={`cell medium-3 tweet-card delay-${delaytime}`}>
+  <div data-viewport={isChromatic() ? '' : 'true'} className={['cell', 'medium-3', 'tweet-card', `delay-${delaytime}`, isChromatic() ? 'inviewport' : ''].join(' ')}>
     <a href={link} target="_blank" rel="noreferrer">
       <img src={imgback} alt={imgback} />
       <div className="tweet-card__header">

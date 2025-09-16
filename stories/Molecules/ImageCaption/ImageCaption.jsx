@@ -33,7 +33,7 @@ export function Imagecaption({
   if (args.caption === 'true' || args.credit === 'true') {
     if (args.animation === 'true') {
       return (
-        <figcaption className={cls(`${opacityonly}`, `${caption_variant}`, `${credit_variant}`)} data-viewport={isChromatic() ? '' : 'true'}>
+        <figcaption className={cls(`${opacityonly}`, `${caption_variant}`, `${credit_variant}`, isChromatic() ? 'inviewport' : '')} data-viewport={isChromatic() ? '' : 'true'}>
           {args.caption === 'true' && (<P label={paragraph} />)}
           {args.credit === 'true' && <Imagecredit label={label} />}
         </figcaption>

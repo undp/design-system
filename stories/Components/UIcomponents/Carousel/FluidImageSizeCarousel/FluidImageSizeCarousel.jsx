@@ -16,8 +16,9 @@ export const FluidImageSizeCarousel = ({ data }) => {
   // useEffect(() => {
   //   swiper('.fluid-carousel', '.slide-content');
   // }, []);
+  const fiCarouselCls = isChromatic() ? 'fluid-carousel inviewport' : 'fluid-carousel';
   return (
-    <section data-viewport={isChromatic() ? '' : 'true'} className="fluid-carousel" dir={rtl} data-undpds-component="swiper" data-selector=".fluid-carousel" data-arrows-selector=".slide-content">
+    <section data-viewport={isChromatic() ? '' : 'true'} className={fiCarouselCls} dir={rtl} data-undpds-component="swiper" data-selector=".fluid-carousel" data-arrows-selector=".slide-content">
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

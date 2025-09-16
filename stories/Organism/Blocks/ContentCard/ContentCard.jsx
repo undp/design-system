@@ -10,7 +10,7 @@ export function ContentCard({
   ...args
 }) {
   return (
-    <div className="content-card-container" data-viewport={isChromatic() ? '' : 'true'}>
+    <div className={['content-card-container', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
       <ContentCardImage data={data} Hovercolors={args.accent} {...args} />
       <CtaButton label={buttontype} Type="Secondary" />
     </div>

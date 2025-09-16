@@ -31,7 +31,7 @@ export function ImageRevelCard({
   return (
     <div className="grid-x grid-margin-x">
       {data.map((item, index) => (
-        <div key={index} data-viewport={isChromatic() ? '' : 'true'} className={['cell', `${size}`, 'image-reveal-card', `delay-${2 + index++}`].join(' ')}>
+        <div key={index} data-viewport={isChromatic() ? '' : 'true'} className={['cell', `${size}`, 'image-reveal-card', `delay-${2 + index++}`, isChromatic() ? 'inviewport' : ''].join(' ')}>
           <a href={item.link}>
             <div className={`image-reveal-card__content ${accent_color}`}>
               <div className="image">

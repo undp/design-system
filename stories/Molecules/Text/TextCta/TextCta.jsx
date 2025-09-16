@@ -8,7 +8,7 @@ import isChromatic from "chromatic/isChromatic";
 
 export function TextCta({ headerText, descriptionText, label }) {
   return (
-    <div className="grid-x trusted-partnerships__container" data-viewport={isChromatic() ? '' : 'true'}>
+    <div className={['grid-x', 'trusted-partnerships__container', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
       <div className="cell medium-7 small-12 medium-offset-1 trusted-partnerships--header">
         <Heading type="2" label={headerText} />
         <P label={descriptionText} />

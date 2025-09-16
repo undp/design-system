@@ -114,7 +114,7 @@ export function CountryHomepage({
           <CtaButton label={storyBtn} Icon="No Arrow" />
         </div>
         <div className="grid-x our-impact">
-          <div className="cell small-12 medium-12 large-11 large-offset-1" data-viewport={isChromatic() ? '' : 'true'}>
+          <div className={['cell', 'small-12', 'medium-12', 'large-11', 'large-offset-1', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
             <Heading type="2" label={statHeading} />
           </div>
           <div className="cell small-12 medium-12 large-12">

@@ -16,7 +16,7 @@ export function Breadcrumbcomponent({ data, colorTheme, rlt_offset, ...args }) {
     <nav
       aria-label="breadcrumbs"
       data-viewport={isChromatic() ? '' : 'true'}
-      className={["breadcrumb", `${color}`, moreClasses].join(" ")}
+      className={["breadcrumb", `${color}`, moreClasses, isChromatic() ? 'inviewport' : ''].join(" ")}
     >
       <ul>
         {data.map((item, i) => {

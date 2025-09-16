@@ -16,7 +16,7 @@ export function Stats({
   return (
     <div className="grid-x stats-grid">
       {data.map((item, index) => (
-        <div className={`cell medium-3 delay-${2 + index++}`} key={index} data-viewport={isChromatic() ? '' : 'true'}>
+        <div className={['cell', 'medium-3', `delay-${2 + index++}`, isChromatic() ? 'inviewport' : ''].join(' ')} key={index} data-viewport={isChromatic() ? '' : 'true'}>
           <StatsPanel number={item.number} imageback={imageback} percent={item.percent} content={item.content} {...args} />
         </div>
       ))}

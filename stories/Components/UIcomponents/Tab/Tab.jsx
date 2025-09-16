@@ -8,8 +8,9 @@ export function Tab({ tabdata }) {
   // useEffect(() => {
   //   tabs();
   // }, []);
+  const tabsCls = isChromatic() ? 'tabs inviewport' : 'tabs';
   return (
-    <div className="tabs" data-viewport={isChromatic() ? '' : 'true'} data-undpds-component="tabs">
+    <div className={tabsCls} data-viewport={isChromatic() ? '' : 'true'} data-undpds-component="tabs">
       <ul data-deep-link="true" data-tabs id="tablist_1" role="tablist">
         {tabdata.map((item, index) => (
           <li key={index} className={index == 0 ? 'tabs-title is-active' : 'tabs-title'}>
