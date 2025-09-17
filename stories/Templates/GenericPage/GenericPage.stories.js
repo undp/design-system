@@ -479,7 +479,7 @@ export default {
     <li>expandToSize('.pagehero-full');</li>
     <li>sidebarNav();</li>
     <li>sidebarMenu();</li>
-    <li>sticky('.sidebar-desktop', '.generic-content', '.sidebar-desktop .sidebar-accordion');</li>
+    <li>sticky('.sidebar-desktop', '.generic-content');</li>
     <li>swiper('.fluid-carousel', '.slide-content'); on load (Include swiper library from <a href="https://swiperjs.com/get-started">here</a> in your html page).</li>
   </ul>
   <li>Refer <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>
