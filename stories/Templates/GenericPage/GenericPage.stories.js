@@ -471,7 +471,7 @@ export default {
 
 <ul>
   <li>Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section.</li>
-  <li>Initialize navigation, language switcher, accordion, sidebar and swiper by calling below mentioned functions.</li>
+            <li>Initialize navigation, language switcher, accordion, sidebar and swiper by using <a href="../?path=/docs/getting-started-automatic-component-initialization--docs">Implicit invocation</a> or calling below mentioned functions.</li>
   <ul>
     <li>navigationInitialize();</li>
     <li>langSwitch();</li>
@@ -479,6 +479,7 @@ export default {
     <li>expandToSize('.pagehero-full');</li>
     <li>sidebarNav();</li>
     <li>sidebarMenu();</li>
+    <li>sticky('.sidebar-desktop', '.generic-content', '.sidebar-desktop .sidebar-accordion');</li>
     <li>swiper('.fluid-carousel', '.slide-content'); on load (Include swiper library from <a href="https://swiperjs.com/get-started">here</a> in your html page).</li>
   </ul>
   <li>Refer <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>
@@ -519,6 +520,7 @@ export default {
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js</a></li>
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/scrolling-progressbar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/scrolling-progressbar.min.js</a></li>
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sidebar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sidebar.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sticky.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sticky.min.js</a></li>
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js</a></li>
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a></li>
 </ul>

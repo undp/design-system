@@ -80,7 +80,7 @@ export function GenericPage({
       <div className="grid-container fluid content-bottom">
         <div className="grid-x margin-top-72">
           <div className="cell large-3 small-12 sidebar-width">
-            <div className="column sidebar-desktop">
+            <div className="column sidebar-desktop" data-undpds-component="sticky">
               <Sidebar
                 data={sidebarCaptionData.sidebardata}
                 headerText={sidebarCaptionData.headerText}
