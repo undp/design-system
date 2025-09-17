@@ -269,7 +269,23 @@ export const initializeComponents = (Story, context) => {
                 }).catch(err => console.error('Error initializing sidebar:', err));
             }
             break;
+        case 'sticky':
+            if (typeof sticky === 'function') {
+                const stickyMovingSide = element.getAttribute('data-sticky-movingside') || '.generic-content';
+                sticky(element, stickyMovingSide);
+                element.setAttribute('data-initialized', 'true');
+            } else {
+                import("./sticky.js").then(module => {
+                    if (module && typeof module.sticky === 'function') {
+                        const stickyMovingSide = element.getAttribute('data-sticky-movingside') || '.generic-content';
+                        module.sticky(element, stickyMovingSide);
+                    }
+                    element.setAttribute('data-initialized', 'true');
+                }).catch(err => console.error('Error initializing sticky functionality:', err));
+            }
+            break;
         }
+
       });
     }, 100);
 

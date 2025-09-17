@@ -1,7 +1,7 @@
-import * as utility from './resize';
+// import * as utility from './resize';
 
 // stickyScroll handler function.
-export function sticky(stickyArea, stickyMovingSide, StickyScrollBar) {
+export function sticky(stickyArea, stickyMovingSide) {
   const stickyScroll = (state) => {
     const $sticky = jQuery(stickyArea);
     const $relatedPublication = jQuery(stickyMovingSide);
@@ -40,32 +40,27 @@ export function sticky(stickyArea, stickyMovingSide, StickyScrollBar) {
   };
 
   // stickyScrollBar add on Sidebar,if sidebar content is more than [window screen - header Height].
-  const stickyScrollBar = () => {
-    // initialize stickyScrollBar
-    const $sidebarWrapper = jQuery(StickyScrollBar);
+  // const stickyScrollBar = () => {
+  //   // initialize stickyScrollBar
+  //   const $sidebarWrapper = jQuery(StickyScrollBar);
 
-    // stickyScrollBar length check
-    if (jQuery($sidebarWrapper).length) {
-      const $sidebarHeight = $sidebarWrapper.innerHeight();
-      const $windowHeight = jQuery(window).innerHeight();
-      const $headerHeight = jQuery('.header').height();
+  //   // stickyScrollBar length check
+  //   if (jQuery($sidebarWrapper).length) {
+  //     const $sidebarHeight = $sidebarWrapper.innerHeight();
+  //     const $windowHeight = jQuery(window).innerHeight();
+  //     const $headerHeight = jQuery('.header').height();
 
-      // stickyScrollBar function condition check.
-      if ($sidebarHeight > ($windowHeight - $headerHeight)) {
-        $sidebarWrapper.addClass('scrollbar');
-      } else {
-        $sidebarWrapper.removeClass('scrollbar');
-      }
-    }
-  };
-
-  // initialize stickyScrollBar function.
-  jQuery(window).on('load', () => {
-    stickyScrollBar();
-  });
+  //     // stickyScrollBar function condition check.
+  //     if ($sidebarHeight > ($windowHeight - $headerHeight)) {
+  //       $sidebarWrapper.addClass('scrollbar');
+  //     } else {
+  //       $sidebarWrapper.removeClass('scrollbar');
+  //     }
+  //   }
+  // };
 
   // initialize stickyScroll function and enable/disable based on mediaQuery breakpoint.
-  const initStickyScroll = (params) => {
+  const initStickyScroll = () => {
     const $windowWidth = jQuery(window).width();
     const breakpoint = 1024;
     if ($windowWidth >= breakpoint) {
@@ -77,18 +72,8 @@ export function sticky(stickyArea, stickyMovingSide, StickyScrollBar) {
     }
   };
 
-  // Run on doc ready.
-  jQuery(document).ready(() => {
-    let init = false;
-    if (!init) {
-      initStickyScroll();
-      init = true;
-    }
-  });
+  initStickyScroll();
 
-  // Custom windowResize;
-  utility.windowResize(jQuery(window), (e) => {
-    initStickyScroll();
-    stickyScrollBar();
-  });
+  window.addEventListener("resize", initStickyScroll);
+
 }
