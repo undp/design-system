@@ -283,8 +283,7 @@
           if (typeof sticky === 'function') {
             // Initialize sticky side navigation
             const stickyMovingSide = element.getAttribute('data-sticky-movingside') || '.generic-content';
-            const stickyScrollBar = element.getAttribute('data-sticky-scrollbar') || '.sidebar-desktop .sidebar-accordion';
-            sticky(element, stickyMovingSide, stickyScrollBar);
+            sticky(element, stickyMovingSide);
             element.setAttribute('data-initialized', 'true');
           } else {
             console.warn('Sidebar component requires sticky function. Make sure sticky.min.js is loaded.');
