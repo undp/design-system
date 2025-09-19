@@ -50,32 +50,31 @@ const getCaptionForLocale = (locale) => {
 export default {
   title: "Components/UI components/Text/Heading big block",
   component: HeadingBig,
-  argTypes: {
-    Emphasize: {
-      options: ["true", "false"],
-      control: { type: "inline-radio" },
-    },
-  },
-  args: {
-    Emphasize: "true",
-  },
+  // argTypes: {
+  //   Emphasize: {
+  //     options: ["true", "false"],
+  //     control: { type: "inline-radio" },
+  //   },
+  // },
+  // args: {
+  //   Emphasize: "true",
+  // },
   parameters: {
     docs: {
         page: () => (
             <>
               <style>
                 {`
-                  .background_gray {
-                    background-color: #A9B1B7;
-                  }
-                `}
+                      .background_gray {
+                        background-color: #A9B1B7;
+                      }
+                    `}
               </style>
-
               <h1>Heading Big Block</h1>
 
-              <p>The Heading Block defines a section of information data with some items - Header title, Description. <code>H2</code> <code>H4</code> atoms tags are used for creating this section.</p>
+              <p>The Heading Block defines a section of information data with some items - Header title, Description and animated background. <code>H2</code> <code>H4</code> atoms tags are used for creating this section.</p>
 
-              <Canvas className="background_gray" of={HeadingBigStory} />
+              <Canvas className="background_grayk" of={HeadingBigStory} />
 
               <h3>Usage</h3>
 
@@ -93,12 +92,8 @@ export default {
               </ul>
 
               <h4>JS:</h4>
+              <p><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js</a> background animation</p>
               <p><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a> (optional for viewport animation)</p>
-
-              
-
-              
-
             </>
         )
     }
