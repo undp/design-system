@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { Breadcrumbcomponent } from "./Breadcrumbs";
 import { getCaptionForLocale } from "./BreadcrumbsUtils";
 
@@ -6,26 +6,20 @@ import { getCaptionForLocale } from "./BreadcrumbsUtils";
 export default {
   title: 'Components/Navigation components/Breadcrumbs',
   argTypes: {
-    Color: {
-      options: ["Black", "White"],
+    // Color: {
+    //   options: ["Black", "White"],
+    //   control: { type: "inline-radio" },
+    // },
+    colorTheme: {
       control: { type: "inline-radio" },
-    },
+      options: ["light", "dark"],
+      name: "Color Theme",
+    }
   },
   parameters: {
       backgrounds: {
-        default: "Light gray",
-          values: [
-            { name: "Light gray", value: "#D4D6D8" },
-            { name: "Dark gray", value: "#232e3d" },
-            { name: "White", value: "#FFFFFF" },
-          ],
-        },
-        args: {
-          backgrounds: {
-            default: "Light gray",
-          },
-          Color: "Black",
-        },
+        disable: false,
+      },
       docs: {
         page: () => (
           <>
@@ -72,20 +66,20 @@ export default {
               <h4>CSS:</h4>
               <p>Add the base layout style from:</p>
               <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css</a></li>
               </ul>
 
               <h4>JS:</h4>
               <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a></li>
               </ul>
 
               <h3>Interactions</h3>
               <p>By clicking on the breadcrumb, the current page is redirected to the respective previous page.</p>
 
-              <h3>Changelog</h3>
-              <p>1.0 — Released component</p>
+
+
 
           </>
         )
@@ -93,11 +87,12 @@ export default {
   },
 };
 
-const Template = (args, { globals: { locale } }) => {
+const Template = (args, { globals: { locale, theme } }) => {
   const caption = getCaptionForLocale(locale);
   return (
     <Breadcrumbcomponent
       data={caption}
+      colorTheme={theme}
       {...args}
     />
   );
@@ -105,7 +100,6 @@ const Template = (args, { globals: { locale } }) => {
 
 export const Breadcrumbs = Template.bind({});
 Breadcrumbs.parameters = {
-  backgrounds: { default: 'Light gray' },
   docs: {
     story: {
       inline: false,
@@ -113,6 +107,7 @@ Breadcrumbs.parameters = {
     },
   },
 }
+Breadcrumbs.args = { colorTheme: "light" };
 Breadcrumbs.storyName = "Breadcrumbs";
 
 

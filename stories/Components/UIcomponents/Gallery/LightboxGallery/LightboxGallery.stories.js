@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { LightboxGallery } from "./LightboxGallery";
 import galleryThum1 from "../../../../assets/images/parallax-gallery-thumb1.jpg";
 import galleryImg1 from "../../../../assets/images/parallax-gallery-img1.jpg";
@@ -437,7 +437,7 @@ export default {
           <h4>Method 1: Automatic Initialization (Recommended)</h4>
           <ul>
             <li>Include the component initializer script:
-              <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+              <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
             </li>
             <li>Add the required data attribute to your lightbox gallery element:
               <code>data-undpds-component="lightbox-gallery"</code>
@@ -460,37 +460,37 @@ export default {
               Add the base layout style from
               <ul>
                 <li>
-                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">
                     base-minimal.min.css
                   </a>
                 </li>
                 <li>
-                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css">
                     cta-link.min.css
                   </a>
                 </li>
                 <li>
-                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/frosted-background.min.css">
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/frosted-background.min.css">
                     frosted-background.min.css
                   </a>
                 </li>
                 <li>
-                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-caption.min.css">
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-caption.min.css">
                     image-caption.min.css
                   </a>
                 </li>
                 <li>
-                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/lightbox.min.css">
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/lightbox.min.css">
                     lightbox.min.css
                   </a>
                 </li>
                 <li>
-                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/lightbox-gallery.min.css">
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/lightbox-gallery.min.css">
                     lightbox-gallery.min.css
                   </a>
                 </li>
                 <li>
-                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css">
                     swiper.min.css
                   </a>
                 </li>
@@ -501,12 +501,12 @@ export default {
   
             <ul>
               <li>
-                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lightbox-gallery.min.js">
+                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lightbox-gallery.min.js">
                   lightbox-gallery.min.js
                 </a>
               </li>
               <li>
-                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js">
+                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js">
                   init.min.js
                 </a> (for automatic initialization)
               </li>
@@ -523,9 +523,9 @@ export default {
               </li>
             </ul>
   
-            <h3>Changelog</h3>
+            
   
-            <p>1.0 — Released component</p>
+            
           </div>
         </>
       ),

@@ -80,7 +80,7 @@ export function GenericPage({
       <div className="grid-container fluid content-bottom">
         <div className="grid-x margin-top-72">
           <div className="cell large-3 small-12 sidebar-width">
-            <div className="column sidebar-desktop">
+            <div className="column sidebar-desktop" data-undpds-component="sticky" data-sticky-movingside=".generic-content">
               <Sidebar
                 data={sidebarCaptionData.sidebardata}
                 headerText={sidebarCaptionData.headerText}
@@ -184,7 +184,7 @@ export function GenericPage({
         data={footerData.footerdata}
         copyright={footerData.copyright}
         menudata={footerData.menudata}
-        {...{ color: 'default' }}
+        {...{ color: 'default', variant: 'default' }}
       />
     </div>
   );

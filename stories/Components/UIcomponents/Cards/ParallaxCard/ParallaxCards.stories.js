@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import ParallaxCards from './ParallaxCards';
 
 const getCaptionForLocale = (locale) => {
@@ -307,19 +307,19 @@ export default {
               <p>Add the base layout style from:</p>
 
               <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/parallax-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/parallax-cards.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/parallax-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/parallax-card.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/parallax-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/parallax-cards.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/parallax-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/parallax-card.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css</a></li>
               </ul>
 
               <h4>JS:</h4>
 
               <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smartresize.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smartresize.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js</a></li>
               </ul>
 
               <h4>3rd Party library dependencies:</h4>
@@ -336,9 +336,9 @@ export default {
                 <li>By clicking on the CTA link, the page is redirected to the detailed page.</li>
               </ul>
 
-              <h3>Changelog</h3>
+              
 
-              <p>1.0 — Released component</p>
+              
 
             </>
         )

@@ -22,10 +22,6 @@
           display: block;
         }
 
-        &.scrollbar {
-          height: calc(100vh - 9.375rem);
-          overflow-y: auto;
-        }
       }
 
       ul {
@@ -65,8 +61,14 @@
       }
 
       @include devicebreak(large) {
-        .sidebar-accordion h6 {
-          display: none;
+        .sidebar-accordion {
+          h6 {
+            display: none;
+          }
+          &.scrollbar {
+            height: calc(100vh - 9.375rem);
+            overflow-y: auto;
+          }
         }
       }
     }

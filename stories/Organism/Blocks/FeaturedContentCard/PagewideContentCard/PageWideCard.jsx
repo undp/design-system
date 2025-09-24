@@ -5,6 +5,7 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { CtaButton } from '../../../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 import BackgroundImg from '../../../../assets/images/Pagewide.jpg';
+import isChromatic from "chromatic/isChromatic";
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
@@ -30,7 +31,7 @@ export function PageWideCard({
     <div className="wide-card">
       <Heading type="6" label={label} dataViewport="true" />
       <div className="grid-x wide-card__wrapper">
-        <div className="cell medium-6 wide-card__description" data-viewport="true">
+        <div className={['cell', 'medium-6', 'wide-card__description', isChromatic() ? 'inviewport' : ''].join(' ')} data-viewport={isChromatic() ? '' : 'true'}>
           <div className="card-summary">
             <Heading type="4" label={title} />
             <P label={paragraph} />

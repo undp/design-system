@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { DownloadModal } from "./DownloadModal";
 
 const statsArray = (locale) => {
@@ -623,7 +623,7 @@ export default {
               <h4>Method 1: Automatic Initialization (Recommended)</h4>
               <ul>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
                 <li>Add the required data attribute to your download modal container:
                   <code>data-undpds-component="download-modal"</code>
@@ -650,29 +650,29 @@ export default {
               <h4>CSS</h4>
               <p>Add the base layout style from:</p>
               <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/publication-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/publication-card.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/modal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/modal.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/custom-select.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/custom-select.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/checkbox.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/checkbox.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/download-modal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/download-modal.min.css</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/download-row.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/download-row.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/publication-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/publication-card.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/modal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/modal.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/custom-select.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/custom-select.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/checkbox.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/checkbox.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/download-modal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/download-modal.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/download-row.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/download-row.min.css</a></li>
               </ul>
 
               <h4>JS</h4>
               <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/download-modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/download-modal.min.js</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js</a> (for automatic initialization)</li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/modal.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/select.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/select.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/download-modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/download-modal.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js</a> (for automatic initialization)</li>
               </ul>
 
               <h3>Interactions</h3>
               <p>There will be a checkbox where the user can click on it to select the asset and then click on the download button to download the document.</p>
 
-              <h3>Changelog</h3>
-              <p>1.0 — Released component</p>
+              
+              
 
             </>
         )

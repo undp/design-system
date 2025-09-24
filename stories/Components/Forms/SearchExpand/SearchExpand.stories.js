@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { SearchExpand } from './SearchExpand';
 
 const getCaptionForLocale = (locale) => {
@@ -68,17 +68,15 @@ export default {
             <h4>CSS:</h4>
             <p>Add the base layout style from:</p>
             <ul>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/search-expand.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/search-expand.min.css</a></li>
             </ul>
 
             <h4>JS:</h4>
             <ul>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/expand-search.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/expand-search.min.js</a></li>
             </ul>
 
-            <h3>Changelog</h3>
-            <p>1.0 — Released component</p>
             </>
           )
         },

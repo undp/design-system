@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import './icons.scss';
 
 export function Icons({ src, alt }) {

@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { ParallaxGallery } from "./ParallaxGallery";
 import galleryImg1 from "../../../../assets/images/parallax-gallery-img1.jpg";
 import galleryImg2 from "../../../../assets/images/parallax-gallery-img2.jpg";
@@ -171,7 +171,7 @@ export default {
               <h4>Method 1: Automatic Initialization (Recommended)</h4>
               <ul>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
                 <li>Add the required data attributes to your parallax gallery element:
                   <code>data-undpds-component="parallax"</code> and <code>data-options</code> with a JSON configuration.
@@ -197,15 +197,15 @@ export default {
               <p>Add the base layout style from</p>
 
               <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">Base Layout Style</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/parallax-gallery.min.css">Parallax Gallery CSS</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">CTA Link CSS</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">Base Layout Style</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/parallax-gallery.min.css">Parallax Gallery CSS</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css">CTA Link CSS</a></li>
               </ul>
 
               <h4>JS:</h4>
 
               <ul>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">Parallax JS</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js">Parallax JS</a></li>
               </ul>
 
               <p>Following external libraries need to be included first:</p>
@@ -219,9 +219,9 @@ export default {
 
               <p>On the opening of the page and scrolling, images move.</p>
 
-              <h3>Changelog</h3>
+              
 
-              <p>1.0 — Released component</p>
+              
 
             </>
         )

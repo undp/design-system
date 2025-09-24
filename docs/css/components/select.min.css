@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.4.6
+ * UNDP Design System 1.4.7
  *
  */
 .select-default{appearance:none;background:var(--undpds-color-white) url(../../images/chevron-down.svg) no-repeat right 22px center;border:2px solid var(--undpds-color-black);border-radius:0;color:var(--undpds-color-black);cursor:pointer;display:block;font-size:var(--undpds-font-size-16);font-weight:600;line-height:1.125rem;margin:0;padding:var(--undpds-spacing-05) var(--undpds-spacing-50) var(--undpds-spacing-05) var(--undpds-spacing-05);position:relative;text-transform:uppercase;width:100%}[dir=rtl] .select-default{background-position:left 22px center;padding:var(--undpds-spacing-05) var(--undpds-spacing-05) var(--undpds-spacing-05) var(--undpds-spacing-50);text-align:right}

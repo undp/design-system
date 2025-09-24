@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.4.6
+ * UNDP Design System 1.4.7
  *
  */
 progress{border:2px solid var(--undpds-color-black);border-radius:7px;height:14px;width:50%}progress::-webkit-progress-bar{background-color:var(--undpds-color-white);border-radius:7px}progress::-webkit-progress-value{background-color:var(--undpds-color-black)}progress::-moz-progress-bar{background-color:var(--undpds-color-white)}

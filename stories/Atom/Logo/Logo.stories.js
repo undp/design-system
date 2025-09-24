@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story, Canvas, Anchor } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, Anchor } from '@storybook/addon-docs/blocks';
 import { Logo } from './Logo';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
@@ -9,8 +9,8 @@ import pnudwhite from '../../assets/images/pnud-logo-white.svg';
 export default {
   title: 'Foundation/Logos',
   component: Logo,
-  
-  
+
+
   parameters: {
     args: {
       src: logo,
@@ -46,7 +46,7 @@ export default {
           <h3>Formatting</h3>
           <h4>Default</h4>
           <p>
-            There are only two versions of the UNDP logo: UNDP (English) and PNUD (French/Spanish). Within the design system, the logo is used in the header and footer components.
+            There are only two versions of the UNDP logo: PNUD (French/Spanish/Portuguese) and UNDP (English and all other languages). Within the design system, the logo is used in the header and footer components.
             The logo is available in blue or white.
           </p>
 
@@ -60,28 +60,32 @@ export default {
           <h4>States</h4>
           <p>The UNDP and PNUD logos are available in blue or white and used as per the page background.</p>
 
-          <h4>1. PNUD logo - Blue <a href="images/pnud-logo-blue.svg" download>Download</a></h4>
-     
+          <h4>1. PNUD logo - Blue </h4>
+          <p>CDN: <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/images/pnud-logo-blue.svg">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/images/pnud-logo-blue.svg</a></p>
+
 
           <Canvas  of={PNUDLogoBlue} />
 
-          <h4>2. PNUD logo - White <a href="images/pnud-logo-white.svg" download>Download</a></h4>
-   
+          <h4>2. PNUD logo - White</h4>
+          <p>CDN: <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/images/pnud-logo-white.svg">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/images/pnud-logo-white.svg</a></p>
+
 
           <Canvas of={PNUDLogoWhite} />
 
           <h4>3. UNDP Logo - Blue</h4>
-       
+          <p>CDN: <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/images/undp-logo-blue.svg">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/images/undp-logo-blue.svg</a></p>
+
 
           <Canvas of={UNDPLogoBlue} />
 
           <h4>4. UNDP Logo - White</h4>
+          <p>CDN: <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/images/undp-logo-white.svg">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/images/undp-logo-white.svg</a></p>
 
 
           <Canvas of={UNDPLogoWhite} />
 
           <h3>Interactions</h3>
-          <p>By clicking on the logo, the website is redirected to the homepage.</p>
+          <p>By clicking on the logo, the user should be directed to the homepage.</p>
         </section>
       ),
     },
@@ -112,13 +116,15 @@ export const PNUDLogoWhite = Template.bind({});
 PNUDLogoWhite.args = {
   src: pnudwhite,
   alt: 'PNUD Logo - White',
+  colorTheme: 'dark',
 };
 PNUDLogoWhite.argTypes = {
   src: { table: { disable: true } },
   alt: { table: { disable: true } },
+  colorTheme: { table: { disable: true }, control: { disable: true } }, // hide control
 };
 PNUDLogoWhite.parameters = {
-  backgrounds: { default: 'gray' },
+  // backgrounds: { default: 'gray' },
   docs: {
     story: {
       inline: false,
@@ -149,14 +155,15 @@ export const UNDPLogoWhite = Template.bind({});
 UNDPLogoWhite.args = {
   src: logowhite,
   alt: 'UNDP Logo - White',
+  colorTheme: 'dark',
 };
 UNDPLogoWhite.argTypes = {
   src: { table: { disable: true } },
   alt: { table: { disable: true } },
-  
+  colorTheme: { table: { disable: true }, control: { disable: true } }, // hide control
 };
 UNDPLogoWhite.parameters = {
-  backgrounds: { default: 'gray' },
+  // backgrounds: { default: 'gray' },
   docs: {
     story: {
       inline: false,

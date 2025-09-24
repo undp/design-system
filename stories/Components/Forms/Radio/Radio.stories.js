@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Radio } from './Radio';
 
 const getCaptionForLocale = (locale) => {
@@ -25,6 +25,13 @@ const getCaptionForLocale = (locale) => {
 export default {
   title: 'Components/Forms/Radio',
   component: Radio,
+  argTypes: {
+    label_pos: {
+      control: { type: "inline-radio" },
+      options: ["before", "after"],
+      name: "Label positon",
+    }
+  },
   parameters: {
     docs: {
       page: () => (
@@ -83,8 +90,8 @@ export default {
             <h4>CSS:</h4>
             <p>Add the base layout style from:</p>
             <ul>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/radio.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/radio.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/radio.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/radio.min.css</a></li>
             </ul>
 
             <h4>JS:</h4>
@@ -96,8 +103,6 @@ export default {
               <li>The active state is applied to the entire button.</li>
             </ul>
 
-            <h3>Changelog</h3>
-            <p>1.0 — Released component</p>
 
         </>
       ),
@@ -112,6 +117,7 @@ const Template = (args, { globals: { locale } }) => {
       label={caption.label}
       name='undp'
       id="undp"
+      label_pos={args.label_pos}
       {...args}
     />
   );
@@ -119,3 +125,6 @@ const Template = (args, { globals: { locale } }) => {
 
 export const RadioStory = Template.bind({});
 RadioStory.storyName = 'Radio';
+RadioStory.args = {
+  label_pos: 'after',
+};

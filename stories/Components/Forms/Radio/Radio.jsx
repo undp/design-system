@@ -4,7 +4,7 @@ import './radio.scss';
 import '../../../assets/scss/_typography.scss';
 
 export function Radio({
-  label, id, name, label_pos,
+  label, id, name, label_pos
 }) {
   return (
     <div className="form-check">
@@ -15,6 +15,6 @@ export function Radio({
   );
 }
 
-Radio.defaultProps = {
-  label_pos: 'after',
-};
+// Radio.defaultProps = {
+//   label_pos: 'after',
+// };

@@ -77,6 +77,7 @@ export function GlobalHomePage({
               headerText={whatwedoheader}
               descriptionText={whatwedodescription}
               dataViewport="false"
+              {...{ Emphasize: 'true'}}
             />
           </div>
         </div>
@@ -142,7 +143,7 @@ export function GlobalHomePage({
               data={footerData.footerdata}
               copyright={footerData.copyright}
               menudata={footerData.menudata}
-              {...{ color: 'default' }}
+              {...{ color: 'default', variant: 'default' }}
             />
           </div>
         </div>

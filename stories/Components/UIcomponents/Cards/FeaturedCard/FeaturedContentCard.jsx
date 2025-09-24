@@ -4,6 +4,7 @@ import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
+import isChromatic from "chromatic/isChromatic";
 
 export const size_options = {
   large: 'large-8 medium-8',
@@ -46,11 +47,12 @@ export function FeaturedContentCard({
 
   let color = (hovercolor) ? accent_color_options[`${hovercolor}`] : accent_color_options[`${args.accent}`];
   let accent_color = color ? `accent-${color}` : '';
+  const fcCardCls = isChromatic() ? 'cell small-3 medium-3 large-3 medium-offset-1 small-offset-1 feature__card-title inviewport' : 'cell small-3 medium-3 large-3 medium-offset-1 small-offset-1 feature__card-title';
 
   return (
     <div className="grid-x grid-margin-x">
       {headertext && (
-        <div data-viewport="true" className="cell small-3 medium-3 large-3 medium-offset-1 small-offset-1 feature__card-title ">
+        <div data-viewport={isChromatic() ? '' : 'true'} className={fcCardCls}>
           <Heading type="2" label={headertext} />
         </div>
       )}

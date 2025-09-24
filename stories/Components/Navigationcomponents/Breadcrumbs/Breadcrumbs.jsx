@@ -1,11 +1,12 @@
 import React from "react";
 import "./breadcrumbs.scss";
+import isChromatic from "chromatic/isChromatic";
 
-export function Breadcrumbcomponent({ data, Color, rlt_offset, ...args }) {
+export function Breadcrumbcomponent({ data, colorTheme, rlt_offset, ...args }) {
   const lastIndex = data.length - 1;
 
   let color = "";
-  if (Color == "White") {
+  if (colorTheme == "dark") {
     color = "white";
   }
 
@@ -14,8 +15,8 @@ export function Breadcrumbcomponent({ data, Color, rlt_offset, ...args }) {
   return (
     <nav
       aria-label="breadcrumbs"
-      data-viewport="true"
-      className={["breadcrumb", `${color}`, moreClasses].join(" ")}
+      data-viewport={isChromatic() ? '' : 'true'}
+      className={["breadcrumb", `${color}`, moreClasses, isChromatic() ? 'inviewport' : ''].join(" ")}
     >
       <ul>
         {data.map((item, i) => {

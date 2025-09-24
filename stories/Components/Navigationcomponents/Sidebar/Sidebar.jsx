@@ -24,7 +24,7 @@ export function Sidebar({
   }
 
   return (
-    <nav role="navigation" aria-label="Sidebar" className={cls('sidebar-accordion', `${height}`)} data-undpds-component="sidebar">
+    <nav role="navigation" aria-label="Sidebar" className={cls('sidebar-accordion scrollbar', `${height}`)} data-undpds-component="sidebar">
       <div className="grid-x">
         <div className={['cell', `${size}`].join(' ')}>
           <Heading type="6" label={label} />

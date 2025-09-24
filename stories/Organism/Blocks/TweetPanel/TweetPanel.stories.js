@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { TweetPanel } from './TweetPanel';
 import { getCaptionForLocale } from './TweetPanelUtils';
 

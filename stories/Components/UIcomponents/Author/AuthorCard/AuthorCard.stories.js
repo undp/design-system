@@ -1,4 +1,4 @@
-import { Meta, Canvas, Story } from '@storybook/addon-docs';
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 import { Authorcard } from './AuthorCard';
 import authorImage from '../../../../assets/images/author.png';
 
@@ -155,10 +155,10 @@ export default {
             <p>Add the base layout style from:</p>
 
             <ul>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-card.min.css</a></li>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-column.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-column.min.css</a></li>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-card.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-column.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-column.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css</a></li>
             </ul>
 
             <h4>JS:</h4>
@@ -171,9 +171,9 @@ export default {
               <li>The entire card is clickable. Clicking any part of the card should take the user to the associated author detail page.</li>
             </ul>
 
-            <h3>Changelog</h3>
+            
 
-            <p>1.0 — Released component</p>
+            
 
         </>
       )

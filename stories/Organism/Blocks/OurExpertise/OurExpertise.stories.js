@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { OurExpertise } from "./OurExpertise";
 import { getCaptionForLocale } from "./OurExpertiseUtils";
 
@@ -32,7 +32,7 @@ export default {
 <ul>
    <li>Include the required CSS and JS files listed in the CSS and JS References section.</li>
    <li>Include the component initializer script:
-      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
    </li>
    <li>Add the required data attribute to your Our Expertise element:
       <code>data-undpds-component="our-expertise"</code>
@@ -51,13 +51,13 @@ export default {
 <h4>CSS:</h4>
 <p>Add the base layout style from:</p>
 <ul>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/our-expertise.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/our-expertise.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/our-expertise.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/our-expertise.min.css</a></li>
 </ul>
 
 <h4>JS:</h4>
 <ul>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/components/our-expertise.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/components/our-expertise.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/components/our-expertise.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/components/our-expertise.min.js</a></li>
 </ul>
 
             </>
