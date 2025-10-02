@@ -84,7 +84,8 @@
       }
 
       &::before {
-        @extend %absolute__content;
+        content: "";
+        position: absolute;
 
         @include mixins.transform(rotate(90deg));
 
