@@ -1,12 +1,11 @@
 @use '../../../assets/scss/variables';
 @use '../../../assets/scss/mixins';
 @use '../../../assets/scss/breakpoints';
-@use "../../../assets/scss/base";
 
 
 /* author image */
 
-base.$colors: (
+$colors: (
   'yellow': var(--undpds-color-yellow),
   'red': var(--undpds-color-red),
   'green': var(--undpds-color-green),
@@ -39,7 +38,7 @@ div.author__img {
     }
 
     @each $name,
-    $color in base.$colors {
+    $color in $colors {
 
       &.accent-#{$name}::before,
       &.#{$name}::before {
@@ -63,7 +62,7 @@ div.author__img {
 }
 
 @each $name,
-$color in base.$colors {
+$color in $colors {
   .accent-#{$name} div.author__img {
     &:hover {
 
@@ -72,7 +71,7 @@ $color in base.$colors {
       }
 
       @each $name2,
-      $color2 in base.$colors {
+      $color2 in $colors {
 
         &.accent-#{$name2}::before,
         &.#{$name2}::before {

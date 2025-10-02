@@ -58,7 +58,7 @@ export function DownloadModal({
                 {Category === 'Multiplelanguages' && <CustomSelect text={select} />}
                 <div className={cls('download-list', `${category_variant}`)}>
                   {data.map((item, index) => (
-                    <DownloadRow title={item.title} subtitle={item.subtitle} dataValue={item.dataValue} key={index} value={index} />
+                    <DownloadRow title={item.title} subtitle={item.subtitle} dataValue={item.dataValue} key={index} value={index} type="Checkbox" />
                   ))}
                 </div>
               </div>

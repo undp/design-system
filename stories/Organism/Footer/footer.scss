@@ -160,11 +160,11 @@
 
     a {
       $socials: (
-        "facebook",
-        "instagram",
-        "linkedin",
-        "twitter",
         "twitter-x",
+        "linkedin",
+        "facebook",
+        "threads",
+        "instagram",
         "youtube"
       );
 
@@ -174,7 +174,7 @@
       display: block;
       font-size: 0;
       height: 20px;
-      margin-inline-start: var(--undpds-spacing-07);
+      margin-inline-start: var(--undpds-spacing-06);
       margin-block-end: var(--undpds-spacing-05);
       width: 20px;
 
@@ -196,11 +196,11 @@
     li {
       a {
         $socials: (
-          "facebook",
-          "instagram",
-          "linkedin",
-          "twitter",
           "twitter-x",
+          "linkedin",
+          "facebook",
+          "threads",
+          "instagram",
           "youtube"
         );
 
@@ -247,7 +247,8 @@
         border-bottom: 2px solid var(--undpds-color-gray-400);
         content: "";
         position: absolute;
-        width: calc(100% - 1.3rem);
+        width: calc(100% - 2rem);
+        inset-inline-start: 1rem;
       }
     }
 
