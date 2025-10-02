@@ -1,7 +1,5 @@
-import React from 'react';
 import './download-row.scss';
 import { Checkbox } from '../../Components/Forms/Checkbox/Checkbox';
-import { Heading } from '../../Atom/Typography/Heading/Heading';
 
 export function DownloadRow({
   title, subtitle, value, dataValue, ...args
