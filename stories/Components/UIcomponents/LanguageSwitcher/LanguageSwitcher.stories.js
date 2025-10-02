@@ -22,9 +22,7 @@ export default {
   // },
   parameters: {
     backgrounds: {
-      // default: "gray",
-      // values: [{ name: "gray", value: "#D4D6D8" }],
-      disable: false
+      disabled: false
     },
     docs: {
         page: () => (

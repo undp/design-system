@@ -18,7 +18,7 @@ export default {
   },
   parameters: {
       backgrounds: {
-        disable: false,
+        disabled: false,
       },
       docs: {
         page: () => (
