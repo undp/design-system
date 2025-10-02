@@ -1,9 +1,8 @@
 @use '../../../assets/scss/mixins';
-@use "../../../assets/scss/base";
 
 
 /* card_thumbnail__image start */
-base.$colors: (
+$colors: (
   'yellow': var(--undpds-color-yellow),
   'red': var(--undpds-color-red),
   'green': var(--undpds-color-green),
@@ -28,7 +27,7 @@ div.card-thumbnail__image {
     }
 
     @each $name,
-    $color in base.$colors {
+    $color in $colors {
 
       &.accent-#{$name}::before,
       &.#{$name}::before {
@@ -38,7 +37,7 @@ div.card-thumbnail__image {
       .accent-#{$name} & {
 
         @each $name2,
-        $color2 in base.$colors {
+        $color2 in $colors {
 
           &.accent-#{$name2}::before,
           &.#{$name2}::before {
@@ -55,7 +54,7 @@ div.card-thumbnail__image {
     &:hover {
 
       @each $name,
-      $color in base.$colors {
+      $color in $colors {
 
         &.accent-#{$name}::before,
         &.#{$name}::before {
@@ -65,7 +64,7 @@ div.card-thumbnail__image {
         .accent-#{$name} & {
 
           @each $name2,
-          $color2 in base.$colors {
+          $color2 in $colors {
 
             &.accent-#{$name2}::before,
             &.#{$name2}::before {

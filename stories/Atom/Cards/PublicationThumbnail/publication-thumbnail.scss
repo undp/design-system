@@ -1,9 +1,8 @@
 @use '../../../assets/scss/mixins';
-@use "../../../assets/scss/base";
 
 
 /* publication_thumbnail */
-base.$colors: (
+$colors: (
   'yellow': var(--undpds-color-yellow),
   'red': var(--undpds-color-red),
   'green': var(--undpds-color-green),
@@ -47,7 +46,7 @@ div.publication-thumbnail__image {
     }
 
     @each $name,
-    $color in base.$colors {
+    $color in $colors {
 
       &.accent-#{$name}:after,
       &.#{$name}:after {
@@ -57,7 +56,7 @@ div.publication-thumbnail__image {
       .accent-#{$name} & {
 
         @each $name2,
-        $color2 in base.$colors {
+        $color2 in $colors {
 
           &.accent-#{$name2}::before,
           &.#{$name2}::before {
@@ -74,7 +73,7 @@ div.publication-thumbnail__image {
     &:hover {
 
       @each $name,
-      $color in base.$colors {
+      $color in $colors {
 
         &.accent-#{$name}:after,
         &.#{$name}:after {
@@ -84,7 +83,7 @@ div.publication-thumbnail__image {
         .accent-#{$name} & {
 
           @each $name2,
-          $color2 in base.$colors {
+          $color2 in $colors {
 
             &.accent-#{$name2}::before,
             &.#{$name2}::before {
