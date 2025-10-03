@@ -18,6 +18,8 @@ module.exports = (type = 'css') => {
     './stories/**/_!(swiper)*.scss', // no partials
     './stories/**/normalize.scss', // merged atom into base styling
     './stories/**/style.scss', // we don't need this file
+    './stories/**/documentation.scss', // no Storybook documentation
+    './stories/Templates/* rtl/*.scss',
     './stories/Atom/**', // merged atom into base styling
     './stories/**/*.mdx',
     './stories/**/*.jsx',
@@ -75,6 +77,55 @@ module.exports = (type = 'css') => {
 
   // Generate cumulative bundle entries (css only)
   if (type === 'css') {
+
+    // Ensure components sit after organism entries and before patterns in the bundle
+    if (componentScssList.length) {
+      const isComponentsEntry = (file) => file.includes('/stories/Components/');
+      const isPatternsEntry = (file) => file.includes('/stories/Patterns/');
+      const isOrganismEntry = (file) => file.includes('/stories/Organism/');
+
+      const componentsEntries = [];
+      const retainedEntries = componentScssList.filter((file) => {
+        if (isComponentsEntry(file)) {
+          componentsEntries.push(file);
+          return false;
+        }
+        return true;
+      });
+
+      if (componentsEntries.length) {
+        const findLastIndex = (arr, predicate) => {
+          for (let i = arr.length - 1; i >= 0; i -= 1) {
+            if (predicate(arr[i])) {
+              return i;
+            }
+          }
+          return -1;
+        };
+
+        const firstPatternIndex = retainedEntries.findIndex(isPatternsEntry);
+        const lastOrganismIndex = findLastIndex(retainedEntries, isOrganismEntry);
+
+        let insertionIndex = retainedEntries.length;
+
+        if (lastOrganismIndex !== -1) {
+          insertionIndex = lastOrganismIndex + 1;
+        } else if (firstPatternIndex !== -1) {
+          insertionIndex = firstPatternIndex;
+        }
+
+        // Guard to keep components before patterns even if organisms absent
+        if (firstPatternIndex !== -1 && insertionIndex > firstPatternIndex) {
+          insertionIndex = firstPatternIndex;
+        }
+
+        retainedEntries.splice(insertionIndex, 0, ...componentsEntries);
+
+        componentScssList.length = 0;
+        componentScssList.push(...retainedEntries);
+      }
+    }
+
     const genDir = path.resolve(__dirname, '.generated');
     if (!fs.existsSync(genDir)) {
       fs.mkdirSync(genDir);
@@ -88,6 +139,8 @@ module.exports = (type = 'css') => {
 
     const componentsBundlePath = path.join(genDir, 'components.bundle.scss');
     const templatesBundlePath = path.join(genDir, 'templates.bundle.scss');
+
+    //
 
     fs.writeFileSync(componentsBundlePath, `// AUTO-GENERATED: Aggregated component styles\n${toImportBlock(componentScssList)}\n`);
     fs.writeFileSync(templatesBundlePath, `// AUTO-GENERATED: Aggregated template styles\n${toImportBlock(templateScssList)}\n`);
