@@ -1,25 +1,27 @@
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import './headingbig.scss';
-import '../../../assets/scss/_grid.scss';
+// import '../../../assets/scss/_grid.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { List } from '../../../Atom/Typography/Lists/Lists';
-import { changeBackground } from '../../../assets/js/smooth-bg-change';
+// import { changeBackground } from '../../../assets/js/smooth-bg-change';
 
-export const transition_options = {
-  true: 'heading-big',
-  false: 'heading-container',
-};
+// export const transition_options = {
+//   true: 'heading-big',
+//   false: 'heading-container',
+// };
 
 export function HeadingBig({
   headerText, descriptionText, listData, dataViewport, ...args
 }) {
-  useEffect(() => {
-    changeBackground('.heading-big');
-  }, []);
+  // useEffect(() => {
+  //   changeBackground('.heading-big');
+  // }, []);
 
-  let transition_variant = transition_options[`${args.Emphasize}`];
+  // const transition_variant = transition_options[`${args.Emphasize}`];
+  // const intFunc = args.Emphasize ? 'change-background' : '';
+
   return (
-    <div data-color="blue" data-viewport={dataViewport} className={['grid-x align-center', `${transition_variant}`].join(' ')}>
+    <div className="grid-x align-center heading-big" data-viewport={dataViewport} data-undpds-component="change-background">
       <div className="cell medium-4">
         <Heading type="2" label={headerText} />
       </div>
@@ -34,6 +36,6 @@ export function HeadingBig({
   );
 }
 
-HeadingBig.defaultProps = {
-  Emphasize: 'true',
-};
+// HeadingBig.defaultProps = {
+//   Emphasize: 'true',
+// };

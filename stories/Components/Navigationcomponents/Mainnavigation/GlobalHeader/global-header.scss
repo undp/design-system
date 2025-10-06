@@ -140,9 +140,9 @@
     }
 
     button {
-      margin-inline: var(--undpds-spacing-03);
 
       &.icon-globe {
+        margin-inline-end: var(--undpds-spacing-03);
         mask: url(~icons/globe.svg) no-repeat left center;
         @include devicebreak(mediumonlytab) {
           display: none;
@@ -150,6 +150,7 @@
       }
 
       &.icon-search {
+        margin-inline-end: var(--undpds-spacing-03);
         mask: url(~icons/search.svg) no-repeat left center;
         @include devicebreak(small) {
           background: transparent url(~icons/search.svg) no-repeat left center;
