@@ -66,7 +66,7 @@ export default {
               <style>
                 {`
                       .background_gray {
-                        background-color: #A9B1B7;
+                        background-color: #edeff0;
                       }
                     `}
               </style>
@@ -74,7 +74,7 @@ export default {
 
               <p>The Heading Block defines a section of information data with some items - Header title, Description and animated background. <code>H2</code> <code>H4</code> atoms tags are used for creating this section.</p>
 
-              <Canvas className="background_grayk" of={HeadingBigStory} />
+              <Canvas className="background_gray" of={HeadingBigStory} />
 
               <h3>Usage</h3>
 

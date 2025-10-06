@@ -64,7 +64,8 @@ const parameters = {
   backgrounds: {
     options: {
       light: { name: "light", value: "#FFFFFF" },
-      dark: { name: "dark", value: "#55606e" }
+      dark: { name: "dark", value: "#55606e" },
+      lightgrey: { name: "lightgrey", value: "#edeff0" },
     },
     disabled: true
   }

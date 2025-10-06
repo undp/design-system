@@ -8,8 +8,8 @@ export function changeBackground(container) {
   const section = container || '.heading-big';
   const $section = jQuery(section);
   // Set Light and Dark Background colors.
-  const colorDark = '#232E3E';
-  const colorLight = '#ffffff';
+  const colorDark = $section.data('color-dark') || '#232E3E';
+  const colorLight = $section.data('color-light') || '#ffffff00';
   // Calculate height for start and end trigger
   const sectionHeight = $section.height();
   const sectionFullHeight = $section.innerHeight();
