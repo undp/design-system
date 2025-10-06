@@ -1,10 +1,8 @@
 @use '../../../assets/scss/mixins';
 @use '../../../assets/scss/breakpoints';
 @use '../../../assets/scss/variables';
-@use "../../../assets/scss/base";
 
-
-base.$colors: (
+$colors: (
   'yellow': var(--undpds-color-yellow),
   'red': var(--undpds-color-red),
   'green': var(--undpds-color-green),
@@ -42,7 +40,7 @@ base.$colors: (
   }
 
   @each $name,
-  $color in base.$colors {
+  $color in $colors {
 
     &.accent-#{$name},
     &.#{$name} {
@@ -54,7 +52,7 @@ base.$colors: (
 }
 
 @each $name,
-$color in base.$colors {
+$color in $colors {
 
   .accent-#{$name} .progress-container,
   .#{$name} .progress-container {
@@ -64,7 +62,7 @@ $color in base.$colors {
     }
 
     @each $name2,
-    $color2 in base.$colors {
+    $color2 in $colors {
 
       &.accent-#{$name2},
       &.#{$name2} {

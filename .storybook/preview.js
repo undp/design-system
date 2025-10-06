@@ -28,8 +28,7 @@ const parameters = {
     },
   },
   viewport: {
-    // viewports: INITIAL_VIEWPORTS,
-    viewports: {
+    options: {
       small: { name: "Small", styles: { width: "375px", height: "812px" } },
       medium: { name: "Medium", styles: { width: "768px", height: "900px" } },
       large: { name: "Large", styles: { width: "1380px", height: "768px" } },
@@ -63,11 +62,12 @@ const parameters = {
   },
   layout: 'fullscreen',
   backgrounds: {
-    disable: true,
-    values: [
-      { name: "light", value: "#FFFFFF" },
-      { name: "dark", value: "#55606e" }
-    ]
+    options: {
+      light: { name: "light", value: "#FFFFFF" },
+      dark: { name: "dark", value: "#55606e" },
+      lightgrey: { name: "lightgrey", value: "#edeff0" },
+    },
+    disabled: true
   }
 }
 

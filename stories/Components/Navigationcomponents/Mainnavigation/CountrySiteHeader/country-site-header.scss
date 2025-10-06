@@ -3,31 +3,17 @@
 @import '../../../../assets/scss/breakpoints';
 
 .country-header {
-  height: 7.1875rem;
+  height: 4.6875rem;
 
-  @include devicebreak(mediumonlytab) {
-    height: 4.6875rem;
+  @include devicebreak(large) {
+    height: 7.1875rem;
   }
 
   .header {
     @extend %header;
-    position: fixed;
-    background-color: var(--undpds-color-gray-100);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    height: unset;
-    min-height: 7.1875rem;
-
-    @include devicebreak(mediumonlytab) {
-      min-height: 4.6875rem;
-    }
 
     .grid-container.fluid>.grid-margin-x {
-      // margin-inline: -1.5rem;
       justify-content: space-between;
-
-      @include devicebreak(small) {
-        // margin-inline: -0.75rem;
-      }
     }
 
     .site-title {
@@ -250,27 +236,27 @@
       }
     }
 
-    .icon-search {
+    .icon-search, .icon-globe {
       @extend %header-icon;
-
-      margin-inline: var(--undpds-spacing-03);
-      // -webkit-mask: url(~icons/search.svg) no-repeat left center;
-      mask: url(~icons/search.svg) no-repeat left center;
-
-      @include devicebreak(small) {
-        background: transparent url(~icons/search.svg) no-repeat left center;
-      }
     }
 
-    .icon-globe {
-      @extend %header-icon;
+    button {
 
-      margin-inline: var(--undpds-spacing-03);
-      // -webkit-mask: url(~icons/globe.svg) no-repeat left center;
-      mask: url(~icons/globe.svg) no-repeat left center;
+      &.icon-search {
+        margin-inline: var(--undpds-spacing-03);
+        mask: url(~icons/search.svg) no-repeat left center;
+        @include devicebreak(small) {
+          background: transparent url(~icons/search.svg) no-repeat left center;
+        }
+      }
 
-      @include devicebreak(mediumonlytab) {
+      &.icon-globe {
+        margin-inline: var(--undpds-spacing-03);
         display: none;
+        mask: url(~icons/globe.svg) no-repeat left center;
+        @include devicebreak(large) {
+          display: inline-flex;
+        }
       }
     }
 
@@ -289,40 +275,6 @@
       @include transition(opacity 0.3s ease);
     }
   }
-
-  // &.country-load-animation {
-  //   .header .top-left .logo {
-  //     @include transition(all 0.7s ease);
-
-  //     left: 50%;
-  //     position: fixed;
-  //     top: 0;
-  //     transform: translateX(-50%);
-  //   }
-
-  //   .menu,
-  //   .site-title,
-  //   .top-right {
-  //     opacity: 0;
-  //   }
-  // }
-
-  // &.run-animation {
-  //   .header .top-left .logo {
-  //     inset-inline-start: var(--undpds-spacing-04);
-  //     position: fixed;
-  //     transform: translateX(0);
-  //   }
-  // }
-
-  // &.show-content {
-
-  //   .menu,
-  //   .site-title,
-  //   .top-right {
-  //     opacity: 1;
-  //   }
-  // }
 }
 
 [dir='rtl'] {

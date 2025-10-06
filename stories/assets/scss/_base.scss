@@ -431,4 +431,13 @@ $colors-light: (
   }
 }
 
+// Inverted color scheme
+.inverted {
+  color: var(--undpds-color-white);
+  a {
+    color: var(--undpds-color-white);
+    background-image: linear-gradient(var(--undpds-color-white), var(--undpds-color-white)), linear-gradient(var(--undpds-color-white), var(--undpds-color-white));
+  }
+}
+
 /* base end */

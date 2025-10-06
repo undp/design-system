@@ -10,18 +10,16 @@ export default {
   title: 'Foundation/Logos',
   component: Logo,
 
-
   parameters: {
     args: {
       src: logo,
       alt: 'UNDP Logo',
     },
     backgrounds: {
-      default: 'white',
       values: [
         { name: "white", value: "#fff" },
         { name: "gray", value: "#A9B1B7" },
-      ],
+      ]
     },
     docs: {
       page: () => (
@@ -90,6 +88,12 @@ export default {
       ),
     },
   },
+
+  globals: {
+    backgrounds: {
+      value: "white"
+    }
+  }
 };
 
 const Template = (args) => <Logo {...args} />;

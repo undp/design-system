@@ -3,20 +3,14 @@
 @import '../../../../assets/scss/breakpoints';
 
 .global-header {
-  height: 7.1875rem;
+  height: 4.6875rem;
 
-  @include devicebreak(mediumonlytab) {
-    height: 4.6875rem;
+  @include devicebreak(large) {
+    height: 7.1875rem;
   }
 
   .header {
     @extend %header;
-    height: 7.1875rem;
-    position: fixed;
-
-    @include devicebreak(mediumonlytab) {
-      height: 4.6875rem;
-    }
 
     .fluid {
       height: 7.1875rem;
@@ -141,6 +135,37 @@
       }
     }
 
+    .icon-search, .icon-globe {
+      @extend %header-icon;
+    }
+
+    button {
+
+      &.icon-globe {
+        margin-inline-end: var(--undpds-spacing-03);
+        mask: url(~icons/globe.svg) no-repeat left center;
+        @include devicebreak(mediumonlytab) {
+          display: none;
+        }
+      }
+
+      &.icon-search {
+        margin-inline-end: var(--undpds-spacing-03);
+        mask: url(~icons/search.svg) no-repeat left center;
+        @include devicebreak(small) {
+          background: transparent url(~icons/search.svg) no-repeat left center;
+          mask: inherit;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+        @include devicebreak(large) {
+          margin-inline-start: var(--undpds-spacing-03);
+        }
+      }
+    }
+
     .align-content-middle {
       align-items: center;
       position: relative;
@@ -156,43 +181,8 @@
 
       @include devicebreak(mediumonlytab) {
         margin-bottom: 0;
-
-        .icon-globe {
-          display: none;
-        }
       }
     }
-
-      .icon-globe {
-        @extend %header-icon;
-
-        margin-inline: var(--undpds-spacing-03);
-        mask: url(~icons/globe.svg) no-repeat left center;
-
-        @include devicebreak(mediumonlytab) {
-          display: none;
-        }
-      }
-
-      .icon-search {
-        @extend %header-icon;
-
-        margin-inline-end: var(--undpds-spacing-03);
-        mask: url(~icons/search.svg) no-repeat left center;
-
-        @include devicebreak(small) {
-          background: transparent url(~icons/search.svg) no-repeat left center;
-          mask: inherit;
-
-          &:hover {
-            background-color: transparent;
-          }
-        }
-        @include devicebreak(large) {
-          margin-inline-start: var(--undpds-spacing-03);
-        }
-      }
-
 
     .mid-nav ul,
     .top-left,

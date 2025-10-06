@@ -125,15 +125,13 @@
   display: inline-flex;
   font-size: 0;
   height: 26px;
-  margin-inline-end: var(--undpds-spacing-03);
+  margin-inline-end: 0;
   padding: 0;
   width: 25px;
   min-width: 25px;
 
-  @include breakpoints.devicebreak(small) {
-    margin-inline-end: 0;
-    -webkit-mask: inherit;
-    mask: inherit;
+  @include breakpoints.devicebreak(medium) {
+    margin-inline-end: var(--undpds-spacing-03);
   }
 
   &:hover {
@@ -490,12 +488,15 @@
 %header {
   background-color: var(--undpds-color-gray-100);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  height: 7.1875rem;
+  height: 4.6875rem;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 9;
+  @include breakpoints.devicebreak(large) {
+    height: 7.1875rem;
+  }
 }
 
 %background-white {
