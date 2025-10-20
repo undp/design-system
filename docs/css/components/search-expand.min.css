@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.4.8
+ * UNDP Design System 1.4.10
  *
  */
 .expand-search button,.expand-search input[type=text]{border:0;border-bottom:1px solid var(--undpds-color-black);border-radius:0;cursor:pointer}.expand-search{align-items:flex-end;display:flex;position:relative}.expand-search input[type=text]{background-color:var(--undpds-color-white);box-sizing:border-box;font-size:var(--undpds-font-size-14);height:2.675rem;padding:0;position:relative;transition:all .2s ease-in-out;width:0}.expand-search input[type=text]:focus{box-shadow:none;outline:none}.expand-search.open input{outline:none;padding-left:.8125rem;padding-right:var(--undpds-spacing-06);width:calc(100% - 1.6875rem);z-index:1}.expand-search button{background:none;height:2.625rem;padding:0 0 1px;width:1.6875rem;z-index:2}.expand-search button img{width:27px}.expand-search button.close-button{border:0;display:none;position:absolute;right:0}.expand-search button.close-button.show{display:block}.expand-search button.close-button img{max-width:30px}[dir=rtl] .expand-search .icon-search-black{left:inherit;right:0}[dir=rtl] .expand-search.open input{padding-left:var(--undpds-spacing-06);padding-right:.8125rem}[dir=rtl] .expand-search .close-button{left:0;right:inherit}
