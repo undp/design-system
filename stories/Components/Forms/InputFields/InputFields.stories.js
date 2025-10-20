@@ -306,30 +306,43 @@ export default {
           </p>
 
           <Canvas of={InputcomponentDate} />
+          <p></p>
 
           <Canvas of={InputcomponentNumber} />
+          <p></p>
 
           <Canvas of={InputcomponentPassword} />
+          <p></p>
 
           <Canvas of={InputcomponentTelephone} />
+          <p></p>
 
           <Canvas of={InputcomponentText} />
+          <p></p>
 
           <Canvas of={InputcomponentEmail} />
+          <p></p>
 
           <Canvas of={InputcomponentUrl} />
+          <p></p>
 
           <Canvas of={InputcomponentTime} />
+          <p></p>
 
           <Canvas of={InputcomponentWeek} />
+          <p></p>
 
           <Canvas of={InputcomponentMonth} />
+          <p></p>
 
           <Canvas of={InputcomponentDatetimeLocal} />
+          <p></p>
 
           <Canvas of={InputcomponentColor} />
+          <p></p>
 
           <Canvas of={InputcomponentRange} />
+          <p></p>
 
           <Canvas of={InputcomponentFile} />
 
@@ -404,12 +417,14 @@ const Template = (args, { globals: { locale } }) => {
 
 export const InputcomponentDate = Template.bind({});
 InputcomponentDate.args = {
+  labelText: "Date",
   element: "input",
   type: "date",
   id: "date",
 };
 export const InputcomponentNumber = Template.bind({});
 InputcomponentNumber.args = {
+  labelText: "Number",
   element: "input",
   type: "number",
   id: "number",
@@ -418,6 +433,7 @@ InputcomponentNumber.args = {
 };
 export const InputcomponentPassword = Template.bind({});
 InputcomponentPassword.args = {
+  labelText: "Password",
   element: "input",
   type: "password",
   id: "password",
@@ -426,6 +442,7 @@ InputcomponentPassword.args = {
 };
 export const InputcomponentTelephone = Template.bind({});
 InputcomponentTelephone.args = {
+  labelText: "Telephone",
   element: "input",
   type: "tel",
   id: "tel",
@@ -434,6 +451,7 @@ InputcomponentTelephone.args = {
 };
 export const InputcomponentText = Template.bind({});
 InputcomponentText.args = {
+  labelText: "Text",
   element: "input",
   type: "text",
   id: "text",
@@ -442,6 +460,7 @@ InputcomponentText.args = {
 
 export const InputcomponentEmail = Template.bind({});
 InputcomponentEmail.args = {
+  labelText: "Email",
   element: "input",
   type: "email",
   id: "email",
@@ -450,6 +469,7 @@ InputcomponentEmail.args = {
 
 export const InputcomponentUrl = Template.bind({});
 InputcomponentUrl.args = {
+  labelText: "URL",
   element: "input",
   type: "url",
   id: "url",
@@ -458,6 +478,7 @@ InputcomponentUrl.args = {
 
 export const InputcomponentTime = Template.bind({});
 InputcomponentTime.args = {
+  labelText: "Time",
   element: "input",
   type: "time",
   id: "time",
@@ -465,6 +486,7 @@ InputcomponentTime.args = {
 
 export const InputcomponentWeek = Template.bind({});
 InputcomponentWeek.args = {
+  labelText: "Week",
   element: "input",
   type: "week",
   id: "week",
@@ -472,6 +494,7 @@ InputcomponentWeek.args = {
 
 export const InputcomponentMonth = Template.bind({});
 InputcomponentMonth.args = {
+  labelText: "Month",
   element: "input",
   type: "month",
   id: "month",
@@ -479,6 +502,7 @@ InputcomponentMonth.args = {
 
 export const InputcomponentDatetimeLocal = Template.bind({});
 InputcomponentDatetimeLocal.args = {
+  labelText: "Datetime-local",
   element: "input",
   type: "datetime-local",
   id: "datetime-local",
@@ -486,6 +510,7 @@ InputcomponentDatetimeLocal.args = {
 
 export const InputcomponentColor = Template.bind({});
 InputcomponentColor.args = {
+  labelText: "Color",
   element: "input",
   type: "color",
   id: "color",
@@ -493,6 +518,7 @@ InputcomponentColor.args = {
 
 export const InputcomponentRange = Template.bind({});
 InputcomponentRange.args = {
+  labelText: "Range",
   element: "input",
   type: "range",
   id: "range",
@@ -502,6 +528,7 @@ InputcomponentRange.args = {
 
 export const InputcomponentFile = Template.bind({});
 InputcomponentFile.args = {
+  labelText: "File",
   element: "input",
   type: "file",
   id: "file",
