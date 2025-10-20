@@ -19,6 +19,17 @@ const getCaptionForLocale = (locale) => {
         text: "Date label",
         text2: "Enter text",
         text3: "Placeholder",
+        detail11: "Website URL",
+        detail12: "Enter a valid URL",
+        detail13: "Email address",
+        detail14: "Enter your email",
+        detail15: "Select time",
+        detail16: "Select date and time",
+        detail17: "Select week",
+        detail18: "Select month",
+        detail19: "Choose color",
+        detail20: "Adjust value",
+        detail21: "Choose file",
       };
     case "ukrainian":
       return {
@@ -35,6 +46,17 @@ const getCaptionForLocale = (locale) => {
         text: "Дата",
         text2: "Введіть текст",
         text3: "",
+        detail11: "URL-адреса вебсайту",
+        detail12: "Введіть дійсну URL-адресу",
+        detail13: "Адреса електронної пошти",
+        detail14: "Введіть свою електронну адресу",
+        detail15: "Виберіть час",
+        detail16: "Виберіть дату та час",
+        detail17: "Виберіть тиждень",
+        detail18: "Виберіть місяць",
+        detail19: "Виберіть колір",
+        detail20: "Налаштуйте значення",
+        detail21: "Виберіть файл",
       };
     case "arabic":
       return {
@@ -51,6 +73,17 @@ const getCaptionForLocale = (locale) => {
         text: "تسمية التاريخ",
         text2: "أدخل النص",
         text3: "نائب",
+        detail11: "عنوان URL للموقع",
+        detail12: "أدخل عنوان URL صالحًا",
+        detail13: "عنوان البريد الإلكتروني",
+        detail14: "أدخل بريدك الإلكتروني",
+        detail15: "حدد الوقت",
+        detail16: "حدد التاريخ والوقت",
+        detail17: "حدد الأسبوع",
+        detail18: "حدد الشهر",
+        detail19: "اختر اللون",
+        detail20: "اضبط القيمة",
+        detail21: "اختر الملف",
       };
     case "burmese":
       return {
@@ -67,6 +100,17 @@ const getCaptionForLocale = (locale) => {
         text: "ရက်စွဲတံဆိပ်",
         text2: "စာသားရိုက်ထည့်ပါ",
         text3: "နေရာယူသည်",
+        detail11: "ဝဘ်ဆိုက် URL",
+        detail12: "တရားဝင် URL ကိုထည့်ပါ",
+        detail13: "အီးမေးလ်လိပ်စာ",
+        detail14: "သင့်အီးမေးလ်ကိုထည့်ပါ",
+        detail15: "အချိန်ရွေးပါ",
+        detail16: "ရက်စွဲနှင့်အချိန်ရွေးပါ",
+        detail17: "အပတ်ရွေးပါ",
+        detail18: "လရွေးပါ",
+        detail19: "အရောင်ရွေးပါ",
+        detail20: "တန်ဖိုးချိန်ညှိပါ",
+        detail21: "ဖိုင်ရွေးပါ",
       };
     case "japanese":
       return {
@@ -83,6 +127,17 @@ const getCaptionForLocale = (locale) => {
         text: "日付ラベル",
         text2: "テキストを入力してください",
         text3: "プレースホルダー",
+        detail11: "ウェブサイトURL",
+        detail12: "有効なURLを入力してください",
+        detail13: "メールアドレス",
+        detail14: "メールアドレスを入力してください",
+        detail15: "時間を選択",
+        detail16: "日付と時間を選択",
+        detail17: "週を選択",
+        detail18: "月を選択",
+        detail19: "色を選択",
+        detail20: "値を調整",
+        detail21: "ファイルを選択",
       };
     default:
       return {
@@ -99,6 +154,17 @@ const getCaptionForLocale = (locale) => {
         text: "Date label",
         text2: "Enter text",
         text3: "Placeholder",
+        detail11: "Website URL",
+        detail12: "Enter a valid URL",
+        detail13: "Email address",
+        detail14: "Enter your email",
+        detail15: "Select time",
+        detail16: "Select date and time",
+        detail17: "Select week",
+        detail18: "Select month",
+        detail19: "Choose color",
+        detail20: "Adjust value",
+        detail21: "Choose file",
       };
   }
 };
@@ -186,6 +252,44 @@ export default {
               a way for the user to enter a password.
             </li>
             <li>
+              <strong>Email:</strong> Input elements of type email are used to
+              let the user enter and edit an email address.
+            </li>
+            <li>
+              <strong>URL:</strong> Input elements of type url are used to let
+              the user enter and edit a URL.
+            </li>
+            <li>
+              <strong>Time:</strong> Input elements of type time create input
+              fields designed to let the user easily enter a time (hours and
+              minutes, and optionally seconds).
+            </li>
+            <li>
+              <strong>Week:</strong> Input elements of type week create input
+              fields allowing easy entry of a year plus the ISO 8601 week number.
+            </li>
+            <li>
+              <strong>Month:</strong> Input elements of type month create input
+              fields that let the user enter a month and year.
+            </li>
+            <li>
+              <strong>Datetime-local:</strong> Input elements of type
+              datetime-local create input controls that let the user easily enter
+              both a date and a time.
+            </li>
+            <li>
+              <strong>Color:</strong> Input elements of type color provide a user
+              interface element that lets a user specify a color.
+            </li>
+            <li>
+              <strong>Range:</strong> Input elements of type range let the user
+              specify a numeric value between a minimum and maximum value.
+            </li>
+            <li>
+              <strong>File:</strong> Input elements of type file let the user
+              choose one or more files from their device storage.
+            </li>
+            <li>
               <strong>Textarea:</strong> The Textarea HTML element requires a
               multi-line plain-text editing control useful when you want to
               allow users to enter a sizable amount of free-form text, for
@@ -210,6 +314,24 @@ export default {
           <Canvas of={InputcomponentTelephone} />
 
           <Canvas of={InputcomponentText} />
+
+          <Canvas of={InputcomponentEmail} />
+
+          <Canvas of={InputcomponentUrl} />
+
+          <Canvas of={InputcomponentTime} />
+
+          <Canvas of={InputcomponentWeek} />
+
+          <Canvas of={InputcomponentMonth} />
+
+          <Canvas of={InputcomponentDatetimeLocal} />
+
+          <Canvas of={InputcomponentColor} />
+
+          <Canvas of={InputcomponentRange} />
+
+          <Canvas of={InputcomponentFile} />
 
           <h3>Usage</h3>
           <ol>
@@ -318,8 +440,84 @@ InputcomponentText.args = {
   placeholder: "Placeholder",
 };
 
+export const InputcomponentEmail = Template.bind({});
+InputcomponentEmail.args = {
+  element: "input",
+  type: "email",
+  id: "email",
+  placeholder: "example@email.com",
+};
+
+export const InputcomponentUrl = Template.bind({});
+InputcomponentUrl.args = {
+  element: "input",
+  type: "url",
+  id: "url",
+  placeholder: "https://example.com",
+};
+
+export const InputcomponentTime = Template.bind({});
+InputcomponentTime.args = {
+  element: "input",
+  type: "time",
+  id: "time",
+};
+
+export const InputcomponentWeek = Template.bind({});
+InputcomponentWeek.args = {
+  element: "input",
+  type: "week",
+  id: "week",
+};
+
+export const InputcomponentMonth = Template.bind({});
+InputcomponentMonth.args = {
+  element: "input",
+  type: "month",
+  id: "month",
+};
+
+export const InputcomponentDatetimeLocal = Template.bind({});
+InputcomponentDatetimeLocal.args = {
+  element: "input",
+  type: "datetime-local",
+  id: "datetime-local",
+};
+
+export const InputcomponentColor = Template.bind({});
+InputcomponentColor.args = {
+  element: "input",
+  type: "color",
+  id: "color",
+};
+
+export const InputcomponentRange = Template.bind({});
+InputcomponentRange.args = {
+  element: "input",
+  type: "range",
+  id: "range",
+  min: "0",
+  max: "100",
+};
+
+export const InputcomponentFile = Template.bind({});
+InputcomponentFile.args = {
+  element: "input",
+  type: "file",
+  id: "file",
+};
+
 InputcomponentDate.storyName = "Date";
 InputcomponentNumber.storyName = "Number";
 InputcomponentPassword.storyName = "Password";
 InputcomponentTelephone.storyName = "Telephone";
 InputcomponentText.storyName = "Text";
+InputcomponentEmail.storyName = "Email";
+InputcomponentUrl.storyName = "URL";
+InputcomponentTime.storyName = "Time";
+InputcomponentWeek.storyName = "Week";
+InputcomponentMonth.storyName = "Month";
+InputcomponentDatetimeLocal.storyName = "Datetime-local";
+InputcomponentColor.storyName = "Color";
+InputcomponentRange.storyName = "Range";
+InputcomponentFile.storyName = "File";

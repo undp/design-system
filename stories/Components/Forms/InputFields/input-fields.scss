@@ -41,6 +41,14 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="date"],
+input[type="url"],
+input[type="time"],
+input[type="week"],
+input[type="month"],
+input[type="datetime-local"],
+input[type="color"],
+input[type="range"],
+input[type="file"],
 textarea {
   @extend %background-white;
 
@@ -131,6 +139,22 @@ textarea {
   resize: vertical;
 }
 
+input[type="color"] {
+  height: 46px;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  padding: 0;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  padding: 0.5rem 0.625rem;
+  cursor: pointer;
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
   appearance: none;
   opacity: 1;
@@ -151,6 +175,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   input[type="search"],
   input[type="tel"],
   input[type="date"],
+  input[type="url"],
+  input[type="time"],
+  input[type="week"],
+  input[type="month"],
+  input[type="datetime-local"],
+  input[type="color"],
+  input[type="range"],
+  input[type="file"],
   textarea {
     direction: rtl;
     @media (hover: none) and (pointer: coarse) {
@@ -213,6 +245,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   input[type="search"],
   input[type="tel"],
   input[type="date"],
+  input[type="url"],
+  input[type="time"],
+  input[type="week"],
+  input[type="month"],
+  input[type="datetime-local"],
+  input[type="color"],
+  input[type="range"],
+  input[type="file"],
   textarea {
     font-family: var(--undpds-font-family-notosans);
   }
