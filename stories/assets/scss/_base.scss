@@ -440,4 +440,71 @@ $colors-light: (
   }
 }
 
+// Spacing utility classes
+.spacing-01,
+.spacing-002 {
+  height: var(--undpds-spacing-01);
+}
+
+.spacing-02,
+.spacing-004 {
+  height: var(--undpds-spacing-02);
+  margin: calc(var(--undpds-spacing-02) / 2 - 1px);
+}
+
+.spacing-03,
+.spacing-008 {
+  height: var(--undpds-spacing-03);
+}
+
+.spacing-04,
+.spacing-012 {
+  height: var(--undpds-spacing-04);
+}
+
+.spacing-05,
+.spacing-016 {
+  height: var(--undpds-spacing-05);
+}
+
+.spacing-06,
+.spacing-024 {
+  height: var(--undpds-spacing-06);
+}
+
+.spacing-07,
+.spacing-032 {
+  height: var(--undpds-spacing-07);
+}
+
+.spacing-08,
+.spacing-040 {
+  height: var(--undpds-spacing-08);
+}
+
+.spacing-09,
+.spacing-048 {
+  height: var(--undpds-spacing-09);
+}
+
+.spacing-10,
+.spacing-064 {
+  height: var(--undpds-spacing-10);
+}
+
+.spacing-11,
+.spacing-080 {
+  height: var(--undpds-spacing-11);
+}
+
+.spacing-12,
+.spacing-096 {
+  height: var(--undpds-spacing-12);
+}
+
+.spacing-13,
+.spacing-160 {
+  height: var(--undpds-spacing-13);
+}
+
 /* base end */
