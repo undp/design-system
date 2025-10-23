@@ -153,6 +153,7 @@ input[type="range"] {
 input[type="file"] {
   padding: 0.5rem 0.625rem;
   cursor: pointer;
+  border: none;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {

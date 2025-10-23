@@ -502,7 +502,7 @@ InputcomponentMonth.args = {
 
 export const InputcomponentDatetimeLocal = Template.bind({});
 InputcomponentDatetimeLocal.args = {
-  labelText: "Datetime-local",
+  labelText: "Local date and time",
   element: "input",
   type: "datetime-local",
   id: "datetime-local",
