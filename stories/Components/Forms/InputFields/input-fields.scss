@@ -148,6 +148,94 @@ input[type="color"] {
 input[type="range"] {
   padding: 0;
   cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  height: 2.875rem; // 46px total height to match other inputs
+
+  // Track styling
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.25rem; // 4px
+    background: var(--undpds-color-gray-300);
+    border-radius: 0.125rem;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 0.25rem; // 4px
+    background: var(--undpds-color-gray-300);
+    border-radius: 0.125rem;
+  }
+
+  // Thumb styling
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.5rem; // 24px
+    height: 1.5rem; // 24px
+    border-radius: 50%;
+    background: var(--undpds-color-blue-600);
+    cursor: pointer;
+    margin-top: -0.625rem; // Center the thumb on the track
+    border: 0.125rem solid var(--undpds-color-white);
+    box-shadow: 0 0 0 0.0625rem var(--undpds-color-blue-600);
+  }
+
+  &::-moz-range-thumb {
+    width: 1.5rem; // 24px
+    height: 1.5rem; // 24px
+    border-radius: 50%;
+    background: var(--undpds-color-blue-600);
+    cursor: pointer;
+    border: 0.125rem solid var(--undpds-color-white);
+    box-shadow: 0 0 0 0.0625rem var(--undpds-color-blue-600);
+  }
+
+  // Focus state
+  &:focus {
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    }
+
+    &::-moz-range-thumb {
+      box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    }
+  }
+
+  // Hover state
+  &:hover::-webkit-slider-thumb {
+    background: var(--undpds-color-blue-700);
+  }
+
+  &:hover::-moz-range-thumb {
+    background: var(--undpds-color-blue-700);
+  }
+
+  // Disabled state
+  &:disabled {
+    cursor: not-allowed;
+
+    &::-webkit-slider-runnable-track {
+      background: var(--undpds-color-gray-200);
+    }
+
+    &::-moz-range-track {
+      background: var(--undpds-color-gray-200);
+    }
+
+    &::-webkit-slider-thumb {
+      background: var(--undpds-color-gray-400);
+      box-shadow: none;
+    }
+
+    &::-moz-range-thumb {
+      background: var(--undpds-color-gray-400);
+      box-shadow: none;
+    }
+  }
 }
 
 input[type="file"] {
