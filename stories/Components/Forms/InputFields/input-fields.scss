@@ -190,7 +190,7 @@ input[type="range"] {
     background: var(--undpds-color-blue-600);
     cursor: pointer;
     margin-top: -0.5rem; // Center the thumb on the 8px track
-    border: 0.25rem solid var(--undpds-color-white);
+    border: 0.25rem solid var(--undpds-color-blue-600);
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
   }
 
@@ -200,7 +200,7 @@ input[type="range"] {
     border-radius: 50%;
     background: var(--undpds-color-blue-600);
     cursor: pointer;
-    border: 0.25rem solid var(--undpds-color-white);
+    border: 0.25rem solid var(--undpds-color-blue-600);
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
   }
 
@@ -250,10 +250,12 @@ input[type="range"] {
 
     &::-webkit-slider-thumb {
       background: var(--undpds-color-blue-700);
+      border-color: var(--undpds-color-blue-700);
     }
 
     &::-moz-range-thumb {
       background: var(--undpds-color-blue-700);
+      border-color: var(--undpds-color-blue-700);
     }
   }
 
@@ -277,13 +279,13 @@ input[type="range"] {
 
     &::-webkit-slider-thumb {
       background: var(--undpds-color-gray-500);
-      border-color: var(--undpds-color-white);
+      border-color: var(--undpds-color-gray-500);
       box-shadow: none;
     }
 
     &::-moz-range-thumb {
       background: var(--undpds-color-gray-500);
-      border-color: var(--undpds-color-white);
+      border-color: var(--undpds-color-gray-500);
       box-shadow: none;
     }
   }
