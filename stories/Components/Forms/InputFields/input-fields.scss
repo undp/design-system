@@ -152,6 +152,7 @@ input[type="range"] {
   appearance: none;
   background: transparent;
   height: 2.875rem; // 46px total height to match other inputs
+  border: none; // Remove black border for range input
 
   // Track styling
   &::-webkit-slider-runnable-track {
@@ -177,6 +178,148 @@ input[type="range"] {
       var(--undpds-color-gray-300) var(--range-progress, 50%),
       var(--undpds-color-gray-300) 100%
     );
+  }
+
+  // Thumb styling
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.5rem; // 24px
+    height: 1.5rem; // 24px
+    border-radius: 50%;
+    background: var(--undpds-color-blue-600);
+    cursor: pointer;
+    margin-top: -0.5rem; // Center the thumb on the 8px track
+    border: 0.25rem solid var(--undpds-color-white);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+  }
+
+  &::-moz-range-thumb {
+    width: 1.5rem; // 24px
+    height: 1.5rem; // 24px
+    border-radius: 50%;
+    background: var(--undpds-color-blue-600);
+    cursor: pointer;
+    border: 0.25rem solid var(--undpds-color-white);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+  }
+
+  // Progress fill for Firefox
+  &::-moz-range-progress {
+    background: var(--undpds-color-blue-600);
+    height: 0.5rem;
+    border-radius: 1.5625rem 0 0 1.5625rem;
+  }
+
+  // Focus state
+  &:focus {
+    outline: none;
+
+    &::-webkit-slider-runnable-track {
+      box-shadow: 0 0 0.25rem 0 var(--undpds-color-blue-600);
+    }
+
+    &::-moz-range-track {
+      box-shadow: 0 0 0.25rem 0 var(--undpds-color-blue-600);
+    }
+
+    &::-webkit-slider-thumb {
+      background: var(--undpds-color-blue-600);
+    }
+
+    &::-moz-range-thumb {
+      background: var(--undpds-color-blue-600);
+    }
+  }
+
+  // Hover state
+  &:hover:not(:disabled) {
+    &::-webkit-slider-runnable-track {
+      background: linear-gradient(
+        to right,
+        var(--undpds-color-blue-700) 0%,
+        var(--undpds-color-blue-700) var(--range-progress, 50%),
+        var(--undpds-color-gray-300) var(--range-progress, 50%),
+        var(--undpds-color-gray-300) 100%
+      );
+    }
+
+    &::-moz-range-progress {
+      background: var(--undpds-color-blue-700);
+    }
+
+    &::-webkit-slider-thumb {
+      background: var(--undpds-color-blue-700);
+    }
+
+    &::-moz-range-thumb {
+      background: var(--undpds-color-blue-700);
+    }
+  }
+
+  // Disabled state
+  &:disabled {
+    cursor: not-allowed;
+
+    &::-webkit-slider-runnable-track {
+      background: linear-gradient(
+        to right,
+        var(--undpds-color-gray-500) 0%,
+        var(--undpds-color-gray-500) var(--range-progress, 50%),
+        var(--undpds-color-gray-300) var(--range-progress, 50%),
+        var(--undpds-color-gray-300) 100%
+      );
+    }
+
+    &::-moz-range-progress {
+      background: var(--undpds-color-gray-500);
+    }
+
+    &::-webkit-slider-thumb {
+      background: var(--undpds-color-gray-500);
+      border-color: var(--undpds-color-white);
+      box-shadow: none;
+    }
+
+    &::-moz-range-thumb {
+      background: var(--undpds-color-gray-500);
+      border-color: var(--undpds-color-white);
+      box-shadow: none;
+    }
+  }
+}
+
+input[type="file"] {
+  padding: 0.5rem 0.625rem;
+  cursor: pointer;
+  border: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  appearance: none;
+  opacity: 1;
+  position: absolute;
+  margin-inline-start: -1.7rem;
+  width: 1rem;
+  height: 1rem;
+  color: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+[dir="rtl"] {
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="url"],
+  input[type="time"],
+  input[type="week"],
+  input[type="month"],
+  input[type="datetime-local"],
   input[type="color"],
   input[type="range"],
   input[type="file"],
