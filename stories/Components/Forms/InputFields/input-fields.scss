@@ -156,16 +156,27 @@ input[type="range"] {
   // Track styling
   &::-webkit-slider-runnable-track {
     width: 100%;
-    height: 0.25rem; // 4px
+    height: 0.5rem; // 8px (updated from 4px per Figma design)
     background: var(--undpds-color-gray-300);
-    border-radius: 0.125rem;
+    border-radius: 1.5625rem; // 25px for pill shape
   }
 
   &::-moz-range-track {
     width: 100%;
-    height: 0.25rem; // 4px
+    height: 0.5rem; // 8px (updated from 4px per Figma design)
     background: var(--undpds-color-gray-300);
-    border-radius: 0.125rem;
+    border-radius: 1.5625rem; // 25px for pill shape
+  }
+
+  // Progress fill (webkit)
+  &::-webkit-slider-runnable-track {
+    background: linear-gradient(
+      to right,
+      var(--undpds-color-blue-600) 0%,
+      var(--undpds-color-blue-600) var(--range-progress, 50%),
+      var(--undpds-color-gray-300) var(--range-progress, 50%),
+      var(--undpds-color-gray-300) 100%
+    );
   }
 
   // Thumb styling
@@ -175,43 +186,74 @@ input[type="range"] {
     width: 1.5rem; // 24px
     height: 1.5rem; // 24px
     border-radius: 50%;
-    background: var(--undpds-color-blue-600);
+    background: var(--undpds-color-white);
     cursor: pointer;
-    margin-top: -0.625rem; // Center the thumb on the track
-    border: 0.125rem solid var(--undpds-color-white);
-    box-shadow: 0 0 0 0.0625rem var(--undpds-color-blue-600);
+    margin-top: -0.5rem; // Center the thumb on the 8px track
+    border: 0.25rem solid var(--undpds-color-blue-600);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
   }
 
   &::-moz-range-thumb {
     width: 1.5rem; // 24px
     height: 1.5rem; // 24px
     border-radius: 50%;
-    background: var(--undpds-color-blue-600);
+    background: var(--undpds-color-white);
     cursor: pointer;
-    border: 0.125rem solid var(--undpds-color-white);
-    box-shadow: 0 0 0 0.0625rem var(--undpds-color-blue-600);
+    border: 0.25rem solid var(--undpds-color-blue-600);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+  }
+
+  // Progress fill for Firefox
+  &::-moz-range-progress {
+    background: var(--undpds-color-blue-600);
+    height: 0.5rem;
+    border-radius: 1.5625rem 0 0 1.5625rem;
   }
 
   // Focus state
   &:focus {
     outline: none;
 
+    &::-webkit-slider-runnable-track {
+      box-shadow: 0 0 0.25rem 0 var(--undpds-color-blue-600);
+    }
+
+    &::-moz-range-track {
+      box-shadow: 0 0 0.25rem 0 var(--undpds-color-blue-600);
+    }
+
     &::-webkit-slider-thumb {
-      box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+      border-color: var(--undpds-color-blue-600);
     }
 
     &::-moz-range-thumb {
-      box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+      border-color: var(--undpds-color-blue-600);
     }
   }
 
   // Hover state
-  &:hover::-webkit-slider-thumb {
-    background: var(--undpds-color-blue-700);
-  }
+  &:hover:not(:disabled) {
+    &::-webkit-slider-runnable-track {
+      background: linear-gradient(
+        to right,
+        var(--undpds-color-blue-700) 0%,
+        var(--undpds-color-blue-700) var(--range-progress, 50%),
+        var(--undpds-color-gray-300) var(--range-progress, 50%),
+        var(--undpds-color-gray-300) 100%
+      );
+    }
 
-  &:hover::-moz-range-thumb {
-    background: var(--undpds-color-blue-700);
+    &::-moz-range-progress {
+      background: var(--undpds-color-blue-700);
+    }
+
+    &::-webkit-slider-thumb {
+      border-color: var(--undpds-color-blue-700);
+    }
+
+    &::-moz-range-thumb {
+      border-color: var(--undpds-color-blue-700);
+    }
   }
 
   // Disabled state
@@ -219,20 +261,28 @@ input[type="range"] {
     cursor: not-allowed;
 
     &::-webkit-slider-runnable-track {
-      background: var(--undpds-color-gray-200);
+      background: linear-gradient(
+        to right,
+        var(--undpds-color-gray-500) 0%,
+        var(--undpds-color-gray-500) var(--range-progress, 50%),
+        var(--undpds-color-gray-300) var(--range-progress, 50%),
+        var(--undpds-color-gray-300) 100%
+      );
     }
 
-    &::-moz-range-track {
-      background: var(--undpds-color-gray-200);
+    &::-moz-range-progress {
+      background: var(--undpds-color-gray-500);
     }
 
     &::-webkit-slider-thumb {
-      background: var(--undpds-color-gray-400);
+      background: var(--undpds-color-white);
+      border-color: var(--undpds-color-gray-500);
       box-shadow: none;
     }
 
     &::-moz-range-thumb {
-      background: var(--undpds-color-gray-400);
+      background: var(--undpds-color-white);
+      border-color: var(--undpds-color-gray-500);
       box-shadow: none;
     }
   }
