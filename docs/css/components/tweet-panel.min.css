@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.4.8
+ * UNDP Design System 1.4.10
  *
  */
 .twitter-panel{background-color:#232e3e;overflow:hidden;padding:var(--undpds-spacing-12) var(--undpds-spacing-06)}.twitter-panel .twitter{background:url(../../images/tweet-white.svg) no-repeat bottom;display:block;font-size:0;height:36px;margin-bottom:var(--undpds-spacing-02);width:36px}@media(min-width:48em){.twitter-panel .twitter{margin-bottom:.375rem}}.twitter-panel h2{align-items:flex-end;color:var(--undpds-color-white);display:flex;margin-bottom:var(--undpds-spacing-08)}.twitter-panel a{text-decoration:none}:lang(my) .twitter-panel span{margin-bottom:.875rem}

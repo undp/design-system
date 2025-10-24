@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.4.8
+ * UNDP Design System 1.4.10
  *
  */
 .page-title h2{font-family:var(--undpds-font-family-sohnebreit);font-weight:700;margin-bottom:1.25rem;text-transform:uppercase}.page-title h4{font-weight:400;margin-bottom:var(--undpds-spacing-03)}.page-title.white h2,.page-title.white h4{color:var(--undpds-color-white)}:lang(my) .page-title h2{font-family:var(--undpds-font-family-notosans)}:lang(be) .page-title h2,:lang(bg) .page-title h2,:lang(kk) .page-title h2,:lang(ky) .page-title h2,:lang(mk) .page-title h2,:lang(mn) .page-title h2,:lang(ru) .page-title h2,:lang(sr) .page-title h2,:lang(uk) .page-title h2{font-family:var(--undpds-font-family-proximanova)}

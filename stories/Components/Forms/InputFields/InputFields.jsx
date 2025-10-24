@@ -33,10 +33,29 @@ export function Inputcomponent({
     // Update state when the value changes
     inputElement.current.addEventListener("input", updateInputState);
 
+    // Handle range input progress fill
+    if (type === "range") {
+      updateRangeProgress();
+      inputElement.current.addEventListener("input", updateRangeProgress);
+    }
+
     return () => {
       inputElement.current?.removeEventListener("input", updateInputState);
+      if (type === "range") {
+        inputElement.current?.removeEventListener("input", updateRangeProgress);
+      }
     };
   }, [state]);
+
+  const updateRangeProgress = () => {
+    if (type === "range" && inputElement.current) {
+      const value = inputElement.current.value;
+      const min = inputElement.current.min || 0;
+      const max = inputElement.current.max || 100;
+      const percentage = ((value - min) / (max - min)) * 100;
+      inputElement.current.style.setProperty("--range-progress", `${percentage}%`);
+    }
+  };
 
   const updateInputState = () => {
     if (inputElement.current.value) {
