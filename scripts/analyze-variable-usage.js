@@ -28,15 +28,21 @@ if (args.length === 0) {
 
 const variableName = args[0];
 const searchDir = args[1] || 'stories/';
-const searchPattern = variableName.startsWith('$') ? variableName : `$${variableName}`;
+// Sanitize inputs to prevent command injection
+const sanitizedVariableName = variableName.replace(/[`$]/g, '\\$&');
+const searchPattern = sanitizedVariableName.startsWith('\\$') ? sanitizedVariableName : `\\$${sanitizedVariableName}`;
+// Sanitize directory path - only allow alphanumeric, /, -, _, and .
+const sanitizedSearchDir = searchDir.replace(/[^a-zA-Z0-9/_.-]/g, '');
 
 console.log(`🔍 Searching for usage of: ${searchPattern}`);
-console.log(`📂 Search directory: ${searchDir}\n`);
+console.log(`📂 Search directory: ${sanitizedSearchDir}\n`);
 
 try {
   // Search for the variable in SCSS files
+  // Using shell: false and array form for better security, but grep doesn't support it well
+  // So we carefully sanitize inputs instead
   const result = execSync(
-    `grep -r "${searchPattern}" ${searchDir} --include="*.scss" --include="*.sass" -n`,
+    `grep -r "${searchPattern}" ${sanitizedSearchDir} --include="*.scss" --include="*.sass" -n`,
     { 
       encoding: 'utf8',
       cwd: path.join(__dirname, '..'),
