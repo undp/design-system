@@ -2,7 +2,13 @@ module.exports = {
   source: ['tokens/figma/**/*.json'],
   platforms: {
     scss: {
-      transformGroup: 'scss',
+      // Use only valid built-in transforms plus our custom one
+      transforms: [
+        'attribute/cti',
+        'name/custom-kebab',  // Use our custom name transform
+        'size/rem',
+        'color/css'
+      ],
       buildPath: 'tokens/build/',
       files: [
         {
@@ -21,6 +27,32 @@ module.exports = {
     verbosity: 'default'
   },
   hooks: {
+    transforms: {
+      'name/custom-kebab': {
+        type: 'name',
+        transform: (token) => {
+          // Custom name transformation to match existing SCSS conventions
+          const path = token.path;
+          
+          // Handle color tokens with light/dark/default variants
+          if (path[0] === 'color' && path.length === 3) {
+            const colorBase = path[1]; // e.g., 'yellow', 'red', 'green'
+            const variant = path[2]; // e.g., 'light', 'default', 'dark'
+            
+            if (variant === 'default') {
+              // Drop the 'default' suffix: color-yellow instead of color-yellow-default
+              return `color-${colorBase}`;
+            } else if (variant === 'light' || variant === 'dark') {
+              // Prefix instead of suffix: color-light-yellow instead of color-yellow-light
+              return `color-${variant}-${colorBase}`;
+            }
+          }
+          
+          // For all other tokens, use standard kebab-case
+          return path.join('-');
+        }
+      }
+    },
     formats: {
       'custom/figma-variables': function({ dictionary, file, options }) {
         const header = `// Auto-generated from Figma tokens

@@ -8,7 +8,7 @@
 
 // Auto-generated from Figma tokens
 // DO NOT EDIT MANUALLY - This section is managed by the Figma token sync process
-// Last updated: 2025-10-28T19:16:34.528Z
+// Last updated: 2025-10-28T20:16:22.711Z
 // To update these tokens, export from Figma and run: npm run tokens:sync
 
 /* FIGMA TOKENS START */
@@ -33,19 +33,19 @@ $color-gray-400: #d4d6d8;
 $color-gray-500: #a9b1b7;
 $color-gray-600: #55606e;
 $color-gray-700: #232e3d;
-$color-yellow-light: #ffe17e;
-$color-yellow-default: #ffeb00;
-$color-yellow-dark: #fbc412;
-$color-red-light: #ffbcb7;
-$color-red-default: #ee402d;
-$color-red-dark: #d12800;
-$color-green-light: #b8ecb6;
-$color-green-default: #6de354;
-$color-green-dark: #59ba47;
-$color-azure-light: #a2daf3;
-$color-azure-default: #60d4f2;
-$color-azure-dark: #00c1ff;
-$color-pink-light: #ffb4ae;
+$color-light-yellow: #ffe17e;
+$color-yellow: #ffeb00;
+$color-dark-yellow: #fbc412;
+$color-light-red: #ffbcb7;
+$color-red: #ee402d;
+$color-dark-red: #d12800;
+$color-light-green: #b8ecb6;
+$color-green: #6de354;
+$color-dark-green: #59ba47;
+$color-light-azure: #a2daf3;
+$color-azure: #60d4f2;
+$color-dark-azure: #00c1ff;
+$color-light-pink: #ffb4ae;
 $color-silvery-moonlight: #ced0d3;
 $color-shuttle-gray: #55606f;
 $color-ebony-clay: #232e3e;
@@ -95,31 +95,38 @@ $spacing-09: 3rem;
 // These variables are specific to Storybook and are not synced with Figma
 // You can safely edit these variables
 
+$color-yellow-light: #ffe17e;
+$color-yellow-default: #ffeb00;
+$color-yellow-dark: #fbc412;
+$color-red-light: #ffbcb7;
+$color-red-default: #ee402d;
+$color-red-dark: #d12800;
+$color-green-light: #b8ecb6;
+$color-green-default: #6de354;
+$color-green-dark: #59ba47;
+$color-azure-light: #a2daf3;
+$color-azure-default: #60d4f2;
+$color-azure-dark: #00c1ff;
+$color-pink-light: #ffb4ae;
+// These variables are specific to Storybook and are not synced with Figma
+// You can safely edit these variables
+
 // Image variables
 $img-path: '../../../assets/images';
 $img-path-Icon: '../../../assets/icons';
 $img-path-Iconback: '../../assets/icons';
 $img-path-Iconfourback: '../../../../assets/icons';
 // Colors
-$color-light-yellow: #ffe17e;
-$color-yellow: #ffeb00;
-$color-dark-yellow: #fbc412;
-$color-light-red: #ffbcb7;
-$color-red: #ee402d;
-$color-dark-red: #d12800;
-$color-light-green: #b8ecb6;
-$color-green: #6de354;
-$color-dark-green: #59ba47;
-$color-light-azure: #a2daf3;
-$color-azure: #60d4f2;
-$color-dark-azure: #00c1ff;
-$color-light-pink: #ffb4ae;
 
 // Font families
 // Local fonts
 $Font-Family-ProximaNova: 'ProximaNova', sans-serif;
 $Font-Family-SohneBreit: 'SohneBreit', $Font-Family-ProximaNova;
 $Font-Family-UNBangla: 'UNBangla', sans-serif;
+// Remote fonts, require additional setup
+// https://design.undp.org/?path=/docs/getting-started-internationalization--docs
+// Remote fonts, require additional setup
+// https://design.undp.org/?path=/docs/getting-started-internationalization--docs
 // Remote fonts, require additional setup
 // https://design.undp.org/?path=/docs/getting-started-internationalization--docs
 // Remote fonts, require additional setup
@@ -134,6 +141,8 @@ $Font-Family-NotoSans-Khmer: 'Noto Sans Khmer', sans-serif;
 $Font-Family-NotoSans-Korean: 'Noto Sans KR', sans-serif;
 $Font-Family-NotoSans-Thai: 'Noto Sans Thai', sans-serif;
 // Spacing variables
+// Width variables
+// Spacing variables
 
 // Width variables
 $width-150: 9.375rem;
@@ -145,10 +154,14 @@ $width-900: 56.25rem;
 $width-1096: 68.5rem;
 $width-1440: 90rem;
 // Header height
+// Header height
+// Header height
 
 // Header height
 $header-height-xlarge: 115px;
 $header-height-medium: 75px;
+// Gradient color list
+// Gradient color list
 // Gradient color list
 
 // Gradient color list
@@ -156,6 +169,8 @@ $yellow-gradient: $color-yellow 30%, rgba(255, 235, 0, 0) 110%;
 $red-gradient: $color-red 30%, rgb(240, 49, 49, 0) 110%;
 $green-gradient: $color-green 30%, rgba(0, 0, 0, 0) 110%;
 $blue-gradient: $color-azure 30%, rgb(101, 204, 244, 0) 110%;
+//SDG color
+//SDG color
 //SDG color
 
 //SDG color
@@ -176,6 +191,8 @@ $sdg-blue: #0a97d9;
 $sdg-lime-green: #56c02b;
 $sdg-royal-blue: #00689d;
 $sdg-navy-blue: #19486a;
+//SDG hover color
+//SDG hover color
 //SDG hover color
 
 //SDG hover color
@@ -199,9 +216,12 @@ $sdg-hover-navy-blue: #a2c2d8;
 
 $author-image-radius: 50%;
 // Language selectors
+// Language selectors
+// Language selectors
 
 // Language selectors
 $cyrillic: ":lang(bg),:lang(be),:lang(kk),:lang(ky),:lang(mk),:lang(mn),:lang(ru),:lang(sr),:lang(uk)";
+/* variables end */
 /* variables end */
 
 /* variables end */

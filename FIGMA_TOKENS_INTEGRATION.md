@@ -184,11 +184,19 @@ The integration supports the following token types from Figma:
 
 ### Variable Naming Convention
 
-Figma tokens are transformed to SCSS variables using kebab-case:
+Figma tokens are transformed to SCSS variables using kebab-case with special rules for color variants:
 
+**Standard tokens:**
 - Figma: `color.blue.500` → SCSS: `$color-blue-500`
 - Figma: `font.size.16` → SCSS: `$font-size-16`
 - Figma: `spacing.05` → SCSS: `$spacing-05`
+
+**Color variant tokens** (special transformation):
+- Figma: `color.yellow.default` → SCSS: `$color-yellow` (default suffix is dropped)
+- Figma: `color.yellow.light` → SCSS: `$color-light-yellow` (variant is prefixed)
+- Figma: `color.yellow.dark` → SCSS: `$color-dark-yellow` (variant is prefixed)
+
+This transformation ensures compatibility with existing SCSS conventions in the design system.
 
 ## File Structure
 
