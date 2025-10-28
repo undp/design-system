@@ -101,8 +101,8 @@ Tokens are transformed to SCSS variables using kebab-case:
 ## Documentation
 
 For complete documentation, see:
-- [FIGMA_TOKENS_INTEGRATION.md](../docs/FIGMA_TOKENS_INTEGRATION.md) - Full integration guide
-- [FIGMA_PLUGIN_SETUP.md](../docs/FIGMA_PLUGIN_SETUP.md) - Figma plugin setup
+- [FIGMA_TOKENS_INTEGRATION.md](FIGMA_TOKENS_INTEGRATION.md) - Full integration guide
+- [FIGMA_PLUGIN_SETUP.md](FIGMA_PLUGIN_SETUP.md) - Figma plugin setup
 
 ## Troubleshooting
 

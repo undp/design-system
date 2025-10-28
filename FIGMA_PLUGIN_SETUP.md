@@ -281,7 +281,7 @@ For plugin-specific issues:
 - Discord: https://tokens.studio/discord
 
 For UNDP Design System integration issues:
-- See: [docs/FIGMA_TOKENS_INTEGRATION.md](FIGMA_TOKENS_INTEGRATION.md)
+- See: [FIGMA_TOKENS_INTEGRATION.md](FIGMA_TOKENS_INTEGRATION.md)
 - Create an issue in the repository
 
 ## Additional Resources

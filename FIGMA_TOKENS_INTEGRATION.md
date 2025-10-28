@@ -135,6 +135,41 @@ git commit -m "Update design tokens from Figma"
 git push
 ```
 
+## Automated Workflow with GitHub Actions
+
+For teams that want automated token synchronization, we provide a GitHub Actions workflow that handles the entire process automatically.
+
+### Automated Workflow Benefits
+
+- ✅ **Automatic processing**: Tokens sync automatically when pushed
+- ✅ **Pull Request creation**: Changes are submitted as PRs for review
+- ✅ **Build validation**: Ensures changes don't break the build
+- ✅ **Team review**: Changes go through standard PR review process
+- ✅ **Audit trail**: Clear history of all token updates
+
+### Quick Setup
+
+1. **Push tokens to the dedicated branch**:
+   ```bash
+   git checkout -b update-figma-tokens
+   git add tokens/figma/tokens.json
+   git commit -m "chore: update design tokens from Figma"
+   git push origin update-figma-tokens
+   ```
+
+2. **GitHub Actions automatically**:
+   - Runs token sync
+   - Updates SCSS variables
+   - Creates PR to `develop`
+   - Validates build
+
+3. **Review and merge the PR**
+
+### Full Documentation
+
+For complete setup instructions, workflow configuration, and advanced options, see:
+- **[GITHUB_ACTIONS_WORKFLOW.md](GITHUB_ACTIONS_WORKFLOW.md)** - Complete GitHub Actions setup guide
+
 ## Token Structure
 
 ### Supported Token Types
