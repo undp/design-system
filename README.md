@@ -48,11 +48,26 @@ npm run build-storybook
 
 # build compiled css and js
 npm run build
+
+# sync design tokens from Figma
+npm run tokens:sync
 ```
 
 ### Important
 
 Make sure to run `npm run build` to compile production ready css and js files and include them with your development work. This will help save some extra steps when it comes time to deploy to production.
+
+## Figma Design Token Integration
+
+The UNDP Design System uses Figma as the authoritative source for design tokens (colors, typography, spacing, etc.). These tokens are automatically synchronized to Storybook's SCSS variables.
+
+**Quick Start:**
+1. Export tokens from Figma using the Tokens Studio plugin (save as `tokens/figma/tokens.json`)
+2. Run `npm run tokens:sync` to synchronize tokens to Storybook
+3. Review changes and test components
+4. Commit the updated token files
+
+For detailed setup instructions, plugin configuration, and workflow documentation, see [docs/FIGMA_TOKENS_INTEGRATION.md](docs/FIGMA_TOKENS_INTEGRATION.md).
 
 ## List of components
 

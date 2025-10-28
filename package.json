@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --loglevel verbose"
+    "build-storybook": "storybook build --loglevel verbose",
+    "tokens:build": "style-dictionary build --config style-dictionary.config.js",
+    "tokens:sync": "node scripts/sync-figma-tokens.js"
   },
   "keywords": [
     "UNDP",
@@ -94,6 +96,7 @@
     "sass-embedded": "^1.81.0",
     "sass-loader": "^16.0.3",
     "storybook": "^9.1.10",
+    "style-dictionary": "^4.2.0",
     "style-loader": "^4.0.0",
     "stylelint": "^16.9.0",
     "stylelint-config-prettier": "^9.0.5",
