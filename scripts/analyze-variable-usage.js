@@ -1,0 +1,99 @@
+#!/usr/bin/env node
+
+/**
+ * Variable Usage Analyzer
+ * 
+ * This script helps identify which components use specific SCSS variables.
+ * Useful when variable names change and components need to be updated.
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+const args = process.argv.slice(2);
+
+if (args.length === 0) {
+  console.log('Usage: node scripts/analyze-variable-usage.js <variable-name>');
+  console.log('');
+  console.log('Examples:');
+  console.log('  node scripts/analyze-variable-usage.js color-blue-500');
+  console.log('  node scripts/analyze-variable-usage.js font-size-16');
+  console.log('  node scripts/analyze-variable-usage.js spacing-05');
+  console.log('');
+  console.log('Without arguments, shows all variable usage counts:');
+  process.exit(0);
+}
+
+const variableName = args[0];
+const searchPattern = variableName.startsWith('$') ? variableName : `$${variableName}`;
+
+console.log(`🔍 Searching for usage of: ${searchPattern}\n`);
+
+try {
+  // Search for the variable in SCSS files
+  const result = execSync(
+    `grep -r "${searchPattern}" stories/ --include="*.scss" --include="*.sass" -n`,
+    { 
+      encoding: 'utf8',
+      cwd: path.join(__dirname, '..'),
+      maxBuffer: 10 * 1024 * 1024 
+    }
+  );
+
+  const lines = result.trim().split('\n');
+  
+  if (lines.length === 0 || (lines.length === 1 && lines[0] === '')) {
+    console.log(`❌ Variable ${searchPattern} not found in any component files.`);
+    console.log('');
+    console.log('This could mean:');
+    console.log('  - The variable is defined but not used');
+    console.log('  - The variable name is incorrect');
+    console.log('  - The variable is only used in non-component files');
+    process.exit(0);
+  }
+
+  // Group by file
+  const fileUsage = {};
+  lines.forEach(line => {
+    const match = line.match(/^([^:]+):(\d+):(.*)/);
+    if (match) {
+      const [, filePath, lineNum, content] = match;
+      if (!fileUsage[filePath]) {
+        fileUsage[filePath] = [];
+      }
+      fileUsage[filePath].push({ lineNum: parseInt(lineNum), content: content.trim() });
+    }
+  });
+
+  console.log(`✅ Found ${lines.length} usage(s) in ${Object.keys(fileUsage).length} file(s):\n`);
+
+  // Display results grouped by file
+  Object.entries(fileUsage).forEach(([filePath, usages]) => {
+    console.log(`📄 ${filePath}`);
+    usages.forEach(({ lineNum, content }) => {
+      console.log(`   Line ${lineNum}: ${content}`);
+    });
+    console.log('');
+  });
+
+  console.log('📊 Summary:');
+  console.log(`  - Total files: ${Object.keys(fileUsage).length}`);
+  console.log(`  - Total usages: ${lines.length}`);
+  console.log('');
+  console.log('💡 If this variable name changed, you need to update all these files.');
+
+} catch (error) {
+  if (error.status === 1) {
+    // grep returns status 1 when no matches found
+    console.log(`❌ Variable ${searchPattern} not found in any component files.`);
+    console.log('');
+    console.log('This could mean:');
+    console.log('  - The variable is defined but not used');
+    console.log('  - The variable name is incorrect');
+    console.log('  - The variable is only used in non-component files');
+  } else {
+    console.error('❌ Error running search:', error.message);
+  }
+  process.exit(0);
+}

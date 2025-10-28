@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --loglevel verbose",
     "tokens:build": "style-dictionary build --config style-dictionary.config.js",
-    "tokens:sync": "node scripts/sync-figma-tokens.js"
+    "tokens:sync": "node scripts/sync-figma-tokens.js",
+    "tokens:analyze": "node scripts/analyze-variable-usage.js"
   },
   "keywords": [
     "UNDP",
