@@ -164,7 +164,7 @@ After exporting from Figma:
 
 ```bash
 # 1. Place the exported tokens.json in the correct directory
-# tokens/figma/tokens.json
+# figma-tokens/input/tokens.json
 
 # 2. Run the token sync command
 npm run tokens:sync
@@ -176,7 +176,7 @@ git diff stories/assets/scss/_variables.scss
 npm run storybook
 
 # 5. Commit changes
-git add tokens/figma/tokens.json stories/assets/scss/_variables.scss
+git add figma-tokens/input/tokens.json stories/assets/scss/_variables.scss
 git commit -m "Update design tokens from Figma"
 ```
 

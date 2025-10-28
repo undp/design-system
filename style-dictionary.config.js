@@ -1,5 +1,5 @@
 module.exports = {
-  source: ['tokens/figma/**/*.json'],
+  source: ['figma-tokens/input/**/*.json'],
   platforms: {
     scss: {
       // Use only valid built-in transforms plus our custom one

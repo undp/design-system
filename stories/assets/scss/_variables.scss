@@ -8,7 +8,7 @@
 
 // Auto-generated from Figma tokens
 // DO NOT EDIT MANUALLY - This section is managed by the Figma token sync process
-// Last updated: 2025-10-28T20:16:22.711Z
+// Last updated: 2025-10-28T21:08:32.187Z
 // To update these tokens, export from Figma and run: npm run tokens:sync
 
 /* FIGMA TOKENS START */
@@ -95,6 +95,9 @@ $spacing-09: 3rem;
 // These variables are specific to Storybook and are not synced with Figma
 // You can safely edit these variables
 
+// These variables are specific to Storybook and are not synced with Figma
+// You can safely edit these variables
+
 $color-yellow-light: #ffe17e;
 $color-yellow-default: #ffeb00;
 $color-yellow-dark: #fbc412;
@@ -110,6 +113,9 @@ $color-azure-dark: #00c1ff;
 $color-pink-light: #ffb4ae;
 // These variables are specific to Storybook and are not synced with Figma
 // You can safely edit these variables
+// Image variables
+// These variables are specific to Storybook and are not synced with Figma
+// You can safely edit these variables
 
 // Image variables
 $img-path: '../../../assets/images';
@@ -117,12 +123,23 @@ $img-path-Icon: '../../../assets/icons';
 $img-path-Iconback: '../../assets/icons';
 $img-path-Iconfourback: '../../../../assets/icons';
 // Colors
+// Font families
+// Local fonts
+// Colors
 
 // Font families
 // Local fonts
 $Font-Family-ProximaNova: 'ProximaNova', sans-serif;
 $Font-Family-SohneBreit: 'SohneBreit', $Font-Family-ProximaNova;
 $Font-Family-UNBangla: 'UNBangla', sans-serif;
+// Remote fonts, require additional setup
+// https://design.undp.org/?path=/docs/getting-started-internationalization--docs
+// Remote fonts, require additional setup
+// https://design.undp.org/?path=/docs/getting-started-internationalization--docs
+// Remote fonts, require additional setup
+// https://design.undp.org/?path=/docs/getting-started-internationalization--docs
+// Remote fonts, require additional setup
+// https://design.undp.org/?path=/docs/getting-started-internationalization--docs
 // Remote fonts, require additional setup
 // https://design.undp.org/?path=/docs/getting-started-internationalization--docs
 // Remote fonts, require additional setup
@@ -143,6 +160,10 @@ $Font-Family-NotoSans-Thai: 'Noto Sans Thai', sans-serif;
 // Spacing variables
 // Width variables
 // Spacing variables
+// Width variables
+// Spacing variables
+// Width variables
+// Spacing variables
 
 // Width variables
 $width-150: 9.375rem;
@@ -156,10 +177,18 @@ $width-1440: 90rem;
 // Header height
 // Header height
 // Header height
+// Header height
+// Header height
+// Header height
+// Header height
 
 // Header height
 $header-height-xlarge: 115px;
 $header-height-medium: 75px;
+// Gradient color list
+// Gradient color list
+// Gradient color list
+// Gradient color list
 // Gradient color list
 // Gradient color list
 // Gradient color list
@@ -169,6 +198,10 @@ $yellow-gradient: $color-yellow 30%, rgba(255, 235, 0, 0) 110%;
 $red-gradient: $color-red 30%, rgb(240, 49, 49, 0) 110%;
 $green-gradient: $color-green 30%, rgba(0, 0, 0, 0) 110%;
 $blue-gradient: $color-azure 30%, rgb(101, 204, 244, 0) 110%;
+//SDG color
+//SDG color
+//SDG color
+//SDG color
 //SDG color
 //SDG color
 //SDG color
@@ -191,6 +224,10 @@ $sdg-blue: #0a97d9;
 $sdg-lime-green: #56c02b;
 $sdg-royal-blue: #00689d;
 $sdg-navy-blue: #19486a;
+//SDG hover color
+//SDG hover color
+//SDG hover color
+//SDG hover color
 //SDG hover color
 //SDG hover color
 //SDG hover color
@@ -218,9 +255,14 @@ $author-image-radius: 50%;
 // Language selectors
 // Language selectors
 // Language selectors
+// Language selectors
+// Language selectors
+// Language selectors
+// Language selectors
 
 // Language selectors
 $cyrillic: ":lang(bg),:lang(be),:lang(kk),:lang(ky),:lang(mk),:lang(mn),:lang(ru),:lang(sr),:lang(uk)";
+/* variables end */
 /* variables end */
 /* variables end */
 

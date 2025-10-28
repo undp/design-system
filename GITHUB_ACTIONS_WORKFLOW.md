@@ -43,9 +43,9 @@ The workflow also supports manual triggering via workflow dispatch, allowing you
        branches:
          - 'update-figma-tokens'
        paths:
-         - 'tokens/figma/tokens.json'
+         - 'figma-tokens/input/tokens.json'
    ```
-   Runs when `tokens/figma/tokens.json` is pushed to the `update-figma-tokens` branch.
+   Runs when `figma-tokens/input/tokens.json` is pushed to the `update-figma-tokens` branch.
 
 2. **Manual (Workflow Dispatch)**
    ```yaml
@@ -81,14 +81,14 @@ The workflow also supports manual triggering via workflow dispatch, allowing you
 #### Option A: Manual Export (Simple)
 
 1. Export tokens from Figma using Tokens Studio plugin
-2. Save as `tokens/figma/tokens.json`
+2. Save as `figma-tokens/input/tokens.json`
 3. Create/checkout the `update-figma-tokens` branch:
    ```bash
    git checkout -b update-figma-tokens
    ```
 4. Commit and push the token file:
    ```bash
-   git add tokens/figma/tokens.json
+   git add figma-tokens/input/tokens.json
    git commit -m "chore: update design tokens from Figma"
    git push origin update-figma-tokens
    ```
@@ -188,9 +188,9 @@ gh workflow run figma-token-sync.yml \
 ### Automated Trigger via Token Push
 
 ```bash
-# Export tokens from Figma to tokens/figma/tokens.json
+# Export tokens from Figma to figma-tokens/input/tokens.json
 git checkout update-figma-tokens
-git add tokens/figma/tokens.json
+git add figma-tokens/input/tokens.json
 git commit -m "chore: update tokens from Figma"
 git push origin update-figma-tokens
 
@@ -227,7 +227,7 @@ When a PR is created, reviewers should:
 **Issue**: Workflow doesn't run when pushing to `update-figma-tokens`
 
 **Solutions**:
-1. Verify `tokens/figma/tokens.json` was modified
+1. Verify `figma-tokens/input/tokens.json` was modified
 2. Check workflow file is in `.github/workflows/`
 3. Ensure GitHub Actions is enabled for the repository
 4. Check branch protection rules aren't blocking workflows

@@ -62,7 +62,7 @@ Make sure to run `npm run build` to compile production ready css and js files an
 The UNDP Design System uses Figma as the authoritative source for design tokens (colors, typography, spacing, etc.). These tokens are automatically synchronized to Storybook's SCSS variables.
 
 **Manual Workflow:**
-1. Export tokens from Figma using the Tokens Studio plugin (save as `tokens/figma/tokens.json`)
+1. Export tokens from Figma using the Tokens Studio plugin (save as `figma-tokens/input/tokens.json`)
 2. Run `npm run tokens:sync` to synchronize tokens to Storybook
 3. Review changes and test components
 4. Commit the updated token files

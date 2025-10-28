@@ -11,7 +11,7 @@ The UNDP Design System uses Figma as the authoritative source for design tokens 
 ```
 Figma Design File
     ↓ (Export via Figma Plugin)
-tokens/figma/tokens.json
+figma-tokens/input/tokens.json
     ↓ (Style Dictionary transformation)
 tokens/build/_figma-tokens.scss
     ↓ (Merge script)
@@ -47,7 +47,7 @@ Storybook Components
 3. **Export Tokens**
    - In the plugin, click **Export**
    - Select all token sets you want to export
-   - Save the exported JSON file as `tokens/figma/tokens.json` in your local repository
+   - Save the exported JSON file as `figma-tokens/input/tokens.json` in your local repository
 
 ### Alternative: Manual Export
 
@@ -86,7 +86,7 @@ If you prefer not to use a plugin, you can manually create the `tokens.json` fil
 
 Export your design tokens from Figma using the plugin (see above) and save to:
 ```
-tokens/figma/tokens.json
+figma-tokens/input/tokens.json
 ```
 
 ### Step 2: Run Token Synchronization
@@ -128,7 +128,7 @@ Navigate through your components to ensure:
 If everything looks good:
 
 ```bash
-git add tokens/figma/tokens.json
+git add figma-tokens/input/tokens.json
 git add stories/assets/scss/_variables.scss
 git add package.json package-lock.json
 git commit -m "Update design tokens from Figma"
@@ -152,7 +152,7 @@ For teams that want automated token synchronization, we provide a GitHub Actions
 1. **Push tokens to the dedicated branch**:
    ```bash
    git checkout -b update-figma-tokens
-   git add tokens/figma/tokens.json
+   git add figma-tokens/input/tokens.json
    git commit -m "chore: update design tokens from Figma"
    git push origin update-figma-tokens
    ```
@@ -269,7 +269,7 @@ grep -r "\$color-\|\$font-\|\$spacing-" stories/ --include="*.scss" | wc -l
 ### Issue: Style Dictionary build fails
 
 **Solution:**
-- Check that `tokens/figma/tokens.json` is valid JSON
+- Check that `figma-tokens/input/tokens.json` is valid JSON
 - Ensure all required token properties (`value`, `type`) are present
 - Run `npm run tokens:build` separately to see detailed errors
 
@@ -348,7 +348,7 @@ name: Sync Design Tokens
 on:
   push:
     paths:
-      - 'tokens/figma/tokens.json'
+      - 'figma-tokens/input/tokens.json'
 
 jobs:
   sync:
