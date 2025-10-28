@@ -1,6 +1,6 @@
-@use 'variables';
-@use 'breakpoints';
-@use 'mixins';
+@import './variables';
+@import './breakpoints';
+@import './mixins';
 
 .swiper {
   box-sizing: border-box;
@@ -114,12 +114,12 @@
   &-initialized {
     padding-right: var(--undpds-spacing-44);
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       padding-right: var(--undpds-spacing-08);
     }
 
     .swiper-scrollbar {
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         padding-right: var(--undpds-spacing-08);
       }
     }
@@ -131,7 +131,7 @@
     padding-left: var(--undpds-spacing-44);
     padding-right: 0;
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       padding-left: var(--undpds-spacing-08);
       padding-right: 0;
     }
@@ -139,7 +139,7 @@
     .swiper-scrollbar {
       padding-right: 0;
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         padding-left: var(--undpds-spacing-08);
         padding-right: 0;
       }

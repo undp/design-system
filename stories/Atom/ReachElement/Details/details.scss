@@ -1,6 +1,6 @@
-@use '../../../assets/scss/mixins';
-@use '../../../assets/scss/breakpoints';
-@use '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 /* details tag start */
 details {
@@ -48,7 +48,7 @@ details {
 [dir='rtl'] {
   details {
     summary::before {
-      @include mixins.transform(translate(0) rotate(180deg));
+      @include transform(translate(0) rotate(180deg));
 
       margin-left: var(--undpds-spacing-02);
       margin-right: 0;
@@ -56,7 +56,7 @@ details {
 
     &[open] {
       summary::before {
-        @include mixins.transform(translate(0) rotate(0deg));
+        @include transform(translate(0) rotate(0deg));
       }
     }
   }

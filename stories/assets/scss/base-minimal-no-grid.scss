@@ -1,8 +1,8 @@
-@use 'normalize';
-@use 'variables';
-@use 'custom_properties';
-@use 'mixins';
-@use 'fonts';
-@use 'typography';
-@use 'base';
-@use 'components';
+@import './normalize';
+@import './variables';
+@import './custom_properties';
+@import './mixins';
+@import './fonts';
+@import './typography';
+@import './base';
+@import './components';

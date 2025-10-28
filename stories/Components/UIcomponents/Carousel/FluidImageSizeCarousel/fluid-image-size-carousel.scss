@@ -1,6 +1,5 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/variables';
-@use '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
 
 /* fixed image size carousel start */
 .fluid-carousel {
@@ -16,15 +15,15 @@
     max-width: 55%;
     object-fit: cover;
 
-    @include breakpoints.devicebreak(large) {
+    @include devicebreak(large) {
       max-width: 65%;
     }
 
-    @include breakpoints.devicebreak(xlarge) {
+    @include devicebreak(xlarge) {
       max-width: 70%;
     }
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       height: 18rem;
       max-width: 100%;
       width: auto;
@@ -33,25 +32,25 @@
 
   .slide-content {
     box-sizing: border-box;
-    padding-left: var(--undpds-spacing-06);
+    padding-left: $spacing-06;
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       flex: 0 0 45%;
       max-width: 45%;
       position: relative;
     }
 
-    @include breakpoints.devicebreak(large) {
+    @include devicebreak(large) {
       flex: 0 0 35%;
       max-width: 35%;
     }
 
-    @include breakpoints.devicebreak(xlarge) {
+    @include devicebreak(xlarge) {
       flex: 0 0 30%;
       max-width: 30%;
     }
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       margin-top: 1.5rem;
       padding-left: 1.5rem;
       padding-right: 2rem;
@@ -68,11 +67,11 @@
     p {
       @extend %carousel_desc;
 
-      @include breakpoints.devicebreak(large) {
+      @include devicebreak(large) {
         margin-bottom: 3rem;
       }
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         font-size: 0.875rem;
       }
     }
@@ -82,7 +81,7 @@
     }
 
     &__button-wrap {
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         display: inline-flex;
       }
     }
@@ -120,9 +119,9 @@
   .fluid-carousel {
     .slide-content {
       padding-left: 0;
-      padding-right: var(--undpds-spacing-06);
+      padding-right: $spacing-06;
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         padding-right: 1.5rem;
       }
     }
@@ -137,7 +136,7 @@
           margin-right: 0;
 
           img {
-            @include mixins.transform(rotate(180deg));
+            @include transform(rotate(180deg));
           }
         }
 
@@ -146,7 +145,7 @@
           margin-right: 0.344rem;
 
           img {
-            @include mixins.transform(rotate(-180deg));
+            @include transform(rotate(-180deg));
           }
         }
       }

@@ -1,10 +1,9 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/variables';
-@use '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
 
 /* pagehero card hero start */
 .pagehero-cards {
-  @include breakpoints.devicebreak(small) {
+  @include devicebreak(small) {
     &-items {
       .swiper-wrapper {
         margin-left: 0;
@@ -14,35 +13,35 @@
   }
 
   &-items {
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       overflow: hidden;
     }
 
     .pagehero-cards-box {
-      @include breakpoints.devicebreak(large) {
-        flex: 0 0 calc(16.66667% - var(--undpds-spacing-06));
-        max-width: calc(16.66667% - var(--undpds-spacing-06));
+      @include devicebreak(large) {
+        flex: 0 0 calc(16.66667% - #{$spacing-06});
+        max-width: calc(16.66667% - #{$spacing-06});
 
         &.large {
-          flex: 0 0 calc(25% - var(--undpds-spacing-06));
-          max-width: calc(25% - var(--undpds-spacing-06));
+          flex: 0 0 calc(25% - #{$spacing-06});
+          max-width: calc(25% - #{$spacing-06});
         }
       }
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         margin-left: 0;
       }
     }
   }
 
   &-box {
-    @include breakpoints.devicebreak(medium) {
-      margin-bottom: var(--undpds-spacing-06);
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-06;
 
       &.swiper-slide {
         height: auto;
         margin-left: 0;
-        margin-right: var(--undpds-font-size-20);
+        margin-right: $font-size-20;
       }
     }
   }
@@ -55,22 +54,22 @@
       padding-bottom: 1.875rem;
       text-transform: uppercase;
 
-      @include breakpoints.devicebreak(medium) {
-        margin-right: var(--undpds-spacing-04);
+      @include devicebreak(medium) {
+        margin-right: $spacing-04;
       }
 
-      @include breakpoints.devicebreak(large) {
+      @include devicebreak(large) {
         padding-bottom: 0;
       }
     }
 
     h3 {
-      font-size: var(--undpds-font-size-25);
+      font-size: $font-size-25;
       font-weight: 700;
-      margin-bottom: var(--undpds-font-size-35);
-      padding-top: var(--undpds-font-size-20);
+      margin-bottom: $font-size-35;
+      padding-top: $font-size-20;
 
-      @include breakpoints.devicebreak(large) {
+      @include devicebreak(large) {
         font-size: 1.875rem;
         padding-top: 0;
       }
@@ -79,24 +78,24 @@
     >:nth-child(2) {
       position: relative;
 
-      @include breakpoints.devicebreak(large) {
-        margin-left: var(--undpds-spacing-10);
+      @include devicebreak(large) {
+        margin-left: $spacing-10;
       }
 
       &::before {
         content: "";
         position: absolute;
 
-        @include mixins.transform(rotate(90deg));
+        @include transform(rotate(90deg));
 
-        background-color: var(--undpds-color-dark-red);
+        background-color: $color-dark-red;
         height: 7rem;
         left: 3.5rem;
         top: -4rem;
         width: 3px;
 
-        @include breakpoints.devicebreak(large) {
-          @include mixins.transform(rotate(0));
+        @include devicebreak(large) {
+          @include transform(rotate(0));
 
           height: 80%;
           left: -60px;
@@ -110,21 +109,21 @@
     margin-left: 0;
     position: relative;
 
-    @include breakpoints.devicebreak(medium) {
-      margin-left: var(--undpds-spacing-10);
+    @include devicebreak(medium) {
+      margin-left: $spacing-10;
     }
 
     &::before {
       @extend %absolute__content;
 
-      background: var(--undpds-color-dark-red);
+      background: $color-dark-red;
       height: 7rem;
       left: 3.5rem;
       top: -4rem;
       transform: rotate(90deg);
       width: 3px;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         height: 80%;
         left: -60px;
         top: 0;
@@ -134,17 +133,17 @@
   }
 
   .swiper-initialized {
-    padding-right: var(--undpds-spacing-10);
+    padding-right: $spacing-10;
 
-    @include breakpoints.devicebreak(medium) {
-      padding-right: var(--undpds-spacing-13);
+    @include devicebreak(medium) {
+      padding-right: $spacing-13;
     }
 
     .swiper-scrollbar {
-      padding-right: var(--undpds-spacing-10);
+      padding-right: $spacing-10;
 
-      @include breakpoints.devicebreak(medium) {
-        padding-right: var(--undpds-spacing-13);
+      @include devicebreak(medium) {
+        padding-right: $spacing-13;
       }
     }
   }
@@ -154,41 +153,41 @@
   .pagehero-cards {
     &-top {
       >:nth-child(2) {
-        @include breakpoints.devicebreak(large) {
-          margin-right: var(--undpds-spacing-10);
+        @include devicebreak(large) {
+          margin-right: $spacing-10;
         }
 
         &::before {
           right: 3.5rem;
 
-          @include breakpoints.devicebreak(large) {
+          @include devicebreak(large) {
             right: -60px;
           }
         }
       }
 
       h2 {
-        @include breakpoints.devicebreak(medium) {
-          margin-left: var(--undpds-spacing-04);
+        @include devicebreak(medium) {
+          margin-left: $spacing-04;
           margin-right: 0;
         }
       }
     }
 
     .swiper-initialized {
-      padding-left: var(--undpds-spacing-10);
+      padding-left: $spacing-10;
       padding-right: 0;
 
-      @include breakpoints.devicebreak(medium) {
-        padding-left: var(--undpds-spacing-13);
+      @include devicebreak(medium) {
+        padding-left: $spacing-13;
       }
 
       .swiper-scrollbar {
-        padding-left: var(--undpds-spacing-10);
+        padding-left: $spacing-10;
         padding-right: 0;
 
-        @include breakpoints.devicebreak(medium) {
-          padding-left: var(--undpds-spacing-13);
+        @include devicebreak(medium) {
+          padding-left: $spacing-13;
         }
       }
 
@@ -196,7 +195,7 @@
         .cta__link {
           i {
             left: unset;
-            right: var(--undpds-spacing-05);
+            right: $spacing-05;
           }
         }
       }

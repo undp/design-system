@@ -1,18 +1,19 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/base';
+@import '../../../assets/scss/typography';
+
 .menu ul {
   padding: 0;
 
   li {
     display: inline-block;
-    margin-block: var(--undpds-spacing-04);
-    margin-inline: 0 var(--undpds-spacing-60);
-    padding-inline-start: 0;
-
-    a {
-      font-weight: 500;
-    }
+    margin: $spacing-04 3.75rem $spacing-04 0;
+    padding-left: 0;
 
     &:last-of-type {
-      margin-inline-end: 0;
+      margin-right: 0;
     }
   }
 }
@@ -20,8 +21,15 @@
 [dir='rtl'] {
   .menu ul {
     li {
+      margin-left: 3.75rem;
+      margin-right: 0;
+
       a {
         margin: 0;
+      }
+
+      &:last-of-type {
+        margin-left: 0;
       }
     }
   }

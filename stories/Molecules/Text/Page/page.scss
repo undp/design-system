@@ -5,7 +5,7 @@
 /* page title start */
 .page-title {
   h2 {
-    font-family: var(--undpds-font-family-sohnebreit);
+    font-family: $Font-Family-SohneBreit;
     font-weight: 700;
     margin-bottom: 1.25rem;
     text-transform: uppercase;
@@ -13,13 +13,13 @@
 
   h4 {
     font-weight: 400;
-    margin-bottom: var(--undpds-spacing-03);
+    margin-bottom: $spacing-03;
   }
 
   &.white {
     h2,
     h4 {
-      color: var(--undpds-color-white);
+      color: $color-white;
     }
   }
 }
@@ -27,7 +27,7 @@
 :lang(my) {
   .page-title {
     h2 {
-      font-family: var(--undpds-font-family-notosans);
+      font-family: $Font-Family-NotoSans;
     }
   }
 }
@@ -35,7 +35,7 @@
 #{$cyrillic} {
   .page-title {
     h2 {
-      font-family: var(--undpds-font-family-proximanova);
+      font-family: $Font-Family-ProximaNova;
     }
   }
 }

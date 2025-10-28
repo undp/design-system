@@ -1,6 +1,5 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/variables';
-@use '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
 
 /* fixed carousel start */
 .fixed-carousel {
@@ -14,33 +13,33 @@
     display: block;
     object-fit: contain;
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       flex: 0 0 18rem;
       max-width: 18rem;
     }
 
-    @include breakpoints.devicebreak(large) {
+    @include devicebreak(large) {
       flex: 0 0 23.563rem;
       max-width: 23.563rem;
     }
 
-    @include breakpoints.devicebreak(xlarge) {
+    @include devicebreak(xlarge) {
       flex: 0 0 28rem;
       max-width: 28rem;
     }
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       max-width: 10.625rem;
     }
   }
 
   h2 {
-    margin-bottom: var(--undpds-spacing-50);
-    margin-top: var(--undpds-spacing-11);
+    margin-bottom: $spacing-50;
+    margin-top: $spacing-11;
   }
 
   .slide-content {
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       align-content: space-between;
       display: flex;
       flex-wrap: wrap;
@@ -48,16 +47,16 @@
       padding-right: 1.5rem;
     }
 
-    @include breakpoints.devicebreak(large) {
+    @include devicebreak(large) {
       padding-left: 8.875rem;
       padding-right: 4rem;
     }
 
-    @include breakpoints.devicebreak(xlarge) {
+    @include devicebreak(xlarge) {
       padding-right: 6rem;
     }
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       margin-top: 1.5rem;
       padding-left: 1.5rem;
       padding-right: 2rem;
@@ -70,7 +69,7 @@
     .button {
       text-transform: uppercase;
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         display: inline-flex;
       }
     }
@@ -83,7 +82,7 @@
       h4 {
         @extend %carousel_title;
 
-        @include breakpoints.devicebreak(medium) {
+        @include devicebreak(medium) {
           margin-bottom: 2rem;
         }
       }
@@ -91,11 +90,11 @@
       p {
         @extend %carousel_desc;
 
-        @include breakpoints.devicebreak(large) {
+        @include devicebreak(large) {
           margin-bottom: 3.375rem;
         }
 
-        @include breakpoints.devicebreak(small) {
+        @include devicebreak(small) {
           font-size: 0.875rem;
         }
       }
@@ -103,7 +102,7 @@
   }
 
   &__button-wrap {
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       display: inline-flex;
     }
   }
@@ -117,7 +116,7 @@
     display: flex;
     margin-left: 2.5rem;
 
-    @include breakpoints.devicebreak(large) {
+    @include devicebreak(large) {
       margin-left: 4rem;
     }
 
@@ -143,21 +142,21 @@
 [dir='rtl'] {
   .fixed-carousel {
     .slide-content {
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         padding-left: 1.5rem;
         padding-right: 3rem;
       }
 
-      @include breakpoints.devicebreak(large) {
+      @include devicebreak(large) {
         padding-left: 4rem;
         padding-right: 8.875rem;
       }
 
-      @include breakpoints.devicebreak(xlarge) {
+      @include devicebreak(xlarge) {
         padding-left: 6rem;
       }
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         padding-left: 2rem;
         padding-right: 1.5rem;
       }
@@ -167,7 +166,7 @@
       margin-left: 0;
       margin-right: 2.5rem;
 
-      @include breakpoints.devicebreak(large) {
+      @include devicebreak(large) {
         margin-right: 4rem;
       }
 
@@ -177,7 +176,7 @@
           margin-right: 0;
 
           img {
-            @include mixins.transform(rotate(180deg));
+            @include transform(rotate(180deg));
           }
         }
 
@@ -186,7 +185,7 @@
           margin-right: 0.75rem;
 
           img {
-            @include mixins.transform(rotate(-180deg));
+            @include transform(rotate(-180deg));
           }
         }
       }
