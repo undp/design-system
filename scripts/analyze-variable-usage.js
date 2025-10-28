@@ -14,26 +14,29 @@ const { execSync } = require('child_process');
 const args = process.argv.slice(2);
 
 if (args.length === 0) {
-  console.log('Usage: node scripts/analyze-variable-usage.js <variable-name>');
+  console.log('Usage: node scripts/analyze-variable-usage.js <variable-name> [search-directory]');
   console.log('');
   console.log('Examples:');
   console.log('  node scripts/analyze-variable-usage.js color-blue-500');
-  console.log('  node scripts/analyze-variable-usage.js font-size-16');
-  console.log('  node scripts/analyze-variable-usage.js spacing-05');
+  console.log('  node scripts/analyze-variable-usage.js font-size-16 docs/');
+  console.log('  node scripts/analyze-variable-usage.js spacing-05 stories/');
   console.log('');
-  console.log('Without arguments, shows all variable usage counts:');
+  console.log('Default search directory: stories/');
+  console.log('');
   process.exit(0);
 }
 
 const variableName = args[0];
+const searchDir = args[1] || 'stories/';
 const searchPattern = variableName.startsWith('$') ? variableName : `$${variableName}`;
 
-console.log(`🔍 Searching for usage of: ${searchPattern}\n`);
+console.log(`🔍 Searching for usage of: ${searchPattern}`);
+console.log(`📂 Search directory: ${searchDir}\n`);
 
 try {
   // Search for the variable in SCSS files
   const result = execSync(
-    `grep -r "${searchPattern}" stories/ --include="*.scss" --include="*.sass" -n`,
+    `grep -r "${searchPattern}" ${searchDir} --include="*.scss" --include="*.sass" -n`,
     { 
       encoding: 'utf8',
       cwd: path.join(__dirname, '..'),
