@@ -9,8 +9,9 @@
  * Features:
  * - Resolves token references (e.g., {color.blue.600})
  * - Converts design token types to appropriate SASS values
- * - Preserves existing variables not present in tokens.json
- * - Generates proper SASS variable names
+ * - Updates existing variables with Figma token values (no duplicates)
+ * - Uses SASS variable references for semantic tokens
+ * - Generates proper SASS variable names with hyphens (font-family, font-size, etc.)
  */
 
 const fs = require('fs');
@@ -21,30 +22,113 @@ const TOKENS_PATH = path.join(__dirname, '../figma-tokens/input/tokens.json');
 const VARIABLES_PATH = path.join(__dirname, '../stories/assets/scss/_variables.scss');
 
 /**
- * Parse existing SASS variables to preserve non-token variables
+ * Parse existing SASS variables from file content
  */
 function parseExistingSassVariables(content) {
   const variables = new Map();
   const lines = content.split('\n');
   
-  lines.forEach(line => {
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
     const trimmed = line.trim();
+    
     // Match SASS variable declarations: $variable-name: value;
     const match = trimmed.match(/^\$([a-zA-Z0-9_-]+)\s*:\s*(.+?);/);
     if (match) {
-      variables.set(match[1], match[2]);
+      const varName = match[1];
+      const varValue = match[2];
+      
+      // Store the variable with its line number and value
+      variables.set(varName, {
+        value: varValue,
+        lineNumber: i,
+        originalLine: line
+      });
     }
-  });
+  }
   
   return variables;
 }
 
 /**
- * Resolve token references like {color.blue.600} to actual values
+ * Update existing SASS file with token values
  */
-function resolveTokenReference(value, tokens) {
+function updateSassVariables(existingContent, tokens) {
+  const lines = existingContent.split('\n');
+  const existingVars = parseExistingSassVariables(existingContent);
+  const updatedVars = new Set();
+  const newVars = [];
+  
+  // Update existing variables with token values
+  for (const token of tokens) {
+    const varName = pathToVariableName(token.path);
+    const varValue = token.sassReference || token.value;
+    
+    if (existingVars.has(varName)) {
+      // Update existing variable
+      const existing = existingVars.get(varName);
+      const lineNum = existing.lineNumber;
+      
+      // Replace the line with updated value
+      const indent = lines[lineNum].match(/^\s*/)[0];
+      lines[lineNum] = `${indent}$${varName}: ${varValue};`;
+      updatedVars.add(varName);
+    } else {
+      // Collect new variables to add
+      newVars.push({
+        name: varName,
+        value: varValue,
+        token: token
+      });
+    }
+  }
+  
+  // Add new variables at the end of the file (before any trailing comments)
+  if (newVars.length > 0) {
+    // Find a good insertion point (before final comments or at end)
+    let insertIndex = lines.length;
+    
+    // Group new variables by category
+    const grouped = {};
+    newVars.forEach(v => {
+      const category = v.token.path[0];
+      if (!grouped[category]) {
+        grouped[category] = [];
+      }
+      grouped[category].push(v);
+    });
+    
+    // Add new variables grouped by category
+    const newLines = [];
+    newLines.push('');
+    newLines.push('// Additional Figma tokens (new variables)');
+    
+    for (const [category, vars] of Object.entries(grouped)) {
+      newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
+      vars.forEach(v => {
+        newLines.push(`$${v.name}: ${v.value};`);
+      });
+      newLines.push('');
+    }
+    
+    // Insert before the end
+    lines.splice(insertIndex, 0, ...newLines);
+  }
+  
+  return {
+    content: lines.join('\n'),
+    updatedCount: updatedVars.size,
+    newCount: newVars.length
+  };
+}
+
+/**
+ * Resolve token references like {color.blue.600} to actual values
+ * Returns both the resolved value and the reference path for semantic tokens
+ */
+function resolveTokenReference(value, tokens, returnReference = false) {
   if (typeof value !== 'string' || !value.startsWith('{') || !value.endsWith('}')) {
-    return value;
+    return returnReference ? { value, reference: null } : value;
   }
   
   const reference = value.slice(1, -1); // Remove { }
@@ -63,7 +147,7 @@ function resolveTokenReference(value, tokens) {
           current = current[part];
         } else {
           console.warn(`Warning: Could not resolve reference ${value}`);
-          return value;
+          return returnReference ? { value, reference: null } : value;
         }
       }
       break;
@@ -72,24 +156,49 @@ function resolveTokenReference(value, tokens) {
   
   // If we found a token object with $value, resolve it recursively
   if (current && typeof current === 'object' && '$value' in current) {
-    return resolveTokenReference(current.$value, tokens);
+    const resolved = resolveTokenReference(current.$value, tokens, returnReference);
+    if (returnReference && typeof current.$value === 'string' && current.$value.startsWith('{')) {
+      // This is a reference to another token, return the reference
+      return { value: resolved.value || resolved, reference: reference };
+    }
+    return resolved;
   }
   
-  return current;
+  return returnReference ? { value: current, reference: null } : current;
 }
 
 /**
- * Convert a nested token path to a SASS variable name
+ * Convert a nested token path to a SASS variable name with proper hyphenation
+ * e.g., ['fontfamily', 'proximanova'] => 'font-family-proximanova'
+ * e.g., ['fontsize', '20'] => 'font-size-20'
+ * e.g., ['lineheight', '100%'] => 'line-height-100'
  * e.g., ['color', 'blue', '600'] => 'color-blue-600'
- * e.g., ['lineheight', '100%'] => 'lineheight-100'
  */
-function pathToVariableName(pathArray, prefix = '') {
-  const cleanedPath = pathArray.map(part => {
+function pathToVariableName(pathArray) {
+  const cleanedPath = pathArray.map((part, index) => {
     // Remove % and other special characters that aren't valid in SASS variable names
-    return part.toString().replace(/[%]/g, '');
+    let cleaned = part.toString().replace(/[%]/g, '');
+    
+    // Add hyphens for compound words if this is the first part (category)
+    if (index === 0) {
+      // fontfamily -> font-family
+      // fontsize -> font-size
+      // fontweight -> font-weight
+      // lineheight -> line-height
+      // textcase -> text-case
+      const hyphenated = cleaned
+        .replace(/^fontfamily$/i, 'font-family')
+        .replace(/^fontsize$/i, 'font-size')
+        .replace(/^fontweight$/i, 'font-weight')
+        .replace(/^lineheight$/i, 'line-height')
+        .replace(/^textcase$/i, 'text-case');
+      return hyphenated;
+    }
+    
+    return cleaned;
   });
-  const name = cleanedPath.join('-');
-  return prefix ? `${prefix}-${name}` : name;
+  
+  return cleanedPath.join('-');
 }
 
 /**
@@ -142,7 +251,7 @@ function processTokenValue(value, type) {
 /**
  * Recursively extract tokens from a token group
  */
-function extractTokens(obj, pathArray = [], allTokensRoot = {}) {
+function extractTokens(obj, pathArray = [], allTokensRoot = {}, isSemantic = false) {
   const tokens = [];
   
   for (const [key, value] of Object.entries(obj)) {
@@ -155,108 +264,38 @@ function extractTokens(obj, pathArray = [], allTokensRoot = {}) {
     
     // If this is a token (has $value property)
     if (value && typeof value === 'object' && '$value' in value) {
-      const resolvedValue = resolveTokenReference(value.$value, allTokensRoot);
-      const processedValue = processTokenValue(resolvedValue, value.$type);
+      let processedValue;
+      let sassReference = null;
+      
+      // For semantic tokens, try to preserve references to primitive tokens
+      if (isSemantic && typeof value.$value === 'string' && value.$value.startsWith('{')) {
+        const refResult = resolveTokenReference(value.$value, allTokensRoot, true);
+        const referencePath = value.$value.slice(1, -1); // Remove { }
+        const referenceParts = referencePath.split('.');
+        
+        // Create SASS variable reference
+        sassReference = '$' + pathToVariableName(referenceParts);
+        processedValue = refResult.value;
+      } else {
+        processedValue = resolveTokenReference(value.$value, allTokensRoot);
+        processedValue = processTokenValue(processedValue, value.$type);
+      }
       
       tokens.push({
         path: currentPath,
         value: processedValue,
+        sassReference: sassReference,
         type: value.$type,
-        originalValue: value.$value
+        originalValue: value.$value,
+        isSemantic: isSemantic
       });
     } else if (value && typeof value === 'object') {
       // Recursively process nested objects
-      tokens.push(...extractTokens(value, currentPath, allTokensRoot));
+      tokens.push(...extractTokens(value, currentPath, allTokensRoot, isSemantic));
     }
   }
   
   return tokens;
-}
-
-/**
- * Generate SASS variable declarations from tokens
- */
-function generateSassVariables(tokens) {
-  const lines = [];
-  
-  // Group tokens by category
-  const grouped = {};
-  tokens.forEach(token => {
-    const category = token.path[0];
-    if (!grouped[category]) {
-      grouped[category] = [];
-    }
-    grouped[category].push(token);
-  });
-  
-  // Generate variables for each category
-  for (const [category, categoryTokens] of Object.entries(grouped)) {
-    lines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens from Figma`);
-    
-    categoryTokens.forEach(token => {
-      const varName = pathToVariableName(token.path);
-      const value = token.value;
-      lines.push(`$${varName}: ${value};`);
-    });
-    
-    lines.push('');
-  }
-  
-  return lines.join('\n');
-}
-
-/**
- * Merge Figma tokens with existing variables
- */
-function mergeWithExistingVariables(existingContent, newTokenVariables, tokenVariableNames) {
-  const lines = existingContent.split('\n');
-  const resultLines = [];
-  let inFigmaSection = false;
-  let figmaStartIndex = -1;
-  let figmaEndIndex = -1;
-  
-  // Find existing Figma tokens section
-  for (let i = 0; i < lines.length; i++) {
-    if (lines[i].includes('// FIGMA TOKENS START')) {
-      inFigmaSection = true;
-      figmaStartIndex = i;
-    } else if (lines[i].includes('// FIGMA TOKENS END')) {
-      inFigmaSection = false;
-      figmaEndIndex = i;
-      break;
-    }
-  }
-  
-  // Build the result
-  if (figmaStartIndex >= 0 && figmaEndIndex >= 0) {
-    // Replace existing Figma section
-    resultLines.push(...lines.slice(0, figmaStartIndex));
-    resultLines.push('// FIGMA TOKENS START');
-    resultLines.push('// Auto-generated from figma-tokens/input/tokens.json');
-    resultLines.push('// Do not edit this section manually');
-    resultLines.push('');
-    resultLines.push(newTokenVariables);
-    resultLines.push('// FIGMA TOKENS END');
-    resultLines.push(...lines.slice(figmaEndIndex + 1));
-  } else {
-    // Add new Figma section at the top after any initial comments
-    let insertIndex = 0;
-    while (insertIndex < lines.length && (lines[insertIndex].trim().startsWith('//') || lines[insertIndex].trim() === '')) {
-      insertIndex++;
-    }
-    
-    resultLines.push(...lines.slice(0, insertIndex));
-    resultLines.push('// FIGMA TOKENS START');
-    resultLines.push('// Auto-generated from figma-tokens/input/tokens.json');
-    resultLines.push('// Do not edit this section manually');
-    resultLines.push('');
-    resultLines.push(newTokenVariables);
-    resultLines.push('// FIGMA TOKENS END');
-    resultLines.push('');
-    resultLines.push(...lines.slice(insertIndex));
-  }
-  
-  return resultLines.join('\n');
 }
 
 /**
@@ -286,8 +325,8 @@ function transformTokens(options = {}) {
   if (!jsonOutput) {
     console.log('🔍 Extracting tokens...');
   }
-  const primitiveTokens = extractTokens(tokens.primitive || {}, [], tokens);
-  const semanticTokens = extractTokens(tokens.semantic || {}, [], tokens);
+  const primitiveTokens = extractTokens(tokens.primitive || {}, [], tokens, false);
+  const semanticTokens = extractTokens(tokens.semantic || {}, [], tokens, true);
   const allExtractedTokens = [...primitiveTokens, ...semanticTokens];
 
   if (!jsonOutput) {
@@ -296,34 +335,25 @@ function transformTokens(options = {}) {
     console.log(`   Total: ${allExtractedTokens.length} tokens\n`);
   }
 
-  // Generate SASS variables
+  // Update existing SASS file with token values (no duplicates)
   if (!jsonOutput) {
-    console.log('🔨 Generating SASS variables...');
+    console.log('🔨 Updating SASS variables with Figma token values...');
   }
-  const sassVariables = generateSassVariables(allExtractedTokens);
-
-  // Get list of generated variable names
-  const tokenVariableNames = new Set(
-    allExtractedTokens.map(token => pathToVariableName(token.path))
-  );
-
-  // Merge with existing content
-  if (!jsonOutput) {
-    console.log('🔀 Merging with existing variables...');
-  }
-  const mergedContent = mergeWithExistingVariables(existingContent, sassVariables, tokenVariableNames);
+  const updateResult = updateSassVariables(existingContent, allExtractedTokens);
 
   // Write back to file
   if (!jsonOutput) {
     console.log(`💾 Writing updated variables to: ${VARIABLES_PATH}`);
   }
-  fs.writeFileSync(VARIABLES_PATH, mergedContent, 'utf8');
+  fs.writeFileSync(VARIABLES_PATH, updateResult.content, 'utf8');
 
   const result = {
     success: true,
     tokensProcessed: allExtractedTokens.length,
     primitiveTokens: primitiveTokens.length,
-    semanticTokens: semanticTokens.length
+    semanticTokens: semanticTokens.length,
+    variablesUpdated: updateResult.updatedCount,
+    variablesAdded: updateResult.newCount
   };
 
   if (jsonOutput) {
@@ -338,13 +368,16 @@ function transformTokens(options = {}) {
   console.log(`   - Total tokens processed: ${allExtractedTokens.length}`);
   console.log(`   - Primitive tokens: ${primitiveTokens.length}`);
   console.log(`   - Semantic tokens: ${semanticTokens.length}`);
+  console.log(`   - Variables updated: ${updateResult.updatedCount}`);
+  console.log(`   - Variables added: ${updateResult.newCount}`);
   console.log('');
 
-  // Show sample of generated variables
-  console.log('📝 Sample of generated variables:');
+  // Show sample of updated variables
+  console.log('📝 Sample of updated variables:');
   allExtractedTokens.slice(0, 5).forEach(token => {
     const varName = pathToVariableName(token.path);
-    console.log(`   $${varName}: ${token.value};`);
+    const value = token.sassReference || token.value;
+    console.log(`   $${varName}: ${value};`);
   });
   if (allExtractedTokens.length > 5) {
     console.log(`   ... and ${allExtractedTokens.length - 5} more`);
