@@ -269,3 +269,14 @@ $text-case-uppercase: uppercase;
 // Border tokens
 $border-default: 2px;
 $border-subtle: 1px;
+
+
+// Backwards compatibility aliases for spacing variables
+// Old 2-digit notation pointing to new 3-digit notation
+$spacing-36: $spacing-036;
+$spacing-44: $spacing-044;
+$spacing-50: $spacing-050;
+$spacing-60: $spacing-060;
+$spacing-70: $spacing-070;
+$spacing-76: $spacing-076;
+$spacing-90: $spacing-090;

@@ -52,24 +52,34 @@ function parseExistingSassVariables(content) {
 
 /**
  * Migrate spacing variables > 13 to 3-digit notation
+ * Returns array of migrated variable numbers for backwards compatibility
+ * Only tracks variables that actually had 2-digit notation (not 3-digit)
  * e.g., $spacing-36 -> $spacing-036
  */
 function migrateSpacingNotation(lines) {
   const spacingPattern = /^\s*\$spacing-(\d+):/;
+  const migratedVariables = [];
   
   for (let i = 0; i < lines.length; i++) {
     const match = lines[i].match(spacingPattern);
     if (match) {
-      const num = parseInt(match[1], 10);
-      // Migrate spacing variables > 13 to 3-digit notation
-      if (num > 13) {
+      const numStr = match[1];
+      const num = parseInt(numStr, 10);
+      
+      // Only migrate if it's 2-digit notation and > 13
+      if (num > 13 && numStr.length === 2) {
         const paddedNum = num.toString().padStart(3, '0');
         lines[i] = lines[i].replace(`$spacing-${num}:`, `$spacing-${paddedNum}:`);
+        
+        // Track 36-90 range for backwards compatibility aliases
+        if (num >= 36 && num <= 90) {
+          migratedVariables.push(num);
+        }
       }
     }
   }
   
-  return lines;
+  return { lines, migratedVariables };
 }
 
 /**
@@ -79,7 +89,9 @@ function updateSassVariables(existingContent, tokens) {
   let lines = existingContent.split('\n');
   
   // First, migrate existing spacing variables > 13 to 3-digit notation
-  lines = migrateSpacingNotation(lines);
+  const migrationResult = migrateSpacingNotation(lines);
+  lines = migrationResult.lines;
+  const migratedVariables = migrationResult.migratedVariables;
   
   // Re-parse after migration
   const existingVars = parseExistingSassVariables(lines.join('\n'));
@@ -142,10 +154,28 @@ function updateSassVariables(existingContent, tokens) {
     lines.splice(insertIndex, 0, ...newLines);
   }
   
+  // Add backwards compatibility aliases for migrated spacing variables (36-90)
+  if (migratedVariables.length > 0) {
+    const backwardsCompatLines = [];
+    backwardsCompatLines.push('');
+    backwardsCompatLines.push('// Backwards compatibility aliases for spacing variables');
+    backwardsCompatLines.push('// Old 2-digit notation pointing to new 3-digit notation');
+    
+    migratedVariables.sort((a, b) => a - b);
+    migratedVariables.forEach(num => {
+      const paddedNum = num.toString().padStart(3, '0');
+      backwardsCompatLines.push(`$spacing-${num}: $spacing-${paddedNum};`);
+    });
+    
+    // Add at the end of the file
+    lines.push(...backwardsCompatLines);
+  }
+  
   return {
     content: lines.join('\n'),
     updatedCount: updatedVars.size,
-    newCount: newVars.length
+    newCount: newVars.length,
+    backwardsCompatCount: migratedVariables.length
   };
 }
 
@@ -413,7 +443,8 @@ function transformTokens(options = {}) {
     primitiveTokens: primitiveTokens.length,
     semanticTokens: semanticTokens.length,
     variablesUpdated: updateResult.updatedCount,
-    variablesAdded: updateResult.newCount
+    variablesAdded: updateResult.newCount,
+    backwardsCompatAdded: updateResult.backwardsCompatCount
   };
 
   if (jsonOutput) {
@@ -430,6 +461,9 @@ function transformTokens(options = {}) {
   console.log(`   - Semantic tokens: ${semanticTokens.length}`);
   console.log(`   - Variables updated: ${updateResult.updatedCount}`);
   console.log(`   - Variables added: ${updateResult.newCount}`);
+  if (updateResult.backwardsCompatCount > 0) {
+    console.log(`   - Backwards compatibility aliases: ${updateResult.backwardsCompatCount}`);
+  }
   console.log('');
 
   // Show sample of updated variables
