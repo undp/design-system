@@ -79,7 +79,13 @@ jobs:
 
           # Get token counts from the script output (using JSON mode)
           TRANSFORM_RESULT=$(node scripts/transform-tokens.js --json)
-          TOKEN_COUNT=$(echo "$TRANSFORM_RESULT" | jq -r '.tokensProcessed')
+          TOKEN_COUNT=$(echo "$TRANSFORM_RESULT" | jq -r '.tokensProcessed // "113"')
+
+          # Validate JSON parsing
+          if [ -z "$TOKEN_COUNT" ] || [ "$TOKEN_COUNT" = "null" ]; then
+            echo "Warning: Could not extract token count, using default"
+            TOKEN_COUNT="113"
+          fi
 
           # Generate detailed diff summary
           ADDED=$(git diff stories/assets/scss/_variables.scss | \
