@@ -77,9 +77,9 @@ jobs:
         run: |
           echo "Generating change summary..."
 
-          # Get token counts from the script output
-          TOKEN_COUNT=$(node scripts/transform-tokens.js 2>&1 | \
-            grep "Total tokens processed:" | grep -oP '\d+')
+          # Get token counts from the script output (using JSON mode)
+          TRANSFORM_RESULT=$(node scripts/transform-tokens.js --json)
+          TOKEN_COUNT=$(echo "$TRANSFORM_RESULT" | jq -r '.tokensProcessed')
 
           # Generate detailed diff summary
           ADDED=$(git diff stories/assets/scss/_variables.scss | \

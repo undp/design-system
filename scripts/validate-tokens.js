@@ -86,14 +86,15 @@ try {
 
   // Check 6: Valid SASS syntax (basic check)
   const invalidPatterns = [
-    /\$[a-zA-Z0-9_-]+%:/,  // Variable names with %
-    /\$[a-zA-Z0-9_-]+\s+[a-zA-Z0-9_-]+:/,  // Variable names with spaces
+    { pattern: /\$[a-zA-Z0-9_-]+%\s*:/, desc: 'Variable names with %' },
+    { pattern: /\$[a-zA-Z0-9_-]+\s+[a-zA-Z0-9_-]+\s*:/, desc: 'Variable names with spaces' },
   ];
 
   let hasInvalidSyntax = false;
-  for (const pattern of invalidPatterns) {
-    if (pattern.test(newContent)) {
-      console.log(`   ✗ Invalid SASS syntax detected: ${pattern}`);
+  for (const { pattern, desc } of invalidPatterns) {
+    const match = newContent.match(pattern);
+    if (match) {
+      console.log(`   ✗ Invalid SASS syntax detected (${desc}): ${match[0]}`);
       hasInvalidSyntax = true;
     }
   }

@@ -262,54 +262,84 @@ function mergeWithExistingVariables(existingContent, newTokenVariables, tokenVar
 /**
  * Main transformation function
  */
-function transformTokens() {
-  console.log('🎨 Starting Figma tokens transformation...\n');
-  
+function transformTokens(options = {}) {
+  const { jsonOutput = false } = options;
+
+  if (!jsonOutput) {
+    console.log('🎨 Starting Figma tokens transformation...\n');
+  }
+
   // Read tokens file
-  console.log(`📖 Reading tokens from: ${TOKENS_PATH}`);
+  if (!jsonOutput) {
+    console.log(`📖 Reading tokens from: ${TOKENS_PATH}`);
+  }
   const tokensContent = fs.readFileSync(TOKENS_PATH, 'utf8');
   const tokens = JSON.parse(tokensContent);
-  
+
   // Read existing variables file
-  console.log(`📖 Reading existing variables from: ${VARIABLES_PATH}`);
+  if (!jsonOutput) {
+    console.log(`📖 Reading existing variables from: ${VARIABLES_PATH}`);
+  }
   const existingContent = fs.readFileSync(VARIABLES_PATH, 'utf8');
-  
+
   // Extract all tokens from primitive and semantic groups
-  console.log('🔍 Extracting tokens...');
+  if (!jsonOutput) {
+    console.log('🔍 Extracting tokens...');
+  }
   const primitiveTokens = extractTokens(tokens.primitive || {}, [], tokens);
   const semanticTokens = extractTokens(tokens.semantic || {}, [], tokens);
   const allExtractedTokens = [...primitiveTokens, ...semanticTokens];
-  
-  console.log(`   Found ${primitiveTokens.length} primitive tokens`);
-  console.log(`   Found ${semanticTokens.length} semantic tokens`);
-  console.log(`   Total: ${allExtractedTokens.length} tokens\n`);
-  
+
+  if (!jsonOutput) {
+    console.log(`   Found ${primitiveTokens.length} primitive tokens`);
+    console.log(`   Found ${semanticTokens.length} semantic tokens`);
+    console.log(`   Total: ${allExtractedTokens.length} tokens\n`);
+  }
+
   // Generate SASS variables
-  console.log('🔨 Generating SASS variables...');
+  if (!jsonOutput) {
+    console.log('🔨 Generating SASS variables...');
+  }
   const sassVariables = generateSassVariables(allExtractedTokens);
-  
+
   // Get list of generated variable names
   const tokenVariableNames = new Set(
     allExtractedTokens.map(token => pathToVariableName(token.path))
   );
-  
+
   // Merge with existing content
-  console.log('🔀 Merging with existing variables...');
+  if (!jsonOutput) {
+    console.log('🔀 Merging with existing variables...');
+  }
   const mergedContent = mergeWithExistingVariables(existingContent, sassVariables, tokenVariableNames);
-  
+
   // Write back to file
-  console.log(`💾 Writing updated variables to: ${VARIABLES_PATH}`);
+  if (!jsonOutput) {
+    console.log(`💾 Writing updated variables to: ${VARIABLES_PATH}`);
+  }
   fs.writeFileSync(VARIABLES_PATH, mergedContent, 'utf8');
-  
+
+  const result = {
+    success: true,
+    tokensProcessed: allExtractedTokens.length,
+    primitiveTokens: primitiveTokens.length,
+    semanticTokens: semanticTokens.length
+  };
+
+  if (jsonOutput) {
+    console.log(JSON.stringify(result, null, 2));
+    return result;
+  }
+
   console.log('\n✅ Transformation complete!\n');
-  
+
   // Generate summary
   console.log('📊 Summary:');
   console.log(`   - Total tokens processed: ${allExtractedTokens.length}`);
   console.log(`   - Primitive tokens: ${primitiveTokens.length}`);
   console.log(`   - Semantic tokens: ${semanticTokens.length}`);
   console.log('');
-  
+
   // Show sample of generated variables
   console.log('📝 Sample of generated variables:');
   allExtractedTokens.slice(0, 5).forEach(token => {
@@ -319,19 +349,15 @@ function transformTokens() {
   if (allExtractedTokens.length > 5) {
     console.log(`   ... and ${allExtractedTokens.length - 5} more`);
   }
-  
-  return {
-    success: true,
-    tokensProcessed: allExtractedTokens.length,
-    primitiveTokens: primitiveTokens.length,
-    semanticTokens: semanticTokens.length
-  };
+
+  return result;
 }
 
 // Run the transformation
 if (require.main === module) {
   try {
-    transformTokens();
+    const jsonOutput = process.argv.includes('--json');
+    transformTokens({ jsonOutput });
     process.exit(0);
   } catch (error) {
     console.error('❌ Error during transformation:');
