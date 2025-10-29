@@ -177,16 +177,16 @@ $spacing-096: 96px;
 $spacing-160: 160px;
 
 // Fontfamily tokens
-$font-family-proximanova: 'Proxima Nova';
-$font-family-sohnebreit: 'Söhne Breit';
-$font-family-notosans: 'Noto Sans';
-$font-family-notosans-arabic: 'Noto Sans Arabic';
-$font-family-notosans-burmese: 'Noto Sans Myanmar';
-$font-family-notosans-chinese: 'Noto Sans SC';
-$font-family-notosans-japanese: 'Noto Sans JP';
-$font-family-notosans-georgian: 'Noto Sans Georgian';
-$font-family-notosans-khmer: 'Noto Sans Khmer';
-$font-family-notosans-korean: 'Noto Sans KR';
+$font-family-proximanova: 'ProximaNova', sans-serif;
+$font-family-sohnebreit: 'SohneBreit', $Font-Family-ProximaNova;
+$font-family-notosans: 'Noto Sans', sans-serif;
+$font-family-notosans-arabic: 'Noto Sans Arabic', sans-serif;
+$font-family-notosans-burmese: 'Noto Sans Myanmar', sans-serif;
+$font-family-notosans-chinese: 'Noto Sans SC', sans-serif;
+$font-family-notosans-japanese: 'Noto Sans JP', sans-serif;
+$font-family-notosans-georgian: 'Noto Sans Georgian', sans-serif;
+$font-family-notosans-khmer: 'Noto Sans Khmer', sans-serif;
+$font-family-notosans-korean: 'Noto Sans KR', sans-serif;
 $font-family-primary: $font-family-proximanova;
 $font-family-secondary: $font-family-sohnebreit;
 
@@ -200,7 +200,7 @@ $font-size-82: 5.125rem;
 $font-size-100: 6.25rem;
 $font-size-body-default: $font-size-20;
 $font-size-body-small: $font-size-16;
-$font-size-heading-xxlarge: $font-size-100;
+$font-size-heading-xxlarge: $font-size-82;
 $font-size-heading-xlarge: $font-size-55;
 $font-size-heading-large: $font-size-35;
 $font-size-heading-medium: $font-size-35;
@@ -269,6 +269,8 @@ $text-case-uppercase: uppercase;
 // Border tokens
 $border-default: 2px;
 $border-subtle: 1px;
+
+
 
 
 // Backwards compatibility aliases for spacing variables
