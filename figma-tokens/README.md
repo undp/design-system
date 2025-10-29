@@ -107,6 +107,42 @@ Tokens are converted to SASS variables using kebab-case with proper hyphenation 
 - `fontweight.bold` → `$font-weight-bold`
 - `textcase.uppercase` → `$text-case-uppercase`
 
+### Spacing Variables: Dual Notation System
+
+**Spacing is the ONLY variable type that allows duplicates** to support both ranking and pixel-based systems:
+
+#### Rank-Based Notation (2 digits, padded with zeros)
+For semantic ranking from 01 to 13:
+```scss
+$spacing-01: 0.125rem;  // Rank 1
+$spacing-02: 0.25rem;   // Rank 2
+...
+$spacing-12: 6rem;      // Rank 12
+$spacing-13: 10rem;     // Rank 13 (max)
+```
+- Uses rem units
+- Preserved from existing variables
+- NOT modified by Figma tokens
+
+#### Pixel-Based Notation (3 digits, padded with zeros)
+For exact pixel values from Figma:
+```scss
+$spacing-002: 2px;      // From Figma token "2"
+$spacing-004: 4px;      // From Figma token "4"
+$spacing-016: 16px;     // From Figma token "16"
+$spacing-036: 2.25rem;  // Migrated from $spacing-36
+$spacing-160: 160px;    // From Figma token "160"
+```
+- Uses px or rem units
+- Created/updated by Figma tokens
+- All values > 13 use only this notation (no rank-based equivalent)
+- Existing 2-digit variables > 13 are automatically migrated to 3-digit notation
+
+**Why both notations?**
+- Rank-based provides semantic meaning (spacing scale steps)
+- Pixel-based provides exact Figma values for pixel-perfect implementation
+- Designers can specify exact pixel values while developers can use semantic ranks
+
 ### Semantic Tokens Use SASS References
 
 Semantic tokens reference primitive tokens using SASS variables rather than resolved values:
