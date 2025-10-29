@@ -73,7 +73,8 @@ try {
   const sampleTokens = [
     '$color-blue-600:',
     '$font-size-20:',
-    '$spacing-16:',
+    '$spacing-002:',  // Pixel-based notation (3 digits)
+    '$spacing-01:',   // Rank-based notation (2 digits)
     '$font-family-primary:',
     '$line-height-100:',
     '$color-border-default:'
@@ -88,7 +89,7 @@ try {
   }
 
   if (allTokensPresent) {
-    console.log('   ✓ Sample tokens verified (with hyphens)');
+    console.log('   ✓ Sample tokens verified (with hyphens and spacing notations)');
   } else {
     throw new Error('Some sample tokens are missing');
   }

@@ -51,17 +51,44 @@ function parseExistingSassVariables(content) {
 }
 
 /**
+ * Migrate spacing variables > 13 to 3-digit notation
+ * e.g., $spacing-36 -> $spacing-036
+ */
+function migrateSpacingNotation(lines) {
+  const spacingPattern = /^\s*\$spacing-(\d+):/;
+  
+  for (let i = 0; i < lines.length; i++) {
+    const match = lines[i].match(spacingPattern);
+    if (match) {
+      const num = parseInt(match[1], 10);
+      // Migrate spacing variables > 13 to 3-digit notation
+      if (num > 13) {
+        const paddedNum = num.toString().padStart(3, '0');
+        lines[i] = lines[i].replace(`$spacing-${num}:`, `$spacing-${paddedNum}:`);
+      }
+    }
+  }
+  
+  return lines;
+}
+
+/**
  * Update existing SASS file with token values
  */
 function updateSassVariables(existingContent, tokens) {
-  const lines = existingContent.split('\n');
-  const existingVars = parseExistingSassVariables(existingContent);
+  let lines = existingContent.split('\n');
+  
+  // First, migrate existing spacing variables > 13 to 3-digit notation
+  lines = migrateSpacingNotation(lines);
+  
+  // Re-parse after migration
+  const existingVars = parseExistingSassVariables(lines.join('\n'));
   const updatedVars = new Set();
   const newVars = [];
   
   // Update existing variables with token values
   for (const token of tokens) {
-    const varName = pathToVariableName(token.path);
+    const varName = pathToVariableName(token.path, token.usePixelNotation);
     const varValue = token.sassReference || token.value;
     
     if (existingVars.has(varName)) {
@@ -169,12 +196,18 @@ function resolveTokenReference(value, tokens, returnReference = false) {
 
 /**
  * Convert a nested token path to a SASS variable name with proper hyphenation
+ * Special handling for spacing variables which use dual notation:
+ * - Rank-based (2 digits): $spacing-01, $spacing-02, ... $spacing-13
+ * - Pixel-based (3 digits): $spacing-002, $spacing-004, etc.
+ * 
  * e.g., ['fontfamily', 'proximanova'] => 'font-family-proximanova'
  * e.g., ['fontsize', '20'] => 'font-size-20'
  * e.g., ['lineheight', '100%'] => 'line-height-100'
  * e.g., ['color', 'blue', '600'] => 'color-blue-600'
+ * e.g., ['spacing', '2'] => 'spacing-002' (pixel-based)
+ * e.g., ['spacing', '16'] => 'spacing-016' (pixel-based)
  */
-function pathToVariableName(pathArray) {
+function pathToVariableName(pathArray, usePixelNotation = false) {
   const cleanedPath = pathArray.map((part, index) => {
     // Remove % and other special characters that aren't valid in SASS variable names
     let cleaned = part.toString().replace(/[%]/g, '');
@@ -193,6 +226,14 @@ function pathToVariableName(pathArray) {
         .replace(/^lineheight$/i, 'line-height')
         .replace(/^textcase$/i, 'text-case');
       return hyphenated;
+    }
+    
+    // Special handling for spacing values - use 3-digit padding for pixel notation
+    if (index === 1 && pathArray[0] === 'spacing' && usePixelNotation) {
+      const num = parseInt(cleaned, 10);
+      if (!isNaN(num)) {
+        return num.toString().padStart(3, '0');
+      }
     }
     
     return cleaned;
@@ -250,6 +291,8 @@ function processTokenValue(value, type) {
 
 /**
  * Recursively extract tokens from a token group
+ * For spacing tokens, generates ONLY pixel-based notation (3 digits)
+ * Rank-based notation (2 digits) is preserved from existing file
  */
 function extractTokens(obj, pathArray = [], allTokensRoot = {}, isSemantic = false) {
   const tokens = [];
@@ -281,14 +324,31 @@ function extractTokens(obj, pathArray = [], allTokensRoot = {}, isSemantic = fal
         processedValue = processTokenValue(processedValue, value.$type);
       }
       
-      tokens.push({
-        path: currentPath,
-        value: processedValue,
-        sassReference: sassReference,
-        type: value.$type,
-        originalValue: value.$value,
-        isSemantic: isSemantic
-      });
+      // Special handling for spacing tokens - ONLY use pixel-based notation (3 digits)
+      // Rank-based notation (2 digits) is preserved from existing variables
+      if (pathArray[0] === 'spacing' && value.$type === 'spacing' && !isSemantic) {
+        const token = {
+          path: currentPath,
+          value: processedValue,
+          sassReference: sassReference,
+          type: value.$type,
+          originalValue: value.$value,
+          isSemantic: isSemantic,
+          usePixelNotation: true  // Always use 3-digit notation for Figma spacing tokens
+        };
+        tokens.push(token);
+      } else {
+        // For non-spacing tokens, use normal notation
+        const token = {
+          path: currentPath,
+          value: processedValue,
+          sassReference: sassReference,
+          type: value.$type,
+          originalValue: value.$value,
+          isSemantic: isSemantic
+        };
+        tokens.push(token);
+      }
     } else if (value && typeof value === 'object') {
       // Recursively process nested objects
       tokens.push(...extractTokens(value, currentPath, allTokensRoot, isSemantic));
@@ -375,7 +435,7 @@ function transformTokens(options = {}) {
   // Show sample of updated variables
   console.log('📝 Sample of updated variables:');
   allExtractedTokens.slice(0, 5).forEach(token => {
-    const varName = pathToVariableName(token.path);
+    const varName = pathToVariableName(token.path, token.usePixelNotation);
     const value = token.sassReference || token.value;
     console.log(`   $${varName}: ${value};`);
   });
