@@ -1,4 +1,141 @@
 // Image variables
+// FIGMA TOKENS START
+// Auto-generated from figma-tokens/input/tokens.json
+// Do not edit this section manually
+
+// Spacing tokens from Figma
+$spacing-2: 2px;
+$spacing-4: 4px;
+$spacing-8: 8px;
+$spacing-12: 12px;
+$spacing-16: 16px;
+$spacing-24: 24px;
+$spacing-32: 32px;
+$spacing-40: 40px;
+$spacing-48: 48px;
+$spacing-64: 64px;
+$spacing-80: 80px;
+$spacing-96: 96px;
+$spacing-160: 160px;
+
+// Fontfamily tokens from Figma
+$fontfamily-proximanova: 'Proxima Nova';
+$fontfamily-sohnebreit: 'Söhne Breit';
+$fontfamily-notosans: 'Noto Sans';
+$fontfamily-notosans-arabic: 'Noto Sans Arabic';
+$fontfamily-notosans-burmese: 'Noto Sans Myanmar';
+$fontfamily-notosans-chinese: 'Noto Sans SC';
+$fontfamily-notosans-japanese: 'Noto Sans JP';
+$fontfamily-notosans-georgian: 'Noto Sans Georgian';
+$fontfamily-notosans-khmer: 'Noto Sans Khmer';
+$fontfamily-notosans-korean: 'Noto Sans KR';
+$fontfamily-primary: 'Proxima Nova';
+$fontfamily-secondary: 'Söhne Breit';
+
+// Fontsize tokens from Figma
+$fontsize-14: 0.875rem;
+$fontsize-16: 1rem;
+$fontsize-20: 1.25rem;
+$fontsize-25: 1.5625rem;
+$fontsize-30: 1.875rem;
+$fontsize-32: 2rem;
+$fontsize-35: 2.1875rem;
+$fontsize-40: 2.5rem;
+$fontsize-45: 2.8125rem;
+$fontsize-47: 2.9375rem;
+$fontsize-55: 3.4375rem;
+$fontsize-82: 5.125rem;
+$fontsize-100: 6.25rem;
+$fontsize-body-default: 1.25rem;
+$fontsize-body-small: 1rem;
+$fontsize-heading-xxlarge: 6.25rem;
+$fontsize-heading-xlarge: 3.4375rem;
+$fontsize-heading-large: 2.1875rem;
+$fontsize-heading-medium: 2.1875rem;
+$fontsize-heading-small: 1.5625rem;
+$fontsize-heading-xsmall: 1rem;
+$fontsize-display-xxlarge: 6.25rem;
+$fontsize-display-xlarge: 5.125rem;
+$fontsize-display-large: 3.4375rem;
+
+// Color tokens from Figma
+$color-blue-100: #B5D5F5;
+$color-blue-200: #94C4F5;
+$color-blue-300: #6BABEB;
+$color-blue-400: #4F95DD;
+$color-blue-500: #3288CE;
+$color-blue-600: #006EB5;
+$color-blue-700: #1F5A95;
+$color-gray-100: #FAFAFA;
+$color-gray-200: #F7F7F7;
+$color-gray-300: #EDEFF0;
+$color-gray-400: #D4D6D8;
+$color-gray-500: #A9B1B7;
+$color-gray-600: #55606E;
+$color-gray-700: #232E3D;
+$color-yellow-200: #FFE17E;
+$color-yellow-400: #FFEB00;
+$color-yellow-600: #FBC412;
+$color-red-200: #FFBCB7;
+$color-red-400: #EE402D;
+$color-red-600: #D12800;
+$color-green-200: #B8ECB6;
+$color-green-400: #6DE354;
+$color-green-600: #59BA47;
+$color-azure-200: #A2DAF3;
+$color-azure-400: #60D4F2;
+$color-azure-600: #00C1FF;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-text-default: #000000;
+$color-text-inverse: #ffffff;
+$color-accent: #FFEB00;
+$color-brand: #006EB5;
+$color-action-primary: #D12800;
+$color-action-secondary: #006EB5;
+$color-surface-default: #F7F7F7;
+$color-background-default: #ffffff;
+$color-border-default: #000000;
+$color-border-subtle: #D4D6D8;
+$color-border-inverse: #ffffff;
+
+// Sizing tokens from Figma
+$sizing-1: 1px;
+$sizing-2: 2px;
+$sizing-4: 4px;
+$sizing-8: 8px;
+$sizing-16: 16px;
+$sizing-24: 24px;
+$sizing-32: 32px;
+$sizing-64: 64px;
+$sizing-128: 128px;
+$sizing-256: 256px;
+$sizing-512: 512px;
+$sizing-1024: 1024px;
+
+// Lineheight tokens from Figma
+$lineheight-100: 100%;
+$lineheight-110: 110%;
+$lineheight-138: 138%;
+$lineheight-body: 138%;
+$lineheight-heading: 110%;
+$lineheight-display: 100%;
+
+// Fontweight tokens from Figma
+$fontweight-bold: 700;
+$fontweight-semibold: 600;
+$fontweight-regular: 400;
+
+// Textcase tokens from Figma
+$textcase-none: none;
+$textcase-uppercase: uppercase;
+
+// Border tokens from Figma
+$border-default: 2px;
+$border-subtle: 1px;
+
+// FIGMA TOKENS END
+
 $img-path: '../../../assets/images';
 $img-path-Icon: '../../../assets/icons';
 $img-path-Iconback: '../../assets/icons';
