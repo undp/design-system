@@ -138,10 +138,36 @@ $spacing-160: 160px;    // From Figma token "160"
 - All values > 13 use only this notation (no rank-based equivalent)
 - Existing 2-digit variables > 13 are automatically migrated to 3-digit notation
 
+#### Backwards Compatibility Aliases
+To prevent breaking changes, spacing variables that were migrated from 2-digit to 3-digit notation have backwards compatibility aliases:
+
+```scss
+// New 3-digit notation (primary)
+$spacing-036: 2.25rem;
+$spacing-044: 2.75rem;
+$spacing-050: 3.125rem;
+$spacing-060: 3.75rem;
+$spacing-070: 4.375rem;
+$spacing-076: 4.75rem;
+$spacing-090: 5.625rem;
+
+// Backwards compatibility aliases (at end of file)
+$spacing-36: $spacing-036;  // Points to new 3-digit notation
+$spacing-44: $spacing-044;
+$spacing-50: $spacing-050;
+$spacing-60: $spacing-060;
+$spacing-70: $spacing-070;
+$spacing-76: $spacing-076;
+$spacing-90: $spacing-090;
+```
+
+This ensures existing code using `$spacing-36` continues to work while new code should use the standardized `$spacing-036` notation.
+
 **Why both notations?**
 - Rank-based provides semantic meaning (spacing scale steps)
 - Pixel-based provides exact Figma values for pixel-perfect implementation
 - Designers can specify exact pixel values while developers can use semantic ranks
+- Backwards compatibility preserves existing code
 
 ### Semantic Tokens Use SASS References
 
