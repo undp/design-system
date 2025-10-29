@@ -36,10 +36,6 @@ git clone
 # install project dependencies
 npm install
 
-# In Windows environment apply patch to the mdx1-csf plugin.
-# This can be omitted when this PR is merged: https://github.com/storybookjs/mdx1-csf/pull/27
-npm run windows-patch-package
-
 # runs storybook locally
 npm run storybook
 
@@ -59,7 +55,7 @@ The design system includes automated integration with Figma design tokens to ens
 Design tokens are automatically synchronized from `figma-tokens/input/tokens.json` to SASS variables in `stories/assets/scss/_variables.scss`. These tokens include:
 
 - **Colors**: Brand colors, semantic colors, and color scales
-- **Typography**: Font families, sizes, weights, and line heights  
+- **Typography**: Font families, sizes, weights, and line heights
 - **Spacing**: Spacing scale for layouts
 - **Sizing**: Component sizing values
 - **Borders**: Border widths and styles
