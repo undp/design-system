@@ -45,29 +45,38 @@ try {
     throw new Error('No tokens were processed');
   }
 
-  // Check 3: File was modified
+  // Check 3: Verify transformations applied or file is already up-to-date
   const originalContent = fs.readFileSync(backupPath, 'utf8');
   const newContent = fs.readFileSync(VARIABLES_PATH, 'utf8');
 
-  if (newContent.includes('// FIGMA TOKENS START')) {
-    console.log('   ✓ Figma tokens section added to variables file');
+  // Check that file was either updated or already contains the expected tokens
+  const hasTokenVariables = newContent.includes('$font-family-primary:') &&
+                             newContent.includes('$color-border-default:');
+  
+  if (newContent !== originalContent) {
+    console.log('   ✓ Variables file was updated with token values');
+  } else if (hasTokenVariables) {
+    console.log('   ✓ Variables file already up-to-date with token values');
   } else {
-    throw new Error('Figma tokens section not found in output');
+    throw new Error('Variables file was not modified and does not contain expected tokens');
   }
 
   // Check 4: Existing variables preserved
   const existingVarPattern = /\$img-path:/;
   if (existingVarPattern.test(newContent)) {
-    console.log('   ✓ Existing variables preserved');
+    console.log('   ✓ Existing non-token variables preserved');
   } else {
     throw new Error('Existing variables were not preserved');
   }
 
-  // Check 5: Sample tokens present
+  // Check 5: Sample tokens present with correct naming
   const sampleTokens = [
     '$color-blue-600:',
-    '$fontsize-20:',
-    '$spacing-16:'
+    '$font-size-20:',
+    '$spacing-16:',
+    '$font-family-primary:',
+    '$line-height-100:',
+    '$color-border-default:'
   ];
 
   let allTokensPresent = true;
@@ -79,12 +88,20 @@ try {
   }
 
   if (allTokensPresent) {
-    console.log('   ✓ Sample tokens verified');
+    console.log('   ✓ Sample tokens verified (with hyphens)');
   } else {
     throw new Error('Some sample tokens are missing');
   }
 
-  // Check 6: Valid SASS syntax (basic check)
+  // Check 6: Semantic tokens use SASS references
+  const semanticRefPattern = /\$color-border-default:\s+\$color-black/;
+  if (semanticRefPattern.test(newContent)) {
+    console.log('   ✓ Semantic tokens use SASS variable references');
+  } else {
+    console.log('   ⚠ Warning: Could not verify semantic token references');
+  }
+
+  // Check 7: Valid SASS syntax (basic check)
   const invalidPatterns = [
     { pattern: /\$[a-zA-Z0-9_-]+%\s*:/, desc: 'Variable names with %' },
     { pattern: /\$[a-zA-Z0-9_-]+\s+[a-zA-Z0-9_-]+\s*:/, desc: 'Variable names with spaces' },

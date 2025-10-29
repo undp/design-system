@@ -99,10 +99,29 @@ This will resolve to the actual value of `color.blue.600`.
 
 ### Variable Naming
 
-Tokens are converted to SASS variables using kebab-case:
+Tokens are converted to SASS variables using kebab-case with proper hyphenation for CSS property names:
 - `color.blue.600` → `$color-blue-600`
-- `fontsize.body.default` → `$fontsize-body-default`
-- `lineheight.100%` → `$lineheight-100`
+- `fontfamily.proximanova` → `$font-family-proximanova`
+- `fontsize.body.default` → `$font-size-body-default`
+- `lineheight.100%` → `$line-height-100`
+- `fontweight.bold` → `$font-weight-bold`
+- `textcase.uppercase` → `$text-case-uppercase`
+
+### Semantic Tokens Use SASS References
+
+Semantic tokens reference primitive tokens using SASS variables rather than resolved values:
+```scss
+// Primitive token
+$color-black: #000000;
+
+// Semantic token (uses reference)
+$color-border-default: $color-black;  // NOT #000000
+
+// CSS custom property (automatically resolved)
+--undpds-color-border-default: #000000;
+```
+
+This provides better maintainability - updating `$color-black` automatically updates all semantic tokens that reference it.
 
 ### Special Characters
 
@@ -110,42 +129,68 @@ Special characters like `%` are removed from variable names to ensure SASS compa
 
 ## SASS Variables Output
 
-The transformed tokens are written to:
+The transformed tokens update existing variables in:
 ```
 stories/assets/scss/_variables.scss
 ```
 
-The file structure:
+Variables are merged with the existing file:
+- Existing variables with matching names are updated with Figma token values (Figma takes precedence)
+- New variables from tokens are added to the end of the file
+- Variables not present in tokens.json are preserved unchanged
+
+Example file structure:
 ```scss
-// FIGMA TOKENS START
-// Auto-generated from figma-tokens/input/tokens.json
-// Do not edit this section manually
-
-// Spacing tokens from Figma
-$spacing-2: 2px;
-$spacing-4: 4px;
-// ... more tokens
-
-// FIGMA TOKENS END
-
-// Existing non-token variables are preserved below
+// Image variables (preserved)
 $img-path: '../../../assets/images';
-// ... etc
+
+// Colors (updated with Figma values)
+$color-black: #000000;
+$color-white: #ffffff;
+$color-blue-600: #006EB5;  // Updated from Figma
+
+// Font sizes (updated)
+$font-size-20: 1.25rem;
+
+// ... other existing variables ...
+
+// Additional Figma tokens (new variables)
+// Font-family tokens
+$font-family-proximanova: 'Proxima Nova';
+$font-family-primary: $font-family-proximanova;  // Reference
+
+// Semantic color tokens
+$color-border-default: $color-black;  // Uses reference
+$color-brand: $color-blue-600;
 ```
 
-### Preservation of Existing Variables
+### Variable Merging Strategy
 
 The transformation script:
-- ✅ Preserves all existing SASS variables not present in `tokens.json`
-- ✅ Updates existing variables if they're defined in tokens
-- ✅ Adds new variables from tokens
-- ✅ Maintains file structure and comments
+- ✅ Updates existing variables with Figma token values (Figma takes precedence)
+- ✅ Adds new variables from tokens at the end of the file
+- ✅ Preserves all variables not present in tokens.json
+- ✅ Uses SASS references for semantic tokens
+- ✅ No duplicate variables created
 
 ## CSS Custom Properties
 
 The SASS variables are automatically converted to CSS custom properties via:
 ```
 stories/assets/scss/_custom_properties.scss
+```
+
+SASS variable references are automatically resolved during compilation:
+```scss
+// Input SASS
+$color-black: #000000;
+$color-border-default: $color-black;
+
+// Output CSS
+:root {
+  --undpds-color-black: #000000;
+  --undpds-color-border-default: #000000;  // Reference resolved
+}
 ```
 
 This allows tokens to be used in both SASS and CSS:
