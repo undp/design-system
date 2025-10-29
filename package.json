@@ -9,7 +9,8 @@
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --loglevel verbose",
-    "transform-tokens": "node scripts/transform-tokens.js"
+    "transform-tokens": "node scripts/transform-tokens.js",
+    "validate-tokens": "node scripts/validate-tokens.js"
   },
   "keywords": [
     "UNDP",
