@@ -95,7 +95,7 @@ If the build fails after a token sync PR due to missing variables:
 1. **Check the PR description** for the list of deleted variables
 2. **Search your codebase** for references to these variables:
    ```bash
-   grep -r "\$variable-name" stories/
+   grep -r "\$spacing-01" stories/
    ```
 3. **Update references** to use new variable names or fallback values
 4. **Review Figma** to understand why the token was removed

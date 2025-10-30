@@ -27,10 +27,12 @@ try {
   // Test 1: Add a fake token-derived variable
   console.log('Test 1: Adding fake token-derived variable...');
   const lines = originalContent.split('\n');
-  const insertIndex = lines.findIndex(line => line.includes('$color-black'));
+  
+  // Find a safe insertion point (after the first color variable)
+  const insertIndex = lines.findIndex(line => line.includes('$color-black') || line.includes('$color-'));
   
   if (insertIndex === -1) {
-    throw new Error('Could not find insertion point');
+    throw new Error('Could not find insertion point (no color variables found)');
   }
   
   lines.splice(insertIndex + 1, 0, '$color-fake-999: #999999;');
@@ -50,6 +52,7 @@ try {
   console.log('\nTest 3: Verifying deletion...');
   const newContent = fs.readFileSync(VARIABLES_PATH, 'utf8');
   const wasFakeDeleted = !newContent.includes('$color-fake-999');
+  // Note: deletedVars contains variable names without the $ prefix
   const isInDeletedList = result.deletedVars.includes('color-fake-999');
   
   if (wasFakeDeleted && isInDeletedList) {
