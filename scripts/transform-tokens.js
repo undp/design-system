@@ -27,10 +27,19 @@ const VARIABLES_PATH = path.join(__dirname, '../stories/assets/scss/_variables.s
 function parseExistingSassVariables(content) {
   const variables = new Map();
   const lines = content.split('\n');
+  let inPreserveSection = false;
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     const trimmed = line.trim();
+
+    // Check for PRESERVE marker
+    if (trimmed.includes('PRESERVE:') || trimmed.includes('// PRESERVE')) {
+      inPreserveSection = true;
+    } else if (inPreserveSection && trimmed.startsWith('//') && !trimmed.includes('PRESERVE')) {
+      // End preserve section when we hit a different comment
+      inPreserveSection = false;
+    }
 
     // Match SASS variable declarations: $variable-name: value;
     const match = trimmed.match(/^\$([a-zA-Z0-9_-]+)\s*:\s*(.+?);/);
@@ -42,7 +51,8 @@ function parseExistingSassVariables(content) {
       variables.set(varName, {
         value: varValue,
         lineNumber: i,
-        originalLine: line
+        originalLine: line,
+        preserve: inPreserveSection
       });
     }
   }
@@ -163,7 +173,7 @@ function updateSassVariables(existingContent, tokens) {
   for (const [varName, varInfo] of existingVars.entries()) {
     if (isTokenDerivedVariable(varName) && !expectedTokenVars.has(varName)) {
       // Check if this variable should be preserved
-      if (!shouldPreserveVariable(varName, varInfo.value)) {
+      if (!varInfo.preserve && !shouldPreserveVariable(varName, varInfo.value)) {
         varsToDelete.add(varName);
       }
     }

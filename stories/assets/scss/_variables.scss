@@ -275,7 +275,6 @@ $sizing-32: $spacing-032;
 $sizing-4: $spacing-004;
 $sizing-64: $spacing-010;
 $sizing-8: $spacing-008;
-$color-blue-800: #0468b1;
 $font-size-25: $font-size-24;
 $font-size-26: $font-size-24;
 $spacing-01: $spacing-001;
@@ -292,10 +291,14 @@ $spacing-11: $spacing-011;
 $spacing-12: $spacing-012;
 $spacing-13: $spacing-013;
 $spacing-100: $font-size-100;
+
+// PRESERVE: Backwards compatibility - do not delete
+$color-blue-800: #0468b1;
 $spacing-136: 8.5rem;
 $spacing-320: 20rem;
 $spacing-330: 20.625rem;
 $spacing-400: 25rem;
+
 
 
 // Backwards compatibility aliases for spacing variables
