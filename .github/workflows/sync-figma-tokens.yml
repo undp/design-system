@@ -5,8 +5,7 @@ name: Sync Figma Design Tokens
 on:
   push:
     branches:
-      - master
-      - main
+      - update-figma-tokens
     paths:
       - 'figma-tokens/input/tokens.json'
 
@@ -46,15 +45,11 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Fetch latest master
-          git fetch origin master:master || git fetch origin main:main || true
+          git fetch origin master:master
 
           # Try to merge master into current branch
-          echo "Attempting to sync with master/main..."
-          if git show-ref --verify --quiet refs/heads/master; then
-            git merge master --no-edit || echo "Merge conflict detected, will continue with transformation"
-          elif git show-ref --verify --quiet refs/heads/main; then
-            git merge main --no-edit || echo "Merge conflict detected, will continue with transformation"
-          fi
+          echo "Attempting to sync with master..."
+          git merge master --no-edit || echo "Merge conflict detected, will continue with transformation"
 
       - name: Transform Figma tokens to SASS variables
         id: transform
@@ -141,39 +136,49 @@ jobs:
           echo "$SUMMARY" > /tmp/pr_summary.md
           echo "summary_file=/tmp/pr_summary.md" >> $GITHUB_OUTPUT
 
-      - name: Commit changes
+      - name: Build assets to propagate changes
+        if: steps.transform.outputs.has_changes == 'true'
+        run: |
+          echo "Building assets to propagate token changes..."
+          npm run build
+          echo "✅ Build completed successfully with new tokens"
+
+      - name: Commit changes and push to origin
         if: steps.transform.outputs.has_changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add stories/assets/scss/_variables.scss
+          git add .
           git commit -m "chore: sync Figma design tokens to SASS variables
 
           - Transformed tokens from figma-tokens/input/tokens.json
           - Updated stories/assets/scss/_variables.scss
           - Preserved existing non-token variables
+          - Built production assets
 
           Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+          
+          git push origin
 
-      - name: Create branch for PR
-        if: steps.transform.outputs.has_changes == 'true'
-        id: create-branch
-        run: |
-          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-          BRANCH_NAME="update-figma-tokens-${TIMESTAMP}"
-          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+      # - name: Create branch for PR
+      #   if: steps.transform.outputs.has_changes == 'true'
+      #   id: create-branch
+      #   run: |
+      #     TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+      #     BRANCH_NAME="update-figma-tokens-${TIMESTAMP}"
+      #     echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
 
-          # Create and push new branch
-          git checkout -b "$BRANCH_NAME"
-          git push origin "$BRANCH_NAME"
+      #     # Create and push new branch
+      #     git checkout -b "$BRANCH_NAME"
+      #     git push origin "$BRANCH_NAME"
 
       - name: Create Pull Request
         if: steps.transform.outputs.has_changes == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          BRANCH_NAME="${{ steps.create-branch.outputs.branch_name }}"
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
 
           # Create PR against develop branch
           PR_URL=$(gh pr create \
@@ -248,13 +253,6 @@ jobs:
           else
             echo "❌ Could not find PR number"
           fi
-
-      - name: Build assets to validate changes
-        if: steps.transform.outputs.has_changes == 'true'
-        run: |
-          echo "Building assets to validate token changes..."
-          npm run build
-          echo "✅ Build completed successfully with new tokens"
 
       - name: Summary
         if: always()
