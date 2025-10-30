@@ -83,6 +83,59 @@ function migrateSpacingNotation(lines) {
 }
 
 /**
+ * Check if a variable name matches token-derived patterns
+ * Token-derived variables follow specific naming conventions from Figma tokens
+ */
+function isTokenDerivedVariable(varName) {
+  // Patterns that indicate a variable is derived from Figma tokens
+  const tokenPatterns = [
+    /^color-.*-\d+$/,              // color-blue-600, color-gray-100
+    /^color-(black|white)$/,       // color-black, color-white
+    /^font-size-\d+$/,             // font-size-20
+    /^font-family-.+$/,            // font-family-proximanova (NEW format)
+    /^spacing-\d+$/,               // spacing-01, spacing-036
+    /^line-height-\d+$/,           // line-height-100
+    /^line-height-(body|heading|display)$/,  // semantic line heights
+    /^font-weight-(bold|semibold|regular)$/, // font-weight tokens
+    /^text-case-(none|uppercase)$/,          // text-case tokens
+    /^border-(default|subtle)$/,             // border tokens
+    /^color-.*-(primary|secondary|subtle|inverse|default|muted)$/, // semantic colors
+    /^font-family-(primary|secondary)$/,     // semantic font families
+    /^font-size-(body|heading|display)$/,    // semantic font sizes
+    /^sizing-\d+$/                           // sizing tokens
+  ];
+
+  // Explicitly exclude legacy Font-Family variables (PascalCase format)
+  // These are manually curated with fallback fonts and should be preserved
+  if (/^Font-Family-.+$/.test(varName)) {
+    return false;
+  }
+
+  return tokenPatterns.some(pattern => pattern.test(varName));
+}
+
+/**
+ * Check if a variable should be excluded from deletion
+ * even if it appears to be token-derived
+ */
+function shouldPreserveVariable(varName, varValue) {
+  // Preserve variables that are aliases (reference other variables)
+  if (varValue.startsWith('$')) {
+    return true;
+  }
+
+  // Preserve font family variables with fallback fonts
+  // (indicates they're manually curated)
+  if (varName.toLowerCase().includes('font-family') || varName.includes('Font-Family')) {
+    if (varValue.includes(',') && (varValue.includes('sans-serif') || varValue.includes('serif'))) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+/**
  * Update existing SASS file with token values
  */
 function updateSassVariables(existingContent, tokens) {
@@ -97,6 +150,24 @@ function updateSassVariables(existingContent, tokens) {
   const existingVars = parseExistingSassVariables(lines.join('\n'));
   const updatedVars = new Set();
   const newVars = [];
+  
+  // Build a set of all expected token variable names
+  const expectedTokenVars = new Set();
+  for (const token of tokens) {
+    const varName = pathToVariableName(token.path, token.usePixelNotation);
+    expectedTokenVars.add(varName);
+  }
+
+  // Identify variables to delete (token-derived but no longer in tokens.json)
+  const varsToDelete = new Set();
+  for (const [varName, varInfo] of existingVars.entries()) {
+    if (isTokenDerivedVariable(varName) && !expectedTokenVars.has(varName)) {
+      // Check if this variable should be preserved
+      if (!shouldPreserveVariable(varName, varInfo.value)) {
+        varsToDelete.add(varName);
+      }
+    }
+  }
 
   // Update existing variables with token values
   for (const token of tokens) {
@@ -120,6 +191,18 @@ function updateSassVariables(existingContent, tokens) {
         token: token
       });
     }
+  }
+
+  // Remove deleted variables (mark lines for deletion)
+  const linesToDelete = new Set();
+  for (const varName of varsToDelete) {
+    const varInfo = existingVars.get(varName);
+    linesToDelete.add(varInfo.lineNumber);
+  }
+
+  // Filter out deleted lines
+  if (linesToDelete.size > 0) {
+    lines = lines.filter((line, index) => !linesToDelete.has(index));
   }
 
   // Add new variables at the end of the file (before any trailing comments)
@@ -205,6 +288,8 @@ function updateSassVariables(existingContent, tokens) {
     content: lines.join('\n'),
     updatedCount: updatedVars.size,
     newCount: newVars.length,
+    deletedCount: varsToDelete.size,
+    deletedVars: Array.from(varsToDelete),
     backwardsCompatCount: migratedVariables.length
   };
 }
@@ -522,6 +607,8 @@ function transformTokens(options = {}) {
     semanticTokens: semanticTokens.length,
     variablesUpdated: updateResult.updatedCount,
     variablesAdded: updateResult.newCount,
+    variablesDeleted: updateResult.deletedCount || 0,
+    deletedVars: updateResult.deletedVars || [],
     backwardsCompatAdded: updateResult.backwardsCompatCount
   };
 
@@ -539,10 +626,22 @@ function transformTokens(options = {}) {
   console.log(`   - Semantic tokens: ${semanticTokens.length}`);
   console.log(`   - Variables updated: ${updateResult.updatedCount}`);
   console.log(`   - Variables added: ${updateResult.newCount}`);
+  if (updateResult.deletedCount > 0) {
+    console.log(`   - Variables deleted: ${updateResult.deletedCount}`);
+  }
   if (updateResult.backwardsCompatCount > 0) {
     console.log(`   - Backwards compatibility aliases: ${updateResult.backwardsCompatCount}`);
   }
   console.log('');
+
+  // Show deleted variables if any
+  if (updateResult.deletedCount > 0) {
+    console.log('🗑️  Deleted variables (no longer in Figma tokens):');
+    updateResult.deletedVars.forEach(varName => {
+      console.log(`   - $${varName}`);
+    });
+    console.log('');
+  }
 
   // Show sample of updated variables
   console.log('📝 Sample of updated variables:');
