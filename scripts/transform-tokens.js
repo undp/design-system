@@ -193,6 +193,26 @@ function updateSassVariables(existingContent, tokens) {
     }
   }
 
+  // Find backwards compatibility mappings for deleted variables
+  // Map deleted variables to existing ones if their values match
+  const backwardsCompatMappings = new Map();
+  for (const deletedVarName of varsToDelete) {
+    const deletedVarInfo = existingVars.get(deletedVarName);
+    const deletedValue = deletedVarInfo.value.trim();
+    
+    // Search for a matching variable in the current tokens
+    for (const token of tokens) {
+      const tokenVarName = pathToVariableName(token.path, token.usePixelNotation);
+      const tokenValue = (token.sassReference || token.value).trim();
+      
+      // If values match, create a backwards compatibility alias
+      if (deletedValue === tokenValue) {
+        backwardsCompatMappings.set(deletedVarName, tokenVarName);
+        break;
+      }
+    }
+  }
+
   // Remove deleted variables (mark lines for deletion)
   const linesToDelete = new Set();
   for (const varName of varsToDelete) {
@@ -238,34 +258,40 @@ function updateSassVariables(existingContent, tokens) {
   }
 
   // Remove any existing backwards compatibility sections to prevent duplicates
-  const backwardsCompatMarker = '// Backwards compatibility aliases for spacing variables';
-  let markerIndex = -1;
-  do {
-    markerIndex = lines.findIndex((line, idx) =>
-      idx > (markerIndex + 1) && line.trim() === backwardsCompatMarker
-    );
-    if (markerIndex !== -1) {
-      // Find the end of this section (next empty line followed by non-comment or end of file)
-      let endIndex = markerIndex + 1;
-      while (endIndex < lines.length) {
-        const line = lines[endIndex].trim();
-        // Stop at empty line followed by non-comment/non-variable, or end of section
-        if (line === '' && endIndex + 1 < lines.length) {
-          const nextLine = lines[endIndex + 1].trim();
-          if (nextLine && !nextLine.startsWith('//') && !nextLine.startsWith('$spacing-')) {
+  const backwardsCompatMarkers = [
+    '// Backwards compatibility aliases for spacing variables',
+    '// Backwards compatibility aliases for deleted variables'
+  ];
+  
+  for (const marker of backwardsCompatMarkers) {
+    let markerIndex = -1;
+    do {
+      markerIndex = lines.findIndex((line, idx) =>
+        idx > (markerIndex + 1) && line.trim() === marker
+      );
+      if (markerIndex !== -1) {
+        // Find the end of this section (next empty line followed by non-comment or end of file)
+        let endIndex = markerIndex + 1;
+        while (endIndex < lines.length) {
+          const line = lines[endIndex].trim();
+          // Stop at empty line followed by non-comment/non-variable, or end of section
+          if (line === '' && endIndex + 1 < lines.length) {
+            const nextLine = lines[endIndex + 1].trim();
+            if (nextLine && !nextLine.startsWith('//') && !nextLine.startsWith('$')) {
+              break;
+            }
+          }
+          endIndex++;
+          // Also stop if we hit another section marker
+          if (line.startsWith('//') && !line.includes('spacing') && !line.includes('Old 2-digit') && !line.includes('deleted')) {
             break;
           }
         }
-        endIndex++;
-        // Also stop if we hit another section marker
-        if (line.startsWith('//') && !line.includes('spacing') && !line.includes('Old 2-digit')) {
-          break;
-        }
+        // Remove this section
+        lines.splice(markerIndex, endIndex - markerIndex);
       }
-      // Remove this section
-      lines.splice(markerIndex, endIndex - markerIndex);
-    }
-  } while (markerIndex !== -1);
+    } while (markerIndex !== -1);
+  }
 
   // Add backwards compatibility aliases for migrated spacing variables (36-90)
   if (migratedVariables.length > 0) {
@@ -284,12 +310,33 @@ function updateSassVariables(existingContent, tokens) {
     lines.push(...backwardsCompatLines);
   }
 
+  // Add backwards compatibility aliases for deleted variables with matching values
+  if (backwardsCompatMappings.size > 0) {
+    const deletedCompatLines = [];
+    deletedCompatLines.push('');
+    deletedCompatLines.push('// Backwards compatibility aliases for deleted variables');
+    deletedCompatLines.push('// Variables removed from Figma tokens but mapped to existing equivalents');
+
+    // Sort by variable name for consistent output
+    const sortedMappings = Array.from(backwardsCompatMappings.entries()).sort((a, b) => 
+      a[0].localeCompare(b[0])
+    );
+
+    sortedMappings.forEach(([oldVar, newVar]) => {
+      deletedCompatLines.push(`$${oldVar}: $${newVar};`);
+    });
+
+    // Add at the end of the file
+    lines.push(...deletedCompatLines);
+  }
+
   return {
     content: lines.join('\n'),
     updatedCount: updatedVars.size,
     newCount: newVars.length,
     deletedCount: varsToDelete.size,
     deletedVars: Array.from(varsToDelete),
+    deletedMappedCount: backwardsCompatMappings.size,
     backwardsCompatCount: migratedVariables.length
   };
 }
@@ -609,6 +656,7 @@ function transformTokens(options = {}) {
     variablesAdded: updateResult.newCount,
     variablesDeleted: updateResult.deletedCount || 0,
     deletedVars: updateResult.deletedVars || [],
+    deletedMappedCount: updateResult.deletedMappedCount || 0,
     backwardsCompatAdded: updateResult.backwardsCompatCount
   };
 
@@ -628,6 +676,9 @@ function transformTokens(options = {}) {
   console.log(`   - Variables added: ${updateResult.newCount}`);
   if (updateResult.deletedCount > 0) {
     console.log(`   - Variables deleted: ${updateResult.deletedCount}`);
+    if (updateResult.deletedMappedCount > 0) {
+      console.log(`   - Deleted variables mapped to equivalents: ${updateResult.deletedMappedCount}`);
+    }
   }
   if (updateResult.backwardsCompatCount > 0) {
     console.log(`   - Backwards compatibility aliases: ${updateResult.backwardsCompatCount}`);
@@ -640,6 +691,9 @@ function transformTokens(options = {}) {
     updateResult.deletedVars.forEach(varName => {
       console.log(`   - $${varName}`);
     });
+    if (updateResult.deletedMappedCount > 0) {
+      console.log(`   Note: ${updateResult.deletedMappedCount} of these have backwards compatibility aliases`);
+    }
     console.log('');
   }
 

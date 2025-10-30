@@ -4,6 +4,8 @@
 
 The Figma token synchronization workflow now supports automatic deletion of SASS variables when their corresponding tokens are removed from Figma. This ensures that the `_variables.scss` file stays in sync with the design tokens defined in Figma.
 
+**New**: Deleted variables with matching values are automatically mapped to existing variables through backwards compatibility aliases, ensuring existing code continues to work seamlessly.
+
 ## How It Works
 
 ### 1. Token-Derived Variable Detection
@@ -36,14 +38,31 @@ When a token is removed from `figma-tokens/input/tokens.json`:
 1. The transform script identifies the corresponding SASS variable
 2. Checks if it's a token-derived variable
 3. Verifies it's not in the exclusion list
-4. Removes the variable from `_variables.scss`
-5. Reports the deletion in the summary
+4. Searches for existing variables with matching values
+5. If a match is found, creates a backwards compatibility alias
+6. If no match is found, removes the variable completely
+7. Reports the deletion in the summary
+
+### 4. Backwards Compatibility Aliases
+
+**New Feature**: When a variable is deleted but its value matches an existing variable, a backwards compatibility alias is automatically created:
+
+```scss
+// Example: Old variable deleted, but value matches new variable
+// Old: $sizing-8: 8px;
+// New: $spacing-008: 8px;
+// Result: Backwards compatibility alias created
+$sizing-8: $spacing-008;
+```
+
+This ensures that existing SCSS code continues to work without any changes required.
 
 ## Workflow Integration
 
 The GitHub Actions workflow (`sync-figma-tokens.yml`) now includes:
 
 - **Detailed deletion reporting**: Lists all deleted variables in the PR description
+- **Backwards compatibility tracking**: Shows how many deleted variables have aliases
 - **Impact warning**: Alerts reviewers about potential breaking changes
 - **Variable counts**: Tracks new, modified, and deleted variables
 
@@ -54,14 +73,16 @@ The GitHub Actions workflow (`sync-figma-tokens.yml`) now includes:
 - **Total tokens processed**: 109
 - **New variables**: 5
 - **Modified variables**: 96
-- **Removed variables**: 2
+- **Removed variables**: 17
 
 ### 🗑️ Deleted Variables
 The following SASS variables were removed because their corresponding tokens were deleted from Figma:
-  - `$color-old-blue-800`
-  - `$font-size-obsolete-12`
+  - `$sizing-8`
+  - `$spacing-05`
 
-**Impact**: Ensure these variables are not referenced in your SCSS files to avoid compilation errors.
+**Note**: 17 of these deleted variables have backwards compatibility aliases that map them to existing variables with matching values, ensuring existing code continues to work.
+
+**Impact**: Review references to these variables in your SCSS files. Variables with backwards compatibility aliases will continue to work.
 ```
 
 ## Testing

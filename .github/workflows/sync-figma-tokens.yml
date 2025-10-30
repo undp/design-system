@@ -78,6 +78,7 @@ jobs:
           VARS_ADDED=$(echo "$TRANSFORM_RESULT" | jq -r '.variablesAdded // 0')
           VARS_UPDATED=$(echo "$TRANSFORM_RESULT" | jq -r '.variablesUpdated // 0')
           VARS_DELETED=$(echo "$TRANSFORM_RESULT" | jq -r '.variablesDeleted // 0')
+          DELETED_MAPPED=$(echo "$TRANSFORM_RESULT" | jq -r '.deletedMappedCount // 0')
           
           # Get deleted variable names if any
           DELETED_VARS_JSON=$(echo "$TRANSFORM_RESULT" | jq -r '.deletedVars // []')
@@ -115,13 +116,20 @@ jobs:
           # Create deleted variables section if any
           DELETED_SECTION=""
           if [ "$REMOVED_VARS" -gt 0 ] && [ -n "$DELETED_VARS_LIST" ]; then
+            COMPAT_NOTE=""
+            if [ "$DELETED_MAPPED" -gt 0 ]; then
+              COMPAT_NOTE="
+
+          **Note**: ${DELETED_MAPPED} of these deleted variables have backwards compatibility aliases that map them to existing variables with matching values, ensuring existing code continues to work."
+            fi
+            
             DELETED_SECTION="
 
           ### 🗑️ Deleted Variables
           The following SASS variables were removed because their corresponding tokens were deleted from Figma:
-          ${DELETED_VARS_LIST}
+          ${DELETED_VARS_LIST}${COMPAT_NOTE}
 
-          **Impact**: Ensure these variables are not referenced in your SCSS files to avoid compilation errors."
+          **Impact**: Review references to these variables in your SCSS files. Variables with backwards compatibility aliases will continue to work."
           fi
 
           # Create summary
