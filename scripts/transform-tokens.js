@@ -27,10 +27,22 @@ const VARIABLES_PATH = path.join(__dirname, '../stories/assets/scss/_variables.s
 function parseExistingSassVariables(content) {
   const variables = new Map();
   const lines = content.split('\n');
+  let inPreserveSection = false;
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     const trimmed = line.trim();
+
+    // Check for PRESERVE marker
+    if (trimmed.includes('PRESERVE:') || trimmed.includes('// PRESERVE')) {
+      inPreserveSection = true;
+    } else if (inPreserveSection && trimmed === '') {
+      // End preserve section on empty line
+      inPreserveSection = false;
+    } else if (inPreserveSection && trimmed.startsWith('//') && trimmed.includes('Backwards compatibility aliases')) {
+      // End preserve section when we hit the next section
+      inPreserveSection = false;
+    }
 
     // Match SASS variable declarations: $variable-name: value;
     const match = trimmed.match(/^\$([a-zA-Z0-9_-]+)\s*:\s*(.+?);/);
@@ -42,7 +54,8 @@ function parseExistingSassVariables(content) {
       variables.set(varName, {
         value: varValue,
         lineNumber: i,
-        originalLine: line
+        originalLine: line,
+        preserve: inPreserveSection
       });
     }
   }
@@ -163,7 +176,7 @@ function updateSassVariables(existingContent, tokens) {
   for (const [varName, varInfo] of existingVars.entries()) {
     if (isTokenDerivedVariable(varName) && !expectedTokenVars.has(varName)) {
       // Check if this variable should be preserved
-      if (!shouldPreserveVariable(varName, varInfo.value)) {
+      if (!varInfo.preserve && !shouldPreserveVariable(varName, varInfo.value)) {
         varsToDelete.add(varName);
       }
     }
@@ -230,27 +243,52 @@ function updateSassVariables(existingContent, tokens) {
     // Find a good insertion point (before final comments or at end)
     let insertIndex = lines.length;
 
-    // Group new variables by category
+    // Group new variables by category, separating primitive and semantic
     const grouped = {};
     newVars.forEach(v => {
       const category = v.token.path[0];
+      const isSemantic = v.token.isSemantic || false;
+      
       if (!grouped[category]) {
-        grouped[category] = [];
+        grouped[category] = {
+          primitive: [],
+          semantic: []
+        };
       }
-      grouped[category].push(v);
+      
+      if (isSemantic) {
+        grouped[category].semantic.push(v);
+      } else {
+        grouped[category].primitive.push(v);
+      }
     });
 
-    // Add new variables grouped by category
+    // Add new variables grouped by category, with primitives before semantics
     const newLines = [];
     newLines.push('');
     newLines.push('// Additional Figma tokens (new variables)');
 
-    for (const [category, vars] of Object.entries(grouped)) {
-      newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
-      vars.forEach(v => {
-        newLines.push(`$${v.name}: ${v.value};`);
-      });
-      newLines.push('');
+    for (const [category, categoryVars] of Object.entries(grouped)) {
+      // Output primitive tokens first
+      if (categoryVars.primitive.length > 0) {
+        newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
+        categoryVars.primitive.forEach(v => {
+          newLines.push(`$${v.name}: ${v.value};`);
+        });
+        newLines.push('');
+      }
+      
+      // Then output semantic tokens (which may reference primitives)
+      if (categoryVars.semantic.length > 0) {
+        if (categoryVars.primitive.length === 0) {
+          // If no primitives were output, add the category header
+          newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
+        }
+        categoryVars.semantic.forEach(v => {
+          newLines.push(`$${v.name}: ${v.value};`);
+        });
+        newLines.push('');
+      }
     }
 
     // Insert before the end
@@ -563,17 +601,35 @@ function extractTokens(obj, pathArray = [], allTokensRoot = {}, isSemantic = fal
       } else {
         processedValue = resolveTokenReference(value.$value, allTokensRoot);
         processedValue = processTokenValue(processedValue, value.$type, existingVars, currentPath);
-      }      // Special handling for spacing tokens - ONLY use pixel-based notation (3 digits)
-      // Rank-based notation (2 digits) is preserved from existing variables
+      }      
+      // Special handling for spacing tokens
       if (pathArray[0] === 'spacing' && value.$type === 'spacing' && !isSemantic) {
+        // Determine if this is pixel notation (3-digit) or ranking notation (2-digit)
+        // Pixel notation: 002, 004, 008, 012, 016, 024, 032, 040, 048, 064, 080, 096, 160, etc.
+        // Ranking notation: 01, 02, 03, ..., 13 (references other tokens)
+        const spacingKey = key;
+        const isPixelNotation = spacingKey.length === 3 && !value.$value.startsWith('{');
+        
+        // For ranking notation that references another token, use the SASS reference
+        let finalValue = processedValue;
+        let finalSassReference = sassReference;
+        if (!isPixelNotation && value.$value.startsWith('{')) {
+          // This is a ranking notation that references another spacing token
+          // Use the SASS reference instead of the resolved value
+          const referencePath = value.$value.slice(1, -1); // Remove { }
+          const referenceParts = referencePath.split('.');
+          finalSassReference = '$' + pathToVariableName(referenceParts, true); // Use pixel notation for reference
+          finalValue = processedValue; // Keep processed value as fallback
+        }
+        
         const token = {
           path: currentPath,
-          value: processedValue,
-          sassReference: sassReference,
+          value: finalValue,
+          sassReference: finalSassReference,
           type: value.$type,
           originalValue: value.$value,
           isSemantic: isSemantic,
-          usePixelNotation: true  // Always use 3-digit notation for Figma spacing tokens
+          usePixelNotation: isPixelNotation
         };
         tokens.push(token);
       } else {
