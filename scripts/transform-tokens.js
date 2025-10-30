@@ -36,8 +36,11 @@ function parseExistingSassVariables(content) {
     // Check for PRESERVE marker
     if (trimmed.includes('PRESERVE:') || trimmed.includes('// PRESERVE')) {
       inPreserveSection = true;
-    } else if (inPreserveSection && trimmed.startsWith('//') && !trimmed.includes('PRESERVE')) {
-      // End preserve section when we hit a different comment
+    } else if (inPreserveSection && trimmed === '') {
+      // End preserve section on empty line
+      inPreserveSection = false;
+    } else if (inPreserveSection && trimmed.startsWith('//') && trimmed.includes('Backwards compatibility aliases')) {
+      // End preserve section when we hit the next section
       inPreserveSection = false;
     }
 
