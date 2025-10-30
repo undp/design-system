@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --loglevel verbose",
     "transform-tokens": "node scripts/transform-tokens.js",
-    "validate-tokens": "node scripts/validate-tokens.js"
+    "validate-tokens": "node scripts/validate-tokens.js",
+    "test-token-deletion": "node scripts/test-token-deletion.js"
   },
   "keywords": [
     "UNDP",
