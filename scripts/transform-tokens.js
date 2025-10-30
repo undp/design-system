@@ -27,10 +27,22 @@ const VARIABLES_PATH = path.join(__dirname, '../stories/assets/scss/_variables.s
 function parseExistingSassVariables(content) {
   const variables = new Map();
   const lines = content.split('\n');
+  let inPreserveSection = false;
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     const trimmed = line.trim();
+
+    // Check for PRESERVE marker
+    if (trimmed.includes('PRESERVE:') || trimmed.includes('// PRESERVE')) {
+      inPreserveSection = true;
+    } else if (inPreserveSection && trimmed === '') {
+      // End preserve section on empty line
+      inPreserveSection = false;
+    } else if (inPreserveSection && trimmed.startsWith('//') && trimmed.includes('Backwards compatibility aliases')) {
+      // End preserve section when we hit the next section
+      inPreserveSection = false;
+    }
 
     // Match SASS variable declarations: $variable-name: value;
     const match = trimmed.match(/^\$([a-zA-Z0-9_-]+)\s*:\s*(.+?);/);
@@ -42,7 +54,8 @@ function parseExistingSassVariables(content) {
       variables.set(varName, {
         value: varValue,
         lineNumber: i,
-        originalLine: line
+        originalLine: line,
+        preserve: inPreserveSection
       });
     }
   }
@@ -83,6 +96,59 @@ function migrateSpacingNotation(lines) {
 }
 
 /**
+ * Check if a variable name matches token-derived patterns
+ * Token-derived variables follow specific naming conventions from Figma tokens
+ */
+function isTokenDerivedVariable(varName) {
+  // Patterns that indicate a variable is derived from Figma tokens
+  const tokenPatterns = [
+    /^color-.*-\d+$/,              // color-blue-600, color-gray-100
+    /^color-(black|white)$/,       // color-black, color-white
+    /^font-size-\d+$/,             // font-size-20
+    /^font-family-.+$/,            // font-family-proximanova (NEW format)
+    /^spacing-\d+$/,               // spacing-01, spacing-036
+    /^line-height-\d+$/,           // line-height-100
+    /^line-height-(body|heading|display)$/,  // semantic line heights
+    /^font-weight-(bold|semibold|regular)$/, // font-weight tokens
+    /^text-case-(none|uppercase)$/,          // text-case tokens
+    /^border-(default|subtle)$/,             // border tokens
+    /^color-.*-(primary|secondary|subtle|inverse|default|muted)$/, // semantic colors
+    /^font-family-(primary|secondary)$/,     // semantic font families
+    /^font-size-(body|heading|display)$/,    // semantic font sizes
+    /^sizing-\d+$/                           // sizing tokens
+  ];
+
+  // Explicitly exclude legacy Font-Family variables (PascalCase format)
+  // These are manually curated with fallback fonts and should be preserved
+  if (/^Font-Family-.+$/.test(varName)) {
+    return false;
+  }
+
+  return tokenPatterns.some(pattern => pattern.test(varName));
+}
+
+/**
+ * Check if a variable should be excluded from deletion
+ * even if it appears to be token-derived
+ */
+function shouldPreserveVariable(varName, varValue) {
+  // Preserve variables that are aliases (reference other variables)
+  if (varValue.startsWith('$')) {
+    return true;
+  }
+
+  // Preserve font family variables with fallback fonts
+  // (indicates they're manually curated)
+  if (varName.toLowerCase().includes('font-family') || varName.includes('Font-Family')) {
+    if (varValue.includes(',') && (varValue.includes('sans-serif') || varValue.includes('serif'))) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+/**
  * Update existing SASS file with token values
  */
 function updateSassVariables(existingContent, tokens) {
@@ -97,6 +163,24 @@ function updateSassVariables(existingContent, tokens) {
   const existingVars = parseExistingSassVariables(lines.join('\n'));
   const updatedVars = new Set();
   const newVars = [];
+  
+  // Build a set of all expected token variable names
+  const expectedTokenVars = new Set();
+  for (const token of tokens) {
+    const varName = pathToVariableName(token.path, token.usePixelNotation);
+    expectedTokenVars.add(varName);
+  }
+
+  // Identify variables to delete (token-derived but no longer in tokens.json)
+  const varsToDelete = new Set();
+  for (const [varName, varInfo] of existingVars.entries()) {
+    if (isTokenDerivedVariable(varName) && !expectedTokenVars.has(varName)) {
+      // Check if this variable should be preserved
+      if (!varInfo.preserve && !shouldPreserveVariable(varName, varInfo.value)) {
+        varsToDelete.add(varName);
+      }
+    }
+  }
 
   // Update existing variables with token values
   for (const token of tokens) {
@@ -122,32 +206,89 @@ function updateSassVariables(existingContent, tokens) {
     }
   }
 
+  // Find backwards compatibility mappings for deleted variables
+  // Map deleted variables to existing ones if their values match
+  const backwardsCompatMappings = new Map();
+  for (const deletedVarName of varsToDelete) {
+    const deletedVarInfo = existingVars.get(deletedVarName);
+    const deletedValue = deletedVarInfo.value.trim();
+    
+    // Search for a matching variable in the current tokens
+    for (const token of tokens) {
+      const tokenVarName = pathToVariableName(token.path, token.usePixelNotation);
+      const tokenValue = (token.sassReference || token.value).trim();
+      
+      // If values match, create a backwards compatibility alias
+      if (deletedValue === tokenValue) {
+        backwardsCompatMappings.set(deletedVarName, tokenVarName);
+        break;
+      }
+    }
+  }
+
+  // Remove deleted variables (mark lines for deletion)
+  const linesToDelete = new Set();
+  for (const varName of varsToDelete) {
+    const varInfo = existingVars.get(varName);
+    linesToDelete.add(varInfo.lineNumber);
+  }
+
+  // Filter out deleted lines
+  if (linesToDelete.size > 0) {
+    lines = lines.filter((line, index) => !linesToDelete.has(index));
+  }
+
   // Add new variables at the end of the file (before any trailing comments)
   if (newVars.length > 0) {
     // Find a good insertion point (before final comments or at end)
     let insertIndex = lines.length;
 
-    // Group new variables by category
+    // Group new variables by category, separating primitive and semantic
     const grouped = {};
     newVars.forEach(v => {
       const category = v.token.path[0];
+      const isSemantic = v.token.isSemantic || false;
+      
       if (!grouped[category]) {
-        grouped[category] = [];
+        grouped[category] = {
+          primitive: [],
+          semantic: []
+        };
       }
-      grouped[category].push(v);
+      
+      if (isSemantic) {
+        grouped[category].semantic.push(v);
+      } else {
+        grouped[category].primitive.push(v);
+      }
     });
 
-    // Add new variables grouped by category
+    // Add new variables grouped by category, with primitives before semantics
     const newLines = [];
     newLines.push('');
     newLines.push('// Additional Figma tokens (new variables)');
 
-    for (const [category, vars] of Object.entries(grouped)) {
-      newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
-      vars.forEach(v => {
-        newLines.push(`$${v.name}: ${v.value};`);
-      });
-      newLines.push('');
+    for (const [category, categoryVars] of Object.entries(grouped)) {
+      // Output primitive tokens first
+      if (categoryVars.primitive.length > 0) {
+        newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
+        categoryVars.primitive.forEach(v => {
+          newLines.push(`$${v.name}: ${v.value};`);
+        });
+        newLines.push('');
+      }
+      
+      // Then output semantic tokens (which may reference primitives)
+      if (categoryVars.semantic.length > 0) {
+        if (categoryVars.primitive.length === 0) {
+          // If no primitives were output, add the category header
+          newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
+        }
+        categoryVars.semantic.forEach(v => {
+          newLines.push(`$${v.name}: ${v.value};`);
+        });
+        newLines.push('');
+      }
     }
 
     // Insert before the end
@@ -155,34 +296,40 @@ function updateSassVariables(existingContent, tokens) {
   }
 
   // Remove any existing backwards compatibility sections to prevent duplicates
-  const backwardsCompatMarker = '// Backwards compatibility aliases for spacing variables';
-  let markerIndex = -1;
-  do {
-    markerIndex = lines.findIndex((line, idx) =>
-      idx > (markerIndex + 1) && line.trim() === backwardsCompatMarker
-    );
-    if (markerIndex !== -1) {
-      // Find the end of this section (next empty line followed by non-comment or end of file)
-      let endIndex = markerIndex + 1;
-      while (endIndex < lines.length) {
-        const line = lines[endIndex].trim();
-        // Stop at empty line followed by non-comment/non-variable, or end of section
-        if (line === '' && endIndex + 1 < lines.length) {
-          const nextLine = lines[endIndex + 1].trim();
-          if (nextLine && !nextLine.startsWith('//') && !nextLine.startsWith('$spacing-')) {
+  const backwardsCompatMarkers = [
+    '// Backwards compatibility aliases for spacing variables',
+    '// Backwards compatibility aliases for deleted variables'
+  ];
+  
+  for (const marker of backwardsCompatMarkers) {
+    let markerIndex = -1;
+    do {
+      markerIndex = lines.findIndex((line, idx) =>
+        idx > (markerIndex + 1) && line.trim() === marker
+      );
+      if (markerIndex !== -1) {
+        // Find the end of this section (next empty line followed by non-comment or end of file)
+        let endIndex = markerIndex + 1;
+        while (endIndex < lines.length) {
+          const line = lines[endIndex].trim();
+          // Stop at empty line followed by non-comment/non-variable, or end of section
+          if (line === '' && endIndex + 1 < lines.length) {
+            const nextLine = lines[endIndex + 1].trim();
+            if (nextLine && !nextLine.startsWith('//') && !nextLine.startsWith('$')) {
+              break;
+            }
+          }
+          endIndex++;
+          // Also stop if we hit another section marker
+          if (line.startsWith('//') && !line.includes('spacing') && !line.includes('Old 2-digit') && !line.includes('deleted')) {
             break;
           }
         }
-        endIndex++;
-        // Also stop if we hit another section marker
-        if (line.startsWith('//') && !line.includes('spacing') && !line.includes('Old 2-digit')) {
-          break;
-        }
+        // Remove this section
+        lines.splice(markerIndex, endIndex - markerIndex);
       }
-      // Remove this section
-      lines.splice(markerIndex, endIndex - markerIndex);
-    }
-  } while (markerIndex !== -1);
+    } while (markerIndex !== -1);
+  }
 
   // Add backwards compatibility aliases for migrated spacing variables (36-90)
   if (migratedVariables.length > 0) {
@@ -201,10 +348,33 @@ function updateSassVariables(existingContent, tokens) {
     lines.push(...backwardsCompatLines);
   }
 
+  // Add backwards compatibility aliases for deleted variables with matching values
+  if (backwardsCompatMappings.size > 0) {
+    const deletedCompatLines = [];
+    deletedCompatLines.push('');
+    deletedCompatLines.push('// Backwards compatibility aliases for deleted variables');
+    deletedCompatLines.push('// Variables removed from Figma tokens but mapped to existing equivalents');
+
+    // Sort by variable name for consistent output
+    const sortedMappings = Array.from(backwardsCompatMappings.entries()).sort((a, b) => 
+      a[0].localeCompare(b[0])
+    );
+
+    sortedMappings.forEach(([oldVar, newVar]) => {
+      deletedCompatLines.push(`$${oldVar}: $${newVar};`);
+    });
+
+    // Add at the end of the file
+    lines.push(...deletedCompatLines);
+  }
+
   return {
     content: lines.join('\n'),
     updatedCount: updatedVars.size,
     newCount: newVars.length,
+    deletedCount: varsToDelete.size,
+    deletedVars: Array.from(varsToDelete),
+    deletedMappedCount: backwardsCompatMappings.size,
     backwardsCompatCount: migratedVariables.length
   };
 }
@@ -431,17 +601,35 @@ function extractTokens(obj, pathArray = [], allTokensRoot = {}, isSemantic = fal
       } else {
         processedValue = resolveTokenReference(value.$value, allTokensRoot);
         processedValue = processTokenValue(processedValue, value.$type, existingVars, currentPath);
-      }      // Special handling for spacing tokens - ONLY use pixel-based notation (3 digits)
-      // Rank-based notation (2 digits) is preserved from existing variables
+      }      
+      // Special handling for spacing tokens
       if (pathArray[0] === 'spacing' && value.$type === 'spacing' && !isSemantic) {
+        // Determine if this is pixel notation (3-digit) or ranking notation (2-digit)
+        // Pixel notation: 002, 004, 008, 012, 016, 024, 032, 040, 048, 064, 080, 096, 160, etc.
+        // Ranking notation: 01, 02, 03, ..., 13 (references other tokens)
+        const spacingKey = key;
+        const isPixelNotation = spacingKey.length === 3 && !value.$value.startsWith('{');
+        
+        // For ranking notation that references another token, use the SASS reference
+        let finalValue = processedValue;
+        let finalSassReference = sassReference;
+        if (!isPixelNotation && value.$value.startsWith('{')) {
+          // This is a ranking notation that references another spacing token
+          // Use the SASS reference instead of the resolved value
+          const referencePath = value.$value.slice(1, -1); // Remove { }
+          const referenceParts = referencePath.split('.');
+          finalSassReference = '$' + pathToVariableName(referenceParts, true); // Use pixel notation for reference
+          finalValue = processedValue; // Keep processed value as fallback
+        }
+        
         const token = {
           path: currentPath,
-          value: processedValue,
-          sassReference: sassReference,
+          value: finalValue,
+          sassReference: finalSassReference,
           type: value.$type,
           originalValue: value.$value,
           isSemantic: isSemantic,
-          usePixelNotation: true  // Always use 3-digit notation for Figma spacing tokens
+          usePixelNotation: isPixelNotation
         };
         tokens.push(token);
       } else {
@@ -522,6 +710,9 @@ function transformTokens(options = {}) {
     semanticTokens: semanticTokens.length,
     variablesUpdated: updateResult.updatedCount,
     variablesAdded: updateResult.newCount,
+    variablesDeleted: updateResult.deletedCount || 0,
+    deletedVars: updateResult.deletedVars || [],
+    deletedMappedCount: updateResult.deletedMappedCount || 0,
     backwardsCompatAdded: updateResult.backwardsCompatCount
   };
 
@@ -539,10 +730,28 @@ function transformTokens(options = {}) {
   console.log(`   - Semantic tokens: ${semanticTokens.length}`);
   console.log(`   - Variables updated: ${updateResult.updatedCount}`);
   console.log(`   - Variables added: ${updateResult.newCount}`);
+  if (updateResult.deletedCount > 0) {
+    console.log(`   - Variables deleted: ${updateResult.deletedCount}`);
+    if (updateResult.deletedMappedCount > 0) {
+      console.log(`   - Deleted variables mapped to equivalents: ${updateResult.deletedMappedCount}`);
+    }
+  }
   if (updateResult.backwardsCompatCount > 0) {
     console.log(`   - Backwards compatibility aliases: ${updateResult.backwardsCompatCount}`);
   }
   console.log('');
+
+  // Show deleted variables if any
+  if (updateResult.deletedCount > 0) {
+    console.log('🗑️  Deleted variables (no longer in Figma tokens):');
+    updateResult.deletedVars.forEach(varName => {
+      console.log(`   - $${varName}`);
+    });
+    if (updateResult.deletedMappedCount > 0) {
+      console.log(`   Note: ${updateResult.deletedMappedCount} of these have backwards compatibility aliases`);
+    }
+    console.log('');
+  }
 
   // Show sample of updated variables
   console.log('📝 Sample of updated variables:');
