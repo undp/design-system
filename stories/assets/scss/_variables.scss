@@ -5,23 +5,23 @@ $img-path-Iconback: '../../assets/icons';
 $img-path-Iconfourback: '../../../../assets/icons';
 
 // Colors
-$color-black: #000;
-$color-white: #fff;
-$color-blue-100: #b5d5f5;
-$color-blue-200: #94c4f5;
-$color-blue-300: #6babeb;
-$color-blue-400: #4f95dd;
-$color-blue-500: #3288ce;
-$color-blue-600: #0468B1;
-$color-blue-700: #1f5a95;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-blue-100: #B5D5F5;
+$color-blue-200: #94C4F5;
+$color-blue-300: #6BABEB;
+$color-blue-400: #4F95DD;
+$color-blue-500: #3288CE;
+$color-blue-600: #006EB5;
+$color-blue-700: #1F5A95;
 $color-blue-800: #0468b1;
-$color-gray-100: #fafafa;
-$color-gray-200: #f7f7f7;
-$color-gray-300: #edeff0;
-$color-gray-400: #d4d6d8;
-$color-gray-500: #a9b1b7;
-$color-gray-600: #55606e;
-$color-gray-700: #232e3d;
+$color-gray-100: #FAFAFA;
+$color-gray-200: #F7F7F7;
+$color-gray-300: #EDEFF0;
+$color-gray-400: #D4D6D8;
+$color-gray-500: #A9B1B7;
+$color-gray-600: #55606E;
+$color-gray-700: #232E3D;
 $color-light-yellow: #ffe17e;
 $color-yellow: #ffeb00;
 $color-dark-yellow: #fbc412;
@@ -45,10 +45,10 @@ $font-size-14: 0.875rem;
 $font-size-16: 1rem;
 $font-size-20: 1.25rem;
 $font-size-24: 1.5rem;
-$font-size-25: 1.563rem;
+$font-size-25: 1.5625rem;
 $font-size-26: 1.625rem;
 $font-size-32: 2rem;
-$font-size-35: 2.188rem;
+$font-size-35: 2.1875rem;
 
 // Font families
 // Local fonts
@@ -81,13 +81,13 @@ $spacing-10: 4rem;
 $spacing-11: 5rem;
 $spacing-12: 6rem;
 $spacing-13: 10rem;
-$spacing-36: 2.25rem;
-$spacing-44: 2.75rem;
-$spacing-50: 3.125rem;
-$spacing-60: 3.75rem;
-$spacing-70: 4.375rem;
-$spacing-76: 4.75rem;
-$spacing-90: 5.625rem;
+$spacing-036: 2.25rem;
+$spacing-044: 2.75rem;
+$spacing-050: 3.125rem;
+$spacing-060: 3.75rem;
+$spacing-070: 4.375rem;
+$spacing-076: 4.75rem;
+$spacing-090: 5.625rem;
 $spacing-100: 6.25rem;
 $spacing-136: 8.5rem;
 $spacing-330: 20.625rem;
@@ -158,3 +158,127 @@ $author-image-radius: 50%;
 $cyrillic: ":lang(bg),:lang(be),:lang(kk),:lang(ky),:lang(mk),:lang(mn),:lang(ru),:lang(sr),:lang(uk)";
 
 /* variables end */
+
+
+// Additional Figma tokens (new variables)
+// Spacing tokens
+$spacing-002: 2px;
+$spacing-004: 4px;
+$spacing-008: 8px;
+$spacing-012: 12px;
+$spacing-016: 16px;
+$spacing-024: 24px;
+$spacing-032: 32px;
+$spacing-040: 40px;
+$spacing-048: 48px;
+$spacing-064: 64px;
+$spacing-080: 80px;
+$spacing-096: 96px;
+$spacing-160: 160px;
+
+// Fontfamily tokens
+$font-family-proximanova: 'ProximaNova', sans-serif;
+$font-family-sohnebreit: 'SohneBreit', $Font-Family-ProximaNova;
+$font-family-notosans: 'Noto Sans', sans-serif;
+$font-family-notosans-arabic: 'Noto Sans Arabic', sans-serif;
+$font-family-notosans-burmese: 'Noto Sans Myanmar', sans-serif;
+$font-family-notosans-chinese: 'Noto Sans SC', sans-serif;
+$font-family-notosans-japanese: 'Noto Sans JP', sans-serif;
+$font-family-notosans-georgian: 'Noto Sans Georgian', sans-serif;
+$font-family-notosans-khmer: 'Noto Sans Khmer', sans-serif;
+$font-family-notosans-korean: 'Noto Sans KR', sans-serif;
+$font-family-primary: $font-family-proximanova;
+$font-family-secondary: $font-family-sohnebreit;
+
+// Fontsize tokens
+$font-size-30: 1.875rem;
+$font-size-40: 2.5rem;
+$font-size-45: 2.8125rem;
+$font-size-47: 2.9375rem;
+$font-size-55: 3.4375rem;
+$font-size-82: 5.125rem;
+$font-size-100: 6.25rem;
+$font-size-body-default: $font-size-20;
+$font-size-body-small: $font-size-16;
+$font-size-heading-xxlarge: $font-size-82;
+$font-size-heading-xlarge: $font-size-55;
+$font-size-heading-large: $font-size-35;
+$font-size-heading-medium: $font-size-35;
+$font-size-heading-small: $font-size-25;
+$font-size-heading-xsmall: $font-size-16;
+$font-size-display-xxlarge: $font-size-100;
+$font-size-display-xlarge: $font-size-82;
+$font-size-display-large: $font-size-55;
+
+// Color tokens
+$color-yellow-200: #FFE17E;
+$color-yellow-400: #FFEB00;
+$color-yellow-600: #FBC412;
+$color-red-200: #FFBCB7;
+$color-red-400: #EE402D;
+$color-red-600: #D12800;
+$color-green-200: #B8ECB6;
+$color-green-400: #6DE354;
+$color-green-600: #59BA47;
+$color-azure-200: #A2DAF3;
+$color-azure-400: #60D4F2;
+$color-azure-600: #00C1FF;
+$color-text-default: $color-black;
+$color-text-inverse: $color-white;
+$color-accent: $color-yellow-400;
+$color-brand: $color-blue-600;
+$color-action-primary: $color-red-600;
+$color-action-secondary: $color-blue-600;
+$color-surface-default: $color-gray-200;
+$color-background-default: $color-white;
+$color-border-default: $color-black;
+$color-border-subtle: $color-gray-400;
+$color-border-inverse: $color-white;
+
+// Sizing tokens
+$sizing-1: 1px;
+$sizing-2: 2px;
+$sizing-4: 4px;
+$sizing-8: 8px;
+$sizing-16: 16px;
+$sizing-24: 24px;
+$sizing-32: 32px;
+$sizing-64: 64px;
+$sizing-128: 128px;
+$sizing-256: 256px;
+$sizing-512: 512px;
+$sizing-1024: 1024px;
+
+// Lineheight tokens
+$line-height-100: 100%;
+$line-height-110: 110%;
+$line-height-138: 138%;
+$line-height-body: $line-height-138;
+$line-height-heading: $line-height-110;
+$line-height-display: $line-height-100;
+
+// Fontweight tokens
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-regular: 400;
+
+// Textcase tokens
+$text-case-none: none;
+$text-case-uppercase: uppercase;
+
+// Border tokens
+$border-default: 2px;
+$border-subtle: 1px;
+
+
+
+
+// Backwards compatibility aliases for spacing variables
+// Old 2-digit notation pointing to new 3-digit notation
+$spacing-36: $spacing-036;
+$spacing-44: $spacing-044;
+$spacing-50: $spacing-050;
+$spacing-60: $spacing-060;
+$spacing-70: $spacing-070;
+$spacing-76: $spacing-076;
+$spacing-90: $spacing-090;

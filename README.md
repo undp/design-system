@@ -36,10 +36,6 @@ git clone
 # install project dependencies
 npm install
 
-# In Windows environment apply patch to the mdx1-csf plugin.
-# This can be omitted when this PR is merged: https://github.com/storybookjs/mdx1-csf/pull/27
-npm run windows-patch-package
-
 # runs storybook locally
 npm run storybook
 
@@ -48,6 +44,47 @@ npm run build-storybook
 
 # build compiled css and js
 npm run build
+```
+
+## Figma Design Tokens Integration
+
+The design system includes automated integration with Figma design tokens to ensure consistency between design and code.
+
+### Using Design Tokens
+
+Design tokens are automatically synchronized from `figma-tokens/input/tokens.json` to SASS variables in `stories/assets/scss/_variables.scss`. These tokens include:
+
+- **Colors**: Brand colors, semantic colors, and color scales
+- **Typography**: Font families, sizes, weights, and line heights
+- **Spacing**: Spacing scale for layouts
+- **Sizing**: Component sizing values
+- **Borders**: Border widths and styles
+
+### Working with Tokens
+
+```bash
+# Transform Figma tokens to SASS variables
+npm run transform-tokens
+
+# Validate token transformation without modifying files
+npm run validate-tokens
+
+# Build with updated tokens
+npm run build
+```
+
+### Automated Synchronization
+
+When `figma-tokens/input/tokens.json` is updated in the `master` branch:
+
+1. GitHub Actions workflow automatically triggers
+2. Tokens are transformed to SASS variables
+3. A pull request is created against `develop` branch
+4. The PR includes a detailed summary of changes
+5. Repository maintainers are notified for review
+
+See [figma-tokens/README.md](figma-tokens/README.md) for complete documentation.
+
 ```
 
 ### Important
