@@ -75,6 +75,20 @@ jobs:
           # Get token counts from the script output (using JSON mode)
           TRANSFORM_RESULT=$(node scripts/transform-tokens.js --json)
           TOKEN_COUNT=$(echo "$TRANSFORM_RESULT" | jq -r '.tokensProcessed // "113"')
+          VARS_ADDED=$(echo "$TRANSFORM_RESULT" | jq -r '.variablesAdded // 0')
+          VARS_UPDATED=$(echo "$TRANSFORM_RESULT" | jq -r '.variablesUpdated // 0')
+          VARS_DELETED=$(echo "$TRANSFORM_RESULT" | jq -r '.variablesDeleted // 0')
+          DELETED_MAPPED=$(echo "$TRANSFORM_RESULT" | jq -r '.deletedMappedCount // 0')
+          
+          # Get deleted variable names if any
+          DELETED_VARS_JSON=$(echo "$TRANSFORM_RESULT" | jq -r '.deletedVars // []')
+          DELETED_VARS_LIST=""
+          if [ "$VARS_DELETED" -gt 0 ]; then
+            DELETED_VARS_LIST=$(echo "$DELETED_VARS_JSON" | jq -r '.[] | "  - `$" + . + "`"' | head -20)
+            if [ $(echo "$DELETED_VARS_JSON" | jq '. | length') -gt 20 ]; then
+              DELETED_VARS_LIST="${DELETED_VARS_LIST}\n  - ... and $(( $(echo "$DELETED_VARS_JSON" | jq '. | length') - 20 )) more"
+            fi
+          fi
 
           # Validate JSON parsing
           if [ -z "$TOKEN_COUNT" ] || [ "$TOKEN_COUNT" = "null" ]; then
@@ -82,14 +96,41 @@ jobs:
             TOKEN_COUNT="113"
           fi
 
-          # Generate detailed diff summary
+          # Generate detailed diff summary (fallback if JSON parsing fails)
           ADDED=$(git diff stories/assets/scss/_variables.scss | \
             grep "^+\$" | grep -v "^+++" | wc -l)
           REMOVED=$(git diff stories/assets/scss/_variables.scss | \
             grep "^-\$" | grep -v "^---" | wc -l)
-          MODIFIED=$((ADDED > REMOVED ? REMOVED : ADDED))
-          NEW_VARS=$((ADDED - MODIFIED))
-          REMOVED_VARS=$((REMOVED - MODIFIED))
+          
+          # Use JSON values if available, otherwise use git diff
+          if [ "$VARS_ADDED" != "0" ] || [ "$VARS_UPDATED" != "0" ] || [ "$VARS_DELETED" != "0" ]; then
+            NEW_VARS=$VARS_ADDED
+            REMOVED_VARS=$VARS_DELETED
+            MODIFIED=$VARS_UPDATED
+          else
+            MODIFIED=$((ADDED > REMOVED ? REMOVED : ADDED))
+            NEW_VARS=$((ADDED - MODIFIED))
+            REMOVED_VARS=$((REMOVED - MODIFIED))
+          fi
+
+          # Create deleted variables section if any
+          DELETED_SECTION=""
+          if [ "$REMOVED_VARS" -gt 0 ] && [ -n "$DELETED_VARS_LIST" ]; then
+            COMPAT_NOTE=""
+            if [ "$DELETED_MAPPED" -gt 0 ]; then
+              COMPAT_NOTE="
+
+          **Note**: ${DELETED_MAPPED} of these deleted variables have backwards compatibility aliases that map them to existing variables with matching values, ensuring existing code continues to work."
+            fi
+            
+            DELETED_SECTION="
+
+          ### 🗑️ Deleted Variables
+          The following SASS variables were removed because their corresponding tokens were deleted from Figma:
+          ${DELETED_VARS_LIST}${COMPAT_NOTE}
+
+          **Impact**: Review references to these variables in your SCSS files. Variables with backwards compatibility aliases will continue to work."
+          fi
 
           # Create summary
           SUMMARY="## 🎨 Figma Design Tokens Sync
@@ -100,7 +141,7 @@ jobs:
           - **Total tokens processed**: ${TOKEN_COUNT:-113}
           - **New variables**: ${NEW_VARS}
           - **Modified variables**: ${MODIFIED}
-          - **Removed variables**: ${REMOVED_VARS}
+          - **Removed variables**: ${REMOVED_VARS}${DELETED_SECTION}
 
           ### Files Modified
           - \`stories/assets/scss/_variables.scss\`
