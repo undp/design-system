@@ -230,27 +230,52 @@ function updateSassVariables(existingContent, tokens) {
     // Find a good insertion point (before final comments or at end)
     let insertIndex = lines.length;
 
-    // Group new variables by category
+    // Group new variables by category, separating primitive and semantic
     const grouped = {};
     newVars.forEach(v => {
       const category = v.token.path[0];
+      const isSemantic = v.token.isSemantic || false;
+      
       if (!grouped[category]) {
-        grouped[category] = [];
+        grouped[category] = {
+          primitive: [],
+          semantic: []
+        };
       }
-      grouped[category].push(v);
+      
+      if (isSemantic) {
+        grouped[category].semantic.push(v);
+      } else {
+        grouped[category].primitive.push(v);
+      }
     });
 
-    // Add new variables grouped by category
+    // Add new variables grouped by category, with primitives before semantics
     const newLines = [];
     newLines.push('');
     newLines.push('// Additional Figma tokens (new variables)');
 
-    for (const [category, vars] of Object.entries(grouped)) {
-      newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
-      vars.forEach(v => {
-        newLines.push(`$${v.name}: ${v.value};`);
-      });
-      newLines.push('');
+    for (const [category, categoryVars] of Object.entries(grouped)) {
+      // Output primitive tokens first
+      if (categoryVars.primitive.length > 0) {
+        newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
+        categoryVars.primitive.forEach(v => {
+          newLines.push(`$${v.name}: ${v.value};`);
+        });
+        newLines.push('');
+      }
+      
+      // Then output semantic tokens (which may reference primitives)
+      if (categoryVars.semantic.length > 0) {
+        if (categoryVars.primitive.length === 0) {
+          // If no primitives were output, add the category header
+          newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
+        }
+        categoryVars.semantic.forEach(v => {
+          newLines.push(`$${v.name}: ${v.value};`);
+        });
+        newLines.push('');
+      }
     }
 
     // Insert before the end
