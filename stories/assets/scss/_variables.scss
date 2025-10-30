@@ -152,6 +152,9 @@ $spacing-064: 64px;
 $spacing-080: 80px;
 $spacing-096: 96px;
 $spacing-160: 160px;
+$spacing-010: 64px;
+$spacing-011: 80px;
+$spacing-013: 160px;
 
 // Fontfamily tokens
 $font-family-proximanova: 'ProximaNova', sans-serif;
@@ -239,18 +242,6 @@ $border-subtle: 1px;
 
 
 
-
-// Spacing tokens
-$spacing-010: 64px;
-$spacing-011: 80px;
-$spacing-013: 160px;
-$spacing-001: 2px;
-$spacing-005: 16px;
-$spacing-006: 24px;
-$spacing-007: 32px;
-$spacing-009: 48px;
-$spacing-003: 8px;
-
 // Fontweight tokens
 $font-weight-extrabold: 800;
 $font-weight-body-default: $font-weight-regular;
@@ -269,19 +260,19 @@ $color-action-secondary-hover: $color-blue-500;
 
 $font-size-25: $font-size-24;
 $font-size-26: $font-size-24;
-$spacing-01: $spacing-001;
-$spacing-02: $spacing-002;
-$spacing-03: $spacing-003;
+$spacing-01: $spacing-002;
+$spacing-02: $spacing-004;
+$spacing-03: $spacing-008;
 $spacing-04: $spacing-012;
-$spacing-05: $spacing-005;
-$spacing-06: $spacing-006;
-$spacing-07: $spacing-007;
+$spacing-05: $spacing-016;
+$spacing-06: $spacing-024;
+$spacing-07: $spacing-032;
 $spacing-08: $spacing-040;
-$spacing-09: $spacing-009;
-$spacing-10: $spacing-010;
-$spacing-11: $spacing-011;
-$spacing-12: $spacing-012;
-$spacing-13: $spacing-013;
+$spacing-09: $spacing-048;
+$spacing-10: $spacing-064;
+$spacing-11: $spacing-080;
+$spacing-12: $spacing-096;
+$spacing-13: $spacing-160;
 
 // PRESERVE: Backwards compatibility - do not delete
 // Variables removed from Figma tokens but still referenced in SCSS files
@@ -294,6 +285,16 @@ $spacing-330: 20.625rem;
 $spacing-400: 25rem;
 
 
+
+
+
+// Spacing tokens
+$spacing-001: 2px;
+$spacing-005: 16px;
+$spacing-006: 24px;
+$spacing-007: 32px;
+$spacing-009: 48px;
+$spacing-003: 8px;
 
 
 // Backwards compatibility aliases for spacing variables
