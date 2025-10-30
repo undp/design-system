@@ -139,9 +139,9 @@ $cyrillic: ":lang(bg),:lang(be),:lang(kk),:lang(ky),:lang(mk),:lang(mn),:lang(ru
 
 // Additional Figma tokens (new variables)
 // Spacing tokens
-$spacing-002: 4px;
-$spacing-004: 12px;
-$spacing-008: 40px;
+$spacing-002: 2px;
+$spacing-004: 4px;
+$spacing-008: 8px;
 $spacing-012: 12px;
 $spacing-016: 16px;
 $spacing-024: 24px;
@@ -152,9 +152,6 @@ $spacing-064: 64px;
 $spacing-080: 80px;
 $spacing-096: 96px;
 $spacing-160: 160px;
-$spacing-010: 64px;
-$spacing-011: 80px;
-$spacing-013: 160px;
 
 // Fontfamily tokens
 $font-family-proximanova: 'ProximaNova', sans-serif;
@@ -289,12 +286,9 @@ $spacing-400: 25rem;
 
 
 // Spacing tokens
-$spacing-001: 2px;
-$spacing-005: 16px;
-$spacing-006: 24px;
-$spacing-007: 32px;
-$spacing-009: 48px;
-$spacing-003: 8px;
+$spacing-010: $spacing-064;
+$spacing-011: $spacing-080;
+$spacing-013: $spacing-160;
 
 
 // Backwards compatibility aliases for spacing variables

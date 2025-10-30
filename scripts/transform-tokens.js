@@ -601,17 +601,35 @@ function extractTokens(obj, pathArray = [], allTokensRoot = {}, isSemantic = fal
       } else {
         processedValue = resolveTokenReference(value.$value, allTokensRoot);
         processedValue = processTokenValue(processedValue, value.$type, existingVars, currentPath);
-      }      // Special handling for spacing tokens - ONLY use pixel-based notation (3 digits)
-      // Rank-based notation (2 digits) is preserved from existing variables
+      }      
+      // Special handling for spacing tokens
       if (pathArray[0] === 'spacing' && value.$type === 'spacing' && !isSemantic) {
+        // Determine if this is pixel notation (3-digit) or ranking notation (2-digit)
+        // Pixel notation: 002, 004, 008, 012, 016, 024, 032, 040, 048, 064, 080, 096, 160, etc.
+        // Ranking notation: 01, 02, 03, ..., 13 (references other tokens)
+        const spacingKey = key;
+        const isPixelNotation = spacingKey.length === 3 && !value.$value.startsWith('{');
+        
+        // For ranking notation that references another token, use the SASS reference
+        let finalValue = processedValue;
+        let finalSassReference = sassReference;
+        if (!isPixelNotation && value.$value.startsWith('{')) {
+          // This is a ranking notation that references another spacing token
+          // Use the SASS reference instead of the resolved value
+          const referencePath = value.$value.slice(1, -1); // Remove { }
+          const referenceParts = referencePath.split('.');
+          finalSassReference = '$' + pathToVariableName(referenceParts, true); // Use pixel notation for reference
+          finalValue = processedValue; // Keep processed value as fallback
+        }
+        
         const token = {
           path: currentPath,
-          value: processedValue,
-          sassReference: sassReference,
+          value: finalValue,
+          sassReference: finalSassReference,
           type: value.$type,
           originalValue: value.$value,
           isSemantic: isSemantic,
-          usePixelNotation: true  // Always use 3-digit notation for Figma spacing tokens
+          usePixelNotation: isPixelNotation
         };
         tokens.push(token);
       } else {
