@@ -21,8 +21,8 @@ const OUTPUT_PATH = path.join(__dirname, '../figma-tokens/css-custom-properties.
  * @returns {Array<string>} - Array of custom property names
  */
 function extractCustomProperties(content) {
-  // Match all --undpds-* custom properties
-  const regex = /--undpds-[a-z0-9-]+/g;
+  // Match all --undpds-* custom properties (including underscores)
+  const regex = /--undpds-[a-z0-9_-]+/g;
   const matches = content.match(regex) || [];
   
   // Remove duplicates and sort
@@ -115,15 +115,9 @@ function formatPropertiesCompact(groups) {
     lines.push(`## ${category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')} (${properties.length})`);
     lines.push('');
     
-    // Guard against empty properties array
-    if (properties.length === 0) {
-      lines.push('*No properties in this category*');
-      lines.push('');
-      return;
-    }
-    
     // Format properties in columns for compact display
     // Aim for 3-4 columns depending on property name length
+    // Note: Empty groups are already filtered out by groupProperties function
     const maxLength = Math.max(...properties.map(p => p.length));
     const columnsCount = maxLength > 30 ? 2 : maxLength > 20 ? 3 : 4;
     
