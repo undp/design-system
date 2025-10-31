@@ -194,11 +194,16 @@ function formatPropertiesCompact(groups) {
         lines.push('|----------|-------|----------|-------|----------|-------|');
       }
       
-      // Split into rows and remove empty cells
-      for (let i = 0; i < properties.length; i += columnsCount) {
+      // Organize properties in columns (top-down, left-to-right reading order)
+      // Calculate rows needed
+      const rowsCount = Math.ceil(properties.length / columnsCount);
+      
+      for (let rowIndex = 0; rowIndex < rowsCount; rowIndex++) {
         const row = [];
-        for (let j = 0; j < columnsCount; j++) {
-          const prop = properties[i + j];
+        for (let colIndex = 0; colIndex < columnsCount; colIndex++) {
+          // Calculate the property index for this cell (column-major order)
+          const propIndex = colIndex * rowsCount + rowIndex;
+          const prop = properties[propIndex];
           if (prop) {
             row.push(`\`${prop.name}\``);
             row.push(`\`${prop.value}\``);
