@@ -1,13 +1,14 @@
 ---
 name: Sync Figma Design Tokens
 
-# Trigger workflow when tokens.json is modified
+# Trigger workflow when tokens.json is modified or manually
 on:
   push:
     branches:
       - update-figma-tokens
     paths:
       - 'figma-tokens/input/tokens.json'
+  workflow_dispatch:
 
 jobs:
   sync-tokens:
@@ -184,6 +185,13 @@ jobs:
           npm run build
           echo "✅ Build completed successfully with new tokens"
 
+      - name: Generate CSS custom properties list
+        if: steps.transform.outputs.has_changes == 'true'
+        run: |
+          echo "Generating printable CSS custom properties list..."
+          node scripts/generate-css-custom-properties-list.js
+          echo "✅ CSS custom properties list generated"
+
       - name: Commit changes and push to origin
         if: steps.transform.outputs.has_changes == 'true'
         run: |
@@ -195,6 +203,7 @@ jobs:
 
           - Transformed tokens from figma-tokens/input/tokens.json
           - Updated stories/assets/scss/_variables.scss
+          - Generated CSS custom properties reference
           - Preserved existing non-token variables
           - Built production assets
 
