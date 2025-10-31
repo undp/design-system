@@ -16,17 +16,27 @@ const CSS_PATH = path.join(__dirname, '../docs/css/base-minimal.min.css');
 const OUTPUT_PATH = path.join(__dirname, '../figma-tokens/css-custom-properties.md');
 
 /**
- * Extract CSS custom properties from CSS content
+ * Extract CSS custom properties with values from CSS content
  * @param {string} content - CSS file content
- * @returns {Array<string>} - Array of custom property names
+ * @returns {Map<string, string>} - Map of property names to their values
  */
 function extractCustomProperties(content) {
-  // Match all --undpds-* custom properties (including underscores)
-  const regex = /--undpds-[a-z0-9_-]+/g;
-  const matches = content.match(regex) || [];
+  // Match all --undpds-* custom properties with their values
+  const regex = /--(undpds-[a-z0-9_-]+)\s*:\s*([^;}\n]+)/g;
+  const properties = new Map();
   
-  // Remove duplicates and sort
-  return [...new Set(matches)].sort();
+  let match;
+  while ((match = regex.exec(content)) !== null) {
+    const propName = `--${match[1]}`;
+    const propValue = match[2].trim();
+    // Store first occurrence (avoid duplicates)
+    if (!properties.has(propName)) {
+      properties.set(propName, propValue);
+    }
+  }
+  
+  // Sort by property name
+  return new Map([...properties.entries()].sort((a, b) => a[0].localeCompare(b[0])));
 }
 
 /**
@@ -34,10 +44,10 @@ function extractCustomProperties(content) {
  * Categories: color, spacing, font-family, font-size, font-weight,
  * line-height, text-case, border, sizing, and other.
  * Empty categories are automatically removed.
- * @param {Array<string>} properties - Array of property names
- * @returns {Object} - Properties grouped by category
+ * @param {Map<string, string>} propertiesMap - Map of property names to values
+ * @returns {Object} - Properties grouped by category with values
  */
-function groupProperties(properties) {
+function groupProperties(propertiesMap) {
   const groups = {
     color: [],
     spacing: [],
@@ -51,30 +61,31 @@ function groupProperties(properties) {
     other: []
   };
 
-  properties.forEach(prop => {
+  propertiesMap.forEach((value, prop) => {
     // Extract the category from property name (--undpds-{category}-...)
     const parts = prop.replace('--undpds-', '').split('-');
+    const propWithValue = { name: prop, value: value };
     
     if (parts[0] === 'color') {
-      groups.color.push(prop);
+      groups.color.push(propWithValue);
     } else if (parts[0] === 'spacing') {
-      groups.spacing.push(prop);
+      groups.spacing.push(propWithValue);
     } else if (parts[0] === 'font' && parts[1] === 'family') {
-      groups['font-family'].push(prop);
+      groups['font-family'].push(propWithValue);
     } else if (parts[0] === 'font' && parts[1] === 'size') {
-      groups['font-size'].push(prop);
+      groups['font-size'].push(propWithValue);
     } else if (parts[0] === 'font' && parts[1] === 'weight') {
-      groups['font-weight'].push(prop);
+      groups['font-weight'].push(propWithValue);
     } else if (parts[0] === 'line' && parts[1] === 'height') {
-      groups['line-height'].push(prop);
+      groups['line-height'].push(propWithValue);
     } else if (parts[0] === 'text' && parts[1] === 'case') {
-      groups['text-case'].push(prop);
+      groups['text-case'].push(propWithValue);
     } else if (parts[0] === 'border') {
-      groups.border.push(prop);
+      groups.border.push(propWithValue);
     } else if (parts[0] === 'sizing') {
-      groups.sizing.push(prop);
+      groups.sizing.push(propWithValue);
     } else {
-      groups.other.push(prop);
+      groups.other.push(propWithValue);
     }
   });
 
@@ -89,8 +100,8 @@ function groupProperties(properties) {
 }
 
 /**
- * Format properties in a compact layout
- * @param {Object} groups - Properties grouped by category
+ * Format properties in a table layout with values
+ * @param {Object} groups - Properties grouped by category with values
  * @returns {string} - Formatted markdown content
  */
 function formatPropertiesCompact(groups) {
@@ -115,24 +126,28 @@ function formatPropertiesCompact(groups) {
     lines.push(`## ${category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')} (${properties.length})`);
     lines.push('');
     
-    // Format properties in columns for compact display
-    // Aim for 3-4 columns depending on property name length
-    // Note: Empty groups are already filtered out by groupProperties function
-    const maxLength = Math.max(...properties.map(p => p.length));
-    const columnsCount = maxLength > 30 ? 2 : maxLength > 20 ? 3 : 4;
+    // Use 3 columns for table layout
+    const columnsCount = 3;
+    
+    // Create table header
+    lines.push('| Property | Value | Property | Value | Property | Value |');
+    lines.push('|----------|-------|----------|-------|----------|-------|');
     
     // Split into rows
-    const rows = [];
     for (let i = 0; i < properties.length; i += columnsCount) {
-      rows.push(properties.slice(i, i + columnsCount));
+      const row = [];
+      for (let j = 0; j < columnsCount; j++) {
+        const prop = properties[i + j];
+        if (prop) {
+          row.push(`\`${prop.name}\``);
+          row.push(`\`${prop.value}\``);
+        } else {
+          row.push('');
+          row.push('');
+        }
+      }
+      lines.push(`| ${row.join(' | ')} |`);
     }
-    
-    // Format as markdown list with inline code
-    rows.forEach(row => {
-      const formattedRow = row.map(prop => `\`${prop}\``).join(' • ');
-      lines.push(formattedRow);
-      lines.push('');
-    });
     
     lines.push('');
   });
@@ -165,7 +180,7 @@ function generatePropertiesList() {
   // Extract custom properties
   console.log('🔍 Extracting custom properties...');
   const properties = extractCustomProperties(cssContent);
-  console.log(`   Found ${properties.length} unique custom properties`);
+  console.log(`   Found ${properties.size} unique custom properties`);
   
   // Group properties
   console.log('📊 Grouping properties by category...');
