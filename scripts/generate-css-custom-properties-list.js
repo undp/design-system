@@ -31,6 +31,9 @@ function extractCustomProperties(content) {
 
 /**
  * Group custom properties by their type/category
+ * Categories: color, spacing, font-family, font-size, font-weight,
+ * line-height, text-case, border, sizing, and other.
+ * Empty categories are automatically removed.
  * @param {Array<string>} properties - Array of property names
  * @returns {Object} - Properties grouped by category
  */
@@ -111,6 +114,13 @@ function formatPropertiesCompact(groups) {
   Object.entries(groups).forEach(([category, properties]) => {
     lines.push(`## ${category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')} (${properties.length})`);
     lines.push('');
+    
+    // Guard against empty properties array
+    if (properties.length === 0) {
+      lines.push('*No properties in this category*');
+      lines.push('');
+      return;
+    }
     
     // Format properties in columns for compact display
     // Aim for 3-4 columns depending on property name length
