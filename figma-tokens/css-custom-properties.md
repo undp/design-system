@@ -11,28 +11,38 @@ These properties are automatically generated from Figma design tokens.
 
 ## Color (60)
 
-| Property | Value | Property | Value | Property | Value |
-|----------|-------|----------|-------|----------|-------|
-| `--undpds-color-accent` | `#ffeb00` | `--undpds-color-action-primary` | `#d12800` | `--undpds-color-action-primary-default` | `#d12800` |
-| `--undpds-color-action-primary-hover` | `#ee402d` | `--undpds-color-action-secondary` | `#006eb5` | `--undpds-color-action-secondary-default` | `#006eb5` |
-| `--undpds-color-action-secondary-hover` | `#3288ce` | `--undpds-color-azure` | `#60d4f2` | `--undpds-color-azure-200` | `#a2daf3` |
-| `--undpds-color-azure-400` | `#60d4f2` | `--undpds-color-azure-600` | `#00c1ff` | `--undpds-color-background-default` | `#fff` |
-| `--undpds-color-black` | `#000` | `--undpds-color-blue-100` | `#b5d5f5` | `--undpds-color-blue-200` | `#94c4f5` |
-| `--undpds-color-blue-300` | `#6babeb` | `--undpds-color-blue-400` | `#4f95dd` | `--undpds-color-blue-500` | `#3288ce` |
-| `--undpds-color-blue-600` | `#006eb5` | `--undpds-color-blue-700` | `#1f5a95` | `--undpds-color-blue-800` | `#0468b1` |
-| `--undpds-color-border-default` | `#000` | `--undpds-color-border-inverse` | `#fff` | `--undpds-color-border-subtle` | `#d4d6d8` |
-| `--undpds-color-brand` | `#006eb5` | `--undpds-color-dark-azure` | `#00c1ff` | `--undpds-color-dark-green` | `#59ba47` |
-| `--undpds-color-dark-red` | `#d12800` | `--undpds-color-dark-yellow` | `#fbc412` | `--undpds-color-ebony-clay` | `#232e3e` |
-| `--undpds-color-gray-100` | `#fafafa` | `--undpds-color-gray-200` | `#f7f7f7` | `--undpds-color-gray-300` | `#edeff0` |
-| `--undpds-color-gray-400` | `#d4d6d8` | `--undpds-color-gray-500` | `#a9b1b7` | `--undpds-color-gray-600` | `#55606e` |
-| `--undpds-color-gray-700` | `#232e3d` | `--undpds-color-green` | `#6de354` | `--undpds-color-green-200` | `#b8ecb6` |
-| `--undpds-color-green-400` | `#6de354` | `--undpds-color-green-600` | `#59ba47` | `--undpds-color-light-azure` | `#a2daf3` |
-| `--undpds-color-light-green` | `#b8ecb6` | `--undpds-color-light-pink` | `#ffb4ae` | `--undpds-color-light-red` | `#ffbcb7` |
-| `--undpds-color-light-yellow` | `#ffe17e` | `--undpds-color-red` | `#ee402d` | `--undpds-color-red-200` | `#ffbcb7` |
-| `--undpds-color-red-400` | `#ee402d` | `--undpds-color-red-600` | `#d12800` | `--undpds-color-shuttle-gray` | `#55606f` |
-| `--undpds-color-silvery-moonlight` | `#ced0d3` | `--undpds-color-surface-default` | `#f7f7f7` | `--undpds-color-text-default` | `#000` |
-| `--undpds-color-text-inverse` | `#fff` | `--undpds-color-white` | `#fff` | `--undpds-color-yellow` | `#ffeb00` |
-| `--undpds-color-yellow-200` | `#ffe17e` | `--undpds-color-yellow-400` | `#ffeb00` | `--undpds-color-yellow-600` | `#fbc412` |
+| Property | Value | Property | Value |
+|----------|-------|----------|-------|
+| `--undpds-color-accent` | `#ffeb00` | `--undpds-color-action-primary` | `#d12800` |
+| `--undpds-color-action-primary-default` | `#d12800` | `--undpds-color-action-primary-hover` | `#ee402d` |
+| `--undpds-color-action-secondary` | `#006eb5` | `--undpds-color-action-secondary-default` | `#006eb5` |
+| `--undpds-color-action-secondary-hover` | `#3288ce` | `--undpds-color-azure` | `#60d4f2` |
+| `--undpds-color-azure-200` | `#a2daf3` | `--undpds-color-azure-400` | `#60d4f2` |
+| `--undpds-color-azure-600` | `#00c1ff` | `--undpds-color-background-default` | `#fff` |
+| `--undpds-color-black` | `#000` | `--undpds-color-blue-100` | `#b5d5f5` |
+| `--undpds-color-blue-200` | `#94c4f5` | `--undpds-color-blue-300` | `#6babeb` |
+| `--undpds-color-blue-400` | `#4f95dd` | `--undpds-color-blue-500` | `#3288ce` |
+| `--undpds-color-blue-600` | `#006eb5` | `--undpds-color-blue-700` | `#1f5a95` |
+| `--undpds-color-blue-800` | `#0468b1` | `--undpds-color-border-default` | `#000` |
+| `--undpds-color-border-inverse` | `#fff` | `--undpds-color-border-subtle` | `#d4d6d8` |
+| `--undpds-color-brand` | `#006eb5` | `--undpds-color-dark-azure` | `#00c1ff` |
+| `--undpds-color-dark-green` | `#59ba47` | `--undpds-color-dark-red` | `#d12800` |
+| `--undpds-color-dark-yellow` | `#fbc412` | `--undpds-color-ebony-clay` | `#232e3e` |
+| `--undpds-color-gray-100` | `#fafafa` | `--undpds-color-gray-200` | `#f7f7f7` |
+| `--undpds-color-gray-300` | `#edeff0` | `--undpds-color-gray-400` | `#d4d6d8` |
+| `--undpds-color-gray-500` | `#a9b1b7` | `--undpds-color-gray-600` | `#55606e` |
+| `--undpds-color-gray-700` | `#232e3d` | `--undpds-color-green` | `#6de354` |
+| `--undpds-color-green-200` | `#b8ecb6` | `--undpds-color-green-400` | `#6de354` |
+| `--undpds-color-green-600` | `#59ba47` | `--undpds-color-light-azure` | `#a2daf3` |
+| `--undpds-color-light-green` | `#b8ecb6` | `--undpds-color-light-pink` | `#ffb4ae` |
+| `--undpds-color-light-red` | `#ffbcb7` | `--undpds-color-light-yellow` | `#ffe17e` |
+| `--undpds-color-red` | `#ee402d` | `--undpds-color-red-200` | `#ffbcb7` |
+| `--undpds-color-red-400` | `#ee402d` | `--undpds-color-red-600` | `#d12800` |
+| `--undpds-color-shuttle-gray` | `#55606f` | `--undpds-color-silvery-moonlight` | `#ced0d3` |
+| `--undpds-color-surface-default` | `#f7f7f7` | `--undpds-color-text-default` | `#000` |
+| `--undpds-color-text-inverse` | `#fff` | `--undpds-color-white` | `#fff` |
+| `--undpds-color-yellow` | `#ffeb00` | `--undpds-color-yellow-200` | `#ffe17e` |
+| `--undpds-color-yellow-400` | `#ffeb00` | `--undpds-color-yellow-600` | `#fbc412` |
 
 ## Spacing (45)
 
@@ -56,13 +66,15 @@ These properties are automatically generated from Figma design tokens.
 
 ## Font family (14)
 
-| Property | Value | Property | Value | Property | Value |
-|----------|-------|----------|-------|----------|-------|
-| `--undpds-font-family-notosans` | `Noto Sans,sans-serif` | `--undpds-font-family-notosans-arabic` | `Noto Sans Arabic,sans-serif` | `--undpds-font-family-notosans-burmese` | `Noto Sans Myanmar,sans-serif` |
-| `--undpds-font-family-notosans-chinese` | `Noto Sans SC,sans-serif` | `--undpds-font-family-notosans-georgian` | `Noto Sans Georgian,sans-serif` | `--undpds-font-family-notosans-japanese` | `Noto Sans JP,sans-serif` |
-| `--undpds-font-family-notosans-khmer` | `Noto Sans Khmer,sans-serif` | `--undpds-font-family-notosans-korean` | `Noto Sans KR,sans-serif` | `--undpds-font-family-notosans-thai` | `Noto Sans Thai,sans-serif` |
-| `--undpds-font-family-primary` | `ProximaNova,sans-serif` | `--undpds-font-family-proximanova` | `ProximaNova,sans-serif` | `--undpds-font-family-secondary` | `SohneBreit,ProximaNova,sans-serif` |
-| `--undpds-font-family-sohnebreit` | `SohneBreit,ProximaNova,sans-serif` | `--undpds-font-family-unbangla` | `UNBangla,sans-serif` |  |  |
+| Property | Value | Property | Value |
+|----------|-------|----------|-------|
+| `--undpds-font-family-notosans` | `Noto Sans,sans-serif` | `--undpds-font-family-notosans-arabic` | `Noto Sans Arabic,sans-serif` |
+| `--undpds-font-family-notosans-burmese` | `Noto Sans Myanmar,sans-serif` | `--undpds-font-family-notosans-chinese` | `Noto Sans SC,sans-serif` |
+| `--undpds-font-family-notosans-georgian` | `Noto Sans Georgian,sans-serif` | `--undpds-font-family-notosans-japanese` | `Noto Sans JP,sans-serif` |
+| `--undpds-font-family-notosans-khmer` | `Noto Sans Khmer,sans-serif` | `--undpds-font-family-notosans-korean` | `Noto Sans KR,sans-serif` |
+| `--undpds-font-family-notosans-thai` | `Noto Sans Thai,sans-serif` | `--undpds-font-family-primary` | `ProximaNova,sans-serif` |
+| `--undpds-font-family-proximanova` | `ProximaNova,sans-serif` | `--undpds-font-family-secondary` | `SohneBreit,ProximaNova,sans-serif` |
+| `--undpds-font-family-sohnebreit` | `SohneBreit,ProximaNova,sans-serif` | `--undpds-font-family-unbangla` | `UNBangla,sans-serif` |
 
 ## Font size (27)
 
@@ -80,31 +92,35 @@ These properties are automatically generated from Figma design tokens.
 
 ## Font weight (10)
 
-| Property | Value | Property | Value | Property | Value |
-|----------|-------|----------|-------|----------|-------|
-| `--undpds-font-weight-body-bold` | `700` | `--undpds-font-weight-body-default` | `400` | `--undpds-font-weight-bold` | `700` |
-| `--undpds-font-weight-display-bold` | `800` | `--undpds-font-weight-display-default` | `700` | `--undpds-font-weight-extrabold` | `800` |
-| `--undpds-font-weight-heading-bold` | `700` | `--undpds-font-weight-heading-default` | `600` | `--undpds-font-weight-regular` | `400` |
-| `--undpds-font-weight-semibold` | `600` |  |  |  |  |
+- `--undpds-font-weight-body-bold`: `700`
+- `--undpds-font-weight-body-default`: `400`
+- `--undpds-font-weight-bold`: `700`
+- `--undpds-font-weight-display-bold`: `800`
+- `--undpds-font-weight-display-default`: `700`
+- `--undpds-font-weight-extrabold`: `800`
+- `--undpds-font-weight-heading-bold`: `700`
+- `--undpds-font-weight-heading-default`: `600`
+- `--undpds-font-weight-regular`: `400`
+- `--undpds-font-weight-semibold`: `600`
 
 ## Line height (6)
 
-| Property | Value | Property | Value | Property | Value |
-|----------|-------|----------|-------|----------|-------|
-| `--undpds-line-height-100` | `100%` | `--undpds-line-height-110` | `110%` | `--undpds-line-height-138` | `138%` |
-| `--undpds-line-height-body` | `138%` | `--undpds-line-height-display` | `100%` | `--undpds-line-height-heading` | `110%` |
+- `--undpds-line-height-100`: `100%`
+- `--undpds-line-height-110`: `110%`
+- `--undpds-line-height-138`: `138%`
+- `--undpds-line-height-body`: `138%`
+- `--undpds-line-height-display`: `100%`
+- `--undpds-line-height-heading`: `110%`
 
 ## Text case (2)
 
-| Property | Value | Property | Value | Property | Value |
-|----------|-------|----------|-------|----------|-------|
-| `--undpds-text-case-none` | `none` | `--undpds-text-case-uppercase` | `uppercase` |  |  |
+- `--undpds-text-case-none`: `none`
+- `--undpds-text-case-uppercase`: `uppercase`
 
 ## Border (2)
 
-| Property | Value | Property | Value | Property | Value |
-|----------|-------|----------|-------|----------|-------|
-| `--undpds-border-default` | `2px` | `--undpds-border-subtle` | `1px` |  |  |
+- `--undpds-border-default`: `2px`
+- `--undpds-border-subtle`: `1px`
 
 ## Other (49)
 
@@ -126,7 +142,7 @@ These properties are automatically generated from Figma design tokens.
 | `--undpds-sdg-yellow` | `#fcc30b` | `--undpds-width-1096` | `68.5rem` | `--undpds-width-1440` | `90rem` |
 | `--undpds-width-150` | `9.375rem` | `--undpds-width-180` | `11.25rem` | `--undpds-width-600` | `37.5rem` |
 | `--undpds-width-705` | `44.0625rem` | `--undpds-width-840` | `52.5rem` | `--undpds-width-900` | `56.25rem` |
-| `--undpds-yellow-gradient` | `#ffeb00 30%,rgba(255,235,0,0) 110%` |  |  |  |  |
+| `--undpds-yellow-gradient` | `#ffeb00 30%,rgba(255,235,0,0) 110%` |
 
 ---
 

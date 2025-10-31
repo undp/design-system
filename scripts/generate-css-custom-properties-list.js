@@ -126,27 +126,42 @@ function formatPropertiesCompact(groups) {
     lines.push(`## ${category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')} (${properties.length})`);
     lines.push('');
     
-    // Use 3 columns for table layout
-    const columnsCount = 3;
-    
-    // Create table header
-    lines.push('| Property | Value | Property | Value | Property | Value |');
-    lines.push('|----------|-------|----------|-------|----------|-------|');
-    
-    // Split into rows
-    for (let i = 0; i < properties.length; i += columnsCount) {
-      const row = [];
-      for (let j = 0; j < columnsCount; j++) {
-        const prop = properties[i + j];
-        if (prop) {
-          row.push(`\`${prop.name}\``);
-          row.push(`\`${prop.value}\``);
-        } else {
-          row.push('');
-          row.push('');
+    // Use columns only if more than 10 properties
+    if (properties.length <= 10) {
+      // Simple list format for small sections
+      properties.forEach(prop => {
+        lines.push(`- \`${prop.name}\`: \`${prop.value}\``);
+      });
+    } else {
+      // Determine column count based on max property name length
+      const maxNameLength = Math.max(...properties.map(p => p.name.length));
+      // Use 2 columns if property names are long (> 35 chars), otherwise 3 columns
+      const columnsCount = maxNameLength > 35 ? 2 : 3;
+      
+      // Create table header based on column count
+      if (columnsCount === 2) {
+        lines.push('| Property | Value | Property | Value |');
+        lines.push('|----------|-------|----------|-------|');
+      } else {
+        lines.push('| Property | Value | Property | Value | Property | Value |');
+        lines.push('|----------|-------|----------|-------|----------|-------|');
+      }
+      
+      // Split into rows and remove empty cells
+      for (let i = 0; i < properties.length; i += columnsCount) {
+        const row = [];
+        for (let j = 0; j < columnsCount; j++) {
+          const prop = properties[i + j];
+          if (prop) {
+            row.push(`\`${prop.name}\``);
+            row.push(`\`${prop.value}\``);
+          }
+        }
+        // Only add row if it has content
+        if (row.length > 0) {
+          lines.push(`| ${row.join(' | ')} |`);
         }
       }
-      lines.push(`| ${row.join(' | ')} |`);
     }
     
     lines.push('');
