@@ -40,6 +40,48 @@ function extractCustomProperties(content) {
 }
 
 /**
+ * Extract numerical value from property name for sorting
+ * @param {string} propName - Property name
+ * @returns {number|null} - Numerical value or null
+ */
+function extractNumericalValue(propName) {
+  // Match patterns like: -100, -002, -01, etc.
+  const match = propName.match(/-(\d+)(?:-|$)/);
+  if (match) {
+    return parseInt(match[1], 10);
+  }
+  return null;
+}
+
+/**
+ * Sort properties by numerical value if available, otherwise alphabetically
+ * @param {Array} properties - Array of property objects with name and value
+ * @returns {Array} - Sorted array
+ */
+function sortProperties(properties) {
+  return properties.sort((a, b) => {
+    const numA = extractNumericalValue(a.name);
+    const numB = extractNumericalValue(b.name);
+    
+    // If both have numerical values, sort by number
+    if (numA !== null && numB !== null) {
+      if (numA !== numB) {
+        return numA - numB;
+      }
+      // If numbers are equal, fall back to alphabetical
+      return a.name.localeCompare(b.name);
+    }
+    
+    // If only one has a numerical value, prioritize the one with number
+    if (numA !== null) return -1;
+    if (numB !== null) return 1;
+    
+    // If neither has numerical value, sort alphabetically
+    return a.name.localeCompare(b.name);
+  });
+}
+
+/**
  * Group custom properties by their type/category
  * Categories: color, spacing, font-family, font-size, font-weight,
  * line-height, text-case, border, sizing, and other.
@@ -87,6 +129,11 @@ function groupProperties(propertiesMap) {
     } else {
       groups.other.push(propWithValue);
     }
+  });
+
+  // Sort each group by numerical value or alphabetically
+  Object.keys(groups).forEach(key => {
+    groups[key] = sortProperties(groups[key]);
   });
 
   // Remove empty groups
