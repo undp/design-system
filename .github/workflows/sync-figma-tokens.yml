@@ -1,13 +1,14 @@
 ---
 name: Sync Figma Design Tokens
 
-# Trigger workflow when tokens.json is modified
+# Trigger workflow when tokens.json is modified or manually
 on:
   push:
     branches:
       - update-figma-tokens
     paths:
       - 'figma-tokens/input/tokens.json'
+  workflow_dispatch:
 
 jobs:
   sync-tokens:
