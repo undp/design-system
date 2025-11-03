@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.5.0
+ * UNDP Design System 1.5.1
  *
  */
 input[type=checkbox]{appearance:none;border:2px solid var(--undpds-color-dark-red);cursor:pointer;height:16px;margin:0;width:16px}input[type=checkbox]:hover{border-color:var(--undpds-color-light-pink)}input[type=checkbox]:focus-visible{box-shadow:0 0 4px var(--undpds-color-blue-800);outline:0}input[type=checkbox]{border-radius:0}input[type=checkbox]:checked{background:url(../../images/icon-check.svg) 1px 0 no-repeat}
