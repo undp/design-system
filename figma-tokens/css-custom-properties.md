@@ -7,62 +7,64 @@ These properties are automatically generated from Figma design tokens.
 
 ---
 
-**Total Properties:** 215
+**Total Properties:** 217
 
-## Color (60)
+## Color (61)
 
 | Property | Value | Property | Value |
 |----------|-------|----------|-------|
-| `--undpds-color-blue-100` | `#b5d5f5` | `--undpds-color-action-primary-hover` | `#ee402d` |
-| `--undpds-color-gray-100` | `#fafafa` | `--undpds-color-action-secondary` | `#006eb5` |
-| `--undpds-color-azure-200` | `#a2daf3` | `--undpds-color-action-secondary-default` | `#006eb5` |
-| `--undpds-color-blue-200` | `#94c4f5` | `--undpds-color-action-secondary-hover` | `#3288ce` |
-| `--undpds-color-gray-200` | `#f7f7f7` | `--undpds-color-azure` | `#60d4f2` |
-| `--undpds-color-green-200` | `#b8ecb6` | `--undpds-color-background-default` | `#fff` |
-| `--undpds-color-red-200` | `#ffbcb7` | `--undpds-color-black` | `#000` |
-| `--undpds-color-yellow-200` | `#ffe17e` | `--undpds-color-border-default` | `#000` |
-| `--undpds-color-blue-300` | `#6babeb` | `--undpds-color-border-inverse` | `#fff` |
-| `--undpds-color-gray-300` | `#edeff0` | `--undpds-color-border-subtle` | `#d4d6d8` |
-| `--undpds-color-azure-400` | `#60d4f2` | `--undpds-color-brand` | `#006eb5` |
-| `--undpds-color-blue-400` | `#4f95dd` | `--undpds-color-dark-azure` | `#00c1ff` |
-| `--undpds-color-gray-400` | `#d4d6d8` | `--undpds-color-dark-green` | `#59ba47` |
-| `--undpds-color-green-400` | `#6de354` | `--undpds-color-dark-red` | `#d12800` |
-| `--undpds-color-red-400` | `#ee402d` | `--undpds-color-dark-yellow` | `#fbc412` |
-| `--undpds-color-yellow-400` | `#ffeb00` | `--undpds-color-ebony-clay` | `#232e3e` |
-| `--undpds-color-blue-500` | `#3288ce` | `--undpds-color-green` | `#6de354` |
-| `--undpds-color-gray-500` | `#a9b1b7` | `--undpds-color-light-azure` | `#a2daf3` |
-| `--undpds-color-azure-600` | `#00c1ff` | `--undpds-color-light-green` | `#b8ecb6` |
-| `--undpds-color-blue-600` | `#006eb5` | `--undpds-color-light-pink` | `#ffb4ae` |
-| `--undpds-color-gray-600` | `#55606e` | `--undpds-color-light-red` | `#ffbcb7` |
-| `--undpds-color-green-600` | `#59ba47` | `--undpds-color-light-yellow` | `#ffe17e` |
-| `--undpds-color-red-600` | `#d12800` | `--undpds-color-red` | `#ee402d` |
-| `--undpds-color-yellow-600` | `#fbc412` | `--undpds-color-shuttle-gray` | `#55606f` |
-| `--undpds-color-blue-700` | `#1f5a95` | `--undpds-color-silvery-moonlight` | `#ced0d3` |
-| `--undpds-color-gray-700` | `#232e3d` | `--undpds-color-surface-default` | `#f7f7f7` |
+| `--undpds-color-blue-100` | `#b5d5f5` | `--undpds-color-action-secondary` | `#006eb5` |
+| `--undpds-color-gray-100` | `#fafafa` | `--undpds-color-action-secondary-default` | `#006eb5` |
+| `--undpds-color-azure-200` | `#a2daf3` | `--undpds-color-action-secondary-hover` | `#3288ce` |
+| `--undpds-color-blue-200` | `#94c4f5` | `--undpds-color-azure` | `#60d4f2` |
+| `--undpds-color-gray-200` | `#f7f7f7` | `--undpds-color-background-default` | `#fff` |
+| `--undpds-color-green-200` | `#b8ecb6` | `--undpds-color-black` | `#000` |
+| `--undpds-color-red-200` | `#ffbcb7` | `--undpds-color-border-default` | `#000` |
+| `--undpds-color-yellow-200` | `#ffe17e` | `--undpds-color-border-inverse` | `#fff` |
+| `--undpds-color-blue-300` | `#6babeb` | `--undpds-color-border-subtle` | `#d4d6d8` |
+| `--undpds-color-gray-300` | `#edeff0` | `--undpds-color-brand` | `#006eb5` |
+| `--undpds-color-azure-400` | `#60d4f2` | `--undpds-color-dark-azure` | `#00c1ff` |
+| `--undpds-color-blue-400` | `#4f95dd` | `--undpds-color-dark-green` | `#59ba47` |
+| `--undpds-color-gray-400` | `#d4d6d8` | `--undpds-color-dark-red` | `#d12800` |
+| `--undpds-color-green-400` | `#6de354` | `--undpds-color-dark-yellow` | `#fbc412` |
+| `--undpds-color-red-400` | `#ee402d` | `--undpds-color-ebony-clay` | `#232e3e` |
+| `--undpds-color-yellow-400` | `#ffeb00` | `--undpds-color-green` | `#6de354` |
+| `--undpds-color-blue-500` | `#3288ce` | `--undpds-color-light-azure` | `#a2daf3` |
+| `--undpds-color-gray-500` | `#a9b1b7` | `--undpds-color-light-green` | `#b8ecb6` |
+| `--undpds-color-azure-600` | `#00c1ff` | `--undpds-color-light-pink` | `#ffb4ae` |
+| `--undpds-color-blue-600` | `#006eb5` | `--undpds-color-light-red` | `#ffbcb7` |
+| `--undpds-color-gray-600` | `#55606e` | `--undpds-color-light-yellow` | `#ffe17e` |
+| `--undpds-color-green-600` | `#59ba47` | `--undpds-color-red` | `#ee402d` |
+| `--undpds-color-red-600` | `#d12800` | `--undpds-color-shuttle-gray` | `#55606f` |
+| `--undpds-color-yellow-600` | `#fbc412` | `--undpds-color-silvery-moonlight` | `#ced0d3` |
+| `--undpds-color-blue-700` | `#1f5a95` | `--undpds-color-surface-default` | `#f7f7f7` |
+| `--undpds-color-gray-700` | `#232e3d` | `--undpds-color-surface-hover` | `#edeff0` |
 | `--undpds-color-blue-800` | `#0468b1` | `--undpds-color-text-default` | `#000` |
 | `--undpds-color-accent` | `#ffeb00` | `--undpds-color-text-inverse` | `#fff` |
 | `--undpds-color-action-primary` | `#d12800` | `--undpds-color-white` | `#fff` |
 | `--undpds-color-action-primary-default` | `#d12800` | `--undpds-color-yellow` | `#ffeb00` |
+| `--undpds-color-action-primary-hover` | `#ee402d` |
 
-## Spacing (45)
+## Spacing (46)
 
 | Property | Value | Property | Value | Property | Value |
 |----------|-------|----------|-------|----------|-------|
-| `--undpds-spacing-01` | `2px` | `--undpds-spacing-12` | `96px` | `--undpds-spacing-064` | `64px` |
-| `--undpds-spacing-002` | `2px` | `--undpds-spacing-13` | `160px` | `--undpds-spacing-070` | `4.375rem` |
-| `--undpds-spacing-02` | `4px` | `--undpds-spacing-016` | `16px` | `--undpds-spacing-70` | `4.375rem` |
-| `--undpds-spacing-03` | `8px` | `--undpds-spacing-024` | `24px` | `--undpds-spacing-076` | `4.75rem` |
-| `--undpds-spacing-004` | `4px` | `--undpds-spacing-032` | `32px` | `--undpds-spacing-76` | `4.75rem` |
-| `--undpds-spacing-04` | `12px` | `--undpds-spacing-036` | `2.25rem` | `--undpds-spacing-080` | `80px` |
-| `--undpds-spacing-05` | `16px` | `--undpds-spacing-36` | `2.25rem` | `--undpds-spacing-090` | `5.625rem` |
-| `--undpds-spacing-06` | `24px` | `--undpds-spacing-040` | `40px` | `--undpds-spacing-90` | `5.625rem` |
-| `--undpds-spacing-07` | `32px` | `--undpds-spacing-044` | `2.75rem` | `--undpds-spacing-096` | `96px` |
-| `--undpds-spacing-008` | `8px` | `--undpds-spacing-44` | `2.75rem` | `--undpds-spacing-100` | `6.25rem` |
-| `--undpds-spacing-08` | `40px` | `--undpds-spacing-048` | `48px` | `--undpds-spacing-136` | `8.5rem` |
-| `--undpds-spacing-09` | `48px` | `--undpds-spacing-050` | `3.125rem` | `--undpds-spacing-160` | `160px` |
-| `--undpds-spacing-10` | `64px` | `--undpds-spacing-50` | `3.125rem` | `--undpds-spacing-320` | `20rem` |
-| `--undpds-spacing-11` | `80px` | `--undpds-spacing-060` | `3.75rem` | `--undpds-spacing-330` | `20.625rem` |
-| `--undpds-spacing-012` | `12px` | `--undpds-spacing-60` | `3.75rem` | `--undpds-spacing-400` | `25rem` |
+| `--undpds-spacing-01` | `2px` | `--undpds-spacing-13` | `160px` | `--undpds-spacing-70` | `4.375rem` |
+| `--undpds-spacing-002` | `2px` | `--undpds-spacing-016` | `16px` | `--undpds-spacing-076` | `4.75rem` |
+| `--undpds-spacing-02` | `4px` | `--undpds-spacing-024` | `24px` | `--undpds-spacing-76` | `4.75rem` |
+| `--undpds-spacing-03` | `8px` | `--undpds-spacing-032` | `32px` | `--undpds-spacing-080` | `80px` |
+| `--undpds-spacing-004` | `4px` | `--undpds-spacing-036` | `2.25rem` | `--undpds-spacing-090` | `5.625rem` |
+| `--undpds-spacing-04` | `12px` | `--undpds-spacing-36` | `2.25rem` | `--undpds-spacing-90` | `5.625rem` |
+| `--undpds-spacing-05` | `16px` | `--undpds-spacing-040` | `40px` | `--undpds-spacing-096` | `96px` |
+| `--undpds-spacing-06` | `24px` | `--undpds-spacing-044` | `2.75rem` | `--undpds-spacing-100` | `6.25rem` |
+| `--undpds-spacing-07` | `32px` | `--undpds-spacing-44` | `2.75rem` | `--undpds-spacing-136` | `8.5rem` |
+| `--undpds-spacing-008` | `8px` | `--undpds-spacing-048` | `48px` | `--undpds-spacing-160` | `160px` |
+| `--undpds-spacing-08` | `40px` | `--undpds-spacing-050` | `3.125rem` | `--undpds-spacing-320` | `20rem` |
+| `--undpds-spacing-09` | `48px` | `--undpds-spacing-50` | `3.125rem` | `--undpds-spacing-330` | `20.625rem` |
+| `--undpds-spacing-10` | `64px` | `--undpds-spacing-060` | `3.75rem` | `--undpds-spacing-400` | `25rem` |
+| `--undpds-spacing-11` | `80px` | `--undpds-spacing-60` | `3.75rem` | `--undpds-spacing-gutter` | `24px` |
+| `--undpds-spacing-012` | `12px` | `--undpds-spacing-064` | `64px` |
+| `--undpds-spacing-12` | `96px` | `--undpds-spacing-070` | `4.375rem` |
 
 ## Font family (14)
 
@@ -147,4 +149,4 @@ These properties are automatically generated from Figma design tokens.
 ---
 
 *This file is automatically generated by `scripts/generate-css-custom-properties-list.js`*
-*Last updated: 2025-10-31*
+*Last updated: 2025-11-03*
