@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.5.0
+ * UNDP Design System 1.5.1
  *
  */
 .stats-slider .stats-card.small{max-width:100%}.stats-slider .stats-card.small:hover.yellow{background-color:#ffeb00}.stats-slider .stats-card.small:hover.red{background-color:#ee402d}.stats-slider .stats-card.small:hover.green{background-color:#6de354}.stats-slider .stats-card.small:hover.blue{background-color:#60d4f2}.stats-slider .stats-card.small:hover.gray{background-color:#fafafa}@media(min-width:48em){.stats-slider .swiper-scrollbar{padding-right:2.75rem}[dir=rtl] .stats-slider.swiper-initialized .swiper-scrollbar{padding-left:2.75rem}}
