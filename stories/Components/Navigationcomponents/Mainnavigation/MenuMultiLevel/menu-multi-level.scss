@@ -22,7 +22,7 @@
       box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
       position: absolute;
       inset-block-start: calc(100% - 2rem);
-      inset-inline-start: calc(0% - 1rem);
+      inset-inline-start: 0;
       padding-inline: 0;
       z-index: 10;
       flex-direction: column;
@@ -53,7 +53,7 @@
           display: flex;
           width: auto;
           transition: 0.2s ease;
-          padding: 1.25rem;
+          padding: 1.25rem 1.25rem 1.25rem var(--undpds-spacing-06);
           column-gap: 1rem;
           justify-content: space-between;
           align-items: center;
@@ -62,7 +62,7 @@
           font-weight: normal;
           text-transform: none;
           text-align: left;
-          border-bottom: 1px solid #d4d6d8;
+          border-bottom: 1px solid var(--undpds-color-gray-400);
           letter-spacing: unset;
         }
 

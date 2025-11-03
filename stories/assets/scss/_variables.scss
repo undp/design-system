@@ -176,20 +176,6 @@ $spacing-080: 80px;
 $spacing-096: 96px;
 $spacing-160: 160px;
 
-// Fontfamily tokens
-$font-family-proximanova: 'Proxima Nova';
-$font-family-sohnebreit: 'Söhne Breit';
-$font-family-notosans: 'Noto Sans';
-$font-family-notosans-arabic: 'Noto Sans Arabic';
-$font-family-notosans-burmese: 'Noto Sans Myanmar';
-$font-family-notosans-chinese: 'Noto Sans SC';
-$font-family-notosans-japanese: 'Noto Sans JP';
-$font-family-notosans-georgian: 'Noto Sans Georgian';
-$font-family-notosans-khmer: 'Noto Sans Khmer';
-$font-family-notosans-korean: 'Noto Sans KR';
-$font-family-primary: $font-family-proximanova;
-$font-family-secondary: $font-family-sohnebreit;
-
 // Fontsize tokens
 $font-size-30: 1.875rem;
 $font-size-40: 2.5rem;
@@ -234,37 +220,6 @@ $color-background-default: $color-white;
 $color-border-default: $color-black;
 $color-border-subtle: $color-gray-400;
 $color-border-inverse: $color-white;
-
-// Sizing tokens
-$sizing-1: 1px;
-$sizing-2: 2px;
-$sizing-4: 4px;
-$sizing-8: 8px;
-$sizing-16: 16px;
-$sizing-24: 24px;
-$sizing-32: 32px;
-$sizing-64: 64px;
-$sizing-128: 128px;
-$sizing-256: 256px;
-$sizing-512: 512px;
-$sizing-1024: 1024px;
-
-// Lineheight tokens
-$line-height-100: 100%;
-$line-height-110: 110%;
-$line-height-138: 138%;
-$line-height-body: $line-height-138;
-$line-height-heading: $line-height-110;
-$line-height-display: $line-height-100;
-
-// Fontweight tokens
-$font-weight-bold: 700;
-$font-weight-semibold: 600;
-$font-weight-regular: 400;
-
-// Textcase tokens
-$text-case-none: none;
-$text-case-uppercase: uppercase;
 
 // Border tokens
 $border-default: 2px;
