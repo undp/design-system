@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Component Initialization Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #0468B1;
+            border-radius: 4px;
+        }
+        .test-section h2 {
+            color: #0468B1;
+            margin-top: 0;
+        }
+        .test-element {
+            padding: 15px;
+            background: #f8f8f8;
+            margin: 10px 0;
+            border-left: 4px solid #0468B1;
+        }
+        .test-result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .pass {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .fail {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .pending {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiple Component Initialization Test</h1>
+    <p>This page tests the new functionality that allows multiple JavaScript components to be initialized on the same HTML element.</p>
+
+    <div class="test-section">
+        <h2>Test 1: Single Component</h2>
+        <p>Element with <code>data-undpds-component="fitText"</code></p>
+        <div id="test1" class="test-element" data-undpds-component="fitText">
+            Single Component Test
+        </div>
+        <div id="result1" class="test-result pending">⏳ Waiting...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Multiple Components (No Spaces)</h2>
+        <p>Element with <code>data-undpds-component="fitText,change-background"</code></p>
+        <div id="test2" class="test-element" data-undpds-component="fitText,change-background">
+            Multiple Components
+        </div>
+        <div id="result2" class="test-result pending">⏳ Waiting...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Multiple Components (With Spaces)</h2>
+        <p>Element with <code>data-undpds-component="fitText, change-background"</code></p>
+        <div id="test3" class="test-element" data-undpds-component="fitText, change-background">
+            Multiple Components with Spaces
+        </div>
+        <div id="result3" class="test-result pending">⏳ Waiting...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Summary</h2>
+        <div id="summary" class="test-result pending">
+            <strong>Running tests...</strong>
+        </div>
+    </div>
+
+    <!-- Mock component functions -->
+    <script>
+        window.initLog = { fitText: [], changeBackground: [] };
+        window.fitText = function(element) {
+            console.log('fitText called for:', element);
+            window.initLog.fitText.push(element);
+        };
+        window.changeBackground = function(element) {
+            console.log('changeBackground called for:', element);
+            window.initLog.changeBackground.push(element);
+        };
+    </script>
+
+    <!-- Include the init.js script -->
+    <script src="js/init.js"></script>
+
+    <!-- Test validation -->
+    <script>
+        setTimeout(() => {
+            let passCount = 0;
+            let failCount = 0;
+
+            // Test 1
+            const test1 = document.getElementById('test1');
+            const result1 = document.getElementById('result1');
+            const test1Init = test1.getAttribute('data-initialized');
+            
+            if (test1Init === 'fitText') {
+                result1.innerHTML = '✅ PASS: <code>data-initialized="' + test1Init + '"</code>';
+                result1.className = 'test-result pass';
+                passCount++;
+            } else {
+                result1.innerHTML = '❌ FAIL: Expected "fitText", got "' + test1Init + '"';
+                result1.className = 'test-result fail';
+                failCount++;
+            }
+
+            // Test 2
+            const test2 = document.getElementById('test2');
+            const result2 = document.getElementById('result2');
+            const test2Init = test2.getAttribute('data-initialized');
+            const test2Parts = test2Init ? test2Init.split(',').map(s => s.trim()).sort() : [];
+            const expected = ['change-background', 'fitText'].sort();
+            
+            if (JSON.stringify(test2Parts) === JSON.stringify(expected)) {
+                result2.innerHTML = '✅ PASS: <code>data-initialized="' + test2Init + '"</code>';
+                result2.className = 'test-result pass';
+                passCount++;
+            } else {
+                result2.innerHTML = '❌ FAIL: got "' + test2Init + '"';
+                result2.className = 'test-result fail';
+                failCount++;
+            }
+
+            // Test 3
+            const test3 = document.getElementById('test3');
+            const result3 = document.getElementById('result3');
+            const test3Init = test3.getAttribute('data-initialized');
+            const test3Parts = test3Init ? test3Init.split(',').map(s => s.trim()).sort() : [];
+            
+            if (JSON.stringify(test3Parts) === JSON.stringify(expected)) {
+                result3.innerHTML = '✅ PASS: <code>data-initialized="' + test3Init + '"</code>';
+                result3.className = 'test-result pass';
+                passCount++;
+            } else {
+                result3.innerHTML = '❌ FAIL: got "' + test3Init + '"';
+                result3.className = 'test-result fail';
+                failCount++;
+            }
+
+            // Summary
+            const summary = document.getElementById('summary');
+            const total = passCount + failCount;
+            if (failCount === 0) {
+                summary.innerHTML = `<strong>✅ All ${total} Tests Passed!</strong>`;
+                summary.className = 'test-result pass';
+            } else {
+                summary.innerHTML = `<strong>❌ ${passCount}/${total} tests passed</strong>`;
+                summary.className = 'test-result fail';
+            }
+
+            console.log('Test 1:', test1.getAttribute('data-initialized'));
+            console.log('Test 2:', test2.getAttribute('data-initialized'));
+            console.log('Test 3:', test3.getAttribute('data-initialized'));
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -190,7 +190,7 @@ export const initializeComponents = (Story, context) => {
                   markAsInitialized(element, componentType);
                 })
                 .catch((err) =>
-                  console.error("Error initializing accordion:", err),
+                  console.error("Error initializing modal:", err),
                 );
             }
             break;

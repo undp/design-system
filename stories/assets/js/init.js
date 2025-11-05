@@ -183,7 +183,7 @@
           case "fitTitle":
             // Check if the fitTitle function exists in the global scope
             if (typeof fitTitle === "function") {
-              const sizes = null;
+              let sizes = null;
               try {
                 const inputSizes = element.getAttribute("data-sizes");
                 const textArea = document.createElement("textarea");
