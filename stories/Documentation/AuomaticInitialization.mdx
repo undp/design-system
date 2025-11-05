@@ -1,8 +1,6 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
 
-<Meta
-  title="Getting started/Automatic Component Initialization"
-/>
+<Meta title="Getting started/Automatic Component Initialization" />
 
 # Automatic Component Initialization
 
@@ -15,7 +13,7 @@ The UNDP Design System now includes an automatic initialization system that simp
 Components in the UNDP Design System often require JavaScript initialization to enable their full functionality. Traditionally, this required manually calling initialization functions in your JavaScript code:
 
 ```javascript
-$(document).ready(function() {
+$(document).ready(function () {
   // Initialize components manually
   select();
   accordion();
@@ -54,7 +52,10 @@ Add the component initializer script to your HTML after including jQuery and the
 <script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/component-name.min.js"></script>
 
 <!-- Component Initializer (add this last) -->
-<script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js" defer></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js"
+  defer
+></script>
 ```
 
 ### 2. Add Data Attributes to Your HTML
@@ -80,10 +81,12 @@ You can initialize multiple components on the same element by providing a comma-
 ```
 
 This is useful when multiple behaviors need to be applied to the same element, such as:
+
 - Combining `fitTitle` with `change-background` for dynamic text sizing with background effects
 - Adding `fitText` to elements that already have other component functionality
 
 The initialization system will:
+
 - Parse the comma-separated list
 - Initialize each component independently
 - Track which components have been initialized in the `data-initialized` attribute
@@ -136,7 +139,11 @@ Some components support additional data attributes to configure their behavior:
 ### Accordion
 
 ```html
-<ul class="accordion" data-undpds-component="accordion" data-multi-expand="true">
+<ul
+  class="accordion"
+  data-undpds-component="accordion"
+  data-multi-expand="true"
+>
   <!-- Allows multiple accordion panels to be open simultaneously -->
 </ul>
 ```
@@ -144,7 +151,11 @@ Some components support additional data attributes to configure their behavior:
 ### Country Header
 
 ```html
-<header class="country-header" data-undpds-component="country-header" data-overflow="true">
+<header
+  class="country-header"
+  data-undpds-component="country-header"
+  data-overflow="true"
+>
   <!-- Enables overflow menu functionality -->
 </header>
 ```
@@ -155,14 +166,19 @@ Some components support additional data attributes to configure their behavior:
 
 ```html
 <div class="select-box" data-select="" data-undpds-component="custom-select">
-  <button type="button" aria-haspopup="listbox" aria-label="Select" data-select-open="">
+  <button
+    type="button"
+    aria-haspopup="listbox"
+    aria-label="Select"
+    data-select-open=""
+  >
     Select Language
   </button>
   <ul role="listbox" data-select-options="">
-    <li role="option" tabIndex="0" data-value="default">
+    <li role="option" tabindex="0" data-value="default">
       <span>All</span>
     </li>
-    <li role="option" tabIndex="0" data-value="en">
+    <li role="option" tabindex="0" data-value="en">
       <span>English</span>
     </li>
   </ul>
@@ -174,17 +190,13 @@ Some components support additional data attributes to configure their behavior:
 ```html
 <ul class="accordion" aria-label="accordion" data-undpds-component="accordion">
   <li>
-    <button tabIndex="0" aria-expanded="false">
-      Section Header
-    </button>
+    <button tabindex="0" aria-expanded="false">Section Header</button>
     <div class="accordion__panel" aria-hidden="true" role="region">
       <p>Panel content goes here</p>
     </div>
   </li>
   <li>
-    <button tabIndex="0" aria-expanded="false">
-      Another Section
-    </button>
+    <button tabindex="0" aria-expanded="false">Another Section</button>
     <div class="accordion__panel" aria-hidden="true" role="region">
       <p>More content here</p>
     </div>
@@ -202,10 +214,13 @@ Some components support additional data attributes to configure their behavior:
 ```
 
 After initialization, the `data-initialized` attribute will contain:
+
 ```html
-<div class="heading-big" 
-     data-undpds-component="change-background, fitTitle" 
-     data-initialized="change-background,fitTitle">
+<div
+  class="heading-big"
+  data-undpds-component="change-background, fitTitle"
+  data-initialized="change-background,fitTitle"
+>
   <h1>Dynamic Heading</h1>
 </div>
 ```
@@ -215,7 +230,13 @@ After initialization, the `data-initialized` attribute will contain:
 ```html
 <div class="grid-x" data-undpds-component="modal">
   <div class="cell bio-card medium large-3">
-    <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
+    <a
+      href="#"
+      title="bio-card"
+      role="button"
+      data-toggle="modal"
+      data-target-modal="#bioCard"
+    >
       <!-- BioCard content -->
     </a>
   </div>
