@@ -6,18 +6,42 @@
  */
 
 (function () {
+  // Helper function to mark a component as initialized
+  function markAsInitialized(element, componentType) {
+    const initializedAttr = element.getAttribute('data-initialized') || '';
+    const initializedComponents = initializedAttr ? initializedAttr.split(',').map(c => c.trim()).filter(c => c) : [];
+    
+    if (!initializedComponents.includes(componentType)) {
+      initializedComponents.push(componentType);
+      element.setAttribute('data-initialized', initializedComponents.join(','));
+    }
+  }
+
   // Initialize all components when DOM is ready
   function initializeComponents() {
     // Find all elements with data-undpds-component attribute
     const componentElements = document.querySelectorAll('[data-undpds-component]');
 
     componentElements.forEach(element => {
-      // Skip already initialized components
-      if (element.hasAttribute('data-initialized')) {
+      // Get comma-separated list of component types
+      const componentTypesAttr = element.getAttribute('data-undpds-component');
+      if (!componentTypesAttr) {
         return;
       }
 
-      const componentType = element.getAttribute('data-undpds-component');
+      // Get already initialized components
+      const initializedAttr = element.getAttribute('data-initialized') || '';
+      const initializedComponents = initializedAttr ? initializedAttr.split(',').map(c => c.trim()) : [];
+
+      // Parse component types (comma-separated)
+      const componentTypes = componentTypesAttr.split(',').map(c => c.trim());
+
+      // Process each component type
+      componentTypes.forEach(componentType => {
+        // Skip if this specific component is already initialized
+        if (initializedComponents.includes(componentType)) {
+          return;
+        }
 
       // Initialize based on component type
       switch (componentType) {
@@ -25,7 +49,7 @@
           // Check if the accordion function exists in the global scope
           if (typeof accordion === 'function') {
             accordion();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Accordion component requires accordion function. Make sure accordion.min.js is loaded.');
           }
@@ -34,7 +58,7 @@
           // Check if the accordion function exists in the global scope
           if (typeof authorFilter === 'function') {
             authorFilter();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Author Filter component requires authorFilter function. Make sure author-filter.min.js is loaded.');
           }
@@ -43,7 +67,7 @@
           // Check if the changeBackground function exists in the global scope
           if (typeof changeBackground === 'function') {
             changeBackground(element);
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Heading Big Block component requires changeBackground function. Make sure smooth-bg-change.min.js is loaded.');
           }
@@ -51,7 +75,7 @@
         case 'custom-select':
           if (typeof select === 'function') {
             select();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Custom Select component requires select function');
           }
@@ -67,7 +91,7 @@
             selectFilter();
             modal();
 
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             if (typeof checkbox !== 'function') {
               console.warn('Download Modal component requires checkbox function. Make sure download-modal.min.js is loaded.');
@@ -88,7 +112,7 @@
             if (selector) {
               // Initialize expandToSize with the provided selector
               expandToSize(selector);
-              element.setAttribute('data-initialized', 'true');
+              markAsInitialized(element, componentType);
             } else {
               console.warn('expandToSize component requires data-selector attribute');
             }
@@ -105,7 +129,7 @@
             } else {
               toggleFilter();
             }
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Filter Search Bar component requires toggleFilter function. Make sure filter-search-bar.min.js is loaded.');
           }
@@ -114,7 +138,7 @@
           // Check if the fitText function exists in the global scope
           if (typeof fitText === 'function') {
             fitText(element);
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('fitText function mut be present. Make sure fitText.min.js is loaded.');
           }
@@ -134,7 +158,7 @@
             } else {
               fitTitle(element);
             }
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('fitTitle function mut be present. Make sure fitTitle.min.js is loaded.');
           }
@@ -142,7 +166,7 @@
         case 'footer':
           if (typeof accordion === 'function') {
             accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Footer component requires accordion function. Make sure accordion.min.js is loaded.');
           }
@@ -150,7 +174,7 @@
         case 'language-switcher':
           if (typeof langSwitch === 'function') {
             langSwitch();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Language Switcher component requires langSwitch function');
           }
@@ -159,7 +183,7 @@
           if (typeof lightboxGallery === 'function') {
             // Initialize the lightbox gallery
             lightboxGallery();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Lightbox Gallery component requires lightboxGallery function. Make sure lightbox-gallery.min.js is loaded.');
           }
@@ -168,7 +192,7 @@
           // Initialize modal functionality
           if (typeof modal === 'function') {
             modal();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Modal component requires modal function');
           }
@@ -176,7 +200,7 @@
         case 'multi-select':
           if (typeof multiSelect === 'function') {
             multiSelect();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Multi Select component requires multiSelect function');
           }
@@ -193,7 +217,7 @@
             if (element.hasAttribute('data-multilevel') && typeof navigationMultiLevelEdgeDetection === 'function') {
               navigationMultiLevelEdgeDetection();
             }
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Header components require navigationInitialize function. Make sure navigation.min.js is loaded.');
           }
@@ -201,7 +225,7 @@
         case 'our-expertise':
           if (typeof ourExpertise === 'function') {
             ourExpertise();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Our Expertise component requires ourExpertise function. Make sure our-expertise.min.js is loaded.');
           }
@@ -242,7 +266,7 @@
               options.breakpoints
             );
 
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Parallax component requires parallaxEffect function. Make sure parallax.min.js is loaded.');
           }
@@ -251,7 +275,7 @@
           if (typeof sidebarNav === 'function' && typeof sidebarMenu === 'function') {
             sidebarNav();
             sidebarMenu();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Sidebar component requires sidebarNav and sidebarMenu functions');
           }
@@ -260,7 +284,7 @@
           if (typeof statsHover === 'function') {
             // Initialize stats
             statsHover();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Stats component requires statsHover function. Make sure stats.min.js is loaded.');
           }
@@ -269,7 +293,7 @@
           if (typeof swiper === 'function' && typeof parallaxEffect === 'function') {
             swiper('.stats-card-slider');
             parallaxEffect('.stats-card-slider');
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             if (typeof swiper !== 'function') {
               console.warn('Stats Slider component requires swiper function. Make sure swiper.min.js is loaded.');
@@ -284,7 +308,7 @@
             // Initialize sticky side navigation
             const stickyMovingSide = element.getAttribute('data-sticky-movingside') || '.generic-content';
             sticky(element, stickyMovingSide);
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Sidebar component requires sticky function. Make sure sticky.min.js is loaded.');
           }
@@ -301,7 +325,7 @@
 
               // Initialize swiper with the provided selectors
               swiper(selector, arrows);
-              element.setAttribute('data-initialized', 'true');
+              markAsInitialized(element, componentType);
             } else {
               console.warn('Swiper component requires data-selector attribute');
             }
@@ -313,12 +337,13 @@
           if (typeof tabs === 'function') {
             // Initialize tabs
             tabs();
-            element.setAttribute('data-initialized', 'true');
+            markAsInitialized(element, componentType);
           } else {
             console.warn('Tabs component requires tabs function. Make sure tabs.min.js is loaded.');
           }
           break;
       }
+      });
     });
   }
 
