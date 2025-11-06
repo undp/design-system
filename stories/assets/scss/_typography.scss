@@ -71,22 +71,22 @@ h2 {
 }
 
 h3 {
-  font-size: 1.875rem;
+  font-size: var(--undpds-font-size-40);
   font-weight: 600;
   line-height: 1.15;
 
   @include breakpoints.devicebreak(medium) {
-    font-size: var(--undpds-font-size-35);
+    font-size: var(--undpds-font-size-48);
   }
 }
 
 h4 {
-  font-size: var(--undpds-font-size-25);
+  font-size: var(--undpds-font-size-30);
   font-weight: 400;
   line-height: 1.15;
 
   @include breakpoints.devicebreak(medium) {
-    font-size: var(--undpds-font-size-35);
+    font-size: var(--undpds-font-size-32);
   }
 }
 
@@ -96,7 +96,7 @@ h5 {
   line-height: 1.15;
 
   @include breakpoints.devicebreak(medium) {
-    font-size: var(--undpds-font-size-25);
+    font-size: var(--undpds-font-size-24);
   }
 }
 
