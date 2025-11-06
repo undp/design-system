@@ -73,8 +73,7 @@ try {
   const sampleTokens = [
     '$color-blue-600:',
     '$font-size-20:',
-    '$spacing-002:',  // Pixel-based notation (3 digits)
-    '$spacing-01:',   // Rank-based notation (2 digits)
+    '$spacing-002:',  // Pixel-based notation (3 digits) - current format
     '$font-family-primary:',
     '$line-height-100:',
     '$color-border-default:'

@@ -14,7 +14,6 @@ $color-blue-400: #4F95DD;
 $color-blue-500: #3288CE;
 $color-blue-600: #006EB5;
 $color-blue-700: #1F5A95;
-$color-blue-800: #0468b1;
 $color-gray-100: #FAFAFA;
 $color-gray-200: #F7F7F7;
 $color-gray-300: #EDEFF0;
@@ -40,15 +39,11 @@ $color-shuttle-gray: #55606f;
 $color-ebony-clay: #232e3e;
 
 // Font sizes
-$font-size-12: 0.75rem;
 $font-size-14: 0.875rem;
 $font-size-16: 1rem;
 $font-size-20: 1.25rem;
 $font-size-24: 1.5rem;
-$font-size-25: 1.5625rem;
-$font-size-26: 1.625rem;
 $font-size-32: 2rem;
-$font-size-35: 2.1875rem;
 
 // Font families
 // Local fonts
@@ -68,19 +63,6 @@ $Font-Family-NotoSans-Korean: 'Noto Sans KR', sans-serif;
 $Font-Family-NotoSans-Thai: 'Noto Sans Thai', sans-serif;
 
 // Spacing variables
-$spacing-01: 0.125rem;
-$spacing-02: 0.25rem;
-$spacing-03: 0.5rem;
-$spacing-04: 0.75rem;
-$spacing-05: 1rem;
-$spacing-06: 1.5rem;
-$spacing-07: 2rem;
-$spacing-08: 2.5rem;
-$spacing-09: 3rem;
-$spacing-10: 4rem;
-$spacing-11: 5rem;
-$spacing-12: 6rem;
-$spacing-13: 10rem;
 $spacing-036: 2.25rem;
 $spacing-044: 2.75rem;
 $spacing-050: 3.125rem;
@@ -88,11 +70,6 @@ $spacing-060: 3.75rem;
 $spacing-070: 4.375rem;
 $spacing-076: 4.75rem;
 $spacing-090: 5.625rem;
-$spacing-100: 6.25rem;
-$spacing-136: 8.5rem;
-$spacing-330: 20.625rem;
-$spacing-320: 20rem;
-$spacing-400: 25rem;
 
 // Width variables
 $width-150: 9.375rem;
@@ -176,25 +153,41 @@ $spacing-080: 80px;
 $spacing-096: 96px;
 $spacing-160: 160px;
 
+// Fontfamily tokens
+$font-family-proximanova: 'ProximaNova', sans-serif;
+$font-family-sohnebreit: 'SohneBreit', $Font-Family-ProximaNova;
+$font-family-notosans: 'Noto Sans', sans-serif;
+$font-family-notosans-arabic: 'Noto Sans Arabic', sans-serif;
+$font-family-notosans-burmese: 'Noto Sans Myanmar', sans-serif;
+$font-family-notosans-chinese: 'Noto Sans SC', sans-serif;
+$font-family-notosans-japanese: 'Noto Sans JP', sans-serif;
+$font-family-notosans-georgian: 'Noto Sans Georgian', sans-serif;
+$font-family-notosans-khmer: 'Noto Sans Khmer', sans-serif;
+$font-family-notosans-korean: 'Noto Sans KR', sans-serif;
+$font-family-primary: $font-family-proximanova;
+$font-family-secondary: $font-family-sohnebreit;
+
 // Fontsize tokens
 $font-size-30: 1.875rem;
 $font-size-40: 2.5rem;
-$font-size-45: 2.8125rem;
-$font-size-47: 2.9375rem;
-$font-size-55: 3.4375rem;
-$font-size-82: 5.125rem;
+$font-size-48: 3rem;
+$font-size-56: 3.5rem;
+$font-size-64: 4rem;
+$font-size-72: 4.5rem;
+$font-size-80: 5rem;
+$font-size-96: 6rem;
 $font-size-100: 6.25rem;
 $font-size-body-default: $font-size-20;
 $font-size-body-small: $font-size-16;
-$font-size-heading-xxlarge: $font-size-100;
-$font-size-heading-xlarge: $font-size-55;
-$font-size-heading-large: $font-size-35;
-$font-size-heading-medium: $font-size-35;
-$font-size-heading-small: $font-size-25;
+$font-size-heading-xxlarge: $font-size-80;
+$font-size-heading-xlarge: $font-size-64;
+$font-size-heading-large: $font-size-48;
+$font-size-heading-medium: $font-size-32;
+$font-size-heading-small: $font-size-24;
 $font-size-heading-xsmall: $font-size-16;
 $font-size-display-xxlarge: $font-size-100;
-$font-size-display-xlarge: $font-size-82;
-$font-size-display-large: $font-size-55;
+$font-size-display-xlarge: $font-size-80;
+$font-size-display-large: $font-size-56;
 
 // Color tokens
 $color-yellow-200: #FFE17E;
@@ -221,9 +214,101 @@ $color-border-default: $color-black;
 $color-border-subtle: $color-gray-400;
 $color-border-inverse: $color-white;
 
+// Sizing tokens
+
+// Lineheight tokens
+$line-height-100: 100%;
+$line-height-110: 110%;
+$line-height-138: 138%;
+$line-height-body: $line-height-138;
+$line-height-heading: $line-height-110;
+$line-height-display: $line-height-100;
+
+// Fontweight tokens
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-regular: 400;
+
+// Textcase tokens
+$text-case-none: none;
+$text-case-uppercase: uppercase;
+
 // Border tokens
-$border-default: 2px;
-$border-subtle: 1px;
+
+
+
+// Fontweight tokens
+$font-weight-extrabold: 800;
+$font-weight-body-default: $font-weight-regular;
+$font-weight-body-bold: $font-weight-bold;
+$font-weight-display-bold: $font-weight-extrabold;
+$font-weight-display-default: $font-weight-body-bold;
+$font-weight-heading-bold: $font-weight-bold;
+$font-weight-heading-default: $font-weight-semibold;
+
+// Color tokens
+$color-action-primary-default: $color-red-600;
+$color-action-primary-hover: $color-red-400;
+$color-action-secondary-default: $color-blue-600;
+$color-action-secondary-hover: $color-blue-500;
+
+
+$font-size-25: $font-size-24;
+$font-size-26: $font-size-24;
+$spacing-01: $spacing-002;
+$spacing-02: $spacing-004;
+$spacing-03: $spacing-008;
+$spacing-04: $spacing-012;
+$spacing-05: $spacing-016;
+$spacing-06: $spacing-024;
+$spacing-07: $spacing-032;
+$spacing-08: $spacing-040;
+$spacing-09: $spacing-048;
+$spacing-10: $spacing-064;
+$spacing-11: $spacing-080;
+$spacing-12: $spacing-096;
+$spacing-13: $spacing-160;
+
+// PRESERVE: Backwards compatibility - do not delete
+// Variables removed from Figma tokens but still referenced in SCSS files
+// Using original values since no matching variables of the same type exist
+$color-blue-800: #0468b1;
+$spacing-100: 6.25rem;
+$spacing-136: 8.5rem;
+$spacing-320: 20rem;
+$spacing-330: 20.625rem;
+$spacing-400: 25rem;
+
+
+
+
+
+
+// Color tokens
+$color-surface-hover: $color-gray-300;
+
+
+
+// Spacing tokens
+$spacing-gutter: $spacing-06;
+
+
+
+// Fontsize tokens
+$font-size-12: 0.75rem;
+
+// Paragraphspacing tokens
+$paragraphspacing-12: 12px;
+$paragraphspacing-16: 16px;
+
+
+$border-default: $spacing-002;
+
+
+// Fontsize tokens
+$font-size-36: 2.25rem;
+
+
 
 
 // Backwards compatibility aliases for spacing variables
