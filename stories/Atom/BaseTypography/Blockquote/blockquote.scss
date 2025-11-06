@@ -3,13 +3,13 @@
 @use '../../../assets/scss/variables';
 
 blockquote {
-  font-size: var(--undpds-font-size-26);
+  font-size: var(--undpds-font-size-24);
   font-weight: 600;
   line-height: 1.16;
   margin: 0;
 
   @include breakpoints.devicebreak(medium) {
-    font-size: var(--undpds-font-size-35);
+    font-size: var(--undpds-font-size-36);
     line-height: 1.15;
   }
 
