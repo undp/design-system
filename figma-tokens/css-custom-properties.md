@@ -7,7 +7,7 @@ These properties are automatically generated from Figma design tokens.
 
 ---
 
-**Total Properties:** 219
+**Total Properties:** 220
 
 ## Color (61)
 
@@ -78,20 +78,20 @@ These properties are automatically generated from Figma design tokens.
 | `--undpds-font-family-notosans-japanese` | `Noto Sans JP,sans-serif` | `--undpds-font-family-sohnebreit` | `SohneBreit,ProximaNova,sans-serif` |
 | `--undpds-font-family-notosans-khmer` | `Noto Sans Khmer,sans-serif` | `--undpds-font-family-unbangla` | `UNBangla,sans-serif` |
 
-## Font size (28)
+## Font size (29)
 
 | Property | Value | Property | Value | Property | Value |
 |----------|-------|----------|-------|----------|-------|
-| `--undpds-font-size-12` | `0.75rem` | `--undpds-font-size-48` | `3rem` | `--undpds-font-size-display-xlarge` | `5rem` |
-| `--undpds-font-size-14` | `0.875rem` | `--undpds-font-size-56` | `3.5rem` | `--undpds-font-size-display-xxlarge` | `6.25rem` |
-| `--undpds-font-size-16` | `1rem` | `--undpds-font-size-64` | `4rem` | `--undpds-font-size-heading-large` | `3rem` |
-| `--undpds-font-size-20` | `1.25rem` | `--undpds-font-size-72` | `4.5rem` | `--undpds-font-size-heading-medium` | `2rem` |
-| `--undpds-font-size-24` | `1.5rem` | `--undpds-font-size-80` | `5rem` | `--undpds-font-size-heading-small` | `1.5rem` |
-| `--undpds-font-size-25` | `1.5rem` | `--undpds-font-size-96` | `6rem` | `--undpds-font-size-heading-xlarge` | `4rem` |
-| `--undpds-font-size-26` | `1.5rem` | `--undpds-font-size-100` | `6.25rem` | `--undpds-font-size-heading-xsmall` | `1rem` |
-| `--undpds-font-size-30` | `1.875rem` | `--undpds-font-size-body-default` | `1.25rem` | `--undpds-font-size-heading-xxlarge` | `5rem` |
-| `--undpds-font-size-32` | `2rem` | `--undpds-font-size-body-small` | `1rem` |
-| `--undpds-font-size-40` | `2.5rem` | `--undpds-font-size-display-large` | `3.5rem` |
+| `--undpds-font-size-12` | `0.75rem` | `--undpds-font-size-40` | `2.5rem` | `--undpds-font-size-display-large` | `3.5rem` |
+| `--undpds-font-size-14` | `0.875rem` | `--undpds-font-size-48` | `3rem` | `--undpds-font-size-display-xlarge` | `5rem` |
+| `--undpds-font-size-16` | `1rem` | `--undpds-font-size-56` | `3.5rem` | `--undpds-font-size-display-xxlarge` | `6.25rem` |
+| `--undpds-font-size-20` | `1.25rem` | `--undpds-font-size-64` | `4rem` | `--undpds-font-size-heading-large` | `3rem` |
+| `--undpds-font-size-24` | `1.5rem` | `--undpds-font-size-72` | `4.5rem` | `--undpds-font-size-heading-medium` | `2rem` |
+| `--undpds-font-size-25` | `1.5rem` | `--undpds-font-size-80` | `5rem` | `--undpds-font-size-heading-small` | `1.5rem` |
+| `--undpds-font-size-26` | `1.5rem` | `--undpds-font-size-96` | `6rem` | `--undpds-font-size-heading-xlarge` | `4rem` |
+| `--undpds-font-size-30` | `1.875rem` | `--undpds-font-size-100` | `6.25rem` | `--undpds-font-size-heading-xsmall` | `1rem` |
+| `--undpds-font-size-32` | `2rem` | `--undpds-font-size-body-default` | `1.25rem` | `--undpds-font-size-heading-xxlarge` | `5rem` |
+| `--undpds-font-size-36` | `2.25rem` | `--undpds-font-size-body-small` | `1rem` |
 
 ## Font weight (10)
 
