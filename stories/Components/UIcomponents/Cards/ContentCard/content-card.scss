@@ -38,7 +38,7 @@ div.content-card {
     @extend %carousel_tag;
 
     margin-bottom: 0;
-    padding: var(--undpds-spacing-05) var(--undpds-spacing-06) 1.625rem;
+    padding: var(--undpds-spacing-05) var(--undpds-spacing-06);
   }
 
   &.card {

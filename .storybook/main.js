@@ -5,7 +5,7 @@ import { createRequire } from "node:module";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const require = createRequire(import.meta.url);
-// Original configuration file content follows:
+// Original file content:
 const path = require('path');
 
 const config = {
