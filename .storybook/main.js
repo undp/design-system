@@ -7,7 +7,7 @@ const __dirname = dirname(__filename);
 const require = createRequire(import.meta.url);
 const path = require('path');
 
-// force full rebuild
+// force full rebuild - 2025-11-06-0417
 
 const config = {
   staticDirs: ['../stories/assets'],
