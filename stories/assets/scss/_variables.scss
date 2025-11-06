@@ -234,8 +234,6 @@ $text-case-none: none;
 $text-case-uppercase: uppercase;
 
 // Border tokens
-$border-default: 2px;
-$border-subtle: 1px;
 
 
 
@@ -291,6 +289,19 @@ $color-surface-hover: $color-gray-300;
 
 
 
+// Spacing tokens
+$spacing-gutter: $spacing-06;
+
+
+
+// Fontsize tokens
+$font-size-12: 0.75rem;
+
+// Paragraphspacing tokens
+$paragraphspacing-12: 12px;
+$paragraphspacing-16: 16px;
+
+
 // Backwards compatibility aliases for spacing variables
 // Old 2-digit notation pointing to new 3-digit notation
 $spacing-36: $spacing-036;
@@ -300,3 +311,7 @@ $spacing-60: $spacing-060;
 $spacing-70: $spacing-070;
 $spacing-76: $spacing-076;
 $spacing-90: $spacing-090;
+
+// Backwards compatibility aliases for deleted variables
+// Variables removed from Figma tokens but mapped to existing equivalents
+$border-default: $spacing-002;
