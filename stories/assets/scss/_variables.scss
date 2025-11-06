@@ -302,6 +302,15 @@ $paragraphspacing-12: 12px;
 $paragraphspacing-16: 16px;
 
 
+$border-default: $spacing-002;
+
+
+// Fontsize tokens
+$font-size-36: 2.25rem;
+
+
+
+
 // Backwards compatibility aliases for spacing variables
 // Old 2-digit notation pointing to new 3-digit notation
 $spacing-36: $spacing-036;
@@ -311,7 +320,3 @@ $spacing-60: $spacing-060;
 $spacing-70: $spacing-070;
 $spacing-76: $spacing-076;
 $spacing-90: $spacing-090;
-
-// Backwards compatibility aliases for deleted variables
-// Variables removed from Figma tokens but mapped to existing equivalents
-$border-default: $spacing-002;
