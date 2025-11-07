@@ -33,12 +33,12 @@ These properties are automatically generated from Figma design tokens.
 | `--undpds-color-gray-500` | `#a9b1b7` | `--undpds-color-light-azure` | `#a2daf3` |
 | `--undpds-color-azure-600` | `#00c1ff` | `--undpds-color-light-green` | `#b8ecb6` |
 | `--undpds-color-blue-600` | `#006eb5` | `--undpds-color-light-pink` | `#ffb4ae` |
-| `--undpds-color-gray-600` | `#55606e` | `--undpds-color-light-red` | `#ffbcb7` |
+| `--undpds-color-gray-600` | `#84929d` | `--undpds-color-light-red` | `#ffbcb7` |
 | `--undpds-color-green-600` | `#59ba47` | `--undpds-color-light-yellow` | `#ffe17e` |
 | `--undpds-color-red-600` | `#d12800` | `--undpds-color-red` | `#ee402d` |
 | `--undpds-color-yellow-600` | `#fbc412` | `--undpds-color-shuttle-gray` | `#55606f` |
 | `--undpds-color-blue-700` | `#1f5a95` | `--undpds-color-silvery-moonlight` | `#ced0d3` |
-| `--undpds-color-gray-700` | `#232e3d` | `--undpds-color-surface-default` | `#f7f7f7` |
+| `--undpds-color-gray-700` | `#677383` | `--undpds-color-surface-default` | `#f7f7f7` |
 | `--undpds-color-blue-800` | `#0468b1` | `--undpds-color-surface-hover` | `#edeff0` |
 | `--undpds-color-gray-800` | `#55606e` | `--undpds-color-text-default` | `#000` |
 | `--undpds-color-gray-900` | `#232e3d` | `--undpds-color-text-inverse` | `#fff` |
