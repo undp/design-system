@@ -7,43 +7,44 @@ These properties are automatically generated from Figma design tokens.
 
 ---
 
-**Total Properties:** 220
+**Total Properties:** 222
 
-## Color (61)
+## Color (63)
 
 | Property | Value | Property | Value |
 |----------|-------|----------|-------|
-| `--undpds-color-blue-100` | `#b5d5f5` | `--undpds-color-action-secondary` | `#006eb5` |
-| `--undpds-color-gray-100` | `#fafafa` | `--undpds-color-action-secondary-default` | `#006eb5` |
-| `--undpds-color-azure-200` | `#a2daf3` | `--undpds-color-action-secondary-hover` | `#3288ce` |
-| `--undpds-color-blue-200` | `#94c4f5` | `--undpds-color-azure` | `#60d4f2` |
-| `--undpds-color-gray-200` | `#f7f7f7` | `--undpds-color-background-default` | `#fff` |
-| `--undpds-color-green-200` | `#b8ecb6` | `--undpds-color-black` | `#000` |
-| `--undpds-color-red-200` | `#ffbcb7` | `--undpds-color-border-default` | `#000` |
-| `--undpds-color-yellow-200` | `#ffe17e` | `--undpds-color-border-inverse` | `#fff` |
-| `--undpds-color-blue-300` | `#6babeb` | `--undpds-color-border-subtle` | `#d4d6d8` |
-| `--undpds-color-gray-300` | `#edeff0` | `--undpds-color-brand` | `#006eb5` |
-| `--undpds-color-azure-400` | `#60d4f2` | `--undpds-color-dark-azure` | `#00c1ff` |
-| `--undpds-color-blue-400` | `#4f95dd` | `--undpds-color-dark-green` | `#59ba47` |
-| `--undpds-color-gray-400` | `#d4d6d8` | `--undpds-color-dark-red` | `#d12800` |
-| `--undpds-color-green-400` | `#6de354` | `--undpds-color-dark-yellow` | `#fbc412` |
-| `--undpds-color-red-400` | `#ee402d` | `--undpds-color-ebony-clay` | `#232e3e` |
-| `--undpds-color-yellow-400` | `#ffeb00` | `--undpds-color-green` | `#6de354` |
-| `--undpds-color-blue-500` | `#3288ce` | `--undpds-color-light-azure` | `#a2daf3` |
-| `--undpds-color-gray-500` | `#a9b1b7` | `--undpds-color-light-green` | `#b8ecb6` |
-| `--undpds-color-azure-600` | `#00c1ff` | `--undpds-color-light-pink` | `#ffb4ae` |
-| `--undpds-color-blue-600` | `#006eb5` | `--undpds-color-light-red` | `#ffbcb7` |
-| `--undpds-color-gray-600` | `#55606e` | `--undpds-color-light-yellow` | `#ffe17e` |
-| `--undpds-color-green-600` | `#59ba47` | `--undpds-color-red` | `#ee402d` |
-| `--undpds-color-red-600` | `#d12800` | `--undpds-color-shuttle-gray` | `#55606f` |
-| `--undpds-color-yellow-600` | `#fbc412` | `--undpds-color-silvery-moonlight` | `#ced0d3` |
-| `--undpds-color-blue-700` | `#1f5a95` | `--undpds-color-surface-default` | `#f7f7f7` |
-| `--undpds-color-gray-700` | `#232e3d` | `--undpds-color-surface-hover` | `#edeff0` |
-| `--undpds-color-blue-800` | `#0468b1` | `--undpds-color-text-default` | `#000` |
-| `--undpds-color-accent` | `#ffeb00` | `--undpds-color-text-inverse` | `#fff` |
-| `--undpds-color-action-primary` | `#d12800` | `--undpds-color-white` | `#fff` |
-| `--undpds-color-action-primary-default` | `#d12800` | `--undpds-color-yellow` | `#ffeb00` |
-| `--undpds-color-action-primary-hover` | `#ee402d` |
+| `--undpds-color-blue-100` | `#b5d5f5` | `--undpds-color-action-primary-hover` | `#ee402d` |
+| `--undpds-color-gray-100` | `#fafafa` | `--undpds-color-action-secondary` | `#006eb5` |
+| `--undpds-color-azure-200` | `#a2daf3` | `--undpds-color-action-secondary-default` | `#006eb5` |
+| `--undpds-color-blue-200` | `#94c4f5` | `--undpds-color-action-secondary-hover` | `#3288ce` |
+| `--undpds-color-gray-200` | `#f7f7f7` | `--undpds-color-azure` | `#60d4f2` |
+| `--undpds-color-green-200` | `#b8ecb6` | `--undpds-color-background-default` | `#fff` |
+| `--undpds-color-red-200` | `#ffbcb7` | `--undpds-color-black` | `#000` |
+| `--undpds-color-yellow-200` | `#ffe17e` | `--undpds-color-border-default` | `#000` |
+| `--undpds-color-blue-300` | `#6babeb` | `--undpds-color-border-inverse` | `#fff` |
+| `--undpds-color-gray-300` | `#edeff0` | `--undpds-color-border-subtle` | `#d4d6d8` |
+| `--undpds-color-azure-400` | `#60d4f2` | `--undpds-color-brand` | `#006eb5` |
+| `--undpds-color-blue-400` | `#4f95dd` | `--undpds-color-dark-azure` | `#00c1ff` |
+| `--undpds-color-gray-400` | `#d4d6d8` | `--undpds-color-dark-green` | `#59ba47` |
+| `--undpds-color-green-400` | `#6de354` | `--undpds-color-dark-red` | `#d12800` |
+| `--undpds-color-red-400` | `#ee402d` | `--undpds-color-dark-yellow` | `#fbc412` |
+| `--undpds-color-yellow-400` | `#ffeb00` | `--undpds-color-ebony-clay` | `#232e3e` |
+| `--undpds-color-blue-500` | `#3288ce` | `--undpds-color-green` | `#6de354` |
+| `--undpds-color-gray-500` | `#a9b1b7` | `--undpds-color-light-azure` | `#a2daf3` |
+| `--undpds-color-azure-600` | `#00c1ff` | `--undpds-color-light-green` | `#b8ecb6` |
+| `--undpds-color-blue-600` | `#006eb5` | `--undpds-color-light-pink` | `#ffb4ae` |
+| `--undpds-color-gray-600` | `#84929d` | `--undpds-color-light-red` | `#ffbcb7` |
+| `--undpds-color-green-600` | `#59ba47` | `--undpds-color-light-yellow` | `#ffe17e` |
+| `--undpds-color-red-600` | `#d12800` | `--undpds-color-red` | `#ee402d` |
+| `--undpds-color-yellow-600` | `#fbc412` | `--undpds-color-shuttle-gray` | `#55606f` |
+| `--undpds-color-blue-700` | `#1f5a95` | `--undpds-color-silvery-moonlight` | `#ced0d3` |
+| `--undpds-color-gray-700` | `#677383` | `--undpds-color-surface-default` | `#f7f7f7` |
+| `--undpds-color-blue-800` | `#0468b1` | `--undpds-color-surface-hover` | `#edeff0` |
+| `--undpds-color-gray-800` | `#55606e` | `--undpds-color-text-default` | `#000` |
+| `--undpds-color-gray-900` | `#232e3d` | `--undpds-color-text-inverse` | `#fff` |
+| `--undpds-color-accent` | `#ffeb00` | `--undpds-color-white` | `#fff` |
+| `--undpds-color-action-primary` | `#d12800` | `--undpds-color-yellow` | `#ffeb00` |
+| `--undpds-color-action-primary-default` | `#d12800` |
 
 ## Spacing (46)
 
@@ -149,4 +150,4 @@ These properties are automatically generated from Figma design tokens.
 ---
 
 *This file is automatically generated by `scripts/generate-css-custom-properties-list.js`*
-*Last updated: 2025-11-06*
+*Last updated: 2025-11-12*
