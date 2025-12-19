@@ -89,35 +89,23 @@ export function accordion(
           });
         }
 
-        jQuery(accordionListItem, element)
-          .click(function (e) {
-            e.preventDefault();
-
-            // Callback function for Accordion Trigger
-            accordionTrigger(
-              jQuery(this),
-              accordionListItem,
-              accordionSibling,
-              accordionActiveClass,
-              allowMultiExpand,
-            );
-          })
-          .keypress(function (e) {
-            e.preventDefault();
-            const keycode = e.keyCode ? e.keyCode : e.which;
-
-            // Check if 'Enter' key is pressed
-            if (keycode == 13)
+        // Init accordion onClick behavior and make sure it is initialized only once
+        if (!accordionListItem.data('inited')) {
+          jQuery(accordionListItem, element).on('click keypress', e => {
+            if (e.type === 'click' || (e.type === 'keypress' && (e.keyCode || e.which) == 13) ) {
               accordionTrigger(
-                jQuery(this),
+                $(e.currentTarget),
                 accordionListItem,
                 accordionSibling,
                 accordionActiveClass,
                 allowMultiExpand,
               );
+            }
           });
-      })
+          accordionListItem.data('inited', true)
+        }
 
+      })
       .find(".is-active button")
       .each(function () {
         accordionTrigger(
