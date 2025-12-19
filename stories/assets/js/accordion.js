@@ -90,11 +90,11 @@ export function accordion(
         }
 
         // Init accordion onClick behavior and make sure it is initialized only once
-        if (!accordionListItem.data('inited')) {
+        if (!jQuery(accordionListItem).data('inited')) {
           jQuery(accordionListItem, element).on('click keypress', e => {
             if (e.type === 'click' || (e.type === 'keypress' && (e.keyCode || e.which) == 13) ) {
               accordionTrigger(
-                $(e.currentTarget),
+                jQuery(e.currentTarget),
                 accordionListItem,
                 accordionSibling,
                 accordionActiveClass,
@@ -102,7 +102,7 @@ export function accordion(
               );
             }
           });
-          accordionListItem.data('inited', true)
+          jQuery(accordionListItem).data('inited', true)
         }
 
       })
