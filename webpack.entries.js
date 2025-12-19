@@ -37,6 +37,8 @@ module.exports = (type = 'css') => {
 
   // wildcard file discovery
   glob.sync(`./stories${suggestFiles}`, { ignore: ignoreFiles }).map((file) => {
+    // Normalize path to use forward slashes for consistent checking across OS
+    const normalizedFile = file.replace(/\\/g, '/');
     let fileName = path.basename(file, path.extname(file));
     let objKey = `${cssPathPrefix}/components/${fileName}`;
 
@@ -44,32 +46,36 @@ module.exports = (type = 'css') => {
       objKey = `js/${fileName}`;
     }
 
-    const isTemplate = file.indexOf('Templates') > 0;
+    const isTemplate = normalizedFile.includes('Templates');
 
     if (isTemplate) {
       objKey = `${cssPathPrefix}/templates/${fileName}`;
     }
 
-    if (file.indexOf('assets/scss') > 0) {
+    if (normalizedFile.includes('assets/scss')) {
       objKey = `${cssPathPrefix}/${fileName}`;
     }
 
-    if (file.indexOf('/_') > 0) {
+    if (normalizedFile.includes('/_')) {
       fileName = fileName.replace(/[_]/g, '');
       objKey = `${cssPathPrefix}/components/${fileName}`;
     }
 
-    files[objKey] = file;
+    // Ensure paths start with ./ for webpack resolution
+    const resolvedPath = normalizedFile.startsWith('./') ? normalizedFile : `./${normalizedFile}`;
+    files[objKey] = resolvedPath;
 
     // Build cumulative lists only for css build (exclude base + templates from components bundle logic conditions below)
     if (type === 'css') {
       // Exclude base-minimal & other root asset scss from component aggregation
-      const isBase = file.indexOf('assets/scss') > 0;
+      const isBase = normalizedFile.includes('assets/scss');
       if (!isBase) {
+        // Ensure paths start with ./ for webpack resolution
+        const resolvedPath = normalizedFile.startsWith('./') ? normalizedFile : `./${normalizedFile}`;
         if (isTemplate) {
-          templateScssList.push(file);
+          templateScssList.push(resolvedPath);
         } else {
-          componentScssList.push(file);
+          componentScssList.push(resolvedPath);
         }
       }
     }
@@ -80,9 +86,9 @@ module.exports = (type = 'css') => {
 
     // Ensure components sit after organism entries and before patterns in the bundle
     if (componentScssList.length) {
-      const isComponentsEntry = (file) => file.includes('/stories/Components/');
-      const isPatternsEntry = (file) => file.includes('/stories/Patterns/');
-      const isOrganismEntry = (file) => file.includes('/stories/Organism/');
+      const isComponentsEntry = (file) => file.replace(/\\/g, '/').includes('/stories/Components/');
+      const isPatternsEntry = (file) => file.replace(/\\/g, '/').includes('/stories/Patterns/');
+      const isOrganismEntry = (file) => file.replace(/\\/g, '/').includes('/stories/Organism/');
 
       const componentsEntries = [];
       const retainedEntries = componentScssList.filter((file) => {
