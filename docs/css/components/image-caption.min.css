@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.6.0
+ * UNDP Design System 1.6.2
  *
  */
 figcaption{border-bottom:2px solid #000;color:#55606e;font-size:1rem}@container (width > 30em){figcaption{display:flex;justify-content:space-between;padding-bottom:32px}}figcaption .credits{border-top:1px solid #a9b1b7;color:#000;display:flex;flex-shrink:0;flex-wrap:wrap;margin-bottom:16px;margin-top:16px;padding-top:16px}@container (width > 30em){figcaption .credits{border-top:0;display:block;margin-bottom:0;margin-left:0;margin-top:0;padding-left:0;padding-top:0}}figcaption .credits strong{margin-left:4px}@container (width > 30em){figcaption .credits strong{margin-left:0}}figcaption p{color:#55606e;margin-bottom:16px}@container (width > 30em){figcaption p{border:0;margin:0}figcaption p+.credits{border-left:1px solid #a9b1b7;margin-left:32px;padding-left:32px}}[dir=rtl] figcaption .credits strong{margin-right:4px}@container (width > 30em){[dir=rtl] figcaption p{padding-right:0}[dir=rtl] figcaption .credits{border-left:none;border-right:1px solid #a9b1b7;border-top:0;display:block;margin-left:0;margin-right:32px;padding-left:0;padding-right:32px;padding-top:0}[dir=rtl] figcaption .credits strong{margin-right:0}}:lang(my) figcaption .credits,:lang(my) figcaption p{line-height:1.7}
