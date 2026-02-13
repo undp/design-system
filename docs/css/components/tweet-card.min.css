@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.6.0
+ * UNDP Design System 1.6.2
  *
  */
 .tweet-card{-webkit-font-smoothing:antialiased}@media(max-width:47.9375em){.tweet-card{margin-bottom:var(--undpds-spacing-12)}}.tweet-card a{align-items:flex-start;background:none;display:inline-flex;text-decoration:none}.tweet-card a img{border-radius:50%;height:44px;margin-right:var(--undpds-spacing-05);min-width:44px;width:44px}.tweet-card p{margin-bottom:0;word-break:break-word}.tweet-card__header{color:var(--undpds-color-white);font-weight:400}.tweet-card__header--subtitle{font-size:var(--undpds-font-size-14);font-weight:600}.tweet-card__body{border-top:3px solid var(--undpds-color-white);margin-top:var(--undpds-spacing-07);padding:var(--undpds-spacing-06) .313rem 0 0}.tweet-card__body a,.tweet-card__body p,.tweet-card__body time{color:var(--undpds-color-gray-500);font-size:var(--undpds-font-size-14);font-weight:700}.tweet-card__body a,.tweet-card__body p{color:var(--undpds-color-white);font-weight:400}.tweet-card__body time{margin-top:var(--undpds-spacing-05)}.tweet-card__body p{margin-bottom:1.125rem}.tweet-card .cta__link{color:var(--undpds-color-white);font-size:.938rem}.tweet-card .cta__link:hover{color:var(--undpds-color-gray-400)}.tweet-card .cta__link:after{margin-top:-var(--undpds-spacing-01)}[dir=rtl] .tweet-card img{margin-left:var(--undpds-spacing-05);margin-right:0}[dir=rtl] .tweet-card__body{padding:var(--undpds-spacing-06) 0 0 .313rem}:lang(ro) .tweet_card__header--subtitle{font-weight:700}
