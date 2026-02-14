@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.6.0
+ * UNDP Design System 1.6.2
  *
  */
 .menu ul{padding:0}.menu ul li{display:inline-block;margin-block:var(--undpds-spacing-04);margin-inline:0 var(--undpds-spacing-60);padding-inline-start:0}.menu ul li a{font-weight:500}.menu ul li:last-of-type{margin-inline-end:0}[dir=rtl] .menu ul li a{margin:0}

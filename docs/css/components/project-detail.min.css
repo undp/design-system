@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.6.0
+ * UNDP Design System 1.6.2
  *
  */
 .project-detail{border-bottom:1px solid var(--undpds-color-gray-400)}.project-detail-4{border-bottom:0}.project-detail h2{border-bottom:2px solid var(--undpds-color-black);margin-bottom:0;padding-bottom:2rem}.project-detail-list>div{margin-top:var(--undpds-spacing-07)}@media(max-width:47.9375em){.project-detail-list>div{border-bottom:1px solid var(--undpds-color-gray-400)}}.project-detail-list>div p{color:var(--undpds-color-gray-700);line-height:2;margin-bottom:2rem}.project-detail-list>div h6{margin-bottom:.25rem}
