@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 1.6.0
+ * UNDP Design System 1.6.2
  *
  */
 .sidebar-accordion li>a{background-image:none;border:none;border-bottom:1px solid #a9b1b7;display:block;font-size:1rem;font-weight:700;line-height:1.15;margin-bottom:0;padding:16px}@media(min-width:48em){.sidebar-accordion li>a{padding:24px}.sidebar-accordion.narrow li>a{padding:16px}}[dir=rtl] .sidebar-accordion .accordion__panel li>a{padding-left:24px;padding-right:32px}@media(min-width:48em){[dir=rtl] .sidebar-accordion .accordion__panel li>a{padding-right:48px}}
