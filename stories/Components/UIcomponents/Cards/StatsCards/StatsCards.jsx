@@ -5,11 +5,11 @@ import { Heading } from "../../../../Atom/Typography/Heading/Heading";
 import { P } from "../../../../Atom/BaseTypography/Paragraph/Paragraph";
 
 const cls = (...classes) => {
-  if (typeof fitText == "function") {
-    setTimeout(() => {
-      fitText(".stats-card h2");
-    }, 200);
-  }
+  // if (typeof fitText == "function") {
+  //   setTimeout(() => {
+  //     fitText(".stats-card h2");
+  //   }, 200);
+  // }
   return classes.filter(Boolean).length > 0
     ? classes.filter(Boolean).join(" ")
     : null;
@@ -53,17 +53,25 @@ export function StatsCards({ title, number, percent, content, Size, ...args }) {
   let max_width = args.MaxWidth === "No" ? "full-width" : "";
 
   const fitTextSelector = ".stats-card h2";
-
+  useEffect(() => {
+    if (args.fitText !== "none" && typeof fitText === "function") {
+      setTimeout(() => {
+      fitText(fitTextSelector);
+      }, 200);
+    }
+  }, []);
   return (
     <>
       {/* This hidden div initializes the fitText functionality */}
-      <div 
-        data-undpds-component="stats-cards"
-        data-options={JSON.stringify({
-          selector: fitTextSelector
-        })}
-        style={{ display: "none" }}
-      />
+      {args.fitText !== 'none' && (
+        <div
+          data-undpds-component="stats-cards"
+          data-options={JSON.stringify({
+            selector: fitTextSelector
+          })}
+          style={{ display: "none" }}
+        />
+      )}
     <div
       className={cls(
         "stats-card",

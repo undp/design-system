@@ -24,7 +24,7 @@ export function StatsPanel({
   return (
     <div className={cls('stats-panel', `${accent_color}`)}>
       <img src={imageback} alt={imageback} />
-      <StatsCards number={number} percent={percent} content={content} />
+      <StatsCards number={number} percent={percent} content={content} fitText="none" />
     </div>
   );
 }
