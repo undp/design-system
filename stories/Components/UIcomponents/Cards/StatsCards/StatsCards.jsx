@@ -54,8 +54,10 @@ export function StatsCards({ title, number, percent, content, Size, ...args }) {
 
   const fitTextSelector = ".stats-card h2";
   useEffect(() => {
-    if (args.fitText !== "none") {
-      statsHover();
+    if (args.fitText !== "none" && typeof fitText === "function") {
+      setTimeout(() => {
+      fitText(fitTextSelector);
+      }, 200);
     }
   }, []);
   return (
