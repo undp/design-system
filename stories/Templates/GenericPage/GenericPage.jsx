@@ -56,18 +56,7 @@ export function GenericPage({
         locationData={locationData}
         langSelect={langSelect}
       />
-      <div className="grid-x">
-        <div className="cell small-12 sidebar-width">
-          <div className="column sidebar-mobile">
-            <Sidebar
-              data={sidebarCaptionData.sidebardata}
-              headerText={sidebarCaptionData.headerText}
-              label={sidebarCaptionData.label}
-              active={sidebarCaptionData.active}
-            />
-          </div>
-        </div>
-      </div>
+
       <PageHero
         data={herodata}
         title={title}
@@ -78,6 +67,18 @@ export function GenericPage({
       />
 
       <div className="grid-container fluid content-bottom">
+        <div className="grid-x grid-margin-x">
+          <div className="cell small-12 sidebar-width">
+            <div className="column sidebar-mobile">
+              <Sidebar
+                data={sidebarCaptionData.sidebardata}
+                headerText={sidebarCaptionData.headerText}
+                label={sidebarCaptionData.label}
+                active={sidebarCaptionData.active}
+              />
+            </div>
+          </div>
+        </div>
         <div className="grid-x margin-top-72">
           <div className="cell large-3 small-12 sidebar-width">
             <div className="column sidebar-desktop" data-undpds-component="sticky" data-sticky-movingside=".generic-content">
