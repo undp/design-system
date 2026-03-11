@@ -1,13 +1,18 @@
-const path = require('path');
-const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const RemoveEmptyScripts = require('webpack-remove-empty-scripts');
-// const RemovePlugin = require('remove-files-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const webpackEntry = require('./webpack.entries');
-const pkg = require('./package.json');
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import RemoveEmptyScripts from 'webpack-remove-empty-scripts';
+import CopyPlugin from 'copy-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import webpackEntry from './webpack.entries.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const pkgPath = path.resolve(__dirname, 'package.json');
+const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
 
 const packMode = 'production';
 
@@ -18,7 +23,7 @@ ${pkg.description} ${pkg.version}
 /*
 * Webpack build for scss and js
 */
-module.exports = [
+export default [
   {
     mode: packMode,
     entry: webpackEntry('css'),
@@ -69,11 +74,6 @@ module.exports = [
       // @TODO: Need to find a valid option to manage these icon to resolve
       alias: {
         icons: path.resolve(__dirname, 'stories/assets/icons'),
-        // '../../../../../../assets/icons/hamburger.svg': path.resolve(__dirname, 'stories/assets/icons/hamburger.svg'),
-        // '../../../../../../assets/icons/chevron-down.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
-        // '../../../../assets/icons/chevron-down.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
-        // '../../../../../../assets/icons/times-blue.svg': path.resolve(__dirname, 'stories/assets/icons/times-blue.svg'),
-        // '../../../assets/icons/chevron-small-right.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-small-right.svg'),
       },
       extensions: ['.ts', '.js'],
     },
@@ -107,18 +107,9 @@ module.exports = [
         filename: '[name].min.css',
       }),
       new webpack.BannerPlugin({
-        banner: banner,
-        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT
+        banner,
+        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT,
       }),
-      // delete fonts from the root directory
-      // new RemovePlugin({
-      //   after: {
-      //     include: [
-      //       'fonts',
-      //     ],
-      //     trash: true,
-      //   },
-      // }),
     ],
     output: {
       path: path.resolve(__dirname, 'docs'),
@@ -160,8 +151,8 @@ module.exports = [
         maxChunks: 1,
       }),
       new webpack.BannerPlugin({
-        banner: banner,
-        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT
+        banner,
+        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT,
       }),
     ],
     module: {
@@ -207,8 +198,8 @@ module.exports = [
     },
     plugins: [
       new webpack.BannerPlugin({
-        banner: banner,
-        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT
+        banner,
+        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT,
       }),
     ],
   },
