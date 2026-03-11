@@ -20,7 +20,7 @@ const config = {
     // '@chromatic-com/storybook',
     '@storybook/react-webpack5',
     '@storybook/addon-webpack5-compiler-babel',
-    '@linus_janns/storybook-addon-html',
+    '@whitespace/storybook-addon-html',
     '@storybook/addon-docs'
   ],
 
