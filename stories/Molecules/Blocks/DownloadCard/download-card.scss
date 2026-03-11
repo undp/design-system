@@ -4,10 +4,10 @@
 
 /* download card start */
 $colors: (
-  "yellow": variables.$color-yellow,
-  "red": variables.$color-red,
-  "green": variables.$color-green,
-  "blue": variables.$color-azure,
+  "yellow": var(--undpds-color-yellow),
+  "red": var(--undpds-color-red),
+  "green": var(--undpds-color-green),
+  "blue": var(--undpds-color-azure),
 );
 
 div.download-card {
@@ -26,7 +26,7 @@ div.download-card {
       &::after {
         @include mixins.background-image(
           27.66deg,
-          variables.$color-yellow,
+          var(--undpds-color-yellow),
           transparent 70.49%
         );
 
@@ -51,7 +51,7 @@ div.download-card {
       &::before {
         @include mixins.background-image(
           67.76deg,
-          variables.$color-yellow,
+          var(--undpds-color-yellow),
           transparent 61.11%
         );
 
@@ -110,21 +110,21 @@ div.download-card {
   }
 
   .description {
-    background: variables.$color-gray-100;
-    padding: variables.$spacing-06;
+    background: var(--undpds-color-gray-100);
+    padding: var(--undpds-spacing-06);
   }
 
   .title {
     @extend %paragragh-font-20;
 
-    margin-bottom: variables.$spacing-02;
+    margin-bottom: var(--undpds-spacing-02);
   }
 
   .format {
     @extend %paragragh-font-16;
 
-    color: variables.$color-gray-600;
-    margin-bottom: variables.$spacing-05;
+    color: var(--undpds-color-gray-600);
+    margin-bottom: var(--undpds-spacing-05);
   }
 
   .download {
@@ -138,12 +138,12 @@ div.download-card {
     text-transform: uppercase;
 
     .download-animated {
-      margin-left: variables.$spacing-04;
+      margin-left: var(--undpds-spacing-04);
     }
 
     .external-link-animated {
-      margin-bottom: variables.$spacing-03;
-      margin-left: variables.$spacing-04;
+      margin-bottom: var(--undpds-spacing-03);
+      margin-left: var(--undpds-spacing-04);
     }
   }
 }
@@ -153,7 +153,7 @@ div.download-card {
     .download-animated,
     .external-link-animated {
       margin-left: 0;
-      margin-right: variables.$spacing-04;
+      margin-right: var(--undpds-spacing-04);
     }
 
     &:hover {
@@ -161,7 +161,7 @@ div.download-card {
         &::after {
           @include mixins.background-image(
             318deg,
-            variables.$color-yellow,
+            var(--undpds-color-yellow),
             transparent 70.49%
           );
         }
@@ -182,7 +182,7 @@ div.download-card {
         &::before {
           @include mixins.background-image(
             297deg,
-            variables.$color-yellow,
+            var(--undpds-color-yellow),
             transparent 61.11%
           );
         }

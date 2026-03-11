@@ -1,12 +1,11 @@
 @import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
 $colors: (
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure
+  'yellow': var(--undpds-color-yellow),
+  'red': var(--undpds-color-red),
+  'green': var(--undpds-color-green),
+  'blue': var(--undpds-color-azure)
 );
 
 div.publication-card {
@@ -19,7 +18,7 @@ div.publication-card {
   &:hover {
     div.publication-thumbnail__image {
       &::after {
-        @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+        @include background-image(27.66deg, var(--undpds-color-yellow), transparent 70.49%);
 
         opacity: 0.75;
       }
@@ -39,8 +38,8 @@ div.publication-card {
 
   .description {
     align-items: center;
-    background: $color-gray-100;
-    padding: $spacing-06;
+    background: var(--undpds-color-gray-100);
+    padding: var(--undpds-spacing-06);
 
     >div {
       align-items: center;
@@ -51,7 +50,7 @@ div.publication-card {
       }
 
       > :not(:first-of-type) {
-        border-left: $spacing-01 solid $color-silvery-moonlight;
+        border-left: var(--undpds-spacing-01) solid var(--undpds-color-silvery-moonlight);
         text-align: right;
       }
     }
@@ -60,14 +59,14 @@ div.publication-card {
   .title {
     @extend %paragragh-font-20;
 
-    margin-bottom: $spacing-02;
+    margin-bottom: var(--undpds-spacing-02);
   }
 
   .format {
     @extend %paragragh-font-16;
 
-    color: $color-gray-600;
-    margin-bottom: $spacing-05;
+    color: var(--undpds-color-gray-600);
+    margin-bottom: var(--undpds-spacing-05);
   }
 
   .download {
@@ -82,11 +81,11 @@ div.publication-card {
     text-transform: uppercase;
 
     .download-animated {
-      margin-left: $spacing-04;
+      margin-left: var(--undpds-spacing-04);
     }
 
     &:hover {
-      color: $color-shuttle-gray;
+      color: var(--undpds-color-shuttle-gray);
 
       .download-animated {
         &::after {
@@ -113,11 +112,11 @@ div.publication-card {
 
     .external-link-animated {
       display: inline-block;
-      margin-left: $spacing-04;
+      margin-left: var(--undpds-spacing-04);
     }
 
     &:hover {
-      color: $color-shuttle-gray;
+      color: var(--undpds-color-shuttle-gray);
 
       .external-link-animated {
         &::after {
@@ -137,14 +136,14 @@ div.publication-card {
     .readmore {
       .external-link-animated {
         margin-left: 0;
-        margin-right: $spacing-04;
+        margin-right: var(--undpds-spacing-04);
       }
     }
 
     .download {
       .download-animated {
         margin-left: 0;
-        margin-right: $spacing-04;
+        margin-right: var(--undpds-spacing-04);
       }
     }
 
@@ -156,7 +155,7 @@ div.publication-card {
 
         > :not(:first-of-type) {
           border-left: 0;
-          border-right: $spacing-01 solid $color-silvery-moonlight;
+          border-right: var(--undpds-spacing-01) solid var(--undpds-color-silvery-moonlight);
           text-align: left;
         }
       }

@@ -3,4 +3,4 @@
  * UNDP Design System 1.6.4
  *
  */
-.post-wrapper h2{margin-bottom:16px}.post-wrapper h5{color:#84929d;margin-bottom:48px}
+.post-wrapper h2{margin-bottom:var(--undpds-spacing-05)}.post-wrapper h5{color:var(--undpds-color-gray-600);margin-bottom:var(--undpds-spacing-09)}
