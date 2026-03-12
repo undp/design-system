@@ -13,7 +13,7 @@ import { Meta } from "@storybook/addon-docs/blocks";
    .color__item{
     margin: 5px;
     padding: 10px;
-    border: 1px solid #D4D6D8;
+    border: 1px solid var(--undpds-color-blue-400);
   }
   .color__box {
     width: 110px;
@@ -33,32 +33,32 @@ import { Meta } from "@storybook/addon-docs/blocks";
   .color-wrapper {
     display:none
   }
-  .blue-100 { background-color: #B5D5F5;}
-  .blue-200 {background-color: #94C4F5;}
-  .blue-300 { background-color: #6BABEB;}
-  .blue-400 {background-color: #4F95DD;}
-  .blue-500 {background-color: #3288CE;}
-  .blue-600 {background-color: #0468B1;}
-  .blue-700 {background-color: #1F5A95;}
-  .gray-100 { background-color: #FAFAFA;}
-  .gray-200 {background-color: #F7F7F7;}
-  .gray-300 { background-color: #EDEFF0;}
-  .gray-400 {background-color: #D4D6D8;}
-  .gray-500 {background-color: #A9B1B7;}
-  .gray-600 {background-color: #55606E;}
-  .gray-700 {background-color: #232E3D;}
-  .light-yellow { background-color: #FFE17E;}
-  .yellow {background-color: #FFEB00;}
-  .dark-yellow  { background-color: #FBC412;}
-  .light-red {background-color: #FFBCB7;}
-  .red {background-color: #EE402D;}
-  .dark-red {background-color: #D12800;}
-  .light-green {background-color: #B8ECB6;}
-  .green {background-color: #6DE354;}
-  .dark-green {background-color: #59BA47;}
-  .light-azure {background-color: #A2DAF3;}
-  .azure {background-color: #60D4F2;}
-  .dark-azure {background-color: #00C1FF;}
+  .blue-100 { background-color: var(--undpds-color-blue-100);}
+  .blue-200 {background-color: var(--undpds-color-blue-200);}
+  .blue-300 { background-color: var(--undpds-color-blue-300);}
+  .blue-400 {background-color: var(--undpds-color-blue-400);}
+  .blue-500 {background-color: var(--undpds-color-blue-500);}
+  .blue-600 {background-color: var(--undpds-color-blue-600);}
+  .blue-700 {background-color: var(--undpds-color-blue-700);}
+  .gray-100 { background-color: var(--undpds-color-gray-100);}
+  .gray-200 {background-color: var(--undpds-color-gray-200);}
+  .gray-300 { background-color: var(--undpds-color-gray-300);}
+  .gray-400 {background-color: var(--undpds-color-gray-400);}
+  .gray-500 {background-color: var(--undpds-color-gray-500);}
+  .gray-600 {background-color: var(--undpds-color-gray-600);}
+  .gray-700 {background-color: var(--undpds-color-gray-700);}
+  .light-yellow { background-color: var(--undpds-color-light-yellow);}
+  .yellow {background-color: var(--undpds-color-yellow);}
+  .dark-yellow  { background-color: var(--undpds-color-dark-yellow);}
+  .light-red {background-color: var(--undpds-color-light-red);}
+  .red {background-color: var(--undpds-color-red);}
+  .dark-red {background-color: var(--undpds-color-dark-red);}
+  .light-green {background-color: var(--undpds-color-light-green);}
+  .green {background-color: var(--undpds-color-green);}
+  .dark-green {background-color: var(--undpds-color-dark-green);}
+  .light-azure {background-color: var(--undpds-color-light-azure);}
+  .azure {background-color: var(--undpds-color-azure);}
+  .dark-azure {background-color: var(--undpds-color-dark-azure);}
   `}
 </style>
 
@@ -84,8 +84,10 @@ Primary colors: Primary colors are the base colors of the UI, the ones that are 
   <div className="color__item">
     <div className="color__box blue-100"></div>
     <div className="color__name"> blue-100 </div>
-    <div className="color__code">Hex: <code>#B5D5F5</code></div>
-   </div>
+    <div className="color__code">
+      Hex: <code>#B5D5F5</code>
+    </div>
+  </div>
 
 <div className="color__item">
   <div className="color__box blue-200"></div>
@@ -130,7 +132,9 @@ Primary colors: Primary colors are the base colors of the UI, the ones that are 
   <div className="color__item">
     <div className="color__box blue-700"></div>
     <div className="color__name"> blue-700 </div>
-    <div className="color__code">Hex: <code>#1F5A95</code></div>
+    <div className="color__code">
+      Hex: <code>#1F5A95</code>
+    </div>
   </div>
 </div>
 
@@ -138,8 +142,10 @@ Primary colors: Primary colors are the base colors of the UI, the ones that are 
   <div className="color__item">
     <div className="color__box gray-100"></div>
     <div className="color__name"> gray-100 </div>
-    <div className="color__code">Hex: <code>#FAFAFA</code></div>
-   </div>
+    <div className="color__code">
+      Hex: <code>#FAFAFA</code>
+    </div>
+  </div>
 
 <div className="color__item">
   <div className="color__box gray-200"></div>
@@ -184,7 +190,9 @@ Primary colors: Primary colors are the base colors of the UI, the ones that are 
   <div className="color__item">
     <div className="color__box gray-700"></div>
     <div className="color__name"> gray-700 </div>
-    <div className="color__code">Hex: <code>#232E3D</code></div>
+    <div className="color__code">
+      Hex: <code>#232E3D</code>
+    </div>
   </div>
 </div>
 
@@ -196,7 +204,9 @@ Accent colors: Accent colors are the colors that are used for emphasis in a colo
   <div className="color__item">
     <div className="color__box light-yellow"></div>
     <div className="color__name"> light-yellow </div>
-    <div className="color__code">Hex: <code>#FFEB00</code></div>
+    <div className="color__code">
+      Hex: <code>#FFEB00</code>
+    </div>
    </div>
 
 <div className="color__item">
@@ -234,7 +244,9 @@ Accent colors: Accent colors are the colors that are used for emphasis in a colo
   <div className="color__item">
     <div className="color__box dark-red"></div>
     <div className="color__name"> dark-red</div>
-    <div className="color__code">Hex: <code>#D12800</code></div>
+    <div className="color__code">
+      Hex: <code>#D12800</code>
+    </div>
    </div>
 </div>
 
@@ -242,7 +254,9 @@ Accent colors: Accent colors are the colors that are used for emphasis in a colo
   <div className="color__item">
     <div className="color__box light-green"></div>
     <div className="color__name"> light-green</div>
-    <div className="color__code">Hex: <code>#B8ECB6</code></div>
+    <div className="color__code">
+      Hex: <code>#B8ECB6</code>
+    </div>
    </div>
 
 <div className="color__item">
@@ -282,10 +296,12 @@ Accent colors: Accent colors are the colors that are used for emphasis in a colo
   <div className="color__item">
       <div className="color__box dark-azure"></div>
       <div className="color__name"> dark-azure</div>
-      <div className="color__code">Hex: <code>#00C1FF</code></div>
+      <div className="color__code">
+        Hex: <code>#00C1FF</code>
+      </div>
     </div>
 </div>
 
 ### Usage
 
-- You can pick a color by HEX color code. e.g., #B5D5F5. Colors are also defined in the variables **stories/assets/scss/\_variables.scss** by the same name like blue-100 it's $color-blue-100
+- You can pick a color by HEX color code. e.g., #B5D5F5. Colors are also defined in the variables **stories/assets/scss/\_variables.scss** by the same name like blue-100 it's $color-blue-100 or you can use the CSS variable var(--undpds-color-blue-100) to use the color in your component.

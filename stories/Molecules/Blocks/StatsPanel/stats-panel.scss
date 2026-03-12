@@ -1,17 +1,12 @@
 @import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
 // color map
 $colors: (
-  // 'red': $red-gradient,
-  // 'green': $green-gradient,
-  // 'blue': $blue-gradient,
-  // 'yellow': $yellow-gradient
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure
+  'yellow': var(--undpds-color-yellow),
+  'red': var(--undpds-color-red),
+  'green': var(--undpds-color-green),
+  'blue': var(--undpds-color-azure)
 );
 
 /* statspanel card start */

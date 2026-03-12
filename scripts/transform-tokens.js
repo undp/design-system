@@ -149,6 +149,176 @@ function shouldPreserveVariable(varName, varValue) {
 }
 
 /**
+ * Section mapping for organized variable insertion
+ * Maps token categories to their target section headers
+ */
+const SECTION_MARKERS = {
+  // Primitive sections (in order of appearance in file)
+  colors: { marker: '/* Colors - Primitive */', semantic: false },
+  spacing: { marker: '/* Spacing - Primitive */', semantic: false },
+  fontfamily: { marker: '/* Font Families - Primitive */', semantic: false },
+  fontsize: { marker: '/* Font Sizes - Primitive */', semantic: false },
+  fontweight: { marker: '/* Font Weights - Primitive */', semantic: false },
+  lineheight: { marker: '/* Line Heights - Primitive */', semantic: false },
+  textcase: { marker: '/* Text Case - Primitive */', semantic: false },
+  border: { marker: '/* Border - Primitive */', semantic: false },
+  sizing: { marker: '/* Sizing - Primitive */', semantic: false },
+  
+  // Semantic sections
+  color: { marker: '/* Colors - Semantic */', semantic: true },
+  'font-family': { marker: '/* Font Families - Semantic */', semantic: true },
+  'font-size': { marker: '/* Font Sizes - Semantic */', semantic: true },
+  'font-weight': { marker: '/* Font Weights - Semantic */', semantic: true },
+  'line-height': { marker: '/* Line Heights - Semantic */', semantic: true },
+  // Note: spacing semantic goes to same place as primitives in most cases
+};
+
+/**
+ * Get category key from variable name
+ */
+function getCategoryFromVarName(varName) {
+  if (varName.startsWith('color-')) {
+    // Check if it's semantic based on specific patterns
+    if (/^color-(text|action|surface|background|border|accent|brand)/.test(varName)) {
+      return 'color'; // semantic
+    }
+    return 'colors'; // primitive
+  }
+  if (varName.startsWith('spacing-')) return 'spacing';
+  if (varName.startsWith('font-family-')) return 'font-family'; // semantic
+  if (varName.startsWith('font-size-')) return 'font-size'; // semantic (but could be primitive)
+  if (varName.startsWith('font-weight-')) return 'font-weight';
+  if (varName.startsWith('line-height-')) return 'line-height';
+  if (varName.startsWith('text-case-')) return 'textcase';
+  if (varName.startsWith('border-')) return 'border';
+  if (varName.startsWith('sizing-')) return 'sizing';
+  return null;
+}
+
+/**
+ * Insert variables into their respective organized sections
+ * Respects primitive vs semantic distinction
+ */
+function insertVariablesIntoSections(lines, newVars) {
+  // Group variables by section
+  const variablesBySection = {};
+  const unplacedVars = [];
+
+  newVars.forEach(v => {
+    const isSemantic = v.token.isSemantic || false;
+    let sectionKey = null;
+
+    if (isSemantic) {
+      // For semantic tokens, use semantic section markers
+      if (v.name.startsWith('color-')) {
+        sectionKey = 'color'; // semantic colors
+      } else if (v.name.startsWith('font-family-')) {
+        sectionKey = 'font-family';
+      } else if (v.name.startsWith('font-size-')) {
+        sectionKey = 'font-size';
+      } else if (v.name.startsWith('font-weight-')) {
+        sectionKey = 'font-weight';
+      } else if (v.name.startsWith('line-height-')) {
+        sectionKey = 'line-height';
+      } else if (v.name.startsWith('spacing-')) {
+        sectionKey = 'spacing'; // semantic spacing uses same section as primitive
+      }
+    } else {
+      // For primitive tokens, use primitive section markers
+      if (v.name.startsWith('color-')) {
+        sectionKey = 'colors';
+      } else if (v.name.startsWith('spacing-')) {
+        sectionKey = 'spacing';
+      } else if (v.name.startsWith('font-family-')) {
+        sectionKey = 'fontfamily';
+      } else if (v.name.startsWith('font-size-')) {
+        sectionKey = 'fontsize';
+      } else if (v.name.startsWith('font-weight-')) {
+        sectionKey = 'fontweight';
+      } else if (v.name.startsWith('line-height-')) {
+        sectionKey = 'lineheight';
+      } else if (v.name.startsWith('text-case-')) {
+        sectionKey = 'textcase';
+      } else if (v.name.startsWith('border-')) {
+        sectionKey = 'border';
+      } else if (v.name.startsWith('sizing-')) {
+        sectionKey = 'sizing';
+      }
+    }
+
+    if (sectionKey && SECTION_MARKERS[sectionKey]) {
+      if (!variablesBySection[sectionKey]) {
+        variablesBySection[sectionKey] = [];
+      }
+      variablesBySection[sectionKey].push(v);
+    } else {
+      unplacedVars.push(v);
+    }
+  });
+
+  // Insert variables into each section
+  for (const [sectionKey, vars] of Object.entries(variablesBySection)) {
+    const sectionMarker = SECTION_MARKERS[sectionKey].marker;
+    
+    // Find the section marker
+    let sectionIndex = -1;
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].includes(sectionMarker)) {
+        sectionIndex = i;
+        break;
+      }
+    }
+
+    if (sectionIndex !== -1) {
+      // Find the end of this section (next empty double-space or section marker)
+      let insertIndex = sectionIndex + 1;
+      while (insertIndex < lines.length) {
+        const line = lines[insertIndex];
+        const trimmed = line.trim();
+        
+        // Stop if we hit another section marker (starts with /*)
+        if (trimmed.startsWith('/*') && trimmed.endsWith('*/')) {
+          break;
+        }
+        
+        // Stop if we encounter backwards compatibility marker
+        if (trimmed.includes('BACKWARDS COMPATIBILITY') || trimmed.includes('SEMANTIC TOKENS') || 
+            trimmed.includes('PRIMITIVE TOKENS')) {
+          break;
+        }
+        
+        insertIndex++;
+      }
+
+      // Insert variables before empty line or section boundary
+      const varsToInsert = vars.map(v => `$${v.name}: ${v.value};`);
+      lines.splice(insertIndex, 0, ...varsToInsert);
+    } else {
+      // Fallback: treat as unplaced
+      unplacedVars.push(...vars);
+    }
+  }
+
+  // Place any unplaced variables before backwards compatibility section
+  if (unplacedVars.length > 0) {
+    let backwardsCompatIndex = -1;
+    for (let i = lines.length - 1; i >= 0; i--) {
+      if (lines[i].includes('BACKWARDS COMPATIBILITY')) {
+        backwardsCompatIndex = i;
+        break;
+      }
+    }
+
+    if (backwardsCompatIndex === -1) {
+      backwardsCompatIndex = lines.length;
+    }
+
+    const varsToInsert = unplacedVars.map(v => `$${v.name}: ${v.value};`);
+    lines.splice(backwardsCompatIndex, 0, '', '// Additional tokens', ...varsToInsert);
+  }
+}
+
+/**
  * Update existing SASS file with token values
  */
 function updateSassVariables(existingContent, tokens) {
@@ -238,61 +408,71 @@ function updateSassVariables(existingContent, tokens) {
     lines = lines.filter((line, index) => !linesToDelete.has(index));
   }
 
-  // Add new variables at the end of the file (before any trailing comments)
+  // Add new variables in organized sections if the file has section markers
   if (newVars.length > 0) {
-    // Find a good insertion point (before final comments or at end)
-    let insertIndex = lines.length;
+    // Check if the file has the new organized structure with clear section markers
+    const hasOrganizedStructure = lines.some(line => 
+      line.includes('PRIMITIVE TOKENS') && line.includes('============')
+    );
 
-    // Group new variables by category, separating primitive and semantic
-    const grouped = {};
-    newVars.forEach(v => {
-      const category = v.token.path[0];
-      const isSemantic = v.token.isSemantic || false;
-      
-      if (!grouped[category]) {
-        grouped[category] = {
-          primitive: [],
-          semantic: []
-        };
-      }
-      
-      if (isSemantic) {
-        grouped[category].semantic.push(v);
-      } else {
-        grouped[category].primitive.push(v);
-      }
-    });
+    if (hasOrganizedStructure) {
+      // Insert variables into their respective sections
+      insertVariablesIntoSections(lines, newVars);
+    } else {
+      // Fallback to old behavior: add at the end with grouped output
+      let insertIndex = lines.length;
 
-    // Add new variables grouped by category, with primitives before semantics
-    const newLines = [];
-    newLines.push('');
-    newLines.push('// Additional Figma tokens (new variables)');
-
-    for (const [category, categoryVars] of Object.entries(grouped)) {
-      // Output primitive tokens first
-      if (categoryVars.primitive.length > 0) {
-        newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
-        categoryVars.primitive.forEach(v => {
-          newLines.push(`$${v.name}: ${v.value};`);
-        });
-        newLines.push('');
-      }
-      
-      // Then output semantic tokens (which may reference primitives)
-      if (categoryVars.semantic.length > 0) {
-        if (categoryVars.primitive.length === 0) {
-          // If no primitives were output, add the category header
-          newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
+      // Group new variables by category, separating primitive and semantic
+      const grouped = {};
+      newVars.forEach(v => {
+        const category = v.token.path[0];
+        const isSemantic = v.token.isSemantic || false;
+        
+        if (!grouped[category]) {
+          grouped[category] = {
+            primitive: [],
+            semantic: []
+          };
         }
-        categoryVars.semantic.forEach(v => {
-          newLines.push(`$${v.name}: ${v.value};`);
-        });
-        newLines.push('');
-      }
-    }
+        
+        if (isSemantic) {
+          grouped[category].semantic.push(v);
+        } else {
+          grouped[category].primitive.push(v);
+        }
+      });
 
-    // Insert before the end
-    lines.splice(insertIndex, 0, ...newLines);
+      // Add new variables grouped by category, with primitives before semantics
+      const newLines = [];
+      newLines.push('');
+      newLines.push('// Additional Figma tokens (new variables)');
+
+      for (const [category, categoryVars] of Object.entries(grouped)) {
+        // Output primitive tokens first
+        if (categoryVars.primitive.length > 0) {
+          newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
+          categoryVars.primitive.forEach(v => {
+            newLines.push(`$${v.name}: ${v.value};`);
+          });
+          newLines.push('');
+        }
+        
+        // Then output semantic tokens (which may reference primitives)
+        if (categoryVars.semantic.length > 0) {
+          if (categoryVars.primitive.length === 0) {
+            // If no primitives were output, add the category header
+            newLines.push(`// ${category.charAt(0).toUpperCase() + category.slice(1)} tokens`);
+          }
+          categoryVars.semantic.forEach(v => {
+            newLines.push(`$${v.name}: ${v.value};`);
+          });
+          newLines.push('');
+        }
+      }
+
+      // Insert before the end
+      lines.splice(insertIndex, 0, ...newLines);
+    }
   }
 
   // Remove any existing backwards compatibility sections to prevent duplicates

@@ -55,7 +55,14 @@ jobs:
       - name: Transform Figma tokens to SASS variables
         id: transform
         run: |
-          echo "Running token transformation..."
+          echo "Running token transformation with organization..."
+          echo "Organization rules applied:"
+          echo "  - Tokens organized into PRIMITIVE and SEMANTIC sections"
+          echo "  - Categories: Colors, Spacing, Font Families, Font Sizes, etc."
+          echo "  - Primitive tokens: Direct values (hex, px, rem, etc.)"
+          echo "  - Semantic tokens: Variable references to primitives"
+          echo "  - Backwards compatibility: Legacy aliases at end of file"
+          echo ""
           npm run transform-tokens
 
           # Check if there are changes
@@ -80,7 +87,7 @@ jobs:
           VARS_UPDATED=$(echo "$TRANSFORM_RESULT" | jq -r '.variablesUpdated // 0')
           VARS_DELETED=$(echo "$TRANSFORM_RESULT" | jq -r '.variablesDeleted // 0')
           DELETED_MAPPED=$(echo "$TRANSFORM_RESULT" | jq -r '.deletedMappedCount // 0')
-          
+
           # Get deleted variable names if any
           DELETED_VARS_JSON=$(echo "$TRANSFORM_RESULT" | jq -r '.deletedVars // []')
           DELETED_VARS_LIST=""
@@ -102,7 +109,7 @@ jobs:
             grep "^+\$" | grep -v "^+++" | wc -l)
           REMOVED=$(git diff stories/assets/scss/_variables.scss | \
             grep "^-\$" | grep -v "^---" | wc -l)
-          
+
           # Use JSON values if available, otherwise use git diff
           if [ "$VARS_ADDED" != "0" ] || [ "$VARS_UPDATED" != "0" ] || [ "$VARS_DELETED" != "0" ]; then
             NEW_VARS=$VARS_ADDED
@@ -123,7 +130,7 @@ jobs:
 
           **Note**: ${DELETED_MAPPED} of these deleted variables have backwards compatibility aliases that map them to existing variables with matching values, ensuring existing code continues to work."
             fi
-            
+
             DELETED_SECTION="
 
           ### 🗑️ Deleted Variables
@@ -208,7 +215,7 @@ jobs:
           - Built production assets
 
           Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
-          
+
           git push origin
 
       # - name: Create branch for PR
