@@ -1,0 +1,452 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundation/Design Tokens" />
+
+<style>
+  {`
+  .token-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 2rem;
+    font-size: 0.875rem;
+  }
+  .token-table th {
+    background-color: var(--undpds-color-gray-200);
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--undpds-color-gray-400);
+    font-weight: 600;
+  }
+  .token-table td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--undpds-color-gray-400);
+    vertical-align: top;
+  }
+  .token-table tr:nth-child(even) td {
+    background-color: var(--undpds-color-gray-100);
+  }
+  .token-table code {
+    background-color: var(--undpds-color-gray-300);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+  .token-flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+  .token-flow-step {
+    background-color: var(--undpds-color-blue-100);
+    border: 1px solid var(--undpds-color-blue-400);
+    border-radius: 4px;
+    padding: 0.4rem 0.75rem;
+    font-weight: 600;
+  }
+  .token-flow-arrow {
+    color: var(--undpds-color-blue-600);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .token-swatch {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--undpds-color-gray-400);
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+  }
+  .callout {
+    background-color: var(--undpds-color-blue-100);
+    border-left: 4px solid var(--undpds-color-blue-600);
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9rem;
+  }
+  .callout-warning {
+    background-color: #fff9e6;
+    border-left: 4px solid var(--undpds-color-dark-yellow);
+  }
+  `}
+</style>
+
+# Design Tokens
+
+Design tokens are the single source of truth for all design decisions in the UNDP Design System. They ensure that values such as colours, typography, spacing, and borders remain consistent between Figma and the Storybook implementation.
+
+### Overview
+
+A design token is a named value that stores a design decision. Instead of hard-coding `#006EB5` wherever UNDP Blue is used, both designers and developers reference the same token — `color.brand` — which resolves to that hex value at build time. When a value changes in Figma, updating the token propagates the change automatically across all consuming surfaces.
+
+The design system uses the [W3C Design Token Community Group](https://design-tokens.github.io/community-group/format/) format stored in `figma-tokens/input/tokens.json` as the source of truth.
+
+### Keeping Storybook in Sync with Figma
+
+The synchronisation pipeline works as follows:
+
+<div className="token-flow">
+  <span className="token-flow-step">Figma</span>
+  <span className="token-flow-arrow">→</span>
+  <span className="token-flow-step">tokens.json</span>
+  <span className="token-flow-arrow">→</span>
+  <span className="token-flow-step">transform-tokens script</span>
+  <span className="token-flow-arrow">→</span>
+  <span className="token-flow-step">_variables.scss</span>
+  <span className="token-flow-arrow">→</span>
+  <span className="token-flow-step">CSS custom properties</span>
+  <span className="token-flow-arrow">→</span>
+  <span className="token-flow-step">Storybook / Production</span>
+</div>
+
+1. **Design update** — A designer exports tokens from Figma (using a Figma Tokens plugin or similar) and commits the updated `figma-tokens/input/tokens.json` to the `master` branch.
+2. **GitHub Actions trigger** — The workflow `.github/workflows/sync-figma-tokens.yml` runs automatically on every push to `master`/`main`.
+3. **Token transformation** — The script `scripts/transform-tokens.js` reads `tokens.json`, resolves all token references, applies type conversions, and writes updated SASS variables into `stories/assets/scss/_variables.scss`.
+4. **Pull request** — The workflow opens a PR against `develop` listing every variable that was added, changed, or deleted so the team can review the impact before merging.
+5. **Build** — After the PR is merged, the SASS variables are compiled into CSS custom properties that every component in Storybook and the CDN bundle can consume.
+
+You can also trigger the transformation locally:
+
+```bash
+# Transform tokens to SASS variables
+npm run transform-tokens
+
+# Build the asset bundle with updated tokens
+npm run build
+```
+
+---
+
+## Token Structure
+
+Tokens are split into two tiers: **primitive** tokens that hold raw values, and **semantic** tokens that reference primitives and carry design intent.
+
+### Primitive Tokens
+
+Primitive tokens define the complete palette of available values. They are the raw atoms from which semantic tokens are built.
+
+| Category | Token example | SASS variable | Value |
+|---|---|---|---|
+| Color | `primitive.color.blue.600` | `$color-blue-600` | `#006EB5` |
+| Color | `primitive.color.gray.300` | `$color-gray-300` | `#EDEFF0` |
+| Spacing | `primitive.spacing.008` | `$spacing-008` | `8px` |
+| Font family | `primitive.fontfamily.proximanova` | `$font-family-proximanova` | `'Proxima Nova'` |
+| Font size | `primitive.fontsize.20` | `$font-size-20` | `1.25rem` |
+| Font weight | `primitive.fontweight.bold` | `$font-weight-bold` | `700` |
+| Line height | `primitive.lineheight.130%` | `$line-height-130` | `130%` |
+| Text case | `primitive.textcase.uppercase` | `$text-case-uppercase` | `uppercase` |
+
+Primitive tokens in `tokens.json` look like this:
+
+```json
+{
+  "primitive": {
+    "color": {
+      "blue": {
+        "600": { "$type": "color", "$value": "#006EB5" }
+      }
+    },
+    "spacing": {
+      "008": { "$type": "spacing", "$value": "8px" }
+    }
+  }
+}
+```
+
+### Semantic Tokens
+
+Semantic tokens give meaning to primitive values. They describe *how* a value is used rather than *what* the value is, making it possible to swap the underlying palette without touching component code.
+
+| Category | Token example | SASS variable | References |
+|---|---|---|---|
+| Color – brand | `semantic.color.brand` | `$color-brand` | `$color-blue-600` |
+| Color – text | `semantic.color.text-default` | `$color-text-default` | `$color-black` |
+| Color – action | `semantic.color.action-primary` | `$color-action-primary` | `$color-red-600` |
+| Color – surface | `semantic.color.surface-default` | `$color-surface-default` | `$color-gray-200` |
+| Color – border | `semantic.color.border-default` | `$color-border-default` | `$color-black` |
+| Font family | `semantic.fontfamily.primary` | `$font-family-primary` | `$font-family-proximanova` |
+| Font size | `semantic.fontsize.body` | `$font-size-body-default` | `$font-size-20` |
+| Line height | `semantic.lineheight.body` | `$line-height-body` | `$line-height-130` |
+
+Semantic tokens in `tokens.json` reference primitives using curly-brace notation:
+
+```json
+{
+  "semantic": {
+    "color": {
+      "brand": { "$type": "color", "$value": "{color.blue.600}" },
+      "text-default": { "$type": "color", "$value": "{color.black}" }
+    },
+    "fontfamily": {
+      "primary": { "$value": "{fontfamily.proximanova}" }
+    }
+  }
+}
+```
+
+The transformation script resolves these references at build time. In `_variables.scss`, **semantic tokens are written as SASS variable references** so that updating a primitive automatically cascades to all semantics that depend on it:
+
+```scss
+// Primitive
+$color-blue-600: #006EB5;
+
+// Semantic – references the primitive variable, not the raw hex value
+$color-brand: $color-blue-600;
+```
+
+---
+
+## Transformation Process
+
+The script `scripts/transform-tokens.js` converts `tokens.json` into SASS variables in `stories/assets/scss/_variables.scss`. The key rules are:
+
+### Variable Naming
+
+Tokens are converted to kebab-case SASS variables by joining path segments with hyphens and applying property-specific prefixes:
+
+| Token path | SASS variable |
+|---|---|
+| `color.blue.600` | `$color-blue-600` |
+| `fontfamily.proximanova` | `$font-family-proximanova` |
+| `fontsize.body.default` | `$font-size-body-default` |
+| `lineheight.100%` | `$line-height-100` (special characters removed) |
+| `fontweight.bold` | `$font-weight-bold` |
+| `textcase.uppercase` | `$text-case-uppercase` |
+| `spacing.008` | `$spacing-008` |
+
+### Type Conversions
+
+| Token type | Input | Output |
+|---|---|---|
+| Color | `#006EB5` | `#006EB5` (unchanged) |
+| Font size | `20px` | `1.25rem` (÷ 16) |
+| Spacing | `8px` | `8px` (unchanged) |
+| Line height | `130%` | `130%` (unchanged) |
+| Font family | `Proxima Nova` | `'Proxima Nova'` (quoted) |
+
+### Merging Strategy
+
+The script performs a non-destructive merge:
+
+- ✅ Existing variables that match a token name are **updated** with the Figma value (Figma takes precedence).
+- ✅ New token variables are **appended** to the file.
+- ✅ Variables not present in `tokens.json` (e.g. `$img-path`) are **preserved unchanged**.
+- ✅ No duplicate variables are ever created.
+
+---
+
+## Spacing — Dual Notation System
+
+Spacing is the only variable category that intentionally allows two notations for the same pixel dimension, supporting both a semantic rank scale and exact Figma pixel values.
+
+### Rank-based notation (2 digits)
+
+Semantic scale steps numbered `01`–`13` expressed in `rem`:
+
+```scss
+$spacing-01: 0.125rem;  // 2px
+$spacing-02: 0.25rem;   // 4px
+$spacing-03: 0.5rem;    // 8px
+$spacing-04: 0.75rem;   // 12px
+$spacing-05: 1rem;      // 16px
+$spacing-06: 1.5rem;    // 24px
+$spacing-07: 2rem;      // 32px
+$spacing-08: 2.5rem;    // 40px
+$spacing-09: 3rem;      // 48px
+$spacing-10: 4rem;      // 64px
+$spacing-11: 5rem;      // 80px
+$spacing-12: 6rem;      // 96px
+$spacing-13: 10rem;     // 160px
+```
+
+### Pixel-based notation (3 digits)
+
+Exact pixel values from Figma, zero-padded to 3 digits:
+
+```scss
+$spacing-002: 2px;
+$spacing-004: 4px;
+$spacing-008: 8px;
+$spacing-016: 16px;
+$spacing-036: 2.25rem;
+$spacing-160: 160px;
+```
+
+Both notations can be used in components. Prefer the **rank-based** notation for semantic meaning and the **pixel-based** notation when you need to match an exact Figma specification.
+
+---
+
+## Backwards Compatibility
+
+When spacing variables are renamed or migrated (e.g. `$spacing-36` → `$spacing-036`), the transformation script automatically adds backwards compatibility aliases at the end of `_variables.scss`:
+
+```scss
+// New 3-digit notation (primary)
+$spacing-036: 2.25rem;
+$spacing-044: 2.75rem;
+$spacing-050: 3.125rem;
+$spacing-060: 3.75rem;
+$spacing-070: 4.375rem;
+$spacing-076: 4.75rem;
+$spacing-090: 5.625rem;
+
+// Backwards compatibility aliases — existing code continues to work
+$spacing-36: $spacing-036;
+$spacing-44: $spacing-044;
+$spacing-50: $spacing-050;
+$spacing-60: $spacing-060;
+$spacing-70: $spacing-070;
+$spacing-76: $spacing-076;
+$spacing-90: $spacing-090;
+```
+
+Aliases are also created when a token is removed from Figma but an existing SASS variable carries the same value. This prevents silent breakage in components that rely on the old variable name.
+
+<div className="callout callout-warning">
+  <strong>Note:</strong> Backwards compatibility aliases are a safety net, not a long-term strategy. New code should always use the current canonical variable name (e.g. <code>$spacing-036</code>) rather than the deprecated alias.
+</div>
+
+---
+
+## CSS Custom Properties
+
+All SASS variables in `_variables.scss` are compiled to CSS custom properties (also known as CSS variables) in `_custom_properties.scss`. The prefix `--undpds-` is added to every property name to avoid collisions with third-party stylesheets.
+
+```scss
+// SASS input (_variables.scss)
+$color-black: #000000;
+$color-border-default: $color-black;   // SASS reference
+$font-size-body-default: 1.25rem;
+
+// CSS output (_custom_properties.scss)
+:root {
+  --undpds-color-black: #000000;
+  --undpds-color-border-default: #000000;   // reference resolved by SASS compiler
+  --undpds-font-size-body-default: 1.25rem;
+}
+```
+
+SASS variable references are **resolved during compilation**, so the CSS custom property always contains the concrete value rather than another variable reference. This means you can safely use CSS custom properties in any context, including plain HTML with no SASS tooling.
+
+The design system exposes **217 CSS custom properties** across the following categories:
+
+<table className="token-table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Count</th>
+      <th>Example property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Color</td>
+      <td>62</td>
+      <td><code>--undpds-color-brand</code>, <code>--undpds-color-text-default</code></td>
+    </tr>
+    <tr>
+      <td>Spacing</td>
+      <td>42</td>
+      <td><code>--undpds-spacing-05</code>, <code>--undpds-spacing-036</code></td>
+    </tr>
+    <tr>
+      <td>Font family</td>
+      <td>14</td>
+      <td><code>--undpds-font-family-primary</code></td>
+    </tr>
+    <tr>
+      <td>Font size</td>
+      <td>29</td>
+      <td><code>--undpds-font-size-body-default</code>, <code>--undpds-font-size-heading-large</code></td>
+    </tr>
+    <tr>
+      <td>Font weight</td>
+      <td>10</td>
+      <td><code>--undpds-font-weight-bold</code>, <code>--undpds-font-weight-regular</code></td>
+    </tr>
+    <tr>
+      <td>Line height</td>
+      <td>6</td>
+      <td><code>--undpds-line-height-body</code>, <code>--undpds-line-height-100</code></td>
+    </tr>
+    <tr>
+      <td>Text case</td>
+      <td>2</td>
+      <td><code>--undpds-text-case-uppercase</code></td>
+    </tr>
+    <tr>
+      <td>Border</td>
+      <td>1</td>
+      <td><code>--undpds-border-default</code></td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td>51</td>
+      <td>SDG colours, gradients, widths, heights</td>
+    </tr>
+  </tbody>
+</table>
+
+### Usage
+
+Tokens can be consumed via SASS variables or CSS custom properties depending on your build setup:
+
+**In SASS:**
+```scss
+.my-component {
+  color: $color-brand;
+  margin-bottom: $spacing-06;
+  font-family: $font-family-primary;
+  font-size: $font-size-body-default;
+}
+```
+
+**In CSS (no build step required):**
+```css
+.my-component {
+  color: var(--undpds-color-brand);
+  margin-bottom: var(--undpds-spacing-06);
+  font-family: var(--undpds-font-family-primary);
+  font-size: var(--undpds-font-size-body-default);
+}
+```
+
+Include the base stylesheet from the CDN to get all CSS custom properties in your project:
+
+```html
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" />
+```
+
+---
+
+## Updating Tokens
+
+### Via Figma export (recommended)
+
+1. Export tokens from Figma using the Tokens Studio plugin or equivalent.
+2. Replace `figma-tokens/input/tokens.json` with the exported file.
+3. Commit and push to the `master` branch.
+4. The GitHub Actions workflow creates a PR against `develop` — review and merge it.
+
+### Manual update
+
+1. Edit `figma-tokens/input/tokens.json` directly.
+2. Run `npm run transform-tokens` to preview the SASS output locally.
+3. Run `npm run build` to verify the build compiles without errors.
+4. Commit and push; the workflow will still open a PR for team review.
+
+### Validation
+
+The transformation script validates the token file before writing any output:
+
+- ✅ Valid JSON structure
+- ✅ All token references can be resolved
+- ✅ No circular references
+- ✅ SASS syntax compiles successfully
+
+Run `npm run validate-tokens` to check the token file without writing any output.
