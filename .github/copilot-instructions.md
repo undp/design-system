@@ -1,6 +1,6 @@
 # GitHub Copilot Repository Instructions
 
-These instructions guide AI code generation (Copilot / Chat) to produce consistent, high‑quality code for this UNDP Design System. The tech stack centers on React (v19), Storybook 9 (Webpack 5 builder), SCSS, and a hybrid of authored JS utilities plus asset pipeline.
+These instructions guide AI code generation (Copilot / Chat) to produce consistent, high‑quality code for this UNDP Design System. The tech stack centers on React (v19), Storybook 10 (Webpack 5 builder), SCSS, and a hybrid of authored JS utilities plus asset pipeline.
 
 ---
 ## Core Principles

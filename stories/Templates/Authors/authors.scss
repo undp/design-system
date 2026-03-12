@@ -1,4 +1,3 @@
-@import '../../assets/scss/variables';
 @import '../../assets/scss/mixins';
 @import '../../assets/scss/breakpoints';
 
@@ -18,10 +17,10 @@
   }
 
   .breadcrumb {
-    margin-top: $spacing-11;
+    margin-top: var(--undpds-spacing-11);
 
     @include devicebreak(small) {
-      margin-top: $spacing-06;
+      margin-top: var(--undpds-spacing-06);
     }
   }
 
@@ -55,7 +54,7 @@
         display: block;
 
         .expand-search {
-          margin: $spacing-06 0;
+          margin: var(--undpds-spacing-06) 0;
         }
       }
     }
@@ -74,8 +73,8 @@
     }
 
     &.close {
-      background-color: $color-gray-300;
-      color: $color-black;
+      background-color: var(--undpds-color-gray-300);
+      color: var(--undpds-color-black);
       font-size: 0;
 
       span {
@@ -92,17 +91,17 @@
     margin: 6.125rem 0 4.1875rem;
 
     @include devicebreak(small) {
-      margin: 3.3125rem 0 $spacing-10;
+      margin: 3.3125rem 0 var(--undpds-spacing-10);
     }
   }
 
   .author-content {
-    margin-bottom: $spacing-136;
-    margin-top: $spacing-11;
+    margin-bottom: var(--undpds-spacing-136);
+    margin-top: var(--undpds-spacing-11);
   }
 
   .author-card {
-    margin-top: $spacing-76;
+    margin-top: var(--undpds-spacing-76);
 
     @include devicebreak(small) {
       margin-top: 0;
@@ -116,14 +115,14 @@
       }
 
       h6 {
-        font-size: $font-size-16;
+        font-size: var(--undpds-font-size-16);
 
         @include devicebreak(small) {
           h6 {
-            font-size: $font-size-16;
+            font-size: var(--undpds-font-size-16);
 
             @include devicebreak(small) {
-              font-size: 0.875rem;
+              font-size: var(--undpds-font-size-14);
             }
           }
         }

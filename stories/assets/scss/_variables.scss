@@ -276,7 +276,7 @@ $line-height-heading: $line-height-110;
 $line-height-body: $line-height-138;
 
 /* Spacing - Semantic */
-$spacing-gutter: $spacing-06;
+$spacing-gutter: $spacing-024;
 
 
 /* ============================================================================
@@ -305,16 +305,6 @@ $spacing-10: $spacing-064;
 $spacing-11: $spacing-080;
 $spacing-12: $spacing-096;
 $spacing-13: $spacing-160;
-
-// Deprecated: 2-digit spacing notation pointing to new 3-digit notation
-$spacing-036: $spacing-036;
-$spacing-044: $spacing-044;
-$spacing-050: $spacing-050;
-$spacing-060: $spacing-060;
-$spacing-070: $spacing-070;
-$spacing-076: $spacing-076;
-$spacing-090: $spacing-090;
-
 
 // Backwards compatibility aliases for spacing variables
 // Old 2-digit notation pointing to new 3-digit notation
