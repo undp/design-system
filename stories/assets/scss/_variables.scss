@@ -1,12 +1,22 @@
+/* ============================================================================
+   Asset Paths
+   ============================================================================ */
+
 // Image variables
 $img-path: '../../../assets/images';
 $img-path-Icon: '../../../assets/icons';
 $img-path-Iconback: '../../assets/icons';
 $img-path-Iconfourback: '../../../../assets/icons';
 
-// Colors
+
+/* ============================================================================
+   PRIMITIVE TOKENS - Direct value assignments
+   ============================================================================ */
+
+/* Colors - Primitive */
 $color-black: #000000;
 $color-white: #ffffff;
+
 $color-blue-100: #B5D5F5;
 $color-blue-200: #94C4F5;
 $color-blue-300: #6BABEB;
@@ -14,82 +24,52 @@ $color-blue-400: #4F95DD;
 $color-blue-500: #3288CE;
 $color-blue-600: #006EB5;
 $color-blue-700: #1F5A95;
+
 $color-gray-100: #FAFAFA;
 $color-gray-200: #F7F7F7;
 $color-gray-300: #EDEFF0;
 $color-gray-400: #D4D6D8;
 $color-gray-500: #A9B1B7;
-$color-light-yellow: #ffe17e;
-$color-yellow: #ffeb00;
-$color-dark-yellow: #fbc412;
-$color-light-red: #ffbcb7;
-$color-red: #ee402d;
-$color-dark-red: #d12800;
-$color-light-green: #b8ecb6;
-$color-green: #6de354;
-$color-dark-green: #59ba47;
-$color-light-azure: #a2daf3;
-$color-azure: #60d4f2;
-$color-dark-azure: #00c1ff;
+$color-gray-530: #84929D;
+$color-gray-560: #677383;
+$color-gray-600: #55606E;
+$color-gray-700: #232E3D;
+
+$color-yellow-200: #FFE17E;
+$color-yellow-400: #FFEB00;
+$color-yellow-600: #FBC412;
+
+$color-red-200: #FFBCB7;
+$color-red-400: #EE402D;
+$color-red-600: #D12800;
+
+$color-green-200: #B8ECB6;
+$color-green-400: #6DE354;
+$color-green-600: #59BA47;
+
+$color-azure-200: #A2DAF3;
+$color-azure-400: #60D4F2;
+$color-azure-600: #00C1FF;
+
+// Legacy color names (deprecated, use new naming)
+$color-light-yellow: $color-yellow-200;
+$color-yellow: $color-yellow-400;
+$color-dark-yellow: $color-yellow-600;
+$color-light-red: $color-red-200;
+$color-red: $color-red-400;
+$color-dark-red: $color-red-600;
+$color-light-green: $color-green-200;
+$color-green: $color-green-400;
+$color-dark-green: $color-green-600;
+$color-light-azure: $color-azure-200;
+$color-azure: $color-azure-400;
+$color-dark-azure: $color-azure-600;
 $color-light-pink: #ffb4ae;
 $color-silvery-moonlight: #ced0d3;
 $color-shuttle-gray: #55606f;
 $color-ebony-clay: #232e3e;
 
-// Font sizes
-$font-size-14: 0.875rem;
-$font-size-16: 1rem;
-$font-size-20: 1.25rem;
-$font-size-24: 1.5rem;
-$font-size-32: 2rem;
-
-// Font families
-// Local fonts
-$Font-Family-ProximaNova: 'ProximaNova', sans-serif;
-$Font-Family-SohneBreit: 'SohneBreit', $Font-Family-ProximaNova;
-$Font-Family-UNBangla: 'UNBangla', sans-serif;
-// Remote fonts, require additional setup
-// https://design.undp.org/?path=/docs/getting-started-internationalization--docs
-$Font-Family-NotoSans: 'Noto Sans', sans-serif;
-$Font-Family-NotoSans-Arabic: 'Noto Sans Arabic', sans-serif;
-$Font-Family-NotoSans-Burmese: 'Noto Sans Myanmar', sans-serif;
-$Font-Family-NotoSans-Chinese: 'Noto Sans SC', sans-serif;
-$Font-Family-NotoSans-Japanese: 'Noto Sans JP', sans-serif;
-$Font-Family-NotoSans-Georgian: 'Noto Sans Georgian', sans-serif;
-$Font-Family-NotoSans-Khmer: 'Noto Sans Khmer', sans-serif;
-$Font-Family-NotoSans-Korean: 'Noto Sans KR', sans-serif;
-$Font-Family-NotoSans-Thai: 'Noto Sans Thai', sans-serif;
-
-// Spacing variables
-$spacing-036: 2.25rem;
-$spacing-044: 2.75rem;
-$spacing-050: 3.125rem;
-$spacing-060: 3.75rem;
-$spacing-070: 4.375rem;
-$spacing-076: 4.75rem;
-$spacing-090: 5.625rem;
-
-// Width variables
-$width-150: 9.375rem;
-$width-180: 11.25rem;
-$width-600: 37.5rem;
-$width-705: 44.0625rem;
-$width-840: 52.5rem;
-$width-900: 56.25rem;
-$width-1096: 68.5rem;
-$width-1440: 90rem;
-
-// Header height
-$header-height-xlarge: 115px;
-$header-height-medium: 75px;
-
-// Gradient color list
-$yellow-gradient: $color-yellow 30%, rgba(255, 235, 0, 0) 110%;
-$red-gradient: $color-red 30%, rgb(240, 49, 49, 0) 110%;
-$green-gradient: $color-green 30%, rgba(0, 0, 0, 0) 110%;
-$blue-gradient: $color-azure 30%, rgb(101, 204, 244, 0) 110%;
-
-//SDG color
+// SDG Colors
 $sdg-red: #e5243b;
 $sdg-mustard: #dda63a;
 $sdg-kelly-green: #4c9f38;
@@ -108,7 +88,7 @@ $sdg-lime-green: #56c02b;
 $sdg-royal-blue: #00689d;
 $sdg-navy-blue: #19486a;
 
-//SDG hover color
+// SDG Hover Colors
 $sdg-hover-red: #dc9099;
 $sdg-hover-mustard: #d3bb8a;
 $sdg-hover-kelly-green: #9fd092;
@@ -127,16 +107,7 @@ $sdg-hover-lime-green: #abce9e;
 $sdg-hover-royal-blue: #748f9d;
 $sdg-hover-navy-blue: #a2c2d8;
 
-$author-image-radius: 50%;
-
-// Language selectors
-$cyrillic: ":lang(bg),:lang(be),:lang(kk),:lang(ky),:lang(mk),:lang(mn),:lang(ru),:lang(sr),:lang(uk)";
-
-/* variables end */
-
-
-// Additional Figma tokens (new variables)
-// Spacing tokens
+/* Spacing - Primitive */
 $spacing-002: 2px;
 $spacing-004: 4px;
 $spacing-008: 8px;
@@ -151,7 +122,33 @@ $spacing-080: 80px;
 $spacing-096: 96px;
 $spacing-160: 160px;
 
-// Fontfamily tokens
+$spacing-036: 2.25rem;
+$spacing-044: 2.75rem;
+$spacing-050: 3.125rem;
+$spacing-060: 3.75rem;
+$spacing-070: 4.375rem;
+$spacing-076: 4.75rem;
+$spacing-090: 5.625rem;
+
+/* Font Families - Primitive */
+// Local fonts
+$Font-Family-ProximaNova: 'ProximaNova', sans-serif;
+$Font-Family-SohneBreit: 'SohneBreit', $Font-Family-ProximaNova;
+$Font-Family-UNBangla: 'UNBangla', sans-serif;
+
+// Remote fonts (require additional setup)
+// https://design.undp.org/?path=/docs/getting-started-internationalization--docs
+$Font-Family-NotoSans: 'Noto Sans', sans-serif;
+$Font-Family-NotoSans-Arabic: 'Noto Sans Arabic', sans-serif;
+$Font-Family-NotoSans-Burmese: 'Noto Sans Myanmar', sans-serif;
+$Font-Family-NotoSans-Chinese: 'Noto Sans SC', sans-serif;
+$Font-Family-NotoSans-Japanese: 'Noto Sans JP', sans-serif;
+$Font-Family-NotoSans-Georgian: 'Noto Sans Georgian', sans-serif;
+$Font-Family-NotoSans-Khmer: 'Noto Sans Khmer', sans-serif;
+$Font-Family-NotoSans-Korean: 'Noto Sans KR', sans-serif;
+$Font-Family-NotoSans-Thai: 'Noto Sans Thai', sans-serif;
+
+// Modern lowercase naming convention
 $font-family-proximanova: 'ProximaNova', sans-serif;
 $font-family-sohnebreit: 'SohneBreit', $Font-Family-ProximaNova;
 $font-family-notosans: 'Noto Sans', sans-serif;
@@ -162,11 +159,16 @@ $font-family-notosans-japanese: 'Noto Sans JP', sans-serif;
 $font-family-notosans-georgian: 'Noto Sans Georgian', sans-serif;
 $font-family-notosans-khmer: 'Noto Sans Khmer', sans-serif;
 $font-family-notosans-korean: 'Noto Sans KR', sans-serif;
-$font-family-primary: $font-family-proximanova;
-$font-family-secondary: $font-family-sohnebreit;
 
-// Fontsize tokens
+/* Font Sizes - Primitive */
+$font-size-12: 0.75rem;
+$font-size-14: 0.875rem;
+$font-size-16: 1rem;
+$font-size-20: 1.25rem;
+$font-size-24: 1.5rem;
 $font-size-30: 1.875rem;
+$font-size-32: 2rem;
+$font-size-36: 2.25rem;
 $font-size-40: 2.5rem;
 $font-size-48: 3rem;
 $font-size-56: 3.5rem;
@@ -175,84 +177,121 @@ $font-size-72: 4.5rem;
 $font-size-80: 5rem;
 $font-size-96: 6rem;
 $font-size-100: 6.25rem;
-$font-size-body-default: $font-size-20;
-$font-size-body-small: $font-size-16;
-$font-size-heading-xxlarge: $font-size-80;
-$font-size-heading-xlarge: $font-size-64;
-$font-size-heading-large: $font-size-48;
-$font-size-heading-medium: $font-size-32;
-$font-size-heading-small: $font-size-24;
-$font-size-heading-xsmall: $font-size-16;
-$font-size-display-xxlarge: $font-size-100;
-$font-size-display-xlarge: $font-size-80;
-$font-size-display-large: $font-size-56;
 
-// Color tokens
-$color-yellow-200: #FFE17E;
-$color-yellow-400: #FFEB00;
-$color-yellow-600: #FBC412;
-$color-red-200: #FFBCB7;
-$color-red-400: #EE402D;
-$color-red-600: #D12800;
-$color-green-200: #B8ECB6;
-$color-green-400: #6DE354;
-$color-green-600: #59BA47;
-$color-azure-200: #A2DAF3;
-$color-azure-400: #60D4F2;
-$color-azure-600: #00C1FF;
+/* Font Weights - Primitive */
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+/* Line Heights - Primitive */
+$line-height-100: 100%;
+$line-height-110: 110%;
+$line-height-138: 138%;
+
+/* Text Case - Primitive */
+$text-case-none: none;
+$text-case-uppercase: uppercase;
+
+/* Border - Primitive */
+$border-default: $spacing-002;
+
+/* Other Primitives */
+$paragraphspacing-12: 12px;
+$paragraphspacing-16: 16px;
+$author-image-radius: 50%;
+$cyrillic: ":lang(bg),:lang(be),:lang(kk),:lang(ky),:lang(mk),:lang(mn),:lang(ru),:lang(sr),:lang(uk)";
+
+/* Gradients - Primitive */
+$yellow-gradient: $color-yellow 30%, rgba(255, 235, 0, 0) 110%;
+$red-gradient: $color-red 30%, rgb(240, 49, 49, 0) 110%;
+$green-gradient: $color-green 30%, rgba(0, 0, 0, 0) 110%;
+$blue-gradient: $color-azure 30%, rgb(101, 204, 244, 0) 110%;
+
+/* Width - Primitive */
+$width-150: 9.375rem;
+$width-180: 11.25rem;
+$width-600: 37.5rem;
+$width-705: 44.0625rem;
+$width-840: 52.5rem;
+$width-900: 56.25rem;
+$width-1096: 68.5rem;
+$width-1440: 90rem;
+
+/* Header Heights - Primitive */
+$header-height-xlarge: 115px;
+$header-height-medium: 75px;
+
+
+/* ============================================================================
+   SEMANTIC TOKENS - Variable references and derived values
+   ============================================================================ */
+
+/* Colors - Semantic */
 $color-text-default: $color-black;
 $color-text-inverse: $color-white;
 $color-accent: $color-yellow-400;
 $color-brand: $color-blue-600;
 $color-action-primary: $color-red-600;
+$color-action-primary-default: $color-red-600;
+$color-action-primary-hover: $color-red-400;
 $color-action-secondary: $color-blue-600;
+$color-action-secondary-default: $color-blue-600;
+$color-action-secondary-hover: $color-blue-500;
 $color-surface-default: $color-gray-200;
+$color-surface-hover: $color-gray-300;
 $color-background-default: $color-white;
 $color-border-default: $color-black;
 $color-border-subtle: $color-gray-400;
 $color-border-inverse: $color-white;
 
-// Sizing tokens
+/* Font Families - Semantic */
+$font-family-primary: $font-family-proximanova;
+$font-family-secondary: $font-family-sohnebreit;
 
-// Lineheight tokens
-$line-height-100: 100%;
-$line-height-110: 110%;
-$line-height-138: 138%;
-$line-height-body: $line-height-138;
-$line-height-heading: $line-height-110;
-$line-height-display: $line-height-100;
+/* Font Sizes - Semantic */
+$font-size-body-small: $font-size-16;
+$font-size-body-default: $font-size-20;
+$font-size-heading-xsmall: $font-size-16;
+$font-size-heading-small: $font-size-24;
+$font-size-heading-medium: $font-size-32;
+$font-size-heading-large: $font-size-48;
+$font-size-heading-xlarge: $font-size-64;
+$font-size-heading-xxlarge: $font-size-80;
+$font-size-display-large: $font-size-56;
+$font-size-display-xlarge: $font-size-80;
+$font-size-display-xxlarge: $font-size-100;
 
-// Fontweight tokens
-$font-weight-bold: 700;
-$font-weight-semibold: 600;
-$font-weight-regular: 400;
-
-// Textcase tokens
-$text-case-none: none;
-$text-case-uppercase: uppercase;
-
-// Border tokens
-
-
-
-// Fontweight tokens
-$font-weight-extrabold: 800;
+/* Font Weights - Semantic */
 $font-weight-body-default: $font-weight-regular;
 $font-weight-body-bold: $font-weight-bold;
-$font-weight-display-bold: $font-weight-extrabold;
-$font-weight-display-default: $font-weight-body-bold;
-$font-weight-heading-bold: $font-weight-bold;
 $font-weight-heading-default: $font-weight-semibold;
+$font-weight-heading-bold: $font-weight-bold;
+$font-weight-display-default: $font-weight-body-bold;
+$font-weight-display-bold: $font-weight-extrabold;
 
-// Color tokens
-$color-action-primary-default: $color-red-600;
-$color-action-primary-hover: $color-red-400;
-$color-action-secondary-default: $color-blue-600;
-$color-action-secondary-hover: $color-blue-500;
+/* Line Heights - Semantic */
+$line-height-display: $line-height-100;
+$line-height-heading: $line-height-110;
+$line-height-body: $line-height-138;
+
+/* Spacing - Semantic */
+$spacing-gutter: $spacing-06;
 
 
+/* ============================================================================
+   BACKWARDS COMPATIBILITY - Preserved for legacy code
+   Do not delete without updating referencing SCSS files
+   ============================================================================ */
+
+// Deprecated: Legacy color values, use mapping above
+
+// Deprecated: Font size aliases
 $font-size-25: $font-size-24;
 $font-size-26: $font-size-24;
+
+// Deprecated: Short-form spacing (rank-based notation)
+// Maps to new 3-digit pixel notation: $spacing-01 → $spacing-002
 $spacing-01: $spacing-002;
 $spacing-02: $spacing-004;
 $spacing-03: $spacing-008;
@@ -267,81 +306,15 @@ $spacing-11: $spacing-080;
 $spacing-12: $spacing-096;
 $spacing-13: $spacing-160;
 
-// PRESERVE: Backwards compatibility - do not delete
-// Variables removed from Figma tokens but still referenced in SCSS files
-// Using original values since no matching variables of the same type exist
-$color-blue-800: #0468b1;
-$spacing-100: 6.25rem;
-$spacing-136: 8.5rem;
-$spacing-320: 20rem;
-$spacing-330: 20.625rem;
-$spacing-400: 25rem;
+// Deprecated: 2-digit spacing notation pointing to new 3-digit notation
+$spacing-036: $spacing-036;
+$spacing-044: $spacing-044;
+$spacing-050: $spacing-050;
+$spacing-060: $spacing-060;
+$spacing-070: $spacing-070;
+$spacing-076: $spacing-076;
+$spacing-090: $spacing-090;
 
-
-
-
-
-
-// Color tokens
-$color-surface-hover: $color-gray-300;
-
-
-
-// Spacing tokens
-$spacing-gutter: $spacing-06;
-
-
-
-// Fontsize tokens
-$font-size-12: 0.75rem;
-
-// Paragraphspacing tokens
-$paragraphspacing-12: 12px;
-$paragraphspacing-16: 16px;
-
-
-$border-default: $spacing-002;
-
-
-// Fontsize tokens
-$font-size-36: 2.25rem;
-
-
-
-
-
-
-
-
-
-
-
-
-// Color tokens
-
-
-$color-gray-600: #55606E;
-$color-gray-700: #232E3D;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Color tokens
-$color-gray-530: #84929D;
-$color-gray-560: #677383;
-
-
-$color-gray-800: $color-gray-600;
-$color-gray-900: $color-gray-700;
 
 // Backwards compatibility aliases for spacing variables
 // Old 2-digit notation pointing to new 3-digit notation
@@ -352,3 +325,7 @@ $spacing-60: $spacing-060;
 $spacing-70: $spacing-070;
 $spacing-76: $spacing-076;
 $spacing-90: $spacing-090;
+
+// Backwards compatibility aliases for deleted variables
+// Variables removed from Figma tokens but mapped to existing equivalents
+$spacing-100: $font-size-100;
