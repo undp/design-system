@@ -123,7 +123,7 @@ $colors: (
     padding: var(--undpds-spacing-09);
 
     @include devicebreak(medium) {
-      max-width: var(--undpds-spacing-330);
+      max-width: 20.625rem;
 
       h4 {
         font-weight: 600;
