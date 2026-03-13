@@ -1,8 +1,6 @@
-@import '../../assets/scss/variables';
-
 /* stats grid start */
 .stats-grid {
-  background-color: $color-gray-700;
+  background-color: var(--undpds-color-gray-700);
 }
 
 /* stats grid end */

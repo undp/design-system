@@ -1,14 +1,12 @@
-@import '../../../assets/scss/variables';
-
 /* post start */
 .post-wrapper {
   h2 {
-    margin-bottom: $spacing-05;
+    margin-bottom: var(--undpds-spacing-05);
   }
 
   h5 {
-    color: $color-gray-600;
-    margin-bottom: $spacing-09;
+    color: var(--undpds-color-gray-600);
+    margin-bottom: var(--undpds-spacing-09);
   }
 }
 
