@@ -22,7 +22,7 @@
     }
 
     &:focus {
-      box-shadow: 0 0 4px var(--undpds-color-blue-800);
+      box-shadow: 0 0 4px var(--undpds-color-blue-600);
       outline: none;
     }
 
@@ -81,7 +81,7 @@
 
   &--toggled {
     .switch__track {
-      background-color: var(--undpds-color-blue-800);
+      background-color: var(--undpds-color-blue-600);
     }
 
     .switch__icon {

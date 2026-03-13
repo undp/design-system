@@ -1,0 +1,373 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundation/Design Tokens" />
+
+<style>
+  {`
+  .token-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 2rem;
+    font-size: 0.875rem;
+  }
+  .token-table th {
+    background-color: var(--undpds-color-gray-200);
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--undpds-color-gray-400);
+    font-weight: 600;
+  }
+  .token-table td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--undpds-color-gray-400);
+    vertical-align: top;
+  }
+  .token-table tr:nth-child(even) td {
+    background-color: var(--undpds-color-gray-100);
+  }
+  .token-table code {
+    background-color: var(--undpds-color-gray-300);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+  .callout {
+    background-color: var(--undpds-color-blue-100);
+    border-left: 4px solid var(--undpds-color-blue-600);
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9rem;
+  }
+  .callout-warning {
+    background-color: #fff9e6;
+    border-left: 4px solid var(--undpds-color-dark-yellow);
+  }
+  `}
+</style>
+
+# Design Tokens
+
+Design tokens are named values that store design decisions — colors, typography, spacing, borders — and serve as the single source of truth shared between Figma and the UNDP Design System. As a web developer, you consume these tokens through SASS variables or CSS custom properties; you never need to hard-code raw values such as `#006EB5` or `1.25rem`.
+
+### Overview
+
+A design token is a named value that stores a design decision. Instead of hard-coding `#006EB5` wherever UNDP Blue is used, components reference the semantic token `$color-brand` (or its CSS custom property `--undpds-color-brand`). When the brand colour is updated in Figma and the tokens are synchronised, every component reflects the change automatically.
+
+The design system uses the [W3C Design Token Community Group](https://design-tokens.github.io/community-group/format/) format stored in `figma-tokens/input/tokens.json` as the source of truth.
+
+### Keeping Storybook in Sync with Figma
+
+When `figma-tokens/input/tokens.json` is updated in the `update-figma-tokens` branch, a GitHub Actions workflow transforms those tokens into SASS variables (`stories/assets/scss/_variables.scss`) and opens a pull request against `develop` for team review. Once merged, the variables are compiled into CSS custom properties and included in the CDN bundle.
+
+---
+
+## Token Structure
+
+Tokens are split into two tiers: **primitive** tokens that hold raw values, and **semantic** tokens that reference primitives and carry design intent.
+
+### Primitive Tokens
+
+Primitive tokens define the complete palette of available values. They are the raw atoms from which semantic tokens are built.
+
+<table className="token-table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>SASS variable</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Color</td>
+      <td><code>$color-blue-600</code></td>
+      <td><code>#006EB5</code></td>
+    </tr>
+    <tr>
+      <td>Color</td>
+      <td><code>$color-gray-300</code></td>
+      <td><code>#EDEFF0</code></td>
+    </tr>
+    <tr>
+      <td>Spacing</td>
+      <td><code>$spacing-008</code></td>
+      <td><code>8px</code></td>
+    </tr>
+    <tr>
+      <td>Font family</td>
+      <td><code>$font-family-proximanova</code></td>
+      <td><code>'Proxima Nova'</code></td>
+    </tr>
+    <tr>
+      <td>Font size</td>
+      <td><code>$font-size-20</code></td>
+      <td><code>1.25rem</code></td>
+    </tr>
+    <tr>
+      <td>Font weight</td>
+      <td><code>$font-weight-bold</code></td>
+      <td><code>700</code></td>
+    </tr>
+    <tr>
+      <td>Line height</td>
+      <td><code>$line-height-130</code></td>
+      <td><code>130%</code></td>
+    </tr>
+    <tr>
+      <td>Text case</td>
+      <td><code>$text-case-uppercase</code></td>
+      <td><code>uppercase</code></td>
+    </tr>
+  </tbody>
+</table>
+
+### Semantic Tokens
+
+Semantic tokens give meaning to primitive values. They describe *how* a value is used rather than *what* the value is, making it possible to swap the underlying palette without touching component code. **Prefer semantic tokens over primitive tokens in your components.**
+
+<table className="token-table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>SASS variable</th>
+      <th>CSS custom property</th>
+      <th>Resolves to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Color – brand</td>
+      <td><code>$color-brand</code></td>
+      <td><code>--undpds-color-brand</code></td>
+      <td><code>$color-blue-600</code></td>
+    </tr>
+    <tr>
+      <td>Color – text</td>
+      <td><code>$color-text-default</code></td>
+      <td><code>--undpds-color-text-default</code></td>
+      <td><code>$color-black</code></td>
+    </tr>
+    <tr>
+      <td>Color – action</td>
+      <td><code>$color-action-primary</code></td>
+      <td><code>--undpds-color-action-primary</code></td>
+      <td><code>$color-red-600</code></td>
+    </tr>
+    <tr>
+      <td>Color – surface</td>
+      <td><code>$color-surface-default</code></td>
+      <td><code>--undpds-color-surface-default</code></td>
+      <td><code>$color-gray-200</code></td>
+    </tr>
+    <tr>
+      <td>Color – border</td>
+      <td><code>$color-border-default</code></td>
+      <td><code>--undpds-color-border-default</code></td>
+      <td><code>$color-black</code></td>
+    </tr>
+    <tr>
+      <td>Font family</td>
+      <td><code>$font-family-primary</code></td>
+      <td><code>--undpds-font-family-primary</code></td>
+      <td><code>$font-family-proximanova</code></td>
+    </tr>
+    <tr>
+      <td>Font size</td>
+      <td><code>$font-size-body-default</code></td>
+      <td><code>--undpds-font-size-body-default</code></td>
+      <td><code>$font-size-20</code></td>
+    </tr>
+    <tr>
+      <td>Line height</td>
+      <td><code>$line-height-body</code></td>
+      <td><code>--undpds-line-height-body</code></td>
+      <td><code>$line-height-130</code></td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## Spacing — Dual Notation System
+
+Spacing is the only variable category that intentionally allows two notations for the same pixel dimension, supporting both a semantic rank scale and exact Figma pixel values.
+
+### Rank-based notation (2 digits)
+
+Semantic scale steps numbered `01`–`13` expressed in `rem`:
+
+```scss
+$spacing-01: 0.125rem;  // 2px
+$spacing-02: 0.25rem;   // 4px
+$spacing-03: 0.5rem;    // 8px
+$spacing-04: 0.75rem;   // 12px
+$spacing-05: 1rem;      // 16px
+$spacing-06: 1.5rem;    // 24px
+$spacing-07: 2rem;      // 32px
+$spacing-08: 2.5rem;    // 40px
+$spacing-09: 3rem;      // 48px
+$spacing-10: 4rem;      // 64px
+$spacing-11: 5rem;      // 80px
+$spacing-12: 6rem;      // 96px
+$spacing-13: 10rem;     // 160px
+```
+
+### Pixel-based notation (3 digits)
+
+Exact pixel values from Figma, zero-padded to 3 digits:
+
+```scss
+$spacing-002: 2px;
+$spacing-004: 4px;
+$spacing-008: 8px;
+$spacing-016: 16px;
+$spacing-036: 2.25rem;
+$spacing-160: 160px;
+```
+
+Both notations can be used in components. Prefer the **rank-based** notation for semantic meaning and the **pixel-based** notation when you need to match an exact Figma specification.
+
+---
+
+## Backwards Compatibility
+
+When spacing variables are renamed or migrated (e.g. `$spacing-36` → `$spacing-036`), the transformation script automatically adds backwards compatibility aliases at the end of `_variables.scss`:
+
+```scss
+// New 3-digit notation (primary)
+$spacing-036: 2.25rem;
+$spacing-044: 2.75rem;
+$spacing-050: 3.125rem;
+$spacing-060: 3.75rem;
+$spacing-070: 4.375rem;
+$spacing-076: 4.75rem;
+$spacing-090: 5.625rem;
+
+// Backwards compatibility aliases — existing code continues to work
+$spacing-36: $spacing-036;
+$spacing-44: $spacing-044;
+$spacing-50: $spacing-050;
+$spacing-60: $spacing-060;
+$spacing-70: $spacing-070;
+$spacing-76: $spacing-076;
+$spacing-90: $spacing-090;
+```
+
+Aliases are also created when a token is removed from Figma but an existing SASS variable carries the same value. This prevents silent breakage in components that rely on the old variable name.
+
+<div className="callout callout-warning">
+  <strong>Note:</strong> Backwards compatibility aliases are a safety net, not a long-term strategy. New code should always use the current canonical variable name (e.g. <code>$spacing-036</code>) rather than the deprecated alias.
+</div>
+
+---
+
+## CSS Custom Properties
+
+All SASS variables in `_variables.scss` are compiled to CSS custom properties (also known as CSS variables) in `_custom_properties.scss`. The prefix `--undpds-` is added to every property name to avoid collisions with third-party stylesheets.
+
+```scss
+// SASS input (_variables.scss)
+$color-black: #000000;
+$color-border-default: $color-black;   // SASS reference
+$font-size-body-default: 1.25rem;
+
+// CSS output (_custom_properties.scss)
+:root {
+  --undpds-color-black: #000000;
+  --undpds-color-border-default: #000000;   // reference resolved by SASS compiler
+  --undpds-font-size-body-default: 1.25rem;
+}
+```
+
+SASS variable references are **resolved during compilation**, so the CSS custom property always contains the concrete value rather than another variable reference. This means you can safely use CSS custom properties in any context, including plain HTML with no SASS tooling.
+
+The design system exposes **217 CSS custom properties** across the following categories:
+
+<table className="token-table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Count</th>
+      <th>Example property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Color</td>
+      <td>62</td>
+      <td><code>--undpds-color-brand</code>, <code>--undpds-color-text-default</code></td>
+    </tr>
+    <tr>
+      <td>Spacing</td>
+      <td>42</td>
+      <td><code>--undpds-spacing-05</code>, <code>--undpds-spacing-036</code></td>
+    </tr>
+    <tr>
+      <td>Font family</td>
+      <td>14</td>
+      <td><code>--undpds-font-family-primary</code></td>
+    </tr>
+    <tr>
+      <td>Font size</td>
+      <td>29</td>
+      <td><code>--undpds-font-size-body-default</code>, <code>--undpds-font-size-heading-large</code></td>
+    </tr>
+    <tr>
+      <td>Font weight</td>
+      <td>10</td>
+      <td><code>--undpds-font-weight-bold</code>, <code>--undpds-font-weight-regular</code></td>
+    </tr>
+    <tr>
+      <td>Line height</td>
+      <td>6</td>
+      <td><code>--undpds-line-height-body</code>, <code>--undpds-line-height-100</code></td>
+    </tr>
+    <tr>
+      <td>Text case</td>
+      <td>2</td>
+      <td><code>--undpds-text-case-uppercase</code></td>
+    </tr>
+    <tr>
+      <td>Border</td>
+      <td>1</td>
+      <td><code>--undpds-border-default</code></td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td>51</td>
+      <td>SDG colors, gradients, widths, heights</td>
+    </tr>
+  </tbody>
+</table>
+
+### Usage
+
+Tokens can be consumed via SASS variables or CSS custom properties depending on your build setup:
+
+**In SASS:**
+```scss
+.my-component {
+  color: $color-brand;
+  margin-bottom: $spacing-06;
+  font-family: $font-family-primary;
+  font-size: $font-size-body-default;
+}
+```
+
+**In CSS (no build step required):**
+```css
+.my-component {
+  color: var(--undpds-color-brand);
+  margin-bottom: var(--undpds-spacing-06);
+  font-family: var(--undpds-font-family-primary);
+  font-size: var(--undpds-font-size-body-default);
+}
+```
+
+Include the base stylesheet from the CDN to get all CSS custom properties in your project:
+
+```html
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" />
+```
