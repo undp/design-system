@@ -3,9 +3,9 @@
 // DO NOT EDIT MANUALLY - Run `npm run transform-tokens` to regenerate
 //
 // Breakpoints:
-//   Mobile:  max-width: 30em (≤ 480px)
-//   Tablet:  min-width: 30.0625em and max-width: 64em (> 480px and ≤ 1024px)
-//   Desktop: min-width: 64.0625em (> 1024px)
+//   Mobile:  max-width: 30em (≤ 480px, assuming 16px base font size)
+//   Tablet:  min-width: 30.0625em and max-width: 64em (> 480px and ≤ 1024px, assuming 16px base font size)
+//   Desktop: min-width: 64.0625em (> 1024px, assuming 16px base font size)
 
 /* Mobile: max-width: 30em (≤ 480px) */
 @media (max-width: 30em) {

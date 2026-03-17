@@ -24,9 +24,9 @@ const BREAKPOINT_CUSTOM_PROPERTIES_PATH = path.join(__dirname, '../stories/asset
 
 /**
  * Breakpoint definitions matching UNDP Design System specification:
- * - mobile:  ≤ 480px (30em)
- * - tablet:  > 480px (30em) and ≤ 1024px (64em)
- * - desktop: > 1024px (64em)
+ * - mobile:  ≤ 480px (30em, assuming 16px base font size)
+ * - tablet:  > 480px (30em) and ≤ 1024px (64em, assuming 16px base font size)
+ * - desktop: > 1024px (64em, assuming 16px base font size)
  */
 const BREAKPOINTS = [
   {
@@ -913,9 +913,9 @@ function generateBreakpointCustomProperties(allTokensRoot) {
     '// DO NOT EDIT MANUALLY - Run `npm run transform-tokens` to regenerate',
     '//',
     '// Breakpoints:',
-    '//   Mobile:  max-width: 30em (≤ 480px)',
-    '//   Tablet:  min-width: 30.0625em and max-width: 64em (> 480px and ≤ 1024px)',
-    '//   Desktop: min-width: 64.0625em (> 1024px)',
+    '//   Mobile:  max-width: 30em (≤ 480px, assuming 16px base font size)',
+    '//   Tablet:  min-width: 30.0625em and max-width: 64em (> 480px and ≤ 1024px, assuming 16px base font size)',
+    '//   Desktop: min-width: 64.0625em (> 1024px, assuming 16px base font size)',
     '',
   ];
 
@@ -935,7 +935,8 @@ function generateBreakpointCustomProperties(allTokensRoot) {
 
     for (const token of tokens) {
       // Reuse pathToVariableName which already handles compound-word expansions
-      // (fontsize → font-size, paragraphspacing stays as-is, etc.)
+      // (fontsize → font-size, lineheight → line-height; paragraphspacing has no
+      // special mapping so it stays as one hyphenated segment: paragraphspacing-body)
       const varSuffix = pathToVariableName(token.path);
       lines.push(`    --undpds-${varSuffix}: ${token.value};`);
     }
