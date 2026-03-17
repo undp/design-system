@@ -636,6 +636,22 @@ function resolveTokenReference(value, tokens, returnReference = false) {
 }
 
 /**
+ * Convert a Figma token reference string (e.g. "{fontsize.24}") into a CSS
+ * custom property var() call (e.g. "var(--undpds-font-size-24)").
+ *
+ * Returns null when the value is not a reference, so the caller can fall back
+ * to using a resolved concrete value.
+ */
+function tokenReferenceToVarRef(tokenValue) {
+  if (typeof tokenValue === 'string' && tokenValue.startsWith('{') && tokenValue.endsWith('}')) {
+    const refPath = tokenValue.slice(1, -1).split('.');
+    const varName = pathToVariableName(refPath);
+    return `var(--undpds-${varName})`;
+  }
+  return null;
+}
+
+/**
  * Convert a nested token path to a SASS variable name with proper hyphenation
  * Special handling for spacing variables which use dual notation:
  * - Rank-based (2 digits): $spacing-01, $spacing-02, ... $spacing-13
@@ -883,11 +899,15 @@ function extractBreakpointTokens(obj, pathArray, allTokensRoot) {
     const currentPath = [...pathArray, key];
 
     if (value && typeof value === 'object' && '$value' in value) {
-      const resolvedRaw = resolveTokenReference(value.$value, allTokensRoot);
+      // Preserve the original reference string so generateBreakpointCustomProperties
+      // can emit var() references to primitive CSS custom properties.
+      const rawValue = value.$value;
+      const resolvedRaw = resolveTokenReference(rawValue, allTokensRoot);
       const resolvedValue = processTokenValue(resolvedRaw, value.$type);
       tokens.push({
         path: currentPath,
-        value: resolvedValue,
+        rawValue,         // e.g. "{fontsize.24}" – used for var() reference generation
+        value: resolvedValue,  // concrete fallback, e.g. "1.5rem"
         type: value.$type,
       });
     } else if (value && typeof value === 'object') {
@@ -938,7 +958,11 @@ function generateBreakpointCustomProperties(allTokensRoot) {
       // (fontsize → font-size, lineheight → line-height; paragraphspacing has no
       // special mapping so it stays as one hyphenated segment: paragraphspacing-body)
       const varSuffix = pathToVariableName(token.path);
-      lines.push(`    --undpds-${varSuffix}: ${token.value};`);
+      // Prefer a var() reference to the corresponding primitive CSS custom property
+      // (semantic approach). Fall back to the concrete resolved value only when
+      // the token value is not a reference.
+      const cssValue = tokenReferenceToVarRef(token.rawValue) || token.value;
+      lines.push(`    --undpds-${varSuffix}: ${cssValue};`);
     }
 
     lines.push('  }');

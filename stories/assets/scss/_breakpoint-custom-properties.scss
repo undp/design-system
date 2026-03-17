@@ -10,62 +10,62 @@
 /* Mobile: max-width: 30em (≤ 480px) */
 @media (max-width: 30em) {
   :root {
-    --undpds-font-size-body-large: 1.25rem;
-    --undpds-font-size-body-default: 1rem;
-    --undpds-font-size-body-small: 0.875rem;
-    --undpds-font-size-heading-xxlarge: 4.5rem;
-    --undpds-font-size-heading-xlarge: 3.5rem;
-    --undpds-font-size-heading-large: 2.5rem;
-    --undpds-font-size-heading-medium: 1.875rem;
-    --undpds-font-size-heading-small: 1.5rem;
-    --undpds-font-size-heading-xsmall: 1rem;
-    --undpds-font-size-display-large: 3.5rem;
-    --undpds-font-size-display-medium: 2.5rem;
-    --undpds-font-size-display-small: 2rem;
-    --undpds-spacing-gutter: 12px;
-    --undpds-paragraphspacing-body: 12px;
-    --undpds-paragraphspacing-heading: 16px;
+    --undpds-font-size-body-large: var(--undpds-font-size-20);
+    --undpds-font-size-body-default: var(--undpds-font-size-16);
+    --undpds-font-size-body-small: var(--undpds-font-size-14);
+    --undpds-font-size-heading-xxlarge: var(--undpds-font-size-72);
+    --undpds-font-size-heading-xlarge: var(--undpds-font-size-56);
+    --undpds-font-size-heading-large: var(--undpds-font-size-40);
+    --undpds-font-size-heading-medium: var(--undpds-font-size-30);
+    --undpds-font-size-heading-small: var(--undpds-font-size-24);
+    --undpds-font-size-heading-xsmall: var(--undpds-font-size-16);
+    --undpds-font-size-display-large: var(--undpds-font-size-56);
+    --undpds-font-size-display-medium: var(--undpds-font-size-40);
+    --undpds-font-size-display-small: var(--undpds-font-size-32);
+    --undpds-spacing-gutter: var(--undpds-spacing-012);
+    --undpds-paragraphspacing-body: var(--undpds-paragraphspacing-12);
+    --undpds-paragraphspacing-heading: var(--undpds-paragraphspacing-16);
   }
 }
 
 /* Tablet: min-width: 30.0625em and max-width: 64em (> 480px and ≤ 1024px) */
 @media (min-width: 30.0625em) and (max-width: 64em) {
   :root {
-    --undpds-font-size-body-default: 1rem;
-    --undpds-font-size-body-small: 0.875rem;
-    --undpds-font-size-body-large: 1.25rem;
-    --undpds-font-size-heading-xxlarge: 4.5rem;
-    --undpds-font-size-heading-xlarge: 3.5rem;
-    --undpds-font-size-heading-large: 2.5rem;
-    --undpds-font-size-heading-medium: 1.875rem;
-    --undpds-font-size-heading-small: 1.5rem;
-    --undpds-font-size-heading-xsmall: 1rem;
-    --undpds-font-size-display-large: 5rem;
-    --undpds-font-size-display-medium: 4rem;
-    --undpds-font-size-display-small: 3rem;
-    --undpds-spacing-gutter: 12px;
-    --undpds-paragraphspacing-body: 12px;
-    --undpds-paragraphspacing-heading: 16px;
+    --undpds-font-size-body-default: var(--undpds-font-size-16);
+    --undpds-font-size-body-small: var(--undpds-font-size-14);
+    --undpds-font-size-body-large: var(--undpds-font-size-20);
+    --undpds-font-size-heading-xxlarge: var(--undpds-font-size-72);
+    --undpds-font-size-heading-xlarge: var(--undpds-font-size-56);
+    --undpds-font-size-heading-large: var(--undpds-font-size-40);
+    --undpds-font-size-heading-medium: var(--undpds-font-size-30);
+    --undpds-font-size-heading-small: var(--undpds-font-size-24);
+    --undpds-font-size-heading-xsmall: var(--undpds-font-size-16);
+    --undpds-font-size-display-large: var(--undpds-font-size-80);
+    --undpds-font-size-display-medium: var(--undpds-font-size-64);
+    --undpds-font-size-display-small: var(--undpds-font-size-48);
+    --undpds-spacing-gutter: var(--undpds-spacing-012);
+    --undpds-paragraphspacing-body: var(--undpds-paragraphspacing-12);
+    --undpds-paragraphspacing-heading: var(--undpds-paragraphspacing-16);
   }
 }
 
 /* Desktop: min-width: 64.0625em (> 1024px) */
 @media (min-width: 64.0625em) {
   :root {
-    --undpds-font-size-body-large: 1.5rem;
-    --undpds-font-size-body-default: 1.25rem;
-    --undpds-font-size-body-small: 1rem;
-    --undpds-font-size-heading-xxlarge: 5rem;
-    --undpds-font-size-heading-xlarge: 4rem;
-    --undpds-font-size-heading-large: 3rem;
-    --undpds-font-size-heading-medium: 2rem;
-    --undpds-font-size-heading-small: 1.5rem;
-    --undpds-font-size-heading-xsmall: 1rem;
-    --undpds-font-size-display-large: 6.25rem;
-    --undpds-font-size-display-medium: 5rem;
-    --undpds-font-size-display-small: 3.5rem;
-    --undpds-spacing-gutter: 24px;
-    --undpds-paragraphspacing-body: 16px;
-    --undpds-paragraphspacing-heading: 16px;
+    --undpds-font-size-body-large: var(--undpds-font-size-24);
+    --undpds-font-size-body-default: var(--undpds-font-size-20);
+    --undpds-font-size-body-small: var(--undpds-font-size-16);
+    --undpds-font-size-heading-xxlarge: var(--undpds-font-size-80);
+    --undpds-font-size-heading-xlarge: var(--undpds-font-size-64);
+    --undpds-font-size-heading-large: var(--undpds-font-size-48);
+    --undpds-font-size-heading-medium: var(--undpds-font-size-32);
+    --undpds-font-size-heading-small: var(--undpds-font-size-24);
+    --undpds-font-size-heading-xsmall: var(--undpds-font-size-16);
+    --undpds-font-size-display-large: var(--undpds-font-size-100);
+    --undpds-font-size-display-medium: var(--undpds-font-size-80);
+    --undpds-font-size-display-small: var(--undpds-font-size-56);
+    --undpds-spacing-gutter: var(--undpds-spacing-024);
+    --undpds-paragraphspacing-body: var(--undpds-paragraphspacing-16);
+    --undpds-paragraphspacing-heading: var(--undpds-paragraphspacing-16);
   }
 }
