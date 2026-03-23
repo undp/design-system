@@ -80,6 +80,7 @@
     }
 
     &>.active {
+      color: var(--undpds-color-white);
       border-bottom: none;
 
       button::after {
@@ -94,11 +95,9 @@
 
       &>a {
         background-color: var(--undpds-color-blue-600);
-        color: var(--undpds-color-white);
 
         @include devicebreak(large) {
           background-color: var(--undpds-color-blue-600);
-          color: var(--undpds-color-white);
         }
       }
 
@@ -171,11 +170,14 @@
 
         &:first-of-type a {
           background-color: transparent;
+        }
+
+        &:first-of-type {
           color: var(--undpds-color-black);
 
-          &:hover,
-          &:focus,
-          &:active {
+          a:hover,
+          a:focus,
+          a:active {
             background-color: var(--undpds-color-gray-400);
           }
 

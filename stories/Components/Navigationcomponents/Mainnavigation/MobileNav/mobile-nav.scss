@@ -44,11 +44,12 @@
   }
 
   .mobile-nav-options {
+    color: var(--undpds-color-blue-600);
+
     a {
       @extend %img_none;
       @extend %mobile-nav;
 
-      color: var(--undpds-color-blue-600);
       margin-bottom: 1.58125rem;
 
       img {
@@ -56,10 +57,13 @@
       }
 
       &.button {
-        color: var(--undpds-color-white);
         display: flex;
         margin-inline: 0;
       }
+    }
+
+    .button {
+      color: var(--undpds-color-white);
     }
   }
 

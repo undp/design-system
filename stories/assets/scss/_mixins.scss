@@ -519,21 +519,11 @@
 %footerlink {
   @extend %img_none;
 
-  color: var(--undpds-color-white);
   font-size: var(--undpds-font-size-16);
   line-height: 1.4;
-
-  &:hover {
-    color: var(--undpds-color-blue-100);
-  }
 }
 
 %footerlinkinvert {
-  color: var(--undpds-color-black);
-
-  &:hover {
-    color: var(--undpds-color-gray-600);
-  }
 }
 
 %selectoption {

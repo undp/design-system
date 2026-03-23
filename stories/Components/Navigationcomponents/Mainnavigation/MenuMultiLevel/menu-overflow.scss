@@ -121,6 +121,7 @@
     }
 
     >li {
+      color: var(--undpds-color-black);
       padding: 0;
       margin: 0;
 
@@ -135,7 +136,6 @@
         font-size: 0.875rem;
         text-transform: uppercase;
         height: 4.125rem;
-        color: var(--undpds-color-black);
       }
 
       &.edge:focus>ul.sub-menu,
@@ -147,8 +147,9 @@
       }
 
       &:hover {
+        color: var(--undpds-color-gray-600);
+
         >a {
-          color: var(--undpds-color-gray-600);
         }
       }
     }
@@ -275,8 +276,9 @@
         >a.active {
           transition: 0.2s ease;
           background: var(--undpds-color-blue-600);
-          color: var(--undpds-color-white);
         }
+
+        color: var(--undpds-color-white);
 
         &.has-submenu>a.active:after,
         &.has-submenu>a:after {
