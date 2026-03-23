@@ -80,6 +80,7 @@
     }
 
     &>.active {
+      color: var(--undpds-color-white);
       border-bottom: none;
 
       button::after {
@@ -94,11 +95,9 @@
 
       &>a {
         background-color: var(--undpds-color-blue-600);
-        color: var(--undpds-color-white);
 
         @include devicebreak(large) {
           background-color: var(--undpds-color-blue-600);
-          color: var(--undpds-color-white);
         }
       }
 
@@ -154,6 +153,7 @@
       padding: 0;
 
       li {
+        color: var(--undpds-color-black);
         a {
           @extend %img_none;
 
@@ -168,25 +168,6 @@
             padding-left: var(--undpds-spacing-09);
           }
         }
-
-        &:first-of-type a {
-          background-color: transparent;
-          color: var(--undpds-color-black);
-
-          &:hover,
-          &:focus,
-          &:active {
-            background-color: var(--undpds-color-gray-400);
-          }
-
-          // @include devicebreak(large) {
-          //   &:hover {
-          //     // background-color: var(--undpds-color-gray-300;
-          //     background-color: var(--undpds-color-gray-400;
-          //   }
-          // }
-        }
-
         &:last-of-type a {
           margin-bottom: 0;
         }

@@ -13,10 +13,15 @@
 
     li {
       display: inline-block;
+      color: var(--undpds-color-dark-red);
       margin-inline: var(--undpds-spacing-06) 0;
       margin-block: var(--undpds-spacing-04);
       padding-inline-start: 0;
       position: relative;
+
+      &:hover {
+        color: var(--undpds-color-red);
+      }
 
       &::after {
         color: var(--undpds-color-dark-red);
@@ -37,6 +42,7 @@
         margin-inline-end: 0;
         max-width: calc(100vw - 2rem);
         text-transform: uppercase;
+        color: var(--undpds-color-black);
 
         &::after {
           display: none;
@@ -45,31 +51,25 @@
 
       a {
         background: none;
-        color: var(--undpds-color-dark-red);
         font-size: var(--undpds-font-size-12);
         font-weight: 600;
         letter-spacing: 0.03em;
         text-transform: uppercase;
         transition: opacity 0.2s ease;
-
-        &:hover {
-          color: var(--undpds-color-red);
-        }
       }
     }
   }
 
   &.white {
     li {
+      color: var(--undpds-color-white);
+
       &::after {
         color: var(--undpds-color-white);
       }
 
       a {
-        color: var(--undpds-color-white);
-
         &:hover {
-          color: var(--undpds-color-white);
           opacity: 0.7;
         }
       }

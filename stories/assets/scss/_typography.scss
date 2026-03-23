@@ -197,7 +197,7 @@ hr {
 }
 
 a {
-  color: var(--undpds-color-black);
+  color: inherit;
   text-decoration: none;
   @extend %animate-link !optional;
 }

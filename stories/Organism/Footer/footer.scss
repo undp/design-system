@@ -30,10 +30,15 @@
   padding-left: 0;
 
   li {
+    color: var(--undpds-color-white);
     list-style: none;
     margin-bottom: var(--undpds-spacing-04);
     padding: 0;
     text-align: left;
+
+    &:hover {
+      color: var(--undpds-color-blue-100);
+    }
 
     @include breakpoints.devicebreak(medium) {
       text-align: right;
@@ -45,8 +50,12 @@
   }
 
   &.inverted {
-    a {
-      @extend %footerlinkinvert;
+    li {
+      color: var(--undpds-color-black);
+
+      &:hover {
+        color: var(--undpds-color-gray-600);
+      }
     }
   }
 }
@@ -93,9 +102,14 @@
   }
 
   li {
+    color: var(--undpds-color-white);
     list-style: none;
     margin-bottom: var(--undpds-spacing-04);
     padding-left: 0;
+
+    &:hover {
+      color: var(--undpds-color-blue-100);
+    }
 
     @include breakpoints.devicebreak(medium) {
       display: inline-flex;
@@ -109,8 +123,12 @@
   }
 
   &.inverted {
-    a {
-      @extend %footerlinkinvert;
+    li {
+      color: var(--undpds-color-black);
+
+      &:hover {
+        color: var(--undpds-color-gray-600);
+      }
     }
   }
 }
@@ -262,8 +280,12 @@
       }
 
       .footer-panel {
-        a {
-          @extend %footerlinkinvert;
+        color: var(--undpds-color-black);
+
+        >* {
+          &:hover {
+            color: var(--undpds-color-gray-600);
+          }
         }
       }
     }
@@ -313,6 +335,7 @@
   }
 
   &-panel {
+    color: var(--undpds-color-white);
     display: none;
     padding: 0 var(--undpds-spacing-05) var(--undpds-spacing-03);
 
@@ -326,6 +349,12 @@
 
       display: block;
       margin-bottom: var(--undpds-spacing-05);
+    }
+
+    >* {
+      &:hover {
+        color: var(--undpds-color-blue-100);
+      }
     }
   }
 }

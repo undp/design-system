@@ -40,14 +40,11 @@
 
       span:first-of-type:not(:last-of-type) {
         border-bottom: 1px solid var(--undpds-color-gray-500);
+        color: var(--undpds-color-gray-600);
         display: inline-block;
         font-size: var(--undpds-font-size-12);
         margin: 0;
         padding-block-end: 1px;
-
-        a {
-          color: var(--undpds-color-gray-600);
-        }
       }
 
       span {
