@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useRef } from 'react';
 import './page-hero.scss';
 import { Video } from '../../../../Atom/Video/Video';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Breadcrumbcomponent } from '../../../Navigationcomponents/Breadcrumbs/Breadcrumbs';
 import { CtaButton } from '../../Buttons/CtaButton/CtaButton';
-import { fitTitle } from "../../../../assets/js/fitTitle";
 
 export function PageHeroOption({
   data,
   title,
   subtitle,
-  content,
+  overline,
   active,
   variant,
   imgsrc,
@@ -20,19 +19,15 @@ export function PageHeroOption({
   cta,
   ...args
 }) {
-  useEffect(() => {
-    if (typeof fitTitle == "function") {
-      fitTitle(".pagehero-content h2");
-    }
-  }, []);
+  const contentRef = useRef(null);
   const CtaEnabledClass = args.CTA == 'On' ? 'has-cta' : '';
   return (
     <div className={["pagehero-tall", CtaEnabledClass].join(" ")}>
       <div className="grid-x">
         <div className="cell medium-4 medium-offset-1 ">
-          <div className="pagehero-content color-black">
+          <div className="pagehero-content color-black" ref={contentRef}>
             <Breadcrumbcomponent data={data} />
-            {args.Overline == 'On' && content && <Heading type="4" label={content} dataViewport="true" />}
+            {args.Overline == 'On' && overline && <Heading type="4" label={overline} dataViewport="true" />}
             <Heading type="2" label={title} dataViewport="true" />
             {args.Subtitle == 'On' && subtitle && <p className="subtitle">{subtitle}</p>}
             {args.CTA == 'On' && cta.label && <CtaButton label={cta.label} For_Primary={cta.for_primary} />}

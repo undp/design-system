@@ -17,3 +17,4 @@ chromatic-build-*.xml
 chromatic-diagnostics.json
 /.generated
 docs/test-*.html
+.playwright-mcp

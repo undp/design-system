@@ -219,7 +219,7 @@ export default {
                     data={caption.herodata}
                     title={caption.title}
                     subtitle={caption?.subtitle}
-                    content={caption?.content}
+                    overline={caption?.content}
                     variant={args.Variant}
                     active={"default"}
                     imgsrc={caption.imgsrc}
@@ -250,12 +250,12 @@ export default {
               <code>data-viewport="true"</code> attribute to your HTML element.
             </li>
             <li>
-              If title wraps unexpectedly because of the long words - you can use fitTitle utility:
+              <strong>Optional:</strong> If title wraps unexpectedly because of long words, use fitTitle utility in your implementation:
               include JS file:<br></br>
               <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitTitle.min.js">
                 https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitTitle.min.js
               </a><br></br>
-              and call following function in your JS file <code>fitTitle(".pagehero-content h2")</code>
+              and call in your JS: <code>fitTitle(".pagehero-content h2")</code> after page load is complete.
             </li>
           </ul>
 
@@ -295,9 +295,9 @@ export default {
             image.
           </p>
 
-          
 
-          
+
+
         </>
       ),
     },
@@ -312,7 +312,7 @@ const Template = (args, { globals: { locale } }) => {
       data={caption.herodata}
       title={caption.title}
       subtitle={caption?.subtitle}
-      content={caption?.content}
+      overline={caption?.content}
       variant={args.Variant}
       active={"default"}
       imgsrc={caption.imgsrc}
