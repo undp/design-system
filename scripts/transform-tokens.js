@@ -20,6 +20,37 @@ const path = require('path');
 // File paths
 const TOKENS_PATH = path.join(__dirname, '../figma-tokens/input/tokens.json');
 const VARIABLES_PATH = path.join(__dirname, '../stories/assets/scss/_variables.scss');
+const BREAKPOINT_CUSTOM_PROPERTIES_PATH = path.join(__dirname, '../stories/assets/scss/_breakpoint-custom-properties.scss');
+
+/**
+ * Breakpoint definitions matching UNDP Design System specification:
+ * - mobile:  ≤ 480px (30em, assuming 16px base font size)
+ * - tablet:  > 480px (30em) and ≤ 1024px (64em, assuming 16px base font size)
+ * - desktop: > 1024px (64em, assuming 16px base font size)
+ */
+const BREAKPOINTS = [
+  {
+    name: 'mobile',
+    label: 'Mobile',
+    description: 'max-width: 30em (≤ 480px)',
+    mediaQuery: '@media (max-width: 30em)',
+    tokenKey: 'breakpoints/mobile',
+  },
+  {
+    name: 'tablet',
+    label: 'Tablet',
+    description: 'min-width: 30.0625em and max-width: 64em (> 480px and ≤ 1024px)',
+    mediaQuery: '@media (min-width: 30.0625em) and (max-width: 64em)',
+    tokenKey: 'breakpoints/tablet',
+  },
+  {
+    name: 'desktop',
+    label: 'Desktop',
+    description: 'min-width: 64.0625em (> 1024px)',
+    mediaQuery: '@media (min-width: 64.0625em)',
+    tokenKey: 'breakpoints/desktop',
+  },
+];
 
 /**
  * Parse existing SASS variables from file content
@@ -605,6 +636,22 @@ function resolveTokenReference(value, tokens, returnReference = false) {
 }
 
 /**
+ * Convert a Figma token reference string (e.g. "{fontsize.24}") into a CSS
+ * custom property var() call (e.g. "var(--undpds-font-size-24)").
+ *
+ * Returns null when the value is not a reference, so the caller can fall back
+ * to using a resolved concrete value.
+ */
+function tokenReferenceToVarRef(tokenValue) {
+  if (typeof tokenValue === 'string' && tokenValue.startsWith('{') && tokenValue.endsWith('}')) {
+    const refPath = tokenValue.slice(1, -1).split('.');
+    const varName = pathToVariableName(refPath);
+    return `var(--undpds-${varName})`;
+  }
+  return null;
+}
+
+/**
  * Convert a nested token path to a SASS variable name with proper hyphenation
  * Special handling for spacing variables which use dual notation:
  * - Rank-based (2 digits): $spacing-01, $spacing-02, ... $spacing-13
@@ -834,6 +881,145 @@ function extractTokens(obj, pathArray = [], allTokensRoot = {}, isSemantic = fal
 }
 
 /**
+ * Extract tokens from a breakpoint token group recursively.
+ * Unlike extractTokens(), this resolves all references to concrete CSS values
+ * (no SASS variable references) and preserves the token path for CSS var naming.
+ *
+ * @param {Object} obj - The token group object to traverse
+ * @param {Array} pathArray - Current accumulated path segments
+ * @param {Object} allTokensRoot - Full tokens root for reference resolution
+ * @returns {Array} Flat array of { path, value, type } objects
+ */
+function extractBreakpointTokens(obj, pathArray, allTokensRoot) {
+  const tokens = [];
+
+  for (const [key, value] of Object.entries(obj)) {
+    if (key.startsWith('$')) continue;
+
+    const currentPath = [...pathArray, key];
+
+    if (value && typeof value === 'object' && '$value' in value) {
+      // Preserve the original reference string so generateBreakpointCustomProperties
+      // can emit var() references to primitive CSS custom properties.
+      const rawValue = value.$value;
+      const resolvedRaw = resolveTokenReference(rawValue, allTokensRoot);
+      const resolvedValue = processTokenValue(resolvedRaw, value.$type);
+      tokens.push({
+        path: currentPath,
+        rawValue,         // e.g. "{fontsize.24}" – used for var() reference generation
+        value: resolvedValue,  // concrete fallback, e.g. "1.5rem"
+        type: value.$type,
+      });
+    } else if (value && typeof value === 'object') {
+      tokens.push(...extractBreakpointTokens(value, currentPath, allTokensRoot));
+    }
+  }
+
+  return tokens;
+}
+
+/**
+ * Generate the content of _breakpoint-custom-properties.scss.
+ *
+ * Strategy: mobile-first
+ *   1. A plain :root block (no media query) declares ALL mobile token values as
+ *      the global defaults. This means every device — including mobile — picks up
+ *      the correct base values without any media-query condition.
+ *   2. The tablet @media range block only declares tokens whose value differs from
+ *      the mobile baseline, avoiding redundant declarations.
+ *   3. The desktop @media block only declares tokens whose value differs from the
+ *      mobile baseline (the tablet range query does NOT cascade to desktop, so we
+ *      always compare against mobile, not tablet).
+ *
+ * This guarantees each semantic token is declared exactly once as a default and
+ * only overridden where a breakpoint-specific value actually changes.
+ *
+ * @param {Object} allTokensRoot - Full tokens root object
+ * @returns {string} SCSS file content
+ */
+function generateBreakpointCustomProperties(allTokensRoot) {
+  const lines = [
+    '// Breakpoint-specific CSS Custom Properties',
+    '// Generated by transform-tokens.js from figma-tokens/input/tokens.json',
+    '// DO NOT EDIT MANUALLY - Run `npm run transform-tokens` to regenerate',
+    '//',
+    '// Strategy: mobile-first',
+    '//   Default (no media query): mobile base values',
+    '//   Tablet:  min-width: 30.0625em and max-width: 64em (> 480px and ≤ 1024px, assuming 16px base font size)',
+    '//   Desktop: min-width: 64.0625em (> 1024px, assuming 16px base font size)',
+    '//',
+    '// Only tokens that differ from the mobile baseline are emitted inside the',
+    '// tablet/desktop media query blocks to avoid redundant declarations.',
+    '',
+  ];
+
+  // Collect extracted tokens for every breakpoint keyed by breakpoint name.
+  const tokensByBreakpoint = new Map();
+  for (const breakpoint of BREAKPOINTS) {
+    const tokenGroup = allTokensRoot[breakpoint.tokenKey];
+    if (!tokenGroup) {
+      console.warn(`Warning: No tokens found for breakpoint key "${breakpoint.tokenKey}"`);
+      continue;
+    }
+    tokensByBreakpoint.set(breakpoint.name, extractBreakpointTokens(tokenGroup, [], allTokensRoot));
+  }
+
+  // Build a mobile baseline map: CSS variable suffix → rawValue (e.g. "{fontsize.20}")
+  // This is used to deduplicate tablet/desktop declarations.
+  const mobileTokens = tokensByBreakpoint.get('mobile') || [];
+  const mobileBaseline = new Map(
+    mobileTokens.map(token => [pathToVariableName(token.path), token.rawValue])
+  );
+
+  // --- 1. Default :root block (no media query) — mobile-first base values ---
+  if (mobileTokens.length > 0) {
+    lines.push('/* Default: mobile-first base values */');
+    lines.push(':root {');
+    for (const token of mobileTokens) {
+      const varSuffix = pathToVariableName(token.path);
+      const cssValue = tokenReferenceToVarRef(token.rawValue) || token.value;
+      lines.push(`  --undpds-${varSuffix}: ${cssValue};`);
+    }
+    lines.push('}');
+    lines.push('');
+  }
+
+  // --- 2. Tablet and Desktop media query blocks (only tokens that differ from mobile) ---
+  for (const breakpoint of BREAKPOINTS) {
+    // Mobile values are already in the default block above; skip the mobile breakpoint here.
+    if (breakpoint.name === 'mobile') continue;
+
+    const tokens = tokensByBreakpoint.get(breakpoint.name) || [];
+
+    // Only emit tokens whose value differs from the mobile baseline.
+    // For desktop we compare against mobile (not tablet) because the tablet range
+    // query (@media …max-width: 64em) does not cascade to desktop-width screens.
+    const diffTokens = tokens.filter(token => {
+      const varSuffix = pathToVariableName(token.path);
+      return mobileBaseline.get(varSuffix) !== token.rawValue;
+    });
+
+    if (diffTokens.length === 0) continue;
+
+    lines.push(`/* ${breakpoint.label}: ${breakpoint.description} */`);
+    lines.push(`${breakpoint.mediaQuery} {`);
+    lines.push('  :root {');
+
+    for (const token of diffTokens) {
+      const varSuffix = pathToVariableName(token.path);
+      const cssValue = tokenReferenceToVarRef(token.rawValue) || token.value;
+      lines.push(`    --undpds-${varSuffix}: ${cssValue};`);
+    }
+
+    lines.push('  }');
+    lines.push('}');
+    lines.push('');
+  }
+
+  return lines.join('\n');
+}
+
+/**
  * Main transformation function
  */
 function transformTokens(options = {}) {
@@ -883,11 +1069,30 @@ function transformTokens(options = {}) {
   }
   fs.writeFileSync(VARIABLES_PATH, updateResult.content, 'utf8');
 
+  // Generate breakpoint-specific CSS custom properties
+  if (!jsonOutput) {
+    console.log('🔨 Generating breakpoint CSS custom properties...');
+  }
+  const breakpointContent = generateBreakpointCustomProperties(tokens);
+  if (!jsonOutput) {
+    console.log(`💾 Writing breakpoint custom properties to: ${BREAKPOINT_CUSTOM_PROPERTIES_PATH}`);
+  }
+  fs.writeFileSync(BREAKPOINT_CUSTOM_PROPERTIES_PATH, breakpointContent, 'utf8');
+
+  // Count breakpoint tokens for reporting
+  let breakpointTokenCount = 0;
+  for (const bp of BREAKPOINTS) {
+    if (tokens[bp.tokenKey]) {
+      breakpointTokenCount += extractBreakpointTokens(tokens[bp.tokenKey], [], tokens).length;
+    }
+  }
+
   const result = {
     success: true,
     tokensProcessed: allExtractedTokens.length,
     primitiveTokens: primitiveTokens.length,
     semanticTokens: semanticTokens.length,
+    breakpointTokens: breakpointTokenCount,
     variablesUpdated: updateResult.updatedCount,
     variablesAdded: updateResult.newCount,
     variablesDeleted: updateResult.deletedCount || 0,
@@ -908,6 +1113,7 @@ function transformTokens(options = {}) {
   console.log(`   - Total tokens processed: ${allExtractedTokens.length}`);
   console.log(`   - Primitive tokens: ${primitiveTokens.length}`);
   console.log(`   - Semantic tokens: ${semanticTokens.length}`);
+  console.log(`   - Breakpoint tokens: ${result.breakpointTokens}`);
   console.log(`   - Variables updated: ${updateResult.updatedCount}`);
   console.log(`   - Variables added: ${updateResult.newCount}`);
   if (updateResult.deletedCount > 0) {
