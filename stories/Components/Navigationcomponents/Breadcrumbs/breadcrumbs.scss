@@ -42,6 +42,7 @@
         margin-inline-end: 0;
         max-width: calc(100vw - 2rem);
         text-transform: uppercase;
+        color: var(--undpds-color-black);
 
         &::after {
           display: none;

@@ -153,6 +153,7 @@
       padding: 0;
 
       li {
+        color: var(--undpds-color-black);
         a {
           @extend %img_none;
 
@@ -167,28 +168,6 @@
             padding-left: var(--undpds-spacing-09);
           }
         }
-
-        &:first-of-type a {
-          background-color: transparent;
-        }
-
-        &:first-of-type {
-          color: var(--undpds-color-black);
-
-          a:hover,
-          a:focus,
-          a:active {
-            background-color: var(--undpds-color-gray-400);
-          }
-
-          // @include devicebreak(large) {
-          //   &:hover {
-          //     // background-color: var(--undpds-color-gray-300;
-          //     background-color: var(--undpds-color-gray-400;
-          //   }
-          // }
-        }
-
         &:last-of-type a {
           margin-bottom: 0;
         }
