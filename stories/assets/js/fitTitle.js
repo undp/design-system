@@ -1,72 +1,132 @@
 import "./undp";
 
-export const fitTitle = (selector, sizes = { small: 16, medium: 24 }) => {
-  const items =
-    typeof selector === "string"
-      ? document.querySelectorAll(selector)
-      : [selector];
-  const size = window.matchMedia(
+/**
+ * Helper function to measure text width using a temporary pseudo-element
+ * Used to find the longest word in a string
+ *
+ * @param {CSSStyleDeclaration} style - Computed style of the element
+ * @param {string} text - Text to measure
+ * @returns {number} Width in pixels (rounded up)
+ */
+function measureTextWidth(style, text) {
+  const pseudo = document.createElement('div');
+  pseudo.textContent = text;
+  pseudo.style.font = style.font;
+  pseudo.style.textTransform = style.textTransform;
+  pseudo.style.letterSpacing = style.letterSpacing;
+  pseudo.style.whiteSpace = 'nowrap';
+  pseudo.style.position = 'absolute';
+  pseudo.style.visibility = 'hidden';
+  pseudo.style.zIndex = '-1';
+  pseudo.style.top = '0';
+
+  document.body.appendChild(pseudo);
+  const width = Math.ceil(pseudo.offsetWidth);
+  document.body.removeChild(pseudo);
+
+  return width;
+}
+
+/**
+ * Calculate the optimal font size for fitting text within available width
+ * This is a pure calculation function with no side effects
+ *
+ * @param {HTMLElement} element - The element containing the text
+ * @param {Object} sizes - Size options { small: number, medium: number }
+ * @returns {number|null} Optimal font size in pixels, or null if no adjustment needed
+ */
+export function calculateOptimalFontSize(element, sizes = { small: 16, medium: 24 }) {
+  if (!element) return null;
+
+  const style = window.getComputedStyle(element);
+  const availableWidth = element.clientWidth
+    - parseFloat(style.paddingLeft)
+    - parseFloat(style.paddingRight);
+
+  // Determine target size based on viewport
+  const targetSize = window.matchMedia(
     `(min-width: ${window.UNDP.breakpoints.SMALL}px)`,
   ).matches
     ? sizes.medium
     : sizes.small;
 
-  // render pseudolement from the string using original element's
-  // returns the width of the pseudo element
-  const renderedWidth = (style, string) => {
-    let pseudo = $(`<div>${string}</div>`);
-    pseudo.css({
-      font: style.font,
-      "text-transform": style.textTransform,
-      "letter-spacing": style.letterSpacing,
-      "white-space": "nowrap",
-      position: "absolute",
-      visibility: "hidden",
-      "z-index": -1,
-      top: 0,
-    });
-    $("body").append(pseudo);
-    const renderedWidth = pseudo.width();
-    pseudo.remove();
-    return Math.ceil(renderedWidth);
-  };
+  // Find the longest word
+  const longestWordWidth = element.textContent
+    .split(/\s+/)
+    .reduce((maxWidth, word) => {
+      if (word.length === 0) return maxWidth;
+      const wordWidth = measureTextWidth(style, word);
+      return Math.max(maxWidth, wordWidth);
+    }, 0);
+
+  // If longest word fits, no adjustment needed
+  if (longestWordWidth <= availableWidth) {
+    return null;
+  }
+
+  // Calculate scaled font size to fit longest word
+  const currentFontSize = parseFloat(style.fontSize);
+  const scaledFontSize = Math.max(
+    targetSize,
+    Math.floor((currentFontSize * availableWidth) / longestWordWidth) - 1,
+  );
+
+  return scaledFontSize;
+}
+
+/**
+ * Apply optimal font sizing to an element (standalone utility function)
+ * This version applies the calculated font size directly to the element
+ * Does NOT wrap the element - wrapping should be handled by the calling code
+ *
+ * @param {string|HTMLElement} selector - CSS selector or element reference
+ * @param {Object} sizes - Size options { small: number, medium: number }
+ */
+export const fitTitle = (selector, sizes = { small: 16, medium: 24 }) => {
+  const items =
+    typeof selector === "string"
+      ? document.querySelectorAll(selector)
+      : [selector];
 
   items.forEach((ele) => {
-    let $ele = $(ele);
-    let style = window.getComputedStyle(ele);
-    let width = ele.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+    const optimalSize = calculateOptimalFontSize(ele, sizes);
 
-    // Removes the previously applied font size and resets it to the default value
-    $ele.css("font-size", "");
-    // When there is only one word, the parent element may shrink to fit the content length,
-    // so we add a wrapper and force its width to 100% to ensure consistent behavior.
-    if (!$ele.parent().hasClass("fit-title-wrapper")) {
-      $ele.wrap('<div class="fit-title-wrapper" style="width: 100%;"></div>');
+    if (optimalSize !== null) {
+      ele.style.fontSize = optimalSize + 'px';
+    } else {
+      // Reset to default if no adjustment needed
+      ele.style.fontSize = '';
     }
-    // find the longest word
-    let longestWord = $ele
-      .text()
-      .split(" ")
-      .reduce((longest, word) => {
-        let wordWidth = word.length > 0 ? renderedWidth(style, word) : 0;
-        return wordWidth > longest ? wordWidth : longest;
-      }, "");
-    if (longestWord > width) {
-      let fontSize = Math.max(
-        size,
-        Math.floor(
-          (parseFloat(style.fontSize.replace("px", "")) *
-            width) /
-            longestWord,
-        ) - 1,
-      );
-      $ele.css("font-size", fontSize + "px");
-      if ($ele.data("fitted") != true) {
-        $ele.data("fitted", true);
-        $(window).on("resize orientationchange", () => {
-          fitTitle(ele, sizes);
-        });
-      }
+
+    // Add responsive listener if not already added
+    if (!ele.dataset.fitTitleListenerAttached) {
+      const resizeHandler = () => fitTitle(ele, sizes);
+      window.addEventListener('resize', resizeHandler);
+      window.addEventListener('orientationchange', resizeHandler);
+      ele.dataset.fitTitleListenerAttached = 'true';
+
+      // Store cleanup function for potential removal
+      ele.dataset.fitTitleCleanup = resizeHandler;
     }
   });
 };
+
+/**
+ * React Hook: useOptimalFontSize
+ * Calculates and returns optimal font size without side effects
+ * Ideal for React components that manage styling internally
+ *
+ * Usage in React:
+ *   const fontSize = useOptimalFontSize(elementRef, { small: 16, medium: 24 });
+ *   return <h2 ref={elementRef} style={{ fontSize: fontSize ? `${fontSize}px` : undefined }} />;
+ *
+ * @param {React.RefObject} elementRef - React ref to the element
+ * @param {Object} sizes - Size options { small: number, medium: number }
+ * @returns {number|null} Optimal font size or null if no adjustment needed
+ */
+export function useOptimalFontSize(elementRef, sizes = { small: 16, medium: 24 }) {
+  // Note: This is exported for use in a React hook wrapper
+  // The actual React hook implementation should be in the component
+  if (!elementRef?.current) return null;
+  return calculateOptimalFontSize(elementRef.current, sizes);
+}
