@@ -435,7 +435,7 @@ $colors-light: (
 .inverted {
   color: var(--undpds-color-white);
   a {
-    color: var(--undpds-color-white);
+    color: inherit;
     background-image: linear-gradient(var(--undpds-color-white), var(--undpds-color-white)), linear-gradient(var(--undpds-color-white), var(--undpds-color-white));
   }
 }
