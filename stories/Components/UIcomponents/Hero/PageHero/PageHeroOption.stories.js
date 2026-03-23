@@ -250,12 +250,7 @@ export default {
               <code>data-viewport="true"</code> attribute to your HTML element.
             </li>
             <li>
-              <strong>Optional:</strong> If title wraps unexpectedly because of long words, use fitTitle utility in your implementation:
-              include JS file:<br></br>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitTitle.min.js">
-                https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitTitle.min.js
-              </a><br></br>
-              and call in your JS: <code>fitTitle(".pagehero-content h2")</code> after page load is complete.
+              If title wraps unexpectedly because of long words - the component automatically uses the fitTitle utility to adjust font size. No additional configuration needed.
             </li>
           </ul>
 

@@ -5,6 +5,12 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Breadcrumbcomponent } from '../../../Navigationcomponents/Breadcrumbs/Breadcrumbs';
 import { CtaButton } from '../../Buttons/CtaButton/CtaButton';
 
+/**
+ * PageHeroOption Component
+ * 
+ * Text fitting is now handled directly by the Heading component when type="2" (h2).
+ * The refactored fitTitle utility is React-safe and only modifies CSS, not DOM structure.
+ */
 export function PageHeroOption({
   data,
   title,
@@ -20,6 +26,7 @@ export function PageHeroOption({
   ...args
 }) {
   const contentRef = useRef(null);
+
   const CtaEnabledClass = args.CTA == 'On' ? 'has-cta' : '';
   return (
     <div className={["pagehero-tall", CtaEnabledClass].join(" ")}>
