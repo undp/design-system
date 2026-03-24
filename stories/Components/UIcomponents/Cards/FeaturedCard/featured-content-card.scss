@@ -10,6 +10,8 @@ $light-colors: (
   "gray": var(--undpds-color-gray-100),
 );
 
+$opaque: hsla(0, 0%, 100%, 0.9);
+
 /* feature card start */
 .feature__card {
   container: featurecard / inline-size;
@@ -37,9 +39,7 @@ $light-colors: (
     .feature__card-slide {
       &::before {
         @include mixins.background(
-          207deg,
-          hsla(0, 0%, 100%, 0.2) 30%,
-          var(--undpds-color-light-yellow)
+          207deg, $opaque, var(--undpds-color-light-yellow)
         );
       }
     }
@@ -53,9 +53,7 @@ $light-colors: (
 
           &::before {
             @include mixins.background(
-              207deg,
-              hsla(0, 0%, 100%, 0.2) 30%,
-              #{$color}
+              207deg, $opaque, #{$color}
             );
           }
         }
@@ -70,9 +68,7 @@ $light-colors: (
 
               &::before {
                 @include mixins.background(
-                  207deg,
-                  hsla(0, 0%, 100%, 0.2) 30%,
-                  #{$color2}
+                  207deg, $opaque, #{$color2}
                 );
               }
             }
@@ -110,7 +106,6 @@ $light-colors: (
     background: var(--undpds-color-gray-200);
     height: 100%;
     overflow: hidden;
-    position: relative;
     position: relative;
 
     @include breakpoints.devicebreak(medium) {
@@ -188,9 +183,7 @@ $light-colors: (
 
       &::before {
         @include mixins.background(
-          207deg,
-          hsla(0, 0%, 100%, 0.2) 30%,
-          #{$color}
+          207deg,$opaque, #{$color}
         );
       }
     }
@@ -250,9 +243,9 @@ $light-colors: (
   }
 }
 
-.image .feature__card-slide {
-  z-index: 1;
-}
+// .image .feature__card-slide {
+//   z-index: 1;
+// }
 
 //feature content
 .feature__card-content {
@@ -348,7 +341,7 @@ $light-colors: (
             &::before {
               @include mixins.background(
                 153deg,
-                hsla(0, 0%, 100%, 0.2) 30%,
+                $opaque,
                 #{$color}
               );
             }
@@ -365,7 +358,7 @@ $light-colors: (
                 &::before {
                   @include mixins.background(
                     153deg,
-                    hsla(0, 0%, 100%, 0.2) 30%,
+                    $opaque,
                     #{$color2}
                   );
                 }
