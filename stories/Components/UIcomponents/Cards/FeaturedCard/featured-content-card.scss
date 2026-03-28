@@ -6,6 +6,7 @@
   container: featurecard / inline-size;
 
   margin-block-end: 0;
+  min-height: 420px;
 
   @include breakpoints.devicebreak(medium) {
     //CtaLink
