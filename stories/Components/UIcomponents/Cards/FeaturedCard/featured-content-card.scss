@@ -6,13 +6,12 @@
   container: featurecard / inline-size;
 
   margin-block-end: 0;
-  min-height: 420px;
+
 
   @include breakpoints.devicebreak(medium) {
     //CtaLink
     .cta__link.cta--arrow {
       width: 100%;
-
       i {
         max-width: var(--undpds-spacing-100);
         &::after {
@@ -20,16 +19,6 @@
         }
       }
     }
-
-    .feature__card-slide {
-      &::before {
-        @include mixins.background(
-          0deg, rgba(10, 14, 20, 0.90) 25.24%, rgba(10, 14, 20, 0.50) 43.56%, rgba(10, 14, 20, 0.00) 58.89%
-        );
-        z-index: 1;
-      }
-    }
-
   }
 
   @include breakpoints.container(large, featurecard) {
@@ -48,9 +37,11 @@
     height: 100%;
     overflow: hidden;
     position: relative;
+    min-height: 350px;
 
     @include breakpoints.devicebreak(medium) {
       display: flex;
+      min-height: 420px;
     }
 
     &:hover {
@@ -72,6 +63,14 @@
           }
         }
       }
+
+
+      .feature__card-slide {
+        &::before {
+          // background: rgba(20, 20, 24, 0.1);
+          background: transparent;
+        }
+      }
     }
   }
 
@@ -86,7 +85,11 @@
     }
   }
   &.image {
-    color: var(--undpds-color-text-inverse);
+    color: var(--undpds-color-text-default);
+    transition: color 0.25s ease-in-out;
+    a:hover {
+      color: var(--undpds-color-text-inverse);
+    }
   }
 }
 
@@ -115,9 +118,10 @@
 
   &::before {
     @extend %feature__card;
-
+    background: linear-gradient(180deg, rgba(247, 247, 247, 0.80) 0%, rgba(247, 247, 247, 0.8) 72.62%);
     bottom: 0;
     content: "";
+    z-index: 1;
 
     @include breakpoints.devicebreak(medium) {
       height: 100%;
@@ -139,9 +143,11 @@
       max-width: 100%;
       object-fit: cover;
       width: 100%;
-      transition: transform 0.5s ease-in-out;
+      filter: brightness(2) saturate(0);
+      transition: filter 0.25s linear;
       .feature__card a:hover & {
-        transform: scale(1.01);
+        // transform: scale(1.01);
+        filter: brightness(1) saturate(1);
       }
     }
   }
@@ -153,7 +159,6 @@
 
   flex-direction: column;
   height: auto;
-  padding: var(--undpds-spacing-07) var(--undpds-spacing-06);
   position: relative;
   width: auto;
 
@@ -166,9 +171,10 @@
     font-size: var(--undpds-font-size-12);
     font-weight: 700;
     line-height: 1.12;
-    margin-bottom: var(--undpds-spacing-gutter);
+    margin-block: var(--undpds-spacing-gutter);
+    padding-inline: var(--undpds-spacing-06);
     text-transform: uppercase;
-    .feature__card.image &  {
+    .feature__card.image a:hover &  {
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.60);
     }
   }
@@ -177,12 +183,44 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: end;
-    flex-grow: 1;
-    margin-bottom: var(--undpds-spacing-06);
+    margin-top: auto;
+    // margin-bottom: var(--undpds-spacing-06);
+    padding: var(--undpds-spacing-08) var(--undpds-spacing-gutter) 0;
+    .feature__card.image & {
+      // background-image: linear-gradient(180deg, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 0.7) 30%, rgba(247, 247, 247, 0.9) 100%);
+      position: relative;
 
-    @include breakpoints.container(medium, featurecard) {
-      margin-bottom: var(--undpds-spacing-07);
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        // z-index: -1;
+        transition: opacity 0.25s ease-in-out;
+      }
+
+      &::before {
+        background-image: linear-gradient(180deg, rgba(20, 20, 24, 0) 0%, rgba(20, 20, 24, 0.7) 30%, rgba(20, 20, 24, 0.9) 100%);
+        opacity: 0;
+      }
+      &::after {
+        background-image: linear-gradient(180deg, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 0.7) 30%, rgba(247, 247, 247, 0.9) 100%);
+        opacity: 1;
+      }
     }
+    .feature__card.image a:hover & {
+      &::before {
+        opacity: 1;
+      }
+      &::after {
+        opacity: 0;
+      }
+      // background-image: linear-gradient(180deg, rgba(20, 20, 24, 0) 0%, rgba(20, 20, 24, 0.7) 30%, rgba(20, 20, 24, 0.9) 100%);
+      // animation: bgFadeoutFadein 0.25s ease-in-out;
+    }
+
+    // @include breakpoints.container(medium, featurecard) {
+    //   margin-bottom: var(--undpds-spacing-07);
+    // }
   }
 
   h4,
@@ -191,15 +229,62 @@
     font-size: var(--undpds-font-size-heading-medium);
     line-height: 1.1;
     margin-bottom: var(--undpds-spacing-04);
+    z-index: 2;
   }
 
   p {
     font-size: var(--undpds-font-size-body-small);
+    z-index: 2;
   }
 
-  .cta__link {
+  .cta__link.cta--arrow {
     z-index: 2;
+    padding: var(--undpds-spacing-gutter);
+    transition: opacity 0.25s ease-in-out;
+    position: relative;
+
+    .feature__card.image & {
+      // background: rgba(247, 247, 247, 0.9);
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        transition: opacity 0.25s ease-in-out;
+      }
+
+      &::before {
+        background: rgba(20, 20, 24, 0.9);
+        opacity: 0;
+      }
+      &::after {
+        background: rgba(247, 247, 247, 0.9);
+        opacity: 1;
+      }
+
+    }
+    .feature__card.image a:hover & {
+      &::before {
+        opacity: 1;
+      }
+      &::after {
+        opacity: 0;
+      }
+    }
   }
 }
 
+@keyframes bgFadeoutFadein {
+  0% {
+    background-image: linear-gradient(180deg, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 0.7) 30%, rgba(247, 247, 247, 0.9) 100%);
+    opacity: 1;
+  }
+  50% {
+    background-image: linear-gradient(180deg, rgba(20, 20, 24, 0) 0%, rgba(20, 20, 24, 0.7) 30%, rgba(20, 20, 24, 0.9) 100%);
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* feature card end */

@@ -41,8 +41,9 @@ export function FeaturedContentCard({
       {data.map((item, index) => (
         <div
           key={index}
-          className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`)}
+          className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`)}
         >
+          <div className={cls('feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`)}>
           <a href={item.url ? item.url : '#'}>
             <div className="feature__card-slide">
               {item.imgback && (item.type ? item.type === 'image' : image_variant === 'image') && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
@@ -57,6 +58,7 @@ export function FeaturedContentCard({
               <Ctalink label={item.button} button_option="span" />
             </article>
           </a>
+          </div>
         </div>
       ))}
     </div>
