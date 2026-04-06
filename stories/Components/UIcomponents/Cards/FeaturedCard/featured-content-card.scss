@@ -67,8 +67,7 @@
 
       .feature__card-slide {
         &::before {
-          // background: rgba(20, 20, 24, 0.1);
-          background: transparent;
+          opacity: 0;
         }
       }
     }
@@ -118,10 +117,12 @@
 
   &::before {
     @extend %feature__card;
-    background: linear-gradient(180deg, rgba(247, 247, 247, 0.80) 0%, rgba(247, 247, 247, 0.8) 72.62%);
+    background: linear-gradient(180deg, rgba(247, 247, 247, 0.80) 0%, rgba(247, 247, 247, 0.98) 72.62%);
     bottom: 0;
     content: "";
     z-index: 1;
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
 
     @include breakpoints.devicebreak(medium) {
       height: 100%;
@@ -143,11 +144,11 @@
       max-width: 100%;
       object-fit: cover;
       width: 100%;
-      filter: brightness(2) saturate(0);
-      transition: filter 0.25s linear;
+      filter: saturate(0);
+      transition: filter 1.25s ease-in-out;
       .feature__card a:hover & {
-        // transform: scale(1.01);
-        filter: brightness(1) saturate(1);
+        filter: saturate(1);
+        // transition: filter 0.25s ease-in-out;
       }
     }
   }
@@ -174,6 +175,7 @@
     margin-block: var(--undpds-spacing-gutter);
     padding-inline: var(--undpds-spacing-06);
     text-transform: uppercase;
+    transition: color 0.25s ease-in-out;
     .feature__card.image a:hover &  {
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.60);
     }
@@ -187,32 +189,22 @@
     // margin-bottom: var(--undpds-spacing-06);
     padding: var(--undpds-spacing-08) var(--undpds-spacing-gutter) 0;
     .feature__card.image & {
-      // background-image: linear-gradient(180deg, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 0.7) 30%, rgba(247, 247, 247, 0.9) 100%);
+
       position: relative;
 
-      &::before, &::after {
+      &::before {
         content: "";
         position: absolute;
         inset: 0;
         // z-index: -1;
         transition: opacity 0.25s ease-in-out;
-      }
-
-      &::before {
         background-image: linear-gradient(180deg, rgba(20, 20, 24, 0) 0%, rgba(20, 20, 24, 0.7) 30%, rgba(20, 20, 24, 0.9) 100%);
         opacity: 0;
-      }
-      &::after {
-        background-image: linear-gradient(180deg, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 0.7) 30%, rgba(247, 247, 247, 0.9) 100%);
-        opacity: 1;
       }
     }
     .feature__card.image a:hover & {
       &::before {
         opacity: 1;
-      }
-      &::after {
-        opacity: 0;
       }
       // background-image: linear-gradient(180deg, rgba(20, 20, 24, 0) 0%, rgba(20, 20, 24, 0.7) 30%, rgba(20, 20, 24, 0.9) 100%);
       // animation: bgFadeoutFadein 0.25s ease-in-out;
@@ -230,61 +222,38 @@
     line-height: 1.1;
     margin-bottom: var(--undpds-spacing-04);
     z-index: 2;
+    transition: color 0.25s ease-in-out;
   }
 
   p {
     font-size: var(--undpds-font-size-body-small);
     z-index: 2;
+    transition: color 0.25s ease-in-out;
   }
 
   .cta__link.cta--arrow {
     z-index: 2;
     padding: var(--undpds-spacing-gutter);
-    transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out, color 0.25s ease-in-out;
     position: relative;
 
     .feature__card.image & {
-      // background: rgba(247, 247, 247, 0.9);
       &::before, &::after {
         content: "";
         position: absolute;
         inset: 0;
         z-index: -1;
         transition: opacity 0.25s ease-in-out;
-      }
-
-      &::before {
         background: rgba(20, 20, 24, 0.9);
         opacity: 0;
       }
-      &::after {
-        background: rgba(247, 247, 247, 0.9);
-        opacity: 1;
-      }
-
     }
     .feature__card.image a:hover & {
       &::before {
         opacity: 1;
       }
-      &::after {
-        opacity: 0;
-      }
     }
   }
 }
 
-@keyframes bgFadeoutFadein {
-  0% {
-    background-image: linear-gradient(180deg, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 0.7) 30%, rgba(247, 247, 247, 0.9) 100%);
-    opacity: 1;
-  }
-  50% {
-    background-image: linear-gradient(180deg, rgba(20, 20, 24, 0) 0%, rgba(20, 20, 24, 0.7) 30%, rgba(20, 20, 24, 0.9) 100%);
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 /* feature card end */
