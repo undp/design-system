@@ -10,12 +10,13 @@
   padding: var(--undpds-width-150) 0 10.938rem;
   z-index: 5;
 
+  color: var(--undpds-color-white);
+
   @include devicebreak(medium) {
     padding: 25rem 0 20rem;
   }
 
   h2 {
-    color: var(--undpds-color-white);
     margin-bottom: var(--undpds-spacing-09);
 
     @include devicebreak(medium) {
@@ -23,19 +24,13 @@
     }
   }
 
-  h4 {
-    color: var(--undpds-color-white);
-  }
-
   ul {
-    color: var(--undpds-color-white);
     margin-top: var(--undpds-spacing-08);
   }
 
   a {
-    color: var(--undpds-color-white);
     background-image: linear-gradient(var(--undpds-color-white), var(--undpds-color-white)),
-      linear-gradient(var(--undpds-color-white), var(--undpds-color-white))
+      linear-gradient(var(--undpds-color-white), var(--undpds-color-white));
   }
 }
 

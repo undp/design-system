@@ -30,6 +30,15 @@ const config = {
       icons: path.resolve(__dirname, '../stories/assets/icons')
     };
 
+    // Keep Storybook output readable by filtering Sass deprecation warnings.
+    config.ignoreWarnings = [
+      ...(config.ignoreWarnings || []),
+      warning => {
+        const message = warning && warning.message ? String(warning.message).toLowerCase() : '';
+        return message.includes('sass-loader') && message.includes('deprecation');
+      }
+    ];
+
     config.module.rules.push({
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', { loader: 'sass-loader', options: { implementation: 'sass-embedded', sourceMap: false, sassOptions: { quietDeps: true, silenceDeprecations: ['import', 'global-builtin'] } } }],
@@ -41,7 +50,7 @@ const config = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env', ['@babel/preset-react', { "runtime": "automatic" }]]
+          presets: ['@babel/preset-env', ['@babel/preset-react', { "runtime": "automatic" }], '@babel/preset-typescript']
         }
       }
     });

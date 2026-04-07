@@ -259,10 +259,9 @@
 %ctaimg {
   content: "";
   height: 1.188rem;
-  margin-left: var(--undpds-spacing-04);
+  margin-inline-start: var(--undpds-spacing-04);
   margin-top: 2px;
   width: 0.813rem;
-
   @include breakpoints.devicebreak(medium) {
     margin-top: 0;
   }
@@ -519,21 +518,11 @@
 %footerlink {
   @extend %img_none;
 
-  color: var(--undpds-color-white);
   font-size: var(--undpds-font-size-16);
   line-height: 1.4;
-
-  &:hover {
-    color: var(--undpds-color-blue-100);
-  }
 }
 
 %footerlinkinvert {
-  color: var(--undpds-color-black);
-
-  &:hover {
-    color: var(--undpds-color-gray-600);
-  }
 }
 
 %selectoption {
@@ -620,7 +609,7 @@
     box-sizing: border-box;
     display: block;
     height: var(--undpds-spacing-05);
-    left: 1.25rem;
+    inset-inline-start: 1.25rem;
     position: relative;
     width: 0;
 
@@ -630,7 +619,7 @@
       background-color: var(--undpds-color-red);
       display: none;
       height: 2px;
-      right: 0;
+      inset-inline-end: 0;
       top: 7px;
       width: 100%;
     }

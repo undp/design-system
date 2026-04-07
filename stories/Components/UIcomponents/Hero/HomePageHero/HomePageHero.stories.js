@@ -7,12 +7,20 @@ import { getCaptionForLocale } from "./HomePageHeroUtils";
 export default {
   title: "Components/UI components/Hero/Homepage",
   argTypes: {
+    headingSize: {
+      name: 'Heading size',
+      control: { type: 'inline-radio' },
+      options: ['small', 'medium', 'large'],
+      description: 'Font size of the title heading (H1)',
+      table: { category: 'Appearance' },
+    },
     variant: {
       options: ["video", "image"],
       control: { type: "radio" },
     },
   },
   args: {
+    headingSize: 'medium',
     variant: "image",
   },
   parameters: {

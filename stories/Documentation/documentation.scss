@@ -132,9 +132,9 @@
 
       &.figma {
         background: var(--undpds-color-black);
+        color: var(--undpds-color-white);
 
-        p,
-        a {
+        p {
           color: var(--undpds-color-white);
         }
       }

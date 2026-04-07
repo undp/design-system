@@ -137,16 +137,8 @@
           inset-inline-start: unset;
         }
 
-        >a:focus,
-        >a:focus-within,
-        >a:hover,
-        >a,
-        >a.active {
+        &:not(.has-submenu) {
           color: var(--undpds-color-black);
-        }
-
-        &.has-submenu>a {
-          color: var(--undpds-color-white);
         }
 
         >a:not(.external, .download) {

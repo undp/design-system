@@ -4,6 +4,12 @@
 
 // * menu item row start *//
 .menu li {
+  &:focus,
+  &:hover {
+    color: var(--undpds-color-gray-600);
+    cursor: pointer;
+  }
+
   a {
     @extend %paragragh-font-14;
     @extend %img_none;
@@ -12,12 +18,6 @@
     display: inline;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-
-    &:focus,
-    &:hover {
-      color: var(--undpds-color-gray-600);
-      cursor: pointer;
-    }
 
     &.selected {
       border-bottom: 2px solid var(--undpds-color-dark-red);
