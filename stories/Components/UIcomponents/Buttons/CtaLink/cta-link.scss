@@ -1,26 +1,21 @@
 @import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/breakpoints';
 
 .cta__link {
   @extend %button;
   @extend %img_none;
 
-  color: $color-black;
+  color: inherit;
 
   &.cta--arrow {
     @extend %chevron-right-expanded;
-
-    padding-left: 0;
-    padding-right: $spacing-06;
+    padding-inline: 0 var(--undpds-spacing-06);
   }
 
   &.cta--space {
     &::after {
       @extend %ctaimg;
-
       @include transition(0.2s ease);
-
       background: url(~icons/arrow-left-expand-defaut.svg) no-repeat left center;
     }
 
@@ -41,9 +36,6 @@
     &.cta--space {
       &::after {
         @include transform(rotate(180deg));
-
-        margin-left: 0;
-        margin-right: $spacing-04;
       }
 
       &:hover::after {
@@ -52,12 +44,9 @@
     }
 
     &.cta--arrow {
-      padding-left: $spacing-06;
-      padding-right: 0;
 
       i {
         @include transform(translate(0) rotate(180deg));
-
         left: 0;
         right: 1.25rem;
       }
