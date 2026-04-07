@@ -151,6 +151,7 @@
   position: relative;
   width: auto;
   display: flex;
+  width: 100%;
 
 
   h6,
@@ -159,12 +160,9 @@
     font-weight: 700;
     line-height: 1.12;
     margin-block: var(--undpds-spacing-gutter);
-    padding-inline: var(--undpds-spacing-06);
+    padding-inline: var(--undpds-spacing-gutter);
     text-transform: uppercase;
     transition: color 0.125s ease-in-out;
-    // .feature__card.image a:hover &  {
-    //   text-shadow: 0 0 4px rgba(0, 0, 0, 0.60);
-    // }
   }
 
   .feature__card-description {
