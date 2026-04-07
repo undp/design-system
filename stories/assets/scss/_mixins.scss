@@ -259,10 +259,9 @@
 %ctaimg {
   content: "";
   height: 1.188rem;
-  margin-left: var(--undpds-spacing-04);
+  margin-inline-start: var(--undpds-spacing-04);
   margin-top: 2px;
   width: 0.813rem;
-
   @include breakpoints.devicebreak(medium) {
     margin-top: 0;
   }
@@ -610,7 +609,7 @@
     box-sizing: border-box;
     display: block;
     height: var(--undpds-spacing-05);
-    left: 1.25rem;
+    inset-inline-start: 1.25rem;
     position: relative;
     width: 0;
 
@@ -620,7 +619,7 @@
       background-color: var(--undpds-color-red);
       display: none;
       height: 2px;
-      right: 0;
+      inset-inline-end: 0;
       top: 7px;
       width: 100%;
     }
