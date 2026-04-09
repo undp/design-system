@@ -40,6 +40,8 @@
         word-break: keep-all;
         white-space: wrap;
         letter-spacing: normal;
+        color: var(--undpds-color-black);
+        background-color: var(--undpds-color-gray-100);
 
         &.edge:focus>ul.sub-menu,
         &.edge:focus-within>ul.sub-menu,
@@ -118,7 +120,6 @@
 
         &:not(.has-submenu) {
           background: var(--undpds-color-gray-400);
-          color: var(--undpds-color-black);
         }
 
         >ul.submenu {
