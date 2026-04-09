@@ -220,11 +220,11 @@ $colors: (
     }
 
     //feature-card
-    .feature__card-slide {
-      &::before {
-        @include mixins.background-image(45deg, #{$color}, transparent 67%);
-      }
-    }
+    // .feature__card-slide {
+    //   &::before {
+    //     @include mixins.background-image(45deg, #{$color}, transparent 67%);
+    //   }
+    // }
 
     //content-card
     .content-card {
@@ -343,15 +343,15 @@ $colors: (
       }
 
       //feature-card
-      .feature__card-slide {
-        &::before {
-          @include mixins.background-image(
-            318deg,
-            #{$color},
-            transparent 67.25%
-          );
-        }
-      }
+      // .feature__card-slide {
+      //   &::before {
+      //     @include mixins.background-image(
+      //       318deg,
+      //       #{$color},
+      //       transparent 67.25%
+      //     );
+      //   }
+      // }
     }
   }
   /* RTL: adds right margin instead of left on medium screens */
@@ -407,9 +407,9 @@ $colors-solid: (
     }
 
     //feature-card
-    .feature__card-slide {
-      background: #{$color};
-    }
+    // .feature__card-slide {
+    //   background: #{$color};
+    // }
   }
 }
 
