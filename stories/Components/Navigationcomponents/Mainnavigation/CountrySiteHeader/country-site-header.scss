@@ -24,7 +24,6 @@
       margin-inline-end: 1.5rem;
       padding: 0.438rem 0;
       flex-shrink: 0;
-      text-transform: uppercase;
 
       @include devicebreak(mediumonlytab) {
         width: calc(100% - 64px);
@@ -46,6 +45,7 @@
         font-size: var(--undpds-font-size-12);
         margin: 0;
         padding-block-end: 1px;
+        text-transform: uppercase;
       }
 
       span {
