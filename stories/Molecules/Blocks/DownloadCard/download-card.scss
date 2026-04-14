@@ -19,6 +19,8 @@ div.download-card {
 
   > a {
     background: none;
+    display: flex;
+    flex-flow: column nowrap;
   }
 
   &:hover {
@@ -98,6 +100,10 @@ div.download-card {
         @include mixins.transform(rotate(-45deg) translate(7px, 0));
       }
     }
+
+    .description {
+      background: var(--undpds-color-surface-hover);
+    }
   }
 
   // RTL download-css
@@ -110,7 +116,7 @@ div.download-card {
   }
 
   .description {
-    background: var(--undpds-color-gray-100);
+    background: var(--undpds-color-surface-default);
     padding: var(--undpds-spacing-06);
   }
 
