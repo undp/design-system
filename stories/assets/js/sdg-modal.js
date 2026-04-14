@@ -1,6 +1,12 @@
 // sdg modal open
 export function sdgModal() {
-  const windowTop = window.top || window;
+  // https://www.chromatic.com/docs/faq/storybook-chromatic-canvas-load-failure/
+  let windowTop;
+  try {
+    windowTop = window.top || window;
+  } catch (e) {
+    windowTop = window;
+  }
   const $modalOpen = jQuery('.sdg-card:not(.sdg-card-link)');
 
   // Remove hash in url on modal close
