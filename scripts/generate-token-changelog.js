@@ -214,6 +214,13 @@ function main() {
   const baseTokens = getBaseTokens();
 
   const { added, changed, removed } = diff(baseTokens, currentTokens);
+
+  // Skip writing if nothing changed to avoid duplicate entries
+  if (added.length === 0 && changed.length === 0 && removed.length === 0) {
+    console.log('ℹ️  No token changes detected — CHANGELOG.md not modified.');
+    return;
+  }
+
   const date = new Date().toISOString().slice(0, 10);
   const newEntry = buildMarkdown({ added, changed, removed }, date, pkg.version);
 
