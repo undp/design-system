@@ -5,13 +5,21 @@
   "homepage": "https://design.undp.org",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run smoke-test",
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --loglevel info",
     "transform-tokens": "node scripts/transform-tokens.js",
     "validate-tokens": "node scripts/validate-tokens.js",
-    "test-token-deletion": "node scripts/test-token-deletion.js"
+    "test-token-deletion": "node scripts/test-token-deletion.js",
+    "lint:js": "eslint \"stories/**/*.{js,jsx}\" \"scripts/**/*.js\"",
+    "lint:css": "stylelint \"stories/**/*.scss\" --allow-empty-input",
+    "lint": "npm run lint:js && npm run lint:css",
+    "generate-manifest": "node scripts/generate-manifest.js",
+    "check-bundle-size": "node scripts/check-bundle-size.js",
+    "smoke-test": "node scripts/smoke-test.js",
+    "generate-component-metadata": "node scripts/generate-component-metadata.js",
+    "generate-token-changelog": "node scripts/generate-token-changelog.js"
   },
   "keywords": [
     "UNDP",
