@@ -12,7 +12,7 @@
     "transform-tokens": "node scripts/transform-tokens.js",
     "validate-tokens": "node scripts/validate-tokens.js",
     "test-token-deletion": "node scripts/test-token-deletion.js",
-    "lint:js": "eslint \"stories/**/*.{js,jsx}\" \"scripts/**/*.js\"",
+    "lint:js": "eslint --quiet \"stories/**/*.{js,jsx}\" \"scripts/**/*.js\"",
     "lint:css": "stylelint \"stories/**/*.scss\" --allow-empty-input",
     "lint": "npm run lint:js && npm run lint:css",
     "generate-manifest": "node scripts/generate-manifest.js",

@@ -36,9 +36,14 @@ jobs:
         run: npm ci
 
       - name: Lint JavaScript (ESLint)
+        # --quiet: only errors fail CI; warnings are reported but don't block.
+        # Stories were not linted previously so pre-existing warnings are allowed.
+        # The flat config is in eslint.config.js (required by ESLint v10+).
         run: npm run lint:js
 
       - name: Lint SCSS (Stylelint)
+        # .stylelintrc.json defaultSeverity: "warning" means violations are
+        # warnings. Errors (exit 2) would still block CI.
         run: npm run lint:css
 
   build:
