@@ -200,7 +200,6 @@ const getCaptionForLocale = (locale) => {
             contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
             descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
             button: "اقرأ أكث",
-            button: "اقرأ أكث",
             type: "color",
             scale: "medium",
           },
