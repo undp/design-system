@@ -1,0 +1,701 @@
+{
+  "version": "1.7.3",
+  "generatedAt": "2026-04-16T17:56:33.587Z",
+  "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@1.7.3/",
+  "assets": {
+    "css": [
+      {
+        "path": "css/base-minimal-no-grid.min.css",
+        "size": 89970,
+        "sha256": "41a0dda240ea4309523d21a2fb88525979c251f7144e43ec71f75016bbbf5cd0"
+      },
+      {
+        "path": "css/base-minimal.min.css",
+        "size": 152153,
+        "sha256": "8eb1e28f285940753ce280bf4a841a31a5f7bb47d71d1169451137a03f9e59f7"
+      },
+      {
+        "path": "css/ckeditor5.min.css",
+        "size": 186024,
+        "sha256": "e32164db95325835e2053f43787d896d4a32cffd694afb3f4edf0b62f8cd8902"
+      },
+      {
+        "path": "css/components.min.css",
+        "size": 289285,
+        "sha256": "8f077ec998b3e218f6037c25a9869740dd8305f8f3b0282b98c226f701906b5f"
+      },
+      {
+        "path": "css/components/accordion.min.css",
+        "size": 1750,
+        "sha256": "2f4beabda235106431a708e09ed61940bab209d9c14b2252dfcb0a9e3cd8b105"
+      },
+      {
+        "path": "css/components/author-card.min.css",
+        "size": 780,
+        "sha256": "316e3c49ca1ae043da742f59d3ab100d16aa14644187d7f470072ea59dce6387"
+      },
+      {
+        "path": "css/components/author-column.min.css",
+        "size": 537,
+        "sha256": "9a402587708a1a69330244904c9ffe76dfd90326cc33bb05e3b6e5fcf835047d"
+      },
+      {
+        "path": "css/components/author-summary.min.css",
+        "size": 1435,
+        "sha256": "cc1c1d84c3ec534e9ce92220038bb9dbc6a7a909c52065e83e2f87a653acefbc"
+      },
+      {
+        "path": "css/components/bio-card.min.css",
+        "size": 10443,
+        "sha256": "7846e741380e946c4d0185f75e5c309fa812e140712b7fe9d866a4c51f777942"
+      },
+      {
+        "path": "css/components/blockquotecomp.min.css",
+        "size": 737,
+        "sha256": "bf1f9739260bd8d753e808a2cedd853e8b078f758895cc565e519c8015b97a9d"
+      },
+      {
+        "path": "css/components/breadcrumbs.min.css",
+        "size": 1452,
+        "sha256": "b7f29a479bfb3d7134578d6bf332d5c71b8407c9674a815a40da9fcd6ccfa840"
+      },
+      {
+        "path": "css/components/buttons.min.css",
+        "size": 6886,
+        "sha256": "580d2969dcd46f57e8c1aebb4bacc1bb1963dffc3ccc1c3e3bbb9c104f5ac926"
+      },
+      {
+        "path": "css/components/checkbox-radio-common.min.css",
+        "size": 167,
+        "sha256": "3867072b11eec7977762ae4087e80f89e3f123990b165957dc89f5e72e274c71"
+      },
+      {
+        "path": "css/components/checkbox.min.css",
+        "size": 463,
+        "sha256": "d3b8af90018d930d4262295deae6903ff61e459c9edc629a7f121712d755210c"
+      },
+      {
+        "path": "css/components/chips.min.css",
+        "size": 646,
+        "sha256": "5f0da8e507c48e91da5e4a44dc669291d68c8d7b251f41e89d75b0fa04583f0e"
+      },
+      {
+        "path": "css/components/content-card-with-and-without-image.min.css",
+        "size": 148,
+        "sha256": "20937330c1bac27ef9bd5a3ed3d4c8bd224b95938e71b86b254b805dfb1a7b8e"
+      },
+      {
+        "path": "css/components/content-card.min.css",
+        "size": 20145,
+        "sha256": "5f323b44644841975ec91907180a9c3ed4c7669c9697e7b60d0b036e7037f53d"
+      },
+      {
+        "path": "css/components/country-card.min.css",
+        "size": 2649,
+        "sha256": "fde806e20885819d160cf4bd9feb6b85a1445b09d36b73f763cabd74897fbde3"
+      },
+      {
+        "path": "css/components/country-site-header.min.css",
+        "size": 6406,
+        "sha256": "3bcb83514b0948a432d8b85e62d22d35834a56b73f63c972fbff914697f8049b"
+      },
+      {
+        "path": "css/components/cta-block.min.css",
+        "size": 381,
+        "sha256": "2d1f2a9a1eb36e910f8b5a28a7ba29cceb399b496d078c7cc7a87a0e3f2afda1"
+      },
+      {
+        "path": "css/components/cta-link.min.css",
+        "size": 1984,
+        "sha256": "eaed2f47e1b568657ed40354b0638c70b9f3e3b4e2fd84161e69e6551a0447ac"
+      },
+      {
+        "path": "css/components/custom-select.min.css",
+        "size": 2383,
+        "sha256": "9284013d11d2e6162425bf13491f418d86674c3bcd15505db31d2e11e25dc8cf"
+      },
+      {
+        "path": "css/components/documentation.min.css",
+        "size": 3870,
+        "sha256": "147caf81db939c00271667691e132263e6492184b397c72ac5a779824e7de2dc"
+      },
+      {
+        "path": "css/components/download-card.min.css",
+        "size": 23446,
+        "sha256": "9b52ace3d5da7b3a76a1113fe64be1cf462a92e26147aa6bfd3fcce57ff048c2"
+      },
+      {
+        "path": "css/components/download-modal.min.css",
+        "size": 1614,
+        "sha256": "1d282643c47e71f59027fb64e2b7cc61a15c9df1f146365cdac4bcad9137d0a4"
+      },
+      {
+        "path": "css/components/download-row.min.css",
+        "size": 848,
+        "sha256": "db135f525079641f66ee69475ca5dc42af9f1f938cb4973d3784514c040d9727"
+      },
+      {
+        "path": "css/components/featured-card.min.css",
+        "size": 1034,
+        "sha256": "de2927a49bf17a79143c07c5a837340e3afedc7ece81d3b95046eeb821d7ba7f"
+      },
+      {
+        "path": "css/components/featured-content-card.min.css",
+        "size": 4148,
+        "sha256": "56521880b2cfd33e52d2256da18e58a4103d02e66aacf8511b2d294d3497beaa"
+      },
+      {
+        "path": "css/components/filter-and-search-bar.min.css",
+        "size": 1640,
+        "sha256": "a984bf49089d0453614d56da7d38af554fd38c9fd965bd3406666668e207dad0"
+      },
+      {
+        "path": "css/components/fixed-size-carousel.min.css",
+        "size": 3719,
+        "sha256": "7e9396545fa5afd75f516ed3dd19d82d3696a21bf1384e04d9bc689f20af9d3d"
+      },
+      {
+        "path": "css/components/fluid-image-size-carousel.min.css",
+        "size": 2948,
+        "sha256": "3d83577f0baaf16a926645de8aca8df82fa6e7a28ff4d0ed9f61d51f641b1678"
+      },
+      {
+        "path": "css/components/footer.min.css",
+        "size": 7888,
+        "sha256": "cd98e04a062e55cdb63d002aea26c1bcc16b64835171063030fc4094d4b8011f"
+      },
+      {
+        "path": "css/components/frosted-background.min.css",
+        "size": 455,
+        "sha256": "563846cc9d70b27a6ee5fa1fb409f424709d1bedfc25a7399870675432c18213"
+      },
+      {
+        "path": "css/components/global-header.min.css",
+        "size": 4891,
+        "sha256": "c6d57451b9308585d2b54211b43065aec6cef063ca208e1f4c715d8cbeb1682e"
+      },
+      {
+        "path": "css/components/headingbig.min.css",
+        "size": 586,
+        "sha256": "2fa89a2ba471d6387d014780df04a2d2aa6648d494bea0857cac1bcd3b1199b3"
+      },
+      {
+        "path": "css/components/homepage-hero.min.css",
+        "size": 4059,
+        "sha256": "de2d16a289a710e35b88855b45be3d4f27da36ceda78432305ba73f9c63d7c64"
+      },
+      {
+        "path": "css/components/image-caption.min.css",
+        "size": 1632,
+        "sha256": "79c8ad5b0e1facf68d2a6d329b3cbd5067382646395e2a7b22544224081fe2da"
+      },
+      {
+        "path": "css/components/image-only-carousel.min.css",
+        "size": 1481,
+        "sha256": "35945c1c1396203c462c30f0dba82afaff5511cc423ed2fcf00b791289effc47"
+      },
+      {
+        "path": "css/components/image-reveal-cards.min.css",
+        "size": 238,
+        "sha256": "ab8b646fae506e6f73afa8e5d9576d9cd4b84b5bd5a027f10c335c045636c49c"
+      },
+      {
+        "path": "css/components/image-revel-cta-card.min.css",
+        "size": 8637,
+        "sha256": "639c44193e6444bf6a457dada7f7c8b2be84ce4c10b977b7f784c9b96d3dc3c2"
+      },
+      {
+        "path": "css/components/input-fields.min.css",
+        "size": 12119,
+        "sha256": "5300098b9437eb1099a91503a1088507ee7a57311a745a2b24d50bd2baf32fab"
+      },
+      {
+        "path": "css/components/intro.min.css",
+        "size": 30918,
+        "sha256": "635027bf83421bfb7c3332a45e4612b7ba26974cd29867b83e0a6d639b59f7f5"
+      },
+      {
+        "path": "css/components/language-switcher.min.css",
+        "size": 3271,
+        "sha256": "f3e83d53cf55b7d9ad46f3bb3262166d546e67371f5fbbd7785e197f83bc8373"
+      },
+      {
+        "path": "css/components/lightbox-gallery.min.css",
+        "size": 4338,
+        "sha256": "b14e7416b4fe10eecfcf4527b5045fc03f2642c517f5e7c12994883f059b3674"
+      },
+      {
+        "path": "css/components/lightbox.min.css",
+        "size": 9835,
+        "sha256": "00e5625b95cfb13585f2fce4a73265ee984df1650e469a2c11cda6041d02e30e"
+      },
+      {
+        "path": "css/components/loader.min.css",
+        "size": 502,
+        "sha256": "2124334666d51d89041fadaf214d2e57762f68f46e0fe99727a4166c2eddd89d"
+      },
+      {
+        "path": "css/components/mega-menu.min.css",
+        "size": 5617,
+        "sha256": "9c0a146c11953a376d154112450c6d0e9b05a21d786d2a8dc07ab76baa007efb"
+      },
+      {
+        "path": "css/components/menu-multi-level.min.css",
+        "size": 10047,
+        "sha256": "4a332bd33867a2ec2731c16a7b1a22460370726206872725aeaeec9e74831c8e"
+      },
+      {
+        "path": "css/components/menu-overflow.min.css",
+        "size": 11129,
+        "sha256": "73ad45f2edfbdffba858e7f8937d3863381573ecd11197d5c6cad7faf122f68d"
+      },
+      {
+        "path": "css/components/menu.min.css",
+        "size": 305,
+        "sha256": "0743fff5004d8edd5c3e532c61ab1b022f3399e8db1a808020411adae534054c"
+      },
+      {
+        "path": "css/components/mobile-nav.min.css",
+        "size": 4391,
+        "sha256": "ca17676a8b83bb63efd474402d383022b58463d4d2f24c34c82aad1568a67eca"
+      },
+      {
+        "path": "css/components/modal.min.css",
+        "size": 1661,
+        "sha256": "beead649cc05b4ee25255a7b6cae597c933431b847d8ce7f2d8803c2f02d3b1c"
+      },
+      {
+        "path": "css/components/multi-select.min.css",
+        "size": 4146,
+        "sha256": "d6d878c8d53babf2b4838118d2021c0319bc9a0d27c6f1d129ad47f585eaf4a2"
+      },
+      {
+        "path": "css/components/newsletter-signup.min.css",
+        "size": 1572,
+        "sha256": "8c22ecb6f63d00ba72731d8a79c1046a654c42ace91aa7ec433735758e6a2607"
+      },
+      {
+        "path": "css/components/our-expertise.min.css",
+        "size": 3859,
+        "sha256": "af9a3043a5f58cbb06a6a1f59d33d9e403196e5f024deb9ddee7312a6f592e9d"
+      },
+      {
+        "path": "css/components/page-hero.min.css",
+        "size": 4565,
+        "sha256": "96cd17d585d15e62690c1bb8d9457e10256679f287bc932a15fd576a8f4e2711"
+      },
+      {
+        "path": "css/components/page-wide-card.min.css",
+        "size": 10789,
+        "sha256": "ccf31c7fb263ddde927967758334f000a9daf39d21ab021af4622f26925c2a36"
+      },
+      {
+        "path": "css/components/page.min.css",
+        "size": 661,
+        "sha256": "b0e534ba054d415e7b6708c54761002bc0db52572103cb9684d8bed494939c70"
+      },
+      {
+        "path": "css/components/pagehero-cards.min.css",
+        "size": 3535,
+        "sha256": "8098ce068ad74c39cfd1e6899efcfecf26eff4c406d2abe94e7c6ee7c4582f4e"
+      },
+      {
+        "path": "css/components/pagination.min.css",
+        "size": 1556,
+        "sha256": "7bc36a058e7173ee34446d09d2b874dce0e43e9ba728ab0e66092d35ff971862"
+      },
+      {
+        "path": "css/components/parallax-card.min.css",
+        "size": 2860,
+        "sha256": "e91535abe3abb2e74bcbd0bf11bc7e348fc666976079d04cb7cc70d06cfb0d87"
+      },
+      {
+        "path": "css/components/parallax-cards.min.css",
+        "size": 926,
+        "sha256": "b5a29f2852116e713a539e497ef785d9bd74a6e8ca7a2fe47ee3df02301c9c14"
+      },
+      {
+        "path": "css/components/parallax-gallery.min.css",
+        "size": 2739,
+        "sha256": "34af577854527d9bde375122e74408b4bad29be10790fce6993005c6ff1b3582"
+      },
+      {
+        "path": "css/components/post-header.min.css",
+        "size": 151,
+        "sha256": "34ab00b42d6d633c9704674c782b8ffad28c28e65d6b1992ce692099b22381e9"
+      },
+      {
+        "path": "css/components/post.min.css",
+        "size": 190,
+        "sha256": "036f686edfb7b1af41312260227f6f5c9b399f0d1d0602c03f9df82a0a5bd251"
+      },
+      {
+        "path": "css/components/progress-bar.min.css",
+        "size": 374,
+        "sha256": "47dd910c0e2326895fdde3168d09fbef8b72174ea791d855f40454b354cf0e48"
+      },
+      {
+        "path": "css/components/project-detail.min.css",
+        "size": 563,
+        "sha256": "b81b783a62dd770b380b00c1c72e753311b9bd8d2b2a84f3d79cec33cabd214e"
+      },
+      {
+        "path": "css/components/projectdetails.min.css",
+        "size": 520,
+        "sha256": "e0f5e912f2fb591b752d74c92a5a250c6fea348677b240cb3232fde1f1efea07"
+      },
+      {
+        "path": "css/components/publication-card.min.css",
+        "size": 14414,
+        "sha256": "9b5ad436de30045258c89a1b82117aafc8ccb2be271a2f576b75258ca3c4597b"
+      },
+      {
+        "path": "css/components/radio.min.css",
+        "size": 568,
+        "sha256": "8bddd5590bd4bc6a3280b829aba3a892dc309461825806e57a37a477ea5596b8"
+      },
+      {
+        "path": "css/components/scrollbar.min.css",
+        "size": 631,
+        "sha256": "341c5dc0b64e9779025bd9dfe9069b4e4a648265c7dbd18c85185abafc2d0638"
+      },
+      {
+        "path": "css/components/sdg.min.css",
+        "size": 5197,
+        "sha256": "0e15200e4d4db22340093055bc2ee80b254f998e316ef6c9167a2869270b1657"
+      },
+      {
+        "path": "css/components/sdgmodal.min.css",
+        "size": 14137,
+        "sha256": "b3388bd2021aad47b3052e4b23eec9512d7ea63e6cf65819152bef316a2413d9"
+      },
+      {
+        "path": "css/components/search-expand.min.css",
+        "size": 1223,
+        "sha256": "b1e211c615ec19dee4ee45802ae2610c3afe012405ecc2671d104c2200b1d566"
+      },
+      {
+        "path": "css/components/sectionheader.min.css",
+        "size": 82,
+        "sha256": "fa2cc61b3af944d5af0f3f1d86fe9e582cfdd5b4de9e22c4f01e77f4b7786b6d"
+      },
+      {
+        "path": "css/components/select.min.css",
+        "size": 728,
+        "sha256": "636364f4a9305b6dc5ae436ebac901cd2f07291f46b1ee656e61e065113c3962"
+      },
+      {
+        "path": "css/components/sidebar-data.min.css",
+        "size": 513,
+        "sha256": "6ae94daa6973a043b5a7c47993df9b8ba71fb57ab1083c89454a046fb70efaf1"
+      },
+      {
+        "path": "css/components/sidebar.min.css",
+        "size": 4577,
+        "sha256": "3f8a1aed8417db399881e81ff4a71aebdc6fa14a307f85776330ea565f42b797"
+      },
+      {
+        "path": "css/components/smallcopy.min.css",
+        "size": 225,
+        "sha256": "264d5d053654d1a22042aa1e7c91ae3dfbe2ee22c36c3be0043e7f58647c7576"
+      },
+      {
+        "path": "css/components/stats-card-slider.min.css",
+        "size": 592,
+        "sha256": "80e5334befae853bea69dcb5cf62d9a46645c615f55de78ed6bd0a2565fed263"
+      },
+      {
+        "path": "css/components/stats-cards.min.css",
+        "size": 6125,
+        "sha256": "7c74b973e5fa3fc1bb084c160dcbcda78f3e276426ce4982f3df597ee22e26de"
+      },
+      {
+        "path": "css/components/stats-panel.min.css",
+        "size": 5841,
+        "sha256": "ff610c9282c1e4afebb2275e0a02c115eafa4bba49c5acf80a05cb6a6ff3082f"
+      },
+      {
+        "path": "css/components/stats-slider.min.css",
+        "size": 4465,
+        "sha256": "fe013e6e3178f8b6a48ff5275ad45d8bad17467050015bff97f14a83aa23eab7"
+      },
+      {
+        "path": "css/components/stats.min.css",
+        "size": 101,
+        "sha256": "d47c55a3c5e945f063b9f4dfc77e2296f374ab70c715017a50ac8c19bdd9700e"
+      },
+      {
+        "path": "css/components/swiper.min.css",
+        "size": 2027,
+        "sha256": "6085a3d213af94a5bc38bcc1e889a495c1110b10663b84015a0a29c0669d4592"
+      },
+      {
+        "path": "css/components/switch.min.css",
+        "size": 2443,
+        "sha256": "932bc1212b4b3519a5dc207ee826d7130ebf22fc746d170ca50e7b627cf42fbc"
+      },
+      {
+        "path": "css/components/tab.min.css",
+        "size": 1024,
+        "sha256": "a2025e6270e455d9cbeaf2b118020f1f562d9d3ab51f023adf0f5f01ef66d620"
+      },
+      {
+        "path": "css/components/tertiary.min.css",
+        "size": 354,
+        "sha256": "e7946548e10fd00fffb2915a5c9917b8b20be0503b91147d5ee860cbdbbb179a"
+      },
+      {
+        "path": "css/components/text-panel.min.css",
+        "size": 2789,
+        "sha256": "ad392d8443a5efbba12286d899fdb6692ead9583166e3bed7d6c30162fca3d73"
+      },
+      {
+        "path": "css/components/textbackground.min.css",
+        "size": 363,
+        "sha256": "3eaf93b22cf7586c35c2415452d4739109607781304419b51fb1f9bcb6da6407"
+      },
+      {
+        "path": "css/components/textcta.min.css",
+        "size": 458,
+        "sha256": "79f74f55440f444afa146b9c36153e3d509f6487705269146f8d4ba80787933b"
+      },
+      {
+        "path": "css/components/tweet-card.min.css",
+        "size": 1456,
+        "sha256": "b38d898b89871d9b9f4de36430e2030fba286ae867f6afa2313ddef6ec14f70d"
+      },
+      {
+        "path": "css/components/tweet-panel.min.css",
+        "size": 614,
+        "sha256": "8dc624ede94d23d00ad508b7809a5b9c18293db23802c0fbe476b94642ce9769"
+      },
+      {
+        "path": "css/templates.min.css",
+        "size": 19705,
+        "sha256": "dcdfffecc966c0b47e01af782a9e609cff089654b060fb3a0250ccf882c379ca"
+      },
+      {
+        "path": "css/templates/article-page.min.css",
+        "size": 2414,
+        "sha256": "b2aa432888243e0483b14b5f2e370adfea2469447598319f15046e1aa4e4eeef"
+      },
+      {
+        "path": "css/templates/author-page.min.css",
+        "size": 786,
+        "sha256": "0dd7bc6233e5eee18989f7c55a4f7e0f6d6858c597f933182d51d5514f0ab5c4"
+      },
+      {
+        "path": "css/templates/authors.min.css",
+        "size": 2805,
+        "sha256": "dece49b745d6aedc510b8c1724acd60391cb2862c49a4f62f84887f216156d2e"
+      },
+      {
+        "path": "css/templates/countryhome-page.min.css",
+        "size": 1883,
+        "sha256": "284e5d7b6d0698781e1d68fac8bdb55b5289bbdc9de89e39eaeed6499cb4cf7d"
+      },
+      {
+        "path": "css/templates/generic-landing-page.min.css",
+        "size": 5048,
+        "sha256": "328b5f325c882a434be3297afc3c9c71ea3fed26610204b6e29de2e3aa0ac774"
+      },
+      {
+        "path": "css/templates/generic-page.min.css",
+        "size": 6606,
+        "sha256": "429ad400c7873f2891d35e75c836c7d27dc095a0ee28d4c4ac9bc0513f0cc1f8"
+      },
+      {
+        "path": "css/templates/globalhome-page.min.css",
+        "size": 1119,
+        "sha256": "491049cd77198bb4b726b9ede3cf40a234a4718dee09dec94ee6d65b67aff9fd"
+      },
+      {
+        "path": "css/templates/project-page.min.css",
+        "size": 3014,
+        "sha256": "334ba3fb2cec05f65066b62c6148e5b30747301d98b023f62635fdf3afde4baf"
+      },
+      {
+        "path": "css/templates/publication-page.min.css",
+        "size": 4507,
+        "sha256": "6fe76ee12ec528e9c33824becabdd7e8614853b7e482ec0e6f415bb363864ddd"
+      },
+      {
+        "path": "css/templates/sdg.min.css",
+        "size": 912,
+        "sha256": "d727a2ad784240c2b70689a15fd1fe5b410fb73b70fe149fa18538632d9fb403"
+      }
+    ],
+    "js": [
+      {
+        "path": "js/accordion.min.js",
+        "size": 21997,
+        "sha256": "221697661451f4ef36961b8dacd0a2a584e979c679172a0211cc3b653b81b4a7"
+      },
+      {
+        "path": "js/addingFonts.min.js",
+        "size": 238,
+        "sha256": "a6b87910017fe2a69348c3dbb24b5d581ce94adfc14d06029c59eb4be0a18a9d"
+      },
+      {
+        "path": "js/all.min.js",
+        "size": 123617,
+        "sha256": "2fa934b6124d5ce75960e1fbdc5035ad8e4a4c4370fc05b19155fa35db010fde"
+      },
+      {
+        "path": "js/animation.min.js",
+        "size": 21728,
+        "sha256": "9d973625134bfce60456fe72e9175064d528940fae9a3147ff621ab1f171f0f0"
+      },
+      {
+        "path": "js/author-filter.min.js",
+        "size": 829,
+        "sha256": "ec434eba668a749b70ea01d8561ec4c12b04a2b221f1fc360aa809b2a12065ef"
+      },
+      {
+        "path": "js/download-modal.min.js",
+        "size": 21363,
+        "sha256": "9a67d09c54d2529dfe087677657180a9fe0aa3fc84b1d5dc0bb383446af50f53"
+      },
+      {
+        "path": "js/expand-search.min.js",
+        "size": 21363,
+        "sha256": "11ab0d2d3b335ee958a1888839ddaae7e41d463be9ecf3f765217fb34922be61"
+      },
+      {
+        "path": "js/filter-search-bar.min.js",
+        "size": 23458,
+        "sha256": "ec571af0b5ed00a3b749b73c93739fe1b6c738ee6089fb593165c2f2d12b1782"
+      },
+      {
+        "path": "js/fitText.min.js",
+        "size": 26017,
+        "sha256": "d84355d9642b1d19973b2a0f28319e357e3b3374e7bc9d7819c35200f5009bc5"
+      },
+      {
+        "path": "js/fitTitle.min.js",
+        "size": 32382,
+        "sha256": "bb6e1f546611105c7fd7718030ea7f46898dc0b29bda04b3b5edc69373c1d399"
+      },
+      {
+        "path": "js/init.js",
+        "size": 6990,
+        "sha256": "b456e1d85cab264248b9b5b47b82d7dcf2295e6d41379f79085248e819cf81e5"
+      },
+      {
+        "path": "js/lang-switcher.min.js",
+        "size": 21116,
+        "sha256": "9db2e7790be7db403f03909db8942307a543baa21f976985128ea356d252bbc2"
+      },
+      {
+        "path": "js/lazyload.min.js",
+        "size": 24914,
+        "sha256": "930f0e0a9f2ad584d0ff366a11074dec8653ee773e0f26a5aa41ba1fe87f6cfd"
+      },
+      {
+        "path": "js/lightbox-gallery.min.js",
+        "size": 21943,
+        "sha256": "b4e4819242a86b0ff2a06b38ab41675e472ebbda0171c6963b46484c75c61f0d"
+      },
+      {
+        "path": "js/modal.min.js",
+        "size": 1140,
+        "sha256": "6b147c30bf1c438658e1af2b74750d6f8db686ea9963bfa64029549201aacf5f"
+      },
+      {
+        "path": "js/multi-select.min.js",
+        "size": 42982,
+        "sha256": "201f92595924a333aa575d8f82d0292a827c66af58a57efb1e83ce62573d7ad8"
+      },
+      {
+        "path": "js/navigation-data.min.js",
+        "size": 51596,
+        "sha256": "6787de38a3cb6f4267c8f4da71790095a85c5a24c12acd85c2869c0f0e5a3b9f"
+      },
+      {
+        "path": "js/navigation.min.js",
+        "size": 54782,
+        "sha256": "7ba684d453878265a5864b17c430e26bbc8376f84b2878250860bda1400c3faf"
+      },
+      {
+        "path": "js/our-expertise.min.js",
+        "size": 23560,
+        "sha256": "3071d34dbf4ae6ff1df1572958e241dcdb17c919041db974ff32e80902c4fa77"
+      },
+      {
+        "path": "js/parallax.min.js",
+        "size": 38117,
+        "sha256": "cdc7e73dbebdd98b36cf5accd595496b82ff0409eaf3620e649df50fa06c1e3d"
+      },
+      {
+        "path": "js/resize.min.js",
+        "size": 14262,
+        "sha256": "bdc840b1ebd2fda034a9656f65b8247534ecd59a1b2e083e2ae6583b82be9085"
+      },
+      {
+        "path": "js/scrolling-progress-bar.min.js",
+        "size": 664,
+        "sha256": "1e3fab7d6228ec0ebe89c2ae8419b0a2d264f0d99b8034e90024029da4279406"
+      },
+      {
+        "path": "js/sdg-modal.min.js",
+        "size": 29859,
+        "sha256": "4ed09bba348be7f14ce2bcbfeaf27cf9c6fc776869d73fa828b037960e58eb9f"
+      },
+      {
+        "path": "js/select.min.js",
+        "size": 21181,
+        "sha256": "407513ec4d30a1453bcae119e4e43e55060020ed5be2d38d14fc0297e3fa1887"
+      },
+      {
+        "path": "js/sidebar.min.js",
+        "size": 21559,
+        "sha256": "0442eb76606a96954a069c4d2cb60dae380e112f234efd0deb5b8bc36bd05271"
+      },
+      {
+        "path": "js/smartresize.min.js",
+        "size": 15358,
+        "sha256": "604f57e63281c9c3d7279ebab351a8b00330dcd357531d3dbd2c3be38acb9c00"
+      },
+      {
+        "path": "js/smooth-bg-change.min.js",
+        "size": 20128,
+        "sha256": "b73bd85ed8c99711cfcc9bfe7a1b24a29e83d19a42558131b63b8cb8e17bc55a"
+      },
+      {
+        "path": "js/stats.min.js",
+        "size": 1044,
+        "sha256": "ec263bb75e2b889ad1af774327a6f8a821019195d235bb6295ada29e01c97706"
+      },
+      {
+        "path": "js/sticky.min.js",
+        "size": 1462,
+        "sha256": "b8f6e8587a5ab909db29c8819e22e0e5b8f5688b72c9d41b04e674e7183a4894"
+      },
+      {
+        "path": "js/storybook-init.min.js",
+        "size": 87285,
+        "sha256": "ce32bd569932a9e038f79bbac7c799f345b166f8eb7f1d750f1e64fbc3b86fcb"
+      },
+      {
+        "path": "js/swiper.min.js",
+        "size": 33762,
+        "sha256": "26f85b547bff0277db6a2ce340baf1e59bd249ecc3bbb5f76a08868fd9a42531"
+      },
+      {
+        "path": "js/tabs.min.js",
+        "size": 763,
+        "sha256": "2d3b7fa3b116163ca3b69f8460f8fd0f3dd9cc8881d2839ae8733195db5ecd44"
+      },
+      {
+        "path": "js/undp.min.js",
+        "size": 922,
+        "sha256": "fb3ff71badaeaafecce098d8a736df8b650e00956327206fa29608c992f0ea98"
+      },
+      {
+        "path": "js/viewport.min.js",
+        "size": 22660,
+        "sha256": "f99eaaf3e9e458aa150436d8ca3064106f8411c93162636315235efed665b927"
+      }
+    ]
+  }
+}

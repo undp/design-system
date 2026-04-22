@@ -1,0 +1,2435 @@
+{
+  "version": "1.7.3",
+  "generatedAt": "2026-04-16T17:56:33.652Z",
+  "totalComponents": 95,
+  "statusSummary": {
+    "draft": 0,
+    "beta": 0,
+    "stable": 95,
+    "deprecated": 0
+  },
+  "components": [
+    {
+      "title": "Components/Forms/Checkbox",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Forms",
+        "name": "Checkbox"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Forms/Checkbox/Checkbox.stories.js",
+      "stories": [
+        "CheckboxStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/checkbox.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/Forms/Dropdown/MultiSelect",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Forms",
+        "name": "MultiSelect"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Forms/Dropdowns/Multiselect/MultiSelect.stories.js",
+      "stories": [
+        "MultiSelectStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/multi-select.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/checkbox.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/radio.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/multi-select.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/Forms/Dropdown/Select",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Forms",
+        "name": "Select"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Forms/Dropdowns/CustomSelect/CustomSelect.stories.js",
+      "stories": [
+        "CustomSelectStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/custom-select.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/select.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/Forms/Input fields",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Forms",
+        "name": "Input fields"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Forms/InputFields/InputFields.stories.js",
+      "stories": [
+        "InputcomponentDate",
+        "InputcomponentNumber",
+        "InputcomponentPassword",
+        "InputcomponentTelephone",
+        "InputcomponentText",
+        "InputcomponentEmail",
+        "InputcomponentUrl",
+        "InputcomponentTime",
+        "InputcomponentWeek",
+        "InputcomponentMonth",
+        "InputcomponentDatetimeLocal",
+        "InputcomponentColor",
+        "InputcomponentRange",
+        "InputcomponentFile"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/Forms/Radio",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Forms",
+        "name": "Radio"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Forms/Radio/Radio.stories.js",
+      "stories": [
+        "RadioStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/radio.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/Forms/Search expand",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Forms",
+        "name": "Search expand"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Forms/SearchExpand/SearchExpand.stories.js",
+      "stories": [
+        "SearchExpandStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/search-expand.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/expand-search.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/Forms/Text panel",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Forms",
+        "name": "Text panel"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Forms/TextPanel/TextPanel.stories.js",
+      "stories": [
+        "TextPanelStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/text-panel.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/Forms/Textarea",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Forms",
+        "name": "Textarea"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Forms/Textarea/Textarea.stories.js",
+      "stories": [
+        "TextareaStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/Navigation components/Breadcrumbs",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Navigation components",
+        "name": "Breadcrumbs"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Navigationcomponents/Breadcrumbs/Breadcrumbs.stories.js",
+      "stories": [
+        "Breadcrumbs"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/Navigation components/Main navigation/Country header - Dropdown menu",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Navigation components",
+        "name": "Country header - Dropdown menu"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeaderDropdown.stories.js",
+      "stories": [
+        "CountrySiteHeaderDropdownStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-site-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu-multi-level.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu-overflow.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/Navigation components/Main navigation/Country Site Header",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Navigation components",
+        "name": "Country Site Header"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader.stories.js",
+      "stories": [
+        "CountrySiteHeaderStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-site-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu-overflow.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/Navigation components/Main navigation/Global header",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Navigation components",
+        "name": "Global header"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.js",
+      "stories": [
+        "GlobalHeaderStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/global-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/Navigation components/Menu",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Navigation components",
+        "name": "Menu"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Navigationcomponents/Menu/Menu.stories.js",
+      "stories": [
+        "MenuStory"
+      ],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/Navigation components/Pagination",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Navigation components",
+        "name": "Pagination"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Navigationcomponents/Pagination/Pagination.stories.js",
+      "stories": [
+        "PaginationStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/pagination.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/Navigation components/Sidebar",
+      "category": {
+        "tier1": "Components",
+        "tier2": "Navigation components",
+        "name": "Sidebar"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/Navigationcomponents/Sidebar/Sidebar.stories.js",
+      "stories": [
+        "SidebarStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar-data.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sidebar.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/Post Header",
+      "category": {
+        "tier1": "Components",
+        "tier2": null,
+        "name": "Post Header"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Text/PostHeader/PostHeader.stories.js",
+      "stories": [
+        "PostHeaderStory"
+      ],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/Twitter panel",
+      "category": {
+        "tier1": "Components",
+        "tier2": null,
+        "name": "Twitter panel"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Blocks/TweetPanel/TweetPanel.stories.js",
+      "stories": [
+        "TweetPanelStory"
+      ],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Accordion",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Accordion"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Accordion/Accordion.stories.js",
+      "stories": [
+        "AccordionStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Author summary",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Author summary"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Blocks/AuthorSummary/AuthorSummary.stories.js",
+      "stories": [
+        "AuthorSummaryStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-summary.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Authors/Author",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Author"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Author/AuthorColumn/AuthorColumn.stories.js",
+      "stories": [
+        "AuthorStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-column.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Authors/Author Card",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Author Card"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Author/AuthorCard/AuthorCard.stories.js",
+      "stories": [
+        "AuthorcardStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-column.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Buttons/Buttons",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Buttons"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Buttons/CtaButton/CtaButton.stories.js",
+      "stories": [
+        "CtaButtonStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Buttons/Chips",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Chips"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Buttons/Chips/Chips.stories.js",
+      "stories": [
+        "ChipsStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/chips.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Buttons/CTA link",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "CTA link"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Buttons/CtaLink/CtaLink.stories.js",
+      "stories": [
+        "CtaLinkStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Buttons/Switch",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Switch"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Buttons/Switch/Switch.stories.js",
+      "stories": [
+        "SwitchStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/switch.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Cards/Bio card",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Bio card"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Cards/BioCard/BioCard.stories.js",
+      "stories": [
+        "BioCardStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/bio-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/modal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/modal.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Cards/Content card/With image",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "With image"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Cards/ContentCard/ContentCardImage.stories.js",
+      "stories": [
+        "ContentCardWithImageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Cards/Content card/Without image/With emphasize",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "With emphasize"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImageEmphasize.stories.js",
+      "stories": [
+        "ContentCardWithOutImageEmphasizeStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Cards/Content card/Without image/Without emphasize",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Without emphasize"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImage.stories.js",
+      "stories": [
+        "ContentCardWithOutImageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Cards/Download card",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Download card"
+      },
+      "status": "stable",
+      "storyFile": "stories/Molecules/Blocks/DownloadCard/DownloadCard.stories.js",
+      "stories": [
+        "PublicationModule",
+        "DownloadModule",
+        "CardModule"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/download-card.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Cards/Featured card",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Featured card"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Cards/FeaturedCard/FeaturedContentCard.stories.js",
+      "stories": [
+        "FeaturedContentCardStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Cards/Image reveal card",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Image reveal card"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Cards/ImageRevelCTACard/ImageRevelCTACard.stories.js",
+      "stories": [
+        "ImageRevelCTACard"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-revel-cta-card.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Cards/Parallax cards",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Parallax cards"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Cards/ParallaxCard/ParallaxCards.stories.js",
+      "stories": [
+        "ParallaxCardsStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/parallax-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/parallax-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Cards/Publication card",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Publication card"
+      },
+      "status": "stable",
+      "storyFile": "stories/Molecules/Blocks/PublicationCard/PublicationCard.stories.js",
+      "stories": [
+        "PublicationCardStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/publication-card.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Cards/Stats card",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Stats card"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Cards/StatsCards/StatsCards.stories.js",
+      "stories": [
+        "StatsCardStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitText.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Carousel/Fixed carousel",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Fixed carousel"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Carousel/FixedSizeCarousel/FixedSizeCarousel.stories.js",
+      "stories": [
+        "FixedSizeCarouselStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/fixed-size-carousel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Carousel/Fluid carousel",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Fluid carousel"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Carousel/FluidImageSizeCarousel/FluidImageSizeCarousel.stories.js",
+      "stories": [
+        "FluidCarouselStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/fluid-image-size-carousel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Carousel/Image carousel",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Image carousel"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Carousel/ImageOnlyCarousel/ImageOnlyCarousel.stories.js",
+      "stories": [
+        "ImageCarousel"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-only-carousel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Footer",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Footer"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Footer/Footer.stories.js",
+      "stories": [
+        "FooterStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Gallery/Lightbox gallery",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Lightbox gallery"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Gallery/LightboxGallery/LightboxGallery.stories.js",
+      "stories": [
+        "LightGallery"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/frosted-background.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-caption.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/lightbox.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/lightbox-gallery.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lightbox-gallery.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Gallery/Parallax gallery",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Parallax gallery"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Gallery/ParallaxGallery/ParallaxGallery.stories.js",
+      "stories": [
+        "ParallaxGalleryStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/parallax-gallery.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Hero/Homepage",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Homepage"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Hero/HomePageHero/HomePageHero.stories.js",
+      "stories": [
+        "HomePageHeroStory",
+        "HomePageHeroSplitStory",
+        "HomePageHeroOptionStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepagehero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/animation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Hero/Page/Page hero - cards",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Page hero - cards"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Hero/PageHeroCards/PageHeroCards.stories.js",
+      "stories": [
+        "PageHeroCardsStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/pagehero-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Hero/Page/PageHero",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "PageHero"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Hero/PageHero/PageHero.stories.js",
+      "stories": [
+        "PageHeroStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/animation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Hero/Page/PageHeroOption",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "PageHeroOption"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Hero/PageHero/PageHeroOption.stories.js",
+      "stories": [
+        "PageHeroOptionStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Language switcher",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Language switcher"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js",
+      "stories": [
+        "LanguageSwitcherStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Modal",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Modal"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Modal/ModalSample.stories.js",
+      "stories": [
+        "ModalSampleStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/bio-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/modal.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/modal.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Pagewide featured content card",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Pagewide featured content card"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Blocks/FeaturedContentCard/PagewideContentCard/PageWideCard.stories.js",
+      "stories": [
+        "PageWideCardStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-wide-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Stats",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Stats"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Stats/Stats.stories.js",
+      "stories": [
+        "StatsStory"
+      ],
+      "assets": {
+        "css": [],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/stats.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Stats card slider",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Stats card slider"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/StatsCardSlider/StatsCardSlider.stories.js",
+      "stories": [
+        "StatsCardSliderStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-card-slider.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Tabs",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Tabs"
+      },
+      "status": "stable",
+      "storyFile": "stories/Components/UIcomponents/Tab/Tab.stories.js",
+      "stories": [
+        "TabStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/tab.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/tabs.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Text/Callout",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Callout"
+      },
+      "status": "stable",
+      "storyFile": "stories/Molecules/Text/BlockquoteComponent/BlockquoteComponent.stories.js",
+      "stories": [
+        "BlockquoteStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/blockquotecomp.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Text/CTA block",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "CTA block"
+      },
+      "status": "stable",
+      "storyFile": "stories/Molecules/Text/CtaBlock/CtaBlock.stories.js",
+      "stories": [
+        "CtaBlockStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-block.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Text/Heading big block",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Heading big block"
+      },
+      "status": "stable",
+      "storyFile": "stories/Molecules/Text/HeadingBig/HeadingBig.stories.js",
+      "stories": [
+        "HeadingBigStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/headingbig.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Text/Post block",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Post block"
+      },
+      "status": "stable",
+      "storyFile": "stories/Molecules/Text/Post/Post.stories.js",
+      "stories": [
+        "PostWithDescription",
+        "PostWithoutDescription"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/post.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Text/Small copy lockup",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Small copy lockup"
+      },
+      "status": "stable",
+      "storyFile": "stories/Molecules/Text/SmallCopy/SmallCopy.stories.js",
+      "stories": [
+        "SmallCopyStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/smallcopy.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Text/Tertiary block",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Tertiary block"
+      },
+      "status": "stable",
+      "storyFile": "stories/Molecules/Text/Tertiary/Tertiary.stories.js",
+      "stories": [
+        "TertiaryBlockStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/teritiary.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Components/UI components/Text/Text background",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Text background"
+      },
+      "status": "stable",
+      "storyFile": "stories/Molecules/Text/TextBackground/TextBackground.stories.js",
+      "stories": [
+        "TextBackgroundStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/textbackground.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Components/UI components/Text/Text cta",
+      "category": {
+        "tier1": "Components",
+        "tier2": "UI components",
+        "name": "Text cta"
+      },
+      "status": "stable",
+      "storyFile": "stories/Molecules/Text/TextCta/TextCta.stories.js",
+      "stories": [
+        "TextCtaStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/textcta.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Foundation/Icons",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": null,
+        "name": "Icons"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/Icons/Icons.stories.js",
+      "stories": [
+        "IconsStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Foundation/Images/Author image",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": "Images",
+        "name": "Author image"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/Images/AuthorImage/AuthorImages.stories.js",
+      "stories": [
+        "AuthorImage"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Foundation/Images/Image with credit + caption",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": "Images",
+        "name": "Image with credit + caption"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/Images/ImageCaptionCredit/ImageCaptionCredit.stories.js",
+      "stories": [
+        "ImageCaptionCreditStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-caption.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Foundation/Layout/Spacing",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": "Layout",
+        "name": "Spacing"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/Layout/Spacing/Spacing.stories.js",
+      "stories": [
+        "SpacingStory"
+      ],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Foundation/Logos",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": null,
+        "name": "Logos"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/Logo/Logo.stories.js",
+      "stories": [
+        "PNUDLogoBlue",
+        "PNUDLogoWhite",
+        "UNDPLogoBlue",
+        "UNDPLogoWhite"
+      ],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Foundation/Typography/Base typography",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": "Typography",
+        "name": "Base typography"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/BaseTypography/BaseTypography.stories.js",
+      "stories": [
+        "AbbreviationComponent",
+        "HeadingComponent",
+        "BlockquoteComponent",
+        "CiteComponent",
+        "CodeComponent",
+        "HrComponent",
+        "MarkComponent",
+        "PComponent",
+        "QuotationComponent",
+        "SmallComponent",
+        "ListComponent",
+        "DescriptionlistComponent",
+        "DetailsTagComponent",
+        "FigcaptionComponent"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Foundation/Typography/Headers",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": "Typography",
+        "name": "Headers"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/Typography/Heading/Heading.stories.js",
+      "stories": [],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Foundation/Typography/Links",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": "Typography",
+        "name": "Links"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/Typography/Links/Links.stories.js",
+      "stories": [
+        "LinkStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Foundation/Typography/Lists",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": "Typography",
+        "name": "Lists"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/Typography/Lists/Lists.stories.js",
+      "stories": [],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Foundation/Typography/P",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": "Typography",
+        "name": "P"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/BaseTypography/Paragraph/Paragraph.stories.js",
+      "stories": [
+        "ParagraphStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Foundation/Typography/Table",
+      "category": {
+        "tier1": "Foundation",
+        "tier2": "Typography",
+        "name": "Table"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/Table/Table.stories.js",
+      "stories": [
+        "Table"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Patterns/Card grids/Content cards",
+      "category": {
+        "tier1": "Patterns",
+        "tier2": "Card grids",
+        "name": "Content cards"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Blocks/ContentCard/ContentCard.stories.js",
+      "stories": [
+        "ContentCardStory"
+      ],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Patterns/Card grids/Content cards with and without image",
+      "category": {
+        "tier1": "Patterns",
+        "tier2": "Card grids",
+        "name": "Content cards with and without image"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage.stories.js",
+      "stories": [
+        "ContentCardWithAndWithoutImageStory"
+      ],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Patterns/Card grids/Featured cards",
+      "category": {
+        "tier1": "Patterns",
+        "tier2": "Card grids",
+        "name": "Featured cards"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.js",
+      "stories": [
+        "FeaturedCardStory"
+      ],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Patterns/Card grids/Image reveal cards",
+      "category": {
+        "tier1": "Patterns",
+        "tier2": "Card grids",
+        "name": "Image reveal cards"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Blocks/ImageRevealCards/ImageRevealCards.stories.js",
+      "stories": [
+        "ImageRevealCardsStory"
+      ],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    },
+    {
+      "title": "Patterns/Download modal",
+      "category": {
+        "tier1": "Patterns",
+        "tier2": null,
+        "name": "Download modal"
+      },
+      "status": "stable",
+      "storyFile": "stories/Patterns/DownloadModal/DownloadModal.stories.js",
+      "stories": [
+        "DownloadModalStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/publication-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/modal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/custom-select.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/checkbox.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/download-modal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/download-row.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/modal.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/select.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/download-modal.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Patterns/Filter and search sidebar",
+      "category": {
+        "tier1": "Patterns",
+        "tier2": null,
+        "name": "Filter and search sidebar"
+      },
+      "status": "stable",
+      "storyFile": "stories/Patterns/FilterAndSearchBar/FilterAndSearchBar.stories.js",
+      "stories": [
+        "FilterAndSearchBarStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/filter-and-search-bar.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/multi-select.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/checkbox.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/radio.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/search-expand.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/chips.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/filter-search-bar.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/multi-select.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/expand-search.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Patterns/Our Expertise",
+      "category": {
+        "tier1": "Patterns",
+        "tier2": null,
+        "name": "Our Expertise"
+      },
+      "status": "stable",
+      "storyFile": "stories/Organism/Blocks/OurExpertise/OurExpertise.stories.js",
+      "stories": [
+        "OurExpertiseStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/our-expertise.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/components/our-expertise.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Patterns/Stats slider (two rows)",
+      "category": {
+        "tier1": "Patterns",
+        "tier2": null,
+        "name": "Stats slider (two rows)"
+      },
+      "status": "stable",
+      "storyFile": "stories/Patterns/StatsSlider/StatsSlider.stories.js",
+      "stories": [
+        "StatsSliderStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-slider.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/fitText.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Article page",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Article page"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/ArticlePage/ArticlePage.stories.js",
+      "stories": [
+        "ArticlePageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/global-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/post-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-caption.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/blockquotecomp.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/authors.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/article-page.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/animation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Author detail page",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Author detail page"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/AuthorPage/AuthorPage.stories.js",
+      "stories": [
+        "AuthorPageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/global-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/authors.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-summary.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/chips.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/author-page.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/animation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Author listing page",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Author listing page"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/Authors/Authors.stories.js",
+      "stories": [
+        "AuthorsStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/global-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/author-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/custom-select.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/search-expand.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/authors.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/animation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/expand-search.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/select.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/author-filter.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Country homepage",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Country homepage"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/CountryHomepage/CountryHomepage.stories.js",
+      "stories": [
+        "CountryHomepageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-site-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/headingbig.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card-with-and-without-image.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-wide-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-reveal-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-slider.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/countryhome-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/article-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Country homepage rtl",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Country homepage rtl"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/CountryHomepage rtl/CountryHomepage.stories.js",
+      "stories": [
+        "CountryHomepageRTL"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-site-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/headingbig.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card-with-and-without-image.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-wide-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-reveal-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-slider.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-group.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/countryhome-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/article-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Generic landing page",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Generic landing page"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/LandingPage/GenericLandingPage.stories.js",
+      "stories": [
+        "GenericLandingPageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-site-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/headingbig.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card-with-and-without-image.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-wide-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-reveal-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-slider.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-group.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/countryhome-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/article-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Generic page",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Generic page"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/GenericPage/GenericPage.stories.js",
+      "stories": [
+        "GenericPageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/progress.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar-data.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/fluid-image-size-carousel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/generic-page.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/scrolling-progressbar.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sidebar.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sticky.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Global homepage",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Global homepage"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/GlobalHomepage/GlobalHomepage.stories.js",
+      "stories": [
+        "GlobalHomepageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/global-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/headingbig.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/textbackground.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/textcta.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/our-expertise.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-panel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/fixed-size-carousel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/tweet-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/tweet-panel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-group.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/globalhome-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/article-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/our-expertise.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sticky.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/stats.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Global Homepage RTL",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Global Homepage RTL"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/GlobalHomepage rtl/GlobalHomepage.stories.js",
+      "stories": [
+        "GlobalHomepageRtlStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/global-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/headingbig.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/textbackground.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/textcta.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/our-expertise.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-panel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/fixed-size-carousel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/tweet-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/tweet-panel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-group.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/globalhome-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/article-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/our-expertise.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sticky.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/stats.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Project page",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Project page"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/ProjectPage/ProjectPage.stories.js",
+      "stories": [
+        "ProjectPageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/progress.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar-data.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/fluid-image-size-carousel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/generic-page.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/scrolling-progressbar.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sidebar.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/Publication page",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "Publication page"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/PublicationPage/PublicationPage.stories.js",
+      "stories": [
+        "PublicationPageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/progress.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/sidebar-data.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/fluid-image-size-carousel.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/generic-page.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/scrolling-progressbar.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/sidebar.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Templates/SDG page",
+      "category": {
+        "tier1": "Templates",
+        "tier2": null,
+        "name": "SDG page"
+      },
+      "status": "stable",
+      "storyFile": "stories/Templates/Sdg/Sdg.stories.js",
+      "stories": [
+        "SdgpageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/country-site-header.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/language-switcher.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mega-menu.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/mobile-nav.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/homepage-hero.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/breadcrumbs.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/headingbig.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/content-card-with-and-without-image.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/featured-content-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/cta-link.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/page-wide-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-card.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/image-reveal-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-cards.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/stats-slider.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-group.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/countryhome-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/templates/article-page.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/swiper.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smooth-bg-change.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Utilities/Frosted background",
+      "category": {
+        "tier1": "Utilities",
+        "tier2": null,
+        "name": "Frosted background"
+      },
+      "status": "stable",
+      "storyFile": "stories/Utilities/FrostedImage/FrostedImage.stories.js",
+      "stories": [
+        "FrostedImageStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/froasted-background.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Utilities/Loader",
+      "category": {
+        "tier1": "Utilities",
+        "tier2": null,
+        "name": "Loader"
+      },
+      "status": "stable",
+      "storyFile": "stories/Utilities/Loader/Loader.stories.js",
+      "stories": [
+        "LoaderStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/loader.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Utilities/Progress bar",
+      "category": {
+        "tier1": "Utilities",
+        "tier2": null,
+        "name": "Progress bar"
+      },
+      "status": "stable",
+      "storyFile": "stories/Utilities/ProgressBar/ProgressBar.stories.js",
+      "stories": [
+        "ProgressBarStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/progress.min.css"
+        ],
+        "js": []
+      }
+    },
+    {
+      "title": "Utilities/Progress bar navigation",
+      "category": {
+        "tier1": "Utilities",
+        "tier2": null,
+        "name": "Progress bar navigation"
+      },
+      "status": "stable",
+      "storyFile": "stories/Atom/Navigation/ProgressBarNavigation/ProgressBarNavigation.stories.js",
+      "stories": [
+        "ProgressBarNavigationStory"
+      ],
+      "assets": {
+        "css": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css",
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/progress-bar.min.css"
+        ],
+        "js": [
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/scrolling-progress-bar.min.js"
+        ]
+      }
+    },
+    {
+      "title": "Utilities/Scrollbars",
+      "category": {
+        "tier1": "Utilities",
+        "tier2": null,
+        "name": "Scrollbars"
+      },
+      "status": "stable",
+      "storyFile": "stories/Utilities/ScrollBar/ScrollBar.stories.js",
+      "stories": [
+        "ScrollBarStory"
+      ],
+      "assets": {
+        "css": [],
+        "js": []
+      }
+    }
+  ]
+}

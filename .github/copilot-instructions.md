@@ -95,6 +95,7 @@ For non-React behaviors (e.g., `fitTitle`, component initializers):
 - Prefer static imports; avoid dynamic `import()` unless code-splitting a rarely used heavy feature.
 - Keep third-party additions minimal; confirm before adding new deps (esp. large UI libs).
 - For text scaling / fitting, reuse existing logic (e.g., `fitTitle`) rather than introducing new libraries.
+- run `npm run build` and commit all updated files inside /docs folder as a final step of all Copilot activities if there were changes made to Javascript or SCSS/CSS files
 
 ---
 ## Linting & Formatting

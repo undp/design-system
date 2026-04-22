@@ -185,6 +185,13 @@ jobs:
           echo "$SUMMARY" > /tmp/pr_summary.md
           echo "summary_file=/tmp/pr_summary.md" >> $GITHUB_OUTPUT
 
+      - name: Generate token changelog
+        if: steps.transform.outputs.has_changes == 'true'
+        run: |
+          echo "Generating token changelog..."
+          BASE_REF=HEAD npm run generate-token-changelog
+          echo "✅ Token changelog updated at figma-tokens/CHANGELOG.md"
+
       - name: Build assets to propagate changes
         if: steps.transform.outputs.has_changes == 'true'
         run: |
@@ -198,6 +205,13 @@ jobs:
           echo "Generating printable CSS custom properties list..."
           node scripts/generate-css-custom-properties-list.js
           echo "✅ CSS custom properties list generated"
+
+      - name: Generate asset manifest
+        if: steps.transform.outputs.has_changes == 'true'
+        run: |
+          echo "Generating asset manifest..."
+          npm run generate-manifest
+          echo "✅ Asset manifest generated at docs/manifest.json"
 
       - name: Commit changes and push to origin
         if: steps.transform.outputs.has_changes == 'true'
