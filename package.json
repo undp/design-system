@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run smoke-test",
-    "build": "webpack --progress",
+    "build": "webpack --progress && npm run generate-manifest && npm run generate-component-metadata",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --loglevel info",
     "transform-tokens": "node scripts/transform-tokens.js",
