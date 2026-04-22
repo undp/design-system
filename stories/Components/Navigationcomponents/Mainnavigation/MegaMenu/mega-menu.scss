@@ -73,8 +73,11 @@
       }
 
       &:hover {
-        background: var(--undpds-color-blue-600);
         color: var(--undpds-color-white);
+
+        a {
+          background: var(--undpds-color-blue-600);
+        }
       }
 
       a {
