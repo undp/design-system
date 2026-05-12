@@ -13,7 +13,7 @@ The UNDP Design System now includes an automatic initialization system that simp
 Components in the UNDP Design System often require JavaScript initialization to enable their full functionality. Traditionally, this required manually calling initialization functions in your JavaScript code:
 
 ```javascript
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", () => {
   // Initialize components manually
   select();
   accordion();
@@ -42,12 +42,9 @@ With the automatic initialization system, you can now simply add data attributes
 
 ### 1. Include the Component Initializer
 
-Add the component initializer script to your HTML after including jQuery and the component-specific JS files:
+Add the component initializer script to your HTML after including the component-specific JS files (and any component dependencies):
 
 ```html
-<!-- jQuery (required) -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0-beta.2/dist/jquery.min.js"></script>
-
 <!-- Component JS files -->
 <script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/component-name.min.js"></script>
 
@@ -57,6 +54,8 @@ Add the component initializer script to your HTML after including jQuery and the
   defer
 ></script>
 ```
+
+Some legacy components may still require third-party libraries during the migration away from jQuery. Check each component's documentation page for the exact dependencies.
 
 ### 2. Add Data Attributes to Your HTML
 

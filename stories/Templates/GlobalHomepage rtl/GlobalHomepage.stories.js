@@ -119,7 +119,6 @@ export default {
                   <ul>
                       <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js</a></li>
                       <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/our-expertise.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/our-expertise.min.js</a></li>
-                      <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js</a></li>
                       <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js</a></li>
                       <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js</a></li>
                       <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js</a></li>

@@ -1,17 +1,25 @@
 export function langSwitch() {
-  jQuery('.dropdown-language').click(() => {
-    jQuery('.dropdown-language').toggleClass('active');
-    if (jQuery('.dropdown-language').hasClass('active')) {
-      jQuery('.dropdown-language').find('a').attr('tabIndex', '0');
-    } else {
-      jQuery('.dropdown-language').find('a').attr('tabIndex', '-1');
-    }
+  const dropdowns = Array.from(document.querySelectorAll('.dropdown-language'));
+
+  const updateDropdownLinks = (dropdown, isActive) => {
+    dropdown.querySelectorAll('a').forEach((link) => {
+      link.setAttribute('tabIndex', isActive ? '0' : '-1');
+    });
+  };
+
+  dropdowns.forEach((dropdown) => {
+    dropdown.addEventListener('click', () => {
+      const isActive = dropdown.classList.toggle('active');
+      updateDropdownLinks(dropdown, isActive);
+    });
   });
 
-  jQuery(document).on('click', (event) => {
-    const $trigger = jQuery('.dropdown-language');
-    if ($trigger !== event.target && !$trigger.has(event.target).length) {
-      jQuery('.dropdown-language').removeClass('active');
-    }
+  document.addEventListener('click', (event) => {
+    dropdowns.forEach((dropdown) => {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+        updateDropdownLinks(dropdown, false);
+      }
+    });
   });
 }

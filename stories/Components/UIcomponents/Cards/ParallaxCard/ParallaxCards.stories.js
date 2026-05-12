@@ -319,7 +319,6 @@ export default {
               <ul>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js</a></li>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js</a></li>
               </ul>
 
               <h4>3rd Party library dependencies:</h4>
