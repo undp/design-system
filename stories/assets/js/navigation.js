@@ -1,13 +1,52 @@
 /* eslint-disable no-inner-declarations */
 /* eslint-disable no-restricted-syntax */
 export const navigationInitialize = (locale) => {
-  if (document.body.dataset.navigationInitInited) return;
-  document.body.dataset.navigationInitInited = 'true';
-
   const menu = document.querySelector('.menu > ul');
   const menuItems = document.querySelectorAll('.menu li a');
   const megaWrapper = document.querySelector('.mega-wrapper');
   const mainNavHeight = document.querySelector('.header nav.menu');
+  const navRoot = menu?.closest('header') || document.querySelector('header') || document.body;
+
+  if (navRoot.dataset.navigationInitInited) return;
+  navRoot.dataset.navigationInitInited = 'true';
+
+  if (!document.body.dataset.navigationInitGlobalInited) {
+    document.body.dataset.navigationInitGlobalInited = 'true';
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.classList.contains('show-on-focus')) return;
+      // If the user clicks anywhere, close the mega menu panel, and reset the
+      // tab index values.
+      document.querySelectorAll('.mega-nav-option').forEach((el) => el.classList.remove('show-mega'));
+      const menuItemsAll = document.querySelectorAll('.menu li a');
+      menuItemsAll.forEach((item) => {
+        item.setAttribute('tabIndex', '0');
+      });
+      if (menuItemsAll.length) menuItemsAll[0].focus();
+      document.querySelectorAll('.logo, .top-right button').forEach((el) => el.setAttribute('tabIndex', '0'));
+      document.querySelectorAll('.submenu li a').forEach((a) => a.setAttribute('tabIndex', '0'));
+      document.querySelectorAll('.sub-sub-menu li a').forEach((a) => a.setAttribute('tabIndex', '-1'));
+    });
+
+    /**
+     * Mobile navigation related functionality.
+     */
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('.mobile-links .cta__link:not(.no-submenu)');
+      if (!link) return;
+      const navId = link.getAttribute('id');
+      const navText = link.textContent;
+      e.preventDefault();
+      const subHeading = document.querySelector('.mobile-mega-content .sub-heading');
+      if (subHeading) subHeading.textContent = navText;
+      const mobileContent = document.querySelector(`.mobile-mega-wrapper [data-mobile-id='${navId}']`);
+      if (mobileContent) mobileContent.classList.add('show-content');
+      const mobileLinks = document.querySelector('.mobile-links');
+      if (mobileLinks) mobileLinks.classList.add('hide');
+      const mobileSubMenu = document.querySelector('.mobile-sub-menu');
+      if (mobileSubMenu) mobileSubMenu.classList.add('show');
+    });
+  }
 
   // Track if a menu item is being hovered.
   let hovering_item = false;
@@ -89,20 +128,6 @@ export const navigationInitialize = (locale) => {
       menuItems.forEach((mi) => mi.setAttribute('tabIndex', '0'));
       document.querySelectorAll('.logo, .top-right button').forEach((el) => el.setAttribute('tabIndex', '0'));
     });
-  });
-
-  document.addEventListener('click', (event) => {
-    if (!event.target.classList.contains('show-on-focus')) return;
-    // If the user clicks anywhere, close the mega menu panel, and reset the
-    // tab index values.
-    document.querySelectorAll('.mega-nav-option').forEach((el) => el.classList.remove('show-mega'));
-    menuItems.forEach((item) => {
-      item.setAttribute('tabIndex', '0');
-    });
-    if (menuItems.length) menuItems[0].focus();
-    document.querySelectorAll('.logo, .top-right button').forEach((el) => el.setAttribute('tabIndex', '0'));
-    document.querySelectorAll('.submenu li a').forEach((a) => a.setAttribute('tabIndex', '0'));
-    document.querySelectorAll('.sub-sub-menu li a').forEach((a) => a.setAttribute('tabIndex', '-1'));
   });
 
   /**
@@ -266,25 +291,6 @@ export const navigationInitialize = (locale) => {
     megaWrapper.addEventListener('keydown', handleLastSubSubA, true);
   }
 
-  /**
-   * Mobile navigation related functionality.
-   */
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('.mobile-links .cta__link:not(.no-submenu)');
-    if (!link) return;
-    const navId = link.getAttribute('id');
-    const navText = link.textContent;
-    e.preventDefault();
-    const subHeading = document.querySelector('.mobile-mega-content .sub-heading');
-    if (subHeading) subHeading.textContent = navText;
-    const mobileContent = document.querySelector(`.mobile-mega-wrapper [data-mobile-id='${navId}']`);
-    if (mobileContent) mobileContent.classList.add('show-content');
-    const mobileLinks = document.querySelector('.mobile-links');
-    if (mobileLinks) mobileLinks.classList.add('hide');
-    const mobileSubMenu = document.querySelector('.mobile-sub-menu');
-    if (mobileSubMenu) mobileSubMenu.classList.add('show');
-  });
-
   const backNav = document.querySelector('.back-nav');
   if (backNav) {
     backNav.addEventListener('click', () => {
@@ -345,8 +351,10 @@ export const navigationInitialize = (locale) => {
  * Menu multi-level functionality.
  */
 export const navigationMultiLevelEdgeDetection = () => {
-  if (document.body.dataset.navigationEdgeDetectionInited) return;
-  document.body.dataset.navigationEdgeDetectionInited = 'true';
+  const menuRoot = document.querySelector('.menu');
+  if (!menuRoot) return;
+  if (menuRoot.dataset.navigationEdgeDetectionInited) return;
+  menuRoot.dataset.navigationEdgeDetectionInited = 'true';
 
   // Determine if a multilevel menu item will go off the screen.
   // Change the side it renders on, if it will go off screen, by
@@ -382,11 +390,10 @@ export const navigationMultiLevelEdgeDetection = () => {
  * Navigation overflow functionality.
  */
 export const navigationOverFlow = () => {
-  if (document.body.dataset.navigationOverflowInited) return;
-  document.body.dataset.navigationOverflowInited = 'true';
-
   const overflowUl = document.querySelector('.menu > ul.overflow');
   if (!overflowUl) return;
+  if (overflowUl.dataset.navigationOverflowInited) return;
+  overflowUl.dataset.navigationOverflowInited = 'true';
 
   /**
    * Generate the button and add to navigation if it doesn't exist.

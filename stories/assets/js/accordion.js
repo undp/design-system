@@ -7,6 +7,8 @@ export function accordion(
   const accordionElement = accordionSelector || ".accordion";
   const accordionPanel = accordionSiblingSelector || ".accordion__panel";
   const accordionActiveElement = accordionActiveSelector || "accordion--active";
+  const slideDuration = 250;
+  const panelTimers = new WeakMap();
 
   const toBoolean = (value) => value === true || value === "true";
 
@@ -18,7 +20,66 @@ export function accordion(
     return Array.from(button.parentElement.querySelectorAll(`:scope > ${panelSelector}`));
   };
 
-  const setButtonExpanded = (button, panelSelector, activeClass, shouldOpen) => {
+  const clearPanelAnimation = (panel) => {
+    const timer = panelTimers.get(panel);
+    if (timer) {
+      clearTimeout(timer);
+      panelTimers.delete(panel);
+    }
+  };
+
+  const slidePanel = (panel, shouldOpen, animate = true) => {
+    if (!panel) {
+      return;
+    }
+
+    clearPanelAnimation(panel);
+
+    if (!animate) {
+      panel.style.removeProperty('transition');
+      panel.style.removeProperty('overflow');
+      panel.style.removeProperty('max-height');
+      panel.style.display = shouldOpen ? 'block' : 'none';
+      return;
+    }
+
+    panel.style.transition = `max-height ${slideDuration}ms ease`;
+    panel.style.overflow = 'hidden';
+
+    if (shouldOpen) {
+      panel.style.display = 'block';
+      panel.style.maxHeight = '0px';
+      requestAnimationFrame(() => {
+        panel.style.maxHeight = `${panel.scrollHeight}px`;
+      });
+
+      const openTimer = setTimeout(() => {
+        panel.style.removeProperty('transition');
+        panel.style.removeProperty('overflow');
+        panel.style.removeProperty('max-height');
+        panel.style.display = 'block';
+        panelTimers.delete(panel);
+      }, slideDuration);
+      panelTimers.set(panel, openTimer);
+      return;
+    }
+
+    panel.style.maxHeight = `${panel.scrollHeight}px`;
+    requestAnimationFrame(() => {
+      panel.style.maxHeight = '0px';
+    });
+
+    const closeTimer = setTimeout(() => {
+      panel.style.removeProperty('transition');
+      panel.style.removeProperty('overflow');
+      panel.style.removeProperty('max-height');
+      panel.style.display = 'none';
+      panelTimers.delete(panel);
+    }, slideDuration);
+    panelTimers.set(panel, closeTimer);
+  };
+
+  const setButtonExpanded = (button, panelSelector, activeClass, shouldOpen, animate = true) => {
     if (!button) {
       return;
     }
@@ -28,7 +89,7 @@ export function accordion(
 
     getPanelsForButton(button, panelSelector).forEach((panel) => {
       panel.setAttribute("aria-hidden", shouldOpen ? "false" : "true");
-      panel.style.display = shouldOpen ? "block" : "none";
+      slidePanel(panel, shouldOpen, animate);
     });
   };
 
@@ -87,10 +148,10 @@ export function accordion(
       if (!allowMultiExpand && activeButtons.length > 1) {
         activeButtons.forEach((button, index) => {
           if (index === 0) {
-            setButtonExpanded(button, accordionSibling, accordionActiveClass, true);
+            setButtonExpanded(button, accordionSibling, accordionActiveClass, true, false);
           } else {
             button.classList.remove("is-active");
-            setButtonExpanded(button, accordionSibling, accordionActiveClass, false);
+            setButtonExpanded(button, accordionSibling, accordionActiveClass, false, false);
           }
         });
       }

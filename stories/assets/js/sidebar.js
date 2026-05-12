@@ -1,13 +1,74 @@
 export function sidebarNav() {
   const accordionItems = Array.from(document.querySelectorAll('.sidebar-accordion li'));
   const accordionPanels = Array.from(document.querySelectorAll('.sidebar-accordion .accordion__panel'));
+  const slideDuration = 250;
+  const panelTimers = new WeakMap();
 
-  const setPanelState = (panelElement, isOpen) => {
+  const clearPanelAnimation = (panelElement) => {
+    const timer = panelTimers.get(panelElement);
+    if (timer) {
+      clearTimeout(timer);
+      panelTimers.delete(panelElement);
+    }
+  };
+
+  const slidePanel = (panelElement, isOpen, animate = true) => {
     if (!panelElement) {
       return;
     }
 
-    panelElement.style.display = isOpen ? 'block' : 'none';
+    clearPanelAnimation(panelElement);
+
+    if (!animate) {
+      panelElement.style.removeProperty('transition');
+      panelElement.style.removeProperty('overflow');
+      panelElement.style.removeProperty('max-height');
+      panelElement.style.display = isOpen ? 'block' : 'none';
+      return;
+    }
+
+    panelElement.style.transition = `max-height ${slideDuration}ms ease`;
+    panelElement.style.overflow = 'hidden';
+
+    if (isOpen) {
+      panelElement.style.display = 'block';
+      panelElement.style.maxHeight = '0px';
+      requestAnimationFrame(() => {
+        panelElement.style.maxHeight = `${panelElement.scrollHeight}px`;
+      });
+
+      const openTimer = setTimeout(() => {
+        panelElement.style.removeProperty('transition');
+        panelElement.style.removeProperty('overflow');
+        panelElement.style.removeProperty('max-height');
+        panelElement.style.display = 'block';
+        panelTimers.delete(panelElement);
+      }, slideDuration);
+      panelTimers.set(panelElement, openTimer);
+      return;
+    }
+
+    panelElement.style.maxHeight = `${panelElement.scrollHeight}px`;
+    requestAnimationFrame(() => {
+      panelElement.style.maxHeight = '0px';
+    });
+
+    const closeTimer = setTimeout(() => {
+      panelElement.style.removeProperty('transition');
+      panelElement.style.removeProperty('overflow');
+      panelElement.style.removeProperty('max-height');
+      panelElement.style.display = 'none';
+      panelTimers.delete(panelElement);
+    }, slideDuration);
+    panelTimers.set(panelElement, closeTimer);
+  };
+
+  const setPanelState = (panelElement, isOpen, animate = true) => {
+    if (!panelElement) {
+      return;
+    }
+
+    slidePanel(panelElement, isOpen, animate);
   };
 
   accordionItems.forEach((itemElement) => {
@@ -17,7 +78,7 @@ export function sidebarNav() {
     }
 
     if (itemElement.classList.contains('active')) {
-      setPanelState(panelElement, true);
+      setPanelState(panelElement, true, false);
     }
 
     const firstButton = itemElement.querySelector('button');

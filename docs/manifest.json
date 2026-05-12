@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generatedAt": "2026-05-12T22:30:52.867Z",
+  "generatedAt": "2026-05-12T23:34:54.988Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.0/",
   "assets": {
     "css": [
@@ -528,8 +528,8 @@
     "js": [
       {
         "path": "js/accordion.min.js",
-        "size": 29737,
-        "sha256": "dbe4b225f9852884e4e490042f99cb65329d601a310bbc9814f0db867aff3dc5"
+        "size": 38697,
+        "sha256": "0f3b6e56996a8d3b92f2cd024669ce5fbf32752360f93383f17d0a4106bd097e"
       },
       {
         "path": "js/addingFonts.min.js",
@@ -538,8 +538,8 @@
       },
       {
         "path": "js/all.min.js",
-        "size": 138348,
-        "sha256": "32cbd91a3d451ff1fffc23bbe42a330dfbb4bff89d1458dd60c7662f4d73c2dd"
+        "size": 145870,
+        "sha256": "1880a3c4a9a642ce70272c40d757af3fe879fa4c0350e4acfd5bd09578cd74cc"
       },
       {
         "path": "js/animation.min.js",
@@ -613,8 +613,8 @@
       },
       {
         "path": "js/navigation.min.js",
-        "size": 58108,
-        "sha256": "96c79e84b91d294dc288aa02c26290cc43f540c12980a02a66377210a3360a3a"
+        "size": 58321,
+        "sha256": "43ec44f9bd267655fc6c0efe74741321bd16470b6b2d9b7e52a1a029a1788c84"
       },
       {
         "path": "js/our-expertise.min.js",
@@ -639,7 +639,7 @@
       {
         "path": "js/sdg-modal.min.js",
         "size": 36478,
-        "sha256": "e70add469d8ad251f4ef84eac91d640ffeb3e736258855e46a58ec59a1a89c65"
+        "sha256": "cfdef4f1621fc7a1244a892ed153741ff36031642dfbbb1018d2d1d4fccc8cbb"
       },
       {
         "path": "js/select.min.js",
@@ -648,8 +648,8 @@
       },
       {
         "path": "js/sidebar.min.js",
-        "size": 27218,
-        "sha256": "24098f038677bb3f6bfe792836ea4036080f66de622f790abcad82b76f9e97a6"
+        "size": 36253,
+        "sha256": "f398a9a8c921c82e307185855dcb34aacb1534f284a6c291160c5006038b5903"
       },
       {
         "path": "js/smartresize.min.js",
