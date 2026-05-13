@@ -9,8 +9,16 @@ export function Tab({ tabdata }) {
     <div className={tabsCls} data-viewport={isChromatic() ? '' : 'true'} data-undpds-component="tabs">
       <ul data-deep-link="true" data-tabs id="tablist_1" role="tablist">
         {tabdata.map((item, index) => (
-          <li key={index} className={index == 0 ? 'tabs-title is-active' : 'tabs-title'}>
-            <a href={`#${item.text_id}`} role="tab">{item.text}</a>
+          <li
+            key={index}
+            className={index == 0 ? 'tabs-title is-active' : 'tabs-title'}
+            role="tab"
+            aria-selected={index == 0 ? 'true' : 'false'}
+            aria-controls={item.text_id}
+            id={`tablist_1-tab-${index + 1}`}
+            tabIndex={index == 0 ? 0 : -1}
+          >
+            <a href={`#${item.text_id}`}>{item.text}</a>
           </li>
         ))}
       </ul>

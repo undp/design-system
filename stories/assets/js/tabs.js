@@ -24,41 +24,61 @@ export function tabs() {
       return;
     }
 
-    const tabItems = Array.from(tabList.querySelectorAll(".tabs-title"));
-    const tabTriggers = tabItems
-      .map((item) => item.querySelector("a, button"))
-      .filter(Boolean);
-    const panels = Array.from(panelContainer.querySelectorAll(".tabs-panel"));
 
-    if (!tabTriggers.length || panels.length !== tabTriggers.length) {
+
+    let tabItems = Array.from(tabList.querySelectorAll('.tabs-title[role="tab"]'));
+    let panels = Array.from(panelContainer.querySelectorAll('.tabs-panel'));
+    let isOldMarkup = false;
+
+    // Fallback for old markup: role="tab" on <a> or <button> inside .tabs-title
+    if (!tabItems.length) {
+      const triggers = Array.from(tabList.querySelectorAll('.tabs-title a[role="tab"], .tabs-title button[role="tab"]'));
+      if (triggers.length) {
+        isOldMarkup = true;
+        tabItems = triggers;
+      }
+    }
+
+    if (!tabItems.length || panels.length !== tabItems.length) {
       return;
     }
 
     const tabListId = tabList.id || `tablist-${componentIndex + 1}`;
     tabList.id = tabListId;
 
-    let activeIndex = tabItems.findIndex((item) => item.classList.contains("is-active"));
+    let activeIndex = tabItems.findIndex((item) => item.classList.contains('is-active'));
     if (activeIndex < 0) {
       activeIndex = 0;
     }
 
-    const deepLinkEnabled = tabList.getAttribute("data-deep-link") !== "false";
+    const deepLinkEnabled = tabList.getAttribute('data-deep-link') !== 'false';
 
-    const getPanelForTrigger = (trigger, index) => {
-      const href = trigger.getAttribute("href") || "";
-      if (href.startsWith("#")) {
-        const panel = container.querySelector(href);
-        if (panel) {
-          return panel;
+    const getPanelForTab = (tab, index) => {
+      if (isOldMarkup) {
+        const href = tab.getAttribute('href') || '';
+        if (href.startsWith('#')) {
+          const panel = container.querySelector(href);
+          if (panel) {
+            return panel;
+          }
         }
+        return panels[index] || null;
+      } else {
+        const anchor = tab.querySelector('a, button');
+        if (anchor) {
+          const href = anchor.getAttribute('href') || '';
+          if (href.startsWith('#')) {
+            const panel = container.querySelector(href);
+            if (panel) {
+              return panel;
+            }
+          }
+        }
+        return panels[index] || null;
       }
-
-      return panels[index] || null;
     };
 
-    const resolvedPanels = tabTriggers.map((trigger, index) =>
-      getPanelForTrigger(trigger, index),
-    );
+    const resolvedPanels = tabItems.map((tab, index) => getPanelForTab(tab, index));
 
     if (resolvedPanels.some((panel) => !panel)) {
       return;
@@ -67,20 +87,17 @@ export function tabs() {
     const selectTab = (nextIndex, options = {}) => {
       const { focus = true, updateHash = deepLinkEnabled } = options;
 
-      tabItems.forEach((item, index) => {
-        const trigger = tabTriggers[index];
+      tabItems.forEach((tab, index) => {
         const isActive = index === nextIndex;
-
-        item.classList.toggle("is-active", isActive);
-        trigger.setAttribute("aria-selected", isActive ? "true" : "false");
-        trigger.setAttribute("tabindex", isActive ? "0" : "-1");
+        tab.classList.toggle('is-active', isActive);
+        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        tab.setAttribute('tabindex', isActive ? '0' : '-1');
       });
 
       resolvedPanels.forEach((panel, index) => {
         const isActive = index === nextIndex;
-
-        panel.classList.toggle("is-active", isActive);
-        panel.setAttribute("aria-hidden", isActive ? "false" : "true");
+        panel.classList.toggle('is-active', isActive);
+        panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
         panel.hidden = !isActive;
       });
 
@@ -94,52 +111,47 @@ export function tabs() {
       }
 
       if (focus) {
-        tabTriggers[nextIndex].focus();
+        tabItems[nextIndex].focus();
       }
     };
 
-    tabTriggers.forEach((trigger, index) => {
+    tabItems.forEach((tab, index) => {
       const panel = resolvedPanels[index];
+      tab.setAttribute('aria-controls', panel.id);
+      tab.setAttribute('id', tab.id || `${tabListId}-tab-${index + 1}`);
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tab.id);
 
-      trigger.setAttribute("role", "tab");
-      trigger.setAttribute("id", trigger.id || `${tabListId}-tab-${index + 1}`);
-      trigger.setAttribute("aria-controls", panel.id);
-
-      panel.setAttribute("role", "tabpanel");
-      panel.setAttribute("aria-labelledby", trigger.id);
-
-      trigger.addEventListener("click", (event) => {
+      tab.addEventListener('click', (event) => {
         event.preventDefault();
         selectTab(index, { focus: true });
       });
 
-      trigger.addEventListener("keydown", (event) => {
+      tab.addEventListener('keydown', (event) => {
         let nextIndex = index;
-
         switch (event.key) {
-          case "ArrowRight":
-          case "ArrowDown":
-            nextIndex = (index + 1) % tabTriggers.length;
+          case 'ArrowRight':
+          case 'ArrowDown':
+            nextIndex = (index + 1) % tabItems.length;
             break;
-          case "ArrowLeft":
-          case "ArrowUp":
-            nextIndex = (index - 1 + tabTriggers.length) % tabTriggers.length;
+          case 'ArrowLeft':
+          case 'ArrowUp':
+            nextIndex = (index - 1 + tabItems.length) % tabItems.length;
             break;
-          case "Home":
+          case 'Home':
             nextIndex = 0;
             break;
-          case "End":
-            nextIndex = tabTriggers.length - 1;
+          case 'End':
+            nextIndex = tabItems.length - 1;
             break;
-          case "Enter":
-          case " ":
+          case 'Enter':
+          case ' ':
             selectTab(index, { focus: true });
             event.preventDefault();
             return;
           default:
             return;
         }
-
         event.preventDefault();
         selectTab(nextIndex, { focus: true });
       });
