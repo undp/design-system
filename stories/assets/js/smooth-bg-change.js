@@ -6,7 +6,7 @@ export function changeBackground(container) {
 
   const bodyElement = document.body;
   const section = container || '.heading-big';
-  const sectionElement = document.querySelector(section);
+  const sectionElement = typeof section === 'string' ? document.querySelector(section) : section;
   if (!sectionElement) {
     return;
   }
@@ -37,7 +37,7 @@ export function changeBackground(container) {
     const colorToBlue = gsap.fromTo(bodyElement, { backgroundColor: colorLight, duration: 1, ease: 'SlowMo' }, { backgroundColor: colorDark, duration: 1, ease: 'SlowMo' });
     // Create ScrollTrigger instance
     stFactory.push(ScrollTrigger.create({
-      trigger: section,
+      trigger: sectionElement,
       start: `top+=${sectionStart} center+=${headerHeight}`,
       end: `bottom-=${sectionEnd} center+=${headerHeight}`,
       scrub: true,
@@ -52,7 +52,7 @@ export function changeBackground(container) {
     });
     // Create ScrollTrigger instance
     stFactory.push(ScrollTrigger.create({
-      trigger: section,
+      trigger: sectionElement,
       start: `bottom-=${sectionStartReverse} top+=${headerHeight}`,
       end: `bottom-=40px top+=${headerHeight}`,
       scrub: true,

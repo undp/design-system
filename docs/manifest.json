@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generatedAt": "2026-05-12T23:34:54.988Z",
+  "generatedAt": "2026-05-13T13:42:13.868Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.0/",
   "assets": {
     "css": [
@@ -538,8 +538,8 @@
       },
       {
         "path": "js/all.min.js",
-        "size": 145870,
-        "sha256": "1880a3c4a9a642ce70272c40d757af3fe879fa4c0350e4acfd5bd09578cd74cc"
+        "size": 145891,
+        "sha256": "70136a34663195935a6dc85e2f5c677bd1f7038196ac98b0945eab903dbfc897"
       },
       {
         "path": "js/animation.min.js",
@@ -658,8 +658,8 @@
       },
       {
         "path": "js/smooth-bg-change.min.js",
-        "size": 20235,
-        "sha256": "55c0f3baf557f8918554ae1e7d8e2c1b623dc1f59c9af453b435cccd1e6ff22d"
+        "size": 20256,
+        "sha256": "b88794f33e5244cc50d74fbcf27a4a01a297df50d3f50fb6392395be3a1a8cfc"
       },
       {
         "path": "js/stats.min.js",
