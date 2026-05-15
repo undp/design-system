@@ -5,6 +5,7 @@ import { getCaptionForLocale} from './PostHeaderUtils'
 export default {
   title: 'Components/Post Header',
   component: PostHeader,
+  tags: ['deprecated'],
   argTypes: {
     locale: {
       control: {
