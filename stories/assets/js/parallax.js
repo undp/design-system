@@ -28,16 +28,27 @@ export const parallaxEffect = (trigger, selector, start, end, direction, device,
   function initParallax() {
     parallaxContainer.forEach((container, index) => {
       if (direction == 'horizontal') {
-        // Define empty array to use array.push().
-        const holder = [];
-        const $container = jQuery(container);
-        const { length } = $container.find('.swiper-slide');
-        if (container.querySelector('.swiper-wrapper') != undefined) {
-          if ($container.find(selector).find(trigger).length < 1) {
-            $container.find('.swiper-slide').each((index, element) => {
-              holder.push(element);
-              if (index === Math.floor((length - 1) / 2) || index === length - 1) {
-                jQuery(holder).wrapAll('<div class="stats-card-parallax parallax-slide" />');
+        const slides = Array.from(container.querySelectorAll('.swiper-slide'));
+        const wrapSlideGroup = (slideGroup) => {
+          if (!slideGroup.length) {
+            return;
+          }
+
+          const wrapper = document.createElement('div');
+          wrapper.className = 'stats-card-parallax parallax-slide';
+          slideGroup[0].parentNode?.insertBefore(wrapper, slideGroup[0]);
+          slideGroup.forEach((slideElement) => {
+            wrapper.appendChild(slideElement);
+          });
+        };
+
+        if (container.querySelector('.swiper-wrapper') !== undefined) {
+          if (container.querySelectorAll(`${selector} ${trigger}`).length < 1) {
+            const holder = [];
+            slides.forEach((slideElement, slideIndex) => {
+              holder.push(slideElement);
+              if (slideIndex === Math.floor((slides.length - 1) / 2) || slideIndex === slides.length - 1) {
+                wrapSlideGroup(holder.slice());
                 holder.length = 0;
               }
             });
@@ -107,23 +118,30 @@ export const parallaxEffect = (trigger, selector, start, end, direction, device,
 
 // parallaxlines Function.
 export function parallaxlines() {
-  jQuery(window).scroll(() => {
-    // variables
-    var $sticky = jQuery('.parallax .swiper-wrapper');
-    var stickyTop = $sticky.offset().top;
-    var windowTop = jQuery(window).scrollTop();
-    var diff = windowTop + 500;
-    // calculates the window width
-    const windowWidth = jQuery(window).width();
-    jQuery('.parallax .swiper-wrapper').each(function () {
-      if (windowWidth > 767) {
-        jQuery('.parallax').removeClass('lines-background');
-        if (jQuery(this).isInViewport()) {
-          if (stickyTop < diff) {
-            jQuery('.parallax').toggleClass('lines-background');
-          }
-        }
-      }
-    });
+  const isInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  };
+
+  window.addEventListener('scroll', () => {
+    const sticky = document.querySelector('.parallax .swiper-wrapper');
+    const parallaxSection = document.querySelector('.parallax');
+    if (!sticky || !parallaxSection) {
+      return;
+    }
+
+    const stickyTop = sticky.getBoundingClientRect().top + window.scrollY;
+    const windowTop = window.scrollY;
+    const diff = windowTop + 500;
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth <= 767) {
+      return;
+    }
+
+    parallaxSection.classList.remove('lines-background');
+    const wrappers = Array.from(document.querySelectorAll('.parallax .swiper-wrapper'));
+    const shouldShowLines = wrappers.some((wrapperElement) => isInViewport(wrapperElement) && stickyTop < diff);
+    parallaxSection.classList.toggle('lines-background', shouldShowLines);
   });
 }

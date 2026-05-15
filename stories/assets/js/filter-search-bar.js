@@ -1,106 +1,156 @@
-const selectCount = [];
+let isDocumentFilterEventsBound = false;
+
+const getFilterButton = (checkbox) => checkbox.closest('ul')?.closest('.multi-select')?.querySelector('button');
+
+const updateFilterButtonCount = (checkbox) => {
+  const multiSelect = checkbox.closest('.multi-select');
+  const filterButton = getFilterButton(checkbox);
+
+  if (!multiSelect || !filterButton) {
+    return;
+  }
+
+  const checkedCount = multiSelect.querySelectorAll('input[type="checkbox"]:checked').length;
+  const existingCount = filterButton.querySelector('span');
+
+  if (existingCount) {
+    existingCount.remove();
+  }
+
+  if (checkedCount > 0) {
+    const countElement = document.createElement('span');
+    countElement.textContent = ` (${checkedCount}) `;
+    filterButton.append(countElement);
+  }
+};
+
+const updateFilterStateVisibility = (selectWrapper) => {
+  if (!selectWrapper) {
+    return;
+  }
+
+  const chipWrapper = selectWrapper.querySelector('.selected-chips');
+  const clearButton = selectWrapper.querySelector('.clear-search-filter');
+  const activeFilter = selectWrapper.querySelector('.active-filter');
+  const hasChips = chipWrapper && chipWrapper.querySelectorAll('.chip__cross').length > 0;
+
+  if (clearButton) {
+    clearButton.classList.toggle('show-clear', hasChips);
+  }
+
+  if (activeFilter) {
+    activeFilter.classList.toggle('show-activefilter', hasChips);
+  }
+};
+
 const toggleFilter = function () {
-  const $multiSelect = jQuery('.multi-select');
-  const $searchOption = jQuery('.multi-select li input:checkbox');
-  const $chipWrapper = jQuery('.search-filter .selected-chips');
+  const multiSelects = Array.from(document.querySelectorAll('.multi-select'));
+  const searchOptions = Array.from(document.querySelectorAll('.multi-select li input[type="checkbox"]'));
 
-  $multiSelect.each(function (index) {
-    const $el = jQuery(this);
-    const $numberOfCheck = $el.find('input:checkbox:checked').length;
-    if ($numberOfCheck > 0) {
-      $el.find('button').first().find('span')
-        .remove();
-      $el.find('button').first().append(`<span> (${$numberOfCheck}) </span>`);
+  multiSelects.forEach((multiSelect) => {
+    const checkbox = multiSelect.querySelector('input[type="checkbox"]');
+    if (checkbox) {
+      updateFilterButtonCount(checkbox);
     }
   });
 
-  $searchOption.on('multiSelectInputToggle', function (e) {
-    // e.stopImmediatePropagation();
-    const $el = jQuery(this);
-    const $currentchipWrapper = $el.parents('.select-wrapper').find('.selected-chips');
-    const $eleId = $el.attr('id');
-    const $numberOfChecked = jQuery(this).parents('.multi-select').find('input:checkbox:checked').length;
-    const $filterButton = jQuery(this).parents('ul').not('.sub-menu').siblings();
-    if ($numberOfChecked > 0) {
-      $filterButton.find('span').remove();
-      $filterButton.append(`<span> (${$numberOfChecked}) </span>`);
-    } else {
-      $filterButton.find('span').remove();
+  searchOptions.forEach((option) => {
+    if (option.dataset.filterSearchInitialized === 'true') {
+      return;
     }
-    if ($el.is(':checked')) {
-      const $optionValue = jQuery(this).siblings().text();
-      const $chip = jQuery('<span class="chip chip__cross" tabindex="0" role="button"></span>').clone();
-      $chip.text($optionValue);
-      $chip.attr({ 'option-name': $eleId });
-      $currentchipWrapper.append($chip);
 
-      if ($currentchipWrapper.find('.chip__cross').length > 0) {
-        $currentchipWrapper.siblings('.clear-search-filter').addClass('show-clear')
-          .siblings('.active-filter').addClass('show-activefilter');
+    option.dataset.filterSearchInitialized = 'true';
+    option.addEventListener('click', () => {
+      const selectWrapper = option.closest('.select-wrapper');
+      const chipWrapper = selectWrapper?.querySelector('.selected-chips');
+      const optionId = option.id;
+
+      updateFilterButtonCount(option);
+
+      if (!chipWrapper || !optionId) {
+        return;
       }
-    } else {
-      if ($currentchipWrapper.find('.chip__cross').length < 2) {
-        $currentchipWrapper.siblings('.clear-search-filter').removeClass('show-clear')
-          .siblings('.active-filter').removeClass('show-activefilter');
+
+      if (option.checked) {
+        const optionValue = option.nextElementSibling?.textContent?.trim() || '';
+        const existingChip = chipWrapper.querySelector(`[option-name='${optionId}']`);
+
+        if (!existingChip) {
+          const chip = document.createElement('span');
+          chip.className = 'chip chip__cross';
+          chip.tabIndex = 0;
+          chip.setAttribute('role', 'button');
+          chip.setAttribute('option-name', optionId);
+          chip.textContent = optionValue;
+          chipWrapper.append(chip);
+        }
+      } else {
+        chipWrapper.querySelector(`[option-name='${optionId}']`)?.remove();
       }
-      $el.parents('.select-wrapper').find(`[option-name='${$eleId}']`).remove();
-    }
-  });
 
-  $chipWrapper.on('click', '.chip__cross', function (e) {
-    e.preventDefault();
-
-    const $el = jQuery(this);
-    const $currentchipWrapper = $el.parents('.select-wrapper').find('.selected-chips');
-    if ($currentchipWrapper.find('.chip__cross').length < 2) {
-      $el.parents('.select-wrapper').find('.clear-search-filter').removeClass('show-clear');
-      $el.parents('.select-wrapper').find('.active-filter').removeClass('show-activefilter');
-    }
-    const $id = $el.attr('option-name');
-    const $findId = $el.parents('.select-wrapper').find(`#${$id}`);
-    $findId.prop('checked', false);
-    const $inputCount = $findId.parents('.multi-select').find('input:checkbox:checked').length;
-    const $currentInputCount = $findId.parents('ul').not('.sub-menu').siblings();
-    if ($inputCount > 0) {
-      $currentInputCount.find('span').remove();
-      $currentInputCount.append(`<span> (${$inputCount}) </span>`);
-    } else {
-      $currentInputCount.find('span').remove();
-    }
-
-    // Add Chip removal event watcher.
-    $el.trigger({
-      type: 'filterSearchChipRemoval',
-      bubbles: true,
-      cancelable: false,
-      chip_id: $id,
+      updateFilterStateVisibility(selectWrapper);
     });
-
-    $el.remove();
   });
 
-  jQuery(document).on('click', '.clear-search-filter', function (e) {
-    const $el = jQuery(this);
-    const $currentchipWrapper = $el.parents('.select-wrapper').find('.selected-chips');
-    jQuery($currentchipWrapper).find('.chip').remove();
-    $el.parents('.select-wrapper').find('.clear-search-filter').removeClass('show-clear');
-    $el.parents('.select-wrapper').find('.active-filter').removeClass('show-activefilter');
-    $el.parents('.select-wrapper').find("input[type='checkbox']").prop('checked', false);
-    $el.parents('.select-wrapper').find('button').find('span').remove();
+  if (isDocumentFilterEventsBound) {
+    return;
+  }
 
-    // Add search filter clear event watcher.
-    jQuery(this).trigger({
-      type: 'filterSearchClear',
-      bubbles: true,
-      cancelable: false,
-    });
-    e.stopImmediatePropagation();
-  });
+  isDocumentFilterEventsBound = true;
 
-  jQuery(document).on('click', '.sort-filter-search', function (e) {
-    const $el = jQuery(this);
-    $el.toggleClass('close');
-    $el.next('.search-filter').toggleClass('show-filter');
+  document.addEventListener('click', (event) => {
+    const chip = event.target.closest('.chip__cross');
+    if (chip) {
+      event.preventDefault();
+
+      const selectWrapper = chip.closest('.select-wrapper');
+      const optionId = chip.getAttribute('option-name');
+      const checkbox = optionId ? selectWrapper?.querySelector(`#${optionId}`) : null;
+
+      if (checkbox) {
+        checkbox.checked = false;
+        updateFilterButtonCount(checkbox);
+      }
+
+      chip.dispatchEvent(new CustomEvent('filterSearchChipRemoval', {
+        bubbles: true,
+        cancelable: false,
+        detail: { chip_id: optionId },
+      }));
+
+      chip.remove();
+      updateFilterStateVisibility(selectWrapper);
+      return;
+    }
+
+    const clearButton = event.target.closest('.clear-search-filter');
+    if (clearButton) {
+      const selectWrapper = clearButton.closest('.select-wrapper');
+      const chipWrapper = selectWrapper?.querySelector('.selected-chips');
+      const checkboxes = Array.from(selectWrapper?.querySelectorAll("input[type='checkbox']") || []);
+
+      chipWrapper?.querySelectorAll('.chip').forEach((chipElement) => chipElement.remove());
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+      });
+
+      const filterButton = selectWrapper?.querySelector('button');
+      filterButton?.querySelector('span')?.remove();
+
+      updateFilterStateVisibility(selectWrapper);
+
+      clearButton.dispatchEvent(new CustomEvent('filterSearchClear', {
+        bubbles: true,
+        cancelable: false,
+      }));
+      return;
+    }
+
+    const sortFilterButton = event.target.closest('.sort-filter-search');
+    if (sortFilterButton) {
+      sortFilterButton.classList.toggle('close');
+      sortFilterButton.nextElementSibling?.classList.toggle('show-filter');
+    }
   });
 };
 

@@ -1,11 +1,18 @@
-jQuery(window).on('load', () => {
-  const $progressBar = jQuery('.progress-container .progress-bar');
-  if ($progressBar.length > 0) {
-    jQuery(window).on('scroll', () => {
-      const $windowHeight = (jQuery(window).height() == jQuery(document).height()) ? window.innerHeight : jQuery(window).height();
-      const $scrollPercent = (jQuery(window).scrollTop() / (jQuery(document).height() - $windowHeight)) * 100;
-      const $roundScroll = Math.round($scrollPercent);
-      $progressBar.css('width', `${$roundScroll}%`).toggleClass('progress-top', $roundScroll > 1);
-    });
+window.addEventListener('load', () => {
+  const progressBars = Array.from(document.querySelectorAll('.progress-container .progress-bar'));
+  if (progressBars.length < 1) {
+    return;
   }
+
+  window.addEventListener('scroll', () => {
+    const windowHeight = window.innerHeight;
+    const maxScrollable = document.documentElement.scrollHeight - windowHeight;
+    const scrollPercent = maxScrollable > 0 ? (window.scrollY / maxScrollable) * 100 : 0;
+    const roundScroll = Math.round(scrollPercent);
+
+    progressBars.forEach((progressBarElement) => {
+      progressBarElement.style.width = `${roundScroll}%`;
+      progressBarElement.classList.toggle('progress-top', roundScroll > 1);
+    });
+  });
 });

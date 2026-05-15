@@ -1,6 +1,6 @@
 {
-  "version": "1.7.5",
-  "generatedAt": "2026-05-04T20:16:50.397Z",
+  "version": "2.0.0",
+  "generatedAt": "2026-05-13T14:14:02.409Z",
   "totalComponents": 95,
   "statusSummary": {
     "draft": 0,
@@ -741,8 +741,7 @@
         ],
         "js": [
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js"
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js"
         ]
       }
     },
@@ -999,7 +998,6 @@
         "js": [
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
         ]
       }
@@ -2129,7 +2127,6 @@
         "js": [
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/our-expertise.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
@@ -2185,7 +2182,6 @@
         "js": [
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/our-expertise.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",

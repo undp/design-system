@@ -111,13 +111,13 @@ export const initializeComponents = (Story, context) => {
             break;
           case "expand-search":
             if (typeof expandSearch === "function") {
-              expandSearch(jQuery(element));
+              expandSearch(element);
               markAsInitialized(element, componentType);
             } else {
               import("./expand-search.js")
                 .then((module) => {
                   if (module && typeof module.expandSearch === "function") {
-                    module.expandSearch(jQuery(element));
+                    module.expandSearch(element);
                   }
                   markAsInitialized(element, componentType);
                 })

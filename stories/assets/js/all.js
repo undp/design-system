@@ -3,7 +3,6 @@ import './undp';
 import './viewport';
 import './lazyload';
 import './scrolling-progress-bar';
-import './smartresize';
 
 // ES6 imports
 import { accordion } from './accordion';

@@ -2,68 +2,80 @@
 
 // stickyScroll handler function.
 export function sticky(stickyArea, stickyMovingSide) {
+  let scrollHandler = null;
+
   const stickyScroll = (state) => {
-    const $sticky = jQuery(stickyArea);
-    const $relatedPublication = jQuery(stickyMovingSide);
-    if (jQuery($sticky).length && jQuery($relatedPublication).length) {
-      if (state) {
-        // Calculate values only if stickyScroll enabled.
-        const $stickyTop = jQuery($sticky).offset().top;
-        const $headerHeight = jQuery('.header').innerHeight() + 15 || 130;
-        const $footerTop = jQuery('.footer').offset().top;
-
-        jQuery(window).on('scroll', () => {
-          // Calculate this inside scroll after image loads.
-          const $stickyHeight = jQuery($sticky).innerHeight();
-          const $stickyReleaseHeight = jQuery($relatedPublication).innerHeight();
-          const $stickyReleaseOffset = jQuery($relatedPublication).offset().top;
-
-          let windowTop = Math.round(jQuery(window).scrollTop());
-          let startPoint = Math.round($stickyTop - $headerHeight) < windowTop;
-          let $stickyScrollUp = Math.round(($stickyReleaseOffset + $stickyReleaseHeight) - $stickyHeight);
-          let stopPoint = windowTop > $stickyScrollUp - $headerHeight;
-          if (startPoint && !stopPoint) {
-            jQuery($sticky).css({ position: 'fixed', top: $headerHeight, width: 'inherit' });
-          } else if (stopPoint) {
-            jQuery($sticky).css({ position: 'absolute', top: $stickyScrollUp, width: 'inherit' });
-          } else {
-            jQuery($sticky).css({ position: 'absolute', top: 'initial', width: 'inherit' });
-          }
-        });
-      } else {
-        // Unbind window scroll event and Reset sticky position if stickyScroll disabled.
-        jQuery(window).on('scroll', () => {
-          jQuery($sticky).css({ position: '', top: '', width: '100%' });
-        });
-      }
+    const stickyElement = document.querySelector(stickyArea);
+    const relatedPublication = document.querySelector(stickyMovingSide);
+    if (!stickyElement || !relatedPublication) {
+      return;
     }
+
+    if (scrollHandler) {
+      window.removeEventListener('scroll', scrollHandler);
+      scrollHandler = null;
+    }
+
+    if (state) {
+      const stickyTop = stickyElement.getBoundingClientRect().top + window.scrollY;
+      const headerElement = document.querySelector('.header');
+      const headerHeight = (headerElement ? headerElement.offsetHeight : 115) + 15;
+
+      scrollHandler = () => {
+        const stickyHeight = stickyElement.offsetHeight;
+        const stickyReleaseHeight = relatedPublication.offsetHeight;
+        const stickyReleaseOffset = relatedPublication.getBoundingClientRect().top + window.scrollY;
+
+        const windowTop = Math.round(window.scrollY);
+        const startPoint = Math.round(stickyTop - headerHeight) < windowTop;
+        const stickyScrollUp = Math.round((stickyReleaseOffset + stickyReleaseHeight) - stickyHeight);
+        const stopPoint = windowTop > stickyScrollUp - headerHeight;
+
+        if (startPoint && !stopPoint) {
+          stickyElement.style.position = 'fixed';
+          stickyElement.style.top = `${headerHeight}px`;
+          stickyElement.style.width = 'inherit';
+        } else if (stopPoint) {
+          stickyElement.style.position = 'absolute';
+          stickyElement.style.top = `${stickyScrollUp}px`;
+          stickyElement.style.width = 'inherit';
+        } else {
+          stickyElement.style.position = 'absolute';
+          stickyElement.style.top = 'initial';
+          stickyElement.style.width = 'inherit';
+        }
+      };
+
+      window.addEventListener('scroll', scrollHandler);
+      scrollHandler();
+      return;
+    }
+
+    stickyElement.style.position = '';
+    stickyElement.style.top = '';
+    stickyElement.style.width = '100%';
   };
 
-  // stickyScrollBar add on Sidebar,if sidebar content is more than [window screen - header Height].
+  // stickyScrollBar add on sidebar if sidebar content is more than [window screen - header height].
   // const stickyScrollBar = () => {
-  //   // initialize stickyScrollBar
-  //   const $sidebarWrapper = jQuery(StickyScrollBar);
-
-  //   // stickyScrollBar length check
-  //   if (jQuery($sidebarWrapper).length) {
-  //     const $sidebarHeight = $sidebarWrapper.innerHeight();
-  //     const $windowHeight = jQuery(window).innerHeight();
-  //     const $headerHeight = jQuery('.header').height();
-
-  //     // stickyScrollBar function condition check.
-  //     if ($sidebarHeight > ($windowHeight - $headerHeight)) {
-  //       $sidebarWrapper.addClass('scrollbar');
+  //   const sidebarWrapper = document.querySelector(StickyScrollBar);
+  //   if (sidebarWrapper) {
+  //     const sidebarHeight = sidebarWrapper.offsetHeight;
+  //     const windowHeight = window.innerHeight;
+  //     const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+  //     if (sidebarHeight > (windowHeight - headerHeight)) {
+  //       sidebarWrapper.classList.add('scrollbar');
   //     } else {
-  //       $sidebarWrapper.removeClass('scrollbar');
+  //       sidebarWrapper.classList.remove('scrollbar');
   //     }
   //   }
   // };
 
   // initialize stickyScroll function and enable/disable based on mediaQuery breakpoint.
   const initStickyScroll = () => {
-    const $windowWidth = jQuery(window).width();
+    const windowWidth = window.innerWidth;
     const breakpoint = 1024;
-    if ($windowWidth >= breakpoint) {
+    if (windowWidth >= breakpoint) {
       // Enable Sticky Scroll.
       stickyScroll(true);
     } else {

@@ -1,16 +1,22 @@
 export const getMegaMenu = (lang) => {
-  jQuery.ajax({
-    method: 'GET',
-    url: './js/navigation-data.json',
-    dataType: 'json',
-    success(res) {
+  fetch('./js/navigation-data.json')
+    .then((response) => response.json())
+    .then((res) => {
       lang = (lang === 'en') ? 'english' : lang;
       const resData = res.find((item) => item.language === lang);
-      const $megaWrapper = jQuery('.mega-wrapper');
-      const $mobileMegaWrapper = jQuery('.mobile-mega-wrapper');
-      $megaWrapper.empty();
-      $mobileMegaWrapper.empty();
-      resData.data.forEach((item, index) => {
+      if (!resData) {
+        return;
+      }
+
+      const megaWrapper = document.querySelector('.mega-wrapper');
+      const mobileMegaWrapper = document.querySelector('.mobile-mega-wrapper');
+      if (!megaWrapper || !mobileMegaWrapper) {
+        return;
+      }
+
+      megaWrapper.innerHTML = '';
+      mobileMegaWrapper.innerHTML = '';
+      resData.data.forEach((item) => {
         const submenus = item.submenus
           .map((menu, index) => `<li id="${menu.link.id}-${item.id}" class="${
             index === 0 ? 'active' : ''
@@ -74,7 +80,7 @@ export const getMegaMenu = (lang) => {
                     </div>
            </div>
         `;
-        $megaWrapper.append(renderHtml);
+          megaWrapper.insertAdjacentHTML('beforeend', renderHtml);
 
         // render mobile mega navs
         const renderMobileHtml = `
@@ -96,8 +102,10 @@ export const getMegaMenu = (lang) => {
     .join(' ')}
         </div>
         `;
-        $mobileMegaWrapper.append(renderMobileHtml);
+        mobileMegaWrapper.insertAdjacentHTML('beforeend', renderMobileHtml);
       });
-    },
-  });
+    })
+    .catch(() => {
+      // Keep failure silent to preserve previous behavior where UI simply remains unchanged.
+    });
 };

@@ -4,134 +4,146 @@
 class MultiSelect {
   constructor(element) {
     this.classOpen = 'open';
-
-    this.$window = jQuery(window);
-    this.$currentSelect = jQuery(element);
-    this.$selectTrigger = this.$currentSelect.find('button').first();
+    this.currentSelect = element;
+    this.selectTrigger = this.currentSelect.querySelector('button');
   }
 
   init() {
+    if (this.currentSelect.dataset.multiSelectInitialized === 'true') {
+      return;
+    }
+
     this.addListeners();
     this.listenerWindowClick();
+    this.currentSelect.dataset.multiSelectInitialized = 'true';
   }
 
   addListeners() {
-    this.$selectTrigger.on('click', (ev) => {
+    if (!this.selectTrigger) {
+      return;
+    }
+
+    this.selectTrigger.addEventListener('click', (ev) => {
       ev.stopImmediatePropagation();
       this.toggleSelect();
 
       // Trigger on Multiselect dropdown toggle.
-      this.$currentSelect.trigger({
-        type: 'multiSelectToggle',
+      this.currentSelect.dispatchEvent(createCustomEvent('multiSelectToggle', {
         bubbles: true,
         cancelable: false,
-        select_trigger_dataset_id: this.$selectTrigger?.[0]?.dataset?.id ?? false,
-        select_trigger_id: this.$selectTrigger?.[0]?.id ?? false,
-        state: (this.$currentSelect.hasClass('open')) ? 'open' : 'closed',
-        open: (this.$currentSelect.hasClass('open')),
-        closed: (!this.$currentSelect.hasClass('open')),
-      });
+        select_trigger_dataset_id: this.selectTrigger.dataset?.id || false,
+        select_trigger_id: this.selectTrigger.id || false,
+        state: this.currentSelect.classList.contains(this.classOpen) ? 'open' : 'closed',
+        open: this.currentSelect.classList.contains(this.classOpen),
+        closed: !this.currentSelect.classList.contains(this.classOpen),
+      }));
     });
 
-    // Respond to the toggle of a checkbox input.
-    this.$currentSelect.on('click', 'input[type=checkbox]', (ev) => {
-      ev.stopImmediatePropagation();
-      const $selectedCheckbox = jQuery(ev.target);
-      const $selectedOption = $selectedCheckbox.closest('li[role=option]');
-      $selectedOption.attr('aria-selected', $selectedCheckbox.is(':checked'));
-    });
-
-    // Open/Close sub groups (input is a caret).
-    this.$currentSelect.on('click', '.has-submenu > .checkbox-item', (ev) => {
-      ev.stopImmediatePropagation();
-      const $clickedElement = jQuery(ev.target);
-      if (!$clickedElement.hasClass('checkmark')) {
-        ev.preventDefault();
-        const $rowHasSubmenu = jQuery(ev.currentTarget).closest('li.has-submenu');
-        const $caretButton = $rowHasSubmenu.find('button.caret');
-        $rowHasSubmenu.toggleClass('open');
-        if ($rowHasSubmenu.attr('aria-expanded') === 'true') {
-          $rowHasSubmenu.attr('aria-expanded', 'false');
-          $caretButton.attr('aria-expanded', 'false');
-        } else {
-          $rowHasSubmenu.attr('aria-expanded', 'true');
-          $caretButton.attr('aria-expanded', 'true');
+    this.currentSelect.addEventListener('click', (ev) => {
+      const selectedCheckbox = ev.target.closest('input[type="checkbox"]');
+      if (selectedCheckbox && this.currentSelect.contains(selectedCheckbox)) {
+        ev.stopImmediatePropagation();
+        const selectedOption = selectedCheckbox.closest('li[role="option"]');
+        if (selectedOption) {
+          selectedOption.setAttribute('aria-selected', selectedCheckbox.checked ? 'true' : 'false');
         }
-      }
-    });
 
-    this.$currentSelect.on('click', '.has-submenu > button.caret', (ev) => {
-      const $caretButton = jQuery(ev.currentTarget);
-      $caretButton.siblings('.checkbox-item').trigger('click');
+        updateCheckedCountForMultiSelect(this.currentSelect);
+
+        selectedCheckbox.dispatchEvent(createCustomEvent('multiSelectInputToggle', {
+          bubbles: true,
+          cancelable: false,
+          checkbox_id: selectedCheckbox.id,
+          state: selectedCheckbox.checked,
+          toggle_state: selectedCheckbox.checked ? 'checked' : 'unchecked',
+          selected: selectedCheckbox.checked,
+          unselected: !selectedCheckbox.checked,
+        }));
+        return;
+      }
+
+      // Open/Close sub groups (input is a caret).
+      const checkboxItem = ev.target.closest('.has-submenu > .checkbox-item');
+      if (checkboxItem && this.currentSelect.contains(checkboxItem)) {
+        ev.stopImmediatePropagation();
+
+        if (!ev.target.classList.contains('checkmark')) {
+          ev.preventDefault();
+          const rowHasSubmenu = checkboxItem.closest('li.has-submenu');
+          const caretButton = rowHasSubmenu?.querySelector('button.caret');
+
+          if (!rowHasSubmenu) {
+            return;
+          }
+
+          const isOpen = rowHasSubmenu.classList.toggle('open');
+          rowHasSubmenu.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          if (caretButton) {
+            caretButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          }
+        }
+        return;
+      }
+
+      const caretButton = ev.target.closest('.has-submenu > button.caret');
+      if (caretButton && this.currentSelect.contains(caretButton)) {
+        const checkboxItemTrigger = caretButton.parentElement?.querySelector('.checkbox-item');
+        checkboxItemTrigger?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      }
     });
   }
 
   listenerWindowClick() {
-    this.$window.click((evt) => {
-      if (this.$currentSelect && !this.$currentSelect.is(evt.target)
-        && this.$currentSelect.has(evt.target).length === 0 && this.$currentSelect.hasClass(this.classOpen)) {
-        this.$currentSelect.removeClass(this.classOpen);
-        this.$selectTrigger.attr('aria-expanded', 'false');
+    document.addEventListener('click', (evt) => {
+      if (!this.currentSelect.contains(evt.target) && this.currentSelect.classList.contains(this.classOpen)) {
+        this.currentSelect.classList.remove(this.classOpen);
+        this.selectTrigger?.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
   toggleSelect() {
-    this.$currentSelect.toggleClass(this.classOpen);
-    if (this.$selectTrigger.attr('aria-expanded') === 'true') {
-      this.$selectTrigger.attr('aria-expanded', 'false');
-    } else {
-      this.$selectTrigger.attr('aria-expanded', 'true');
-    }
+    this.currentSelect.classList.toggle(this.classOpen);
+    const isExpanded = this.selectTrigger?.getAttribute('aria-expanded') === 'true';
+    this.selectTrigger?.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
   }
 }
 
+const createCustomEvent = (type, payload) => {
+  const event = new CustomEvent(type, {
+    bubbles: payload.bubbles,
+    cancelable: payload.cancelable,
+    detail: payload,
+  });
+  Object.assign(event, payload);
+  return event;
+};
+
+const updateCheckedCountForMultiSelect = (multiSelectElement) => {
+  const checkedCount = multiSelectElement.querySelectorAll('input[type="checkbox"]:checked').length;
+  const filterButton = multiSelectElement.querySelector('button');
+  if (!filterButton) {
+    return;
+  }
+
+  filterButton.querySelector('span')?.remove();
+
+  if (checkedCount > 0) {
+    const countElement = document.createElement('span');
+    countElement.textContent = ` (${checkedCount}) `;
+    filterButton.append(countElement);
+  }
+};
+
 export function multiSelect() {
-  (function ($) {
-    // Display number of inputs that are selected on load.
-    jQuery('.multi-select').each(function (index) {
-      const $el = jQuery(this);
-      const numberOfCheck = $el.find('input:checkbox:checked').length;
-      if (numberOfCheck > 0) {
-        $el.find('button').first().find('span')
-          .remove();
-        $el.find('button').first().append(`<span> (${numberOfCheck}) </span>`);
-      }
-    });
+  // Display number of inputs that are selected on load.
+  document.querySelectorAll('.multi-select').forEach((multiSelectElement) => {
+    updateCheckedCountForMultiSelect(multiSelectElement);
+  });
 
-    // Update the display of number of inputs that have been selected.
-    jQuery('.multi-select li input:checkbox').on('click', function () {
-      const $el = jQuery(this);
-      const numberOfChecked = $el.parents('.multi-select').find('input:checkbox:checked').length;
-      const filterButton = $el.parents('ul').not('.sub-menu').siblings();
-      if (numberOfChecked > 0) {
-        filterButton.find('span').remove();
-        filterButton.append(`<span> (${numberOfChecked}) </span>`);
-      } else {
-        filterButton.find('span').remove();
-      }
-    });
-
-    // Trigger event on input toggle.
-    jQuery('.multi-select li input').on('click', function (e) {
-      const $el = jQuery(this);
-      $el.trigger({
-        type: 'multiSelectInputToggle',
-        bubbles: true,
-        cancelable: false,
-        checkbox_id: $el[0].id,
-        state: $el[0].checked,
-        toggle_state: ($el[0].checked) ? 'checked' : 'unchecked',
-        selected: $el[0].checked,
-        unselected: !$el[0].checked,
-      });
-      e.stopImmediatePropagation();
-    });
-
-    // Initiate MultiSelect Object.
-    jQuery('[data-multi-select]').each((i, select) => {
-      const multiSelect = new MultiSelect(select);
-      multiSelect.init();
-    });
-  }(jQuery));
+  // Initiate MultiSelect object.
+  document.querySelectorAll('[data-multi-select]').forEach((selectElement) => {
+    const multiSelect = new MultiSelect(selectElement);
+    multiSelect.init();
+  });
 }

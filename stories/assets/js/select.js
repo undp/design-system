@@ -1,21 +1,40 @@
 export function select() {
-  let $selectButton = jQuery('.select-box button');
-  let $selectList = jQuery('.select-box li');
+  const selectBoxes = Array.from(document.querySelectorAll('.select-box'));
 
-  $selectButton.on('click', function () {
-    jQuery(this).parent().toggleClass('expanded').find('ul')
-      .toggleClass('active');
-  });
+  selectBoxes.forEach((selectBox) => {
+    const triggerButton = selectBox.querySelector('button');
+    const optionsList = selectBox.querySelector('ul');
+    const options = Array.from(selectBox.querySelectorAll('li'));
 
-  $selectList.on('click keypress', function () {
-    jQuery(this).parent().siblings().text(jQuery(this).find('span').text());
-    jQuery(this).parent().removeClass('active').parents()
-      .removeClass('expanded');
-  });
-
-  jQuery(document).mouseup((e) => {
-    if (!$selectButton.is(e.target) && $selectButton.has(e.target).length === 0) {
-      $selectButton.parent().removeClass('expanded').find('ul').removeClass('active');
+    if (!triggerButton || !optionsList) {
+      return;
     }
+
+    triggerButton.addEventListener('click', () => {
+      selectBox.classList.toggle('expanded');
+      optionsList.classList.toggle('active');
+    });
+
+    options.forEach((option) => {
+      const setSelectedOption = () => {
+        const optionText = option.querySelector('span')?.textContent || option.textContent || '';
+        triggerButton.textContent = optionText;
+        optionsList.classList.remove('active');
+        selectBox.classList.remove('expanded');
+      };
+
+      option.addEventListener('click', setSelectedOption);
+      option.addEventListener('keypress', setSelectedOption);
+    });
+  });
+
+  document.addEventListener('mouseup', (event) => {
+    selectBoxes.forEach((selectBox) => {
+      const triggerButton = selectBox.querySelector('button');
+      if (triggerButton && !triggerButton.contains(event.target)) {
+        selectBox.classList.remove('expanded');
+        selectBox.querySelector('ul')?.classList.remove('active');
+      }
+    });
   });
 }
