@@ -4,6 +4,7 @@ import { getCaptionForLocale } from "./OurExpertiseUtils";
 
 export default {
   title: "Patterns/Our Expertise",
+  tags: ['deprecated'],
   component: {OurExpertise},
   parameters: {
     docs: {

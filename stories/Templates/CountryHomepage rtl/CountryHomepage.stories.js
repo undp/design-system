@@ -601,6 +601,7 @@ const getCaptionForLocale = (locale) => {
 
 export default {
   title: "Templates/Country homepage rtl",
+  tags: ['deprecated'],
   parameters: {
     docs: {
         page: () => (

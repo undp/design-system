@@ -21,6 +21,7 @@ import { getCaptionForLocale } from './GlobalHomepageUtils.js';
 export default {
   title: "Templates/Global Homepage RTL",
   component: GlobalHomePage,
+  tags: ['deprecated'],
   parameters: {
     docs: {
         page: () => (
@@ -134,7 +135,7 @@ export default {
                       <li>GSAP (<a href="https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo">https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo</a>)</li>
                   </ul>
 
-                  
+
                   <ul>
                       <li>1.0 — Released component</li>
                       <li>1.0.10 - Our Expertise section replaced with new rendering</li>

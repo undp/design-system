@@ -231,6 +231,7 @@ const getCaptionForLocale = (locale) => {
 
 export default {
   title: 'Components/UI components/Cards/Parallax cards',
+  tags: ['deprecated'],
   argTypes: {
     locale: {
       name: 'Locale',
@@ -244,7 +245,9 @@ export default {
     docs: {
         page: () => (
             <>
-              <h1>Parallax Cards</h1>
+             <h2><strong>Deprecated:</strong> This component is deprecated and should not be used in new projects.</h2>
+             <h1>Parallax Cards</h1>
+
 
               <p>The Parallax Cards component defines a card of information data with some items- Title, Paragraph, and CTA Link.</p>
 
@@ -335,9 +338,9 @@ export default {
                 <li>By clicking on the CTA link, the page is redirected to the detailed page.</li>
               </ul>
 
-              
 
-              
+
+
 
             </>
         )

@@ -2,6 +2,7 @@
 import { fileURLToPath } from "node:url";
 import { dirname } from "node:path";
 import { createRequire } from "node:module";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const require = createRequire(import.meta.url);
@@ -78,7 +79,17 @@ const config = {
 
   features: {
     actions: false
-  }
+  },
+
+  tags: {
+    // 👇 Define a custom tag named "deprecated"
+    deprecated: {
+      defaultFilterSelection: 'exclude', // Or 'include'
+    },
+    hidden: {
+      defaultFilterSelection: 'exclude', // Or 'include'
+    }
+  },
 };
 
 export default config;
