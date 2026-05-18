@@ -215,51 +215,48 @@ export const initializeComponents = (Story, context) => {
                 );
             }
             break;
-          case "parallax":
-            if (typeof parallaxEffect === "function") {
-              const options = element.getAttribute("data-options")
-                ? JSON.parse(element.getAttribute("data-options"))
-                : {};
-              parallaxEffect(
-                options.selector || ".parallax-card",
-                options.elements || [
-                  ".parallax-card__image",
-                  ".parallax-card__content",
-                ],
-                options.trigger || "top center",
-                options.endTrigger || "bottom+=85 center",
-                options.direction || "vertical",
-                options.breakpoint || "desktop",
-                options.unit || "percent",
+          case "parallax": {
+            const getParallaxOptions = (el) => {
+              let opts = {
+                triggerElement: ".parallax-gallery-images",
+                targetSelector: ".column",
+                triggerHook: "top center",
+                endTriggerHook: "bottom+=15% center",
+                direction: "vertical",
+                breakpoints: "all",
+              };
+              if (el.hasAttribute("data-options")) {
+                try {
+                  opts = { ...opts, ...JSON.parse(el.getAttribute("data-options")) };
+                } catch (e) {
+                  console.warn("Invalid JSON in data-options for parallax");
+                }
+              }
+              return opts;
+            };
+            const runParallax = (mod) => {
+              const opts = getParallaxOptions(element);
+              mod.parallaxEffect(
+                opts.triggerElement,
+                opts.targetSelector,
+                opts.triggerHook,
+                opts.endTriggerHook,
+                opts.direction,
+                opts.breakpoints,
               );
               markAsInitialized(element, componentType);
+            };
+            if (typeof parallaxEffect === "function") {
+              runParallax({ parallaxEffect });
             } else {
               import("./parallax.js")
-                .then((module) => {
-                  if (module && typeof module.parallaxEffect === "function") {
-                    const options = element.getAttribute("data-options")
-                      ? JSON.parse(element.getAttribute("data-options"))
-                      : {};
-                    module.parallaxEffect(
-                      options.selector || ".parallax-card",
-                      options.elements || [
-                        ".parallax-card__image",
-                        ".parallax-card__content",
-                      ],
-                      options.trigger || "top center",
-                      options.endTrigger || "bottom+=85 center",
-                      options.direction || "vertical",
-                      options.breakpoint || "desktop",
-                      options.unit || "percent",
-                    );
-                  }
-                  markAsInitialized(element, componentType);
-                })
+                .then(runParallax)
                 .catch((err) =>
                   console.error("Error initializing parallax:", err),
                 );
             }
             break;
+          }
           case "sidebar":
             if (
               typeof sidebarNav === "function" &&

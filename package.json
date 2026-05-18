@@ -123,7 +123,6 @@
   },
   "dependencies": {
     "fitty": "^2.4.2",
-    "gsap": "^3.15.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "swiper": "^12.1.4"

@@ -3,8 +3,28 @@
 @use '../../../../assets/scss/mixins';
 
 .parallax-gallery {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &-track {
+    flex: 0 0 0;
+    height: 200vh;
+    pointer-events: none;
+  }
+
   &-left {
+    align-self: flex-start;
     display: flex;
+    height: 100vh;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
 
     @include breakpoints.devicebreak(small) {
       margin-bottom: 0.75rem;
@@ -16,8 +36,11 @@
   }
 
   &-right {
+    align-self: flex-start;
+    height: 100vh;
     overflow: hidden;
-    position: relative;
+    position: sticky;
+    top: 0;
   }
 
   &-content {
@@ -65,12 +88,15 @@
   }
 
   &-images {
+    align-items: flex-start;
     display: flex;
-    margin: -5.313rem auto;
+    height: 100%;
+    overflow: hidden;
 
     .column {
       flex: 0 0 calc(50% - 0.5rem);
       max-width: calc(50% - 0.5rem);
+      will-change: transform;
 
       @include breakpoints.devicebreak(medium) {
         &:first-of-type {
