@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generatedAt": "2026-05-18T17:56:27.665Z",
+  "generatedAt": "2026-05-18T18:44:24.723Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.0/",
   "assets": {
     "css": [
@@ -21,8 +21,8 @@
       },
       {
         "path": "css/components.min.css",
-        "size": 289691,
-        "sha256": "8b8ccd5c65e009894b8949f8aef550ab8453b1e2e7318ea0b2fcad8774d89ed0"
+        "size": 289803,
+        "sha256": "c3e9e06877ee04c1a7f8058127df0487543a4267018bd544ae267b08709d3238"
       },
       {
         "path": "css/components/accordion.min.css",
@@ -76,8 +76,8 @@
       },
       {
         "path": "css/components/chips.min.css",
-        "size": 646,
-        "sha256": "6e541463a1bf4dfd5151f144558ec153b582adce1cc5f9688ac61064ce0bedd4"
+        "size": 758,
+        "sha256": "f6e4c26f3626391e16830d942ab9ddccaef057afe97be043d2a53e640ba26367"
       },
       {
         "path": "css/components/content-card-with-and-without-image.min.css",
