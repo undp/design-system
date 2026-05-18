@@ -19,16 +19,17 @@ export function ParallaxGallery({
 
   const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
   const parallaxOptions = JSON.stringify({
-    triggerElement: '.parallax-gallery-images',
+    triggerElement: '.parallax-gallery',
     targetSelector: '.column',
-    triggerHook: 'top center',
-    endTriggerHook: 'bottom+=15% center',
+    triggerHook: 'top top',
+    endTriggerHook: 'bottom bottom',
     direction: 'vertical',
     breakpoints: 'all'
   });
 
   return (
-    <div className="grid-x grid-margin-x parallax-gallery" data-undpds-component="parallax" data-options={parallaxOptions}>
+    <div className="grid-x parallax-gallery" data-undpds-component="parallax" data-options={parallaxOptions}>
+      <div className="parallax-gallery-track" aria-hidden="true" />
       <div className={cls('medium-6', 'cell', 'parallax-gallery-left', `${background}`)}>
         <div className="parallax-gallery-content">
           <Heading type="5" label={titleText} />
@@ -44,6 +45,8 @@ export function ParallaxGallery({
             <img src={galleryimg1} alt="Image 3" />
             <img src={galleryimg3} alt="Image 4" />
             <img src={galleryimg1} alt="Image 5" />
+            <img src={galleryimg3} alt="Image 6" />
+            <img src={galleryimg1} alt="Image 7" />
           </div>
           <div className="column" role="img" aria-label="parallax gallery images">
             <img src={galleryimg2} alt="Image 6" />
@@ -51,6 +54,8 @@ export function ParallaxGallery({
             <img src={galleryimg2} alt="Image 8" />
             <img src={galleryimg4} alt="Image 9" />
             <img src={galleryimg2} alt="Image 10" />
+            <img src={galleryimg4} alt="Image 11" />
+            <img src={galleryimg2} alt="Image 12" />
           </div>
         </div>
       </div>

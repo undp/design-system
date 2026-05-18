@@ -2,7 +2,7 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { StatsSlider } from "./StatsSlider";
 import { statsArray } from "./StatsSliderUtils";
 
-export default { 
+export default {
   title: "Patterns/Stats slider (two rows)",
   parameters: {
     docs: {
@@ -70,7 +70,7 @@ export default {
 </ul>
 <h4>Method 1: Automatic Initialization (Recommended)</h4>
 <ul>
-   <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> and GSAP libraries (gsap, ScrollTrigger, and EasePack) from <a href="https://greensock.com/docs/v3/Installation">here</a> in your HTML page.</li>
+   <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> in your HTML page.</li>
    <li>Include the component initializer script:
       <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
    </li>
@@ -81,14 +81,14 @@ export default {
 </ul>
 <h4>Method 2: Manual Initialization (Traditional)</h4>
 <ul>
-   <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> and GSAP libraries (gsap, ScrollTrigger, and EasePack) from <a href="https://greensock.com/docs/v3/Installation">here</a> in your HTML page.</li>
+   <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> in your HTML page.</li>
    <li>Include the required JS files as listed in the CSS and JS References section.</li>
    <li>Call the initialization functions directly in your JavaScript:
       <code>swiper('.stats-card-slider');</code>
       <code>parallaxEffect('.stats-card-slider');</code>
    </li>
 </ul>
-<p>This widget displays parallax on desktop and slider on mobile, so it has to apply both on load. Include Swiper (<a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a>) and <a href="https://greensock.com/docs/v3/Installation">GSAP libraries</a> for parallax (include gsap, ScrollTrigger, and EasePack) and slider effects in your HTML file.</p>
+<p>This widget displays parallax on desktop and slider on mobile, so it has to apply both on load. Include Swiper (<a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a>) for the slider functionality in your HTML file. The parallax effect is implemented using vanilla JavaScript with scroll event listeners.</p>
 
 <ul>
     <li>Refer to <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>

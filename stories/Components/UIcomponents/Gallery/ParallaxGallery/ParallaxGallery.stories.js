@@ -208,12 +208,7 @@ export default {
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js">Parallax JS</a></li>
               </ul>
 
-              <p>Following external libraries need to be included first:</p>
-              <ul>
-                <li>GSAP core library</li>
-                <li>GSAP ScrollTrigger plugin</li>
-                <li>GSAP EasePack plugin</li>
-              </ul>
+              <p>The parallax effect is implemented using vanilla JavaScript with scroll event listeners and does not require external animation libraries.</p>
 
               <h3>Interactions</h3>
 
