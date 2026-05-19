@@ -3,14 +3,19 @@
 
 .heading-container {
   background-color: #232e3e;
-  color: $color-white;
+  color: var(--undpds-color-text-inverse);
   justify-content: center;
   overflow: hidden;
-  padding-bottom: $spacing-12;
-  padding-top: $spacing-12;
+  padding-bottom: var(--undpds-spacing-12);
+  padding-top: var(--undpds-spacing-12);
+
+   @include devicebreak(medium) {
+    padding-bottom: var(--undpds-spacing-15);
+    padding-top: var(--undpds-spacing-15);
+  }
 
   h4 {
-    margin-top: $spacing-50;
+    margin-top: var(--undpds-spacing-50);
 
     @include devicebreak(medium) {
       margin-top: 0;
@@ -20,7 +25,7 @@
   h2,
   h4 {
     @include devicebreak(small) {
-      padding: 0 $spacing-06;
+      padding: 0 var(--undpds-spacing-06);
     }
   }
 }

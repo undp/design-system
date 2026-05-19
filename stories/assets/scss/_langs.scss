@@ -55,7 +55,7 @@
   }
 
   h5 {
-    font-size: var(--undpds-font-size-20);
+    font-size: var(--undpds-font-size-body-default);
 
     @include breakpoints.devicebreak(medium) {
       font-size: 1.375rem;
@@ -82,7 +82,7 @@
 /* Cyrillic scripts */
 #{variables.$cyrillic} {
   h1 {
-    font-family: var(--undpds-font-family-proximanova);
+    font-family: var(--undpds-font-family-primary);
   }
 }
 

@@ -5,13 +5,13 @@
 /* Tab start */
 .tabs {
   >ul {
-    background-color: $color-white;
-    border-bottom: 2px solid $color-gray-300;
+    background-color: var(--undpds-color-background-default);
+    border-bottom: 2px solid var(--undpds-color-gray-300);
     list-style: none;
     padding-left: 0;
 
     @include devicebreak(medium) {
-      padding-left: $spacing-09;
+      padding-left: var(--undpds-spacing-09);
     }
 
     li {
@@ -21,36 +21,36 @@
       font-weight: 700;
       letter-spacing: 0.03em;
       margin-bottom: -0.125rem;
-      margin-right: $spacing-06;
+      margin-right: var(--undpds-spacing-06);
       margin-top: 0.75rem;
-      padding-bottom: $spacing-03;
+      padding-bottom: var(--undpds-spacing-03);
       padding-left: 0;
       text-transform: uppercase;
 
       &.is-active {
-        border-bottom: 2px solid $color-dark-red;
+        border-bottom: 2px solid var(--undpds-color-dark-red);
       }
 
       &:hover {
         @include devicebreak(large) {
-          border-bottom: 2px solid $color-gray-500;
+          border-bottom: 2px solid var(--undpds-color-gray-500);
         }
       }
 
       a {
         @extend %img_none;
 
-        font-size: $font-size-16;
+        font-size: var(--undpds-font-size-16);
       }
     }
   }
 
   .tabs-content {
-    background-color: $color-white;
+    background-color: var(--undpds-color-background-default);
 
     .tabs-panel {
       display: none;
-      padding-top: $spacing-05;
+      padding-top: var(--undpds-spacing-05);
 
       @include devicebreak(medium) {
         padding-top: 2.5rem;
@@ -69,11 +69,11 @@
       padding-right: 0;
 
       @include devicebreak(medium) {
-        padding-right: $spacing-09;
+        padding-right: var(--undpds-spacing-09);
       }
 
       li {
-        margin-left: $spacing-06;
+        margin-left: var(--undpds-spacing-06);
         margin-right: 0;
         padding-right: 0;
       }

@@ -26,7 +26,7 @@ table {
       @extend %border-none;
 
       &:nth-child(even) {
-        background-color: var(--undpds-color-gray-200);
+        background-color: var(--undpds-color-surface-default);
       }
     }
   }

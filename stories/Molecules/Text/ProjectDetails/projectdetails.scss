@@ -2,7 +2,7 @@
 
 /* project details start */
 .project-data {
-  border-bottom: 1px solid var(--undpds-color-gray-400);
+  border-bottom: 1px solid var(--undpds-color-border-subtle);
 
   @include devicebreak(medium) {
     border: 0;

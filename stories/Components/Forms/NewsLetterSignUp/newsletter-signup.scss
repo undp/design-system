@@ -5,7 +5,7 @@
 /* signup newsletter start */
 .sign-up {
   label {
-    color: var(--undpds-color-white);
+    color: var(--undpds-color-text-inverse);
     display: block;
     font-size: var(--undpds-font-size-16);
     line-height: 1.4;
@@ -34,24 +34,24 @@
 
     input[type=email] {
       background-color: transparent;
-      border-color: var(--undpds-color-white);
+      border-color: var(--undpds-color-border-inverse);
       border-radius: 0;
-      color: var(--undpds-color-white);
+      color: var(--undpds-color-text-inverse);
       height: 54px;
       margin: 0;
       outline: none;
 
       &::placeholder {
-        color: var(--undpds-color-white);
+        color: var(--undpds-color-text-inverse);
       }
     }
   }
 
   .form-submit {
     -webkit-appearance: none;
-    background-color: var(--undpds-color-white);
+    background-color: var(--undpds-color-background-default);
     border-radius: 0;
-    color: var(--undpds-color-blue-600);
+    color: var(--undpds-color-brand);
     height: 54px;
     margin: 0;
     min-width: 86px;
@@ -65,22 +65,22 @@
 
   &.inverted {
     label {
-      color: var(--undpds-color-black);
+      color: var(--undpds-color-text-default);
     }
 
     input[type=email] {
-      background-color: var(--undpds-color-white);
-      border-color: var(--undpds-color-black);
-      color: var(--undpds-color-black);
+      background-color: var(--undpds-color-background-default);
+      border-color: var(--undpds-color-border-default);
+      color: var(--undpds-color-text-default);
 
       &::placeholder {
-        color: var(--undpds-color-black);
+        color: var(--undpds-color-text-default);
       }
     }
 
     .form-submit {
       background-color: var(--undpds-color-dark-red);
-      color: var(--undpds-color-white);
+      color: var(--undpds-color-text-inverse);
     }
   }
 }

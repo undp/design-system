@@ -40,7 +40,7 @@
         word-break: keep-all;
         white-space: wrap;
         letter-spacing: normal;
-        color: var(--undpds-color-black);
+        color: var(--undpds-color-text-default);
         background-color: var(--undpds-color-gray-100);
 
         &.edge:focus>ul.sub-menu,
@@ -64,7 +64,7 @@
           font-weight: normal;
           text-transform: none;
           text-align: left;
-          border-bottom: 1px solid var(--undpds-color-gray-400);
+          border-bottom: 1px solid var(--undpds-color-border-subtle);
           letter-spacing: unset;
         }
 
@@ -115,8 +115,8 @@
       li:hover,
       li.open {
         transition: 0.2s ease;
-        background: var(--undpds-color-blue-600);
-        color: var(--undpds-color-white);
+        background: var(--undpds-color-brand);
+        color: var(--undpds-color-text-inverse);
 
         &:not(.has-submenu) {
           background: var(--undpds-color-gray-400);
@@ -139,7 +139,7 @@
         }
 
         &:not(.has-submenu) {
-          color: var(--undpds-color-black);
+          color: var(--undpds-color-text-default);
         }
 
         >a:not(.external, .download) {
@@ -244,17 +244,17 @@
 
   li:hover>a.external {
     .external-link-animated {
-      box-shadow: -2px 2px 0 0 var(--undpds-color-white), -4px 0 0 -2px var(--undpds-color-white), -3px 3px 0 -1px var(--undpds-color-white);
+      box-shadow: -2px 2px 0 0 var(--undpds-color-text-inverse), -4px 0 0 -2px var(--undpds-color-text-inverse), -3px 3px 0 -1px var(--undpds-color-text-inverse);
 
       &::after {
         @include transform(rotate(0deg) translate(5px, -5px));
-        border-inline-end-color: var(--undpds-color-white);
-        border-block-start-color: var(--undpds-color-white);
+        border-inline-end-color: var(--undpds-color-border-inverse);
+        border-block-start-color: var(--undpds-color-border-inverse);
       }
 
       &::before {
         @include transform(rotate(-45deg) translate(7px, 0));
-        background: var(--undpds-color-white);
+        background: var(--undpds-color-background-default);
       }
     }
   }
@@ -263,18 +263,18 @@
     .download-animated {
 
       i {
-        border-color: var(--undpds-color-white);
+        border-color: var(--undpds-color-border-inverse);
       }
 
       &::after {
         @include transform(rotate(-45deg) translate(7px, -7px));
-        border-block-end-color: var(--undpds-color-white);
-        border-inline-start-color: var(--undpds-color-white);
+        border-block-end-color: var(--undpds-color-border-inverse);
+        border-inline-start-color: var(--undpds-color-border-inverse);
       }
 
       &::before {
         @include transform(translate(0, -10px));
-        background: var(--undpds-color-white);
+        background: var(--undpds-color-background-default);
       }
     }
   }

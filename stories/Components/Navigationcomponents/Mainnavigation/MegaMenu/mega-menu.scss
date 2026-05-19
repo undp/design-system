@@ -36,21 +36,21 @@
       padding-inline-end: var(--undpds-spacing-09);
 
       &.active {
-        color: var(--undpds-color-white);
+        color: var(--undpds-color-text-inverse);
 
         a {
-          background: var(--undpds-color-blue-600);
+          background: var(--undpds-color-brand);
 
           .external-link-animated {
-            box-shadow: -2px 2px 0 0 var(--undpds-color-white), -4px 0 0 -2px var(--undpds-color-white), -3px 3px 0 -1px var(--undpds-color-white);
+            box-shadow: -2px 2px 0 0 var(--undpds-color-text-inverse), -4px 0 0 -2px var(--undpds-color-text-inverse), -3px 3px 0 -1px var(--undpds-color-text-inverse);
 
             &::before {
-              background: var(--undpds-color-white);
+              background: var(--undpds-color-background-default);
             }
 
             &::after {
-              border-inline-end: 2px solid var(--undpds-color-white);
-              border-block-start: 2px solid var(--undpds-color-white);
+              border-inline-end: 2px solid var(--undpds-color-text-inverse);
+              border-block-start: 2px solid var(--undpds-color-text-inverse);
             }
           }
 
@@ -73,16 +73,16 @@
       }
 
       &:hover {
-        color: var(--undpds-color-white);
+        color: var(--undpds-color-text-inverse);
 
         a {
-          background: var(--undpds-color-blue-600);
+          background: var(--undpds-color-brand);
         }
       }
 
       a {
         background: none;
-        border-block-end: 1px solid var(--undpds-color-gray-400);
+        border-block-end: 1px solid var(--undpds-color-border-subtle);
         display: flex;
         font-size: var(--undpds-spacing-05);
         font-weight: 700;

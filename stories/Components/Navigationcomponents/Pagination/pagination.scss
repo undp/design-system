@@ -7,11 +7,11 @@
   align-items: center;
   display: flex;
   padding-left: 0;
-  font-family: var(--undpds-font-family-proximanova);
+  font-family: var(--undpds-font-family-primary);
 
   li {
     display: flex;
-    color: var(--undpds-color-black);
+    color: var(--undpds-color-text-default);
     font-size: var(--undpds-font-size-16);
     margin-bottom: 0;
     margin-right: var(--undpds-spacing-06);

@@ -19,7 +19,7 @@
     }
 
     ul {
-      background-color: var(--undpds-color-white);
+      background-color: var(--undpds-color-background-default);
       border-top: 0;
       display: block;
 
@@ -43,7 +43,7 @@
   >button {
     @extend %select_default;
 
-    background: var(--undpds-color-white);
+    background: var(--undpds-color-background-default);
     display: flex;
     max-width: 100%;
     text-align: left;
@@ -81,7 +81,7 @@
       &.open {
         ul {
           border: 0;
-          border-top: solid 1px var(--undpds-color-gray-400);
+          border-top: solid 1px var(--undpds-color-border-subtle);
           display: block;
           overflow: visible;
           padding: 0 0 0 var(--undpds-spacing-08);
@@ -95,7 +95,7 @@
       }
 
       button {
-        background: var(--undpds-color-white);
+        background: var(--undpds-color-background-default);
         border: 0;
         cursor: pointer;
         display: block;
@@ -123,7 +123,7 @@
       list-style: none;
 
       >li {
-        border-top: 1px solid var(--undpds-color-gray-400);
+        border-top: 1px solid var(--undpds-color-border-subtle);
         margin-bottom: 0;
 
         &:first-of-type {

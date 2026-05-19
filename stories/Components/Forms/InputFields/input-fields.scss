@@ -10,7 +10,7 @@ label {
   &.error {
     @extend %paragragh-font-20;
 
-    color: var(--undpds-color-black);
+    color: var(--undpds-color-text-default);
     margin-top: 0;
   }
 
@@ -55,11 +55,11 @@ textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  border: 2px solid var(--undpds-color-black);
+  border: 2px solid var(--undpds-color-border-default);
   border-radius: 0;
   box-sizing: border-box;
   display: block;
-  font-family: var(--undpds-font-family-proximanova);
+  font-family: var(--undpds-font-family-primary);
   font-size: var(--undpds-font-size-16);
   height: 46px;
   margin-top: var(--undpds-spacing-03);
@@ -82,7 +82,7 @@ textarea {
   }
 
   &.disabled {
-    background-color: var(--undpds-color-white);
+    background-color: var(--undpds-color-background-default);
     border: 2px solid var(--undpds-color-gray-400);
     color: var(--undpds-color-gray-400);
 
@@ -93,13 +93,13 @@ textarea {
 
   &.error {
     border: 2px solid var(--undpds-color-red);
-    color: var(--undpds-color-black);
+    color: var(--undpds-color-text-default);
   }
 }
 
 input[type="date"] {
   background: url(~icons/calender-black.svg) no-repeat left 14px bottom 12px;
-  background-color: var(--undpds-color-white);
+  background-color: var(--undpds-color-background-default);
   color: var(--undpds-color-gray-500);
   padding-left: var(--undpds-spacing-08);
   position: relative;
@@ -114,7 +114,7 @@ input[type="date"] {
   }
 
   &.filled {
-    color: var(--undpds-color-black);
+    color: var(--undpds-color-text-default);
   }
 }
 
@@ -338,7 +338,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   input[type="date"],
   input[type="search"] {
     background: url(~icons/calender-black.svg) no-repeat right 14px bottom 12px;
-    background-color: var(--undpds-color-white);
+    background-color: var(--undpds-color-background-default);
     padding-left: 0.635rem;
     padding-right: var(--undpds-spacing-08);
     text-align: right;

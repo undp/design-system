@@ -42,7 +42,7 @@
         margin-inline-end: 0;
         max-width: calc(100vw - 2rem);
         text-transform: uppercase;
-        color: var(--undpds-color-black);
+        color: var(--undpds-color-text-default);
 
         &::after {
           display: none;
@@ -62,10 +62,10 @@
 
   &.white {
     li {
-      color: var(--undpds-color-white);
+      color: var(--undpds-color-text-inverse);
 
       &::after {
-        color: var(--undpds-color-white);
+        color: var(--undpds-color-text-inverse);
       }
 
       a {
@@ -77,7 +77,7 @@
 
     &:last-of-type,
     li:last-of-type {
-      color: var(--undpds-color-white);
+      color: var(--undpds-color-text-inverse);
     }
   }
 }

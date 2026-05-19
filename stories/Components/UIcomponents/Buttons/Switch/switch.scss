@@ -22,7 +22,7 @@
     }
 
     &:focus {
-      box-shadow: 0 0 4px var(--undpds-color-blue-600);
+      box-shadow: 0 0 4px var(--undpds-color-brand);
       outline: none;
     }
 
@@ -31,7 +31,7 @@
   &__thumb {
       width: 1.375rem;
       height: 1.375rem;
-      background-color: var(--undpds-color-white);
+      background-color: var(--undpds-color-background-default);
       border-radius: 50%;
       position: absolute;
       top: 50%;
@@ -81,7 +81,7 @@
 
   &--toggled {
     .switch__track {
-      background-color: var(--undpds-color-blue-600);
+      background-color: var(--undpds-color-brand);
     }
 
     .switch__icon {

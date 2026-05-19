@@ -4,7 +4,7 @@
 
 .our-expertise {
   @include devicebreak(large) {
-    background: var(--undpds-color-gray-200);
+    background: var(--undpds-color-surface-default);
   }
 
   .intro {
@@ -21,7 +21,7 @@
   }
 
   .swiper {
-    background: var(--undpds-color-white);
+    background: var(--undpds-color-background-default);
     overflow: hidden;
 
     .swiper-slide {

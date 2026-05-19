@@ -2,14 +2,14 @@
 
 /* project data start */
 .project-detail {
-  border-bottom: 1px solid var(--undpds-color-gray-400);
+  border-bottom: 1px solid var(--undpds-color-border-subtle);
 
   &-4 {
     border-bottom: 0;
   }
 
   h2 {
-    border-bottom: 2px solid var(--undpds-color-black);
+    border-bottom: 2px solid var(--undpds-color-border-default);
     margin-bottom: 0;
     padding-bottom: 2rem;
   }
@@ -19,7 +19,7 @@
       margin-top: var(--undpds-spacing-07);
 
       @include breakpoints.devicebreak(small) {
-        border-bottom: 1px solid var(--undpds-color-gray-400);
+        border-bottom: 1px solid var(--undpds-color-border-subtle);
       }
 
       p {
