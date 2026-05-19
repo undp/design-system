@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generatedAt": "2026-05-19T20:01:05.397Z",
+  "generatedAt": "2026-05-19T20:36:31.807Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.0/",
   "assets": {
     "css": [
@@ -21,8 +21,8 @@
       },
       {
         "path": "css/components.min.css",
-        "size": 293119,
-        "sha256": "21bc437d8f57822033e6c9c9039b4e9a76afdb1ef5c6dd34ae5de570c428a206"
+        "size": 292985,
+        "sha256": "0ed36cda002e0cfbbf5ad7fb66dfff23571eba3e895cf623adbb5f35fb58aa59"
       },
       {
         "path": "css/components/accordion.min.css",
@@ -451,8 +451,8 @@
       },
       {
         "path": "css/components/textbackground.min.css",
-        "size": 587,
-        "sha256": "83bc792d8a2dfa2592b2f6797ead18f73e22d76e1e6ba5783018d542c22ed956"
+        "size": 453,
+        "sha256": "c9f200d3d54de5bf8c500176308600631b92702f1cb817cdbf3261f2f83c3086"
       },
       {
         "path": "css/components/textcta.min.css",
