@@ -2,6 +2,9 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { TweetPanel } from './TweetPanel';
 import { getCaptionForLocale } from './TweetPanelUtils';
 
+/**
+ * @status deprecated
+ */
 export default {
   title: "Components/Twitter panel",
   component: {TweetPanel},

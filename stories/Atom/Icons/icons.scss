@@ -166,7 +166,7 @@
   }
 
   > div p {
-    font-family: var(--undpds-font-family-proximanova);
+    font-family: var(--undpds-font-family-primary);
     font-size: 14px;
     margin-top: 10px;
   }
@@ -176,7 +176,7 @@
 .icons-container > div {
   align-items: center;
   background: var(--undpds-color-gray-300);
-  border: 1px solid var(--undpds-color-gray-400);
+  border: 1px solid var(--undpds-color-border-subtle);
   box-shadow: 2px 2px 4px var(--undpds-color-gray-300);
   box-sizing: border-box;
   display: flex;

@@ -163,7 +163,7 @@
         }
 
         p {
-          color: var(--undpds-color-white);
+          color: var(--undpds-color-text-inverse);
           margin-bottom: var(--undpds-spacing-05);
           padding-right: 0;
 
@@ -176,7 +176,7 @@
 
         .credits {
           border-left: 0;
-          color: var(--undpds-color-white);
+          color: var(--undpds-color-text-inverse);
           padding-left: 0;
         }
       }
@@ -205,7 +205,7 @@
 
       .credits {
         border-right: 0;
-        color: var(--undpds-color-white);
+        color: var(--undpds-color-text-inverse);
         margin-right: 0;
         padding-right: 0;
       }

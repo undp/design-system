@@ -10,7 +10,7 @@
   padding: var(--undpds-width-150) 0 10.938rem;
   z-index: 5;
 
-  color: var(--undpds-color-white);
+  color: var(--undpds-color-text-inverse);
 
   @include devicebreak(medium) {
     padding: 25rem 0 20rem;
@@ -29,8 +29,8 @@
   }
 
   a {
-    background-image: linear-gradient(var(--undpds-color-white), var(--undpds-color-white)),
-      linear-gradient(var(--undpds-color-white), var(--undpds-color-white));
+    background-image: linear-gradient(var(--undpds-color-text-inverse), var(--undpds-color-text-inverse)),
+      linear-gradient(var(--undpds-color-text-inverse), var(--undpds-color-text-inverse));
   }
 }
 

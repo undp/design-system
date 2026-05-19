@@ -66,8 +66,8 @@ button {
     }
 
     &::after {
-      border-right: 2px solid var(--undpds-color-black);
-      border-top: 2px solid var(--undpds-color-black);
+      border-right: 2px solid var(--undpds-color-border-default);
+      border-top: 2px solid var(--undpds-color-border-default);
     }
   }
 
@@ -104,13 +104,13 @@ button {
     margin-left: 1rem;
 
     i {
-      border: 2px solid var(--undpds-color-black);
+      border: 2px solid var(--undpds-color-border-default);
       border-top: 0;
     }
 
     &::after {
-      border-bottom: 2px solid var(--undpds-color-black);
-      border-left: 2px solid var(--undpds-color-black);
+      border-bottom: 2px solid var(--undpds-color-border-default);
+      border-left: 2px solid var(--undpds-color-border-default);
     }
 
     &::before {
@@ -147,7 +147,7 @@ button {
 }
 
 .button.button-secondary {
-  background-color: var(--undpds-color-blue-600);
+  background-color: var(--undpds-color-brand);
 
   &:hover {
     background-color: var(--undpds-color-blue-400);

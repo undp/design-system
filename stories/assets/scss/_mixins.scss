@@ -99,7 +99,7 @@
 }
 
 %border-bottom {
-  border-bottom: 1px solid var(--undpds-color-gray-400);
+  border-bottom: 1px solid var(--undpds-color-border-subtle);
 }
 
 @mixin img-cover {
@@ -119,7 +119,7 @@
 }
 
 %header-icon {
-  background-color: var(--undpds-color-blue-600);
+  background-color: var(--undpds-color-brand);
   border: 0;
   cursor: pointer;
   display: inline-flex;
@@ -147,7 +147,7 @@
 
 %footer-block {
   align-items: center;
-  border-bottom: 1px solid var(--undpds-color-white);
+  border-bottom: 1px solid var(--undpds-color-border-inverse);
   justify-content: space-between;
   margin-bottom: var(--undpds-spacing-07);
 }
@@ -197,19 +197,19 @@
   position: relative;
 
   @include breakpoints.devicebreak(medium) {
-    padding: var(--undpds-spacing-06);
+    padding: var(--undpds-spacing-gutter);
   }
 }
 
 %sidebar-selected {
-  background-color: var(--undpds-color-blue-600);
+  background-color: var(--undpds-color-brand);
 
   h6 {
-    color: var(--undpds-color-white);
+    color: var(--undpds-color-text-inverse);
   }
 
   &:hover {
-    background-color: var(--undpds-color-blue-600);
+    background-color: var(--undpds-color-brand);
   }
 }
 
@@ -339,8 +339,8 @@
 }
 
 %select_default {
-  border: 2px solid var(--undpds-color-black);
-  color: var(--undpds-color-black);
+  border: 2px solid var(--undpds-color-border-default);
+  color: var(--undpds-color-text-default);
   cursor: pointer;
   font-size: var(--undpds-font-size-16);
   font-weight: 600;
@@ -354,7 +354,7 @@
 }
 
 %select_option {
-  border: 2px solid var(--undpds-color-black);
+  border: 2px solid var(--undpds-color-border-default);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -438,7 +438,7 @@
 
 %expand_search {
   border: 0;
-  border-bottom: 1px solid var(--undpds-color-black);
+  border-bottom: 1px solid var(--undpds-color-border-default);
   border-radius: 0;
   cursor: pointer;
 }
@@ -455,7 +455,7 @@
 }
 
 %carousel_tag {
-  color: var(--undpds-color-black);
+  color: var(--undpds-color-text-default);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.48px;
@@ -499,7 +499,7 @@
 }
 
 %background-white {
-  background-color: var(--undpds-color-white);
+  background-color: var(--undpds-color-background-default);
 }
 
 %sub-external {
@@ -526,7 +526,7 @@
 }
 
 %selectoption {
-  border-top: 1px solid var(--undpds-color-gray-400);
+  border-top: 1px solid var(--undpds-color-border-subtle);
   cursor: pointer;
   margin-bottom: 0;
   padding: 0;
@@ -688,7 +688,7 @@
   overflow-x: auto;
   overflow-y: auto;
   scroll-behavior: smooth;
-  scrollbar-color: var(--undpds-color-black) transparent;
+  scrollbar-color: var(--undpds-color-border-default) transparent;
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
@@ -700,7 +700,7 @@
   &::-webkit-scrollbar-track {
     background: var(--undpds-color-black);
     background-clip: padding-box;
-    border: 2px solid var(--undpds-color-white);
+    border: 2px solid var(--undpds-color-border-inverse);
   }
 
   &::-webkit-scrollbar-corner {

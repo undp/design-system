@@ -1,12 +1,12 @@
 {
   "version": "2.0.0",
-  "generatedAt": "2026-05-18T18:44:25.259Z",
+  "generatedAt": "2026-05-19T20:41:16.514Z",
   "totalComponents": 95,
   "statusSummary": {
     "draft": 0,
     "beta": 0,
-    "stable": 95,
-    "deprecated": 0
+    "stable": 93,
+    "deprecated": 2
   },
   "components": [
     {
@@ -386,7 +386,7 @@
         "tier2": null,
         "name": "Twitter panel"
       },
-      "status": "stable",
+      "status": "deprecated",
       "storyFile": "stories/Organism/Blocks/TweetPanel/TweetPanel.stories.js",
       "stories": [
         "TweetPanelStory"
@@ -726,7 +726,7 @@
         "tier2": "UI components",
         "name": "Parallax cards"
       },
-      "status": "stable",
+      "status": "deprecated",
       "storyFile": "stories/Components/UIcomponents/Cards/ParallaxCard/ParallaxCards.stories.js",
       "stories": [
         "ParallaxCardsStory"

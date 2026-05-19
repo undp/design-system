@@ -229,6 +229,9 @@ const getCaptionForLocale = (locale) => {
   }
 };
 
+/**
+ * @status deprecated
+ */
 export default {
   title: 'Components/UI components/Cards/Parallax cards',
   tags: ['deprecated'],

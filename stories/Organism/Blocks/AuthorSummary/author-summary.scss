@@ -4,7 +4,7 @@
 
 /* author summary start */
 .author-summary {
-  border-top: 2px solid var(--undpds-color-black);
+  border-top: 2px solid var(--undpds-color-border-default);
   padding-top: var(--undpds-spacing-07);
 
   @include devicebreak(medium) {
