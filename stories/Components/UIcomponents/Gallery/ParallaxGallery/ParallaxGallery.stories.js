@@ -178,7 +178,7 @@ export default {
                 </li>
                 <li>The data-options should contain values for: triggerElement, targetSelector, triggerHook, endTriggerHook, direction, and breakpoints.</li>
                 <li>The parallax effect will initialize automatically when the page loads - no JavaScript calls required!</li>
-                
+
               </ul>
               <p>See the component code for an example of the data-options format.</p>
               <h4>Method 2: Manual Initialization (Traditional)</h4>
@@ -193,7 +193,7 @@ export default {
               <h3>CSS and JS References</h3>
 
               <h4>CSS:</h4>
-                  
+
               <p>Add the base layout style from</p>
 
               <ul>
@@ -208,20 +208,15 @@ export default {
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js">Parallax JS</a></li>
               </ul>
 
-              <p>Following external libraries need to be included first:</p>
-              <ul>
-                <li>GSAP core library</li>
-                <li>GSAP ScrollTrigger plugin</li>
-                <li>GSAP EasePack plugin</li>
-              </ul>
+              <p>The parallax effect is implemented using vanilla JavaScript with scroll event listeners and does not require external animation libraries.</p>
 
               <h3>Interactions</h3>
 
               <p>On the opening of the page and scrolling, images move.</p>
 
-              
 
-              
+
+
 
             </>
         )

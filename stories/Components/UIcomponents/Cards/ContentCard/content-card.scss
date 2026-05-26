@@ -20,8 +20,8 @@ $backgroundcolors: (
 div.content-card {
   @include transition(all 0.5s);
 
-  background-color: var(--undpds-color-white);
-  border-top: 2px solid var(--undpds-color-black);
+  background-color: var(--undpds-color-background-default);
+  border-top: 2px solid var(--undpds-color-border-default);
   height: 100%;
   word-break: break-word;
 

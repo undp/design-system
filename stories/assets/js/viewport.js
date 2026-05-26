@@ -1,23 +1,25 @@
-jQuery(window).on('load', () => {
+window.addEventListener('load', () => {
+  const elements = document.querySelectorAll('[data-viewport=true]');
 
-  const $objs = jQuery('[data-viewport=true]');
-  if ($objs.length > 0) {
+  if (!elements.length) {
+    return;
+  }
 
-    const isElementInViewport = new IntersectionObserver((entries) => {
+  const isElementInViewport = new IntersectionObserver(
+    (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          jQuery(entry.target).addClass('inviewport');
+          entry.target.classList.add('inviewport');
           isElementInViewport.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.1 // Trigger when at least 10% of the element is visible
-    });
+    },
+    {
+      threshold: 0.1, // Trigger when at least 10% of the element is visible
+    },
+  );
 
-    $objs.each((i, element) => {
-      isElementInViewport.observe(element);
-    });
-
-  }
-
+  elements.forEach((element) => {
+    isElementInViewport.observe(element);
+  });
 });

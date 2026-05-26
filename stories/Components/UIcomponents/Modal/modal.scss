@@ -26,7 +26,7 @@
   &-content {
     @extend %custom-scrollbar;
 
-    background: var(--undpds-color-white);
+    background: var(--undpds-color-background-default);
     max-width: 64rem;
     padding: var(--undpds-spacing-10) var(--undpds-spacing-04) var(--undpds-spacing-04);
     position: relative;

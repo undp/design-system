@@ -1,5 +1,18 @@
+// Helper: get the next sibling matching a selector
+function nextSiblingMatching(el, selector) {
+  let sib = el.nextElementSibling;
+  while (sib) {
+    if (sib.matches(selector)) return sib;
+    sib = sib.nextElementSibling;
+  }
+  return null;
+}
+
 // sdg modal open
 export function sdgModal() {
+  if (document.body.dataset.sdgModalInited) return;
+  document.body.dataset.sdgModalInited = 'true';
+
   // https://www.chromatic.com/docs/faq/storybook-chromatic-canvas-load-failure/
   let windowTop;
   try {
@@ -7,121 +20,198 @@ export function sdgModal() {
   } catch (e) {
     windowTop = window;
   }
-  const $modalOpen = jQuery('.sdg-card:not(.sdg-card-link)');
+
+  const modalOpenEls = () => document.querySelectorAll('.sdg-card:not(.sdg-card-link)');
 
   // Remove hash in url on modal close
   function removeHash() {
     windowTop.history.pushState('', document.title, windowTop.location.pathname + windowTop.location.search);
   }
 
-  // Modal open on sdgcard click
-  jQuery($modalOpen).on('click', function (event) {
+  // Modal open on sdgcard click - handler 1
+  const handleSdgCardClick1 = function (event) {
     event.preventDefault();
-    jQuery('.modal-sdg-content').animate({ scrollTop: 0 }, 'slow');
+    const content = document.querySelector('.modal-sdg-content');
+    if (content) content.scrollTop = 0;
 
     // Get href in sdgcard
-    var url = jQuery(this).attr('href');
-    var currentcolor = jQuery(this).attr('class').split(' ')[1];
-    var currentgoal = jQuery(this).find('h4').text();
-    var currentheading = jQuery(this).find('strong').text();
+    const url = this.getAttribute('href');
+    const currentcolor = this.classList[1];
+    const currentgoal = this.querySelector('h4') ? this.querySelector('h4').textContent : '';
+    const currentheading = this.querySelector('strong') ? this.querySelector('strong').textContent : '';
 
-    var nextcolor = jQuery(this).next('.sdg-card').attr('class').split(' ')[1];
-    var nextgoal = jQuery(this).next('.sdg-card').find('h4').text();
-    var nextheading = jQuery(this).next('.sdg-card').find('strong').text();
-    var nexturl = jQuery(this).next('.sdg-card').attr('href');
+    const nextCard = nextSiblingMatching(this, '.sdg-card');
+    const nextcolor = nextCard ? nextCard.classList[1] : '';
+    const nextgoal = nextCard && nextCard.querySelector('h4') ? nextCard.querySelector('h4').textContent : '';
+    const nextheading = nextCard && nextCard.querySelector('strong') ? nextCard.querySelector('strong').textContent : '';
+    const nexturl = nextCard ? nextCard.getAttribute('href') : '';
 
     windowTop.location.hash = url;
-    jQuery(this).addClass('last-active').siblings().removeClass('last-active');
-    jQuery('.modal-sdg').addClass('sdg-open').find('.sdg-container').addClass(currentcolor);
-    jQuery('.modal-sdg').find('.heading').find('h3').text(`Goal ${currentheading}`);
-    jQuery('.modal-sdg').find('.heading').find('h2').text(currentgoal);
-    jQuery('.modal-sdg').find('.ndg-container .sdg-card').attr('href', nexturl).addClass(nextcolor);
-    jQuery('.modal-sdg').find('.ndg-container strong').text(nextheading);
-    jQuery('.modal-sdg').find('.ndg-container h4').text(nextgoal);
+    this.classList.add('last-active');
+    if (this.parentElement) {
+      Array.from(this.parentElement.children).forEach((sib) => {
+        if (sib !== this) sib.classList.remove('last-active');
+      });
+    }
 
-    jQuery('body').addClass('sdgmodal-open');
-    jQuery($modalOpen).attr('tabindex', '-1');
+    const modalSdg = document.querySelector('.modal-sdg');
+    if (modalSdg) {
+      modalSdg.classList.add('sdg-open');
+      const sdgContainer = modalSdg.querySelector('.sdg-container');
+      if (sdgContainer) sdgContainer.classList.add(currentcolor);
+      const h3 = modalSdg.querySelector('.heading h3');
+      if (h3) h3.textContent = `Goal ${currentheading}`;
+      const h2 = modalSdg.querySelector('.heading h2');
+      if (h2) h2.textContent = currentgoal;
+      const ndgCard = modalSdg.querySelector('.ndg-container .sdg-card');
+      if (ndgCard) {
+        ndgCard.setAttribute('href', nexturl);
+        ndgCard.classList.add(nextcolor);
+      }
+      const ndgStrong = modalSdg.querySelector('.ndg-container strong');
+      if (ndgStrong) ndgStrong.textContent = nextheading;
+      const ndgH4 = modalSdg.querySelector('.ndg-container h4');
+      if (ndgH4) ndgH4.textContent = nextgoal;
+    }
+
+    document.body.classList.add('sdgmodal-open');
+    modalOpenEls().forEach((el) => el.setAttribute('tabindex', '-1'));
+  };
+
+  // Modal open on sdgcard click - handler 2 (mirrors original duplicate handler)
+  const handleSdgCardClick2 = function (event) {
+    event.preventDefault();
+    const content = document.querySelector('.modal-sdg-content');
+    if (content) content.scrollTop = 0;
+
+    // Get href in sdgcard
+    const url = this.getAttribute('href');
+    const currentcolor = this.classList[1];
+    const currentgoal = this.querySelector('h4') ? this.querySelector('h4').textContent : '';
+    const currentheading = this.querySelector('strong') ? this.querySelector('strong').textContent : '';
+
+    const nextCard = nextSiblingMatching(this, '.sdg-card');
+    const nextcolor = nextCard ? nextCard.classList[1] : '';
+    const nextgoal = nextCard && nextCard.querySelector('h4') ? nextCard.querySelector('h4').textContent : '';
+    const nextheading = nextCard && nextCard.querySelector('strong') ? nextCard.querySelector('strong').textContent : '';
+
+    windowTop.location.hash = url;
+    this.classList.add('last-active');
+
+    const modalSdg = document.querySelector('.modal-sdg');
+    if (modalSdg) {
+      modalSdg.classList.add('sdg-open');
+      const sdgContainer = modalSdg.querySelector('.sdg-container');
+      if (sdgContainer) sdgContainer.classList.add(currentcolor);
+      const h3 = modalSdg.querySelector('.heading h3');
+      if (h3) h3.textContent = `Goal ${currentheading}`;
+      const h2 = modalSdg.querySelector('.heading h2');
+      if (h2) h2.textContent = currentgoal;
+      const ndgCard = modalSdg.querySelector('.ndg-container .sdg-card');
+      if (ndgCard) ndgCard.classList.add(nextcolor);
+      const ndgStrong = modalSdg.querySelector('.ndg-container strong');
+      if (ndgStrong) ndgStrong.textContent = nextheading;
+      const ndgH4 = modalSdg.querySelector('.ndg-container h4');
+      if (ndgH4) ndgH4.textContent = nextgoal;
+    }
+
+    document.body.classList.add('sdgmodal-open');
+    modalOpenEls().forEach((el) => el.setAttribute('tabindex', '-1'));
+  };
+
+  modalOpenEls().forEach((el) => {
+    el.addEventListener('click', handleSdgCardClick1);
+    el.addEventListener('click', handleSdgCardClick2);
   });
 
-  jQuery(document).on('click', '.ndg-container .sdg-card', function (event) {
+  document.addEventListener('click', (event) => {
+    const card = event.target.closest('.ndg-container .sdg-card');
+    if (!card) return;
     event.preventDefault();
     event.stopPropagation();
-    var url = jQuery(this).attr('href');
-    var lastactive = jQuery('.last-active').next('.sdg-card');
-    var bottomcolor = lastactive.attr('class').split(' ')[1];
-    var bottomgoal = lastactive.find('h4').text();
-    var bottomheading = lastactive.find('strong').text();
-    var nextcolor = lastactive.next('.sdg-card').attr('class').split(' ')[1];
-    var nextgoal = lastactive.next('.sdg-card').find('h4').text();
-    var nextheading = lastactive.next('.sdg-card').find('strong').text();
-    var nexturl = lastactive.next('.sdg-card').attr('href');
 
-    jQuery('.sdg-container').addClass(bottomcolor);
-    jQuery('.modal-sdg').find('.heading').find('h3').text(`Goal ${bottomheading}`);
-    jQuery('.modal-sdg').find('.heading').find('h2').text(bottomgoal);
-    jQuery('.modal-sdg').find('.ndg-container .sdg-card').attr('href', nexturl).addClass(nextcolor);
-    jQuery('.modal-sdg').find('.ndg-container strong').text(nextheading);
-    jQuery('.modal-sdg').find('.ndg-container h4').text(nextgoal);
-    jQuery('.last-active').next('.sdg-card').addClass('last-active').siblings()
-      .removeClass('last-active');
+    const url = card.getAttribute('href');
+    const lastActiveEl = document.querySelector('.last-active');
+    const lastactive = lastActiveEl ? nextSiblingMatching(lastActiveEl, '.sdg-card') : null;
+
+    const bottomcolor = lastactive ? lastactive.classList[1] : '';
+    const bottomgoal = lastactive && lastactive.querySelector('h4') ? lastactive.querySelector('h4').textContent : '';
+    const bottomheading = lastactive && lastactive.querySelector('strong') ? lastactive.querySelector('strong').textContent : '';
+    const nextCard2 = lastactive ? nextSiblingMatching(lastactive, '.sdg-card') : null;
+    const nextcolor = nextCard2 ? nextCard2.classList[1] : '';
+    const nextgoal = nextCard2 && nextCard2.querySelector('h4') ? nextCard2.querySelector('h4').textContent : '';
+    const nextheading = nextCard2 && nextCard2.querySelector('strong') ? nextCard2.querySelector('strong').textContent : '';
+    const nexturl = nextCard2 ? nextCard2.getAttribute('href') : '';
+
+    document.querySelectorAll('.sdg-container').forEach((el) => el.classList.add(bottomcolor));
+    const modalSdg = document.querySelector('.modal-sdg');
+    if (modalSdg) {
+      const h3 = modalSdg.querySelector('.heading h3');
+      if (h3) h3.textContent = `Goal ${bottomheading}`;
+      const h2 = modalSdg.querySelector('.heading h2');
+      if (h2) h2.textContent = bottomgoal;
+      const ndgCard = modalSdg.querySelector('.ndg-container .sdg-card');
+      if (ndgCard) {
+        ndgCard.setAttribute('href', nexturl);
+        ndgCard.classList.add(nextcolor);
+      }
+      const ndgStrong = modalSdg.querySelector('.ndg-container strong');
+      if (ndgStrong) ndgStrong.textContent = nextheading;
+      const ndgH4 = modalSdg.querySelector('.ndg-container h4');
+      if (ndgH4) ndgH4.textContent = nextgoal;
+    }
+    if (lastactive) {
+      lastactive.classList.add('last-active');
+      if (lastactive.parentElement) {
+        Array.from(lastactive.parentElement.children).forEach((sib) => {
+          if (sib !== lastactive) sib.classList.remove('last-active');
+        });
+      }
+    }
     windowTop.location.hash = url;
-  });
-
-  jQuery($modalOpen).on('click', function (event) {
-    event.preventDefault();
-    jQuery('.modal-sdg-content').animate({ scrollTop: 0 }, 'slow');
-
-    // Get href in sdgcard
-    var url = jQuery(this).attr('href');
-    var currentcolor = jQuery(this).attr('class').split(' ')[1];
-    var currentgoal = jQuery(this).find('h4').text();
-    var currentheading = jQuery(this).find('strong').text();
-
-    var nextcolor = jQuery(this).next('.sdg-card').attr('class').split(' ')[1];
-    var nextgoal = jQuery(this).next('.sdg-card').find('h4').text();
-    var nextheading = jQuery(this).next('.sdg-card').find('strong').text();
-
-    windowTop.location.hash = url;
-    jQuery(this).addClass('last-active');
-    jQuery('.modal-sdg').addClass('sdg-open').find('.sdg-container').addClass(currentcolor);
-    jQuery('.modal-sdg').find('.heading').find('h3').text(`Goal ${currentheading}`);
-    jQuery('.modal-sdg').find('.heading').find('h2').text(currentgoal);
-
-    jQuery('.modal-sdg').find('.ndg-container .sdg-card').addClass(nextcolor);
-    jQuery('.modal-sdg').find('.ndg-container strong').text(nextheading);
-    jQuery('.modal-sdg').find('.ndg-container h4').text(nextgoal);
-
-    jQuery('body').addClass('sdgmodal-open');
-    jQuery($modalOpen).attr('tabindex', '-1');
   });
 
   // Modal close someone hits the escape key
-  jQuery(document).keydown((event) => {
-    if (event.keyCode == 27 && jQuery('.modal-sdg').hasClass('sdg-open')) {
+  document.addEventListener('keydown', (event) => {
+    const modalSdg = document.querySelector('.modal-sdg');
+    if (event.keyCode === 27 && modalSdg && modalSdg.classList.contains('sdg-open')) {
       removeHash();
-      jQuery('.sdg-container').attr('class', 'sdg-container');
-      jQuery('.ndg-container .sdg-card').attr('class', 'sdg-card');
-      jQuery('.modal-sdg').addClass('animation-out');
+      const sdgContainer = document.querySelector('.sdg-container');
+      if (sdgContainer) sdgContainer.setAttribute('class', 'sdg-container');
+      const ndgCard = document.querySelector('.ndg-container .sdg-card');
+      if (ndgCard) ndgCard.setAttribute('class', 'sdg-card');
+      modalSdg.classList.add('animation-out');
       setTimeout(() => {
-        jQuery('.modal-sdg').removeClass('sdg-open animation-out');
+        modalSdg.classList.remove('sdg-open', 'animation-out');
       }, 200);
-      jQuery('body').removeClass('sdgmodal-open');
-      jQuery('.last-active').focus().removeClass('last-active');
-      jQuery($modalOpen).attr('tabindex', '0');
+      document.body.classList.remove('sdgmodal-open');
+      const lastActiveEl = document.querySelector('.last-active');
+      if (lastActiveEl) {
+        lastActiveEl.focus();
+        lastActiveEl.classList.remove('last-active');
+      }
+      modalOpenEls().forEach((el) => el.setAttribute('tabindex', '0'));
     }
   });
 
   // Modal close on close button
-  jQuery('.modal-sdg .close, .modal-sdg .modal-header').on('click', () => {
-    jQuery('.sdg-container').attr('class', 'sdg-container');
-    jQuery('.ndg-container .sdg-card').attr('class', 'sdg-card');
-    jQuery('.modal-sdg').addClass('animation-out');
-    setTimeout(() => {
-      jQuery('.modal-sdg').removeClass('sdg-open animation-out');
-    }, 200);
-    jQuery('body').removeClass('sdgmodal-open');
-    jQuery($modalOpen).removeAttr('tabindex');
-    // Call removeHash funtion for remove hash in url on close button
-    removeHash();
+  document.querySelectorAll('.modal-sdg .close, .modal-sdg .modal-header').forEach((el) => {
+    el.addEventListener('click', () => {
+      const sdgContainer = document.querySelector('.sdg-container');
+      if (sdgContainer) sdgContainer.setAttribute('class', 'sdg-container');
+      const ndgCard = document.querySelector('.ndg-container .sdg-card');
+      if (ndgCard) ndgCard.setAttribute('class', 'sdg-card');
+      const modalSdg = document.querySelector('.modal-sdg');
+      if (modalSdg) {
+        modalSdg.classList.add('animation-out');
+        setTimeout(() => {
+          modalSdg.classList.remove('sdg-open', 'animation-out');
+        }, 200);
+      }
+      document.body.classList.remove('sdgmodal-open');
+      modalOpenEls().forEach((el) => el.removeAttribute('tabindex'));
+      // Call removeHash function for remove hash in url on close button
+      removeHash();
+    });
   });
 }

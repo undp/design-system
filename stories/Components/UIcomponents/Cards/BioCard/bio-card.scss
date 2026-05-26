@@ -17,7 +17,7 @@ $colors: (
   a {
     @include transition(0.6s ease);
 
-    background: var(--undpds-color-gray-200);
+    background: var(--undpds-color-surface-default);
     display: block;
   }
 

@@ -1,12 +1,12 @@
 {
-  "version": "1.7.3",
-  "generatedAt": "2026-04-16T17:56:33.652Z",
+  "version": "2.0.0",
+  "generatedAt": "2026-05-26T14:59:22.649Z",
   "totalComponents": 95,
   "statusSummary": {
     "draft": 0,
     "beta": 0,
-    "stable": 95,
-    "deprecated": 0
+    "stable": 93,
+    "deprecated": 2
   },
   "components": [
     {
@@ -386,7 +386,7 @@
         "tier2": null,
         "name": "Twitter panel"
       },
-      "status": "stable",
+      "status": "deprecated",
       "storyFile": "stories/Organism/Blocks/TweetPanel/TweetPanel.stories.js",
       "stories": [
         "TweetPanelStory"
@@ -726,7 +726,7 @@
         "tier2": "UI components",
         "name": "Parallax cards"
       },
-      "status": "stable",
+      "status": "deprecated",
       "storyFile": "stories/Components/UIcomponents/Cards/ParallaxCard/ParallaxCards.stories.js",
       "stories": [
         "ParallaxCardsStory"
@@ -741,8 +741,7 @@
         ],
         "js": [
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js"
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/parallax.min.js"
         ]
       }
     },
@@ -999,7 +998,6 @@
         "js": [
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js"
         ]
       }
@@ -2129,7 +2127,6 @@
         "js": [
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/our-expertise.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",
@@ -2185,7 +2182,6 @@
         "js": [
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/our-expertise.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/navigation.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/undp.min.js",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/lang-switcher.min.js",

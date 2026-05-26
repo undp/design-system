@@ -122,7 +122,7 @@
 }
 
 .background-white {
-  background-color: var(--undpds-color-white);
+  background-color: var(--undpds-color-background-default);
 }
 
 // global colors
@@ -433,9 +433,9 @@ $colors-light: (
 
 // Inverted color scheme
 .inverted {
-  color: var(--undpds-color-white);
+  color: var(--undpds-color-text-inverse);
   a {
-    background-image: linear-gradient(var(--undpds-color-white), var(--undpds-color-white)), linear-gradient(var(--undpds-color-white), var(--undpds-color-white));
+    background-image: linear-gradient(var(--undpds-color-text-inverse), var(--undpds-color-text-inverse)), linear-gradient(var(--undpds-color-text-inverse), var(--undpds-color-text-inverse));
   }
 }
 

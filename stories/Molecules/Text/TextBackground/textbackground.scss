@@ -2,16 +2,14 @@
 @import '../../../assets/scss/breakpoints';
 
 .heading-container {
-  background-color: #232e3e;
-  color: $color-white;
+  background-color: var(--undpds-color-gray-700);
+  color: var(--undpds-color-text-inverse);
   justify-content: center;
   overflow: hidden;
-  padding-bottom: $spacing-12;
-  padding-top: $spacing-12;
+  padding-block: var(--undpds-spacing-096);
 
   h4 {
-    margin-top: $spacing-50;
-
+    margin-top: var(--undpds-spacing-050);
     @include devicebreak(medium) {
       margin-top: 0;
     }
@@ -20,7 +18,7 @@
   h2,
   h4 {
     @include devicebreak(small) {
-      padding: 0 $spacing-06;
+      padding: 0 var(--undpds-spacing-024);
     }
   }
 }

@@ -373,7 +373,6 @@ export default {
 
               <ul>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/swiper.min.js</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/smartresize.min.js</a></li>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/viewport.min.js</a></li>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js</a> (for automatic initialization)</li>
               </ul>

@@ -19,24 +19,24 @@
   }
 
   .large-article-image {
-    margin-top: $spacing-05;
+    margin-top: var(--undpds-spacing-05);
 
     @include devicebreak(medium) {
-      margin-top: $spacing-07;
+      margin-top: var(--undpds-spacing-07);
     }
   }
 
   .author-section {
-    border-bottom: 1px solid $color-gray-400;
-    margin-bottom: $spacing-70;
-    padding-top: $spacing-07;
+    border-bottom: 1px solid var(--undpds-color-border-subtle);
+    margin-bottom: var(--undpds-spacing-70);
+    padding-top: var(--undpds-spacing-07);
 
     @include devicebreak(medium) {
       margin-bottom: 5.5rem;
     }
 
     @include devicebreak(mediumonlytab) {
-      border-top: 2px solid $color-black;
+      border-top: 2px solid var(--undpds-color-border-default);
     }
   }
 
@@ -53,7 +53,7 @@
   }
 
   .blockq {
-    margin-bottom: $spacing-11;
+    margin-bottom: var(--undpds-spacing-11);
     margin-top: 2.82rem;
 
     @include devicebreak(large) {
@@ -67,7 +67,7 @@
   }
 
   .image-caption {
-    padding-top: $spacing-07;
+    padding-top: var(--undpds-spacing-07);
     container-type: inline-size;
 
     @include devicebreak(mediumonlytab) {
@@ -77,7 +77,7 @@
     }
 
     .image__caption {
-      padding-left: $spacing-12;
+      padding-left: var(--undpds-spacing-12);
 
       @include devicebreak(medium) {
         padding-left: 0;
@@ -92,7 +92,7 @@
   }
 
   .middle-image {
-    margin-bottom: $spacing-07;
+    margin-bottom: var(--undpds-spacing-07);
     margin-top: 3.063rem;
 
     @include devicebreak(medium) {
@@ -106,7 +106,7 @@
 
   .middle-caption {
     container-type: inline-size;
-    margin-bottom: $spacing-50;
+    margin-bottom: var(--undpds-spacing-50);
 
     @include devicebreak(medium) {
       margin-bottom: 6.125rem;
@@ -114,15 +114,15 @@
   }
 
   .list-section {
-    margin-bottom: $spacing-09;
+    margin-bottom: var(--undpds-spacing-09);
     margin-top: 2.25rem;
 
     @include devicebreak(medium) {
-      margin-bottom: $width-180;
+      margin-bottom: var(--undpds-width-180);
     }
 
     li {
-      margin-top: $spacing-06;
+      margin-top: var(--undpds-spacing-06);
 
       &:first-of-type {
         margin-top: 0;
@@ -132,15 +132,11 @@
 }
 
 .featured-card-container {
-  margin-bottom: $spacing-07;
+  margin-bottom: var(--undpds-spacing-07);
 
   @include devicebreak(medium) {
-    margin-bottom: $spacing-10;
+    margin-bottom: var(--undpds-spacing-10);
   }
-
-  // .feature__card {
-  //   margin-bottom: $spacing-06;
-  // }
 }
 
 header {

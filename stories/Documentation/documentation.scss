@@ -35,14 +35,14 @@
   }
 
   h1.title {
-    font-family: var(--undpds-font-family-sohnebreit);
+    font-family: var(--undpds-font-family-secondary);
     font-weight: 900;
-    color: var(--undpds-color-black);
+    color: var(--undpds-color-text-default);
     margin-top: var(--undpds-spacing-10);
     margin-bottom: var(--undpds-spacing-07);
 
     div {
-      font-family: var(--undpds-font-family-sohnebreit);
+      font-family: var(--undpds-font-family-secondary);
       font-weight: 900;
       font-size: 55px;
     }
@@ -57,7 +57,7 @@
   h4,
   h5,
   h6 {
-    font-family: var(--undpds-font-family-proximanova);
+    font-family: var(--undpds-font-family-primary);
   }
 
   h2 {
@@ -120,7 +120,7 @@
   hr {
     margin-top: var(--undpds-spacing-11);
     margin-bottom: var(--undpds-spacing-06);
-    border-top: 2px solid var(--undpds-color-black);
+    border-top: 2px solid var(--undpds-color-border-default);
   }
 
   .intro {
@@ -132,10 +132,10 @@
 
       &.figma {
         background: var(--undpds-color-black);
-        color: var(--undpds-color-white);
+        color: var(--undpds-color-text-inverse);
 
         p {
-          color: var(--undpds-color-white);
+          color: var(--undpds-color-text-inverse);
         }
       }
 
@@ -182,11 +182,11 @@
 
 // Documentation styles
 .sbdocs {
-  font-family: var(--undpds-font-family-proximanova);
+  font-family: var(--undpds-font-family-primary);
 
   h1,
   &-h1 {
-    font-family: var(--undpds-font-family-sohnebreit);
+    font-family: var(--undpds-font-family-secondary);
     font-weight: 900;
   }
 

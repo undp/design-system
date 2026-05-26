@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import GlobalHeader from "./GlobalHeader";
 import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcherUtils"
-import { 
+import {
   getNavLinks,
   menuData,
   getSiteTitle,
@@ -15,7 +15,8 @@ import {
 
 export default {
   title: "Components/Navigation components/Main navigation/Global header",
-  parameters: { 
+  tags: ['deprecated'],
+  parameters: {
     docs: {
       page: () => (
     <>
@@ -143,14 +144,14 @@ export default {
         <li>Reading meter (if used) updated based on the scrolling depth into content.</li>
       </ul>
 
-      
 
-      
+
+
     </>
       )
     }
   },
-};  
+};
 
 const Template = (args, {globals: { locale } }) => {
     let lang = locale === "en" ? "english" : locale;
@@ -164,7 +165,7 @@ const Template = (args, {globals: { locale } }) => {
     );
     const backcaption = getBackForLocale(locale);
     const siteTitleData = getSiteTitle(locale);
-  
+
     return (
           <GlobalHeader
             siteTitleData={siteTitleData}

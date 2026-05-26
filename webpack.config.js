@@ -142,9 +142,7 @@ export default [
       ],
     },
     externals: {
-      jquery: 'jQuery',
       Swiper: 'Swiper',
-      gsap: 'gsap',
     },
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({

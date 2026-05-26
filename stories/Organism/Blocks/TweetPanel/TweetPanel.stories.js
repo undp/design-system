@@ -2,9 +2,13 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { TweetPanel } from './TweetPanel';
 import { getCaptionForLocale } from './TweetPanelUtils';
 
+/**
+ * @status deprecated
+ */
 export default {
   title: "Components/Twitter panel",
   component: {TweetPanel},
+  tags: ['deprecated'],
   parameters: {
     docs: {
         page: () => (
@@ -28,7 +32,7 @@ export default {
 const Template = (args, { globals: { locale } }) => {
   const content = getCaptionForLocale(locale);
   return <TweetPanel data={content.tweetpaneldata} headertext={content.headertext}></TweetPanel>;
-              
+
 }
 
 export const TweetPanelStory = Template.bind({});

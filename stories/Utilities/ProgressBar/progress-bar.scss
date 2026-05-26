@@ -2,13 +2,13 @@
 
 /* progress start */
 progress {
-  border: 2px solid var(--undpds-color-black);
+  border: 2px solid var(--undpds-color-border-default);
   border-radius: 7px;
   height: 14px;
   width: 50%;
 
   &::-webkit-progress-bar {
-    background-color: var(--undpds-color-white);
+    background-color: var(--undpds-color-background-default);
     border-radius: 7px;
   }
 
@@ -17,7 +17,7 @@ progress {
   }
 
   &::-moz-progress-bar {
-    background-color: var(--undpds-color-white);
+    background-color: var(--undpds-color-background-default);
   }
 }
 

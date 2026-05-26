@@ -191,8 +191,7 @@ export default {
 
               <ul>
                   <li>Copy the HTML from the HTML tab (Canvas) into your HTML file.</li>
-                  <li>Include Foundation’s core and tabs JavaScript from <a href="https://github.com/foundation/foundation-sites/tree/develop/dist/js/plugins">Foundation’s GitHub repository</a>.</li>
-                  {/* <li>Initialize the tab function in document ready or window load by calling <code>tabs()</code> function.</li> */}
+                  <li>Include <code>tabs.min.js</code> to enable tab switching, keyboard navigation, and optional deep-link behavior.</li>
                   <li><strong>Optional:</strong> If you want to add left-right animation then add <code>data-viewport="true"</code> attribute to your HTML element and include <code>viewport.min.js</code>.</li>
                   <li>Add other resources in your HTML file given below.</li>
                   <li>Choose one of the following initialization methods:</li>
@@ -215,6 +214,13 @@ export default {
                 <li>Call the initialization function directly in your JavaScript:
                   <code>tabs();</code>
                 </li>
+              </ul>
+
+              <h4>Accessibility and Keyboard</h4>
+              <ul>
+                <li>Tabs use ARIA tab semantics and maintain active state with <code>aria-selected</code> and <code>aria-controls</code>.</li>
+                <li>Use Arrow keys to move between tabs, and Home/End to jump to the first or last tab.</li>
+                <li>If <code>data-deep-link="true"</code> is present, the URL hash will track the active tab panel.</li>
               </ul>
 
               <h3>CSS and JS References</h3>
