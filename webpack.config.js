@@ -142,7 +142,6 @@ export default [
       ],
     },
     externals: {
-      jquery: 'jQuery',
       Swiper: 'Swiper',
     },
     plugins: [
