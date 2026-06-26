@@ -30,7 +30,7 @@
   }
 
   &__header {
-    color: var(--undpds-color-white);
+    color: var(--undpds-color-text-inverse);
     font-weight: 400;
 
     &--subtitle {
@@ -40,13 +40,13 @@
   }
 
   &__body {
-    border-top: 3px solid var(--undpds-color-white);
+    border-top: 3px solid var(--undpds-color-border-inverse);
+    color: var(--undpds-color-text-inverse);
     margin-top: var(--undpds-spacing-07);
     padding: var(--undpds-spacing-06) 0.313rem 0 0;
 
     time,
-    p,
-    a {
+    p {
       color: var(--undpds-color-gray-500);
       font-size: var(--undpds-font-size-14);
       font-weight: 700;
@@ -54,7 +54,6 @@
 
     p,
     a {
-      color: var(--undpds-color-white);
       font-weight: 400;
     }
 
@@ -68,7 +67,7 @@
   }
 
   .cta__link {
-    color: var(--undpds-color-white);
+    color: var(--undpds-color-text-inverse);
     font-size: 0.938rem;
 
     &:hover {

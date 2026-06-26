@@ -159,9 +159,21 @@ const getLangCode = (Story, context) => {
   )
 }
 
+const getParentDocument = () => {
+  try {
+    if (window.parent && window.parent !== window) {
+      return window.parent.document;
+    }
+  } catch (error) {
+    return null;
+  }
+  return null;
+};
+
 const sbFrameReset = (Story, context) => {
   const iframeBody = document.querySelector('body');
-  const sidebarItem = parent.document.querySelectorAll('.sidebar-item');
+  const parentDocument = getParentDocument();
+  const sidebarItem = parentDocument ? parentDocument.querySelectorAll('.sidebar-item') : [];
   sidebarItem.forEach(function (item, i) {
     item.addEventListener('click', function (e) {
       const classNames = ['sdgmodal-open', 'color-blue'];
@@ -176,16 +188,10 @@ const sbFrameReset = (Story, context) => {
 }
 
 const setDirection = (Story, options) => {
-  let direction = 'ltr';
-  const input = parent.document.querySelector('[aria-controls="rtl-status"]');
-  const checkRTL = (elem) => {
-    if (elem.checked) {
-      direction = 'rtl';
-    }
-  }
-  if (input && input.checked) {
-    input.addEventListener('change', checkRTL(input), false);
-  }
+  const parentDocument = getParentDocument();
+  const input = parentDocument ? parentDocument.querySelector('[aria-controls="rtl-status"]') : null;
+  const direction = input && input.checked ? 'rtl' : 'ltr';
+
   if (typeof window.UNDP === 'undefined') {
     window.UNDP = {};
   }

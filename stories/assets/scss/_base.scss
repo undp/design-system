@@ -122,7 +122,7 @@
 }
 
 .background-white {
-  background-color: var(--undpds-color-white);
+  background-color: var(--undpds-color-background-default);
 }
 
 // global colors
@@ -220,11 +220,11 @@ $colors: (
     }
 
     //feature-card
-    .feature__card-slide {
-      &::before {
-        @include mixins.background-image(45deg, #{$color}, transparent 67%);
-      }
-    }
+    // .feature__card-slide {
+    //   &::before {
+    //     @include mixins.background-image(45deg, #{$color}, transparent 67%);
+    //   }
+    // }
 
     //content-card
     .content-card {
@@ -343,15 +343,15 @@ $colors: (
       }
 
       //feature-card
-      .feature__card-slide {
-        &::before {
-          @include mixins.background-image(
-            318deg,
-            #{$color},
-            transparent 67.25%
-          );
-        }
-      }
+      // .feature__card-slide {
+      //   &::before {
+      //     @include mixins.background-image(
+      //       318deg,
+      //       #{$color},
+      //       transparent 67.25%
+      //     );
+      //   }
+      // }
     }
   }
   /* RTL: adds right margin instead of left on medium screens */
@@ -407,9 +407,9 @@ $colors-solid: (
     }
 
     //feature-card
-    .feature__card-slide {
-      background: #{$color};
-    }
+    // .feature__card-slide {
+    //   background: #{$color};
+    // }
   }
 }
 
@@ -433,10 +433,9 @@ $colors-light: (
 
 // Inverted color scheme
 .inverted {
-  color: var(--undpds-color-white);
+  color: var(--undpds-color-text-inverse);
   a {
-    color: var(--undpds-color-white);
-    background-image: linear-gradient(var(--undpds-color-white), var(--undpds-color-white)), linear-gradient(var(--undpds-color-white), var(--undpds-color-white));
+    background-image: linear-gradient(var(--undpds-color-text-inverse), var(--undpds-color-text-inverse)), linear-gradient(var(--undpds-color-text-inverse), var(--undpds-color-text-inverse));
   }
 }
 
@@ -560,23 +559,23 @@ $colors-light: (
 }
 
 .spacing-136 {
-  height: var(--undpds-spacing-136);
-  margin: calc(var(--undpds-spacing-136) / 2 - 1px);
+  height: 8.5rem;
+  margin: calc(8.5rem / 2 - 1px);
 }
 
 .spacing-320 {
-  height: var(--undpds-spacing-320);
-  margin: calc(var(--undpds-spacing-320) / 2 - 1px);
+  height: 20rem;
+  margin: calc(20rem / 2 - 1px);
 }
 
 .spacing-330 {
-  height: var(--undpds-spacing-330);
-  margin: calc(var(--undpds-spacing-330) / 2 - 1px);
+  height: 20.625rem;
+  margin: calc(20.625rem / 2 - 1px);
 }
 
 .spacing-400 {
-  height: var(--undpds-spacing-400);
-  margin: calc(var(--undpds-spacing-400) / 2 - 1px);
+  height: 25rem;
+  margin: calc(25rem / 2 - 1px);
 }
 
 /* base end */

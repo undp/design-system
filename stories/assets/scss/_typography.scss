@@ -9,8 +9,8 @@ html {
 }
 
 body {
-  color: var(--undpds-color-black);
-  font-family: var(--undpds-font-family-proximanova);
+  color: var(--undpds-color-text-default);
+  font-family: var(--undpds-font-family-primary);
   font-size: var(--undpds-font-size-16);
   line-height: 1.4;
 
@@ -20,7 +20,7 @@ body {
 }
 
 button {
-  font-family: var(--undpds-font-family-proximanova);
+  font-family: var(--undpds-font-family-primary);
 }
 
 h1,
@@ -40,7 +40,7 @@ caption {
 }
 
 h1 {
-  font-family: var(--undpds-font-family-sohnebreit);
+  font-family: var(--undpds-font-family-secondary);
   font-weight: 700;
   font-size: 2.938rem;
   letter-spacing: 0.06rem;
@@ -172,7 +172,7 @@ dd {
 
 hr {
   // border-width: 2px;
-  border: 1px solid var(--undpds-color-black);
+  border: 1px solid var(--undpds-color-border-default);
 }
 
 // link animation
@@ -197,7 +197,7 @@ hr {
 }
 
 a {
-  color: var(--undpds-color-black);
+  color: inherit;
   text-decoration: none;
   @extend %animate-link !optional;
 }

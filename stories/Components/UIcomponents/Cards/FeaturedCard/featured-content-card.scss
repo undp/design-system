@@ -1,88 +1,24 @@
 @use "../../../../assets/scss/breakpoints";
-@use "../../../../assets/scss/variables";
 @use "../../../../assets/scss/mixins";
-
-$light-colors: (
-  "yellow": var(--undpds-color-light-yellow),
-  "red": var(--undpds-color-light-red),
-  "green": var(--undpds-color-light-green),
-  "blue": var(--undpds-color-light-azure),
-  "gray": var(--undpds-color-gray-100),
-);
 
 /* feature card start */
 .feature__card {
   container: featurecard / inline-size;
-
   margin-block-end: 0;
 
   @include breakpoints.devicebreak(medium) {
-    // @include container(medium, featurecard) {
-
-    // margin-block-end: 0;
-
     //CtaLink
     .cta__link.cta--arrow {
       width: 100%;
-
       i {
         max-width: var(--undpds-spacing-100);
-
         &::after {
           background-position: right top;
         }
       }
     }
-
-    .feature__card-slide {
-      &::before {
-        @include mixins.background(
-          207deg,
-          hsla(0, 0%, 100%, 0.2) 30%,
-          var(--undpds-color-light-yellow)
-        );
-      }
-    }
-
-    //colors
-    @each $name, $color in $light-colors {
-      &.accent-#{$name},
-      &.#{$name} {
-        .feature__card-slide {
-          background: $color;
-
-          &::before {
-            @include mixins.background(
-              207deg,
-              hsla(0, 0%, 100%, 0.2) 30%,
-              #{$color}
-            );
-          }
-        }
-      }
-
-      .accent-#{$name} & {
-        @each $name2, $color2 in $light-colors {
-          &.accent-#{$name2},
-          &.#{$name2} {
-            .feature__card-slide {
-              background: $color2;
-
-              &::before {
-                @include mixins.background(
-                  207deg,
-                  hsla(0, 0%, 100%, 0.2) 30%,
-                  #{$color2}
-                );
-              }
-            }
-          }
-        }
-      }
-    }
   }
 
-  // @include devicebreak(large) {
   @include breakpoints.container(large, featurecard) {
     .cta__link.cta--arrow {
       i {
@@ -94,45 +30,28 @@ $light-colors: (
     }
   }
 
-  &.red {
-    a:hover {
-      .cta__link.cta--arrow i::before {
-        background-color: var(--undpds-color-black);
-      }
-
-      .cta__link.cta--arrow i::after {
-        border-color: var(--undpds-color-black);
-      }
-    }
-  }
-
   a {
-    background: var(--undpds-color-gray-200);
+
     height: 100%;
     overflow: hidden;
     position: relative;
-    position: relative;
+    min-height: 350px;
+    display: flex;
 
     @include breakpoints.devicebreak(medium) {
-      // @include container(medium, featurecard) {
-      display: flex;
+      min-height: 420px;
     }
 
     &:hover {
-      .feature__card-slide {
-        @include mixins.transform(translateX(0));
-      }
 
       .cta__link.cta--arrow {
         i {
           width: var(--undpds-spacing-11);
 
-          // @include devicebreak(medium) {
           @include breakpoints.container(medium, featurecard) {
             width: calc(100% - 6.25rem);
           }
 
-          // @include devicebreak(large) {
           @include breakpoints.container(large, featurecard) {
             width: calc(100% - 6.25rem);
           }
@@ -142,10 +61,17 @@ $light-colors: (
           }
         }
       }
+
+
+      .feature__card-slide {
+        &::before {
+          opacity: 0;
+        }
+      }
     }
   }
 
-  //variant image or without-out image
+  //variants image or without image
   &.without-image {
     .feature__card-slide {
       z-index: 0;
@@ -154,45 +80,12 @@ $light-colors: (
         display: none;
       }
     }
-
-    &.yellow {
-      .feature__card-slide {
-        background: var(--undpds-color-yellow);
-      }
-    }
   }
-}
-
-//colors
-@each $name, $color in $light-colors {
-  .accent-#{$name} {
-    .feature__card {
-      &.without-image {
-        .feature__card-slide {
-          background: $color;
-        }
-
-        @each $name2, $color2 in $light-colors {
-          &.accent-#{$name2},
-          &.#{$name2} {
-            .feature__card-slide {
-              background: $color2;
-            }
-          }
-        }
-      }
-    }
-
-    .feature__card-slide {
-      background: $color;
-
-      &::before {
-        @include mixins.background(
-          207deg,
-          hsla(0, 0%, 100%, 0.2) 30%,
-          #{$color}
-        );
-      }
+  &.image {
+    color: var(--undpds-color-text-default);
+    transition: color 0.25s ease-in-out;
+    a:hover {
+      color: var(--undpds-color-text-inverse);
     }
   }
 }
@@ -201,42 +94,35 @@ $light-colors: (
 .feature__card-slide {
   @extend %feature__card;
 
-  position: relative;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
 
-  @include breakpoints.devicebreak(medium) {
-    // @include container(medium, featurecard) {
-    @include mixins.transform(translateX(-105%));
-    @include mixins.transition(transform 0.3s);
+  background: var(--undpds-color-surface-default);
+  transition: background-color 0.25s ease-in-out;
 
-    background: var(--undpds-color-light-yellow);
-    display: none;
-    height: 100%;
-    position: absolute;
-    z-index: 0;
+  .feature__card a:hover & {
+    background: var(--undpds-color-surface-hover);
   }
 
-  @include breakpoints.devicebreak(large) {
-    // @include container(large, featurecard) {
-    display: inherit;
-  }
 
   &::before {
     @extend %feature__card;
-
+    background: linear-gradient(180deg, rgba(247, 247, 247, 0.80) 0%, rgba(247, 247, 247, 0.98) 72.62%);
     bottom: 0;
     content: "";
-
-    @include breakpoints.devicebreak(medium) {
-      // @include container(medium, featurecard) {
-      height: 100%;
-      position: absolute;
-    }
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+    height: 100%;
+    position: absolute;
   }
 
   .feature__card-image {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+
     height: 100%;
     width: 100%;
 
@@ -246,157 +132,103 @@ $light-colors: (
       max-width: 100%;
       object-fit: cover;
       width: 100%;
+      filter: saturate(0);
+      transition: filter 1.25s ease-in-out;
+      .feature__card a:hover & {
+        filter: saturate(1);
+        // transition: filter 0.25s ease-in-out;
+      }
     }
   }
-}
-
-.image .feature__card-slide {
-  z-index: 1;
 }
 
 //feature content
 .feature__card-content {
   @extend %feature__card;
 
-  // background: var(--undpds-color-gray-100);
   flex-direction: column;
   height: auto;
-  padding: var(--undpds-spacing-07) var(--undpds-spacing-06);
   position: relative;
   width: auto;
+  display: flex;
+  width: 100%;
 
-  @include breakpoints.devicebreak(medium) {
-    // @include container(medium, featurecard) {
-    // background: none;
-    display: flex;
-  }
 
-  h6 {
+  h6,
+  .feature__card-tag {
     font-size: var(--undpds-font-size-12);
     font-weight: 700;
-    line-height: 1.17;
-    margin-bottom: var(--undpds-spacing-06);
+    line-height: 1.12;
+    margin-block: var(--undpds-spacing-gutter);
+    padding-inline: var(--undpds-spacing-gutter);
     text-transform: uppercase;
-
-    // @include devicebreak(medium) {
-    @include breakpoints.container(medium, featurecard) {
-      margin-bottom: var(--undpds-spacing-09);
-    }
+    transition: color 0.125s ease-in-out;
   }
 
   .feature__card-description {
-    margin-bottom: var(--undpds-spacing-09);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: end;
+    margin-top: auto;
+    // margin-bottom: var(--undpds-spacing-06);
+    padding: var(--undpds-spacing-08) var(--undpds-spacing-gutter) 0;
 
-    // @include devicebreak(medium) {
-    @include breakpoints.container(medium, featurecard) {
-      margin-bottom: 4.688rem;
+    .feature__card.image & {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        // z-index: -1;
+        transition: opacity 0.25s ease-in-out;
+        background-image: linear-gradient(180deg, rgba(20, 20, 24, 0) 0%, rgba(20, 20, 24, 0.7) 30%, rgba(20, 20, 24, 0.9) 100%);
+        opacity: 0;
+      }
+    }
+    .feature__card.image a:hover & {
+      &::before {
+        opacity: 1;
+      }
     }
   }
 
   h4,
-  h5 {
-    margin-bottom: var(--undpds-spacing-06);
-
-    // @include devicebreak(medium) {
-    @include breakpoints.container(medium, featurecard) {
-      margin-bottom: var(--undpds-spacing-07);
-    }
+  h5,
+  .feature__card-title {
+    font-size: var(--undpds-font-size-heading-medium);
+    line-height: 1.1;
+    margin-bottom: var(--undpds-spacing-04);
+    z-index: 2;
+    transition: color 0.125s ease-in-out;
   }
 
   p {
-    font-size: var(--undpds-font-size-14);
-
-    // @include devicebreak(medium) {
-    @include breakpoints.container(medium, featurecard) {
-      font-size: var(--undpds-font-size-20);
-    }
-  }
-
-  .cta__link {
-    margin-bottom: 0;
-    margin-top: var(--undpds-spacing-08);
+    font-size: var(--undpds-font-size-body-small);
     z-index: 2;
-
-    // @include devicebreak(medium) {
-    @include breakpoints.container(medium, featurecard) {
-      margin-top: auto;
-    }
+    transition: color 0.125s ease-in-out;
   }
-}
 
-[dir="rtl"] {
-  .feature__card {
-    // @include devicebreak(medium) {
-    @include breakpoints.container(medium, featurecard) {
-      .cta__link.cta--arrow {
-        width: 100%;
+  .cta__link.cta--arrow {
+    z-index: 2;
+    padding: var(--undpds-spacing-gutter);
+    transition: opacity 0.25s ease-in-out, color 0.125s ease-in-out;
+    position: relative;
 
-        i {
-          &::after {
-            margin-left: inherit;
-          }
-        }
-      }
-
-      //colors
-      @each $name, $color in $light-colors {
-        &.accent-#{$name}.image,
-        &.#{$name}.image {
-          .feature__card-slide {
-            background-color: #{$color};
-
-            &::before {
-              @include mixins.background(
-                153deg,
-                hsla(0, 0%, 100%, 0.2) 30%,
-                #{$color}
-              );
-            }
-          }
-        }
-
-        .accent-#{$name} & {
-          @each $name2, $color2 in $light-colors {
-            &.accent-#{$name2},
-            &.#{$name2} {
-              .feature__card-slide {
-                background-color: #{$color2};
-
-                &::before {
-                  @include mixins.background(
-                    153deg,
-                    hsla(0, 0%, 100%, 0.2) 30%,
-                    #{$color2}
-                  );
-                }
-              }
-            }
-          }
-        }
-      }
-
-      //feature__card-slide
-      .feature__card-slide {
-        @include breakpoints.devicebreak(medium) {
-          // @include container(medium, featurecard) {
-          @include mixins.transform(translateX(105%));
-
-          &:hover {
-            @include mixins.transform(translateX(0));
-          }
-        }
+    .feature__card.image & {
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        transition: opacity 0.25s ease-in-out;
+        background: rgba(20, 20, 24, 0.9);
+        opacity: 0;
       }
     }
-
-    //feature__card-slide When it is above a medium screen size
-    .feature__card-slide {
-      @include breakpoints.devicebreak(medium) {
-        // @include container(medium, featurecard) {
-        @include mixins.transform(translateX(105%));
-
-        &:hover {
-          @include mixins.transform(translateX(0));
-        }
+    .feature__card.image a:hover & {
+      &::before {
+        opacity: 1;
       }
     }
   }

@@ -1,43 +1,34 @@
 // Declare variables.
 const delay = 200;
-let isStart = true;
-let timeoutId;
 
-// Resize Started
-let triggerResizeStart = (el) => {
-  el.trigger('resizestart');
-  isStart = !isStart;
+const triggerResizeStart = (target) => {
+  target.dispatchEvent(new CustomEvent('resizestart'));
 };
 
-// Resize Ended
-let triggerResizeEnd = (el) => {
-  clearTimeout(timeoutId);
-  timeoutId = setTimeout(() => {
-    el.trigger('resizeend');
-    isStart = !isStart;
-  }, delay);
+const triggerResizeEnd = (target) => {
+  target.dispatchEvent(new CustomEvent('resizeend'));
 };
 
-// Resize Event Callback
-const resizeEventsTrigger = (el) => {
-  if (isStart) {
-    triggerResizeStart(el);
-  } else {
-    triggerResizeEnd(el);
-  }
-};
+// Custom window resize helper.
+export function windowResize(target, fn) {
+  const resizeTarget = target || window;
+  let isStart = true;
+  let timeoutId;
 
-// Custom Windows Resize Function.
-export function windowResize(elem, fn) {
-  // Resize Event Observer.
-  elem.resize(() => {
-    resizeEventsTrigger(elem);
-  });
+  const resizeEventsTrigger = () => {
+    if (isStart) {
+      triggerResizeStart(resizeTarget);
+      isStart = false;
+      return;
+    }
 
-  // Resize before callback.
-  //  For now this is not required so keeping this line commented as we may use it in future.
-  // elem.on('resizestart', fn);
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      triggerResizeEnd(resizeTarget);
+      isStart = true;
+    }, delay);
+  };
 
-  // Resize after callback.
-  elem.on('resizeend', fn);
+  resizeTarget.addEventListener('resize', resizeEventsTrigger);
+  resizeTarget.addEventListener('resizeend', fn);
 }

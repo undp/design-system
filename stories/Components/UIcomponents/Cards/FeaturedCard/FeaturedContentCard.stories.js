@@ -196,16 +196,10 @@ export default {
       options: ['large', 'medium', 'small'],
       control: { type: 'inline-radio' },
     },
-    hovercolor: {
-      name: 'Hover accent color',
-      options: ['global', 'yellow', 'red', 'green', 'blue'],
-      control: { type: 'inline-radio' },
-    },
   },
   args: {
     image: 'image',
     size: 'medium',
-    hovercolor: 'global',
   },
   parameters: {
     docs: {
@@ -270,7 +264,7 @@ export default {
           <h3>Usage</h3>
 
           <ul>
-            <li>From the control tab of canvas, choose Image control either Image or Color, Size control either Large, Medium or Small, and Hover color from Yellow, Red, Green or Blue.</li>
+            <li>From the control tab of canvas, choose Image control either Image or Color, and Size control either Large, Medium or Small.</li>
             <li>Copy the HTML from the HTML tab and include the CSS and JS files listed below.</li>
             <li>If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js.</li>
           </ul>
@@ -300,9 +294,9 @@ export default {
             <li>By clicking on the CTA Link, the associated page is opened.</li>
           </ul>
 
-          
 
-          
+
+
 
         </>
       ),

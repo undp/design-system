@@ -14,7 +14,7 @@ $colors: (
 .stats-card {
   @include transition(300ms all);
 
-  background-color: var(--undpds-color-gray-200);
+  background-color: var(--undpds-color-surface-default);
   box-sizing: border-box;
   overflow-wrap: break-word;
   padding: var(--undpds-spacing-08);
@@ -36,7 +36,7 @@ $colors: (
     @include transition(300ms all);
 
     color: var(--undpds-color-gray-200);
-    font-family: var(--undpds-font-family-sohnebreit);
+    font-family: var(--undpds-font-family-secondary);
     font-weight: 700;
     font-size: var(--undpds-spacing-11);
     letter-spacing: 0.05rem;
@@ -123,7 +123,7 @@ $colors: (
     padding: var(--undpds-spacing-09);
 
     @include devicebreak(medium) {
-      max-width: var(--undpds-spacing-330);
+      max-width: 20.625rem;
 
       h4 {
         font-weight: 600;
@@ -176,7 +176,7 @@ $colors: (
     background-color: var(--undpds-color-yellow);
 
     & h2 {
-      color: var(--undpds-color-black);
+      color: var(--undpds-color-text-default);
     }
 
     @each $name, $color in $colors {
@@ -218,7 +218,7 @@ $colors: (
 #{$cyrillic} {
   div.stats-card {
     h2 {
-      font-family: var(--undpds-font-family-proximanova);
+      font-family: var(--undpds-font-family-primary);
     }
   }
 }

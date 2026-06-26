@@ -1,0 +1,701 @@
+{
+  "version": "2.0.0",
+  "generatedAt": "2026-05-26T14:59:16.205Z",
+  "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.0/",
+  "assets": {
+    "css": [
+      {
+        "path": "css/base-minimal-no-grid.min.css",
+        "size": 90116,
+        "sha256": "a78c8c50ad9df2a20e0d850b8e4cdfb190c250f14a3cd9a191f9a39deb4a8f1d"
+      },
+      {
+        "path": "css/base-minimal.min.css",
+        "size": 152299,
+        "sha256": "63b4c139a98f3a0f68d91edaaa363a310199a249991ee421bfdbf95eb348dfcb"
+      },
+      {
+        "path": "css/ckeditor5.min.css",
+        "size": 186170,
+        "sha256": "80a398e55a11ef4efa193e39145acf1076ce490be78be1fbee53b00ded7871cd"
+      },
+      {
+        "path": "css/components.min.css",
+        "size": 292985,
+        "sha256": "0ed36cda002e0cfbbf5ad7fb66dfff23571eba3e895cf623adbb5f35fb58aa59"
+      },
+      {
+        "path": "css/components/accordion.min.css",
+        "size": 1763,
+        "sha256": "4ef01cb11dc91ff25f21c30d97a3e1e7b94221bf68dcbab4cf2b5d2a5ed033be"
+      },
+      {
+        "path": "css/components/author-card.min.css",
+        "size": 789,
+        "sha256": "5e9910a25285e3530cad7fed0bce0facf9398f9931bcc4c12db700cbb6b1f72b"
+      },
+      {
+        "path": "css/components/author-column.min.css",
+        "size": 537,
+        "sha256": "9487fe0720a8e4cc55c0dd1c19c0315d79cb2b1115eccb76b47f48fdf9913993"
+      },
+      {
+        "path": "css/components/author-summary.min.css",
+        "size": 1444,
+        "sha256": "f00f56195c7478677f3c7bcc40a57e9c4696f3e66d2c81b7f0d1251854e1ff1a"
+      },
+      {
+        "path": "css/components/bio-card.min.css",
+        "size": 10468,
+        "sha256": "bdb5540a6833613bc7fb8f04ece5101ee9976cec0fe3c78bd40f461b5beda2c1"
+      },
+      {
+        "path": "css/components/blockquotecomp.min.css",
+        "size": 737,
+        "sha256": "e928e8501c98366a70482eb08fb94168c507a98fe9bc53e9bb8d991cc1c92d08"
+      },
+      {
+        "path": "css/components/breadcrumbs.min.css",
+        "size": 1473,
+        "sha256": "472e939c94444ec56363772beab14dc328540fa258e69ee103a1a78b5896248d"
+      },
+      {
+        "path": "css/components/buttons.min.css",
+        "size": 6928,
+        "sha256": "a1654714c161bff7f8736c321e3bad8827a4470eb071c19bf538164663ed17a3"
+      },
+      {
+        "path": "css/components/checkbox-radio-common.min.css",
+        "size": 167,
+        "sha256": "a1d72982b22f28e969ac56914c6bb2637f6fafc7d19cce5ca5640d3a7bf0bff4"
+      },
+      {
+        "path": "css/components/checkbox.min.css",
+        "size": 463,
+        "sha256": "6cdec035d25be072348ebe48a2a69bec3c517b7d70a5e59fe5a722c47a0fb832"
+      },
+      {
+        "path": "css/components/chips.min.css",
+        "size": 758,
+        "sha256": "f6e4c26f3626391e16830d942ab9ddccaef057afe97be043d2a53e640ba26367"
+      },
+      {
+        "path": "css/components/content-card-with-and-without-image.min.css",
+        "size": 148,
+        "sha256": "b668a0460ec287bf8a06e009dac8577c58392f1675526209313aeae83ce064cf"
+      },
+      {
+        "path": "css/components/content-card.min.css",
+        "size": 20174,
+        "sha256": "ee8fc9d481bd64191a9d343fe2e09c0c2c9e74f9be2f1dad74c8e9d60a225180"
+      },
+      {
+        "path": "css/components/country-card.min.css",
+        "size": 3010,
+        "sha256": "fcb2a8f01777aef7ad8792d1b4d219505a75a84f89ccf2c8efd7663b3f46e9f0"
+      },
+      {
+        "path": "css/components/country-site-header.min.css",
+        "size": 6403,
+        "sha256": "cdb5d2c5445355e8a00358ebb9fabe2bb5ba67dd3a62ada3d77e9819a8dd6f40"
+      },
+      {
+        "path": "css/components/cta-block.min.css",
+        "size": 381,
+        "sha256": "c7f44347127762b1f5613c2cb834809571c425a6061bec2361de35454f9fe45c"
+      },
+      {
+        "path": "css/components/cta-link.min.css",
+        "size": 1984,
+        "sha256": "8ac88ab40d8bcabd0f9d9ecfcd9ba62baa3393f78ad72a3abb9dda6b82a9bbfd"
+      },
+      {
+        "path": "css/components/custom-select.min.css",
+        "size": 2450,
+        "sha256": "ff4db534261da15f5fc0f59cd3875bcf088504e4420f3a506bf7e284caf2c757"
+      },
+      {
+        "path": "css/components/documentation.min.css",
+        "size": 3875,
+        "sha256": "4b58d4e85d705020f8746b82b9c7fd9f94c048d40f9fee12c3ad3ad3eaa8f059"
+      },
+      {
+        "path": "css/components/download-card.min.css",
+        "size": 23446,
+        "sha256": "1b1a2eb630300ee42efbc03c324bdab7d12aec6a8d764cc1b209d35462f9edab"
+      },
+      {
+        "path": "css/components/download-modal.min.css",
+        "size": 1632,
+        "sha256": "bb5407cfac6f1ea0b16e5fc2a1dfcdb60f5ea565b8024e36e0b3a38d7a1aa48f"
+      },
+      {
+        "path": "css/components/download-row.min.css",
+        "size": 1114,
+        "sha256": "83846b02763ccf43d2b57972efd9d97e888a137e038283417d4706d8d19c6153"
+      },
+      {
+        "path": "css/components/featured-card.min.css",
+        "size": 1034,
+        "sha256": "16555e65faedcd44ed37df0132a7f4ff732284d4e06958bf8ebf0d893de2a85b"
+      },
+      {
+        "path": "css/components/featured-content-card.min.css",
+        "size": 4148,
+        "sha256": "2a44ff7fcb7be512558960b2dc9f20338f5581b82bc993a41d74e54806a54966"
+      },
+      {
+        "path": "css/components/filter-and-search-bar.min.css",
+        "size": 1643,
+        "sha256": "1dab50a9f84c53a1dda1a2648e795b93220d59b0e29b7bcf3ac7504ed38f5bb2"
+      },
+      {
+        "path": "css/components/fixed-size-carousel.min.css",
+        "size": 3726,
+        "sha256": "b91b73266bd60f6c8cdccea629b33fc1e8328b5d7c9d04b9579b481c44e1b762"
+      },
+      {
+        "path": "css/components/fluid-image-size-carousel.min.css",
+        "size": 2955,
+        "sha256": "a1e8331a094ae412f8304e5acab397d966d553c2f825a00c54ba57f8d931415b"
+      },
+      {
+        "path": "css/components/footer.min.css",
+        "size": 7983,
+        "sha256": "d4c2b7eaeb7c4d18a759522174dc67b9f147900e5c6162f7eb067b582e432cbb"
+      },
+      {
+        "path": "css/components/frosted-background.min.css",
+        "size": 455,
+        "sha256": "0e42c2d64dc8efc9eebb943db84f4714adc106658183ec37d112f26a33c122c4"
+      },
+      {
+        "path": "css/components/global-header.min.css",
+        "size": 4888,
+        "sha256": "d2f33eb50852293b07957efdefb8f1d056b7868d1ff6038ec431d585831e9392"
+      },
+      {
+        "path": "css/components/headingbig.min.css",
+        "size": 621,
+        "sha256": "da90a837d94f47ab8e8089d0719b00d6383b849d7a845bf2f5f224578c65669b"
+      },
+      {
+        "path": "css/components/homepage-hero.min.css",
+        "size": 4059,
+        "sha256": "5a7b4eab9d221528fcb8aa7fe81dc44ef37cbc2963b3577a8947be0f9214fa68"
+      },
+      {
+        "path": "css/components/image-caption.min.css",
+        "size": 1648,
+        "sha256": "3a67f957857d2d7e90bb533448acc292f9c82ee15807a4774d4707d1d0f82db4"
+      },
+      {
+        "path": "css/components/image-only-carousel.min.css",
+        "size": 1481,
+        "sha256": "830374c35d7bdc14890522cf5a1900429e25cf18659bbd26d3dce59c8503dacc"
+      },
+      {
+        "path": "css/components/image-reveal-cards.min.css",
+        "size": 238,
+        "sha256": "fed6161e5241a0c0727275da153f5e571ccfa59e9deccf501b842dad44744d51"
+      },
+      {
+        "path": "css/components/image-revel-cta-card.min.css",
+        "size": 8663,
+        "sha256": "44e34e9753ec06e846043cd3208a674d2dc5874e556eb3a03fa7c056a71ec691"
+      },
+      {
+        "path": "css/components/input-fields.min.css",
+        "size": 12197,
+        "sha256": "cc6c687f3a315db23b08120de12d10cb16236bebf71b0eb8b2dd2f7751494d43"
+      },
+      {
+        "path": "css/components/intro.min.css",
+        "size": 30918,
+        "sha256": "635027bf83421bfb7c3332a45e4612b7ba26974cd29867b83e0a6d639b59f7f5"
+      },
+      {
+        "path": "css/components/language-switcher.min.css",
+        "size": 3281,
+        "sha256": "4344401022f229a48d249a9c7a83d1161feadd2389f4f1d731b491df5b3cc0ed"
+      },
+      {
+        "path": "css/components/lightbox-gallery.min.css",
+        "size": 4359,
+        "sha256": "93ce58015a2e391ac017b106385e5cc760ec7233f4ee3b5b93eaf5a856b153de"
+      },
+      {
+        "path": "css/components/lightbox.min.css",
+        "size": 9883,
+        "sha256": "a686ebcf291448792740a97434df3dbd49d76fd54de024e31bcf54bd5d360c39"
+      },
+      {
+        "path": "css/components/loader.min.css",
+        "size": 496,
+        "sha256": "468f77f8968287a2bc61e6befc315fb15c77980a3c6dbdfcfb93cb6df4e66ac8"
+      },
+      {
+        "path": "css/components/mega-menu.min.css",
+        "size": 5715,
+        "sha256": "e8c79feb2d0fd4fa3facce9d5ca8d39acc01df31ccf045bdd0d93f9dde8e4edd"
+      },
+      {
+        "path": "css/components/menu-multi-level.min.css",
+        "size": 10162,
+        "sha256": "4e23c4538d31a9d534cdecbf0e34d98ed4232c7760b171c706162f122fea9990"
+      },
+      {
+        "path": "css/components/menu-overflow.min.css",
+        "size": 11241,
+        "sha256": "382cc0d3b490836754afed3bce88f5d4857a31bdf638d06e25a1b8c186134a7e"
+      },
+      {
+        "path": "css/components/menu.min.css",
+        "size": 305,
+        "sha256": "8452a39d7f8eb61f171f5ee83b5615c9525ec7b726ef1a33b8c6c88c3d4ac2af"
+      },
+      {
+        "path": "css/components/mobile-nav.min.css",
+        "size": 4392,
+        "sha256": "7e004ba334f38bdc621a192a94a327e55389d3767692f1ffe51eb66c3e96d30d"
+      },
+      {
+        "path": "css/components/modal.min.css",
+        "size": 1692,
+        "sha256": "131f4a34bf360e9852bc7ff00b702362711addf7aa24f1092cb4f2cbd44f7b74"
+      },
+      {
+        "path": "css/components/multi-select.min.css",
+        "size": 4216,
+        "sha256": "cbc932e0e2ed3ef705b504f71682edabd002019b89baf001720804ca657889fc"
+      },
+      {
+        "path": "css/components/newsletter-signup.min.css",
+        "size": 1659,
+        "sha256": "e6d265abffbc08090cbfe56074c2b80d378ffc4815548498ed2dc340cfb68046"
+      },
+      {
+        "path": "css/components/our-expertise.min.css",
+        "size": 3879,
+        "sha256": "2f274961d6232e6c426b61714eef5e8b08501d320024775b92bfcb2ad61a840a"
+      },
+      {
+        "path": "css/components/page-hero.min.css",
+        "size": 4567,
+        "sha256": "cd7b6e572875cb0779f54836a865ab6c678bf020772f5d2192d0cfc9d9253ff4"
+      },
+      {
+        "path": "css/components/page-wide-card.min.css",
+        "size": 10798,
+        "sha256": "684821fe5d4446a1cf7ace3e23c556cf8d447b773531df1d12b3ae3c798d9849"
+      },
+      {
+        "path": "css/components/page.min.css",
+        "size": 663,
+        "sha256": "92cf249a02abd9a78c72516833ca8c8e3e61acfaf927efea57ef4b84e055250c"
+      },
+      {
+        "path": "css/components/pagehero-cards.min.css",
+        "size": 3535,
+        "sha256": "d94421fcae4f3a0e8173948a9e5981eb393fc5e1e57d2723917df49f65a3241d"
+      },
+      {
+        "path": "css/components/pagination.min.css",
+        "size": 1559,
+        "sha256": "db36967d24c258b46a4af2c7d46d2d80badc405b16a50ec459cfef2784e0a5f0"
+      },
+      {
+        "path": "css/components/parallax-card.min.css",
+        "size": 2860,
+        "sha256": "e03f57dcf5d486d0484b97a858a68927d2715675ee27dca4e4dcc6dfa5c79a6a"
+      },
+      {
+        "path": "css/components/parallax-cards.min.css",
+        "size": 931,
+        "sha256": "aed92b7fc59e86e9d7db0f2a8e9410637bd34cb0f5ad376c6c901b362c85c0bc"
+      },
+      {
+        "path": "css/components/parallax-gallery.min.css",
+        "size": 3115,
+        "sha256": "4e3721c7cc1eb37f80c165fa207cdd80204868efac3890d28be3758e92900330"
+      },
+      {
+        "path": "css/components/post-header.min.css",
+        "size": 151,
+        "sha256": "223854f2643de640a7954d6ccffd1073c0b5dea8acfaa2f99836cd4a75f6ebfe"
+      },
+      {
+        "path": "css/components/post.min.css",
+        "size": 190,
+        "sha256": "e30f32fbfccf5620e4a39ce62f20d70ab3ec54f05ceb1b4d57ab7ae5de9a6a77"
+      },
+      {
+        "path": "css/components/progress-bar.min.css",
+        "size": 409,
+        "sha256": "d89809bc96596022937e64ae171542773f293499b1a50308ea970efc851de504"
+      },
+      {
+        "path": "css/components/project-detail.min.css",
+        "size": 582,
+        "sha256": "ccf9beaf8d3059f906f80c1fbf1825ff1d87ca938cbb4325ece98c3bc0144895"
+      },
+      {
+        "path": "css/components/projectdetails.min.css",
+        "size": 525,
+        "sha256": "81b205e29807f2433c1e6791778232e34807b97851c9ee231f569c900ab43dcd"
+      },
+      {
+        "path": "css/components/publication-card.min.css",
+        "size": 14414,
+        "sha256": "916d6c5e387bff0983a019222ed95a0092210e0fa9eb626df60d89945cd31e15"
+      },
+      {
+        "path": "css/components/radio.min.css",
+        "size": 568,
+        "sha256": "f6541554f5056881dd9b4b070a0397f3ce1cb33a7233dc857ba0dcbdcfdb8adb"
+      },
+      {
+        "path": "css/components/scrollbar.min.css",
+        "size": 631,
+        "sha256": "c5d5d5ef938cb57d9e289d3491cf1c66afd788630e88c576a8b7b35f0554803b"
+      },
+      {
+        "path": "css/components/sdg.min.css",
+        "size": 6042,
+        "sha256": "0b9ca03c2c81929a7e47c6cb5bd942c93aa7c7052b6bc261b62e92e913d32d91"
+      },
+      {
+        "path": "css/components/sdgmodal.min.css",
+        "size": 14132,
+        "sha256": "fc0a6409e025ba651398396537d0c00851d88f17d12ec066686ffe27d3c529e5"
+      },
+      {
+        "path": "css/components/search-expand.min.css",
+        "size": 1245,
+        "sha256": "8aa2fee144f156509fcf4502fca9ab802037887de53d0006f6befc26e3aec045"
+      },
+      {
+        "path": "css/components/sectionheader.min.css",
+        "size": 82,
+        "sha256": "6afcaafa05b074aa6d3876065049753120b8b56c125993e5c1fa8e89f7918ec6"
+      },
+      {
+        "path": "css/components/select.min.css",
+        "size": 757,
+        "sha256": "0c314f18a3b5fb4138a26dfc9e17b4861f1b599584073ce9bf476ac4d4b27fdb"
+      },
+      {
+        "path": "css/components/sidebar-data.min.css",
+        "size": 513,
+        "sha256": "376739740b633ca13045908d1d57360de1acf401f12752b8c328f69110e13647"
+      },
+      {
+        "path": "css/components/sidebar.min.css",
+        "size": 4607,
+        "sha256": "a3cabdec5a5483ef2d584833c9306d8dec13c60a14bf6c45e6a6c3b94fef58f8"
+      },
+      {
+        "path": "css/components/smallcopy.min.css",
+        "size": 225,
+        "sha256": "3a383f91b3ea88730644704df82c01d983d44e889747f74e8da035bcbcc83a4f"
+      },
+      {
+        "path": "css/components/stats-card-slider.min.css",
+        "size": 592,
+        "sha256": "755f81cc87f2e61969e267353001db836d8070dc39782379c8124303f5b468d7"
+      },
+      {
+        "path": "css/components/stats-cards.min.css",
+        "size": 6134,
+        "sha256": "70ab0654a3e1e64cf34a69a6b20fc1042022ece2010e5952ed65b8f4d197e6db"
+      },
+      {
+        "path": "css/components/stats-panel.min.css",
+        "size": 5890,
+        "sha256": "64cf635a6b7b74838fd803758cd1fecb25a582bacefd56ff4835dd1cc55451c6"
+      },
+      {
+        "path": "css/components/stats-slider.min.css",
+        "size": 4589,
+        "sha256": "afa503774add1ff2757b07a9f803a03b567221a361ca141fa739753116c3360f"
+      },
+      {
+        "path": "css/components/stats.min.css",
+        "size": 101,
+        "sha256": "7da984e5c07fc7fec9bfd81e9847cba359b1e7cd69a488cb2f68a680e54b353a"
+      },
+      {
+        "path": "css/components/swiper.min.css",
+        "size": 2036,
+        "sha256": "de6612c9b137545c9384044ac8817d041f9c239a9ecb98ecfb302912692ba484"
+      },
+      {
+        "path": "css/components/switch.min.css",
+        "size": 2450,
+        "sha256": "d554c4f88b6d331311de9fc6faa0d3f593f4f3ca3b1e583f56e1740d739419b8"
+      },
+      {
+        "path": "css/components/tab.min.css",
+        "size": 1298,
+        "sha256": "ac2c0041b9fe7d0f653991a386ee28b17f419d36e843beb8e48ae4bf584d5cde"
+      },
+      {
+        "path": "css/components/tertiary.min.css",
+        "size": 354,
+        "sha256": "d29ad31a1b1a71bc9b960ebea92b5ea3216951541b49be660cf2af62f4225e5e"
+      },
+      {
+        "path": "css/components/text-panel.min.css",
+        "size": 2789,
+        "sha256": "35639f9de648e646a7f94dd96a600a05b5de4d9ddf9e7d37556f06d534592fca"
+      },
+      {
+        "path": "css/components/textbackground.min.css",
+        "size": 453,
+        "sha256": "c9f200d3d54de5bf8c500176308600631b92702f1cb817cdbf3261f2f83c3086"
+      },
+      {
+        "path": "css/components/textcta.min.css",
+        "size": 458,
+        "sha256": "3cfd512774f692b0a5b6a1ae3aed299913e144366b251bc3fbb06f3432430923"
+      },
+      {
+        "path": "css/components/tweet-card.min.css",
+        "size": 1486,
+        "sha256": "59cd86bdd25314e559d53eb2f5d7dd15725aa402e96c83827f870fb13da602c1"
+      },
+      {
+        "path": "css/components/tweet-panel.min.css",
+        "size": 621,
+        "sha256": "1f8a21ee2096aed7d4ef4851e2e6d7cd7b3ce4c0e59e368da276fd9206b89a03"
+      },
+      {
+        "path": "css/templates.min.css",
+        "size": 20044,
+        "sha256": "a69b64ae788f18ca682bdbc21794657931319fd0efc17f432737adb75db3965d"
+      },
+      {
+        "path": "css/templates/article-page.min.css",
+        "size": 2737,
+        "sha256": "1e566ddda084fabf91e48fd88bcd16868482ec42860644c5aab3b7edc6f000ba"
+      },
+      {
+        "path": "css/templates/author-page.min.css",
+        "size": 786,
+        "sha256": "8d6aba86cb237b782415525463ccbf9461c2a3713d8d25e3d0cbcc48d65a8163"
+      },
+      {
+        "path": "css/templates/authors.min.css",
+        "size": 2812,
+        "sha256": "81978c111f8dc8c28f72c596968d7cc8377db06d853799a9e20dec6ae7cbe3e5"
+      },
+      {
+        "path": "css/templates/countryhome-page.min.css",
+        "size": 1883,
+        "sha256": "5a57fc3d5f7290813587157497183fecf3f07884194e07a9520708e2204c5640"
+      },
+      {
+        "path": "css/templates/generic-landing-page.min.css",
+        "size": 5057,
+        "sha256": "a1b24840a20878a2d85a2d62895face6ed1a7aa6f2cf0cfb85c06f6bee1f7f71"
+      },
+      {
+        "path": "css/templates/generic-page.min.css",
+        "size": 6615,
+        "sha256": "e0cde401fd41d92b2fac302242eafba3bba68e2b08c7295d65fde802fbc7754c"
+      },
+      {
+        "path": "css/templates/globalhome-page.min.css",
+        "size": 1119,
+        "sha256": "b20da8f04f609582d6e7eb929f726ea6ca5a7ab02fd223217059e77053a7e797"
+      },
+      {
+        "path": "css/templates/project-page.min.css",
+        "size": 3014,
+        "sha256": "3d3efc993b032be840e1e944765d15c5f93acb4a2cf6ec82ba46a7aeea8c53d3"
+      },
+      {
+        "path": "css/templates/publication-page.min.css",
+        "size": 4516,
+        "sha256": "2524d2cc6282971c7a770b55ff488dbe9da3c86d9a2673edeaad805826924825"
+      },
+      {
+        "path": "css/templates/sdg.min.css",
+        "size": 912,
+        "sha256": "8db710380b7e753b5b91de5728f47ce5a764de5d1cde650464fc10f89d6bdd24"
+      }
+    ],
+    "js": [
+      {
+        "path": "js/accordion.min.js",
+        "size": 38697,
+        "sha256": "0f3b6e56996a8d3b92f2cd024669ce5fbf32752360f93383f17d0a4106bd097e"
+      },
+      {
+        "path": "js/addingFonts.min.js",
+        "size": 238,
+        "sha256": "a6b87910017fe2a69348c3dbb24b5d581ce94adfc14d06029c59eb4be0a18a9d"
+      },
+      {
+        "path": "js/all.min.js",
+        "size": 151118,
+        "sha256": "a73ec9da6f90563c00fe59c8abc55840524572dfc0d6da6371bf403e89005b57"
+      },
+      {
+        "path": "js/animation.min.js",
+        "size": 21728,
+        "sha256": "d32e6f9332892f66f3a7c85fa46258d678bbe650d1687b18b2a674be80c93eeb"
+      },
+      {
+        "path": "js/author-filter.min.js",
+        "size": 21734,
+        "sha256": "b02ebe097573fe3dd1ec15268dd4da1aa63552c9874983ebe6039c610afddca4"
+      },
+      {
+        "path": "js/download-modal.min.js",
+        "size": 27136,
+        "sha256": "9e40dbde2bc19e80347ac5c1d160163dd0169bb7e6356e3e1c5f1f4b24bba8dd"
+      },
+      {
+        "path": "js/expand-search.min.js",
+        "size": 26796,
+        "sha256": "deb4ddd8460862f665357ea882931b8c41902d2e0e5ab67189d819d8a854ab7f"
+      },
+      {
+        "path": "js/filter-search-bar.min.js",
+        "size": 29400,
+        "sha256": "3c807ffda6736bbce31339c6144612f1a75b0cb0dd62c3cb77c25d9caf669d06"
+      },
+      {
+        "path": "js/fitText.min.js",
+        "size": 26017,
+        "sha256": "a5663820bbfd6df5dfd2667b4d40a004fc9b516a10d44a1b6b4a67a68baabfd8"
+      },
+      {
+        "path": "js/fitTitle.min.js",
+        "size": 32382,
+        "sha256": "1188c467df2e4e90c7e64e851d9a790ca485c776af9abc69088edae2e70d55de"
+      },
+      {
+        "path": "js/init.js",
+        "size": 6990,
+        "sha256": "867775955debf89fd89079114a588358562a36d5153bfe2c17a0946d3bd8fbeb"
+      },
+      {
+        "path": "js/lang-switcher.min.js",
+        "size": 26373,
+        "sha256": "03ca442f6daf0d5efe0a5b5f23c0f3428e3b6f9863055ea557009fab25dd2528"
+      },
+      {
+        "path": "js/lazyload.min.js",
+        "size": 24914,
+        "sha256": "611d18bf792631e1baf9598d9f8b5f46488b75a6cebdf617acc70cad576346b6"
+      },
+      {
+        "path": "js/lightbox-gallery.min.js",
+        "size": 22544,
+        "sha256": "8fa3c0dbbb39b7366af0c7b2599efb8eb808d98b73ba26f2a9ae0e8238d41fc6"
+      },
+      {
+        "path": "js/modal.min.js",
+        "size": 27389,
+        "sha256": "36a366fa4cf1ac1bc3678e6cc247c375345d4eed8721e7adcf96956212d6ed18"
+      },
+      {
+        "path": "js/multi-select.min.js",
+        "size": 44165,
+        "sha256": "b9f994c0221fd0d1467cb666575c3fa6a5abc14396659f9260054a90dba5ddf2"
+      },
+      {
+        "path": "js/navigation-data.min.js",
+        "size": 60603,
+        "sha256": "0194d80718be651b4cd22e8872397bef304a2416c1cd17c6c3915128a481a2f5"
+      },
+      {
+        "path": "js/navigation.min.js",
+        "size": 58321,
+        "sha256": "646fdef13afd1b4836b26cd94be30a72433e7d2d4226853a0ca6cc0e5e472fbd"
+      },
+      {
+        "path": "js/our-expertise.min.js",
+        "size": 30963,
+        "sha256": "e52ad06f80d9a1107bbdae15775bf7612d11ed0c570d731ed0d333d57ef73832"
+      },
+      {
+        "path": "js/parallax.min.js",
+        "size": 43817,
+        "sha256": "c9220cd6550bacfae82123083574595a240431c11eac08006f7fb2ef36f25b33"
+      },
+      {
+        "path": "js/resize.min.js",
+        "size": 14365,
+        "sha256": "995f77a69e5c32a5d52d1efd0adc0005780b61a86635a89385498700a266c513"
+      },
+      {
+        "path": "js/scrolling-progress-bar.min.js",
+        "size": 27455,
+        "sha256": "3caae31c83192e8a903890153894d34f492fced385d2b1b0213e852cb2d297d1"
+      },
+      {
+        "path": "js/sdg-modal.min.js",
+        "size": 36478,
+        "sha256": "cfdef4f1621fc7a1244a892ed153741ff36031642dfbbb1018d2d1d4fccc8cbb"
+      },
+      {
+        "path": "js/select.min.js",
+        "size": 26769,
+        "sha256": "ec91cc2cc8c9c119268f6064af9c74c578daf5a1855fe300cb3fd72f1f2ab9d2"
+      },
+      {
+        "path": "js/sidebar.min.js",
+        "size": 36253,
+        "sha256": "f398a9a8c921c82e307185855dcb34aacb1534f284a6c291160c5006038b5903"
+      },
+      {
+        "path": "js/smartresize.min.js",
+        "size": 15183,
+        "sha256": "e5f3f35827a9c56256280e6f3a1cac5fffe65cb09507a88e7dcecee9f729e5f0"
+      },
+      {
+        "path": "js/smooth-bg-change.min.js",
+        "size": 28778,
+        "sha256": "e8a200591f4248b1a72a2a99b9e7f9152c2f3ab679fe3ea25fa57ce770f5a31e"
+      },
+      {
+        "path": "js/stats.min.js",
+        "size": 26331,
+        "sha256": "8562d855cfdaf03576d413e631d80002cf0633d4e1338f7e74e804054723b259"
+      },
+      {
+        "path": "js/sticky.min.js",
+        "size": 1571,
+        "sha256": "80f5c1ced092f8335614883196aa8d5fe1e15da9b557bd0becb7d1f5f1093bcd"
+      },
+      {
+        "path": "js/storybook-init.min.js",
+        "size": 87285,
+        "sha256": "ce32bd569932a9e038f79bbac7c799f345b166f8eb7f1d750f1e64fbc3b86fcb"
+      },
+      {
+        "path": "js/swiper.min.js",
+        "size": 48075,
+        "sha256": "d9e90e526fc2c00b45a44a142047a842a8023a7937d8232564907d2ade77696a"
+      },
+      {
+        "path": "js/tabs.min.js",
+        "size": 36077,
+        "sha256": "243cbc3dc8ea34ea69cadc646a21e55779a3ce030b72642a214de5458b46de93"
+      },
+      {
+        "path": "js/undp.min.js",
+        "size": 922,
+        "sha256": "7aa93fe61726ad8df3636be4722bc0f1da827e39a963c2084c087279d0a5756d"
+      },
+      {
+        "path": "js/viewport.min.js",
+        "size": 22681,
+        "sha256": "cadb358ad4480c26d2d1fe6f59a067bd803569870b82b61fc8b270db0d2c07f8"
+      }
+    ]
+  }
+}

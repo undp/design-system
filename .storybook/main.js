@@ -2,6 +2,7 @@
 import { fileURLToPath } from "node:url";
 import { dirname } from "node:path";
 import { createRequire } from "node:module";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const require = createRequire(import.meta.url);
@@ -30,6 +31,15 @@ const config = {
       icons: path.resolve(__dirname, '../stories/assets/icons')
     };
 
+    // Keep Storybook output readable by filtering Sass deprecation warnings.
+    config.ignoreWarnings = [
+      ...(config.ignoreWarnings || []),
+      warning => {
+        const message = warning && warning.message ? String(warning.message).toLowerCase() : '';
+        return message.includes('sass-loader') && message.includes('deprecation');
+      }
+    ];
+
     config.module.rules.push({
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', { loader: 'sass-loader', options: { implementation: 'sass-embedded', sourceMap: false, sassOptions: { quietDeps: true, silenceDeprecations: ['import', 'global-builtin'] } } }],
@@ -41,7 +51,7 @@ const config = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env', ['@babel/preset-react', { "runtime": "automatic" }]]
+          presets: ['@babel/preset-env', ['@babel/preset-react', { "runtime": "automatic" }], '@babel/preset-typescript']
         }
       }
     });
@@ -69,7 +79,17 @@ const config = {
 
   features: {
     actions: false
-  }
+  },
+
+  tags: {
+    // 👇 Define a custom tag named "deprecated"
+    deprecated: {
+      defaultFilterSelection: 'exclude', // Or 'include'
+    },
+    hidden: {
+      defaultFilterSelection: 'exclude', // Or 'include'
+    }
+  },
 };
 
 export default config;

@@ -11,6 +11,8 @@ export const Homepagehero = ({ title, content, button, variant, ...args }) => {
   // useEffect(() => {
   //   expandToSize(".homepage-hero-full");
   // }, []);
+  const validHeadingSizes = ["small", "medium", "large"];
+  const headingSizeClass = validHeadingSizes.includes(args.headingSize) ? args.headingSize : "";
   return (
     <div className="homepage-hero-full" data-undpds-component="expandToSize" data-selector=".homepage-hero-full">
       {variant === 'video'
@@ -22,7 +24,7 @@ export const Homepagehero = ({ title, content, button, variant, ...args }) => {
             <img src={BackgroundImg} alt={BackgroundImg} />
           </div>
         )}
-       <div className="grid-x homepage-hero-content">
+       <div className={`grid-x homepage-hero-content ${headingSizeClass}`.trim()}>
         <div className="cell large-7 medium-9 medium-offset-1">
           <Heading
             type="1"

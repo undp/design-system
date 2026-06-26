@@ -66,7 +66,7 @@ $colors: (
 
     div.stats-card {
       background-color: transparent;
-      color: var(--undpds-color-white);
+      color: var(--undpds-color-text-inverse);
       max-width: 100%;
       padding: 0 var(--undpds-spacing-06);
       width: 100%;
@@ -94,7 +94,7 @@ $colors: (
 
       h2 {
         color: var(--undpds-color-gray-700);
-        text-shadow: -1px -1px 0 var(--undpds-color-white), 1px -1px 0 var(--undpds-color-white), -1px 1px 0 var(--undpds-color-white), 1px 1px 0 var(--undpds-color-white);
+        text-shadow: -1px -1px 0 var(--undpds-color-text-inverse), 1px -1px 0 var(--undpds-color-text-inverse), -1px 1px 0 var(--undpds-color-text-inverse), 1px 1px 0 var(--undpds-color-text-inverse);
         font-size: 5.25rem;
 
         @include devicebreak(medium) {
@@ -113,9 +113,9 @@ $colors: (
           margin-bottom: var(--undpds-spacing-05);
         }
 
-        @supports (-webkit-text-stroke: 2px var(--undpds-color-white)) {
+        @supports (-webkit-text-stroke: 2px var(--undpds-color-text-inverse)) {
           text-shadow: none;
-          -webkit-text-stroke: 2px var(--undpds-color-white);
+          -webkit-text-stroke: 2px var(--undpds-color-text-inverse);
         }
       }
 

@@ -11,7 +11,7 @@
 
   &.show-medium {
     h6 {
-      border-bottom: 2px solid var(--undpds-color-black);
+      border-bottom: 2px solid var(--undpds-color-border-default);
 
       &:hover,
       &:focus,
@@ -43,14 +43,6 @@
       &:active {
         background-color: var(--undpds-color-gray-400);
       }
-
-      // @include devicebreak(large) {
-
-      //     &:hover {
-      //       // background-color: var(--undpds-color-gray-300);
-      //       background-color: var(--undpds-color-gray-400);
-      //     }
-      //   }
     }
   }
 
@@ -80,6 +72,7 @@
     }
 
     &>.active {
+      color: var(--undpds-color-text-inverse);
       border-bottom: none;
 
       button::after {
@@ -93,12 +86,10 @@
       }
 
       &>a {
-        background-color: var(--undpds-color-blue-600);
-        color: var(--undpds-color-white);
+        background-color: var(--undpds-color-brand);
 
         @include devicebreak(large) {
-          background-color: var(--undpds-color-blue-600);
-          color: var(--undpds-color-white);
+          background-color: var(--undpds-color-brand);
         }
       }
 
@@ -154,6 +145,7 @@
       padding: 0;
 
       li {
+        color: var(--undpds-color-text-default);
         a {
           @extend %img_none;
 
@@ -168,25 +160,6 @@
             padding-left: var(--undpds-spacing-09);
           }
         }
-
-        &:first-of-type a {
-          background-color: transparent;
-          color: var(--undpds-color-black);
-
-          &:hover,
-          &:focus,
-          &:active {
-            background-color: var(--undpds-color-gray-400);
-          }
-
-          // @include devicebreak(large) {
-          //   &:hover {
-          //     // background-color: var(--undpds-color-gray-300;
-          //     background-color: var(--undpds-color-gray-400;
-          //   }
-          // }
-        }
-
         &:last-of-type a {
           margin-bottom: 0;
         }

@@ -34,12 +34,19 @@ div.publication-card {
         }
       }
     }
+
+    .description {
+      background: var(--undpds-color-surface-hover);
+    }
+
   }
 
   .description {
     align-items: center;
-    background: var(--undpds-color-gray-100);
+    background: var(--undpds-color-surface-default);
     padding: var(--undpds-spacing-06);
+
+
 
     >div {
       align-items: center;

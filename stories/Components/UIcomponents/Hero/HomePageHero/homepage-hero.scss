@@ -53,6 +53,22 @@
   }
 
   &-content {
+    h1 {
+      font-size: var(--undpds-font-size-display-medium);
+    }
+
+    &.small h1 {
+      font-size: var(--undpds-font-size-display-small);
+    }
+
+    &.medium h1 {
+      font-size: var(--undpds-font-size-display-medium);
+    }
+
+    &.large h1 {
+      font-size: var(--undpds-font-size-display-large);
+    }
+
     @include breakpoints.devicebreak(small) {
       padding: 0 var(--undpds-spacing-06);
     }
@@ -85,11 +101,24 @@
 
     &-content {
       h1 {
+        font-size: var(--undpds-font-size-display-medium);
         margin-bottom: var(--undpds-spacing-05);
 
         @include breakpoints.devicebreak(medium) {
           margin-bottom: var(--undpds-spacing-08);
         }
+      }
+
+      &.small h1 {
+        font-size: var(--undpds-font-size-display-small);
+      }
+
+      &.medium h1 {
+        font-size: var(--undpds-font-size-display-medium);
+      }
+
+      &.large h1 {
+        font-size: var(--undpds-font-size-display-large);
       }
 
       h4 {
@@ -142,12 +171,25 @@
     }
 
     h1 {
+      font-size: var(--undpds-font-size-display-medium);
       margin-bottom: var(--undpds-spacing-05);
 
       @include breakpoints.devicebreak(medium) {
         margin-bottom: var(--undpds-spacing-11);
         padding-top: 4.688rem;
       }
+    }
+
+    &.small h1 {
+      font-size: var(--undpds-font-size-display-small);
+    }
+
+    &.medium h1 {
+      font-size: var(--undpds-font-size-display-medium);
+    }
+
+    &.large h1 {
+      font-size: var(--undpds-font-size-display-large);
     }
 
     h3 {

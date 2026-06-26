@@ -1,18 +1,27 @@
 /* Stats JS start custom */
 export function statsHover() {
-  if (jQuery('.stats-grid .stats-panel').length > 0) {
-    var $winHeight = jQuery(window).height() - 378;
-    var $newWinHeight = jQuery(window).height() + 378;
-    jQuery(window).scroll(() => {
-      jQuery('.stats-grid .stats-panel').each(function () {
-        var $topSpace = (jQuery(this).offset().top - jQuery(window).scrollTop()) * 3;
-        if ($topSpace > $winHeight && ($topSpace + jQuery(this).height()) < $newWinHeight) {
-          jQuery(this).addClass('active');
+  const statsPanels = Array.from(document.querySelectorAll('.stats-grid .stats-panel'));
+  if (statsPanels.length > 0) {
+    const winHeight = window.innerHeight - 378;
+    const newWinHeight = window.innerHeight + 378;
+
+    const updateStatsState = () => {
+      const currentScrollTop = window.scrollY;
+
+      statsPanels.forEach((panelElement) => {
+        const panelTop = panelElement.getBoundingClientRect().top + currentScrollTop;
+        const topSpace = (panelTop - currentScrollTop) * 3;
+
+        if (topSpace > winHeight && (topSpace + panelElement.offsetHeight) < newWinHeight) {
+          panelElement.classList.add('active');
         } else {
-          jQuery(this).removeClass('active');
+          panelElement.classList.remove('active');
         }
       });
-    });
+    };
+
+    window.addEventListener('scroll', updateStatsState);
+    updateStatsState();
   }
 }
 /* Stats JS end custom */

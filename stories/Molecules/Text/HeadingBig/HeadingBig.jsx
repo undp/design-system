@@ -31,6 +31,7 @@ export function HeadingBig({
           listData
           && <List data={listData} type="ul" />
         }
+        <p><a href="#">READ MORE</a></p>
       </div>
     </div>
   );

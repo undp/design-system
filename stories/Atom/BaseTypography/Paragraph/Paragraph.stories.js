@@ -36,7 +36,7 @@ export default {
 
 <h4>CSS:</h4>
 <ul>
-    <li>Add the base layout style from <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" target="_blank">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
+    <li>Add the base layout style from <a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css" target="_blank" rel="noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css</a></li>
 </ul>
 
 <h4>JS:</h4>

@@ -7,9 +7,9 @@
 
   @include x-appearance(none);
 
-  background: var(--undpds-color-white) url(~icons/chevron-down.svg) no-repeat right 22px center;
+  background: var(--undpds-color-background-default) url(~icons/chevron-down.svg) no-repeat right 22px center;
   border-radius: 0;
-  color: var(--undpds-color-black);
+  color: var(--undpds-color-text-default);
   display: block;
 }
 

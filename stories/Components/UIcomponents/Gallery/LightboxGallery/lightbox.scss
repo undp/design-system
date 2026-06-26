@@ -215,7 +215,7 @@
 
                 @include devicebreak(medium) {
                   height: auto;
-                  margin-top: $spacing-06;
+                  margin-top: var(--undpds-spacing-06);
                 }
 
                 @include devicebreak(xlarge) {
@@ -292,7 +292,7 @@
     }
 
     .gslide-title {
-      color: $color-white;
+      color: var(--undpds-color-text-inverse);
       font-size: 1em;
     }
 

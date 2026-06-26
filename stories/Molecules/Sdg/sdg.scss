@@ -8,10 +8,10 @@
 
     align-items: center;
     display: block;
-    font-family: var(--undpds-font-family-sohnebreit);
+    font-family: var(--undpds-font-family-secondary);
     font-weight: 700;
     min-height: 210px;
-    padding: 2.188rem $spacing-06 $spacing-05;
+    padding: 2.188rem var(--undpds-spacing-06) var(--undpds-spacing-05);
     position: relative;
 
     @include devicebreak(medium) {
@@ -22,7 +22,7 @@
     }
 
     strong {
-      color: $color-white;
+      color: var(--undpds-color-text-inverse);
       display: inline-block;
       font-size: 2.938rem;
 
@@ -33,8 +33,8 @@
     }
 
     h4 {
-      color: $color-white;
-      font-size: $font-size-25;
+      color: var(--undpds-color-text-inverse);
+      font-size: var(--undpds-font-size-25);
       letter-spacing: 0.078rem;
       margin: 1.375rem 0 0;
       text-transform: uppercase;
@@ -55,7 +55,7 @@
       }
 
       h4 {
-        color: $color-black;
+        color: var(--undpds-color-text-default);
       }
 
       img {
@@ -71,211 +71,211 @@
     }
 
     &.sdg-color-1 {
-      background-color: $sdg-red;
+      background-color: var(--undpds-sdg-red);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
           rgba(228, 37, 58, 0) 10%,
-          $sdg-red);
+          var(--undpds-sdg-red));
       }
     }
 
     &.sdg-color-2 {
-      background-color: $sdg-mustard;
+      background-color: var(--undpds-sdg-mustard);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(222, 168, 60, 0),
           rgba(222, 168, 60, 0) 80%,
-          $sdg-mustard);
+          var(--undpds-sdg-mustard));
       }
     }
 
     &.sdg-color-3 {
-      background-color: $sdg-kelly-green;
+      background-color: var(--undpds-sdg-kelly-green);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(78, 159, 56, 0),
           rgba(78, 159, 56, 0) 80%,
-          $sdg-kelly-green);
+          var(--undpds-sdg-kelly-green));
       }
     }
 
     &.sdg-color-4 {
-      background-color: $sdg-dark-red;
+      background-color: var(--undpds-sdg-dark-red);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(197, 26, 45, 0),
           rgba(197, 26, 45, 0) 80%,
-          $sdg-dark-red);
+          var(--undpds-sdg-dark-red));
       }
     }
 
     &.sdg-color-5 {
-      background-color: $sdg-red-orange;
+      background-color: var(--undpds-sdg-red-orange);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(255, 60, 35, 0),
           rgba(255, 60, 35, 0) 80%,
-          $sdg-red-orange);
+          var(--undpds-sdg-red-orange));
       }
     }
 
     &.sdg-color-6 {
-      background-color: $sdg-bright-blue;
+      background-color: var(--undpds-sdg-bright-blue);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(39, 189, 227, 0),
           rgba(39, 189, 227, 0) 80%,
-          $sdg-bright-blue);
+          var(--undpds-sdg-bright-blue));
       }
     }
 
     &.sdg-color-7 {
-      background-color: $sdg-yellow;
+      background-color: var(--undpds-sdg-yellow);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(253, 195, 10, 0),
           rgba(253, 195, 10, 0) 80%,
-          $sdg-yellow);
+          var(--undpds-sdg-yellow));
       }
     }
 
     &.sdg-color-8 {
-      background-color: $sdg-burgundy-red;
+      background-color: var(--undpds-sdg-burgundy-red);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(162, 24, 67, 0),
           rgba(162, 24, 67, 0) 80%,
-          $sdg-burgundy-red);
+          var(--undpds-sdg-burgundy-red));
       }
     }
 
     &.sdg-color-9 {
-      background-color: $sdg-orange;
+      background-color: var(--undpds-sdg-orange);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(254, 105, 36, 0),
           rgba(254, 105, 36, 0) 80%,
-          $sdg-orange);
+          var(--undpds-sdg-orange));
       }
     }
 
     &.sdg-color-10 {
-      background-color: $sdg-magenta;
+      background-color: var(--undpds-sdg-magenta);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(222, 21, 104, 0),
           rgba(222, 21, 104, 0) 80%,
-          $sdg-magenta);
+          var(--undpds-sdg-magenta));
       }
     }
 
     &.sdg-color-11 {
-      background-color: $sdg-golden-yellow;
+      background-color: var(--undpds-sdg-golden-yellow);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(254, 156, 37, 0),
           rgba(254, 156, 37, 0) 80%,
-          $sdg-golden-yellow);
+          var(--undpds-sdg-golden-yellow));
       }
     }
 
     &.sdg-color-12 {
-      background-color: $sdg-dark-mustard;
+      background-color: var(--undpds-sdg-dark-mustard);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(191, 139, 46, 0),
           rgba(191, 139, 46, 0) 80%,
-          $sdg-dark-mustard);
+          var(--undpds-sdg-dark-mustard));
       }
     }
 
     &.sdg-color-13 {
-      background-color: $sdg-dark-green;
+      background-color: var(--undpds-sdg-dark-green);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(62, 128, 69, 0),
           rgba(62, 128, 69, 0) 80%,
-          $sdg-dark-green);
+          var(--undpds-sdg-dark-green));
       }
     }
 
     &.sdg-color-14 {
-      background-color: $sdg-blue;
+      background-color: var(--undpds-sdg-blue);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(12, 152, 218, 0),
           rgba(12, 152, 218, 0) 80%,
-          $sdg-blue);
+          var(--undpds-sdg-blue));
       }
     }
 
     &.sdg-color-15 {
-      background-color: $sdg-lime-green;
+      background-color: var(--undpds-sdg-lime-green);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(88, 193, 44, 0),
           rgba(88, 193, 44, 0) 80%,
-          $sdg-lime-green);
+          var(--undpds-sdg-lime-green));
       }
     }
 
     &.sdg-color-16 {
-      background-color: $sdg-royal-blue;
+      background-color: var(--undpds-sdg-royal-blue);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(3, 104, 157, 0),
           rgba(3, 104, 157, 0) 80%,
-          $sdg-royal-blue);
+          var(--undpds-sdg-royal-blue));
       }
     }
 
     &.sdg-color-17 {
-      background-color: $sdg-navy-blue;
+      background-color: var(--undpds-sdg-navy-blue);
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(26, 73, 107, 0),
           rgba(26, 73, 107, 0) 80%,
-          $sdg-navy-blue);
+          var(--undpds-sdg-navy-blue));
       }
     }
 
     &.color-white {
-      background-color: $color-white;
+      background-color: var(--undpds-color-background-default);
     }
 
     &:hover {
@@ -365,7 +365,7 @@
 #{$cyrillic} {
   .sdg-card {
     h4 {
-      font-family: var(--undpds-font-family-proximanova);
+      font-family: var(--undpds-font-family-primary);
     }
   }
 }

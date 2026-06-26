@@ -30,10 +30,15 @@
   padding-left: 0;
 
   li {
+    color: var(--undpds-color-text-inverse);
     list-style: none;
     margin-bottom: var(--undpds-spacing-04);
     padding: 0;
     text-align: left;
+
+    &:hover {
+      color: var(--undpds-color-blue-100);
+    }
 
     @include breakpoints.devicebreak(medium) {
       text-align: right;
@@ -45,8 +50,12 @@
   }
 
   &.inverted {
-    a {
-      @extend %footerlinkinvert;
+    li {
+      color: var(--undpds-color-text-default);
+
+      &:hover {
+        color: var(--undpds-color-gray-600);
+      }
     }
   }
 }
@@ -93,9 +102,14 @@
   }
 
   li {
+    color: var(--undpds-color-text-inverse);
     list-style: none;
     margin-bottom: var(--undpds-spacing-04);
     padding-left: 0;
+
+    &:hover {
+      color: var(--undpds-color-blue-100);
+    }
 
     @include breakpoints.devicebreak(medium) {
       display: inline-flex;
@@ -109,8 +123,12 @@
   }
 
   &.inverted {
-    a {
-      @extend %footerlinkinvert;
+    li {
+      color: var(--undpds-color-text-default);
+
+      &:hover {
+        color: var(--undpds-color-gray-600);
+      }
     }
   }
 }
@@ -244,7 +262,7 @@
 
     @include breakpoints.devicebreak(small) {
       &::after {
-        border-bottom: 2px solid var(--undpds-color-gray-400);
+        border-bottom: 2px solid var(--undpds-color-border-subtle);
         content: "";
         position: absolute;
         width: calc(100% - 2rem);
@@ -254,7 +272,7 @@
 
     &.inverted {
       .footer-heading {
-        color: var(--undpds-color-black);
+        color: var(--undpds-color-text-default);
 
         &::before {
           background: url(~icons/chevron-down.svg) no-repeat center center;
@@ -262,8 +280,12 @@
       }
 
       .footer-panel {
-        a {
-          @extend %footerlinkinvert;
+        color: var(--undpds-color-text-default);
+
+        >* {
+          &:hover {
+            color: var(--undpds-color-gray-600);
+          }
         }
       }
     }
@@ -272,7 +294,7 @@
   &-heading {
     background: transparent;
     border: 0;
-    color: var(--undpds-color-white);
+    color: var(--undpds-color-text-inverse);
     display: block;
     font-size: var(--undpds-font-size-16);
     font-weight: 700;
@@ -313,6 +335,7 @@
   }
 
   &-panel {
+    color: var(--undpds-color-text-inverse);
     display: none;
     padding: 0 var(--undpds-spacing-05) var(--undpds-spacing-03);
 
@@ -326,6 +349,12 @@
 
       display: block;
       margin-bottom: var(--undpds-spacing-05);
+    }
+
+    >* {
+      &:hover {
+        color: var(--undpds-color-blue-100);
+      }
     }
   }
 }
@@ -361,13 +390,13 @@
   }
 
   h5 {
-    color: var(--undpds-color-white);
+    color: var(--undpds-color-text-inverse);
     margin: 0 var(--undpds-spacing-05);
   }
 
   &.inverted {
     h5 {
-      color: var(--undpds-color-black);
+      color: var(--undpds-color-text-default);
     }
   }
 }
@@ -377,8 +406,8 @@
 /* footer start */
 .footer {
   background-color: var(--undpds-color-gray-100);
-  background-color: var(--undpds-color-blue-600);
-  color: var(--undpds-color-white);
+  background-color: var(--undpds-color-brand);
+  color: var(--undpds-color-text-inverse);
   padding: var(--undpds-spacing-09) var(--undpds-spacing-04)
     var(--undpds-spacing-08);
 
@@ -470,7 +499,7 @@
 
   &.inverted {
     background-color: var(--undpds-color-gray-100);
-    color: var(--undpds-color-black);
+    color: var(--undpds-color-text-default);
 
     .footer {
       &-head,

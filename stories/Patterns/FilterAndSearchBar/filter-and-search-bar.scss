@@ -20,7 +20,7 @@
 
     &.close {
       background-color: var(--undpds-color-gray-300);
-      color: var(--undpds-color-black);
+      color: var(--undpds-color-text-default);
       font-size: 0;
 
       &:hover {
@@ -84,7 +84,7 @@
   .active-filter {
     color: var(--undpds-color-gray-600);
     display: none;
-    font-family: var(--undpds-font-family-proximanova);
+    font-family: var(--undpds-font-family-primary);
     font-size: var(--undpds-font-size-16);
     font-weight: 600;
     padding-top: var(--undpds-spacing-05);

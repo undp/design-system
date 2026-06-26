@@ -13,12 +13,12 @@
 
   &-box {
     @include devicebreak(large) {
-      box-shadow: 0 1px 0 1px $color-white;
-      flex: 0 0 calc(25% - #{$spacing-06});
-      margin-left: $spacing-04;
-      margin-right: $spacing-04;
-      margin-top: $spacing-12;
-      max-width: calc(25% - #{$spacing-06});
+      box-shadow: 0 1px 0 1px var(--undpds-color-border-inverse);
+      flex: 0 0 calc(25% - var(--undpds-spacing-06));
+      margin-left: var(--undpds-spacing-04);
+      margin-right: var(--undpds-spacing-04);
+      margin-top: var(--undpds-spacing-12);
+      max-width: calc(25% - var(--undpds-spacing-06));
 
       &.swiper-slide {
         a {
@@ -30,7 +30,7 @@
 
         &:hover {
           a {
-            @include transform(translateY(-#{$spacing-50}));
+            @include transform(translateY(calc(-1 * var(--undpds-spacing-50))));
 
             overflow: visible;
           }
@@ -43,7 +43,7 @@
         .pagehero {
           &-cards {
             &__caption {
-              transform: translateY(calc(-100% + #{$spacing-44}));
+              transform: translateY(calc(-100% + var(--undpds-spacing-44)));
               p {
                 opacity: 1;
               }
@@ -60,8 +60,8 @@
           @include transition(all 0.4s);
           @include transitiondelay(0.2s);
 
-          left: $spacing-05;
-          width: $spacing-11;
+          left: var(--undpds-spacing-05);
+          width: var(--undpds-spacing-11);
 
           @include devicebreak(large) {
             width: 30%;
@@ -93,11 +93,11 @@
     @include transform(translateY(0));
     @include transition(all 0.3s);
 
-    background: $color-white;
-    box-shadow: 0 1px 0 1px $color-white;
+    background: var(--undpds-color-background-default);
+    box-shadow: 0 1px 0 1px var(--undpds-color-text-inverse);
     box-sizing: border-box;
     left: 0;
-    padding-top: $spacing-06;
+    padding-top: var(--undpds-spacing-06);
     position: absolute;
     width: 100%;
     z-index: 2;
@@ -112,7 +112,7 @@
 
     .cta__link {
       font-weight: 700;
-      margin-top: $spacing-07;
+      margin-top: var(--undpds-spacing-07);
     }
   }
 
@@ -123,7 +123,7 @@
         @include transitiondelay(0.3s);
 
         // bottom: 0;
-        box-shadow: 0 1px 0 1px $color-white;
+        box-shadow: 0 1px 0 1px var(--undpds-color-text-inverse);
         box-sizing: border-box;
         opacity: 1;
 
@@ -196,7 +196,7 @@
       .cta__link {
         i {
           left: unset;
-          right: $spacing-05;
+          right: var(--undpds-spacing-05);
         }
       }
     }
