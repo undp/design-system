@@ -7,9 +7,9 @@ These properties are automatically generated from Figma design tokens.
 
 ---
 
-**Total Properties:** 217
+**Total Properties:** 223
 
-## Color (62)
+## Color (63)
 
 | Property | Value | Property | Value |
 |----------|-------|----------|-------|
@@ -39,11 +39,12 @@ These properties are automatically generated from Figma design tokens.
 | `--undpds-color-green-600` | `#59ba47` | `--undpds-color-shuttle-gray` | `#55606f` |
 | `--undpds-color-red-600` | `#d12800` | `--undpds-color-silvery-moonlight` | `#ced0d3` |
 | `--undpds-color-yellow-600` | `#fbc412` | `--undpds-color-surface-default` | `#f7f7f7` |
-| `--undpds-color-blue-700` | `#1f5a95` | `--undpds-color-surface-hover` | `#edeff0` |
-| `--undpds-color-gray-700` | `#232e3d` | `--undpds-color-text-default` | `#000` |
-| `--undpds-color-accent` | `#ffeb00` | `--undpds-color-text-inverse` | `#fff` |
-| `--undpds-color-action-primary` | `#d12800` | `--undpds-color-white` | `#fff` |
-| `--undpds-color-action-primary-default` | `#d12800` | `--undpds-color-yellow` | `#ffeb00` |
+| `--undpds-color-gray-650` | `#333f4f` | `--undpds-color-surface-hover` | `#edeff0` |
+| `--undpds-color-blue-700` | `#1f5a95` | `--undpds-color-text-default` | `#000` |
+| `--undpds-color-gray-700` | `#232e3d` | `--undpds-color-text-inverse` | `#fff` |
+| `--undpds-color-accent` | `#ffeb00` | `--undpds-color-white` | `#fff` |
+| `--undpds-color-action-primary` | `#d12800` | `--undpds-color-yellow` | `#ffeb00` |
+| `--undpds-color-action-primary-default` | `#d12800` |
 
 ## Spacing (42)
 
@@ -76,20 +77,21 @@ These properties are automatically generated from Figma design tokens.
 | `--undpds-font-family-notosans-japanese` | `Noto Sans JP,sans-serif` | `--undpds-font-family-sohnebreit` | `SohneBreit,ProximaNova,sans-serif` |
 | `--undpds-font-family-notosans-khmer` | `Noto Sans Khmer,sans-serif` | `--undpds-font-family-unbangla` | `UNBangla,sans-serif` |
 
-## Font size (29)
+## Font size (32)
 
 | Property | Value | Property | Value | Property | Value |
 |----------|-------|----------|-------|----------|-------|
-| `--undpds-font-size-12` | `0.75rem` | `--undpds-font-size-40` | `2.5rem` | `--undpds-font-size-display-large` | `3.5rem` |
-| `--undpds-font-size-14` | `0.875rem` | `--undpds-font-size-48` | `3rem` | `--undpds-font-size-display-xlarge` | `5rem` |
-| `--undpds-font-size-16` | `1rem` | `--undpds-font-size-56` | `3.5rem` | `--undpds-font-size-display-xxlarge` | `6.25rem` |
-| `--undpds-font-size-20` | `1.25rem` | `--undpds-font-size-64` | `4rem` | `--undpds-font-size-heading-large` | `3rem` |
-| `--undpds-font-size-24` | `1.5rem` | `--undpds-font-size-72` | `4.5rem` | `--undpds-font-size-heading-medium` | `2rem` |
-| `--undpds-font-size-25` | `1.5rem` | `--undpds-font-size-80` | `5rem` | `--undpds-font-size-heading-small` | `1.5rem` |
-| `--undpds-font-size-26` | `1.5rem` | `--undpds-font-size-96` | `6rem` | `--undpds-font-size-heading-xlarge` | `4rem` |
-| `--undpds-font-size-30` | `1.875rem` | `--undpds-font-size-100` | `6.25rem` | `--undpds-font-size-heading-xsmall` | `1rem` |
-| `--undpds-font-size-32` | `2rem` | `--undpds-font-size-body-default` | `1.25rem` | `--undpds-font-size-heading-xxlarge` | `5rem` |
-| `--undpds-font-size-36` | `2.25rem` | `--undpds-font-size-body-small` | `1rem` |
+| `--undpds-font-size-12` | `0.75rem` | `--undpds-font-size-48` | `3rem` | `--undpds-font-size-display-medium` | `var(--undpds-font-size-40)` |
+| `--undpds-font-size-14` | `0.875rem` | `--undpds-font-size-56` | `3.5rem` | `--undpds-font-size-display-small` | `var(--undpds-font-size-32)` |
+| `--undpds-font-size-16` | `1rem` | `--undpds-font-size-64` | `4rem` | `--undpds-font-size-display-xlarge` | `5rem` |
+| `--undpds-font-size-20` | `1.25rem` | `--undpds-font-size-72` | `4.5rem` | `--undpds-font-size-display-xxlarge` | `6.25rem` |
+| `--undpds-font-size-24` | `1.5rem` | `--undpds-font-size-80` | `5rem` | `--undpds-font-size-heading-large` | `3rem` |
+| `--undpds-font-size-25` | `1.5rem` | `--undpds-font-size-96` | `6rem` | `--undpds-font-size-heading-medium` | `2rem` |
+| `--undpds-font-size-26` | `1.5rem` | `--undpds-font-size-100` | `6.25rem` | `--undpds-font-size-heading-small` | `1.5rem` |
+| `--undpds-font-size-30` | `1.875rem` | `--undpds-font-size-body-default` | `1.25rem` | `--undpds-font-size-heading-xlarge` | `4rem` |
+| `--undpds-font-size-32` | `2rem` | `--undpds-font-size-body-large` | `var(--undpds-font-size-20)` | `--undpds-font-size-heading-xsmall` | `1rem` |
+| `--undpds-font-size-36` | `2.25rem` | `--undpds-font-size-body-small` | `1rem` | `--undpds-font-size-heading-xxlarge` | `5rem` |
+| `--undpds-font-size-40` | `2.5rem` | `--undpds-font-size-display-large` | `3.5rem` |
 
 ## Font weight (10)
 
@@ -122,29 +124,30 @@ These properties are automatically generated from Figma design tokens.
 
 - `--undpds-border-default`: `2px`
 
-## Other (51)
+## Other (53)
 
 | Property | Value | Property | Value | Property | Value |
 |----------|-------|----------|-------|----------|-------|
-| `--undpds-paragraphspacing-12` | `12px` | `--undpds-sdg-bright-blue` | `#26bde2` | `--undpds-sdg-hover-navy-blue` | `#a2c2d8` |
-| `--undpds-paragraphspacing-16` | `16px` | `--undpds-sdg-burgundy-red` | `#a21942` | `--undpds-sdg-hover-orange` | `#d2aa98` |
-| `--undpds-width-150` | `9.375rem` | `--undpds-sdg-dark-green` | `#3f7e44` | `--undpds-sdg-hover-red` | `#dc9099` |
-| `--undpds-width-180` | `11.25rem` | `--undpds-sdg-dark-mustard` | `#bf8b2e` | `--undpds-sdg-hover-red-orange` | `#ce9890` |
-| `--undpds-width-600` | `37.5rem` | `--undpds-sdg-dark-red` | `#c5192d` | `--undpds-sdg-hover-royal-blue` | `#748f9d` |
-| `--undpds-width-705` | `44.0625rem` | `--undpds-sdg-golden-yellow` | `#fd9d24` | `--undpds-sdg-hover-yellow` | `#d3c79d` |
-| `--undpds-width-840` | `52.5rem` | `--undpds-sdg-hover-blue` | `#a1c6d7` | `--undpds-sdg-kelly-green` | `#4c9f38` |
-| `--undpds-width-900` | `56.25rem` | `--undpds-sdg-hover-bright-blue` | `#9ac8d3` | `--undpds-sdg-lime-green` | `#56c02b` |
-| `--undpds-width-1096` | `68.5rem` | `--undpds-sdg-hover-burgundy-red` | `#ce94a6` | `--undpds-sdg-magenta` | `#dd1367` |
-| `--undpds-width-1440` | `90rem` | `--undpds-sdg-hover-dark-green` | `#a2d7a6` | `--undpds-sdg-mustard` | `#dda63a` |
-| `--undpds-author-image-radius` | `50%` | `--undpds-sdg-hover-dark-mustard` | `#ceba98` | `--undpds-sdg-navy-blue` | `#19486a` |
-| `--undpds-blue-gradient` | `#60d4f2 30%,rgba(101,204,244,0) 110%` | `--undpds-sdg-hover-dark-red` | `#ce8f97` | `--undpds-sdg-orange` | `#fd6925` |
-| `--undpds-green-gradient` | `#6de354 30%,transparent 110%` | `--undpds-sdg-hover-golden-yellow` | `#c7b094` | `--undpds-sdg-red` | `#e5243b` |
-| `--undpds-header-height-medium` | `75px` | `--undpds-sdg-hover-kelly-green` | `#9fd092` | `--undpds-sdg-red-orange` | `#ff3a21` |
-| `--undpds-header-height-xlarge` | `115px` | `--undpds-sdg-hover-lime-green` | `#abce9e` | `--undpds-sdg-royal-blue` | `#00689d` |
-| `--undpds-red-gradient` | `#ee402d 30%,rgba(240,49,49,0) 110%` | `--undpds-sdg-hover-magenta` | `#c994aa` | `--undpds-sdg-yellow` | `#fcc30b` |
-| `--undpds-sdg-blue` | `#0a97d9` | `--undpds-sdg-hover-mustard` | `#d3bb8a` | `--undpds-yellow-gradient` | `#ffeb00 30%,rgba(255,235,0,0) 110%` |
+| `--undpds-paragraphspacing-12` | `12px` | `--undpds-sdg-blue` | `#0a97d9` | `--undpds-sdg-hover-navy-blue` | `#a2c2d8` |
+| `--undpds-paragraphspacing-16` | `16px` | `--undpds-sdg-bright-blue` | `#26bde2` | `--undpds-sdg-hover-orange` | `#d2aa98` |
+| `--undpds-width-150` | `9.375rem` | `--undpds-sdg-burgundy-red` | `#a21942` | `--undpds-sdg-hover-red` | `#dc9099` |
+| `--undpds-width-180` | `11.25rem` | `--undpds-sdg-dark-green` | `#3f7e44` | `--undpds-sdg-hover-red-orange` | `#ce9890` |
+| `--undpds-width-600` | `37.5rem` | `--undpds-sdg-dark-mustard` | `#bf8b2e` | `--undpds-sdg-hover-royal-blue` | `#748f9d` |
+| `--undpds-width-705` | `44.0625rem` | `--undpds-sdg-dark-red` | `#c5192d` | `--undpds-sdg-hover-yellow` | `#d3c79d` |
+| `--undpds-width-840` | `52.5rem` | `--undpds-sdg-golden-yellow` | `#fd9d24` | `--undpds-sdg-kelly-green` | `#4c9f38` |
+| `--undpds-width-900` | `56.25rem` | `--undpds-sdg-hover-blue` | `#a1c6d7` | `--undpds-sdg-lime-green` | `#56c02b` |
+| `--undpds-width-1096` | `68.5rem` | `--undpds-sdg-hover-bright-blue` | `#9ac8d3` | `--undpds-sdg-magenta` | `#dd1367` |
+| `--undpds-width-1440` | `90rem` | `--undpds-sdg-hover-burgundy-red` | `#ce94a6` | `--undpds-sdg-mustard` | `#dda63a` |
+| `--undpds-author-image-radius` | `50%` | `--undpds-sdg-hover-dark-green` | `#a2d7a6` | `--undpds-sdg-navy-blue` | `#19486a` |
+| `--undpds-blue-gradient` | `#60d4f2 30%,rgba(101,204,244,0) 110%` | `--undpds-sdg-hover-dark-mustard` | `#ceba98` | `--undpds-sdg-orange` | `#fd6925` |
+| `--undpds-green-gradient` | `#6de354 30%,transparent 110%` | `--undpds-sdg-hover-dark-red` | `#ce8f97` | `--undpds-sdg-red` | `#e5243b` |
+| `--undpds-header-height-medium` | `75px` | `--undpds-sdg-hover-golden-yellow` | `#c7b094` | `--undpds-sdg-red-orange` | `#ff3a21` |
+| `--undpds-header-height-xlarge` | `115px` | `--undpds-sdg-hover-kelly-green` | `#9fd092` | `--undpds-sdg-royal-blue` | `#00689d` |
+| `--undpds-paragraphspacing-body` | `var(--undpds-paragraphspacing-12)` | `--undpds-sdg-hover-lime-green` | `#abce9e` | `--undpds-sdg-yellow` | `#fcc30b` |
+| `--undpds-paragraphspacing-heading` | `var(--undpds-paragraphspacing-16)` | `--undpds-sdg-hover-magenta` | `#c994aa` | `--undpds-yellow-gradient` | `#ffeb00 30%,rgba(255,235,0,0) 110%` |
+| `--undpds-red-gradient` | `#ee402d 30%,rgba(240,49,49,0) 110%` | `--undpds-sdg-hover-mustard` | `#d3bb8a` |
 
 ---
 
 *This file is automatically generated by `scripts/generate-css-custom-properties-list.js`*
-*Last updated: 2026-03-12*
+*Last updated: 2026-06-26*

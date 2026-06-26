@@ -1,23 +1,23 @@
 {
   "version": "2.0.0",
-  "generatedAt": "2026-05-26T14:59:16.205Z",
+  "generatedAt": "2026-06-26T20:44:52.521Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.0/",
   "assets": {
     "css": [
       {
         "path": "css/base-minimal-no-grid.min.css",
-        "size": 90116,
-        "sha256": "a78c8c50ad9df2a20e0d850b8e4cdfb190c250f14a3cd9a191f9a39deb4a8f1d"
+        "size": 90148,
+        "sha256": "25a4c6fece20236dddb57fa9fb39870d0673f4eb0a2b8314ec4e87b54d716496"
       },
       {
         "path": "css/base-minimal.min.css",
-        "size": 152299,
-        "sha256": "63b4c139a98f3a0f68d91edaaa363a310199a249991ee421bfdbf95eb348dfcb"
+        "size": 152331,
+        "sha256": "6d54e7625ee3d4e8c19601637c32f8a92ccd73f3bfccda357f35f13583fc378b"
       },
       {
         "path": "css/ckeditor5.min.css",
-        "size": 186170,
-        "sha256": "80a398e55a11ef4efa193e39145acf1076ce490be78be1fbee53b00ded7871cd"
+        "size": 186202,
+        "sha256": "2bd01301e4dcc74645a775159aa8d0b82ddb9a038ac6ebd89dd3166bbdfc1de4"
       },
       {
         "path": "css/components.min.css",
@@ -538,8 +538,8 @@
       },
       {
         "path": "js/all.min.js",
-        "size": 151118,
-        "sha256": "a73ec9da6f90563c00fe59c8abc55840524572dfc0d6da6371bf403e89005b57"
+        "size": 151082,
+        "sha256": "55555f235d1df41a5e6ba98445e33df4ca436f418be254ca4e29e1fe9fe5211c"
       },
       {
         "path": "js/animation.min.js",
@@ -678,8 +678,8 @@
       },
       {
         "path": "js/swiper.min.js",
-        "size": 48075,
-        "sha256": "d9e90e526fc2c00b45a44a142047a842a8023a7937d8232564907d2ade77696a"
+        "size": 48039,
+        "sha256": "037007a2fe057ac8525973298d754edab4c2361ccd0686182626c31cea58cdce"
       },
       {
         "path": "js/tabs.min.js",
