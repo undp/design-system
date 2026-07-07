@@ -1,6 +1,6 @@
 {
   "name": "@undp/design-system",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "UNDP Design System",
   "homepage": "https://design.undp.org",
   "main": "index.js",
@@ -70,7 +70,7 @@
     "babel-plugin-polyfill-corejs3": "^0.14.2",
     "babel-plugin-react-transform": "^3.0.0",
     "babel-preset-env": "^1.7.0",
-    "chromatic": "^16.10.1",
+    "chromatic": "^18.0.1",
     "copy-webpack-plugin": "^14.0.0",
     "core-js": "^3.49",
     "css-loader": "^7.1.4",
@@ -103,7 +103,7 @@
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.99.0",
     "sass-embedded": "^1.99.0",
-    "sass-loader": "^16.0.8",
+    "sass-loader": "^17.0.0",
     "storybook": "^10.4.6",
     "style-loader": "^4.0.0",
     "stylelint": "^17.11.1",
@@ -125,7 +125,7 @@
     "fitty": "^2.4.2",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "swiper": "^12.1.4"
+    "swiper": "^14.0.2"
   },
   "repository": {
     "type": "git",
