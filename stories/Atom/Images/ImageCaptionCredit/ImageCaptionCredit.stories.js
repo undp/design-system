@@ -142,6 +142,7 @@ const Template = (args, { globals: { locale } }) => {
 // };
 
 export const ImageCaptionCredit = Template.bind({});
+ImageCaptionCredit.storyName = "Image with credit and caption";
 ImageCaptionCredit.args = {
   size: 'wide',
   caption: "true",
