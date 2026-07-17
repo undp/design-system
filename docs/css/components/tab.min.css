@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 2.0.1
+ * UNDP Design System 2.0.2
  *
  */
 .tabs>ul li a{background-image:none}.tabs>ul{background-color:var(--undpds-color-background-default);border-bottom:2px solid var(--undpds-color-gray-300);list-style:none;padding-left:0}@media(min-width:48em){.tabs>ul{padding-left:var(--undpds-spacing-09)}}.tabs>ul li{border-bottom:2px solid transparent;cursor:pointer;display:inline-block;font-weight:700;letter-spacing:.03em;margin-bottom:-.125rem;margin-right:var(--undpds-spacing-06);margin-top:.75rem;padding-bottom:var(--undpds-spacing-03);padding-left:0;text-transform:uppercase}.tabs>ul li.is-active{border-bottom:2px solid var(--undpds-color-dark-red)}@media(min-width:64em){.tabs>ul li:hover{border-bottom:2px solid var(--undpds-color-gray-500)}}.tabs>ul li a{font-size:var(--undpds-font-size-16)}.tabs .tabs-content{background-color:var(--undpds-color-background-default)}.tabs .tabs-content .tabs-panel{display:none;padding-top:var(--undpds-spacing-05)}@media(min-width:48em){.tabs .tabs-content .tabs-panel{padding-top:2.5rem}}.tabs .tabs-content .tabs-panel.is-active{display:inherit}[dir=rtl] .tabs>ul{padding-right:0}@media(min-width:48em){[dir=rtl] .tabs>ul{padding-right:var(--undpds-spacing-09)}}[dir=rtl] .tabs>ul li{margin-left:var(--undpds-spacing-06);margin-right:0;padding-right:0}

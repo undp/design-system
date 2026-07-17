@@ -126,10 +126,35 @@ const Template = (args, { globals: { locale } }) => {
   );
 };
 
-export const ImageCaptionCreditStory = Template.bind({});
-ImageCaptionCreditStory.args = {
+// const MediumSmallImageTemplate = (args, { globals: { locale } }) => {
+//   const caption = getCaptionForLocale(locale);
+//   return (
+//     <Images
+//       imagelg={farmlandlg}
+//       imagemd={farmlandsm}
+//       imagesm={farmlandsm}
+//       alt="farmland"
+//       label={caption.label}
+//       paragraph={caption.paragraph}
+//       {...args}
+//     />
+//   );
+// };
+
+export const ImageCaptionCredit = Template.bind({});
+ImageCaptionCredit.storyName = "Image with credit and caption";
+ImageCaptionCredit.args = {
   size: 'wide',
   caption: "true",
   credit: "true",
   animation: "true",
 };
+
+// export const MediumSmallImageStory = MediumSmallImageTemplate.bind({});
+// MediumSmallImageStory.storyName = 'Medium small image';
+// MediumSmallImageStory.args = {
+//   size: 'medium',
+//   caption: "true",
+//   credit: "true",
+//   animation: "true",
+// };
