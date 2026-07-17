@@ -1,6 +1,6 @@
 {
   "version": "2.0.2",
-  "generatedAt": "2026-07-17T19:19:32.260Z",
+  "generatedAt": "2026-07-17T20:09:48.948Z",
   "totalComponents": 95,
   "statusSummary": {
     "draft": 0,
@@ -1398,7 +1398,7 @@
       "status": "stable",
       "storyFile": "stories/Atom/Images/ImageCaptionCredit/ImageCaptionCredit.stories.js",
       "stories": [
-        "ImageCaptionCreditStory",
+        "ImageCaptionCredit",
         "MediumSmallImageStory"
       ],
       "assets": {
