@@ -46,7 +46,7 @@
     "@babel/plugin-transform-block-scoping": "^7.28",
     "@babel/plugin-transform-classes": "^7.28",
     "@babel/plugin-transform-destructuring": "^7.28",
-    "@babel/plugin-transform-for-of": "^7.27",
+    "@babel/plugin-transform-for-of": "^8.0",
     "@babel/plugin-transform-parameters": "^7.27.7",
     "@babel/plugin-transform-shorthand-properties": "^7.27",
     "@babel/plugin-transform-spread": "^7.28",
