@@ -51,7 +51,7 @@
     "@babel/plugin-transform-shorthand-properties": "^7.27",
     "@babel/plugin-transform-spread": "^7.28",
     "@babel/preset-env": "^7.29",
-    "@babel/preset-react": "^7.28.5",
+    "@babel/preset-react": "^8.0.1",
     "@babel/preset-typescript": "^7.28",
     "@storybook/addon-a11y": "^10.5.2",
     "@storybook/addon-docs": "^10.5.2",
