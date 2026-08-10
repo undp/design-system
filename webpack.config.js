@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import webpack from 'webpack';
+import sassEmbedded from 'sass-embedded';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import RemoveEmptyScripts from 'webpack-remove-empty-scripts';
@@ -13,6 +14,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const pkgPath = path.resolve(__dirname, 'package.json');
 const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+const entryConfigPath = path.resolve(__dirname, 'webpack.entries.js');
+const webpackCacheDirectory = path.resolve(__dirname, '.cache/webpack');
 
 const packMode = 'production';
 
@@ -20,12 +23,25 @@ const banner = `
 ${pkg.description} ${pkg.version}
 `;
 
+const commonBuildDependencies = {
+  config: [__filename, pkgPath, entryConfigPath],
+};
+
+const createFilesystemCache = (name) => ({
+  type: 'filesystem',
+  cacheDirectory: webpackCacheDirectory,
+  name,
+  buildDependencies: commonBuildDependencies,
+});
+
 /*
 * Webpack build for scss and js
 */
 export default [
   {
+    name: 'css',
     mode: packMode,
+    cache: createFilesystemCache('css'),
     entry: webpackEntry('css'),
     module: {
       rules: [
@@ -37,14 +53,13 @@ export default [
             {
               loader: 'resolve-url-loader',
               options: {
-                attempts: 1,
                 sourceMap: true,
               },
             },
             {
               loader: 'sass-loader',
               options: {
-                implementation: 'sass-embedded',
+                implementation: sassEmbedded,
                 sourceMap: true,
                 sassOptions: {
                   quietDeps: true,
@@ -80,6 +95,7 @@ export default [
     optimization: {
       minimizer: [
         new CssMinimizerPlugin({
+          parallel: true,
           minimizerOptions: {
             preset: [
               'default',
@@ -116,7 +132,9 @@ export default [
     },
   },
   {
+    name: 'js',
     mode: packMode,
+    cache: createFilesystemCache('js'),
     entry: webpackEntry('js'),
     resolve: {
       alias: {
@@ -132,6 +150,7 @@ export default [
       minimize: true,
       minimizer: [
         new TerserPlugin({
+          parallel: true,
           terserOptions: {
             format: {
               comments: false, // Remove comments
@@ -161,6 +180,10 @@ export default [
           use: {
             loader: 'babel-loader',
             options: {
+              babelrc: false,
+              configFile: false,
+              cacheDirectory: true,
+              cacheCompression: false,
               presets: [
                 ['@babel/preset-env'],
               ],
@@ -175,7 +198,9 @@ export default [
     },
   },
   {
+    name: 'init',
     mode: packMode,
+    cache: createFilesystemCache('init'),
     entry: './stories/assets/js/init.js', // Special routine for the initialization script
     output: {
       path: path.resolve(__dirname, 'docs/js'), // Output directory
@@ -185,6 +210,7 @@ export default [
       minimize: true,
       minimizer: [
         new TerserPlugin({
+          parallel: true,
           terserOptions: {
             format: {
               comments: false, // Remove comments
