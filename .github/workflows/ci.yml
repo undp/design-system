@@ -24,12 +24,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 'latest'
           # actions/setup-node's built-in npm cache restores ~/.npm across runs,
           # making subsequent `npm ci` calls significantly faster.
           cache: npm
