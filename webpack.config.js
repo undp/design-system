@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import webpack from 'webpack';
-import sassEmbedded from 'sass-embedded';
+import * as sassEmbedded from 'sass-embedded';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import RemoveEmptyScripts from 'webpack-remove-empty-scripts';

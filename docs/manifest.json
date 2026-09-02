@@ -1,6 +1,6 @@
 {
   "version": "2.0.2",
-  "generatedAt": "2026-08-10T11:53:40.941Z",
+  "generatedAt": "2026-09-02T13:35:29.959Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.2/",
   "assets": {
     "css": [
@@ -528,8 +528,8 @@
     "js": [
       {
         "path": "js/accordion.min.js",
-        "size": 3056,
-        "sha256": "587216ac2440411022beca4a2cbf8364e90f556f29a95e9134bc4403a7b32f3f"
+        "size": 2833,
+        "sha256": "be7c413483ffa5264c4ca6e6927fa2c834c73500d9c62170c39032ca4fbce595"
       },
       {
         "path": "js/addingFonts.min.js",
@@ -538,43 +538,43 @@
       },
       {
         "path": "js/all.min.js",
-        "size": 61867,
-        "sha256": "f1a0d7029a5abb5ff2f90c9cb88c01142e09965ec32fb823a78043f26941d4f4"
+        "size": 61814,
+        "sha256": "12e45ffc9f4fb42665b5aaeb43175bd02d55b3260d91bce414c9c32012718b25"
       },
       {
         "path": "js/animation.min.js",
-        "size": 1101,
-        "sha256": "7407fadcc4e028cd68d3e141f86090b2066ad28c8bb0228f8ad743d5963989bd"
+        "size": 878,
+        "sha256": "3b01161e170a9623d7fa9f466d746bc5cc32a22766d688a47a70c07699365ca1"
       },
       {
         "path": "js/author-filter.min.js",
-        "size": 1087,
-        "sha256": "be4032efe041a31a3c3d48fa03c2ef72c4a577bfd5078803890ea6e23cc97f3d"
+        "size": 1034,
+        "sha256": "78156d98728886f8f2ab94ac794b25dad5965a255769ed59a1b65b0d8691ce53"
       },
       {
         "path": "js/download-modal.min.js",
-        "size": 1938,
-        "sha256": "56f8143281eb4eac38439ad3a929b601b4c51b0661f4a538cb496d28bf992e48"
+        "size": 1715,
+        "sha256": "c8b22c517688faa81c422416d4abf8b300acc153871a7be24785e33b06a59dde"
       },
       {
         "path": "js/expand-search.min.js",
-        "size": 1651,
-        "sha256": "b1828ca222d5f5bb382c382d1144574257a11870d17e90e997672e8f61b9285b"
+        "size": 1598,
+        "sha256": "a6947770c956b920cf273c2f1723aae04cef06a1c53264c6bb2528c024865555"
       },
       {
         "path": "js/filter-search-bar.min.js",
-        "size": 3259,
-        "sha256": "4bff42231657bb2c84cefed1e0702f6ed679f5f791a9fd65f80508274360eb5e"
+        "size": 3206,
+        "sha256": "3126df175c18b5aa6bd2d086d1e76af01d9b582cb62581ea10ff69bfd6d657fb"
       },
       {
         "path": "js/fitText.min.js",
-        "size": 4569,
-        "sha256": "eef7d264dd0d7fcf1742a193b93dc0aa773e73952b84099b7cc64d3675d575fb"
+        "size": 4346,
+        "sha256": "1b1d2f579e9c3fd83cf736a1c39ebc4d8dd80ce6da33bdc1632565b78b96111b"
       },
       {
         "path": "js/fitTitle.min.js",
-        "size": 2586,
-        "sha256": "28566953735712b8ab54b5b9d5a94e41b1a2a837218e2696a6d0f1c3704cb6ee"
+        "size": 2533,
+        "sha256": "f790c05782610fd1946d9d8e6646d9ba6039eda3f2786bcfc0834ba1e2597264"
       },
       {
         "path": "js/init.js",
@@ -583,8 +583,8 @@
       },
       {
         "path": "js/lang-switcher.min.js",
-        "size": 1229,
-        "sha256": "f0d484d00bd93f13516d2279b5030ae03e815c3256f84c90035591b7597371cc"
+        "size": 1006,
+        "sha256": "0b0f88593624e6597f73a0fcc612504f40fa1888516aac70ddba9b6575f1a096"
       },
       {
         "path": "js/lazyload.min.js",
@@ -593,43 +593,43 @@
       },
       {
         "path": "js/lightbox-gallery.min.js",
-        "size": 1862,
-        "sha256": "63e830e8ae0d9f279a805407feacc6b89dbbf0a4edf596ebaa143c64f1a5f100"
+        "size": 1639,
+        "sha256": "95ed55520e1126b1f5c6cd8c0a72374a6dd9765c66be44a274541f737696eb5e"
       },
       {
         "path": "js/modal.min.js",
-        "size": 2172,
-        "sha256": "cd6416b0d93516cd3188cea2e9fe20734cce543eaba27ec76c7556bffe23ad9a"
+        "size": 1949,
+        "sha256": "cb6ba57a851c030be3fd7c3282c849da85fe4e2f922ea7cff57899ab09fcd2ed"
       },
       {
         "path": "js/multi-select.min.js",
-        "size": 3767,
-        "sha256": "466181a1a8ace115cab9f25631eb7757a2c4bb585fbb003b0cb976bc440fc93f"
+        "size": 3544,
+        "sha256": "dc71b905b86fd65f5455ea9c1a9f4fe1e50b248538394c1b80052e45ccbd56b3"
       },
       {
         "path": "js/navigation-data.min.js",
-        "size": 3939,
-        "sha256": "e673d04a793077768492a79428e3bc2ecafa2e2a7d0d323cb33f6c16433aa20e"
+        "size": 3886,
+        "sha256": "88e1418930ee82d17245daeb617e7245ccda3b757d6f0d5fe377d709face4a94"
       },
       {
         "path": "js/navigation.min.js",
-        "size": 11738,
-        "sha256": "303a960c169a191b86b1ea206a765bb945de09ce06372437dde9d8f12272eaba"
+        "size": 11685,
+        "sha256": "0ef168a1f781563c9d524861d852cbd66ffe0300c617ab7e75a17ec86f7c42e3"
       },
       {
         "path": "js/our-expertise.min.js",
-        "size": 1974,
-        "sha256": "eb3f6d877ff3e9d22976489e0fda4eced9020378bb7d9f758942b3dca744eef7"
+        "size": 1751,
+        "sha256": "ad658278570a7ab453fdb7fea9a7363eba9062dea0d385c40838e44161544390"
       },
       {
         "path": "js/parallax.min.js",
-        "size": 4557,
-        "sha256": "ba74a9277786d3786b49a3af900aba174ea805049aba4815049863f7c28d3d1d"
+        "size": 4504,
+        "sha256": "75b93d078319399629b053587973408d54832e122038d82b5214efcf434564d7"
       },
       {
         "path": "js/resize.min.js",
-        "size": 1162,
-        "sha256": "c1cb81d99f62fd5f0c214ee8924a0363238f91ccde432fd9c90e397ac20903ff"
+        "size": 939,
+        "sha256": "60aea750625ca50b22fe013baebfb85d363446f90fa27addf737e1d90bff2b0b"
       },
       {
         "path": "js/scrolling-progress-bar.min.js",
@@ -638,18 +638,18 @@
       },
       {
         "path": "js/sdg-modal.min.js",
-        "size": 6214,
-        "sha256": "79ec1c109d6f0bb818f89f603825cbbb6889caf0c07ddd43996e72493d9571e8"
+        "size": 5991,
+        "sha256": "dfbb8f7ae7a6ef2da7d5e71f58c4520d7d0f92ff849324953806b5a0258086ca"
       },
       {
         "path": "js/select.min.js",
-        "size": 1569,
-        "sha256": "3da63014393c2372f7cd85e917b8198b6702aea2dddc62a18604d5d6ffa87f57"
+        "size": 1346,
+        "sha256": "7cd98ce24baff7bdbc6f4788ef8d29afb912c4a081547227cfa4c93c84d3b2a4"
       },
       {
         "path": "js/sidebar.min.js",
-        "size": 2993,
-        "sha256": "cc66ba2f82357dbb6518300e44393f9a2cbd384933efce51cb15cbc4509d0c86"
+        "size": 2770,
+        "sha256": "9aeb775e4ac383940dbb71368e3bdff288cddb3044187e57b5655abedc966108"
       },
       {
         "path": "js/smartresize.min.js",
@@ -658,18 +658,18 @@
       },
       {
         "path": "js/smooth-bg-change.min.js",
-        "size": 2667,
-        "sha256": "6be33645cc34b7afe06ea99a391aca7dbfa2b2d4c2cc2622033188cd2b31660b"
+        "size": 2444,
+        "sha256": "849fa7e81a47da7912832ca3635069f6824c2e90a1016d11108938145b48b08d"
       },
       {
         "path": "js/stats.min.js",
-        "size": 1221,
-        "sha256": "4b777e9457e880c2404e75fd9cd43f14021b45c9d1c5e776381f4f6b9e77b8eb"
+        "size": 998,
+        "sha256": "5724cf262b4a70a6471b3c2478a2eb91124a8288836381641452337c7cbe0447"
       },
       {
         "path": "js/sticky.min.js",
-        "size": 1728,
-        "sha256": "1807d9371f7aa12a7b0d8a253add53fb311c16ccd189dff08c5f18204f7cb88d"
+        "size": 1505,
+        "sha256": "033c687d8eda9c985a980c562f2c2ac4b068d62dfe436a9361ac6acda79c1ce9"
       },
       {
         "path": "js/storybook-init.min.js",
@@ -678,18 +678,18 @@
       },
       {
         "path": "js/swiper.min.js",
-        "size": 8034,
-        "sha256": "2fcac8a87d8e20059740111d30d735ec41c71bdd4ca9a5144973e682d9f7dbdf"
+        "size": 7811,
+        "sha256": "35797b05d9c4c01634f90a4f8685e99741918659dd179eb047c8345decd5ad33"
       },
       {
         "path": "js/tabs.min.js",
-        "size": 3351,
-        "sha256": "cd2ad7dca462581aebaf27503c36061ef9de28a44bba41893b4842894eafdd52"
+        "size": 3128,
+        "sha256": "744acab11cda69b7f67455ab34dd6494bcd4834e05a7fdf27c4d32e495522d84"
       },
       {
         "path": "js/undp.min.js",
-        "size": 1107,
-        "sha256": "ef8383d9cf324ffc32506f3c102ab481bbdaf2f44e1f30dd6a739ea738ee0f8a"
+        "size": 1054,
+        "sha256": "223740f9799ee2efb3066310ddab06a12530cdb320f128ec4b9ce535ebf2d865"
       },
       {
         "path": "js/viewport.min.js",
