@@ -8,12 +8,7 @@
         "loose": true
       }
     ],
-    [
-      "@babel/preset-typescript",
-      {
-        "runtime": "automatic"
-      }
-    ]
+    "@babel/preset-typescript"
   ],
   "plugins": [
     "@babel/plugin-transform-shorthand-properties",
@@ -21,7 +16,7 @@
     [
       "@babel/plugin-proposal-decorators",
       {
-        "legacy": true
+        "version": "legacy"
       }
     ],
     [

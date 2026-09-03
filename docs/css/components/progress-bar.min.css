@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 2.0.1
+ * UNDP Design System 2.0.2
  *
  */
 progress{border:2px solid var(--undpds-color-border-default);border-radius:7px;height:14px;width:50%}progress::-webkit-progress-bar{background-color:var(--undpds-color-background-default);border-radius:7px}progress::-webkit-progress-value{background-color:var(--undpds-color-black)}progress::-moz-progress-bar{background-color:var(--undpds-color-background-default)}
