@@ -46,15 +46,41 @@ const config = {
       include: path.resolve(__dirname, '../')
     });
 
-    config.module.rules.push({
-      test: /\.(js|jsx)$/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env', ['@babel/preset-react', { "runtime": "automatic" }], '@babel/preset-typescript']
-        }
+    const patchBabelRule = (rule) => {
+      if (!rule) {
+        return;
       }
-    });
+
+      if (Array.isArray(rule.oneOf)) {
+        rule.oneOf.forEach(patchBabelRule);
+      }
+
+      const ruleUses = rule.use ? (Array.isArray(rule.use) ? rule.use : [rule.use]) : [];
+      ruleUses.forEach((useEntry) => {
+        if (!useEntry) {
+          return;
+        }
+
+        if (typeof useEntry === 'string') {
+          return;
+        }
+
+        if (useEntry.loader && useEntry.loader.includes('babel-loader')) {
+          useEntry.options = {
+            ...(useEntry.options || {}),
+            babelrc: false,
+            configFile: false,
+            presets: [
+              '@babel/preset-env',
+              ['@babel/preset-react', { runtime: 'automatic' }],
+              '@babel/preset-typescript',
+            ],
+          };
+        }
+      });
+    };
+
+    (config.module.rules || []).forEach(patchBabelRule);
 
     return config;
   },
@@ -74,7 +100,7 @@ const config = {
   docs: {},
 
   typescript: {
-    reactDocgen: 'react-docgen-typescript'
+    reactDocgen: false
   },
 
   features: {

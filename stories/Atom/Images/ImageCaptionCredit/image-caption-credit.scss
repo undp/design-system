@@ -40,6 +40,23 @@ figure.medium {
   margin-left: auto;
   margin-right: auto;
 
+  >div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  >img {
+    align-self: center;
+  }
+
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
   @container figure (width > #{$container-size}) {
     margin: 0 auto;
     width: 100%;
@@ -49,6 +66,7 @@ figure.medium {
     }
 
     img {
+      width: auto;
       max-width: 100%;
     }
 

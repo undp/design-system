@@ -1,6 +1,6 @@
 /*!
  * 
- * UNDP Design System 2.0.1
+ * UNDP Design System 2.0.2
  *
  */
 .heading-container{background-color:var(--undpds-color-gray-700);color:var(--undpds-color-text-inverse);justify-content:center;overflow:hidden;padding-block:var(--undpds-spacing-096)}.heading-container h4{margin-top:var(--undpds-spacing-050)}@media(min-width:48em){.heading-container h4{margin-top:0}}@media(max-width:47.9375em){.heading-container h2,.heading-container h4{padding:0 var(--undpds-spacing-024)}}
