@@ -1,18 +1,18 @@
 {
   "version": "2.0.2",
-  "generatedAt": "2026-09-02T13:35:29.959Z",
+  "generatedAt": "2026-09-03T11:29:32.985Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.2/",
   "assets": {
     "css": [
       {
         "path": "css/base-minimal-no-grid.min.css",
-        "size": 90330,
-        "sha256": "5da61d51c07abd7766fdc19d4042c295c15b890aa25e204c91cee19d08e1b5d7"
+        "size": 90379,
+        "sha256": "1d2e0834e9a583099df3e36906f0b86baa44d3ddaa63317f801fdb69dfd3cac7"
       },
       {
         "path": "css/base-minimal.min.css",
-        "size": 152513,
-        "sha256": "c3e4c1fe3c116d5fd97617981bce16047d09fa2ad48d1ad93c2edba26dff1142"
+        "size": 152562,
+        "sha256": "3a30ed3d71df051b17f0d8892df85cd09f78ea7799369a8b8b31f17938829f5a"
       },
       {
         "path": "css/ckeditor5.min.css",
