@@ -67,6 +67,7 @@
   .tabs {
     >ul {
       padding-right: 0;
+      text-align: right;
 
       @include devicebreak(medium) {
         padding-right: var(--undpds-spacing-09);
