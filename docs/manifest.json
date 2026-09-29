@@ -1,6 +1,6 @@
 {
   "version": "2.0.2",
-  "generatedAt": "2026-09-03T11:29:32.985Z",
+  "generatedAt": "2026-09-29T09:00:15.027Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.2/",
   "assets": {
     "css": [
@@ -21,8 +21,8 @@
       },
       {
         "path": "css/components.min.css",
-        "size": 292985,
-        "sha256": "410a0bfe4888a5af116199eac686ea2b24ae8bfa17a14970ddda48bae1c10e04"
+        "size": 293002,
+        "sha256": "63aba1c84676e337e7c13c543e4d4a222a20d31987389121455a875209c5e989"
       },
       {
         "path": "css/components/accordion.min.css",
@@ -116,8 +116,8 @@
       },
       {
         "path": "css/components/documentation.min.css",
-        "size": 3875,
-        "sha256": "4b58d4e85d705020f8746b82b9c7fd9f94c048d40f9fee12c3ad3ad3eaa8f059"
+        "size": 3870,
+        "sha256": "147caf81db939c00271667691e132263e6492184b397c72ac5a779824e7de2dc"
       },
       {
         "path": "css/components/download-card.min.css",
@@ -436,8 +436,8 @@
       },
       {
         "path": "css/components/tab.min.css",
-        "size": 1298,
-        "sha256": "4f82893bb5e988e694460520f6547aac89474d549a85a1361779115baa808e0f"
+        "size": 1315,
+        "sha256": "fe678c22e835f23e9fc1e3f83930b447ff6d79c88e21233036ad5e9f0863b0e7"
       },
       {
         "path": "css/components/tertiary.min.css",
