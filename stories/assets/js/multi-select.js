@@ -110,12 +110,13 @@ class MultiSelect {
 }
 
 const createCustomEvent = (type, payload) => {
+  const { bubbles, cancelable, ...eventProperties } = payload;
   const event = new CustomEvent(type, {
-    bubbles: payload.bubbles,
-    cancelable: payload.cancelable,
+    bubbles,
+    cancelable,
     detail: payload,
   });
-  Object.assign(event, payload);
+  Object.assign(event, eventProperties);
   return event;
 };
 

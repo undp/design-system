@@ -17,6 +17,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 
 const DOCS_DIR = path.resolve(__dirname, '../docs');
 
@@ -215,9 +216,59 @@ function testManifest() {
   }
 }
 
+/**
+ * Check multiselect event construction with native read-only Event properties.
+ * @returns {void} Reports failures without modifying source files or assets.
+ */
+function testMultiSelectEvents() {
+  console.log('\n📜 Multiselect Events');
+  const sourcePath = path.resolve(__dirname, '../stories/assets/js/multi-select.js');
+  const source = fs.readFileSync(sourcePath, 'utf8')
+    .replace('export function multiSelect', 'function multiSelect');
+  const payloads = {
+    multiSelectToggle: {
+      bubbles: true,
+      cancelable: false,
+      select_trigger_dataset_id: 'category',
+      select_trigger_id: 'category-trigger',
+      state: 'open',
+      open: true,
+      closed: false,
+    },
+    multiSelectInputToggle: {
+      bubbles: true,
+      cancelable: false,
+      checkbox_id: 'category-option',
+      state: true,
+      toggle_state: 'checked',
+      selected: true,
+      unselected: false,
+    },
+  };
+
+  for (const [type, payload] of Object.entries(payloads)) {
+    try {
+      const event = vm.runInNewContext(
+        `${source}\ncreateCustomEvent(type, payload);`,
+        { CustomEvent, type, payload }
+      );
+      const preservesPayload = Object.entries(payload)
+        .every(([key, value]) => event[key] === value && event.detail[key] === value);
+      if (event.type === type && preservesPayload) {
+        ok(`${type} preserves event options, detail, and legacy properties`);
+      } else {
+        fail(`${type} preserves event options, detail, and legacy properties`);
+      }
+    } catch (error) {
+      fail(`${type} constructs without assigning read-only properties`, error.message);
+    }
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Entry point
 // ---------------------------------------------------------------------------
+
 function main() {
   console.log('🔬 UNDP Design System — Build Smoke Tests');
   console.log(`   Docs directory: ${DOCS_DIR}`);
@@ -232,6 +283,7 @@ function main() {
   testInitJs();
   testFonts();
   testManifest();
+  testMultiSelectEvents();
 
   console.log(`\n${'─'.repeat(50)}`);
   console.log(`Results: ${passed} passed, ${failed} failed`);
