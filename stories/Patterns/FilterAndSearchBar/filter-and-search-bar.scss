@@ -35,6 +35,16 @@
 }
 
 .search-filter {
+  [hidden] {
+    display: none !important;
+  }
+
+  .chip:focus-visible,
+  .clear-search-filter:focus-visible {
+    outline: 2px solid var(--undpds-color-text-default);
+    outline-offset: 2px;
+  }
+
   @include devicebreak(small) {
     display: none;
 

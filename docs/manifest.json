@@ -1,6 +1,6 @@
 {
   "version": "2.0.2",
-  "generatedAt": "2026-09-03T11:29:32.985Z",
+  "generatedAt": "2026-10-05T09:08:30.481Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.2/",
   "assets": {
     "css": [
@@ -21,8 +21,8 @@
       },
       {
         "path": "css/components.min.css",
-        "size": 292985,
-        "sha256": "410a0bfe4888a5af116199eac686ea2b24ae8bfa17a14970ddda48bae1c10e04"
+        "size": 293372,
+        "sha256": "cbb8da02e2fed178a59950da1b308d704ff0cacd7a52c67ed420adea60e0bf86"
       },
       {
         "path": "css/components/accordion.min.css",
@@ -116,8 +116,8 @@
       },
       {
         "path": "css/components/documentation.min.css",
-        "size": 3875,
-        "sha256": "4b58d4e85d705020f8746b82b9c7fd9f94c048d40f9fee12c3ad3ad3eaa8f059"
+        "size": 3870,
+        "sha256": "147caf81db939c00271667691e132263e6492184b397c72ac5a779824e7de2dc"
       },
       {
         "path": "css/components/download-card.min.css",
@@ -146,8 +146,8 @@
       },
       {
         "path": "css/components/filter-and-search-bar.min.css",
-        "size": 1643,
-        "sha256": "9f61206aba2b2c2f1740b4603d7440c5464ee301e28a9e620b88aee620b5110f"
+        "size": 1845,
+        "sha256": "0824ce97f9a43bdf9f932a83aa9bd16cede6647c90783c6a86712b9572ab8f46"
       },
       {
         "path": "css/components/fixed-size-carousel.min.css",
@@ -266,8 +266,8 @@
       },
       {
         "path": "css/components/multi-select.min.css",
-        "size": 4216,
-        "sha256": "087c779d418d16f12f3ae86c8907a93fbb8ee14f86858f1dfad6613894144396"
+        "size": 4401,
+        "sha256": "dab8ee92c29736a8ae41e4d814db1ab1e3fe1bb2884d32d3269981190da173dc"
       },
       {
         "path": "css/components/newsletter-signup.min.css",
@@ -538,8 +538,8 @@
       },
       {
         "path": "js/all.min.js",
-        "size": 61814,
-        "sha256": "12e45ffc9f4fb42665b5aaeb43175bd02d55b3260d91bce414c9c32012718b25"
+        "size": 64901,
+        "sha256": "35068af398dae5c4a9bf14a4de37f5ffd3b8ecdb32cd709b4aab9efe41cbe30b"
       },
       {
         "path": "js/animation.min.js",
@@ -563,8 +563,8 @@
       },
       {
         "path": "js/filter-search-bar.min.js",
-        "size": 3206,
-        "sha256": "3126df175c18b5aa6bd2d086d1e76af01d9b582cb62581ea10ff69bfd6d657fb"
+        "size": 4899,
+        "sha256": "3f5be49e08ffe38c7d7da540e0133578772a7c0fa86c120d1c35d88e251210a6"
       },
       {
         "path": "js/fitText.min.js",
@@ -603,8 +603,8 @@
       },
       {
         "path": "js/multi-select.min.js",
-        "size": 3544,
-        "sha256": "dc71b905b86fd65f5455ea9c1a9f4fe1e50b248538394c1b80052e45ccbd56b3"
+        "size": 4974,
+        "sha256": "f26b1a68b6d85638a1589b5a1f8533214b79ca42b51c5bdc05e904ffad1c6729"
       },
       {
         "path": "js/navigation-data.min.js",
@@ -678,8 +678,8 @@
       },
       {
         "path": "js/swiper.min.js",
-        "size": 7811,
-        "sha256": "35797b05d9c4c01634f90a4f8685e99741918659dd179eb047c8345decd5ad33"
+        "size": 7775,
+        "sha256": "a62d60f4b45c534e0e84e4371a6bf2156a6db5d0355d938ef3849a4b22a5496c"
       },
       {
         "path": "js/tabs.min.js",
