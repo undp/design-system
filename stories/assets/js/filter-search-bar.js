@@ -2,6 +2,14 @@ let isDocumentFilterEventsBound = false;
 
 const getFilterButton = (checkbox) => checkbox.closest('ul')?.closest('.multi-select')?.querySelector('button');
 
+/**
+ * Read the option's associated labels, regardless of their position.
+ * @param {HTMLInputElement} option Checkbox whose display label is needed.
+ * @returns {string} Trimmed label text, with legacy sibling markup as a fallback.
+ */
+const getOptionLabel = (option) => Array.from(option.labels || [], (label) => label.textContent.trim()).join(' ')
+  || option.nextElementSibling?.textContent?.trim() || '';
+
 const updateFilterButtonCount = (checkbox) => {
   const multiSelect = checkbox.closest('.multi-select');
   const filterButton = getFilterButton(checkbox);
@@ -72,7 +80,7 @@ const toggleFilter = function () {
       }
 
       if (option.checked) {
-        const optionValue = option.nextElementSibling?.textContent?.trim() || '';
+        const optionValue = getOptionLabel(option);
         const existingChip = chipWrapper.querySelector(`[option-name='${optionId}']`);
 
         if (!existingChip) {

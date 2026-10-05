@@ -270,6 +270,41 @@ function testMultiSelectEvents() {
   }
 }
 
+/**
+ * Verify chip text uses associated labels rather than input sibling position.
+ * @returns {void} Reports label regression checks without modifying assets.
+ */
+function testFilterChipLabels() {
+  console.log('\n📜 Filter Chip Labels');
+  const sourcePath = path.resolve(__dirname, '../stories/assets/js/filter-search-bar.js');
+  const source = fs.readFileSync(sourcePath, 'utf8')
+    .replace('export default toggleFilter;', '')
+    .replace('export { toggleFilter };', '');
+  const cases = [
+    ['Label before input', { labels: [{ textContent: '  Category  ' }] }, 'Category'],
+    ['Label after input', {
+      labels: [{ textContent: 'Region' }],
+      nextElementSibling: { textContent: 'Wrong sibling' },
+    }, 'Region'],
+    ['Wrapping label', { labels: [{ textContent: 'Nested option' }] }, 'Nested option'],
+    ['Multiple labels', { labels: [{ textContent: 'Region' }, { textContent: 'Africa' }] }, 'Region Africa'],
+    ['Legacy sibling label', { nextElementSibling: { textContent: '  Legacy  ' } }, 'Legacy'],
+    ['No label', { labels: [] }, ''],
+  ];
+  for (const [description, option, expected] of cases) {
+    try {
+      const actual = vm.runInNewContext(`${source}\ngetOptionLabel(option);`, { option });
+      if (actual === expected) {
+        ok(description);
+      } else {
+        fail(description, `Expected "${expected}", received "${actual}"`);
+      }
+    } catch (error) {
+      fail(description, error.message);
+    }
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Entry point
 // ---------------------------------------------------------------------------
@@ -289,6 +324,7 @@ function main() {
   testFonts();
   testManifest();
   testMultiSelectEvents();
+  testFilterChipLabels();
 
   console.log(`\n${'─'.repeat(50)}`);
   console.log(`Results: ${passed} passed, ${failed} failed`);
