@@ -17,6 +17,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 
 const DOCS_DIR = path.resolve(__dirname, '../docs');
 
@@ -122,6 +123,11 @@ function testJsFiles() {
   for (const name of requiredJs) {
     assertExists(`js/${name}.min.js`, `JS module: ${name}.min.js`);
   }
+  assertContains(
+    'js/filter-search-bar.min.js',
+    /createElement\(["']a["']\)/,
+    'Filter chips use the anchor markup required by chip styles'
+  );
 }
 
 function testInitJs() {
@@ -215,9 +221,186 @@ function testManifest() {
   }
 }
 
+/**
+ * Check multiselect event construction with native read-only Event properties.
+ * @returns {void} Reports failures without modifying source files or assets.
+ */
+function testMultiSelectEvents() {
+  console.log('\n📜 Multiselect Events');
+  const sourcePath = path.resolve(__dirname, '../stories/assets/js/multi-select.js');
+  const source = fs.readFileSync(sourcePath, 'utf8')
+    .replace('export function multiSelect', 'function multiSelect');
+  const payloads = {
+    multiSelectToggle: {
+      bubbles: true,
+      cancelable: false,
+      select_trigger_dataset_id: 'category',
+      select_trigger_id: 'category-trigger',
+      state: 'open',
+      open: true,
+      closed: false,
+    },
+    multiSelectInputToggle: {
+      bubbles: true,
+      cancelable: false,
+      checkbox_id: 'category-option',
+      state: true,
+      toggle_state: 'checked',
+      selected: true,
+      unselected: false,
+    },
+  };
+
+  for (const [type, payload] of Object.entries(payloads)) {
+    try {
+      const event = vm.runInNewContext(
+        `${source}\ncreateCustomEvent(type, payload);`,
+        { CustomEvent, type, payload }
+      );
+      const preservesPayload = Object.entries(payload)
+        .every(([key, value]) => event[key] === value && event.detail[key] === value);
+      if (event.type === type && preservesPayload) {
+        ok(`${type} preserves event options, detail, and legacy properties`);
+      } else {
+        fail(`${type} preserves event options, detail, and legacy properties`);
+      }
+    } catch (error) {
+      fail(`${type} constructs without assigning read-only properties`, error.message);
+    }
+  }
+}
+
+/**
+ * Verify chip text uses associated labels rather than input sibling position.
+ * @returns {void} Reports label regression checks without modifying assets.
+ */
+function testFilterChipLabels() {
+  console.log('\n📜 Filter Chip Labels');
+  const sourcePath = path.resolve(__dirname, '../stories/assets/js/filter-search-bar.js');
+  const source = fs.readFileSync(sourcePath, 'utf8')
+    .replace('export default toggleFilter;', '')
+    .replace('export { toggleFilter };', '');
+  const cases = [
+    ['Label before input', { labels: [{ textContent: '  Category  ' }] }, 'Category'],
+    ['Label after input', {
+      labels: [{ textContent: 'Region' }],
+      nextElementSibling: { textContent: 'Wrong sibling' },
+    }, 'Region'],
+    ['Wrapping label', { labels: [{ textContent: 'Nested option' }] }, 'Nested option'],
+    ['Multiple labels', { labels: [{ textContent: 'Region' }, { textContent: 'Africa' }] }, 'Region Africa'],
+    ['Legacy sibling label', { nextElementSibling: { textContent: '  Legacy  ' } }, 'Legacy'],
+    ['No label', { labels: [] }, ''],
+  ];
+  for (const [description, option, expected] of cases) {
+    try {
+      const actual = vm.runInNewContext(`${source}\ngetOptionLabel(option);`, { option });
+      if (actual === expected) {
+        ok(description);
+      } else {
+        fail(description, `Expected "${expected}", received "${actual}"`);
+      }
+    } catch (error) {
+      fail(description, error.message);
+    }
+  }
+}
+
+/**
+ * Verify multiselect disclosure state, focus safety, and changed-state events.
+ * @returns {void} Reports accessibility regressions without changing assets.
+ */
+function testMultiSelectAccessibility() {
+  console.log('\n♿ Multiselect Disclosure');
+  const source = fs.readFileSync(path.resolve(__dirname, '../stories/assets/js/multi-select.js'), 'utf8')
+    .replace('export function multiSelect', 'function multiSelect');
+  const attributes = {};
+  const panel = { setAttribute: (name, value) => { attributes[name] = value; } };
+  const trigger = {
+    dataset: {},
+    setAttribute: (name, value) => { attributes[name] = value; },
+  };
+  const classes = new Set();
+  const events = [];
+  const listeners = {};
+  const documentListeners = {};
+  trigger.addEventListener = () => {};
+  const element = {
+    querySelector: (selector) => (selector === 'button' ? trigger : panel),
+    classList: {
+      contains: (name) => classes.has(name),
+      toggle: (name, enabled) => (enabled ? classes.add(name) : classes.delete(name)),
+    },
+    dispatchEvent: (event) => events.push(event),
+    addEventListener: (type, listener) => { listeners[type] = listener; },
+    contains: () => false,
+  };
+  const document = {
+    activeElement: null,
+    addEventListener: (type, listener) => { documentListeners[type] = listener; },
+  };
+  trigger.focus = () => { document.activeElement = trigger; };
+  panel.contains = (activeElement) => activeElement === panel;
+  try {
+    const select = vm.runInNewContext(`${source}\nnew MultiSelect(element);`, {
+      element, document, CustomEvent,
+    });
+    select.setOpen(false, false);
+    if (panel.hidden && attributes['aria-hidden'] === 'true' && attributes['aria-expanded'] === 'false' && events.length === 0) {
+      ok('Closed initialization hides options without emitting a toggle');
+    } else {
+      fail('Closed initialization hides options without emitting a toggle');
+    }
+    select.setOpen(true);
+    if (!panel.hidden && attributes['aria-hidden'] === 'false' && attributes['aria-expanded'] === 'true' && events[0]?.open) {
+      ok('Opening exposes options and emits synchronized open state');
+    } else {
+      fail('Opening exposes options and emits synchronized open state');
+    }
+    document.activeElement = panel;
+    select.setOpen(false);
+    select.setOpen(false);
+    if (panel.hidden && attributes['aria-hidden'] === 'true' && attributes['aria-expanded'] === 'false'
+      && document.activeElement === trigger && events.length === 2 && events[1].closed) {
+      ok('Closing restores focus before hiding options and emits only once');
+    } else {
+      fail('Closing restores focus before hiding options and emits only once');
+    }
+    select.addListeners();
+    select.listenerWindowClick();
+    select.setOpen(true);
+    const chip = { closest: () => ({}) };
+    const eventCount = events.length;
+    listeners.focusout({ relatedTarget: chip });
+    documentListeners.click({ target: chip });
+    if (!panel.hidden && attributes['aria-expanded'] === 'true' && attributes['aria-hidden'] === 'false'
+      && events.length === eventCount) {
+      ok('Chip focus and clicks preserve open disclosure without a close event');
+    } else {
+      fail('Chip focus and clicks preserve open disclosure without a close event');
+    }
+    const outside = { closest: () => null };
+    documentListeners.click({ target: outside });
+    if (panel.hidden && events.at(-1).closed) {
+      ok('Ordinary outside clicks still close the disclosure');
+    } else {
+      fail('Ordinary outside clicks still close the disclosure');
+    }
+    select.setOpen(true);
+    listeners.focusout({ relatedTarget: outside });
+    if (panel.hidden && events.at(-1).closed) {
+      ok('Ordinary focus exits still close the disclosure');
+    } else {
+      fail('Ordinary focus exits still close the disclosure');
+    }
+  } catch (error) {
+    fail('Disclosure accessibility state', error.message);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Entry point
 // ---------------------------------------------------------------------------
+
 function main() {
   console.log('🔬 UNDP Design System — Build Smoke Tests');
   console.log(`   Docs directory: ${DOCS_DIR}`);
@@ -232,6 +415,9 @@ function main() {
   testInitJs();
   testFonts();
   testManifest();
+  testMultiSelectEvents();
+  testFilterChipLabels();
+  testMultiSelectAccessibility();
 
   console.log(`\n${'─'.repeat(50)}`);
   console.log(`Results: ${passed} passed, ${failed} failed`);
