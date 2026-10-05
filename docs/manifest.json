@@ -1,6 +1,6 @@
 {
   "version": "2.0.2",
-  "generatedAt": "2026-10-05T08:58:20.044Z",
+  "generatedAt": "2026-10-05T09:08:30.481Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.2/",
   "assets": {
     "css": [
@@ -538,8 +538,8 @@
       },
       {
         "path": "js/all.min.js",
-        "size": 64814,
-        "sha256": "6425b67b57e67aa315d7b4d583a7c7914cffacb2bd570b892066a8d18a1af449"
+        "size": 64901,
+        "sha256": "35068af398dae5c4a9bf14a4de37f5ffd3b8ecdb32cd709b4aab9efe41cbe30b"
       },
       {
         "path": "js/animation.min.js",
@@ -603,8 +603,8 @@
       },
       {
         "path": "js/multi-select.min.js",
-        "size": 4887,
-        "sha256": "0680de602ff0b08856faab00b259dbe960ab3533f1c60d246375729cc08eb70a"
+        "size": 4974,
+        "sha256": "f26b1a68b6d85638a1589b5a1f8533214b79ca42b51c5bdc05e904ffad1c6729"
       },
       {
         "path": "js/navigation-data.min.js",

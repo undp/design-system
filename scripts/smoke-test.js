@@ -321,6 +321,9 @@ function testMultiSelectAccessibility() {
   };
   const classes = new Set();
   const events = [];
+  const listeners = {};
+  const documentListeners = {};
+  trigger.addEventListener = () => {};
   const element = {
     querySelector: (selector) => (selector === 'button' ? trigger : panel),
     classList: {
@@ -328,8 +331,13 @@ function testMultiSelectAccessibility() {
       toggle: (name, enabled) => (enabled ? classes.add(name) : classes.delete(name)),
     },
     dispatchEvent: (event) => events.push(event),
+    addEventListener: (type, listener) => { listeners[type] = listener; },
+    contains: () => false,
   };
-  const document = { activeElement: null };
+  const document = {
+    activeElement: null,
+    addEventListener: (type, listener) => { documentListeners[type] = listener; },
+  };
   trigger.focus = () => { document.activeElement = trigger; };
   panel.contains = (activeElement) => activeElement === panel;
   try {
@@ -356,6 +364,33 @@ function testMultiSelectAccessibility() {
       ok('Closing restores focus before hiding options and emits only once');
     } else {
       fail('Closing restores focus before hiding options and emits only once');
+    }
+    select.addListeners();
+    select.listenerWindowClick();
+    select.setOpen(true);
+    const chip = { closest: () => ({}) };
+    const eventCount = events.length;
+    listeners.focusout({ relatedTarget: chip });
+    documentListeners.click({ target: chip });
+    if (!panel.hidden && attributes['aria-expanded'] === 'true' && attributes['aria-hidden'] === 'false'
+      && events.length === eventCount) {
+      ok('Chip focus and clicks preserve open disclosure without a close event');
+    } else {
+      fail('Chip focus and clicks preserve open disclosure without a close event');
+    }
+    const outside = { closest: () => null };
+    documentListeners.click({ target: outside });
+    if (panel.hidden && events.at(-1).closed) {
+      ok('Ordinary outside clicks still close the disclosure');
+    } else {
+      fail('Ordinary outside clicks still close the disclosure');
+    }
+    select.setOpen(true);
+    listeners.focusout({ relatedTarget: outside });
+    if (panel.hidden && events.at(-1).closed) {
+      ok('Ordinary focus exits still close the disclosure');
+    } else {
+      fail('Ordinary focus exits still close the disclosure');
     }
   } catch (error) {
     fail('Disclosure accessibility state', error.message);

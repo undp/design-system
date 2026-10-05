@@ -1,6 +1,13 @@
 let disclosureId = 0;
 
 /**
+ * Identify filter-chip interactions that must not dismiss open multiselects.
+ * @param {Element|null} target Click target or next focused element.
+ * @returns {boolean} Whether the target is a removable filter chip.
+ */
+const isFilterChip = (target) => Boolean(target?.closest('.chip__cross[option-name]'));
+
+/**
  * Connect a native disclosure button to its panel and accessible group name.
  * @param {HTMLButtonElement} trigger Button controlling the panel.
  * @param {HTMLElement} panel Disclosure content containing native form controls.
@@ -169,6 +176,7 @@ class MultiSelect {
     this.currentSelect.addEventListener('focusout', (event) => {
       if (
         event.relatedTarget &&
+        !isFilterChip(event.relatedTarget) &&
         !this.currentSelect.contains(event.relatedTarget)
       ) {
         this.setOpen(false);
@@ -180,6 +188,7 @@ class MultiSelect {
     document.addEventListener('click', (evt) => {
       if (
         !this.currentSelect.contains(evt.target) &&
+        !isFilterChip(evt.target) &&
         this.currentSelect.classList.contains(this.classOpen)
       ) {
         this.setOpen(false);
