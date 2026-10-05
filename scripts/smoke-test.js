@@ -123,6 +123,11 @@ function testJsFiles() {
   for (const name of requiredJs) {
     assertExists(`js/${name}.min.js`, `JS module: ${name}.min.js`);
   }
+  assertContains(
+    'js/filter-search-bar.min.js',
+    /createElement\(["']a["']\)/,
+    'Filter chips use the anchor markup required by chip styles'
+  );
 }
 
 function testInitJs() {

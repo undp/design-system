@@ -76,9 +76,9 @@ const toggleFilter = function () {
         const existingChip = chipWrapper.querySelector(`[option-name='${optionId}']`);
 
         if (!existingChip) {
-          const chip = document.createElement('span');
+          const chip = document.createElement('a');
           chip.className = 'chip chip__cross';
-          chip.tabIndex = 0;
+          chip.setAttribute('href', '#');
           chip.setAttribute('role', 'button');
           chip.setAttribute('option-name', optionId);
           chip.textContent = optionValue;
@@ -98,8 +98,18 @@ const toggleFilter = function () {
 
   isDocumentFilterEventsBound = true;
 
+  document.addEventListener('keydown', (event) => {
+    const chip = event.target.closest('.selected-chips .chip__cross');
+    if (chip && event.key === ' ') {
+      event.preventDefault();
+      if (!event.repeat) {
+        chip.click();
+      }
+    }
+  });
+
   document.addEventListener('click', (event) => {
-    const chip = event.target.closest('.chip__cross');
+    const chip = event.target.closest('.selected-chips .chip__cross');
     if (chip) {
       event.preventDefault();
 
@@ -109,15 +119,21 @@ const toggleFilter = function () {
 
       if (checkbox) {
         checkbox.checked = false;
+        checkbox.closest('li[role="option"]')?.setAttribute('aria-selected', 'false');
         updateFilterButtonCount(checkbox);
       }
 
-      chip.dispatchEvent(new CustomEvent('filterSearchChipRemoval', {
+      const removalEvent = new CustomEvent('filterSearchChipRemoval', {
         bubbles: true,
         cancelable: false,
         detail: { chip_id: optionId },
-      }));
+      });
+      removalEvent.chip_id = optionId;
+      chip.dispatchEvent(removalEvent);
 
+      if (document.activeElement === chip) {
+        checkbox?.closest('.multi-select')?.querySelector('button')?.focus();
+      }
       chip.remove();
       updateFilterStateVisibility(selectWrapper);
       return;
@@ -125,6 +141,7 @@ const toggleFilter = function () {
 
     const clearButton = event.target.closest('.clear-search-filter');
     if (clearButton) {
+      event.preventDefault();
       const selectWrapper = clearButton.closest('.select-wrapper');
       const chipWrapper = selectWrapper?.querySelector('.selected-chips');
       const checkboxes = Array.from(selectWrapper?.querySelectorAll("input[type='checkbox']") || []);
@@ -132,10 +149,12 @@ const toggleFilter = function () {
       chipWrapper?.querySelectorAll('.chip').forEach((chipElement) => chipElement.remove());
       checkboxes.forEach((checkbox) => {
         checkbox.checked = false;
+        checkbox.closest('li[role="option"]')?.setAttribute('aria-selected', 'false');
       });
 
-      const filterButton = selectWrapper?.querySelector('button');
-      filterButton?.querySelector('span')?.remove();
+      selectWrapper?.querySelectorAll('.multi-select').forEach((multiSelect) => {
+        multiSelect.querySelector('button span')?.remove();
+      });
 
       updateFilterStateVisibility(selectWrapper);
 
