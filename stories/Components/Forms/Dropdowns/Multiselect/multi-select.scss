@@ -7,6 +7,16 @@
   max-width: 18.5rem;
   position: relative;
 
+  [hidden] {
+    display: none !important;
+  }
+
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid var(--undpds-color-text-default);
+    outline-offset: 2px;
+  }
+
   &.open {
     >button {
       border-bottom: 0;

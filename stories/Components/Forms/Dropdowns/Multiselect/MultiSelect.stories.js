@@ -122,6 +122,7 @@ export default {
           </ul>
 
           <h3>Interactions</h3>
+          <p>The dropdown is a disclosure containing a labeled group of native checkbox or radio controls, not a listbox. Enter or Space toggles disclosure buttons; Tab and Shift+Tab move between visible controls. Space selects a checkbox, and arrow keys select within a radio group. Escape closes the current subgroup or dropdown and returns focus to its trigger. Leaving the dropdown closes it without trapping focus. Hidden groups are removed from keyboard navigation and the accessibility tree.</p>
           <ul>
             <li>By clicking on the arrow, the drop-down box can be opened or closed.</li>
             <li>By clicking on the option/options, those can be selected.</li>

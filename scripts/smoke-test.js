@@ -305,6 +305,63 @@ function testFilterChipLabels() {
   }
 }
 
+/**
+ * Verify multiselect disclosure state, focus safety, and changed-state events.
+ * @returns {void} Reports accessibility regressions without changing assets.
+ */
+function testMultiSelectAccessibility() {
+  console.log('\n♿ Multiselect Disclosure');
+  const source = fs.readFileSync(path.resolve(__dirname, '../stories/assets/js/multi-select.js'), 'utf8')
+    .replace('export function multiSelect', 'function multiSelect');
+  const attributes = {};
+  const panel = { setAttribute: (name, value) => { attributes[name] = value; } };
+  const trigger = {
+    dataset: {},
+    setAttribute: (name, value) => { attributes[name] = value; },
+  };
+  const classes = new Set();
+  const events = [];
+  const element = {
+    querySelector: (selector) => (selector === 'button' ? trigger : panel),
+    classList: {
+      contains: (name) => classes.has(name),
+      toggle: (name, enabled) => (enabled ? classes.add(name) : classes.delete(name)),
+    },
+    dispatchEvent: (event) => events.push(event),
+  };
+  const document = { activeElement: null };
+  trigger.focus = () => { document.activeElement = trigger; };
+  panel.contains = (activeElement) => activeElement === panel;
+  try {
+    const select = vm.runInNewContext(`${source}\nnew MultiSelect(element);`, {
+      element, document, CustomEvent,
+    });
+    select.setOpen(false, false);
+    if (panel.hidden && attributes['aria-hidden'] === 'true' && attributes['aria-expanded'] === 'false' && events.length === 0) {
+      ok('Closed initialization hides options without emitting a toggle');
+    } else {
+      fail('Closed initialization hides options without emitting a toggle');
+    }
+    select.setOpen(true);
+    if (!panel.hidden && attributes['aria-hidden'] === 'false' && attributes['aria-expanded'] === 'true' && events[0]?.open) {
+      ok('Opening exposes options and emits synchronized open state');
+    } else {
+      fail('Opening exposes options and emits synchronized open state');
+    }
+    document.activeElement = panel;
+    select.setOpen(false);
+    select.setOpen(false);
+    if (panel.hidden && attributes['aria-hidden'] === 'true' && attributes['aria-expanded'] === 'false'
+      && document.activeElement === trigger && events.length === 2 && events[1].closed) {
+      ok('Closing restores focus before hiding options and emits only once');
+    } else {
+      fail('Closing restores focus before hiding options and emits only once');
+    }
+  } catch (error) {
+    fail('Disclosure accessibility state', error.message);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Entry point
 // ---------------------------------------------------------------------------
@@ -325,6 +382,7 @@ function main() {
   testManifest();
   testMultiSelectEvents();
   testFilterChipLabels();
+  testMultiSelectAccessibility();
 
   console.log(`\n${'─'.repeat(50)}`);
   console.log(`Results: ${passed} passed, ${failed} failed`);
