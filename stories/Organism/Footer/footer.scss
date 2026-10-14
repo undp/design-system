@@ -360,9 +360,6 @@
     }
   }
 
-  &.plain {
-
-  }
 }
 
 // plain footer items style, no accordion
@@ -383,7 +380,10 @@
     font-size: var(--undpds-font-size-heading-xsmall);
     pointer-events: all;
     margin-bottom: var(--undpds-spacing-04);
-    padding: var(--undpds-spacing-08) 0 var(--undpds-spacing-03);
+    padding: var(--undpds-spacing-06) 0 var(--undpds-spacing-03);
+    @include breakpoints.devicebreak(medium) {
+      padding-block-start: 0;
+    }
     &::before {
       display: none;
     }
