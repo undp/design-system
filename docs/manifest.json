@@ -1,6 +1,6 @@
 {
   "version": "2.0.4",
-  "generatedAt": "2026-10-14T15:57:27.749Z",
+  "generatedAt": "2026-10-15T06:58:10.420Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.4/",
   "assets": {
     "css": [
@@ -21,8 +21,8 @@
       },
       {
         "path": "css/components.min.css",
-        "size": 294010,
-        "sha256": "b58d00665177f45a5abc6c0e9137385ed93564fa79c3f40a3977ee2b15171f71"
+        "size": 293962,
+        "sha256": "0955cb19a90a9fab05e920053d6d647ccf45424e2cbb86f2d70e20b221ca6a35"
       },
       {
         "path": "css/components/accordion.min.css",
@@ -161,8 +161,8 @@
       },
       {
         "path": "css/components/footer.min.css",
-        "size": 8621,
-        "sha256": "510045cc50a86206b66bd5d918476a4b853619593fa118754b4d974798b7e73a"
+        "size": 8573,
+        "sha256": "d6ef2524bfad4a16baedd212af691d0c61cd9fd5c4b9563c5f15e2f09fcf785c"
       },
       {
         "path": "css/components/frosted-background.min.css",

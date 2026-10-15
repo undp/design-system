@@ -168,7 +168,7 @@
 // * footer icons start *//
 .footer-icons {
   display: flex;
-  padding-left: 0;
+  padding-inline-start: 0;
   flex-wrap: wrap;
 
   li {
@@ -192,8 +192,7 @@
       display: block;
       font-size: 0;
       height: 20px;
-      margin-inline-start: var(--undpds-spacing-06);
-      margin-block-end: var(--undpds-spacing-05);
+      margin: 0 var(--undpds-spacing-06) var(--undpds-spacing-05) 0;
       width: 20px;
 
       @each $name in $socials {
@@ -201,13 +200,12 @@
           background: url(~icons/#{$name}-white.svg) no-repeat center bottom;
         }
       }
+
+      @include breakpoints.devicebreak(medium) {
+        margin: 0 0 var(--undpds-spacing-05) var(--undpds-spacing-06);
+      }
     }
 
-    // &:last-of-type {
-    //   a {
-    //     margin-right: 0;
-    //   }
-    // }
   }
 
   &.inverted {
@@ -229,27 +227,6 @@
         }
       }
     }
-  }
-}
-
-[dir="rtl"] {
-  .footer-icons {
-    padding-right: 0;
-
-    // li {
-    //   padding: 0;
-
-    // a {
-    //   margin-left: $spacing-07;
-    //   margin-right: 0;
-    // }
-
-    // &:last-of-type {
-    //   a {
-    //     margin-left: 0;
-    //   }
-    // }
-    // }
   }
 }
 
@@ -499,7 +476,7 @@
   }
 
   &-copyright {
-    margin: 0 var(--undpds-spacing-05);
+    // margin: 0 var(--undpds-spacing-05);
 
     @include breakpoints.devicebreak(medium) {
       margin: var(--undpds-spacing-11) 0 0;
@@ -523,11 +500,11 @@
   }
 
   .footer-icons {
-    margin: 0 1.25rem var(--undpds-spacing-07);
+    margin: 0;
 
     @include breakpoints.devicebreak(medium) {
       justify-content: flex-end;
-      margin: 0;
+
     }
   }
 
