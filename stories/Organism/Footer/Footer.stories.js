@@ -102,28 +102,10 @@ export default {
 
 <ul>
   <li>Choose either Default or Inverted from the control tab of the canvas.</li>
-  <li>Copy HTML from the HTML tab and include the below-listed CSS and JS files.</li>
-  {/* <li>Initialize the accordion by calling <code>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</code> function to make the links an accordion on mobile screens.</li> */}
+  <li>Copy HTML from the HTML tab and include the below-listed CSS files.</li>
 </ul>
-<h4>Method 1: Automatic Initialization (Recommended)</h4>
-<ul>
-   <li>Include the required CSS and JS files listed in the CSS and JS References section.</li>
-   <li>Include the component initializer script:
-      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js"&gt;&lt;/script&gt;</code>
-   </li>
-   <li>Add the required data attribute to your footer element:
-      <code>data-undpds-component="footer"</code>
-   </li>
-   <li>The footer will initialize automatically when the page loads - no JavaScript calls required!</li>
-</ul>
-<h4>Method 2: Manual Initialization (Traditional)</h4>
-<ul>
-   <li>Include the required CSS and JS files listed in the CSS and JS References section.</li>
-   <li>Call the initialization function directly in your JavaScript:
-      <code>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</code>
-   </li>
-</ul>
-<h3>CSS and JS References</h3>
+
+<h3>CSS References</h3>
 
 <h4>CSS:</h4>
 
@@ -135,13 +117,6 @@ export default {
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css</a></li>
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css</a></li>
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css</a></li>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css</a></li>
-</ul>
-
-<h4>JS:</h4>
-
-<ul>
-  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js</a></li>
 </ul>
 
 <h3>Interactions</h3>
