@@ -14,12 +14,10 @@ export function FooterLists({
   let screen_variant = variant_options[`${args.variant}`];
   return (
     <div className={cls('cell', 'footer-item', `${screen_variant}`)}>
-      <button type="button" id={arialabel} className="footer-heading" tabIndex="0" aria-controls={ariacontrol} aria-expanded="false">{headerText}</button>
-      <div id={ariacontrol} className="footer-panel" aria-label={arialabel} aria-hidden="false" role="region">
-        {data.map((item, index) => (
-          <Link key={index} label={item.text} />
-        ))}
-      </div>
+      <div className="footer-heading"><Link label={headerText} /></div>
+      {data.map((item, index) => (
+        <Link key={index} label={item.text} />
+      ))}
     </div>
   );
 }
