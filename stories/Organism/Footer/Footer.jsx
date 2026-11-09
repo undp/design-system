@@ -12,7 +12,7 @@ import { FooterConditions } from "../../Molecules/FooterNavigation/FooterConditi
 import { FooterConditions2 } from "../../Molecules/FooterNavigation/FooterConditions2/FooterConditions2";
 import { FooterIcons } from "../../Molecules/FooterNavigation/FooterIcons/FooterIcons";
 import { P } from "../../Atom/BaseTypography/Paragraph/Paragraph";
-import { accordion } from "../../assets/js/accordion";
+// import { accordion } from "../../assets/js/accordion";
 import { Icons } from "../../Atom/Icons/Icons";
 
 const cls = (...classes) =>
@@ -41,9 +41,9 @@ export function Footer({
   variant,
   ...args
 }) {
-  useEffect(() => {
-    accordion('[data-accordion="mobile"]', ".footer-panel", "active");
-  }, []);
+  // useEffect(() => {
+  //   accordion('[data-accordion="mobile"]', ".footer-panel", "active");
+  // }, []);
   return (
     <>
       {variant === "default" && (
@@ -91,9 +91,9 @@ export function Footer({
                   />
                 </div>
               </div>
-              <div className="grid-x grid-margin-x" data-accordion="mobile">
+              <div className="grid-x grid-margin-x">
                 <div className="cell medium-8">
-                  <div className="grid-x grid-margin-x footer-items">
+                  <div className="grid-x grid-margin-x footer-items plain">
                     <FooterLists
                       data={data}
                       headerText={menutitle}

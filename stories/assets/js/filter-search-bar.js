@@ -1,6 +1,15 @@
 let isDocumentFilterEventsBound = false;
+let filterPanelId = 0;
 
 const getFilterButton = (checkbox) => checkbox.closest('ul')?.closest('.multi-select')?.querySelector('button');
+
+/**
+ * Read the option's associated labels, regardless of their position.
+ * @param {HTMLInputElement} option Checkbox whose display label is needed.
+ * @returns {string} Trimmed label text, with legacy sibling markup as a fallback.
+ */
+const getOptionLabel = (option) => Array.from(option.labels || [], (label) => label.textContent.trim()).join(' ')
+  || option.nextElementSibling?.textContent?.trim() || '';
 
 const updateFilterButtonCount = (checkbox) => {
   const multiSelect = checkbox.closest('.multi-select');
@@ -35,12 +44,43 @@ const updateFilterStateVisibility = (selectWrapper) => {
   const hasChips = chipWrapper && chipWrapper.querySelectorAll('.chip__cross').length > 0;
 
   if (clearButton) {
+    clearButton.setAttribute('type', 'button');
+    clearButton.hidden = !hasChips;
     clearButton.classList.toggle('show-clear', hasChips);
   }
 
   if (activeFilter) {
+    activeFilter.hidden = !hasChips;
     activeFilter.classList.toggle('show-activefilter', hasChips);
   }
+};
+
+/**
+ * Reflect responsive filter-panel visibility in its disclosure and ARIA state.
+ * @param {HTMLButtonElement} button Responsive search/filter disclosure.
+ * @returns {void} Links the panel and prevents focus inside collapsed content.
+ */
+const updateSearchFilterVisibility = (button) => {
+  const panel = button.nextElementSibling;
+  if (!panel?.classList.contains('search-filter')) {
+    return;
+  }
+  if (!panel.id) {
+    do {
+      filterPanelId += 1;
+      panel.id = `search-filter-panel-${filterPanelId}`;
+    } while (document.getElementById(panel.id) !== panel);
+  }
+  const isMobile = window.getComputedStyle(button).display !== 'none';
+  const isVisible = !isMobile || panel.classList.contains('show-filter');
+  if (!isVisible && panel.contains(document.activeElement)) {
+    button.focus();
+  }
+  button.setAttribute('type', 'button');
+  button.setAttribute('aria-controls', panel.id);
+  button.setAttribute('aria-expanded', String(isVisible));
+  panel.setAttribute('aria-hidden', String(!isVisible));
+  panel.inert = !isVisible;
 };
 
 const toggleFilter = function () {
@@ -53,6 +93,8 @@ const toggleFilter = function () {
       updateFilterButtonCount(checkbox);
     }
   });
+  document.querySelectorAll('.select-wrapper').forEach(updateFilterStateVisibility);
+  document.querySelectorAll('.sort-filter-search').forEach(updateSearchFilterVisibility);
 
   searchOptions.forEach((option) => {
     if (option.dataset.filterSearchInitialized === 'true') {
@@ -60,7 +102,7 @@ const toggleFilter = function () {
     }
 
     option.dataset.filterSearchInitialized = 'true';
-    option.addEventListener('click', () => {
+    const updateChip = () => {
       const selectWrapper = option.closest('.select-wrapper');
       const chipWrapper = selectWrapper?.querySelector('.selected-chips');
       const optionId = option.id;
@@ -72,15 +114,16 @@ const toggleFilter = function () {
       }
 
       if (option.checked) {
-        const optionValue = option.nextElementSibling?.textContent?.trim() || '';
+        const optionValue = getOptionLabel(option);
         const existingChip = chipWrapper.querySelector(`[option-name='${optionId}']`);
 
         if (!existingChip) {
-          const chip = document.createElement('span');
+          const chip = document.createElement('a');
           chip.className = 'chip chip__cross';
-          chip.tabIndex = 0;
+          chip.setAttribute('href', '#');
           chip.setAttribute('role', 'button');
           chip.setAttribute('option-name', optionId);
+          chip.setAttribute('aria-label', `${selectWrapper.dataset.removeFilterLabel || 'Remove filter'}: ${optionValue}`);
           chip.textContent = optionValue;
           chipWrapper.append(chip);
         }
@@ -89,7 +132,9 @@ const toggleFilter = function () {
       }
 
       updateFilterStateVisibility(selectWrapper);
-    });
+    };
+    option.addEventListener('click', updateChip);
+    updateChip();
   });
 
   if (isDocumentFilterEventsBound) {
@@ -98,26 +143,57 @@ const toggleFilter = function () {
 
   isDocumentFilterEventsBound = true;
 
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.sort-filter-search').forEach(updateSearchFilterVisibility);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    const chip = event.target.closest('.selected-chips .chip__cross');
+    if (chip && event.key === ' ') {
+      event.preventDefault();
+      if (!event.repeat) {
+        chip.click();
+      }
+    }
+    if (event.key === 'Escape') {
+      const panel = event.target.closest('.search-filter.show-filter');
+      const button = panel?.previousElementSibling;
+      if (button?.classList.contains('sort-filter-search') && window.getComputedStyle(button).display !== 'none') {
+        event.preventDefault();
+        button.focus();
+        panel.classList.remove('show-filter');
+        button.classList.remove('close');
+        updateSearchFilterVisibility(button);
+      }
+    }
+  });
+
   document.addEventListener('click', (event) => {
-    const chip = event.target.closest('.chip__cross');
+    const chip = event.target.closest('.selected-chips .chip__cross');
     if (chip) {
       event.preventDefault();
 
       const selectWrapper = chip.closest('.select-wrapper');
       const optionId = chip.getAttribute('option-name');
-      const checkbox = optionId ? selectWrapper?.querySelector(`#${optionId}`) : null;
+      const targetCheckbox = optionId ? document.getElementById(optionId) : null;
+      const checkbox = selectWrapper?.contains(targetCheckbox) ? targetCheckbox : null;
 
       if (checkbox) {
         checkbox.checked = false;
         updateFilterButtonCount(checkbox);
       }
 
-      chip.dispatchEvent(new CustomEvent('filterSearchChipRemoval', {
+      const removalEvent = new CustomEvent('filterSearchChipRemoval', {
         bubbles: true,
         cancelable: false,
         detail: { chip_id: optionId },
-      }));
+      });
+      removalEvent.chip_id = optionId;
+      chip.dispatchEvent(removalEvent);
 
+      if (document.activeElement === chip) {
+        checkbox?.closest('.multi-select')?.querySelector('button')?.focus();
+      }
       chip.remove();
       updateFilterStateVisibility(selectWrapper);
       return;
@@ -125,6 +201,7 @@ const toggleFilter = function () {
 
     const clearButton = event.target.closest('.clear-search-filter');
     if (clearButton) {
+      event.preventDefault();
       const selectWrapper = clearButton.closest('.select-wrapper');
       const chipWrapper = selectWrapper?.querySelector('.selected-chips');
       const checkboxes = Array.from(selectWrapper?.querySelectorAll("input[type='checkbox']") || []);
@@ -134,9 +211,13 @@ const toggleFilter = function () {
         checkbox.checked = false;
       });
 
-      const filterButton = selectWrapper?.querySelector('button');
-      filterButton?.querySelector('span')?.remove();
+      selectWrapper?.querySelectorAll('.multi-select').forEach((multiSelect) => {
+        multiSelect.querySelector('button span')?.remove();
+      });
 
+      if (document.activeElement === clearButton) {
+        selectWrapper?.querySelector('.multi-select > button')?.focus();
+      }
       updateFilterStateVisibility(selectWrapper);
 
       clearButton.dispatchEvent(new CustomEvent('filterSearchClear', {
@@ -148,8 +229,10 @@ const toggleFilter = function () {
 
     const sortFilterButton = event.target.closest('.sort-filter-search');
     if (sortFilterButton) {
+      event.preventDefault();
       sortFilterButton.classList.toggle('close');
       sortFilterButton.nextElementSibling?.classList.toggle('show-filter');
+      updateSearchFilterVisibility(sortFilterButton);
     }
   });
 };

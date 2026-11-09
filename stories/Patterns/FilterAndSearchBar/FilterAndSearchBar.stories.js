@@ -133,6 +133,7 @@ document.addEventListener('multiSelectInputToggle', (e) =&gt;  &#123; <br />
 </ul>
 
 <h3>Custom Event Data:</h3>
+<p>Filter chips support Enter and Space to remove a selection and return focus to its dropdown trigger. Clear all also returns focus before hiding its control. Set <code>data-remove-filter-label</code> on the <code>select-wrapper</code> to localize the chip removal action (or pass <code>removeFilterLabel</code> to the React component). Disclosure visibility and ARIA state stay synchronized on toggle, Escape, outside click, focus exit, and responsive layout changes.</p>
 <p>Each of the custom events contains specific data.</p>
 
 <h4>The <code>multiSelectInputToggle</code> event data contains:</h4>

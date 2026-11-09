@@ -1,6 +1,6 @@
 {
-  "version": "2.0.2",
-  "generatedAt": "2026-09-02T13:35:31.153Z",
+  "version": "2.0.5",
+  "generatedAt": "2026-10-30T14:39:10.830Z",
   "totalComponents": 95,
   "statusSummary": {
     "draft": 0,
@@ -886,13 +886,9 @@
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/footer.min.css",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/input-fields.min.css",
           "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/buttons.min.css",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/accordion.min.css"
+          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/components/newsletter-signup.min.css"
         ],
-        "js": [
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/init.min.js",
-          "https://cdn.jsdelivr.net/npm/@undp/design-system-assets/js/accordion.min.js"
-        ]
+        "js": []
       }
     },
     {

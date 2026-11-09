@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useId } from 'react';
 import './multi-select.scss';
 import { multiSelect } from '../../../../assets/js/multi-select';
 import { Checkbox } from '../../Checkbox/Checkbox';
@@ -9,6 +9,7 @@ const cls = (...classes) => (classes.filter(Boolean).length > 0 ? classes.filter
 function SelectTag({
   text, eleId, locale, ...args
 }) {
+  const disclosureId = `multi-select-${useId()}`;
   useEffect(() => {
     multiSelect(locale);
   }, [locale]);
@@ -18,8 +19,10 @@ function SelectTag({
   return (
     <div className="multi-select" data-multi-select="">
       <button
-        aria-label="Region"
+        type="button"
+        id={`${disclosureId}-trigger`}
         aria-expanded="false"
+        aria-controls={disclosureId}
         data-id={`filter${eleId}`}
       >
         {text}
@@ -27,75 +30,89 @@ function SelectTag({
       <ul
         className={cls(`${args.Height === 'Fix height' ? 'fix-height' : ''}`)}
         data-type="region"
-        role="listbox"
-        aria-multiselectable="true"
+        id={disclosureId}
+        role="group"
+        aria-labelledby={`${disclosureId}-trigger`}
         aria-hidden="true"
-        aria-modal="true"
+        hidden
       >
-        <li role="option">
+        <li role="none">
           <ElementTag
             label={`${text}`}
             value="category1"
-            id={`category1${eleId}`}
+            id={`category1${eleId}-${disclosureId}`}
             label_pos="before"
-            name={`filter${eleId}`}
+            name={`filter${eleId}-${disclosureId}`}
           />
         </li>
-        <li role="option">
+        <li role="none">
           <ElementTag
             label={`${text}`}
             value="category2"
-            id={`category2${eleId}`}
+            id={`category2${eleId}-${disclosureId}`}
             label_pos="before"
-            name={`filter${eleId}`}
+            name={`filter${eleId}-${disclosureId}`}
           />
         </li>
-        <li role="option">
+        <li role="none">
           <ElementTag
             label={`${text}`}
             value="category3"
-            id={`category3${eleId}`}
+            id={`category3${eleId}-${disclosureId}`}
             label_pos="before"
-            name={`filter${eleId}`}
+            name={`filter${eleId}-${disclosureId}`}
           />
         </li>
-        <li role="option">
+        <li role="none">
           <ElementTag
             label={`${text}`}
             value="category4"
-            id={`category4${eleId}`}
+            id={`category4${eleId}-${disclosureId}`}
             label_pos="before"
-            name={`filter${eleId}`}
+            name={`filter${eleId}-${disclosureId}`}
           />
         </li>
-        <li role="option">
+        <li role="none">
           <ElementTag
             label={`${text}`}
             value="category5"
-            id={`category5${eleId}`}
+            id={`category5${eleId}-${disclosureId}`}
             label_pos="before"
-            name={`filter${eleId}`}
+            name={`filter${eleId}-${disclosureId}`}
           />
         </li>
-        <li role="option" className="has-submenu">
-          <button className="checkbox-item">{text}</button>
-          <ul role="listbox" className="sub-menu">
-            <li role="option">
+        <li role="none" className="has-submenu">
+          <button
+            type="button"
+            className="checkbox-item"
+            id={`${disclosureId}-subgroup-trigger`}
+            aria-expanded="false"
+            aria-controls={`${disclosureId}-subgroup`}
+          >{text}</button>
+          <ul
+            role="group"
+            className="sub-menu"
+            id={`${disclosureId}-subgroup`}
+            aria-labelledby={`${disclosureId}-subgroup-trigger`}
+            aria-hidden="true"
+            hidden
+          >
+            <li role="none">
               <ElementTag
                 label={`${text}`}
                 value="subcategory1"
-                id={`subcategory1${eleId}`}
+                id={`subcategory1${eleId}-${disclosureId}`}
                 label_pos="before"
-                name={`filter${eleId}`}
+                name={`filter${eleId}-${disclosureId}`}
               />
             </li>
-            <li role="option">
+            <li role="none">
               <ElementTag
                 label={`${text}`}
                 value="subcategory2"
-                id={`subcategory2${eleId}`}
+                id={`subcategory2${eleId}-${disclosureId}`}
                 label_pos="before"
-                name={`filter${eleId}`}
+                name={`filter${eleId}-${disclosureId}`}
               />
             </li>
           </ul>

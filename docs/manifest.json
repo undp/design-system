@@ -1,118 +1,118 @@
 {
-  "version": "2.0.2",
-  "generatedAt": "2026-09-02T13:35:29.959Z",
-  "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.2/",
+  "version": "2.0.5",
+  "generatedAt": "2026-10-30T14:39:08.285Z",
+  "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.5/",
   "assets": {
     "css": [
       {
         "path": "css/base-minimal-no-grid.min.css",
-        "size": 90330,
-        "sha256": "5da61d51c07abd7766fdc19d4042c295c15b890aa25e204c91cee19d08e1b5d7"
+        "size": 90379,
+        "sha256": "c42c4d3059a4649171a625713e330102a00cb8ec0931845a97ec4aa8bcafd2a4"
       },
       {
         "path": "css/base-minimal.min.css",
-        "size": 152513,
-        "sha256": "c3e4c1fe3c116d5fd97617981bce16047d09fa2ad48d1ad93c2edba26dff1142"
+        "size": 152562,
+        "sha256": "e6f2bb5b7acd3e83ebd68ae94c2d8456e4ba8622f6cae45b17f72aa624af7b2c"
       },
       {
         "path": "css/ckeditor5.min.css",
         "size": 186429,
-        "sha256": "2cf9523ad1fc35c0a441d4439bf21597e7e855ca51f3eae5772a85ef195ef1a1"
+        "sha256": "ad2bf239429b91d73ddec1cb7156fe5da9e55d66685f702ab6da885b0e6b14f7"
       },
       {
         "path": "css/components.min.css",
-        "size": 292985,
-        "sha256": "410a0bfe4888a5af116199eac686ea2b24ae8bfa17a14970ddda48bae1c10e04"
+        "size": 293962,
+        "sha256": "704ad1fa1431a14a4081b7498688cec41b8004800ef4cdecd7cd0226f5f985e4"
       },
       {
         "path": "css/components/accordion.min.css",
         "size": 1763,
-        "sha256": "bf5a2405a39a27a586ce3f97411a12667cd3d6d10fd9a59db1037ac5a2fd9541"
+        "sha256": "c4e5a2032323474db440eb437f487529b18e327a67e86ccbcb54182b0a61b17b"
       },
       {
         "path": "css/components/author-card.min.css",
         "size": 789,
-        "sha256": "6ab213fc8db29601cba2a231dfe52a4501c6131f817469573a722e7375f71368"
+        "sha256": "d246dd97bd2e8ea59f749342c7c4c5cb52e459e446e013fea8a0c4c76295ffae"
       },
       {
         "path": "css/components/author-column.min.css",
         "size": 537,
-        "sha256": "44d3bbec31f0d2d260498472ece0c803366de8d0c64b2b013c4285321474eb00"
+        "sha256": "7027213f6eecd77fd8b99efad7ea6d53aef0f28c847c3c08b82ea701a3e69bf2"
       },
       {
         "path": "css/components/author-summary.min.css",
         "size": 1444,
-        "sha256": "da158c66e1288d90a90c312ec7931d26670490cc5f9347e4057948c1ee05170e"
+        "sha256": "f8412f77ab476a5d495ede80a004b8a13d55b2269198d7e03986d25cc7d0eccd"
       },
       {
         "path": "css/components/bio-card.min.css",
         "size": 10468,
-        "sha256": "78877620cd1015b1e859aba444768b12e3cf8545558d1026f698ec89b22fb3dd"
+        "sha256": "02f40e459031791e37e5c3d6c0a80d1ed627685aa5e99a38df4d661cf6b6e2df"
       },
       {
         "path": "css/components/blockquotecomp.min.css",
         "size": 737,
-        "sha256": "732f923e0842e1aba6207e4258b96fd5656a4b7955324265e2af70e59ca49bdb"
+        "sha256": "400e2234eab3709d27e7e64a77515b0ada22b59b5b274872fb6b0f81ec4bcdea"
       },
       {
         "path": "css/components/breadcrumbs.min.css",
         "size": 1473,
-        "sha256": "21de9997f7454ea45a7d99665c4df2a5ced478762b2aba01e885915043b8bc45"
+        "sha256": "924c8afce7a2f8d762d8723a57d6bb88d6516c9ac7716d4e26c3d15a624155da"
       },
       {
         "path": "css/components/buttons.min.css",
         "size": 6928,
-        "sha256": "af8ddc09a9c87d5658a860c61886feefd59e4db111db384341ccad2c3eadbee9"
+        "sha256": "3c237b7b8fc75e822b14f0cb4f4bf2dd53171e8c1d5b3efb0c13302a3d067337"
       },
       {
         "path": "css/components/checkbox-radio-common.min.css",
         "size": 167,
-        "sha256": "77097a3e5b35c5b10a2b3c9d1235e8b28a2e3672c3f828de04a84feb9b5a7f09"
+        "sha256": "8e4de9c9c3a65cd7e0f467bf2bd276bbbd017221cdf08b2ba856480fefd355b5"
       },
       {
         "path": "css/components/checkbox.min.css",
         "size": 463,
-        "sha256": "bc1209f26abec8b5632a4c3051e67c4b6814d8b9fd3964362f0cf31c9850d06d"
+        "sha256": "33cff73e880b4964bd1cafff3e739d4dd2cfe518608bd6b17fcaabb40129c295"
       },
       {
         "path": "css/components/chips.min.css",
         "size": 758,
-        "sha256": "558a9a2948bfeb84ae0bfec6168162821625d2331453d3afe9e23a8e5f94d676"
+        "sha256": "33f195e58b75e46b2b2baa413b2f9991b47fb18d40fe242813b70733246df6f9"
       },
       {
         "path": "css/components/content-card-with-and-without-image.min.css",
         "size": 148,
-        "sha256": "088591f18eb045252a416aff2e14af68c8ed443f29b8e00153b39a60d6d35004"
+        "sha256": "f2fe1cfeb4d20c2bac8a065be90765765dc5426e76c1113ec2b839de9c4bd909"
       },
       {
         "path": "css/components/content-card.min.css",
         "size": 20174,
-        "sha256": "fe3eb3a08506eff83525a08c1a07bba4bf01e67228284182e7cb0eb480461c1c"
+        "sha256": "653a89403b7d4feacf69bceba4f3e909ecb0a5489a67bdbf8bcb5d5d90343b29"
       },
       {
         "path": "css/components/country-card.min.css",
         "size": 3010,
-        "sha256": "b47a480b511aedec8e5e6dbb4158d72711174cb328bce441eb670edbe79e8640"
+        "sha256": "dda1c96ed84a666a7fddeec7aac62e03c2f5ac4174b2e7055e917c7d57d51c79"
       },
       {
         "path": "css/components/country-site-header.min.css",
         "size": 6403,
-        "sha256": "88e7afd77844b5f2bb917a031785beb44bd6bb71eb6f98bd23fcb360b1cc49d4"
+        "sha256": "d9414e43435d3c06833c4b1e30dfe43abb183095de519fa38fc76ef82ddc2895"
       },
       {
         "path": "css/components/cta-block.min.css",
         "size": 381,
-        "sha256": "84bd4977f5a257b68fd9af3bc52616697c438c5e46c23c9bb2e72fbeda9b1549"
+        "sha256": "127985282df3669e65079b1ca37368444a4f3fed1710cb1b71a13cdd0a41cc76"
       },
       {
         "path": "css/components/cta-link.min.css",
         "size": 1984,
-        "sha256": "5c7fc35c9fda4a56e77124d7e52255a98267dba4d4ce822ade4cb19c0cb12aab"
+        "sha256": "fb13d0a7b7fe516e916b0ee4c730ae036006bd3a780be11ee9f8f6c05cb5aaf7"
       },
       {
         "path": "css/components/custom-select.min.css",
         "size": 2450,
-        "sha256": "35787fd4f85b6c9394f46e00ada324aa4e04b8791ef40e32cfdd24c654ad70a9"
+        "sha256": "69e9f3d9097e0c7a9663a39356c293a95cc74bd69de843ab9f0349becf41037f"
       },
       {
         "path": "css/components/documentation.min.css",
@@ -122,92 +122,92 @@
       {
         "path": "css/components/download-card.min.css",
         "size": 23446,
-        "sha256": "af67a705f6558fba378191ee679918b0cb4ab59626fdc5057293bcce88c95e38"
+        "sha256": "7cb4bbb2c228aaa30385a932acced13b3196cde93cfff67ae9cd4672cef88eba"
       },
       {
         "path": "css/components/download-modal.min.css",
         "size": 1632,
-        "sha256": "b4b08bf5e6684c06c7ea823391fe4579e459fa4aa359084dc52776518aa905a1"
+        "sha256": "d693bce448f57cb211865d582cb3bdaed1a478cb8e863afc0b85c993589078b8"
       },
       {
         "path": "css/components/download-row.min.css",
         "size": 1114,
-        "sha256": "748ea60e82d99e8ea68656ad56d3ea35e3c0eabc739cb80331b3f4d53bfa70ea"
+        "sha256": "0b41d1aafb118bdf21ca9bed48c118ac37fe0d863f1544f25622ac35f29f2346"
       },
       {
         "path": "css/components/featured-card.min.css",
         "size": 1034,
-        "sha256": "89b45a27241a156e3520fef53cf3bf8d6f4375b6377b6d0770db2e644908f633"
+        "sha256": "93e6c4350c5f49c8d791b74d76c9b770464d6ace6e535e6e470e6f89354b01d6"
       },
       {
         "path": "css/components/featured-content-card.min.css",
         "size": 4148,
-        "sha256": "934225fb740e1e70dcf29a5052f78018b67a791b203173bfc92487d7ee3871a9"
+        "sha256": "a8306568344e4fee9690ff255731648645dff099875a9f406a0773e0313336d3"
       },
       {
         "path": "css/components/filter-and-search-bar.min.css",
-        "size": 1643,
-        "sha256": "9f61206aba2b2c2f1740b4603d7440c5464ee301e28a9e620b88aee620b5110f"
+        "size": 1845,
+        "sha256": "f8f3376945f41ce90a2633860485548c306165268d66ad827fe14424fe0592c5"
       },
       {
         "path": "css/components/fixed-size-carousel.min.css",
         "size": 3726,
-        "sha256": "ab709a3847397eb0890e454ac5949f3ffdf7308cb8ecf3d85f21c2da3c8988d2"
+        "sha256": "fe361e03ba6bc6e0d61ac7af83ade7b44b34010b5d327a0f031c34e31c5c1866"
       },
       {
         "path": "css/components/fluid-image-size-carousel.min.css",
         "size": 2955,
-        "sha256": "ee051e706dfd6ae97134562bb6d88c13716a0255c47874061890593cb776f034"
+        "sha256": "ac861476b6feafa41e217c4ec53c8d1ae076b691c64ce5ab80153882d14c2004"
       },
       {
         "path": "css/components/footer.min.css",
-        "size": 7983,
-        "sha256": "226789cb0edbdde884f343ce514353e983a5440aef5a2887aa55bab02ae75bb1"
+        "size": 8573,
+        "sha256": "d8e55a4d479abb16880e1136a8370a7d29c24869d78c9c93b4ec1c77447dd34f"
       },
       {
         "path": "css/components/frosted-background.min.css",
         "size": 455,
-        "sha256": "b5c91e5ffc6417f978e04806cd6f1f3452436038896b3a4242815ea63b4db78f"
+        "sha256": "adfb1d2a365ca08f89fd69866e022f0852325f73b8f816f69dd007b635bfa7a9"
       },
       {
         "path": "css/components/global-header.min.css",
         "size": 4888,
-        "sha256": "cf6a81cee62f4c941b86dc094a1769fffd640b244e55987d6b439b1ac4c9a65e"
+        "sha256": "e7f88201dc592332b04944121d3f7f8397943d5ac67e1c796c217009b5c39e6b"
       },
       {
         "path": "css/components/headingbig.min.css",
         "size": 621,
-        "sha256": "b15e8ad5a8345990ee4c64486a492acaea4717866f5bb1427545c8c806998d72"
+        "sha256": "d6458b87157aefde6fdce7e89029699a5468cd46dfd3c62c9d1f60e6e063a9ea"
       },
       {
         "path": "css/components/homepage-hero.min.css",
         "size": 4059,
-        "sha256": "a03eb499cd7b37fa1e63ac6b808d429550d6482b652bddd119d6824a53734f1a"
+        "sha256": "5a4876bf7536cb149137c65269a89b2a990a81e5d1903df1cdafe06d31461e41"
       },
       {
         "path": "css/components/image-caption.min.css",
         "size": 1648,
-        "sha256": "a8d2167cf9c92feb4808a10ed6e2df7b54f8d870fe433e5abc3b3370a57516ef"
+        "sha256": "7e66896ae31ea771f83c47bba97057d6ff324153f2119f3dabc36a5d77eaa66c"
       },
       {
         "path": "css/components/image-only-carousel.min.css",
         "size": 1481,
-        "sha256": "10993d56ab360761f4007752de3139c8f89fcdb8b71f92fd0ef30df7328f4b4a"
+        "sha256": "267bfd62c71f2d9f2203589fa3320a28df59799a5a9c15ec539b3410cca202c7"
       },
       {
         "path": "css/components/image-reveal-cards.min.css",
         "size": 238,
-        "sha256": "a2b209bb659b0777919bf5630e683a5b66361752dc58732de2da6e3b2d7c88be"
+        "sha256": "36f42e14a650c91cc2b7455e876642f1e79c8c05751b1e0d17eddc22e6599894"
       },
       {
         "path": "css/components/image-revel-cta-card.min.css",
         "size": 8663,
-        "sha256": "9556453d99d701f3538c418c8f80d4d293b1a76c1451146941bd07522f79f36f"
+        "sha256": "97b8db1e96eee7b780d663165a2e63ed7e0cb81161f7f27b9e3e4e559314c0f0"
       },
       {
         "path": "css/components/input-fields.min.css",
         "size": 12197,
-        "sha256": "55ec69b9959992ddafcb1408648e74cdec9be2b5e543e6757bbbdff0dda8c0bb"
+        "sha256": "f273bb41d1e1b9b9b35d7602c1c47a84d429cf2b6de0da82a9672edad6759477"
       },
       {
         "path": "css/components/intro.min.css",
@@ -217,319 +217,319 @@
       {
         "path": "css/components/language-switcher.min.css",
         "size": 3281,
-        "sha256": "4c9da6774d260b457570e945d1872f8820302242ec70300029f904b81a1123da"
+        "sha256": "53965ef42e92841a010c28834a1d919d3eeb2e55d32de717d76862b482c93c9f"
       },
       {
         "path": "css/components/lightbox-gallery.min.css",
         "size": 4359,
-        "sha256": "42118e58decedc3b07f6f36a84e976d894f8d3954f1bb07d416a9b621c0ebab8"
+        "sha256": "c2ce52374d7007b679a6fcf2d3f474d8154e2024223ff53b3ffd421c058662f2"
       },
       {
         "path": "css/components/lightbox.min.css",
         "size": 9883,
-        "sha256": "c8bb31339d16fc5c6e4175e628635ecefd9d2b0bccca2dea62958e0f02d4584d"
+        "sha256": "bd223612579e77cd0fffc3427d3c8efacfe90054997dedb20596cd1ca90e7750"
       },
       {
         "path": "css/components/loader.min.css",
         "size": 496,
-        "sha256": "14e54cd15ef56697cd67ba6fc0f3ba32ad1b7f9a1dfa9ad99889fa136cb4c0c2"
+        "sha256": "50398792e132b37bcc946ab3f12c1bf0377fa586ffa9039986ecbd577238948e"
       },
       {
         "path": "css/components/mega-menu.min.css",
         "size": 5715,
-        "sha256": "91cc452ead4381744057f4b4dd0a10e55c14655ac10f90727fe4a876cc068018"
+        "sha256": "739e5fd90245027b82c13a2a494cce4690f6fc6ebd778a7466460c843b099c3d"
       },
       {
         "path": "css/components/menu-multi-level.min.css",
         "size": 10162,
-        "sha256": "a96cea7ddbe0b522c8997e0b5ae9d0ddfddfa435e85df794ad4580ba2665bd45"
+        "sha256": "22e308f1146e2722e963abc87827068b4f38c0205feea1533620d573191f4b8c"
       },
       {
         "path": "css/components/menu-overflow.min.css",
         "size": 11241,
-        "sha256": "26715900d4e4198969719894f810fff65643fb3cfe95f3e991f8ab43a8ce034b"
+        "sha256": "b95b262962df25e0b6bf79e31f63e362f2fe0d01a766655240070f36f769dc20"
       },
       {
         "path": "css/components/menu.min.css",
         "size": 305,
-        "sha256": "dbaaa31b28bd2166d856fb2f37d4b28bf90af96d50f947986b46f12d0750cd85"
+        "sha256": "c8333c834ad56f5fea677d00543734778ee902483e3f7bba4f3731328a253043"
       },
       {
         "path": "css/components/mobile-nav.min.css",
         "size": 4392,
-        "sha256": "9ed5d9be9376ab676f2edc20b9e48081df2bded77bacc59e72db445fc1f344f2"
+        "sha256": "3904f8ec6a13ce083b8391037a2c3b55a9cb65d4685e8e5cee44823e656493bf"
       },
       {
         "path": "css/components/modal.min.css",
         "size": 1692,
-        "sha256": "6603b495ba83bbff6d8fe4bec85b456980523aace90100bcde874b0fb44041dd"
+        "sha256": "a4a0251f46aa762aa948b7258d7c1053e9297b7c16ea44ac11c8fdc8a3e9c9c9"
       },
       {
         "path": "css/components/multi-select.min.css",
-        "size": 4216,
-        "sha256": "087c779d418d16f12f3ae86c8907a93fbb8ee14f86858f1dfad6613894144396"
+        "size": 4401,
+        "sha256": "d32a37dcfa92e72bf9bd6442b024ab05acb34e8849189edfa583a88b1bada112"
       },
       {
         "path": "css/components/newsletter-signup.min.css",
         "size": 1659,
-        "sha256": "404ffbfbf13f0cd581c58020b4c322ddd743f4258e6888f310cc6f39cd992df2"
+        "sha256": "3169e3a1409a295894b2b1699de4f8adff90e836c1d61d07c2f3d5f51c4db361"
       },
       {
         "path": "css/components/our-expertise.min.css",
         "size": 3879,
-        "sha256": "aa5a903a22b8f7cd3bcbac1c91d724984ebc0500028ef2e2219dbc747e46bed0"
+        "sha256": "0c65b2ec42f310649d98722fc1a535df9454fc4877627e69c665042df696efca"
       },
       {
         "path": "css/components/page-hero.min.css",
         "size": 4567,
-        "sha256": "ad862e116cf5b6fb3aa50d1d3edb94b327b9c277e56252c31475e904d192a770"
+        "sha256": "aaa9cf9b0de7264afb306fb4b533b96a7dc8a796558c47815d9552d11eb7ba85"
       },
       {
         "path": "css/components/page-wide-card.min.css",
         "size": 10798,
-        "sha256": "32c873d5346a920c9772b70f0efe8e0798dffd1e533b2e09cb7817fd8df52a0d"
+        "sha256": "e7ccf4196d619fe38c97f9f913345257e6a17f0a91dfb7bb44e3a00e860b08a4"
       },
       {
         "path": "css/components/page.min.css",
         "size": 663,
-        "sha256": "705090812a8d5b9a66eb5b709bd4e4358bf69193e4767631dfacc56faa9b4280"
+        "sha256": "916613713d20c0e527852d092b6c3480d7f80d873b7fd19a1dc8ff824b2a29f8"
       },
       {
         "path": "css/components/pagehero-cards.min.css",
         "size": 3535,
-        "sha256": "b1b8cfb092431fefab4def00978767d7671b053675ca12c7cf3b8e4857fac17f"
+        "sha256": "531867f9f2f66ed6dbce7b954972073c4d3a1b481aed664347a89003580b3709"
       },
       {
         "path": "css/components/pagination.min.css",
         "size": 1559,
-        "sha256": "9ffe83d6dad712c1ddc7add206767a38a40007488c75dcf940c6946f1ce2976d"
+        "sha256": "ef20c11f1dab75b7d6e23e4f46a8e92e8571e18d7fedfb6dad65e1b37c57a534"
       },
       {
         "path": "css/components/parallax-card.min.css",
         "size": 2860,
-        "sha256": "b0da8ab8f551f1a17b7258d8c25c9b52edfe81918f10b22c2ef801d8ced15d5e"
+        "sha256": "1499c605aae6424c89675e879e0169d12569fdaf18af14cdbf3e4e633b685e91"
       },
       {
         "path": "css/components/parallax-cards.min.css",
         "size": 931,
-        "sha256": "6947886ae120e29c95863b41615102e595d5ab85ef1db3daef372e2839da2c35"
+        "sha256": "59de6b88e422b5fa7cac50c5615eb4a39d1cbe7403d773e855a9521e2c9b9fb1"
       },
       {
         "path": "css/components/parallax-gallery.min.css",
         "size": 3115,
-        "sha256": "cc71169e6f79563f6043c3b0241e8f37510c5ef4ea72aa5f8fc86c7c97e274a7"
+        "sha256": "06120ff0387d43b44206e41e09dc268ee94bf0d620f374d093e03516c45b2a6a"
       },
       {
         "path": "css/components/post-header.min.css",
         "size": 151,
-        "sha256": "98b42da57bfb2e00513deb1ab0f21961c2d3163a65bd8efd2ec555eaae7e16e2"
+        "sha256": "b21c9289a7beb256368cfffae213c7c75e1bb9c4e3507df56be6b08261bd82ff"
       },
       {
         "path": "css/components/post.min.css",
         "size": 190,
-        "sha256": "88c0e4c69fc4e9b1f894a872c78d5e489e7a505210a4b1d93c97f162e5eac8c0"
+        "sha256": "0fabada50fec9890127b4fd9bf057751eddb8ffb84908d61191437d2a10dcd85"
       },
       {
         "path": "css/components/progress-bar.min.css",
         "size": 409,
-        "sha256": "c7043ea3386206a6cf08e113055a01486b86fd1a905418d2789ad73ce3bbabd6"
+        "sha256": "dcace945c6f6fc6f919b0e0d490a7de00f13e457f8b9bf449d35427b552c921e"
       },
       {
         "path": "css/components/project-detail.min.css",
         "size": 582,
-        "sha256": "a02a6a118277ba77713c4597868124b9061c7f9c6ba8ff6416e0b571f20f9cda"
+        "sha256": "56dc7b336147102983851964e9cff555f805bd0e072b9abacbcc765ea4d08668"
       },
       {
         "path": "css/components/projectdetails.min.css",
         "size": 525,
-        "sha256": "16e1d31356217b40c2414435ccbade92af0814e8f6746d1d9c31fc32f235ea6b"
+        "sha256": "e9571c349a35dabb4873a6a3f2fc17afc1707c69047afe74757210fc578bf2d6"
       },
       {
         "path": "css/components/publication-card.min.css",
         "size": 14414,
-        "sha256": "7925a6e3b9db00ba92c661fad191b43775b4515e64cba42e58a2b7cf7cd39f11"
+        "sha256": "f883d5ba0402c77cad990dc77849dfe95a75b82dcaa5f46ac7faa9bfc9ebfbe3"
       },
       {
         "path": "css/components/radio.min.css",
         "size": 568,
-        "sha256": "443b3f136eaa78303e0d256b1443cf665f2bfe0fe7bf4c90220565d9ba14d6d0"
+        "sha256": "d97b599c46729515f70aa830d6c0bb6d22df83a182e5f1553c21c7557e88c91b"
       },
       {
         "path": "css/components/scrollbar.min.css",
         "size": 631,
-        "sha256": "d1ea52db93c40a6e5c5a3bac0b48357e17f13d370a223e1a5eff8fffa5b988b3"
+        "sha256": "2ccd328e2e7ca50030ea1feee7c126aebf1c524c07722c5943f7d8b46a620af5"
       },
       {
         "path": "css/components/sdg.min.css",
         "size": 6042,
-        "sha256": "5f53ed444a86381a053a739ca405d7135ecdd643d7ed52356797130037952948"
+        "sha256": "5f00ccc26ca144716caaca400e97d0c974174fc9875c66cfa0e63ea867691262"
       },
       {
         "path": "css/components/sdgmodal.min.css",
         "size": 14132,
-        "sha256": "74c833bdef278e0a2cf229241d27c87cc6171b17a317a508d192afe0bc9a8dd7"
+        "sha256": "3ee368bf538d5390727d6aed643fa8479a76ea8c25f1bc8b957da945c1e99497"
       },
       {
         "path": "css/components/search-expand.min.css",
         "size": 1245,
-        "sha256": "59d3557d38cede6ab55d5e1a7b6071f3185d2de79700a2c32c1e2aca26f16ccf"
+        "sha256": "bd8b56e3384da62fa05e0c2a41741d5dbffc30d8a90955b972f9854df6f901d8"
       },
       {
         "path": "css/components/sectionheader.min.css",
         "size": 82,
-        "sha256": "86e09ba00e479fbc65d7ad34b0fa2c41cbab3296ef93724c0e8172834045a9d0"
+        "sha256": "2c45870953443ac87292cd5167af30561ba42beff601dbd82342229acce8118d"
       },
       {
         "path": "css/components/select.min.css",
         "size": 757,
-        "sha256": "5ad23bb3d70581a0c914363e619fc75e52ff72271dc68a83f25081dc07dd75d4"
+        "sha256": "5661ab7fbf759feebf9fe1b580716003735d9883c2ac5081ac4f54ee3a2a81f5"
       },
       {
         "path": "css/components/sidebar-data.min.css",
         "size": 513,
-        "sha256": "0e59c5a6571af18e29e75dc42a6f885cabe4cbcdd2abcc3f442a8d7e228bdc8b"
+        "sha256": "46276e9648bc4670abe128778fa4c48b96e0dcd595c8dc6597b3ba994f4d4c2d"
       },
       {
         "path": "css/components/sidebar.min.css",
         "size": 4607,
-        "sha256": "4992d8b6c364d1fef40c4941a62932ec6b0e943e3f4d539d4d118c3ba897ca8d"
+        "sha256": "0d6e389d15fe480661c603f582700863a6f157141bb5b528e585f589c34c7b04"
       },
       {
         "path": "css/components/smallcopy.min.css",
         "size": 225,
-        "sha256": "a575443198bcde609d885638e90ba22ae5c71364c6a10878d632a21986799f14"
+        "sha256": "3c157ea7b9104f1b4998e229c684c24ea49c4cdbae6d8d4f5bb1988785d98d3e"
       },
       {
         "path": "css/components/stats-card-slider.min.css",
         "size": 592,
-        "sha256": "43a0f1cdab109d0ea51109421fcad47e94216ad3c19cb25033943010a4ce7bf9"
+        "sha256": "946c3586fbe623647da987a6d54ac92d229f66ef2cb5a457dc5caf7680190837"
       },
       {
         "path": "css/components/stats-cards.min.css",
         "size": 6134,
-        "sha256": "d97de0a399f180a86c891e8ff25045c04be5348127c0c41a27d33424404eed41"
+        "sha256": "a31e343d7e37aa5d6a1db3fa637cfee4b02e16350add5f83acd18729ffda0bc3"
       },
       {
         "path": "css/components/stats-panel.min.css",
         "size": 5890,
-        "sha256": "307bd629e795a564726497417f9375814268f2847c9f21a68433cb7ad4de137e"
+        "sha256": "a07f62c7c41af9e8e5228761f7fb93183ff83e3bdf87b09562c46542bec13b12"
       },
       {
         "path": "css/components/stats-slider.min.css",
         "size": 4589,
-        "sha256": "f047ce415bdc0b110a2af837a2529da5dd9be1df6fafe5b55241c1148406334d"
+        "sha256": "9f3b1962120836a2a8feb0a22cc709719f3bae10b23dfd009bd5b947f60d6445"
       },
       {
         "path": "css/components/stats.min.css",
         "size": 101,
-        "sha256": "0e0ae439cd0156fa54062fa9ea3e41289fee89273e02bc1ff8a0eedfc0355ebe"
+        "sha256": "4da75f73e9ee89d5f6e51f9600faebf184e27a237f3891d8a49ff73eb4bc0f34"
       },
       {
         "path": "css/components/swiper.min.css",
-        "size": 2036,
-        "sha256": "37ba7eaec51a369099c4fb248422319642aaaafdaa77d5ae6d6fe4d603838602"
+        "size": 2041,
+        "sha256": "2c0146fb948b162423589382b7b907f3237832a2c5204157a26155fe219c6d50"
       },
       {
         "path": "css/components/switch.min.css",
         "size": 2450,
-        "sha256": "889c6f6b86a9f5d9e279f19ce7d24c0437ec24a69854588150a831c12d25d3ea"
+        "sha256": "52f73d817ca715bdc7dd8ffeb3545201c6db242795e9808ce109997807f5ffeb"
       },
       {
         "path": "css/components/tab.min.css",
         "size": 1298,
-        "sha256": "4f82893bb5e988e694460520f6547aac89474d549a85a1361779115baa808e0f"
+        "sha256": "cb5b1e6596eb0e266f6dbd7bea46ab644955e8cc493de9e1957f432b0b87be67"
       },
       {
         "path": "css/components/tertiary.min.css",
         "size": 354,
-        "sha256": "dad17aff513ab15e01560c557606fb100d4ab20612abe8050cdb81f55680404a"
+        "sha256": "bd3808bcce423fc618867be471e10788756bafa429caf71bc9f1ac8d306db4e2"
       },
       {
         "path": "css/components/text-panel.min.css",
         "size": 2789,
-        "sha256": "46cc32e1815ef9526d728590ac8fcfc1c8ba937a27a2e04b80ab5964d3969613"
+        "sha256": "cda3fc7a9b5d8189559ecd8d369316b421ba4ca1980604cc4687e2d879caaa30"
       },
       {
         "path": "css/components/textbackground.min.css",
         "size": 453,
-        "sha256": "dbdd271a5eeb07f7096047b3feffe2af4f6576340912ba7d6c5d072126162df3"
+        "sha256": "36d87c62c61e0e1ad81cdfb3e33154c9cc8295368fc983e790f2e75b68af9283"
       },
       {
         "path": "css/components/textcta.min.css",
         "size": 458,
-        "sha256": "0ab6c57a819511f2505c81349974f6b3bb2636fbcda5f09eb356ed81e0919f40"
+        "sha256": "6c9b05c52182f9b790120e5014be67a3320da9d4f0c9335795b330522e963ccf"
       },
       {
         "path": "css/components/tweet-card.min.css",
         "size": 1486,
-        "sha256": "40daec11b54dc511d3ec6541428421440d221f86924d6552614a1486ee679516"
+        "sha256": "4f6856b7f5778551e08131ee8210f495aaa1f1a21f878582c35edecebf9db2ba"
       },
       {
         "path": "css/components/tweet-panel.min.css",
         "size": 621,
-        "sha256": "4881b82c268c12b68aeaf455243c47841794e0b97b528bad7543bb3e3e777c6a"
+        "sha256": "3c0ad3c73edfdc6a5a9c96eadccf1f08273816796e315a08cad582a1c52e72bd"
       },
       {
         "path": "css/templates.min.css",
         "size": 20044,
-        "sha256": "eb68fa40cfc95c05df36e3d8c5a45a6a6e207037aa2c1083fc6cd8df67b74cd8"
+        "sha256": "984af07a5431d1895b81a52d08f99a656723c6a36c9ddda64c9c0b481a81e08b"
       },
       {
         "path": "css/templates/article-page.min.css",
         "size": 2737,
-        "sha256": "4c909f1fcf05c5ca3543c08500a0866f0d6f4462087a7a5931d399b320bd7bfd"
+        "sha256": "ce2a5140297b1c2c898be9e7406bb2213bc2a9be1bbeb7f461f4f52a9fe09c19"
       },
       {
         "path": "css/templates/author-page.min.css",
         "size": 786,
-        "sha256": "6bf05d76e8e2db32266d632984a70ffa2c9f2f53a4fb3abf18157d94280a47ea"
+        "sha256": "cd86c4010a5e3416c1efe4b020eebfa51e78bc79c402de66d6702f0d9bed4341"
       },
       {
         "path": "css/templates/authors.min.css",
         "size": 2812,
-        "sha256": "4d50c5bc3fb6fb7b17eac1c8746e1755bc9e1493bc0350a4ce57c71d71301f55"
+        "sha256": "281e093849912b4886a107f0bfcd410bd6573634c5e328fb90f5bfb0a1116427"
       },
       {
         "path": "css/templates/countryhome-page.min.css",
         "size": 1883,
-        "sha256": "a6d79cc98f86e1b9451262bd0ab9ebdf9234f09b0edd07c1790a363984783f5d"
+        "sha256": "de8f4892a7c69517a7af6f8788fb464f1b0e3dc6fceb1d7458787f5be8d65030"
       },
       {
         "path": "css/templates/generic-landing-page.min.css",
         "size": 5057,
-        "sha256": "b6b1caf56e8671a50d4059268237afd8c002b50dc37d581357e4c37e5a0666ad"
+        "sha256": "85e469115b7ba6160deb874691a80e26e340da2eb5981b29608167ee6739155a"
       },
       {
         "path": "css/templates/generic-page.min.css",
         "size": 6615,
-        "sha256": "147a140566a16d1a8055bc91a19086c65cfd0dbc9b93e48c216b062039f7ffe4"
+        "sha256": "3a548631047977d3ed9e36ee7c38183a6c227a43b602de982b16e538c39cd677"
       },
       {
         "path": "css/templates/globalhome-page.min.css",
         "size": 1119,
-        "sha256": "497c87002521defdc4fa486e0dd7777e94c646ffde167c92ea494daaf9361534"
+        "sha256": "cfe107ea90148e48dc4fd171153fecee802cd26fb3b28c5aa9bf7bd82174d445"
       },
       {
         "path": "css/templates/project-page.min.css",
         "size": 3014,
-        "sha256": "5a680e4f0ada6d3f14daf10bb5a85d0efd218abec2ff8aaeb977469a2cb9d2d4"
+        "sha256": "876a1c029bb5d80b86b13df20953eab6f4c942ed7d079687ddc2168d6ab826cb"
       },
       {
         "path": "css/templates/publication-page.min.css",
         "size": 4516,
-        "sha256": "1bf06f6ad5caf8ce5658f2e50bac8182256f3278246ae83f1b1ee6a792440c03"
+        "sha256": "036b11202931a53a96af2d2b35fd0c1c4d1ae3c541a07457af12a1d06cf848fb"
       },
       {
         "path": "css/templates/sdg.min.css",
         "size": 912,
-        "sha256": "a0819163c3ebc94eefcbf52f0acca8a9621b6ed04e921d125b78b932df02f770"
+        "sha256": "14100063de93e3004406399a934e241b47aa5285caebcc42f690fa36a6214c53"
       }
     ],
     "js": [
       {
         "path": "js/accordion.min.js",
         "size": 2833,
-        "sha256": "be7c413483ffa5264c4ca6e6927fa2c834c73500d9c62170c39032ca4fbce595"
+        "sha256": "0ee9308c40a6a5fee6c14048cf536c8e07cc79f99baba249f45da8a8b00a411e"
       },
       {
         "path": "js/addingFonts.min.js",
@@ -538,138 +538,138 @@
       },
       {
         "path": "js/all.min.js",
-        "size": 61814,
-        "sha256": "12e45ffc9f4fb42665b5aaeb43175bd02d55b3260d91bce414c9c32012718b25"
+        "size": 64937,
+        "sha256": "2cd8532aa6ee5558f8fa87af328154ce005384d41ab6d13500666b8620e7d7e4"
       },
       {
         "path": "js/animation.min.js",
         "size": 878,
-        "sha256": "3b01161e170a9623d7fa9f466d746bc5cc32a22766d688a47a70c07699365ca1"
+        "sha256": "5acfdb8b049d53cae008e917bcc1c559c086d55d2ed06ab7721f1c978fd4c928"
       },
       {
         "path": "js/author-filter.min.js",
         "size": 1034,
-        "sha256": "78156d98728886f8f2ab94ac794b25dad5965a255769ed59a1b65b0d8691ce53"
+        "sha256": "4ca32acadc66b9174999fd5dfc620975b4dd680d4efd288ae57a208ce20f6bd7"
       },
       {
         "path": "js/download-modal.min.js",
         "size": 1715,
-        "sha256": "c8b22c517688faa81c422416d4abf8b300acc153871a7be24785e33b06a59dde"
+        "sha256": "9594cc580391fa9b2af3fbe31acc79d426be1831341eb9507c1cf4938c2d4905"
       },
       {
         "path": "js/expand-search.min.js",
         "size": 1598,
-        "sha256": "a6947770c956b920cf273c2f1723aae04cef06a1c53264c6bb2528c024865555"
+        "sha256": "b131a8844931cac46858bbdc39031db89da733921c1b472497a5873a2fa2054f"
       },
       {
         "path": "js/filter-search-bar.min.js",
-        "size": 3206,
-        "sha256": "3126df175c18b5aa6bd2d086d1e76af01d9b582cb62581ea10ff69bfd6d657fb"
+        "size": 4899,
+        "sha256": "0901b8e8aa5aa273fdf81fc8bd408120cbf1e2c85259123c5cfcc6acea471198"
       },
       {
         "path": "js/fitText.min.js",
         "size": 4346,
-        "sha256": "1b1d2f579e9c3fd83cf736a1c39ebc4d8dd80ce6da33bdc1632565b78b96111b"
+        "sha256": "bb3cffbb3a684fff6f4b37f2cc36830059670b17eabaedc64f14c4f49b8c53c7"
       },
       {
         "path": "js/fitTitle.min.js",
         "size": 2533,
-        "sha256": "f790c05782610fd1946d9d8e6646d9ba6039eda3f2786bcfc0834ba1e2597264"
+        "sha256": "f08f82ef89445664c0fd96326f54196818ccf99177a125db28596c8a1dc77918"
       },
       {
         "path": "js/init.js",
         "size": 6990,
-        "sha256": "4e0e66da097e422b2097aca3aaae38062ad02f71de3bde3fd29a191f36c6c2eb"
+        "sha256": "19da6c3a7aa5c6633f73ee1542dfea5d2077ca04a26da1f139a835f40954254b"
       },
       {
         "path": "js/lang-switcher.min.js",
         "size": 1006,
-        "sha256": "0b0f88593624e6597f73a0fcc612504f40fa1888516aac70ddba9b6575f1a096"
+        "sha256": "e192e4ffcaaf4f6473e0f6a4a738bd6f520cc99756e012870b1745cf417a8b4c"
       },
       {
         "path": "js/lazyload.min.js",
         "size": 1549,
-        "sha256": "67c9ad140b8649605caab6b76907f350de8d2149c9b1b93cb8a66e2a4edfa55d"
+        "sha256": "a2669e2a9bd643bf23ebb0b7024e8b0de53f14a8bfa69037effd89d0e286fd49"
       },
       {
         "path": "js/lightbox-gallery.min.js",
         "size": 1639,
-        "sha256": "95ed55520e1126b1f5c6cd8c0a72374a6dd9765c66be44a274541f737696eb5e"
+        "sha256": "cefacde8b84b2a0095c2d8cf7ce45ee6e22241503e2597f0f6596d951673615c"
       },
       {
         "path": "js/modal.min.js",
         "size": 1949,
-        "sha256": "cb6ba57a851c030be3fd7c3282c849da85fe4e2f922ea7cff57899ab09fcd2ed"
+        "sha256": "9ca966fcb474f72b4a246b47c1374e4dc5e9470961c1475cba63138317de71ca"
       },
       {
         "path": "js/multi-select.min.js",
-        "size": 3544,
-        "sha256": "dc71b905b86fd65f5455ea9c1a9f4fe1e50b248538394c1b80052e45ccbd56b3"
+        "size": 4974,
+        "sha256": "afb3408cb5efaa72e96fc3c0a5555214897a79a45aac8a7dd88448eeeb04209a"
       },
       {
         "path": "js/navigation-data.min.js",
         "size": 3886,
-        "sha256": "88e1418930ee82d17245daeb617e7245ccda3b757d6f0d5fe377d709face4a94"
+        "sha256": "74a850df692169561101afc9f8cae1f10c983becac1abbbd01b0a2cb2c9fd1bd"
       },
       {
         "path": "js/navigation.min.js",
         "size": 11685,
-        "sha256": "0ef168a1f781563c9d524861d852cbd66ffe0300c617ab7e75a17ec86f7c42e3"
+        "sha256": "6465ed4c25279a77f359e2067aaff443e966b35556f18d0133d94d6d4191e243"
       },
       {
         "path": "js/our-expertise.min.js",
         "size": 1751,
-        "sha256": "ad658278570a7ab453fdb7fea9a7363eba9062dea0d385c40838e44161544390"
+        "sha256": "efb7fba3c45451248eb57511c758967c9383dd542dae5785ed483564bcc7e95f"
       },
       {
         "path": "js/parallax.min.js",
         "size": 4504,
-        "sha256": "75b93d078319399629b053587973408d54832e122038d82b5214efcf434564d7"
+        "sha256": "2cc229becdefb007f90924abcd16c9f3372f865ba8139866a94305cecb182a9d"
       },
       {
         "path": "js/resize.min.js",
         "size": 939,
-        "sha256": "60aea750625ca50b22fe013baebfb85d363446f90fa27addf737e1d90bff2b0b"
+        "sha256": "126733af071b7e5761b78a0b45776d7a6f58c980183ceb7a3ff6a5d2c2409e52"
       },
       {
         "path": "js/scrolling-progress-bar.min.js",
         "size": 645,
-        "sha256": "4f9ac2ea89b9293d58f229d4eae0f501f72d1314c41d6c5129827af770e93ce2"
+        "sha256": "9456c3a6f96ef7df374b9402bdb83c8995a0e56a2eaabdfffad7ad080c02de58"
       },
       {
         "path": "js/sdg-modal.min.js",
         "size": 5991,
-        "sha256": "dfbb8f7ae7a6ef2da7d5e71f58c4520d7d0f92ff849324953806b5a0258086ca"
+        "sha256": "5108134ca8cce9287a6d2285b83a0713717ac046a987596cca51bcd162e8be48"
       },
       {
         "path": "js/select.min.js",
         "size": 1346,
-        "sha256": "7cd98ce24baff7bdbc6f4788ef8d29afb912c4a081547227cfa4c93c84d3b2a4"
+        "sha256": "609072a21ee3df306dbdd9a6b630a79d8465c9e29c79d7b36b8d9f8d4d1ab14e"
       },
       {
         "path": "js/sidebar.min.js",
         "size": 2770,
-        "sha256": "9aeb775e4ac383940dbb71368e3bdff288cddb3044187e57b5655abedc966108"
+        "sha256": "e9e595f817074c9195803dc86c44353290c4a8a695de7c8123e8783731ca48af"
       },
       {
         "path": "js/smartresize.min.js",
         "size": 787,
-        "sha256": "20e373acb4a298f31773a215bd4d25256a251f7228eba8335a8e83e54e50dfed"
+        "sha256": "b89d969b5acb253edc782ba19c99a08b52cdb2f22ff02b2b693bb6fdc5a2695a"
       },
       {
         "path": "js/smooth-bg-change.min.js",
         "size": 2444,
-        "sha256": "849fa7e81a47da7912832ca3635069f6824c2e90a1016d11108938145b48b08d"
+        "sha256": "12427593b7875e90c817b01adbd293e8c5af164c632c41e9e54a5b53e9738c7e"
       },
       {
         "path": "js/stats.min.js",
         "size": 998,
-        "sha256": "5724cf262b4a70a6471b3c2478a2eb91124a8288836381641452337c7cbe0447"
+        "sha256": "c3e5c4b0a802bd6e810c27c749dac8816d8d0f460fdfefb62e7f0179d0ee7533"
       },
       {
         "path": "js/sticky.min.js",
         "size": 1505,
-        "sha256": "033c687d8eda9c985a980c562f2c2ac4b068d62dfe436a9361ac6acda79c1ce9"
+        "sha256": "c4aa4d94d56d82dca5e6d40e766950a2ca16efd063eab911d7cd68c1f799731d"
       },
       {
         "path": "js/storybook-init.min.js",
@@ -679,22 +679,22 @@
       {
         "path": "js/swiper.min.js",
         "size": 7811,
-        "sha256": "35797b05d9c4c01634f90a4f8685e99741918659dd179eb047c8345decd5ad33"
+        "sha256": "51e333d1bba9a08af980b1156327e2229a63e69ea5eeeafe432360aa64644940"
       },
       {
         "path": "js/tabs.min.js",
         "size": 3128,
-        "sha256": "744acab11cda69b7f67455ab34dd6494bcd4834e05a7fdf27c4d32e495522d84"
+        "sha256": "ced06f9bb84e80cf45e309478e837b862dffb127561ac307d62ffbd005f8654b"
       },
       {
         "path": "js/undp.min.js",
         "size": 1054,
-        "sha256": "223740f9799ee2efb3066310ddab06a12530cdb320f128ec4b9ce535ebf2d865"
+        "sha256": "088a3b44a666a51555e4fbb8d3c9eac004edcbfbe4d9d4332ca1d948fbf493f8"
       },
       {
         "path": "js/viewport.min.js",
         "size": 575,
-        "sha256": "f34d44a880c5bb87b8204a4a876ebd042f38b5b16bf18e8b84c3a7d160346898"
+        "sha256": "3f09143f2494376bca1f22b5ce4bf05c4e5d0b819454d7191dfec6555742675b"
       }
     ]
   }
