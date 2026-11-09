@@ -1,6 +1,6 @@
 {
   "version": "2.0.5",
-  "generatedAt": "2026-10-30T14:39:08.285Z",
+  "generatedAt": "2026-11-09T13:38:52.736Z",
   "cdnBase": "https://cdn.jsdelivr.net/npm/@undp/design-system-assets@2.0.5/",
   "assets": {
     "css": [
@@ -116,8 +116,8 @@
       },
       {
         "path": "css/components/documentation.min.css",
-        "size": 3875,
-        "sha256": "4b58d4e85d705020f8746b82b9c7fd9f94c048d40f9fee12c3ad3ad3eaa8f059"
+        "size": 3870,
+        "sha256": "147caf81db939c00271667691e132263e6492184b397c72ac5a779824e7de2dc"
       },
       {
         "path": "css/components/download-card.min.css",
@@ -426,8 +426,8 @@
       },
       {
         "path": "css/components/swiper.min.css",
-        "size": 2041,
-        "sha256": "2c0146fb948b162423589382b7b907f3237832a2c5204157a26155fe219c6d50"
+        "size": 2036,
+        "sha256": "70498c317da135d924e6a332c24c1e9ed1b211c7026625aa3afeff05d1e2a605"
       },
       {
         "path": "css/components/switch.min.css",
@@ -538,8 +538,8 @@
       },
       {
         "path": "js/all.min.js",
-        "size": 64937,
-        "sha256": "2cd8532aa6ee5558f8fa87af328154ce005384d41ab6d13500666b8620e7d7e4"
+        "size": 64901,
+        "sha256": "fc0521e3b882e56d1197dfc6230937a8accbdd95ba4fba373e093630ed4e3f4a"
       },
       {
         "path": "js/animation.min.js",
@@ -678,8 +678,8 @@
       },
       {
         "path": "js/swiper.min.js",
-        "size": 7811,
-        "sha256": "51e333d1bba9a08af980b1156327e2229a63e69ea5eeeafe432360aa64644940"
+        "size": 7775,
+        "sha256": "9d3da803bf6f77652e1f14911cc9468f3d3736f96a642aa14e5e7a64d3197487"
       },
       {
         "path": "js/tabs.min.js",
