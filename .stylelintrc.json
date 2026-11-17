@@ -4,7 +4,7 @@
   ],
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-sass-guidelines"
+    "./stylelint-config-sass-guidelines.cjs"
   ],
   "defaultSeverity": "warning",
   "rules": {
