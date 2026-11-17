@@ -73,7 +73,8 @@ export default [
           include: path.resolve(__dirname, 'stories/assets/icons'),
           type: 'asset/resource',
           generator: {
-            filename: 'images/assets/[name][ext]',
+            filename: 'images/[name][ext]',
+            emit: false,
           },
         },
         {
