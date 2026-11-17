@@ -184,6 +184,17 @@ function testFonts() {
   }
 }
 
+function testCopiedAssets() {
+  console.log('\n🖼️  Copied Assets');
+  assertExists('images/arrow-blue.svg', 'Copied icon is available');
+  assertExists('images/undp-logo-blue.svg', 'UNDP logo is copied');
+  if (!fs.existsSync(path.join(DOCS_DIR, 'images/assets'))) {
+    ok('Icons stay in the images root');
+  } else {
+    fail('Icons stay in the images root', 'Unexpected images/assets directory');
+  }
+}
+
 function testManifest() {
   console.log('\n📋 Asset Manifest');
   const manifestPath = path.join(DOCS_DIR, 'manifest.json');
@@ -414,6 +425,7 @@ function main() {
   testJsFiles();
   testInitJs();
   testFonts();
+  testCopiedAssets();
   testManifest();
   testMultiSelectEvents();
   testFilterChipLabels();
