@@ -4,9 +4,8 @@ import { fileURLToPath } from 'url';
 import webpack from 'webpack';
 import * as sassEmbedded from 'sass-embedded';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import MinimizerPlugin from 'minimizer-webpack-plugin';
 import RemoveEmptyScripts from 'webpack-remove-empty-scripts';
-import CopyPlugin from 'copy-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import webpackEntry from './webpack.entries.js';
 
@@ -71,6 +70,15 @@ export default [
         },
         {
           test: /\.(svg|png|jpg)$/,
+          include: path.resolve(__dirname, 'stories/assets/icons'),
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/assets/[name][ext]',
+          },
+        },
+        {
+          test: /\.(svg|png|jpg)$/,
+          exclude: path.resolve(__dirname, 'stories/assets/icons'),
           type: 'asset/resource',
           generator: {
             filename: 'images/[name][ext]',
@@ -94,29 +102,18 @@ export default [
     },
     optimization: {
       minimizer: [
-        new CssMinimizerPlugin({
+        new MinimizerPlugin({
+          test: /\.css$/i,
+          extractComments: false,
           parallel: true,
-          minimizerOptions: {
-            preset: [
-              'default',
-              {
-                discardComments: { removeAll: true },
-              },
-            ],
+          minify: {
+            implementation: webpack.css.cssMinify,
+            options: { comments: false },
           },
         }),
       ],
     },
     plugins: [
-      // copying icons folder for better reach
-      // to dist folder
-      new CopyPlugin({
-        patterns: [
-          { from: './stories/assets/icons', to: 'images' },
-          { from: './stories/assets/images/(undp|pnud)-logo-(blue|white).svg', to: 'images/[name][ext]' },
-          { from: './stories/assets/fonts', to: 'fonts' },
-        ],
-      }),
       // remove .js file which is generated from every css file
       new RemoveEmptyScripts(),
       new MiniCssExtractPlugin({
@@ -129,6 +126,13 @@ export default [
     ],
     output: {
       path: path.resolve(__dirname, 'docs'),
+      copy: [
+        { from: './stories/assets/icons', to: 'images' },
+        {
+          from: './stories/assets/images/{undp,pnud}-logo-{blue,white}.svg',
+          filename: 'images/[name][ext]',
+        },
+      ],
     },
   },
   {

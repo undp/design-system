@@ -184,6 +184,13 @@ function testFonts() {
   }
 }
 
+function testCopiedAssets() {
+  console.log('\n🖼️  Copied Assets');
+  assertExists('images/arrow-blue.svg', 'Copied icon is available');
+  assertExists('images/assets/arrow-blue.svg', 'CSS-imported icon is emitted');
+  assertExists('images/undp-logo-blue.svg', 'UNDP logo is copied');
+}
+
 function testManifest() {
   console.log('\n📋 Asset Manifest');
   const manifestPath = path.join(DOCS_DIR, 'manifest.json');
@@ -414,6 +421,7 @@ function main() {
   testJsFiles();
   testInitJs();
   testFonts();
+  testCopiedAssets();
   testManifest();
   testMultiSelectEvents();
   testFilterChipLabels();
